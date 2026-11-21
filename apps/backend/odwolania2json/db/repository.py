@@ -8,6 +8,7 @@ parametrami), nigdy przez sklejanie SQL-u ze stringów.
 from __future__ import annotations
 
 import json
+import re
 from typing import Any
 from uuid import UUID
 
@@ -81,10 +82,23 @@ def _assert_read_only(sql: str) -> None:
         )
     lowered = cleaned.lower()
     for keyword in _FORBIDDEN_KEYWORDS:
-        if keyword in lowered:
+        # Granica słowa: „do” w „documents” i „create” w „created_at”
+        # to fragmenty nazw, a nie polecenia zmieniające dane.
+        if re.search(rf"\b{keyword}\b", lowered):
             raise ReadOnlySqlError(
                 f"Zapytanie zawiera niedozwolone słowo: {keyword.upper()}."
             )
+
+
+def _escape_like(value: str) -> str:
+    """Escapuje znaki wieloznaczne ``LIKE`` (``%``, ``_``) i znak ucieczki.
+
+    Używana w zapytaniu z ``ESCAPE '\\'``, żeby nazwa pliku z ``_`` lub ``%``
+    była traktowana dosłownie, a nie jako wzorzec.
+    """
+    return (
+        value.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
+    )
 
 
 def _json_value(value: Any) -> Any:
@@ -203,16 +217,17 @@ class DocumentRepository:
         evidence: Any,
     ) -> None:
         """Wstawia ekstrakcję albo aktualizuje istniejącą o tym samym identyfikatorze."""
+        # „class” jest słowem zarezerwowanym w SQL, więc identyfikator jest cytowany.
         statement = text(
             """
-            INSERT INTO extractions (id, document_id, run_id, class, schema_version,
+            INSERT INTO extractions (id, document_id, run_id, "class", schema_version,
                                      payload, evidence)
-            VALUES (:id, :document_id, :run_id, :class, :schema_version,
+            VALUES (:id, :document_id, :run_id, :document_class, :schema_version,
                     CAST(:payload AS jsonb), CAST(:evidence AS jsonb))
             ON CONFLICT (id) DO UPDATE SET
                 document_id = EXCLUDED.document_id,
                 run_id = EXCLUDED.run_id,
-                class = EXCLUDED.class,
+                "class" = EXCLUDED."class",
                 schema_version = EXCLUDED.schema_version,
                 payload = EXCLUDED.payload,
                 evidence = EXCLUDED.evidence
@@ -222,7 +237,7 @@ class DocumentRepository:
             "id": str(extraction_id),
             "document_id": str(document_id),
             "run_id": str(run_id),
-            "class": document_class,
+            "document_class": document_class,
             "schema_version": schema_version,
             "payload": _json_value(payload),
             "evidence": _json_value(evidence),
@@ -251,12 +266,13 @@ class DocumentRepository:
 
     def class_counts(self) -> list[dict]:
         """Rozkład ekstrakcji według klas dokumentów."""
+        # „class” jest słowem zarezerwowanym w SQL, więc identyfikator jest cytowany.
         statement = text(
             """
-            SELECT class, count(*) AS count
+            SELECT "class", count(*) AS count
             FROM extractions
-            GROUP BY class
-            ORDER BY count DESC, class ASC
+            GROUP BY "class"
+            ORDER BY count DESC, "class" ASC
             """
         )
         with self._engine.connect() as connection:
@@ -275,17 +291,18 @@ class DocumentRepository:
         conditions: list[str] = []
         parameters: dict[str, Any] = {"limit": limit, "offset": offset}
         if name_filter:
-            conditions.append("d.filename ILIKE :name_pattern")
-            parameters["name_pattern"] = f"%{name_filter}%"
+            conditions.append("d.filename ILIKE :name_pattern ESCAPE :escape")
+            parameters["name_pattern"] = f"%{_escape_like(name_filter)}%"
+            parameters["escape"] = "\\"
         if document_class:
-            conditions.append("e.class = :document_class")
+            conditions.append('e."class" = :document_class')
             parameters["document_class"] = document_class
         where = f"WHERE {' AND '.join(conditions)}" if conditions else ""
         statement = text(
             f"""
             SELECT d.id, d.filename, d.sha256, d.size_bytes, d.source_path,
                    d.page_count, d.has_text_layer, d.created_at,
-                   e.class AS document_class
+                   e."class" AS document_class
             FROM documents d
             LEFT JOIN extractions e ON e.document_id = d.id
             {where}
@@ -316,7 +333,7 @@ class DocumentRepository:
         """Lista ekstrakcji z podsumowaniem dokumentu."""
         statement = text(
             """
-            SELECT e.id, e.document_id, e.run_id, e.class, e.schema_version,
+            SELECT e.id, e.document_id, e.run_id, e."class", e.schema_version,
                    e.payload, e.evidence, e.created_at, d.filename
             FROM extractions e
             LEFT JOIN documents d ON d.id = e.document_id
@@ -334,7 +351,7 @@ class DocumentRepository:
         """Ekstrakcja dokumentu o podanym identyfikatorze albo ``None``."""
         statement = text(
             """
-            SELECT e.id, e.document_id, e.run_id, e.class, e.schema_version,
+            SELECT e.id, e.document_id, e.run_id, e."class", e.schema_version,
                    e.payload, e.evidence, e.created_at, d.filename
             FROM extractions e
             LEFT JOIN documents d ON d.id = e.document_id

@@ -1,12 +1,17 @@
 """Testy konfiguracji aplikacji, normalizacji adresu bazy i poleceń CLI."""
 
+from dataclasses import FrozenInstanceError
 from pathlib import Path
 
 import pytest
 
 from odwolania2json.cli import APP_NAME, build_parser, main
 from odwolania2json.config import Settings
-from odwolania2json.db.repository import is_configured, normalize_url
+from odwolania2json.db.repository import (
+    ReadOnlySqlError,
+    is_configured,
+    normalize_url,
+)
 
 
 def test_settings_from_env_reads_database_url():
@@ -73,12 +78,8 @@ def test_settings_web_dir_can_be_overridden():
 def test_settings_are_immutable():
     settings = Settings.from_env({})
 
-    try:
+    with pytest.raises(FrozenInstanceError):
         settings.database_url = "postgresql://u:p@h/db"  # type: ignore[misc]
-    except Exception as error:  # noqa: BLE001 - frozen dataclass blokuje zapis
-        assert "frozen" in str(type(error)).lower() or "attribute" in str(error).lower()
-    else:  # pragma: no cover - zapis nie powinien być możliwy
-        raise AssertionError("Ustawienia powinny być niezmienne")
 
 
 def test_normalize_url_accepts_postgres_scheme():
@@ -153,3 +154,76 @@ def test_build_parser_knows_migrate_command():
     arguments = parser.parse_args(["migrate"])
     assert arguments.command == "migrate"
     assert arguments.database_url is None
+
+
+# --- Runda poprawek 1: C1 — dopasowanie słów kluczowych z granicą słowa ---
+
+
+def test_read_only_check_allows_select_from_documents():
+    """C1: ``do`` wewnątrz ``documents`` nie jest słowem kluczowym."""
+    from odwolania2json.db.repository import _assert_read_only
+
+    _assert_read_only("SELECT * FROM documents")
+
+
+def test_read_only_check_allows_columns_with_words_inside():
+    """C1: ``created_at``, ``document_id``, ``documents_count`` nie są mutacją."""
+    from odwolania2json.db.repository import _assert_read_only
+
+    _assert_read_only(
+        "SELECT id, created_at, document_id, source_path, size_bytes, sha256, "
+        "has_text_layer, documents_count FROM documents"
+    )
+    _assert_read_only("SELECT document_id, run_id FROM extractions")
+    _assert_read_only("SELECT started_at, documents_count FROM runs")
+
+
+def test_read_only_check_allows_count_aggregate():
+    """C1: ``count(*)`` jest odczytem."""
+    from odwolania2json.db.repository import _assert_read_only
+
+    _assert_read_only("SELECT count(*) FROM documents")
+
+
+def test_read_only_check_rejects_mutation_words():
+    """C1: dopasowanie z granicą słowa nadal odrzuca mutacje."""
+    from odwolania2json.db.repository import _assert_read_only
+
+    for zapytanie in (
+        "DROP TABLE documents",
+        "SELECT 1; DELETE FROM documents",
+        "TRUNCATE documents",
+        "CREATE TABLE x (id int)",
+        "ALTER TABLE documents ADD COLUMN x int",
+        "GRANT ALL ON documents TO public",
+        "REVOKE ALL ON documents FROM public",
+        "COPY documents TO '/tmp/x.csv'",
+        "CALL jakas_procedura()",
+        "DO $$ BEGIN END $$",
+        "VACUUM documents",
+        "ANALYZE documents",
+        "INSERT INTO documents (id) VALUES (1)",
+        "UPDATE documents SET filename = 'x'",
+    ):
+        with pytest.raises(ReadOnlySqlError):
+            _assert_read_only(zapytanie)
+
+
+def test_read_only_check_rejects_non_select_start():
+    """C1: odczyty muszą zaczynać się od ``SELECT`` albo ``WITH``."""
+    from odwolania2json.db.repository import _assert_read_only
+
+    with pytest.raises(ReadOnlySqlError):
+        _assert_read_only("SHOW tables")
+    with pytest.raises(ReadOnlySqlError):
+        _assert_read_only("")
+
+
+def test_read_only_check_strips_comments_before_matching():
+    """C1: komentarze nie mogą ukryć mutacji."""
+    from odwolania2json.db.repository import _assert_read_only
+
+    with pytest.raises(ReadOnlySqlError):
+        _assert_read_only("-- komentarz\nDROP TABLE documents")
+    with pytest.raises(ReadOnlySqlError):
+        _assert_read_only("/* blok */ DELETE FROM documents")
