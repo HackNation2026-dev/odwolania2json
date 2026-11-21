@@ -42,6 +42,7 @@ Rozszerzenia T2, T4, analiza regionów włączamy tylko po poprawie F1 na zbiorz
 | Semantyka `payload` | tekst JSON czy napis | decyzja użytkownika, zapis w ADR |
 | Kontrakt OpenAPI | `openapi.yaml` opisuje schematy dokumentów i `/healthz`, bez zasobów v1 | zadanie 5 |
 | Hooki | `pre-commit` wymaga jednorazowo `sh scripts/install_hooks.sh` | uruchomić po sklonowaniu |
+| Interpretacja F1 | błędna wartość jako FP bez FN, algorytm podobieństwa 80% (domyślnie `ratio`) i parowanie list są przyjęte roboczo ([ADR-005](../07-decyzje/ADR-005-interpretacja-f1.md)) | potwierdzić z mentorem (U-Q01, U-Q02), zmienić domyślne `EvalConfig` |
 | Workflow GitHub | `.github/workflows/docs.yml` pozostał, choć CI działa lokalnie | decyzja użytkownika: usunąć |
 
 ## Pytania blokujące decyzje
