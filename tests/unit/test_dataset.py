@@ -7,6 +7,7 @@ from pathlib import Path
 import pytest
 from odwolania2json.dataset import DATA_SPLIT, load_split
 from odwolania2json.loader import MATERIALS_DIR
+from pydantic import ValidationError
 
 PODZIAL_SHA256 = "3cf406a84c22424e1555e5a6192cd18f3247a9da6c2fd4d20a8dcc12f0122e2e"
 WSZYSTKIE_SPRAWY = frozenset(f"przyklad_{numer:02d}" for numer in range(1, 61))
@@ -63,6 +64,16 @@ def test_load_split_validates_coverage(tmp_path: Path) -> None:
     )
 
     with pytest.raises(ValueError, match="przyklad_60"):
+        load_split(sciezka)
+
+
+def test_load_split_rejects_unknown_top_level_key(tmp_path: Path) -> None:
+    dane = json.loads(DATA_SPLIT.read_text(encoding="utf-8"))
+    dane["dodatkowe"] = ["x"]
+    sciezka = tmp_path / "podzial.json"
+    sciezka.write_text(json.dumps(dane), encoding="utf-8")
+
+    with pytest.raises(ValidationError, match="dodatkowe"):
         load_split(sciezka)
 
 
