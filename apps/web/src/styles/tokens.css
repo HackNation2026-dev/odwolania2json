@@ -1,0 +1,60 @@
+/* Tokeny semantyczne. Jasny: paleta zatwierdzona (ADR-002 0.7.0). Ciemny: propozycja niezatwierdzona. */
+:root {
+  color-scheme: light;
+  --bg: #f3f5f0;
+  --surface: #fdfefc;
+  --surface-raised: #ffffff;
+  --border: #d4dcd4;
+  --border-control: #647d70;
+  --text: #202620;
+  --muted: #60675e;
+  --primary: #314a40;
+  --on-primary: #ffffff;
+  --subtle: #ebeeeb;
+  --focus: #647d70;
+
+  --full-bg: #e8f4ec;       --full-fg: #236947;
+  --partial-bg: #fcf2de;    --partial-fg: #875a16;
+  --error-bg: #f9e9e9;      --error-fg: #9d383b;
+  --running-bg: #e4f1f6;    --running-fg: #17647e;
+  --ambiguous-bg: #eee9f7;  --ambiguous-fg: #63459a;
+  --foreign-bg: #ebeeeb;    --foreign-fg: #4a554e;
+
+  --evidence-bg: #ffe380;
+  --evidence-border: #8a5300;
+  --pdf-page: #ffffff;
+  --pdf-canvas: #e4e7e2;
+  --shadow-1: 0 1px 2px rgb(16 24 16 / 0.08);
+  --shadow-2: 0 8px 24px rgb(16 24 16 / 0.16);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #141814;
+  --surface: #1b211c;
+  --surface-raised: #232a24;
+  --border: #2f382f;
+  --border-control: #8aa597;
+  --text: #e6eae4;
+  --muted: #a6aea3;
+  --primary: #a8c9b6;
+  --on-primary: #0f1a14;
+  --subtle: #222923;
+  --focus: #a8c9b6;
+
+  --full-bg: #173024;       --full-fg: #7fd1a4;
+  --partial-bg: #382c12;    --partial-fg: #efc377;
+  --error-bg: #3a1c1d;      --error-fg: #f19b9d;
+  --running-bg: #14303b;    --running-fg: #78cbe6;
+  --ambiguous-bg: #2b2342;  --ambiguous-fg: #c3b0f2;
+  --foreign-bg: #262d27;    --foreign-fg: #b6beb3;
+
+  --evidence-border: #8a5300;
+  --pdf-canvas: #0d100d;
+  --shadow-1: none;
+  --shadow-2: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
