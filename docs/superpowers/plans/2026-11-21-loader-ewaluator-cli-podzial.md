@@ -1,3 +1,9 @@
+---
+wersja: 0.6.1
+aktualizacja: 2026-11-21
+status: plan implementacji zadań 1–4
+---
+
 # Loader, ewaluator, CLI i zamrożenie zbioru — plan implementacji
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
