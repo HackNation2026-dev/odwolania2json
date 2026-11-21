@@ -7,6 +7,7 @@ albo bez klasyfikacji dostaje `{}` pod nazwą wejścia, żeby każde wejście mi
 
 from __future__ import annotations
 
+import contextlib
 import json
 import os
 import sys
@@ -47,7 +48,8 @@ def write_json_atomic(path: Path, payload: dict[str, object]) -> None:
             os.fsync(handle.fileno())
         os.replace(tmp_path, path)
     finally:
-        tmp_path.unlink(missing_ok=True)
+        with contextlib.suppress(OSError):
+            tmp_path.unlink(missing_ok=True)
 
 
 def run_process(input_dir: Path, output_dir: Path, engine: StubEngine) -> int:
@@ -72,6 +74,12 @@ def run_process(input_dir: Path, output_dir: Path, engine: StubEngine) -> int:
         except Exception as error:
             failures += 1
             if target is not None:
-                target.unlink(missing_ok=True)
+                try:
+                    target.unlink(missing_ok=True)
+                except OSError as cleanup_error:
+                    print(
+                        f"błąd: nie usunięto poprzedniego wyniku {target}: {cleanup_error}",
+                        file=sys.stderr,
+                    )
             print(f"błąd: {pdf}: {error}", file=sys.stderr)
     return EXIT_DOCUMENT_ERRORS if failures else EXIT_OK

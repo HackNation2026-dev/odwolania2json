@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pytest
 from odwolania2json.cli import main
-from odwolania2json.engine import StubEngine, run_process
+from odwolania2json.engine import StubEngine, run_process, write_json_atomic
 
 
 def _touch(path: Path) -> None:
@@ -90,6 +90,54 @@ def test_document_error_removes_stale_result_from_previous_run(tmp_path: Path) -
 
     assert exit_code == 1
     assert not stale.exists()
+
+
+def test_failing_cleanup_does_not_stop_other_documents(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+) -> None:
+    input_dir = tmp_path / "in"
+    output_dir = tmp_path / "out"
+    _touch(input_dir / "bad" / "broken.pdf")
+    _touch(input_dir / "good" / "ok.pdf")
+
+    real_unlink = Path.unlink
+
+    def locked_unlink(self: Path, missing_ok: bool = False) -> None:
+        if self.name == "broken.json":
+            raise OSError("plik zablokowany")
+        real_unlink(self, missing_ok=missing_ok)
+
+    monkeypatch.setattr(Path, "unlink", locked_unlink)
+
+    exit_code = run_process(input_dir, output_dir, _BrokenEngine("broken.pdf"))
+
+    assert exit_code == 1
+    assert (output_dir / "good" / "ok.json").is_file()
+    assert "plik zablokowany" in capsys.readouterr().err
+
+
+def test_cleanup_error_does_not_mask_primary_write_error(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    target = tmp_path / "x.json"
+
+    def failing_replace(src: str | os.PathLike[str], dst: str | os.PathLike[str]) -> None:
+        raise OSError("zapis przerwany")
+
+    real_unlink = Path.unlink
+
+    def locked_unlink(self: Path, missing_ok: bool = False) -> None:
+        if self.name.startswith("."):
+            raise OSError("sprzątanie zablokowane")
+        real_unlink(self, missing_ok=missing_ok)
+
+    monkeypatch.setattr(os, "replace", failing_replace)
+    monkeypatch.setattr(Path, "unlink", locked_unlink)
+
+    with pytest.raises(OSError, match="zapis przerwany"):
+        write_json_atomic(target, {})
 
 
 def test_exit_code_zero_when_all_ok(tmp_path: Path) -> None:
