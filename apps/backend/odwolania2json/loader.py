@@ -19,6 +19,7 @@ __all__ = [
     "MATERIALS_DIR",
     "CaseReference",
     "DocumentClass",
+    "MaterialsNotFoundError",
     "input_to_reference_name",
     "load_case_references",
     "load_reference_json",
@@ -47,6 +48,14 @@ _KLASY_WEJSCIA: dict[str, tuple[DocumentClass, str]] = {
 _POPRAWIONE_SPRAWY = frozenset(
     {"przyklad_19", "przyklad_23", "przyklad_25", "przyklad_44", "przyklad_55"}
 )
+
+
+class MaterialsNotFoundError(FileNotFoundError):
+    """Brak katalogu `dane/` albo `dane/negatywne/` w podanym katalogu materiałów.
+
+    Dlaczego osobny błąd: zła ścieżka dawała pustą listę spraw, więc walidacja
+    zestawu przechodziła po cichu zamiast wskazać pomyłkę w konfiguracji.
+    """
 
 
 class CaseReference(BaseModel):
@@ -91,6 +100,9 @@ def load_case_references(
     Sprawa nie musi mieć wszystkich trzech PDF-ów; wpis powstaje z istniejących plików.
     """
     dane = materials_dir / "dane"
+    for wymagany in (dane, dane / _NEGATYWNE):
+        if not wymagany.is_dir():
+            raise MaterialsNotFoundError(f"brak katalogu materiałów: {wymagany}")
     refs: list[CaseReference] = []
     for katalog_sprawy in sorted(dane.glob("przyklad_*")):
         if not katalog_sprawy.is_dir():
@@ -125,6 +137,7 @@ def load_reference_json(
 
     Dla obcego dokumentu zwraca `{}`. Brakujący plik referencji dla pozostałych
     klas jest błędem (`FileNotFoundError`), a nie cichym pustym wynikiem.
+    `corrections_dir=None` zwraca referencje bazowe, bez poprawek organizatora.
     """
     if ref.reference_name is None:
         return {}

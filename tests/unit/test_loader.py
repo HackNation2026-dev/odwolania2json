@@ -9,10 +9,12 @@ from __future__ import annotations
 import hashlib
 from pathlib import Path
 
+import pytest
 from odwolania2json.loader import (
     CORRECTIONS_DIR,
     MATERIALS_DIR,
     CaseReference,
+    MaterialsNotFoundError,
     input_to_reference_name,
     load_case_references,
     load_reference_json,
@@ -69,6 +71,18 @@ def test_loader_applies_organizer_corrections():
         dane = load_reference_json(ref)
 
         assert dane["OdwolanieKIO"]["czynnosc_opis"] == OPIS_PO_POPRAWCE
+
+
+def test_missing_materials_dir_raises_instead_of_empty_list(tmp_path: Path):
+    with pytest.raises(MaterialsNotFoundError, match="dane"):
+        load_case_references(tmp_path / "brak")
+
+
+def test_missing_negatives_dir_raises_instead_of_silent_skip(tmp_path: Path):
+    (tmp_path / "dane").mkdir()
+
+    with pytest.raises(MaterialsNotFoundError, match="negatywne"):
+        load_case_references(tmp_path, CORRECTIONS_DIR)
 
 
 def test_loader_maps_transfer_confirmation():
