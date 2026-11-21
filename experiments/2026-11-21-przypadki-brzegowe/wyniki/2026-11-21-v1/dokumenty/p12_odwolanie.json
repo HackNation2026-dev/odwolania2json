@@ -1,0 +1,44 @@
+{
+ "id": "p12_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_12/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_12",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 69677,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p12_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1543,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Bydgoszcz, dnia 20 lipca 2026 roku Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Zamawiający: Lunareth Sieci S.A. ul. Błotna 97, 40-210 Katowice KRS: 9992132121, NIP: 9997286918, REGON: 999839460 kontakt@sekretariat.example Odwołujący: Wexford Usługi sp. j. ul. Sosnowa 89, 85-830 Bydgoszcz KRS: 9990299642, NIP: 9999988004, REGON: 999132498 reprezentowana przez: adw. Klaudia Dobr"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p12_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 464,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Załączniki: 1) dokument potwierdzający nadanie odwołania; 2) oświadczenie o niezaleganiu z podatkami i składkami; 3) wyciąg z rejestru przedmiotowego; 4) pełnomocnictwo udzielone przedstawicielowi Odwołującego; .............................. Klaudia Dobrowolski, adw. Do odwołania dołączono potwierdzenie wniesienia wadium w kwocie zgodnej z dokumentacją postępowania. Zgodnie z art. 527 ustawy odwoł"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

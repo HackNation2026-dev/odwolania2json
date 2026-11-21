@@ -1,0 +1,682 @@
+{
+ "id": "n_broszura_jpk_fa_2",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/Broszura_JPK_FA(2).pdf",
+ "zrodlo": "negatywny",
+ "klasa_oczekiwana": "obcy",
+ "sprawa": null,
+ "metadane": {
+  "producent": "Adobe PDF Library 9.9",
+  "kreator": "Adobe InDesign CS5.5 (7.5.3)",
+  "rozmiar_bajtow": 764943,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.7"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/n_broszura_jpk_fa_2/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 207,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Struktury JPK na żądanie JPK_KR — księgi rachunkowe JPK_WB — wyciąg bankowy JPK_MAG — magazyn JPK_FA faktury VAT JPK_PKPiR — podatkowa księga przychodów i rozchodów JPK_EWP — ewidencja przychodów Ministerstwo Finansów, Warszawa, marzec 2019"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/n_broszura_jpk_fa_2/p002.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 472,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Spis treści O strukturach VAT na żądanie 4 Ile masz czasu na udostępnienie struktur JPK 4 Jak udostępniać struktury JPK 5 1. Struktura jednolitego pliku kontrolnego dla faktur VAT (JPK_FA) 5 2. Schemat główny 7 2.1. Struktura 7 2.2. Opis struktury 8 3. Nagłówek JPK_FA 9 3.1. Struktura nagłówka 9 3.2. Opis struktury 10 4. Podmiot JPK_FA 10 4.1. Struktura podmiotu JPK_FA 10 4.2. Opis struktury 11 4."
+  },
+  {
+   "nr": 3,
+   "obraz": "strony/n_broszura_jpk_fa_2/p003.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 424,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "5.2. Opis struktury 16 6. FakturaCtrl JPK_FA 21 6.1. Struktura sum kontrolnych dla faktur 21 6.2. Opis struktury 21 7. Stawki podatku 22 7.1. Struktura stawek podatku 22 7.2. Opis struktury 22 8. FakturaWiersz JPK_FA 23 8.1. Struktura FakturaWiersz JPK_FA 23 8.2. Opis struktury 25 9. FakturaWierszCtrl 26 9.1. Struktura sum kontrolnych dla FakturaWiersz 26 9.2. Opis struktury 27 10. Pytania i odpow"
+  },
+  {
+   "nr": 4,
+   "obraz": "strony/n_broszura_jpk_fa_2/p004.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1018,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 O strukturach JPK na żądanie Od 1 lipca 2018 r. wszyscy podatnicy, którzy prowadzą księgi podatkowe i wytwarzają dowody księgowe w formie elektronicznej, przekazują struktury JPK na żądanie organów podatkowych. Do 30 czerwca 2018 r. obowiązek ten dotyczył wyłącznie dużych przedsiębiorców. JPK na żądanie obejmuje 6 struktur:"
+  },
+  {
+   "nr": 5,
+   "obraz": "strony/n_broszura_jpk_fa_2/p005.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1525,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 Jak udostępniać struktury JPK Możesz je przekazać np. na pendrive, karcie pamięci, płycie CD/DVD lub innym nośniku danych lub za pomocą określonych środków komunikacji elektronicznej. Ważne! Jeśli w nieuzasadniony sposób odmawiasz udostępnienia struktur JPK, możesz zostać ukarany karą porządkową w wysokości do 2800 zł. 1. S"
+  },
+  {
+   "nr": 6,
+   "obraz": "strony/n_broszura_jpk_fa_2/p006.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1506,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 4. FakturaCtrl — sumy kontrolne dla danych syntetycznych faktur z sek- cji Faktura, 5. StawkiPodatku — informacje dotyczące stosowanych stawek, 6. FakturaWiersz — dane analityczne z poziomu pojedynczego wiersza faktury, 7. FakturaWierszCtrl — sumy kontrolne dla danych analitycznych po- szczególnych wierszy faktur z sekcji F"
+  },
+  {
+   "nr": 7,
+   "obraz": "strony/n_broszura_jpk_fa_2/p007.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1190,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 Struktura JPK_FA na poziomie syntetycznym zawiera m.in. element, który pozwala na filtrowanie i sortowanie faktur wg rodzaju. W polu RodzajFaktury wymienio- ne są: VAT-podstawowa, KOREKTA-korygująca, ZAL-faktura dokumentująca otrzy- manie zapłaty lub jej części przed dokonaniem czynności oraz faktury końcowe5. Dodatkowo ta "
+  },
+  {
+   "nr": 8,
+   "obraz": "strony/n_broszura_jpk_fa_2/p008.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 533,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.188,
+   "dpi_obrazow": 96.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 Schemat 1. Elementy składające się na JPK_FA 2.2. Opis struktury Tabela 1. Opis elementów składających się na JPK_FA Nazwa elementu Opis elementu Naglowek Nagłówek JPK_FA Podmiot1 Podmiot JPK_FA Faktura Na podstawie art.106 a-q ustawy z 11 marca 2004 r. o podatku od towarów i usług (Dz.U. z 2018 r. poz. 2174 z późn. zm.) Fa"
+  },
+  {
+   "nr": 9,
+   "obraz": "strony/n_broszura_jpk_fa_2/p009.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 377,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.338,
+   "dpi_obrazow": 83.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 3. Nagłówek JPK_FA 3.1. Struktura nagłówka Nagłówek jednolitego pliku kontrolnego dla faktur VAT składa się z następujących pól: „KodFormularza”, „WariantFormularza”, „CelZlozenia”, „DataWytwo- rzeniaJPK”, „DataOd”, „DataDo”, „DomyslnyKodWaluty”, „KodUrzędu”. Określają one właściwości JPK_FA. Schemat 2. Struktura nagłówka J"
+  },
+  {
+   "nr": 10,
+   "obraz": "strony/n_broszura_jpk_fa_2/p010.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 978,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.107,
+   "dpi_obrazow": 72.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 3.2. Opis struktury Tabela 2. Opis pól składających się na nagłówek JPK_FA Nazwa pola Opis pola KodFormularza Pole przechowuje kod formularza i składa się z dwóch atrybutów - kodu systemowego i wariantu schematu np. kod: JPK_FA (2); wariant: 1-0 WariantFormularza Wariant formularza na wypadek pojawienia się nowego wariantu "
+  },
+  {
+   "nr": 11,
+   "obraz": "strony/n_broszura_jpk_fa_2/p011.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 463,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.239,
+   "dpi_obrazow": 72.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 4.2. Opis struktury Tabela 3. Opis pól składających się na podmiot JPK_FA Nazwa pola Opis pola IdentyfikatorPodmiotu Dane identyfikujące podmiot AdresPodmiotu AdresPodmiotu 4.3. Identyfikator podmiotu – Dane identyfikujące podmiot 4.3.1. Struktura danych identyfikujących podmiot Na dane identyfikujące podmiot składają się n"
+  },
+  {
+   "nr": 12,
+   "obraz": "strony/n_broszura_jpk_fa_2/p012.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 495,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.228,
+   "dpi_obrazow": 72.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 4.3.2. Opis struktury Tabela 4. Opis pól składających się na dane identyfikujące podmiot JPK_FA Nazwa pola Opis pola NIP Identyfikator podatkowy NIP PelnaNazwa PelnaNazwa REGON Numer REGON (pole opcjonalne) 4.4. Adres podmiotu 4.4.1. Struktura adresu podmiotu Do pól wchodzących w skład adresu podmiotu należą: „KodKraju”, „W"
+  },
+  {
+   "nr": 13,
+   "obraz": "strony/n_broszura_jpk_fa_2/p013.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 451,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.319,
+   "dpi_obrazow": 72.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 4.4.2. Opis struktury Tabela 5. Opis pól składających się na adres podmiotu JPK_FA Nazwa pola Opis pola KodKraju Pole zawiera dwuliterowy kod kraju wg słownika, który zamieszczono w schemacie Wojewodztwo Województwo Powiat Powiat Gmina Gmina Ulica Nazwa ulicy (pole opcjonalne) NrDomu Numer budynku NrLokalu Numer lokalu (pol"
+  },
+  {
+   "nr": 14,
+   "obraz": "strony/n_broszura_jpk_fa_2/p014.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 692,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.275,
+   "dpi_obrazow": 92.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 5. Dane dotyczące faktury VAT 5.1. Struktura danych dotyczących faktury VAT Dane dotyczące faktury VAT obejmują pola: „P_1”, „P_2A”, „P_3A”, „P_3B”, „P_3C”, „P_3D”, „P_4A”, „P_4B”, „P_5A”, „P_5B”, „P_6”, „P_13_1”, „P_14_1”, „P_13_2”, „P_14_2”, „P_13_3”, „P_14_3”, „P_13_4”, „P_14_4”, „P_13_5”, „P_14_5”, „P_13_6”, „P_13_7”, „"
+  },
+  {
+   "nr": 15,
+   "obraz": "strony/n_broszura_jpk_fa_2/p015.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 83,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.508,
+   "dpi_obrazow": 92.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 Wróć do spisu treści 15"
+  },
+  {
+   "nr": 16,
+   "obraz": "strony/n_broszura_jpk_fa_2/p016.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 933,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.182,
+   "dpi_obrazow": 92.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 5.2. Opis struktury Tabela 6. Opis pól składających się na faktura VAT Nazwa pola Opis pola P1 Data wystawienia P2A Kolejny numer faktury, nadany w ramach jednej lub więcej serii, który w sposób jednoznaczny identyfikuje fakturę P3A Imię i nazwisko lub nazwa nabywcy towarów lub usług. Pole opcjonalne dla przypadku określone"
+  },
+  {
+   "nr": 17,
+   "obraz": "strony/n_broszura_jpk_fa_2/p017.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2021,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 Nazwa pola Opis pola P5A Kod (prefiks) nabywcy - podatnika VAT UE dla przypadków określonych w art. 97 ust. 10 ustawy (pole opcjonalne) P5B Numer, za pomocą którego nabywca towarów lub usług jest identyfikowany dla podatku lub podatku od wartości dodanej, pod którym otrzymał on towary lub usługi, z zastrzeżeniem pkt 24 lit."
+  },
+  {
+   "nr": 18,
+   "obraz": "strony/n_broszura_jpk_fa_2/p018.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2463,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 Nazwa pola Opis pola P_13_3 Pola opcjonalne dla przypadków określonych w art. 106e ust.2 i 3 ustawy (gdy przynajmniej jedno z pól P_106E_2 i P_106E_3 przyjmuje wartość „true”). Ponadto pola opcjonalne dla przypadków określonych w art. 106e ust 4 pkt 1 ustawy (gdy pole P_18 przyjmuje wartość „true”), a także art. 106e ust. 4"
+  },
+  {
+   "nr": 19,
+   "obraz": "strony/n_broszura_jpk_fa_2/p019.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2295,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 Nazwa pola Opis pola P_13_6 Suma wartości sprzedaży netto ze stawką 0%. Pole opcjonalne dla przypadków określonych w art. 106e ust.2 i 3 ustawy (gdy przynajmniej jedno z pól P_106E_2 i P_106E_3 przyjmuje wartość „true”), a także art. 106e ust. 4 pkt 3 i ust. 5 pkt 1-3 ustawy (pole opcjonalne) P_13_7 Suma wartości sprzedaży "
+  },
+  {
+   "nr": 20,
+   "obraz": "strony/n_broszura_jpk_fa_2/p020.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2248,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 Nazwa pola Opis pola P_21A Jeśli pole P_21 równa się „true” - należy podać nazwę lub imię i nazwisko przedstawiciela podatkowego P_21B Jeśli pole P_21 równa się „true” - należy podać adres przedstawiciela podatkowego P_21C Jeśli pole P_21 równa się „true” - należy podać numer przedstawiciela podatkowego, za pomocą którego j"
+  },
+  {
+   "nr": 21,
+   "obraz": "strony/n_broszura_jpk_fa_2/p021.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 897,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.061,
+   "dpi_obrazow": 96.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 Nazwa pola Opis pola OkresFaKorygo- Dla faktury korygującej - okres, do którego odnosi się udzielany wanej opust lub obniżka, w przypadku gdy podatnik udziela opustu lub obniżki ceny w odniesieniu do wszystkich dostaw towarów lub usług dokonanych lub świadczonych na rzecz jednego odbiorcy w danym okresie (pole opcjonalne) Z"
+  },
+  {
+   "nr": 22,
+   "obraz": "strony/n_broszura_jpk_fa_2/p022.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 525,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.151,
+   "dpi_obrazow": 96.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 7. StawkiPodatku 7.1. Struktura stawek podatku Dane dotyczące stawek podatku obejmują pola: „Stawka1”, „Stawka2”, „Stawka3”, „Stawka4”, „Stawka5”. Schemat 8. Struktura tabeli StawkiPodatku 7.2. Opis struktury Tabela 8. Opis pól tabeli StawkiPodatku Nazwa pola Opis pola Stawka1 Wartość stawki podstawowej Stawka2 Wartość staw"
+  },
+  {
+   "nr": 23,
+   "obraz": "strony/n_broszura_jpk_fa_2/p023.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 291,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.29,
+   "dpi_obrazow": 85.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 8. FakturaWiersz JPK_FA 8.1. Struktura FakturaWiersz JPK_FA W skład danych FakturaWiersz wchodzą następujące pola: „P_2B”, „P_7”, „P_8A”, „P_8B”, „P_9A”, „P_9B”, „P_10”, „P_11”, „P_11A”, „P_12”. Schemat 9. Struktura tabeli FakturaWiersz Wróć do spisu treści 23"
+  },
+  {
+   "nr": 24,
+   "obraz": "strony/n_broszura_jpk_fa_2/p024.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 83,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.378,
+   "dpi_obrazow": 85.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 Wróć do spisu treści 24"
+  },
+  {
+   "nr": 25,
+   "obraz": "strony/n_broszura_jpk_fa_2/p025.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1346,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.115,
+   "dpi_obrazow": 85.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 8.2. Opis struktury Tabela 9. Opis pól tabeli FakturaWiersz Nazwa pola Opis pola P_2B Kolejny numer faktury, nadany w ramach jednej lub więcej serii, który w sposób jednoznaczny identyfikuje fakturę P_7 Nazwa (rodzaj) towaru lub usługi. Pole opcjonalne wyłącznie dla przypadku określonego w art 106j ust.3 pkt 2 ustawy (faktu"
+  },
+  {
+   "nr": 26,
+   "obraz": "strony/n_broszura_jpk_fa_2/p026.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 899,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.089,
+   "dpi_obrazow": 88.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 Nazwa pola Opis pola P_11 Wartość dostarczonych towarów lub wykonanych usług, objętych transakcją, bez kwoty podatku (wartość sprzedaży netto). Pole opcjonalne dla przypadków określonych w art. 106e ust.2 i 3 ustawy (gdy przynajmniej jedno z pól P_106E_2 i P_106E_3 przyjmuje wartość „true”) oraz dla przypadku określonego w "
+  },
+  {
+   "nr": 27,
+   "obraz": "strony/n_broszura_jpk_fa_2/p027.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1533,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 9.2. Opis struktury Tabela 10. Opis pól sum kontrolnych dla tabeli FakturaWiersz Nazwa pola Opis pola LiczbaWierszyFaktur Liczba wierszy faktur, w okresie którego dotyczy JPK_FA WartoscWierszyFaktur Łączna wartość kolumny P_11 tabeli FakturaWiersz w okresie, którego dotyczy JPK_FA 10. Pytania i odpowiedzi 1. Co zrobić, gdy "
+  },
+  {
+   "nr": 28,
+   "obraz": "strony/n_broszura_jpk_fa_2/p028.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1931,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 data wystawienia, sprzedaży, obowiązku VAT, wg waluty czy kontrahenta. Okres, którego będzie dotyczył plik również będzie uzależniony od okresu objętego kontrolą. 5. Czy plik JPK_FA ma się uzgadniać z deklaracją VAT, księgami rachun- kowymi, innymi zestawieniami? Plik JPK_FA nie musi się uzgadniać z deklaracją VAT. Natomias"
+  },
+  {
+   "nr": 29,
+   "obraz": "strony/n_broszura_jpk_fa_2/p029.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1390,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 9. Jaką stawkę VAT należy wskazać w polu P_12 (część FakturaWiersz) dla transakcji: - odwrotnego obciążenia - Dostawy towarów oraz świadczenia usług, dla których podatnikiem jest nabywca zgodnie z art. 17 ust. 1 pkt 7 i 8 ustawy VAT (pole P_13_4 w części Faktura); - dostawy towarów oraz świadczenia usług poza terytorium kra"
+  },
+  {
+   "nr": 30,
+   "obraz": "strony/n_broszura_jpk_fa_2/p030.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1217,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 5. Struktura adresu podmiotu JPK_FA. 6. Struktura danych dotyczących faktury VAT. 7. Struktura sum kontrolnych dla faktur. 8. Struktura tabeli StawkiPodatku. 9. Struktura tabeli FakturaWiersz. 10. Struktura sum kontrolnych dla tabeli FakturaWiersz. 12. Spis tabel 1. Opis elementów składających się na JPK_FA. 2. Opis pól skł"
+  },
+  {
+   "nr": 31,
+   "obraz": "strony/n_broszura_jpk_fa_2/p031.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1688,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "JPK na żądanie | Faktury | Instrukcja Ministerstwo Finansów, kwiecień 2019 P_106E_2 i P_106E_3 przyjmuje wartość ‚true’), a także art. 106e ust.4 pkt 3 i ust. 5 pkt 3 ustawy”. 5. W polu RodzajFaktury, z listy rozwijalnej usunięto oznaczenie „POZ – pozostałe”. W opisie skrótu ZAL dodano wyrazy „oraz faktura koń- cowa”. 6. W polu 3_B wprowadzono nową treść opisu „Adres nabywcy. Pole opcjonalne dla p"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 20.9,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2,
+    3
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Broszura Ministerstwa Finansów o strukturze JPK_FA dla faktur VAT; nie jest odwołaniem, pełnomocnictwem ani potwierdzeniem przelewu.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "Struktury JPK na żądanie\nJPK_KR — księgi rachunkowe\nJPK_WB — wyciąg bankowy\nJPK_MAG — magazyn\nJPK_FA faktury VAT\nJPK_PKPiR — podatkowa księga przychodów i rozchodów\nJPK_EWP — ewidencja przychodów",
+      "problemy": [
+       {
+        "kod": "niska_jakosc",
+        "opis": "Jasnoszare opisy struktur JPK i tekst stopki mają słaby kontrast względem białego tła.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "uklad_wielokolumnowy",
+        "opis": "Schemat struktur JPK z liniami łączącymi oraz wyróżnionym poziomym pasem JPK_FA wymaga zachowania powiązań między nazwami a opisami.",
+        "waga": "niska"
+       }
+      ]
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Spis treści\nO strukturach VAT na żądanie 4\nIle masz czasu na udostępnienie struktur JPK 4\nJak udostępniać struktury JPK 5\n1. Struktura jednolitego pliku kontrolnego dla faktur\nVAT (JPK_FA) 5\n2. Schemat główny 7",
+      "problemy": []
+     },
+     {
+      "nr": 3,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "5.2. Opis struktury 16\n6. FakturaCtrl JPK_FA 21\n6.1. Struktura sum kontrolnych dla faktur 21\n6.2. Opis struktury 21\n7. Stawki podatku 22\n7.1. Struktura stawek podatku 22\n7.2. Opis struktury 22\n8. FakturaWiersz JPK_FA 23",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Broszura informacyjna dotycząca JPK_FA, spoza klas dokumentów sprawy odwoławczej KIO.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 3,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 18.2,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2,
+    3
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Broszura informacyjna Ministerstwa Finansów / KAS (marzec 2019) o strukturze JPK_FA (faktury VAT): strona tytułowa i spis treści. Nie jest odwołaniem do KIO, pełnomocnictwem ani potwierdzeniem przelewu; nie dotyczy sprawy odwoławczej.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Struktury JPK na żądanie\nJPK_KR — księgi rachunkowe\nJPK_WB — wyciąg bankowy\nJPK_MAG — magazyn\nJPK_FA faktury VAT\nJPK_PKPiR — podatkowa księga przychodów i rozchodów\nJPK_EWP — ewidencja przychodów",
+      "problemy": [
+       {
+        "kod": "uklad_wielokolumnowy",
+        "opis": "Strona tytułowa z graficznym diagramem (ramki z nazwami struktur JPK, wyróżniony blok JPK_FA na czerwonym tle) zamiast liniowego tekstu.",
+        "waga": "niska"
+       },
+       {
+        "kod": "niska_jakosc",
+        "opis": "Nazwy struktur JPK_KR, JPK_WB, JPK_MAG, JPK_PKPiR, JPK_EWP zapisane jasnoszarą czcionką na białym tle – słaby kontrast; biały tekst na czerwonym tle w bloku „faktury VAT”.",
+        "waga": "niska"
+       },
+       {
+        "kod": "uciety_tekst",
+        "opis": "Ramki diagramu i czerwony blok „faktury VAT” dochodzą do prawej krawędzi strony (spad), sama treść tekstowa nie jest ucięta.",
+        "waga": "niska"
+       }
+      ]
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Spis treści\nO strukturach VAT na żądanie 4\nIle masz czasu na udostępnienie struktur JPK 4\nJak udostępniać struktury JPK 5\n1. Struktura jednolitego pliku kontrolnego dla faktur VAT (JPK_FA) 5\n2. Schemat główny 7",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Spis treści w układzie dwukolumnowym (tytuł rozdziału – numer strony) z podkreśleniami linii.",
+        "waga": "niska"
+       }
+      ]
+     },
+     {
+      "nr": 3,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "5.2. Opis struktury 16\n6. FakturaCtrl JPK_FA 21\n6.1. Struktura sum kontrolnych dla faktur 21\n6.2. Opis struktury 21\n7. Stawki podatku 22\n7.1. Struktura stawek podatku 22\n7.2. Opis struktury 22",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Kontynuacja spisu treści w układzie tytuł – numer strony z podkreśleniami linii.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Cały plik to broszura MF/KAS „Struktury JPK na żądanie – JPK_FA faktury VAT” (31 stron), niezwiązana ze sprawą odwoławczą przed KIO.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "inne",
+      "opis": "Długi dokument (31 stron), z którego obejrzano tylko strony 1–3; dalsze strony zawierają według spisu treści schematy XML i tabele (spis schematów, spis tabel).",
+      "waga": "niska"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 3,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 12.4,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2,
+    3
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Dokument Ministerstwa Finansów opisuje strukturę JPK_FA i schematy pliku kontrolnego dla faktur VAT. Nie jest odwołaniem do KIO, pełnomocnictwem ani potwierdzeniem przelewu.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Struktury JPK na żądanie\nJPK_KR — księgi rachunkowe\nJPK_WB — wyciąg bankowy\nJPK_MAG — magazyn\nJPK_FA faktury VAT\nJPK_PKPiR — podatkowa księga przychodów i rozchodów\nJPK_EWP — ewidencja przychodów\nMinisterstwo Finansów, Warszawa, marzec 2019",
+      "problemy": [
+       {
+        "kod": "uklad_wielokolumnowy",
+        "opis": "Strona zawiera nietypowy układ diagramu struktury JPK_FA z pionowymi i poziomymi połączeniami.",
+        "waga": "niska"
+       }
+      ]
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Spis treści\nO strukturach VAT na żądanie 4\nIle masz czasu na udostępnienie struktury JPK 4\nJak udostępniać struktury JPK 5\n1. Struktura jednolitego pliku kontrolnego dla faktur VAT (JPK_FA) 5\n2. Schemat główny 7\n2.1. Struktura 7\n2.2. Opis struktury 8\n3. Nagłówek JPK_FA 9\n3.1. Struktura nagłówka 9\n3.2. Opis struktury 10\n4. Podmiot JPK_FA 10",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Spis treści ma układ tabelaryczny: nazwy pozycji są wyrównane w jednej kolumnie, a numery stron w drugiej.",
+        "waga": "niska"
+       }
+      ]
+     },
+     {
+      "nr": 3,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "5.2. Opis struktury 16\n6. FakturaCtrl JPK_FA 21\n6.1. Struktura sum kontrolnych dla faktur 21\n6.2. Opis struktury 21\n7. Stawki podatku 22\n7.1. Struktura stawek podatku 22\n7.2. Opis struktury 22\n8. FakturaWiersz JPK_FA 23\n8.1. Struktura FakturaWiersz JPK_FA 23\n8.2. Opis struktury 25",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Spis treści ma układ tabelaryczny: nazwy pozycji są wyrównane w jednej kolumnie, a numery stron w drugiej.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Cały plik jest dokumentacją techniczną Ministerstwa Finansów dotyczącą struktur JPK, a nie dokumentem należącym do klas odwołanie, pełnomocnictwo lub przelew.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 0.999
+     },
+     {
+      "nr": 3,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

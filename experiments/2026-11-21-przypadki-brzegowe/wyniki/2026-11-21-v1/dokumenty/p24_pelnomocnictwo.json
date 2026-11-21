@@ -1,0 +1,31 @@
+{
+ "id": "p24_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_24/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_24",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 73474,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p24_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 700,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "PEŁNOMOCNICTWO PROCESOWE Uldaris Automatyka S.A. z siedzibą w Gdańsk (KRS 9995264890, NIP 9997683341, REGON 999782776) upoważniam adw. Halina Jabłończyk (nr wpisu na listę: WA 96379) do reprezentowania spółki we wszystkich czynnościach w postępowaniu „Odbiór i zagospodarowanie odpadów komunalnych powstałych w obiektach”, numer postępowania: ZP.548.2026, prowadzonym przez Quentavis Technologie sp. "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

@@ -1,0 +1,31 @@
+{
+ "id": "p46_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_46/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_46",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 56966,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p46_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1675,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Olsztyn, 15.06.2026 PEŁNOMOCNICTWO Wykonawcy wspólnie ubiegający się o udzielenie zamówienia (Konsorcjum): 1) Korvel Serwis sp. z o.o. sp.k., ul. Armii Krajowej 101, 10-383 Olsztyn, KRS 9997450782, NIP 9996998288, REGON 999873715; 2) Lumerio Facility sp.j., ul. Lipowa 150, 75-256 Koszalin, KRS 9990093297, NIP 9999917794, REGON 999404710 (dalej łącznie: „Mocodawca”), reprezentowani przez osoby podp"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

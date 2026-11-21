@@ -1,0 +1,49 @@
+{
+ "id": "p01_przelew",
+ "model": "claude",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument „POLECENIE PRZELEWU – Potwierdzenie realizacji polecenia przelewu · Ekobank” ze statusem ZREALIZOWANO, z płatnikiem, odbiorcą, rachunkami, kwotą 200,00 PLN i datą transakcji. Tytuł przelewu wskazuje jednak opłatę skarbową od pełnomocnictwa, a nie wpis od odwołania.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu\nAurelink Automatyka S.A.\nul. Rybacka 79, 50-580 Wrocław",
+    "problemy": [
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Dane ułożone w ramkach w dwóch kolumnach: Płatnik i Rachunek obciążany, Adresat przelewu i Rachunek odbiorcy, Kwota operacji i Data transakcji. Przy odczycie liniowym etykiety i wartości z obu kolumn mogą się wymieszać.",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "W polu Opis tytuł przelewu brzmi „opłata skarbowa od pełnomocnictwa … w postępowaniu przed KIO w przetargu ZS.791.2026”. To nie jest wpis od odwołania, mimo że dokument ma postać potwierdzenia przelewu. Kwota 200,00 PLN też nie odpowiada typowemu wpisowi.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "inne",
+    "opis": "Potwierdzenie przelewu dotyczy opłaty skarbowej od pełnomocnictwa, a nie wpisu od odwołania do KIO. Formalnie to klasa przelew, ale przy weryfikacji wpisu dokument może wprowadzać w błąd.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.265826,
+  "tury": 3
+ },
+ "czas_s": 17.7
+}

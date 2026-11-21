@@ -1,0 +1,69 @@
+{
+ "id": "n_kio_kio_2617_21",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Dokument jest postanowieniem Krajowej Izby Odwoławczej w sprawie odwołania, a nie samym odwołaniem wniesionym do KIO. Zgodnie z definicją kategorii należy do dokumentów „inny”.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Sygn. akt: KIO 2617/21\n\nPOSTANOWIENIE\nz dnia 20 września 2021 r.\n\nKrajowa Izba Odwoławcza - w składzie:\n\nPrzewodniczący: Ewa Kisiel\n\npo rozpoznaniu na posiedzeniu niejawnym bez udziału stron w dniu 20 września 2021 r.",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Gmina Cieszyn z siedzibą w Cieszynie (dalej: „Zamawiający” lub „Gmina”) prowadzi na podstawie przepisów ustawy z dnia 19 września 2019 r. Prawo zamówień publicznych (Dz. U. z 2019 r. poz. 2019 ze zm.) - zwanej dalej: „ustawą” lub „Pzp” - w trybie podstawowym",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "OPZ w sposób, który narusza zasadę uczciwej konkurencji i zasadę równego traktowania wykonawców oraz zasadę udzielania zamówienia zapewniającego najlepszą jakość uzasadnioną charakterem zamówienia, nie jest proporcjonalne do przedmiotu zamówienia",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Plik zawiera postanowienie KIO w sprawie odwołania, a nie dokument będący przedmiotem klasyfikacji (odwołanie, pełnomocnictwo lub przelew).",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Jest to rozstrzygnięcie KIO w postępowaniu odwoławczym, dlatego może być utożsamiane z odwołaniem, choć faktycznie jest postanowieniem organu rozstrzygającego sprawę.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 5487,
+   "output_tokens": 1830,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 1186
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 13.8
+}

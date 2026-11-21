@@ -1,0 +1,197 @@
+{
+ "id": "p01_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_01/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_01",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 92163,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p01_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1326,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Belmoria Rozwiązania S.A. ul. Zaczarowana 78, 90-803 Łódź KRS: 9999405188, NIP: 9999284065, REGON: 999642785 reprezentowana przez: r. pr. Aleksandra Marciniak, r. pr. Jolanta Zajkowski adres do korespondencji: Kancelaria Adwokacka Spółka z ograniczoną odpowiedzialnością, ul. Jasionowa 19, 80-994 Gdańsk tel. 000 000 000, b"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p01_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1430,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania. Zarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria: b).1. Kryteria oceny ofert wskazane w dokumentacji postępowania nie są sformułowane w sposób jednoznaczny, a sposób ich zastosowania przez Zamawiającego nie został wyjaś"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 17.0,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2
+   ],
+   "wynik": {
+    "klasa": "odwolanie",
+    "uzasadnienie_klasy": "Pismo zatytułowane „ODWOŁANIE”, skierowane do Prezesa KIO, zawiera dane stron, zarzuty dotyczące postępowania i żądania.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\n\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w\nsposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia\nodwołania.\n\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 15.9,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2
+   ],
+   "wynik": {
+    "klasa": "odwolanie",
+    "uzasadnienie_klasy": "Dokument zaadresowany do Prezesa Krajowej Izby Odwoławczej, ma tytuł „ODWOŁANIE”, wskazuje Odwołującego i Zamawiającego, przywołuje art. 513 i 515 Pzp, zawiera zarzuty nr 1–3 i sekcję „Wnoszę o”. Na końcu są miejsca na podpisy pełnomocników.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785\nreprezentowana przez: r. pr. Aleksandra Marciniak, r. pr. Jolanta Zajkowski",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania.\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+      "problemy": [
+       {
+        "kod": "inne",
+        "opis": "Sekcja „Wnoszę o” jest niespójna: pkt a) wnosi o oddalenie zarzutów odwołania, czyli żądanie typowe dla zamawiającego. Zaraz po żądaniach i bez nagłówka „Załączniki” następuje lista załączników z powtórzonymi literami a)–d). Ekstrakcja żądań i załączników może je pomylić.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "inne",
+        "opis": "Nad nazwiskami pełnomocników są tylko wykropkowane miejsca na podpis. Podpisów nie widać.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 21.0,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2
+   ],
+   "wynik": {
+    "klasa": "odwolanie",
+    "uzasadnienie_klasy": "Dokument jest odwołaniem do Prezesa Krajowej Izby Odwoławczej, zawierającym opis postępowania, zarzuty wobec oceny ofert oraz wniosek o oddalenie zarzutów i rozpatrzenie odwołania.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\n\nOdwołujący:\n\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w\nsposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia\nodwołania.\n\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

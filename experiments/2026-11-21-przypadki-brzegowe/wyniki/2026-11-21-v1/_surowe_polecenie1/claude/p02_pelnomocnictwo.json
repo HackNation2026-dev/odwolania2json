@@ -1,0 +1,43 @@
+{
+ "id": "p02_pelnomocnictwo",
+ "model": "claude",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Nagłówek „PEŁNOMOCNICTWO”. Mocodawca (Hartica Serwis S.A.) upoważnia adwokatów do zastępowania Wykonawcy przed Krajową Izbą Odwoławczą w postępowaniu nr ZP.431.2026.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nMocodawca Hartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\nDane rejestrowe KRS 9999669444, NIP 9990678035, REGON 999114017\nPełnomocnicy adw. Bartosz Szymanski, nr wpisu WA 33513\nadw. Cezary Wierzbicki, nr wpisu WA 16243",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane pełnomocnictwa ułożone w dwukolumnowej tabeli: etykiety po lewej (Mocodawca, Dane rejestrowe, Pełnomocnicy, Zamawiający, Postępowanie, Zakres, Data), wartości po prawej. Wartości zajmujące kilka wierszy trzeba przypisać do właściwych etykiet.",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "Pod tekstem, po prawej stronie, jest tylko wykropkowane miejsce na podpis nad nazwiskiem „Aleksandra Nowakowicz, Prokurent”. Nie widać podpisu odręcznego ani pieczątki, więc dokument może być niepodpisany.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.259733,
+  "tury": 3
+ },
+ "czas_s": 15.4
+}

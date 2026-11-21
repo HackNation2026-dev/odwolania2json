@@ -1,0 +1,35 @@
+{
+ "id": "p42_przelew",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Potwierdzenie wykonanego przelewu na opłatę skarbową od pełnomocnictwa w postępowaniu przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Małopolski S.A. · wygenerowano 01.07.2026\nZleceniodawca\nNordelia Facility Services S.A.\nul. Wielicka 250, 30-663 Kraków\nRachunek zleceniodawcy\nPL55 9947 7458 7693 6814 0572 7867",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu ułożone w tabeli: etykiety po lewej, wartości po prawej; adresy i tytuł przelewu zajmują kilka wierszy.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": " zleceniodawcy\\nPL55 9947 7458 7693 6814 0572 7867\",\"problemy\":[{\"kod\":\"tabela\",\"opis\":\"Dane przelewu ułożone w tabeli: etykiety po lewej, wartości po prawej; adresy i tytuł przelewu zajmują kilka wierszy.\",\"waga\":\"niska\"}]}],\"problemy_dokumentu\":[]}\nhook: Stop\nhook: Stop Completed\ntokens used\n4204\n"
+ },
+ "czas_s": 11.6
+}

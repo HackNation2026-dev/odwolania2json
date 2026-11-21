@@ -1,0 +1,65 @@
+{
+ "id": "x08_pieczatka",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument „POLECENIE PRZELEWU” – potwierdzenie realizacji przelewu z Ekobanku na kwotę 200,00 PLN, w opisie „opłata skarbowa od pełnomocnictwa” w postępowaniu przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu\nAurelink Automatyka S.A.",
+    "problemy": [
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Czerwona owalna pieczątka „ZAPŁACONO” nachodzi na pole Opis (fragment „przed KIO w przetargu ZS.791.2026 CEN2604016344389”) i pole Nr ref. (CEN2604016344389); niebieska linia podpisu przecina stopkę „...automatycznie przez system bankowości...”.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "skan",
+      "opis": "Strona wygląda na obraz ze szumem (rozsiane kropki na całym tle), prawdopodobnie bez warstwy tekstowej.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Szum typu „sól i pieprz” na całej stronie, kropki również na tekście pól formularza.",
+      "waga": "niska"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu w ramkach formularza ułożonych w dwie kolumny (Płatnik/Rachunek obciążany, Adresat/Rachunek odbiorcy, Kwota/Data).",
+      "waga": "niska"
+     },
+     {
+      "kod": "pusta_strona",
+      "opis": "Treść zajmuje tylko górną część strony (ok. 45%), reszta pusta.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "pieczatka_podpis",
+    "opis": "Pieczątka „ZAPŁACONO” zasłania częściowo opis przelewu i numer referencyjny – utrudnia OCR kluczowych pól (sygnatura/nr ogłoszenia).",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2552536,
+  "tury": 3
+ },
+ "czas_s": 14.5
+}

@@ -1,0 +1,54 @@
+{
+ "id": "x09_uciety",
+ "model": "claude",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Tytuł „PEŁNOMOCNICTWO”. Valtrix Systemy Informatyczne sp. z o.o. udziela radcom prawnym pełnomocnictwa do reprezentowania jej w postępowaniu o udzielenie zamówienia ZP/PN/48/2026, w tym do wniesienia odwołania do Prezesa KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Poznań, 15 październik\nPEŁNOMOCNICTWO\nValtrix Systemy Informatyczne sp. z o.o., ul. Grunwaldzka 112, 60-307 Poznań, KRS 9998213\n9993380162, REGON 999517204 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane\nudziela pełnomocnictwa: r. pr. Magdalena Wróblewska",
+    "problemy": [
+     {
+      "kod": "uciety_tekst",
+      "opis": "Prawy margines jest obcięty. Brakuje końcówek wierszy: daty („15 październik…”), numeru KRS, nazwiska drugiego pełnomocnika (zostało tylko „r. pr.”), nazwy zamówienia („systemu informa…”), zamawiającego („sp. z…”) i zakresu obowiązywania („do prawo…”).",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "skan",
+      "opis": "Strona wygląda na skan lub obraz bez widocznej warstwy tekstu cyfrowego.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie, także na tekście, widać drobny szum w postaci kropek.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "uciety_tekst",
+    "opis": "W jednostronicowym pełnomocnictwie ucięta jest prawa krawędź. Brakuje fragmentów istotnych danych: pełnej daty, KRS, NIP, nazwiska drugiego pełnomocnika i nazwy zamawiającego.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2499302,
+  "tury": 3
+ },
+ "czas_s": 12.4
+}

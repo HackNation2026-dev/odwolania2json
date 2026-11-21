@@ -1,0 +1,31 @@
+{
+ "id": "p05_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_05/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_05",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 75274,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p05_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 955,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "MOCODAWCA PEŁNOMOCNIK Corvantis Wyposażenie sp. z o.o. r. pr. Ignacy Sadowski ul. Orzechowa 31, 20-174 Lublin nr wpisu WA 63695 KRS 9999511966 NIP 9997553319 Pełnomocnictwo Niniejszym ustanawiam pełnomocnikiem wyżej wskazanemu pełnomocnikowi do reprezentowania Mocodawcy w postępowaniu „Modernizacja instalacji wentylacyjnej w obiekcie użyteczności publicznej”, numer postępowania: SWZ.780.2026, prow"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

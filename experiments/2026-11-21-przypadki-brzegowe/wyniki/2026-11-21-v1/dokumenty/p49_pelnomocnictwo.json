@@ -1,0 +1,31 @@
+{
+ "id": "p49_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_49/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_49",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 66803,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p49_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1676,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Toruń, 1 lipca 2026 r. PEŁNOMOCNICTWO Wykonawcy wspólnie ubiegający się o udzielenie zamówienia (Konsorcjum): 1) Altrona Farmacja sp.k., ul. Kolejowa 61, 87-178 Toruń, KRS 9998920417, NIP 9994895854, REGON 999640601; 2) Polvent Aparatura Medyczna sp. z o.o., ul. Przemysłowa 81, 65-423 Zielona Góra, KRS 9996965616, NIP 9994023484, REGON 999445554 (dalej łącznie: „Mocodawca”), reprezentowani przez o"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

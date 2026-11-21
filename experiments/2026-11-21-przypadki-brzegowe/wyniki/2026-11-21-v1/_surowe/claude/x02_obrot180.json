@@ -1,0 +1,70 @@
+{
+ "id": "x02_obrot180",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Nagłówek „POTWIERDZENIE WYKONANIA PRZELEWU” (Bank Polski Zachodni S.A.). Tytuł przelewu to „opłata skarbowa od pełnomocnictwa” w postępowaniu przed KIO, przetarg ZP/PN/48/2026. Kwota 34,00 PLN, status ZREALIZOWANO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 180,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Polski Zachodni S.A. · wygenerowano 16.10.2026 Zleceniodawca Valtrix Systemy Informatyczne sp. z o.o. ul. Grunwaldzka 112, 60-307 Poznań Rachunek zleceniodawcy PL54 7164 9675 2472 1141 8071 4012 Odbiorca Regionalne Centrum Usług Medycznych sp. z o.o.",
+    "problemy": [
+     {
+      "kod": "obrot",
+      "opis": "Cała treść strony jest obrócona o 180°: tekst stoi do góry nogami, a nagłówek znajduje się u dołu obrazu.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "skan",
+      "opis": "Strona wygląda na obraz z losowym szumem (kropki na całej powierzchni). Nie widać cyfrowej warstwy tekstu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie, także w obszarze tekstu, rozsiane są drobne punkty szumu. Mogą zakłócać OCR małej czcionki, np. numerów rachunków.",
+      "waga": "niska"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu są ułożone w tabeli dwukolumnowej (etykieta i wartość) z liniami poziomymi. Tytuł przelewu zajmuje kilka wierszy.",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "Rozbieżność merytoryczna: tytuł mówi o opłacie skarbowej od pełnomocnictwa, ale odbiorcą jest spółka (Regionalne Centrum Usług Medycznych sp. z o.o.), a nie urząd gminy lub miasta. Data operacji 15.10.2026, wygenerowano 16.10.2026.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "obrot",
+    "opis": "Jedyna strona pliku jest obrócona o 180°. Przed OCR trzeba ją obrócić.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "skan",
+    "opis": "Plik to obraz z szumem, bez cyfrowej warstwy tekstu, więc potrzebny jest OCR.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2637334,
+  "tury": 3
+ },
+ "czas_s": 17.1
+}

@@ -1,0 +1,14 @@
+{
+  "id": "odw-001",
+  "wersja": 1,
+  "recenzent": "demo",
+  "zmieniono": "2026-11-21T18:30:00+01:00",
+  "status": "przejrzany",
+  "klasa": "odwolanie",
+  "notatka": "MiniMax pomylił klasę przez wzmiankę o pełnomocnictwie.",
+  "problemy_dokumentu": [],
+  "strony": [
+    {"nr": 2, "problemy": [{"kod": "pieczec_naklada_tekst", "opis": "Podpis lekko na tekście, czytelne", "waga": "niska"}], "notatka": ""}
+  ],
+  "ocena_modeli": {"codex": "trafne", "claude": "czesciowo", "minimax": "chybione"}
+}

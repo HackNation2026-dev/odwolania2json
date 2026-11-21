@@ -1,0 +1,44 @@
+{
+ "id": "p48_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_48/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_48",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 86532,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p48_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1675,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Toruń, 11.08.2026 PEŁNOMOCNICTWO Wykonawcy wspólnie ubiegający się o udzielenie zamówienia (Konsorcjum): 1) Prestal Dystrybucja Medyczna S.A., ul. Krótka 22, 87-098 Toruń, KRS 9990430692, NIP 9990396494, REGON 999666290; 2) Fendor Farmacja sp. z o.o., ul. Ogrodowa 143, 25-728 Kielce, KRS 9997591201, NIP 9993439623, REGON 999980750 (dalej łącznie: „Mocodawca”), reprezentowani przez osoby podpisane "
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p48_pelnomocnictwo/p002.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 84,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "adw. Leszek Jabłoński ............................................ r. pr. Tadeusz Rutkowski"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

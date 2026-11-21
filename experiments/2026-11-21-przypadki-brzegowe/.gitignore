@@ -1,0 +1,6 @@
+# Odtwarzalne skryptami (narzedzia/syntetyczne.py, narzedzia/inwentarz.py); duże pliki binarne.
+wyniki/*/strony/
+wyniki/*/syntetyczne/*.pdf
+wyniki/*/_surowe*/*/*.ostatnia.txt
+przegladarka/target/
+__pycache__/

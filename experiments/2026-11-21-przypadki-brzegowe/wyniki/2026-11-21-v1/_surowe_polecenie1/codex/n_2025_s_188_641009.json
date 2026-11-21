@@ -1,0 +1,52 @@
+{
+ "id": "n_2025_s_188_641009",
+ "model": "codex",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Widoczne strony zawierają ogłoszenie o zamówieniu publicznym opublikowane w TED, dotyczące usług transmisji danych, a nie odwołanie, pełnomocnictwo ani potwierdzenie przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "641009-2025 - Procedura konkurencyjna\nSee the notice on TED website\nPolska – Usługi w zakresie sieci komputerowej – ŚWIADCZENIE USŁUGI TRANSMISJI DANYCH\nW POSTACI BEZPIECZNEJ I DYSPOZYCYJNEJ SIECI DOSTĘPOWEJ",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Główna klasyfikacja (cpv): 72700000 Usługi w zakresie sieci komputerowej\nDodatkowa klasyfikacja (cpv): 72400000 Usługi internetowe\n2.1.2. Miejsce realizacji\nPodpodział krajowy (NUTS): Rzeszowski (PL823)\nKraj: Polska",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "złożenia następujących oświadczeń i dokumentów: Odpis lub informacja z Krajowego Rejestru\nSądowego lub z Centralnej Ewidencji i Informacji o Działalności Gospodarczej – w celu\npotwierdzenia braku podstaw wykluczenia",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Ogłoszenie o zamówieniu publicznym w TED nr 641009-2025; dokument spoza klas odwołanie, pełnomocnictwo i przelew.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "lemy\": []\n    }\n  ],\n  \"problemy_dokumentu\": [\n    {\n      \"kod\": \"dokument_obcy\",\n      \"opis\": \"Ogłoszenie o zamówieniu publicznym w TED nr 641009-2025; dokument spoza klas odwołanie, pełnomocnictwo i przelew.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n30 874\n"
+ },
+ "czas_s": 17.5
+}

@@ -1,0 +1,68 @@
+{
+ "id": "n_2025_s_112_383751",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Plik jest ogłoszeniem o zmianie ogłoszenia o zamówieniu z TED (383751-2025, OJ S 112/2025) dotyczącym przebudowy SUW „Rumia” (PWiK Gdynia). Nie jest to odwołanie, pełnomocnictwo ani potwierdzenie przelewu, ale zawiera słownictwo z zamówień publicznych (Pzp, SWZ, wykonawcy), więc łatwo je pomylić z dokumentem sprawy.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "383751-2025 - Procedura konkurencyjna See the notice on TED website Polska – Roboty budowlane w zakresie wznoszenia kompletnych obiektów budowlanych lub ich części oraz roboty w zakresie inżynierii lądowej i wodnej – Przebudowa Stacji Uzdatniania Wody",
+    "problemy": [
+     {
+      "kod": "jezyk_obcy",
+      "opis": "Nagłówek w prawym górnym rogu po angielsku: „See the notice on TED website”; reszta strony po polsku.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Kierownik Budowy powinien wykazać się doświadczeniem przy realizacji co najmniej 1 roboty budowlanej polegającej na budowie lub przebudowie stacji uzdatniania wody z instalacjami, o wydajności co najmniej 250 m3/h, 11.1.4.2.2. osobę,",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Roboty budowlane w zakresie konstrukcji, 45230000 Roboty budowlane w zakresie budowy rurociągów, linii komunikacyjnych i elektroenergetycznych, autostrad, dróg, lotnisk i kolei; wyrównywanie terenu, 45311200 Roboty w zakresie",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Ogłoszenie o zmianie ogłoszenia o zamówieniu z TED (OJ S 112/2025 z 13/06/2025), czyli dokument spoza klas odwołanie, pełnomocnictwo i przelew.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Dokument przypomina materiał sprawy KIO: zawiera nazwę zamawiającego, numer postępowania ZP/15/FENIKS/2025, odwołania do art. Pzp i SWZ. Klasyfikator może go błędnie uznać za odwołanie albo wyciągnąć z niego dane postępowania.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2880558,
+  "tury": 5
+ },
+ "czas_s": 17.0
+}

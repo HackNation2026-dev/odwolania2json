@@ -1,0 +1,45 @@
+{
+ "id": "p42_przelew",
+ "model": "codex",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Potwierdzenie przelewu 34,00 PLN dotyczy opłaty skarbowej od pełnomocnictwa, a nie wpisu od odwołania do KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Małopolski S.A. · wygenerowano 01.07.2026\nZleceniodawca\nNordelia Facility Services S.A.\nul. Wielicka 250, 30-663 Kraków\nRachunek zleceniodawcy\nPL55 9947 7458",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu przedstawiono w tabeli z etykietami po lewej i wartościami po prawej.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Przelew dotyczy opłaty skarbowej od pełnomocnictwa, poza zakresem klasy przelew zdefiniowanej jako wpis od odwołania.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Nagłówek i układ potwierdzenia przelewu przypominają klasę przelew; właściwy cel płatności wskazano w tytule przelewu.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "ania.\",\n      \"waga\": \"srednia\"\n    },\n    {\n      \"kod\": \"podobny_do_klasy\",\n      \"opis\": \"Nagłówek i układ potwierdzenia przelewu przypominają klasę przelew; właściwy cel płatności wskazano w tytule przelewu.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n14 543\n"
+ },
+ "czas_s": 15.4
+}

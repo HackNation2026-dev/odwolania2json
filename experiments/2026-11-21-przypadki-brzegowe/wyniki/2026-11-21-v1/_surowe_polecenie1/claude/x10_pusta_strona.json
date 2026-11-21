@@ -1,0 +1,68 @@
+{
+ "id": "x10_pusta_strona",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument zaadresowany do Prezesa KIO, z nagłówkiem „ODWOŁANIE”. Wskazuje odwołującego i zamawiającego, zawiera zarzuty, wnioski i podpisy pełnomocników.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "pusta",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "",
+    "problemy": [
+     {
+      "kod": "pusta_strona",
+      "opis": "Strona 2 jest całkowicie pusta i nie ma nawet stopki. Wstawiono ją między stronę „Strona 1 z 2” a „Strona 2 z 2”.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania.\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+    "problemy": [
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Na dole strony są dwa bloki podpisów obok siebie: Aleksandra Marciniak, r. pr. i Jolanta Zajkowski, r. pr.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "pusta_strona",
+    "opis": "Plik ma 3 strony, a stopki dokumentu mówią o 2 stronach. Pusta strona 2 rozdziela treść odwołania. Numeracja stron PDF nie zgadza się z numeracją w stopkach.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2829316,
+  "tury": 5
+ },
+ "czas_s": 15.0
+}

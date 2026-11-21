@@ -1,0 +1,31 @@
+{
+ "id": "p18_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_18/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_18",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 72812,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p18_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 591,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "PEŁNOMOCNICTWO Balttec Infrastruktura S.A. z siedzibą w Katowice (KRS 9990428468, NIP 9995059584, REGON 999728771) ustanawiam pełnomocnikiem adw. Dorota Zawadzki (nr wpisu na listę: WA 37468) do reprezentowania spółki we wszystkich czynnościach w postępowaniu „Świadczenie usług pocztowych i kurierskich na potrzeby urzędu”, numer postępowania: DI.908.2026, prowadzonym przez Xenonix Sieci sp. j, w t"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

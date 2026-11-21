@@ -1,0 +1,31 @@
+{
+ "id": "p32_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_32/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_32",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 81876,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p32_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 787,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "PEŁNOMOCNICTWO Mocodawca Centaur Usługi sp. z o.o. ul. Zaczarowana 8, 60-201 Poznań Dane KRS 9996203344, NIP 9996658849, REGON rejestrowe 999413872 Pełnomocnik adw. Cezary Marciniak, nr wpisu WA 86987 Zamawiający Elarion Technologie sp. z o.o. Postępowanie Dostawa i wdrożenie oprogramowania do obsługi dokumentacji wraz z serwisem wsparcia technicznego nr ZS.520.2026 Zakres Mocodawca ustanawiam peł"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

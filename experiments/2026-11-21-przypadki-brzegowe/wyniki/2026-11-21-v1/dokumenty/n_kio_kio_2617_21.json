@@ -1,0 +1,390 @@
+{
+ "id": "n_kio_kio_2617_21",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/KIO_KIO 2617-21.pdf",
+ "zrodlo": "negatywny",
+ "klasa_oczekiwana": "obcy",
+ "sprawa": null,
+ "metadane": {
+  "producent": "Qt 4.8.7",
+  "kreator": "wkhtmltopdf 0.12.6",
+  "rozmiar_bajtow": 56602,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/n_kio_kio_2617_21/p001.jpg",
+   "szerokosc_pt": 595.0,
+   "wysokosc_pt": 842.0,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1266,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Sygn. akt: KIO 2617/21 POSTANOWIENIE z dnia 20 września 2021 r. Krajowa Izba Odwoławcza - w składzie: Przewodniczący: Ewa Kisiel po rozpoznaniu na posiedzeniu niejawnym bez udziału stron w dniu 20 września 2021 r. w Warszawie odwołania wniesionego do Prezesa Krajowej Izby Odwoławczej w dniu 3 września 2021 r. przez wykonawcę: TAMEX OBIEKTY SPORTOWE S.A. z siedzibą w Warszawie w postępowaniu prowad"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/n_kio_kio_2617_21/p002.jpg",
+   "szerokosc_pt": 595.0,
+   "wysokosc_pt": 842.0,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 3073,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Gmina Cieszyn z siedzibą w Cieszynie (dalej: „Zamawiający” lub „Gmina”) prowadzi na podstawie przepisów ustawy z dnia 19 września 2019 r. Prawo zamówień publicznych (Dz. U. z 2019 r. poz. 2019 ze zm.) - zwanej dalej: „ustawą” lub „Pzp” - w trybie podstawowym postępowanie o udzielenie zamówienia publicznego pn. „Wykonanie modernizacji stadionu miejskiego przy al. Łyska w Cieszynie”. Wartość zamówie"
+  },
+  {
+   "nr": 3,
+   "obraz": "strony/n_kio_kio_2617_21/p003.jpg",
+   "szerokosc_pt": 595.0,
+   "wysokosc_pt": 842.0,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 3358,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "OPZ w sposób, który naruszają zasadę uczciwej konkurencji i zasadę równego traktowania wykonawców oraz zasadę udzielania zamówienia zapewniającego najlepszą jakość uzasadnioną charakterem zamówienia, nie jest proporcjonalny do przedmiotu zamówienia i nie odzwierciedla minimalnych poziomów, przez co postępowanie straciło walor przejrzystości, skoro prowadzi postępowanie na przedmiot zamówienia niez"
+  },
+  {
+   "nr": 4,
+   "obraz": "strony/n_kio_kio_2617_21/p004.jpg",
+   "szerokosc_pt": 595.0,
+   "wysokosc_pt": 842.0,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 5029,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "zamówienia, przekazaną w tym dniu przez Polski Związek Lekkiej Atletyki, oraz w dniu 26 sierpnia 2021 r., w którym Wykonawca zapoznał się dokumentacją wniosku Zamawiającego do Ministerstwa Sportu o dofinansowanie stadionu miejskiego w Cieszynie, przekazaną w tym dniu przez Zamawiającego oraz w dniu 30 sierpnia 2021 r., w którym Wykonawca zapoznał się z oświadczeniem wydanym przez Polski Związek Le"
+  },
+  {
+   "nr": 5,
+   "obraz": "strony/n_kio_kio_2617_21/p005.jpg",
+   "szerokosc_pt": 595.0,
+   "wysokosc_pt": 842.0,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 3418,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Do Izby również w dniu 8 września 2021 r. wpłynęło pismo o ze strony wykonawcy BSG Sp. z. o.o. z siedzibą w Zgierzu w którym wykonawca nie tylko zgłosił przystąpienie do postępowania odwoławczego po stronie Zamawiającego ale podobnie jak wykonawca Przedsiębiorstwo Wielobranżowe GRETASPORT I. S. z siedzibą w Dąbrowie Górniczej złożył wniosek o odrzucenie odwołania, który uzasadnił w następujący spo"
+  },
+  {
+   "nr": 6,
+   "obraz": "strony/n_kio_kio_2617_21/p006.jpg",
+   "szerokosc_pt": 595.0,
+   "wysokosc_pt": 842.0,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 4900,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Odwoławcza w wyroku z dnia 26 sierpnia 2021 roku (KIO 1951/21). W toku tego postępowania rzekome „nowe” okoliczności, stanowiące podstawę zarzutów odwołania z dnia 3 września 2021 roku już pojawiły się na rozprawie w dniu 25 sierpnia 2021 roku - i Izba otrzymała je jako dowody w sprawie stwierdzając jednocześnie w treści orzeczenia, że nie uwzględnia podniesionych w trakcie rozprawy nowych zarzutó"
+  },
+  {
+   "nr": 7,
+   "obraz": "strony/n_kio_kio_2617_21/p007.jpg",
+   "szerokosc_pt": 595.0,
+   "wysokosc_pt": 842.0,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2216,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "specyfikacji, gdyż począwszy od dn. 01.09.2021 r. Odwołujący ma wiedzę, że Wykonawca, realizując świadczenie zgodnie z OPZ, nie będzie w stanie uzyskać wymaganego świadectwa PZLA. Dlatego, od dnia od dn. 01.09.2021 r. zaczął biec termin wskazany w art. 515 ust. 3 pkt 2) ustawy Pzp na zaskarżenie nielegalnego opisu przedmiotu zamówienia (który w obecnym kształcie wymusza zawarcie nieważnej umowy o "
+  },
+  {
+   "nr": 8,
+   "obraz": "strony/n_kio_kio_2617_21/p008.jpg",
+   "szerokosc_pt": 595.0,
+   "wysokosc_pt": 842.0,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 4138,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "GRETASPORT I. S. z siedzibą w Dąbrowie Górniczej, którzy zgłosili przystąpienie do postępowania w ustawowym terminie, wykazując interes w rozstrzygnięciu odwołania na korzyść strony, do której przystąpili. Odwołanie podlega odrzuceniu na podstawie art. 528 pkt 3 Pzp. Powołany przepis stanowi, że Izba odrzuca odwołanie, jeżeli stwierdzi, że odwołanie zostało wniesione po upływie terminu określonego"
+  },
+  {
+   "nr": 9,
+   "obraz": "strony/n_kio_kio_2617_21/p009.jpg",
+   "szerokosc_pt": 595.0,
+   "wysokosc_pt": 842.0,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 4208,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "rozpoznawanej sprawie uzasadnione jest do obliczenia terminu na wniesienie odwołania zastosowanie przepisu art. 515 ust. 3 pkt 2 Pzp, z czym Izba się nie zgadza, to nawet w takim przypadku należy stwierdzić, że 5-dniowy termin na wniesienie odwołania nie został dochowany. Podkreślenia wymaga, że Odwołujący w treści odwołania uzasadniając zachowanie terminu na wniesienie odwołania wprost wskazał, ż"
+  },
+  {
+   "nr": 10,
+   "obraz": "strony/n_kio_kio_2617_21/p010.jpg",
+   "szerokosc_pt": 595.0,
+   "wysokosc_pt": 842.0,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 183,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "2020 r. poz. 2437), obciążając kosztami postępowania Odwołującego. Postanowienie wydano na posiedzeniu niejawnym, na podstawie art. 529 ust. 1 Pzp. Przewodniczący: ...................................... 16"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 19.8,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2,
+    3
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Postanowienie Krajowej Izby Odwoławczej z 20 września 2021 r., sygn. KIO 2617/21, odrzucające odwołanie. Nie jest odwołaniem wnoszonym do KIO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Sygn. akt: KIO 2617/21\nPOSTANOWIENIE\nz dnia 20 września 2021 r.\nKrajowa Izba Odwoławcza - w składzie:\nPrzewodniczący: Ewa Kisiel\npo rozpoznaniu na posiedzeniu niejawnym bez udziału stron w dniu 20 września 2021 r.",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Gmina Cieszyn z siedzibą w Cieszynie (dalej: „Zamawiający” lub „Gmina”) prowadzi\nna podstawie przepisów ustawy z dnia 19 września 2019 r. Prawo zamówień publicznych\n(Dz. U. z 2019 r. poz. 2019 ze zm.)",
+      "problemy": []
+     },
+     {
+      "nr": 3,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "OPZ w sposób, który naruszają zasadę uczciwej konkurencji i zasadę równego\ntraktowania wykonawców oraz zasadę udzielania zamówienia zapewniającego\nnajlepszą jakość uzasadnioną charakterem zamówienia, nie jest proporcjonalny do",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Dokument jest postanowieniem KIO, poza klasami odwołanie, pełnomocnictwo i przelew.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "podobny_do_klasy",
+      "opis": "Uzasadnienie na stronach 2–3 szczegółowo przytacza zarzuty i żądania odwołującego, co może prowadzić do błędnej klasyfikacji jako odwołanie.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 3,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 19.3,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2,
+    3
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Postanowienie KIO z dnia 20 września 2021 r. (sygn. akt KIO 2617/21) odrzucające odwołanie wykonawcy TAMEX OBIEKTY SPORTOWE S.A. Jest to orzeczenie Izby, a nie odwołanie. W uzasadnieniu szczegółowo streszczono zarzuty i żądania odwołania, więc dokument łatwo pomylić z klasą odwolanie.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Sygn. akt: KIO 2617/21\nPOSTANOWIENIE\nz dnia 20 września 2021 r.\nKrajowa Izba Odwoławcza - w składzie:\nPrzewodniczący: Ewa Kisiel\npo rozpoznaniu na posiedzeniu niejawnym bez udziału stron w dniu 20 września 2021 r.",
+      "problemy": [
+       {
+        "kod": "podobny_do_klasy",
+        "opis": "Strona tytułowa postanowienia KIO z sentencją „odrzuca odwołanie”. Słowa „odwołanie” i „Odwołujący” oraz sygnatura mogą zmylić klasyfikator.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "uklad_wielokolumnowy",
+        "opis": "Nietypowy układ: tytuł wyśrodkowany, „Przewodniczący: Ewa Kisiel” wyrównany do prawej, „orzeka:” na środku, z dużymi odstępami między blokami.",
+        "waga": "niska"
+       }
+      ]
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Gmina Cieszyn z siedzibą w Cieszynie (dalej: „Zamawiający” lub „Gmina”) prowadzi na podstawie przepisów ustawy z dnia 19 września 2019 r. Prawo zamówień publicznych (Dz. U. z 2019 r. poz. 2019 ze zm.) - zwanej dalej:",
+      "problemy": [
+       {
+        "kod": "podobny_do_klasy",
+        "opis": "Uzasadnienie streszcza zarzuty odwołania (lista czynności i zaniechań zamawiającego, naruszone przepisy Pzp), przez co treść przypomina samo odwołanie.",
+        "waga": "srednia"
+       }
+      ]
+     },
+     {
+      "nr": 3,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "OPZ w sposób, który naruszają zasadę uczciwej konkurencji i zasadę równego traktowania wykonawców oraz zasadę udzielania zamówienia zapewniającego najlepszą jakość uzasadnioną charakterem zamówienia, nie jest",
+      "problemy": [
+       {
+        "kod": "podobny_do_klasy",
+        "opis": "Strona przytacza żądania odwołującego („Odwołujący wnosi o uwzględnienie odwołania oraz nakazanie Zamawiającemu…”) i uzasadnienie terminu wniesienia odwołania, czyli fragmenty typowe dla odwołania.",
+        "waga": "srednia"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Plik zawiera postanowienie KIO, które nie należy do klas odwołanie, pełnomocnictwo ani przelew.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "podobny_do_klasy",
+      "opis": "Orzeczenie KIO dotyczy odwołania i obszernie cytuje jego zarzuty i żądania, więc grozi błędną klasyfikacją jako odwolanie.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "inne",
+      "opis": "Oceniono tylko strony 1–3 z 10. Pozostałe strony nie zostały sprawdzone.",
+      "waga": "niska"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 3,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 13.8,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2,
+    3
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Dokument jest postanowieniem Krajowej Izby Odwoławczej w sprawie odwołania, a nie samym odwołaniem wniesionym do KIO. Zgodnie z definicją kategorii należy do dokumentów „inny”.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Sygn. akt: KIO 2617/21\n\nPOSTANOWIENIE\nz dnia 20 września 2021 r.\n\nKrajowa Izba Odwoławcza - w składzie:\n\nPrzewodniczący: Ewa Kisiel\n\npo rozpoznaniu na posiedzeniu niejawnym bez udziału stron w dniu 20 września 2021 r.",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Gmina Cieszyn z siedzibą w Cieszynie (dalej: „Zamawiający” lub „Gmina”) prowadzi na podstawie przepisów ustawy z dnia 19 września 2019 r. Prawo zamówień publicznych (Dz. U. z 2019 r. poz. 2019 ze zm.) - zwanej dalej: „ustawą” lub „Pzp” - w trybie podstawowym",
+      "problemy": []
+     },
+     {
+      "nr": 3,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "OPZ w sposób, który narusza zasadę uczciwej konkurencji i zasadę równego traktowania wykonawców oraz zasadę udzielania zamówienia zapewniającego najlepszą jakość uzasadnioną charakterem zamówienia, nie jest proporcjonalne do przedmiotu zamówienia",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Plik zawiera postanowienie KIO w sprawie odwołania, a nie dokument będący przedmiotem klasyfikacji (odwołanie, pełnomocnictwo lub przelew).",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "podobny_do_klasy",
+      "opis": "Jest to rozstrzygnięcie KIO w postępowaniu odwoławczym, dlatego może być utożsamiane z odwołaniem, choć faktycznie jest postanowieniem organu rozstrzygającego sprawę.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 3,
+      "podobienstwo": 0.988
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

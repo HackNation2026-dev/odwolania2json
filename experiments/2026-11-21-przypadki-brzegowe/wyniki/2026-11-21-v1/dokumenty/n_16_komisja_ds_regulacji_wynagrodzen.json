@@ -1,0 +1,152 @@
+{
+ "id": "n_16_komisja_ds_regulacji_wynagrodzen",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/16_komisja_ds._regulacji_wynagrodzeń.pdf",
+ "zrodlo": "negatywny",
+ "klasa_oczekiwana": "obcy",
+ "sprawa": null,
+ "metadane": {
+  "producent": "Microsoft® Office Word 2007",
+  "kreator": "Microsoft® Office Word 2007",
+  "rozmiar_bajtow": 130816,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.5"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/n_16_komisja_ds_regulacji_wynagrodzen/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 855,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Pismo okólne Nr 16/2024/2025 Rektora Uniwersytetu Kazimierza Wielkiego z dnia 4 marca 2025 r. w sprawie powołania Zespołu ds. Regulacji Wynagrodzeń Pracowników Uniwersytetu Kazimierza Wielkiego Na podstawie art. 23 ust. 2 pkt 2) ustawy z dnia 27 lipca 2005 r. Prawo o szkolnictwie wyższym i nauce (Dz. U. z 2024 r., poz. 1571 z późn zm.) ustalam, co następuje: §1 Powołuję Zespół ds. Regulacji Wynagr"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 11.1,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Pismo ogólne rektora w sprawie powołania zespołu ds. regulacji wynagrodzeń pracowników uczelni.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Pismo ogólne Nr 16/2024/2025\nRektora Uniwersytetu Kazimierza Wielkiego\nz dnia 4 marca 2025 r.\nw sprawie powołania Zespołu ds. Regulacji Wynagrodzeń Pracowników Uniwersytetu\nKazimierza Wielkiego",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Pismo dotyczące organizacji zespołu ds. wynagrodzeń uczelni, spoza klas odwołanie, pełnomocnictwo i przelew.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.995
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 10.6,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Pismo okólne Rektora Uniwersytetu Kazimierza Wielkiego w sprawie powołania Zespołu ds. Regulacji Wynagrodzeń. To wewnętrzny akt uczelni, a nie odwołanie do KIO, pełnomocnictwo ani potwierdzenie przelewu. Słowo „Pełnomocnik” występuje tylko jako funkcja jednej osoby.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Pismo okólne Nr 16/2024/2025 Rektora Uniwersytetu Kazimierza Wielkiego z dnia 4 marca 2025 r. w sprawie powołania Zespołu ds. Regulacji Wynagrodzeń Pracowników Uniwersytetu Kazimierza Wielkiego Na podstawie art. 23 ust. 2 pkt 2)",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Pismo okólne rektora uczelni o powołaniu zespołu ds. wynagrodzeń. Dokument nie ma związku ze sprawą odwoławczą przed KIO.",
+      "waga": "niska"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 11.5,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Pismo okólne Rektora Uniwersytetu Kazimierza Wielkiego dotyczące powołania zespołu ds. regulacji wynagrodzeń pracowników; nie jest odwołaniem, pełnomocnictwem ani potwierdzeniem przelewu.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Pismo okólne Nr 16/2024/2025\nRektora Uniwersytetu Kazimierza Wielkiego\nz dnia 4 marca 2025 r.\n\nw sprawie powołania Zespołu ds. Regulacji Wynagrodzeń Pracowników Uniwersytetu\nKazimierza Wielkiego",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Dokument jest urzędowym pismem okólnym rektora, nienależącym do rozpoznawanych klas odwołania, pełnomocnictwa ani przelewu.",
+      "waga": "niska"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

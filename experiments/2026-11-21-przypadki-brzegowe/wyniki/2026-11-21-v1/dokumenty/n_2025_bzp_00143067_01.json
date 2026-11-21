@@ -1,0 +1,272 @@
+{
+ "id": "n_2025_bzp_00143067_01",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/2025_BZP 00143067_01.pdf",
+ "zrodlo": "negatywny",
+ "klasa_oczekiwana": "obcy",
+ "sprawa": null,
+ "metadane": {
+  "producent": "PDFsharp 1.50.4000-netstandard (https://github.com/ststeiger/PdfSharpCore) (Original: Qt 4.8.7)",
+  "kreator": "eZamowienia.gov.pl",
+  "rozmiar_bajtow": 79156,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.7"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/n_2025_bzp_00143067_01/p001.jpg",
+   "szerokosc_pt": 595.0,
+   "wysokosc_pt": 842.0,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2003,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12 Ogłoszenie o zamówieniu Usługi Utrzymanie w ciągłym ruchu urządzeń, sieci wodociągowych, stacji uzdatniania wody, sieci kanalizacyjnych, oczyszczalni ścieków, kolektorów odpływowych na terenie kompleksu wojskowego Celestynów SEKCJA I - ZAMAWIAJĄCY 1.1.) Rola zamawiającego Postępowanie prowadzone jest samodzielnie przez zamawiającego 1.2.) Nazwa zam"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/n_2025_bzp_00143067_01/p002.jpg",
+   "szerokosc_pt": 595.0,
+   "wysokosc_pt": 842.0,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2517,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12 Zamówienie udzielane jest w trybie podstawowym na podstawie: art. 275 pkt 1 ustawy SEKCJA III – UDOSTĘPNIANIE DOKUMENTÓW ZAMÓWIENIA I KOMUNIKACJA 3.1.) Adres strony internetowej prowadzonego postępowania https://platformazakupowa.pl/transakcja/1058573 3.2.) Zamawiający zastrzega dostęp do dokumentów zamówienia: Nie 3.4.) Wykonawcy zobowiązani są do"
+  },
+  {
+   "nr": 3,
+   "obraz": "strony/n_2025_bzp_00143067_01/p003.jpg",
+   "szerokosc_pt": 595.0,
+   "wysokosc_pt": 842.0,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1766,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12 inne. 4.3.5.) Nazwa kryterium: Czas reakcji na zdiagnozowanie przyczyn awarii 4.3.6.) Waga: 20 Kryterium 3 4.3.4.) Rodzaj kryterium: inne. 4.3.5.) Nazwa kryterium: Cena za jedną roboczogodzinę naprawy 4.3.6.) Waga: 20 4.3.10.) Zamawiający określa aspekty społeczne, środowiskowe lub innowacyjne, żąda etykiet lub stosuje rachunek kosztów cyklu życia "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 18.4,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2,
+    3
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Ogłoszenie o zamówieniu publicznym dotyczące utrzymania urządzeń i sieci na terenie kompleksu wojskowego Celestynów.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12\nOgłoszenie o zamówieniu\nUsługi\nUtrzymanie w ciągłym ruchu urządzeń, sieci wodociągowych, stacji uzdatniania wody, sieci kanalizacyjnych, oczyszczalni ścieków",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12\nZamówienie udzielane jest w trybie podstawowym na podstawie: art. 275 pkt 1 ustawy\nSEKCJA III – UDOSTĘPNIANIE DOKUMENTÓW ZAMÓWIENIA I KOMUNIKACJA",
+      "problemy": []
+     },
+     {
+      "nr": 3,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12\ninne.\n4.3.5.) Nazwa kryterium: Czas reakcji na zdiagnozowanie przyczyn awarii\n4.3.6.) Waga: 20\nKryterium 3\n4.3.4.) Rodzaj kryterium:\ninne.",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Plik zawiera trzystronicowe ogłoszenie o zamówieniu publicznym, spoza klas odwołanie, pełnomocnictwo i przelew.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 3,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 18.4,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2,
+    3
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "To ogłoszenie o zamówieniu nr 2025/BZP 00143067 z Biuletynu Zamówień Publicznych, dotyczące usług utrzymania sieci wodociągowo-kanalizacyjnych w kompleksie wojskowym Celestynów. Nie jest odwołaniem, pełnomocnictwem ani potwierdzeniem przelewu. Dotyczy jednak postępowania o zamówienie publiczne, więc tematycznie przypomina dokumenty sprawy KIO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12 Ogłoszenie o zamówieniu Usługi Utrzymanie w ciągłym ruchu urządzeń, sieci wodociągowych, stacji uzdatniania wody, sieci kanalizacyjnych, oczyszczalni ścieków, kolektorów odpływowych na terenie",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12 Zamówienie udzielane jest w trybie podstawowym na podstawie: art. 275 pkt 1 ustawy SEKCJA III – UDOSTĘPNIANIE DOKUMENTÓW ZAMÓWIENIA I KOMUNIKACJA 3.1.) Adres strony internetowej",
+      "problemy": []
+     },
+     {
+      "nr": 3,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12 inne. 4.3.5.) Nazwa kryterium: Czas reakcji na zdiagnozowanie przyczyn awarii 4.3.6.) Waga: 20 Kryterium 3 4.3.4.) Rodzaj kryterium: inne. 4.3.5.) Nazwa kryterium: Cena za jedną",
+      "problemy": [
+       {
+        "kod": "pusta_strona",
+        "opis": "Dolna część strony 3, mniej więcej od połowy wysokości, pod punktem 8.4, nie zawiera treści. Strona nie jest jednak w całości pusta.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Plik zawiera ogłoszenie o zamówieniu z BZP, czyli dokument spoza klas: odwołanie, pełnomocnictwo, przelew.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "podobny_do_klasy",
+      "opis": "Ogłoszenie dotyczy postępowania o zamówienie publiczne i zawiera słownictwo podobne do odwołania (zamawiający, ustawa, art. 275, SWZ, wykonawcy). Może zostać błędnie uznane za odwołanie.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Każda strona ma w nagłówku i stopce drobny tekst biuletynu (numer ogłoszenia, data, tryb). Przy odczycie liniowym OCR może go wmieszać w treść.",
+      "waga": "niska"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 3,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 9.1,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2,
+    3
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Dokument jest ogłoszeniem o zamówieniu publicznym, a nie odwołaniem do KIO, pełnomocnictwem ani potwierdzeniem przelewu.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12\n\nOgłoszenie o zamówieniu\nUsługi\nUtrzymanie w ciągłym ruchu urządzeń, sieci wodociągowych, stacji uzdatniania wody, sieci kanalizacyjnych,",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Zamówienie udzielane jest w trybie podstawowym na podstawie: art. 275 pkt 1 ustawy\n\nSEKCJA III - UDOSTĘPNIANIE DOKUMENTÓW ZAMÓWIENIA I KOMUNIKACJA\n\n3.1.) Adres strony internetowej prowadzonego postępowania\nhttps://platformazakupowa.pl/transakcja/1058573",
+      "problemy": []
+     },
+     {
+      "nr": 3,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "inne.\n\n4.3.5.) Nazwa kryterium: Czas reakcji na zdiagnozowanie przyczyny awarii\n4.3.6.) Waga: 20\n\nKryterium 3\n4.3.4.) Rodzaj kryterium:\ninne.\n4.3.5.) Nazwa kryterium: Cena za jedną roboczogodzinę naprawy\n4.3.6.) Waga: 20",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Cały plik stanowi ogłoszenie o zamówieniu publicznym, które nie należy do klas: odwołanie, pełnomocnictwo ani przelew.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 0.996
+     },
+     {
+      "nr": 3,
+      "podobienstwo": 0.995
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

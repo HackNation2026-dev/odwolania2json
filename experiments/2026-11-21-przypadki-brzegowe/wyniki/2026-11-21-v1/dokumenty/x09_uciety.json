@@ -1,0 +1,230 @@
+{
+ "id": "x09_uciety",
+ "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x09_uciety.pdf",
+ "zrodlo": "syntetyczny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_40",
+ "metadane": {
+  "producent": null,
+  "kreator": null,
+  "rozmiar_bajtow": 238415,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/x09_uciety/p001.jpg",
+   "szerokosc_pt": 488.16,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 0,
+   "obrazy": 1,
+   "pokrycie_obrazami": 1.0,
+   "dpi_obrazow": 150.0,
+   "typ_auto": "skan",
+   "probka_tekstu": ""
+  }
+ ],
+ "wstrzykniete": [
+  {
+   "kod": "skan",
+   "strona": 1,
+   "opis": "obraz"
+  },
+  {
+   "kod": "uciety_tekst",
+   "strona": 1,
+   "opis": "ucięte 18% szerokości z prawej"
+  }
+ ],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 17.5,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "pelnomocnictwo",
+    "uzasadnienie_klasy": "Dokument zatytułowany „PEŁNOMOCNICTWO” upoważnia radców prawnych do reprezentowania wykonawcy przed KIO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "Poznań, 15 październik\nPEŁNOMOCNICTWO\nValtrix Systemy Informatyczne sp. z o.o., ul. Grunwaldzka 112, 60-307 Poznań, KRS 9998213\n9993380162, REGON 999517204 (dalej: „Mocodawca”),",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Strona ma wygląd skanu z widocznym szumem tła.",
+        "waga": "niska"
+       },
+       {
+        "kod": "uciety_tekst",
+        "opis": "Prawa krawędź ucina datę, dane mocodawcy oraz końce licznych wierszy treści pełnomocnictwa.",
+        "waga": "wysoka"
+       },
+       {
+        "kod": "niska_jakosc",
+        "opis": "Na całej stronie występują liczne drobne czarne plamki, również w obszarze tekstu.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "uciety_tekst",
+      "opis": "Jedyna strona dokumentu ma uciętą prawą część, co uniemożliwia pełny odczyt części danych i zdań.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.904
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "skan",
+     "uciety_tekst"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 13.8,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "pelnomocnictwo",
+    "uzasadnienie_klasy": "Dokument ma tytuł „PEŁNOMOCNICTWO”. Valtrix Systemy Informatyczne sp. z o.o. udziela w nim radcom prawnym pełnomocnictwa do reprezentowania jej w postępowaniu odwoławczym przed KIO (ZP/PN/48/2026).",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "Poznań, 15 październik\nPEŁNOMOCNICTWO\nValtrix Systemy Informatyczne sp. z o.o., ul. Grunwaldzka 112, 60-307 Poznań, KRS 9998213\n9993380162, REGON 999517204 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane",
+      "problemy": [
+       {
+        "kod": "uciety_tekst",
+        "opis": "Prawa krawędź strony ucina tekst w każdej linii: datę („Poznań, 15 październik…”), numer KRS, nazwisko drugiego pełnomocnika („r. pr. …”), nazwę zamówienia („systemu informa…”) i nazwę zamawiającego („sp. z…”). Część danych do ekstrakcji jest niekompletna.",
+        "waga": "wysoka"
+       },
+       {
+        "kod": "skan",
+        "opis": "Strona jest obrazem bez warstwy tekstowej. Wymaga OCR.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "niska_jakosc",
+        "opis": "Na całej stronie widać drobny szum w postaci kropek i lekkie rozmycie znaków. Tekst pozostaje czytelny.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "uciety_tekst",
+      "opis": "Na jedynej stronie ucięty jest prawy margines. Brakuje pełnej daty, pełnego numeru KRS, pełnej nazwy zamówienia i zamawiającego oraz końcówek wierszy w treści.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.921
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "skan",
+     "uciety_tekst"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 7.3,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "pelnomocnictwo",
+    "uzasadnienie_klasy": "Dokument nosi tytuł „PEŁNOMOCNICTWO” i upoważnia osoby do reprezentowania Mocodawcy w postępowaniu odwoławczym przed Krajową Izbą Odwoławczą.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "Poznań, 15 październik\nPEŁNOMOCNICTWO\nValtrix Systemy Informatyczne sp. z o.o., ul. Grunwaldzka 112, 60-307 Poznań, KRS 999821\n999380162, REGON 999817204 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Cała strona jest obrazem skanu bez widocznej cyfrowej warstwy tekstu.",
+        "waga": "wysoka"
+       },
+       {
+        "kod": "uciety_tekst",
+        "opis": "Prawa krawędź strony jest ucięta, dlatego końcówki kolejnych wierszy tekstu są niewidoczne.",
+        "waga": "wysoka"
+       },
+       {
+        "kod": "niska_jakosc",
+        "opis": "Cały obszar strony zawiera liczne czarne punkty, plamy i szum skanowania, które mogą utrudniać OCR.",
+        "waga": "srednia"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "skan",
+      "opis": "Dokument jest reprezentowany jako obraz zeskanowanej strony.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "uciety_tekst",
+      "opis": "Tekst przy prawej krawędzi jest systemowo ucięty w wielu wierszach.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Skan zawiera rozproszony szum i liczne artefakty punktowe.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.915
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "skan",
+     "uciety_tekst"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

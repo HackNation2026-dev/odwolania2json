@@ -1,0 +1,66 @@
+{
+ "id": "x04_niska_jakosc",
+ "model": "minimax",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Nagłówek „Potwierdzenie przelewu krajowego” oraz pola dotyczące kwoty, daty operacji, numeru referencyjnego i tytułu przelewu wskazują na potwierdzenie przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "slaba",
+    "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\nNADAWCA\n[nieczytelne] Spółka S.A.\nul. [nieczytelne] 14, 80-322 Gdańsk\nODBIORCA\nEuropejska Infrastruktura S.A.\nul. [nieczytelne] 35, 20-[nieczytelne] Łódź\nKwota przelewu: 30,00 zł\nData operacji: [nieczytelne]\nNumer referencyjny: [nieczytelne]",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona ma postać obrazu; brak widocznej cyfrowej warstwy tekstu.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Tekst jest silnie rozmazany, niewyraźny i zaśmiecony licznymi plamkami oraz szumem; większość danych osobowych i kwotowych nie jest pewnie czytelna.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane o nadawcy i odbiorcy są zestawione w dwóch kolumnach, a kolejne informacje w układzie etykieta–wartość.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Górna część strony wykorzystuje równoległe bloki nadawcy i odbiorcy, co utrudnia odczyt kolejności liniowej.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "niska_jakosc",
+    "opis": "Dokument jest bardzo słabo czytelny z powodu rozmazania, niskiego kontrastu i licznych plamek w tle; bez poprawy jakości wiele danych nie zostanie wiarygodnie odczytanych przez OCR.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2925,
+   "output_tokens": 1520,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 858
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 14.0
+}

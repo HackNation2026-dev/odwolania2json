@@ -1,0 +1,63 @@
+{
+ "id": "n_2020_03_21_22prowadzenie_postepowania_od",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Widoczne strony są slajdami materiału edukacyjnego wyjaśniającego instytucje decyzji i postanowienia w postępowaniu administracyjnym, a nie wnioskiem odwoławczym, pełnomocnictwem ani potwierdzeniem przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Postępowanie odwoławcze i sądowoadministracyjne – cz. 1",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "DECYZJA / POSTANOWIENIE\n\nOrgan administracji publicznej załatwia sprawę przez wydanie decyzji, chyba że przepisy kodeksu stanowią inaczej.\n\nUWAGA! Przepisy prawa materialnego nie muszą wskazywać w sposób wyraźny i bezpośredni na decyzyjną formę załatwiania danej sprawy. Jest to pogląd utrwalony w orzecznictwie.",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "DECYZJA / POSTANOWIENIE\n\nW toku postępowania organ administracji publicznej wydaje postanowienia.\n\nPostanowienia dotyczą poszczególnych kwestii wynikających w toku postępowania, lecz nie rozstrzygają o istocie sprawy, chyba że przepisy kodeksu stanowią inaczej.",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Plik jest materiałem edukacyjnym lub prezentacją o postępowaniu odwoławczym i sądowoadministracyjnym, a nie dokumentem stanowiącym odwołanie, pełnomocnictwo lub potwierdzenie przelewu.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 5279,
+   "output_tokens": 1456,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 838
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 7.3
+}

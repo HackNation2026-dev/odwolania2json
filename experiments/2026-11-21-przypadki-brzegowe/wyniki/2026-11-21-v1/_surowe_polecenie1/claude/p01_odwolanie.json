@@ -1,0 +1,64 @@
+{
+ "id": "p01_odwolanie",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo jest zaadresowane do Prezesa Krajowej Izby Odwoławczej i ma tytuł „ODWOŁANIE”. Wskazuje Odwołującego i Zamawiającego, postępowanie oraz podstawę z art. 513 i 515 Pzp. Zawiera zarzuty nr 1–3, sekcję „Wnoszę o” i miejsca na podpisy pełnomocników.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785\nreprezentowana przez: r. pr. Aleksandra Marciniak",
+    "problemy": [
+     {
+      "kod": "inne",
+      "opis": "Po zdaniu „wnoszę o:” nie ma żądań. Zamiast nich jest zdanie „Zamawiający w dniu 20 marca 2026 roku unieważnił postępowanie.”, czyli struktura odwołania jest niespójna i ekstrakcja żądań może być błędna.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania.\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+    "problemy": [
+     {
+      "kod": "inne",
+      "opis": "W sekcji „Wnoszę o:” żądania są sprzeczne: „wnoszę o oddalenie zarzutów odwołania” i „o uwzględnienie odwołania”. Bez osobnego nagłówka wpisano w nią listę załączników (pełnomocnictwo, oświadczenie, dokument nadania), a oznaczenia a) i b) się powtarzają.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "inne",
+      "opis": "Pod tekstem są tylko wykropkowane miejsca na podpisy pełnomocników (Aleksandra Marciniak, Jolanta Zajkowski). Brak widocznego podpisu odręcznego lub elektronicznego.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "inne",
+    "opis": "Treść odwołania jest niespójna merytorycznie. Na stronie 1 po „wnoszę o:” zamiast żądań jest informacja o unieważnieniu postępowania. Na stronie 2 sekcja „Wnoszę o:” zawiera sprzeczne żądania i jest wymieszana z listą załączników. Ekstrakcja żądań i załączników wymaga ostrożności.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2857666,
+  "tury": 4
+ },
+ "czas_s": 20.5
+}

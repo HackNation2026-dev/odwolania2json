@@ -1,0 +1,31 @@
+{
+ "id": "p13_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_13/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_13",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 77902,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p13_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 688,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "BANK SPÓŁDZIELCZY ZIEMI KUJAWSKIEJ Potwierdzenie wykonania przelewu Płatnik Nazwa: Deltawing Usługi sp. j. Adres: ul. Miodowa 63, 00-427 Warszawa Rachunek zleceniodawcy: PL34484587158449675491600836 Dane odbiorcy Nazwa: Wexoria Serwis sp. z o.o. Adres: ul. Błotna 33, 60-998 Poznań Rachunek uznawany: PL47326231412257943251088415 Szczegóły operacji Kwota operacji: 50.00 PLN Data wykonania: 22 grudni"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

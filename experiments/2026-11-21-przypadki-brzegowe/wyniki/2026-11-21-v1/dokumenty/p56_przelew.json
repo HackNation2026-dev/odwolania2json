@@ -1,0 +1,31 @@
+{
+ "id": "p56_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_56/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_56",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 84723,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p56_przelew/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 742,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Spółdzielczy Regionu · wygenerowano 25.09.2026 Zleceniodawca Gorlan Pojazdy sp. z o.o. ul. Kolejowa 132, 70-903 Szczecin Rachunek zleceniodawcy PL56983284333958978368019827 Odbiorca Miejskie Przedsiębiorstwo Komunikacyjne w Jodłowcu sp. z o.o. ul. Mickiewicza 22, 40-797 Jodłowiec Rachunek odbiorcy PL06510316256707769064068190 Kwota 34,00 PLN Data operacji 24 w"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

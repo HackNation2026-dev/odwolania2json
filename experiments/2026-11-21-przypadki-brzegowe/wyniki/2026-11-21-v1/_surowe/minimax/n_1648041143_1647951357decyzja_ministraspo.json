@@ -1,0 +1,102 @@
+{
+ "id": "n_1648041143_1647951357decyzja_ministraspo",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Dokument stanowi decyzję Ministra Sportu i Turystyki zatwierdzającą zmianę statutu Polskiego Związku Narciarskiego wraz z załączoną uchwałą. Nie jest to odwołanie do KIO, pełnomocnictwo ani potwierdzenie przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "MINISTER\nSPORTU i TURYSTYKI\n\nDP.9552.2021\n\nWarszawa, 21 grudnia 2021 r.\n\nPolska Związek Narciarski\nz siedzibą w Krakowie\nreprezentowany przez:\nr. pr. Adama M. Kozłowskiego",
+    "problemy": [
+     {
+      "kod": "odreczne",
+      "opis": "Odręcznie wpisano datę „21 grudnia 2021 r.” oraz część numeru decyzji.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Na podstawie art. 107 § 4 Kpa Minister Sportu i Turystyki odstąpił od uzasadnienia decyzji, gdyż uwzględnia ona w całości żądanie strony.\nStrona przedstawiła dowód uiszczenia opłaty skarbowej w wysokości 10 zł.\n\nPouczenie:",
+    "problemy": [
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "W dolnej części strony pieczątka, podpis i adnotacje nachodzą na nagłówek stanowiska oraz podpisy.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   {
+    "nr": 3,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Załącznik Nr ....................\ndo decyzji Nr M ....................\nMinister Sportu i Turystyki z dnia 21.12.2021 r.\nZ miany Statutu PZN\n\nUchwała Nr 3\nWalnego Zjazdu Delegatów\nPolskiego Związku Narciarskiego\nz dnia 25 września 2021 r.",
+    "problemy": [
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Niebieska pieczątka i podpis nachodzą na nagłówek w lewej górnej części strony; u dołu znajdują się dwa podpisy.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "odreczne",
+      "opis": "Odręcznie uzupełniono numer uchwały, numer decyzji, daty oraz wyniki głosowań: 34, 0 i 2.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Cały plik zawiera decyzję administracyjną i załącznik do jej uchwały, a nie dokument należący do klas odwołanie, pełnomocnictwo lub przelew.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "wiele_dokumentow",
+    "opis": "W jednym pliku połączono decyzję Ministra z odrębną treścią załącznika, czyli uchwałą Walnego Zjazdu Delegatów PZN z 25 września 2021 r.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "dokument_mieszany",
+    "opis": "Strony 1–2 mają postać cyfrowo generowanego tekstu, natomiast strona 3 jest wyraźnie zeskanowaną stroną z odręcznymi wpisami i pieczątką.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "odreczne",
+    "opis": "W całym dokumencie występują istotne wpisy odręczne, m.in. data i numer decyzji na stronie 1, dane uchwały i wyniki głosowań na stronie 3.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 5486,
+   "output_tokens": 2611,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 1459
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 13.6
+}

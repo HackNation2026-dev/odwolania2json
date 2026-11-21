@@ -1,0 +1,81 @@
+{
+ "id": "x01_obrot90",
+ "model": "minimax",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument nosi tytuł „PEŁNOMOCNICTWO” i w § 2 ustanawia pełnomocników do reprezentowania mocodawcy w postępowaniu odwoławczym przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 270,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nŁódź, 1 kwietnia 2026\n\n§ 1. Mocodawca\nMiejskie Przedsiębiorstwo Budownictwa S.A. ul. Żaczarowa 78, 90-803 Łódź, KRS 00000905188, NIP 9999284065, REGON",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona ma wygląd zeskanowanej bitmapy z licznymi drobnymi plamkami i szumem tła.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "obrot",
+      "opis": "Treść strony jest obrócona o 90° przeciwnie do ruchu wskazówek zegara; do odczytu wymaga obrotu o 270° zgodnie z ruchem wskazówek zegara.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "przekrzywienie",
+      "opis": "Po obrocie strony tekst jest nieznacznie przekrzywiony względem osi poziomej, kilka stopni.",
+      "waga": "niska"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Tło jest silnie ziarniste i pokryte licznymi punktami szumu, choć tekst pozostaje czytelny dla OCR.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "skan",
+    "opis": "Jednostronicowy dokument został przedstawiony jako skan zamiast czystej warstwy tekstowej.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "obrot",
+    "opis": "Cała treść strony jest obrócona o 90° przeciwnie do ruchu wskazówek zegara, czyli o 270° zgodnie z ruchem wskazówek zegara.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "przekrzywienie",
+    "opis": "Tekst po normalizacji orientacji jest lekko przekrzywiony.",
+    "waga": "niska"
+   },
+   {
+    "kod": "niska_jakosc",
+    "opis": "Widoczne są liczne artefakty skanowania i szum punktowy na całym tle strony.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2926,
+   "output_tokens": 6430,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 5816
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 107.7
+}

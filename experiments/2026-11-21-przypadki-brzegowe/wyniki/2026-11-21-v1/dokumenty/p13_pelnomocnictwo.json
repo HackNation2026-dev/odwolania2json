@@ -1,0 +1,31 @@
+{
+ "id": "p13_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_13/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_13",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 66570,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p13_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1107,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "PEŁNOMOCNICTWO Warszawa, 01-01-2026 § 1. Mocodawca Mocodawcą jest Deltawing Usługi sp. j., ul. Miodowa 63, 00-427 Warszawa, KRS 9990929624, NIP 9994888947, REGON 999788508. § 2. Pełnomocnik Mocodawca udzielam pełnomocnictwa adw. Ignacy Rutkiewicz (nr wpisu na listę: WA 87629), r. pr. Weronika Furman (nr wpisu na listę: WA 48119). § 3. Postępowanie Pełnomocnictwo dotyczy postępowania „Modernizacja "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

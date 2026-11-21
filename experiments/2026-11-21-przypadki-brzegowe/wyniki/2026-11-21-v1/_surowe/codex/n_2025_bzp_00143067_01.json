@@ -1,0 +1,53 @@
+{
+ "id": "n_2025_bzp_00143067_01",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Ogłoszenie o zamówieniu publicznym dotyczące utrzymania urządzeń i sieci na terenie kompleksu wojskowego Celestynów.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12\nOgłoszenie o zamówieniu\nUsługi\nUtrzymanie w ciągłym ruchu urządzeń, sieci wodociągowych, stacji uzdatniania wody, sieci kanalizacyjnych, oczyszczalni ścieków",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12\nZamówienie udzielane jest w trybie podstawowym na podstawie: art. 275 pkt 1 ustawy\nSEKCJA III – UDOSTĘPNIANIE DOKUMENTÓW ZAMÓWIENIA I KOMUNIKACJA",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12\ninne.\n4.3.5.) Nazwa kryterium: Czas reakcji na zdiagnozowanie przyczyn awarii\n4.3.6.) Waga: 20\nKryterium 3\n4.3.4.) Rodzaj kryterium:\ninne.",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Plik zawiera trzystronicowe ogłoszenie o zamówieniu publicznym, spoza klas odwołanie, pełnomocnictwo i przelew.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "problemy\": []\n    }\n  ],\n  \"problemy_dokumentu\": [\n    {\n      \"kod\": \"dokument_obcy\",\n      \"opis\": \"Plik zawiera trzystronicowe ogłoszenie o zamówieniu publicznym, spoza klas odwołanie, pełnomocnictwo i przelew.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n7155\n"
+ },
+ "czas_s": 18.4
+}

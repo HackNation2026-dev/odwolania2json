@@ -1,0 +1,31 @@
+{
+ "id": "p26_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_26/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_26",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 81978,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p26_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 857,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "PEŁNOMOCNICTWO PROCESOWE Mocodawca Uldaris Wyposażenie sp. j. ul. Zaczarowana 78, 50-474 Wrocław Dane rejestrowe KRS 9999035670, NIP 9997688539, REGON 999200202 Pełnomocnicy adw. Ryszard Mazurkiewicz, nr wpisu WA 54175 adw. Patrycja Głowacz, nr wpisu WA 41061 Zamawiający Orynte Konsulting sp. k. Postępowanie Świadczenie usług sprzątania pomieszczeń biurowych nr ZP.864.2026 Zakres Mocodawca ustanaw"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

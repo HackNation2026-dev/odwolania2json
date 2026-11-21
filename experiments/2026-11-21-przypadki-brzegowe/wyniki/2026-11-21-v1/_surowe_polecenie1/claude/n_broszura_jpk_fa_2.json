@@ -1,0 +1,89 @@
+{
+ "id": "n_broszura_jpk_fa_2",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Broszura informacyjna Ministerstwa Finansów / KAS (marzec 2019) o strukturze JPK_FA (faktury VAT) – okładka i spis treści. To nie jest odwołanie, pełnomocnictwo ani potwierdzenie przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Struktury JPK na żądanie JPK_KR — księgi rachunkowe JPK_WB — wyciąg bankowy JPK_MAG — magazyn JPK_FA faktury VAT JPK_PKPiR — podatkowa księga przychodów i rozchodów JPK_EWP — ewidencja przychodów",
+    "problemy": [
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Okładka graficzna: pozycje JPK w ramkach połączonych diagramem, wyróżniony blok JPK_FA na czerwonym tle z białym tekstem, logotypy MF i KAS na dole.",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "Część napisów (JPK_KR, JPK_WB, JPK_MAG, JPK_PKPiR, JPK_EWP) jest jasnoszara na białym tle – niski kontrast może pogorszyć OCR.",
+      "waga": "niska"
+     },
+     {
+      "kod": "uciety_tekst",
+      "opis": "Ramki diagramu i czerwony blok „faktury VAT” dochodzą do prawej krawędzi strony (element graficzny ucięty spadem; tekst czytelny).",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Spis treści O strukturach VAT na żądanie 4 Ile masz czasu na udostępnienie struktur JPK 4 Jak udostępniać struktury JPK 5 1. Struktura jednolitego pliku kontrolnego dla faktur VAT (JPK_FA) 5 2. Schemat główny 7",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Spis treści z tytułami rozdziałów i numerami stron wyrównanymi do prawej, rozdzielonymi liniami – numer strony oddalony od tytułu.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "5.2. Opis struktury 16 6. FakturaCtrl JPK_FA 21 6.1. Struktura sum kontrolnych dla faktur 21 6.2. Opis struktury 21 7. Stawki podatku 22 7.1. Struktura stawek podatku 22 7.2. Opis struktury 22 8. FakturaWiersz JPK_FA 23",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Kontynuacja spisu treści: tytuły z numerami stron wyrównanymi do prawej, rozdzielone liniami.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Cały plik to broszura MF o strukturze JPK_FA (31 stron), niezwiązana ze sprawą odwoławczą do KIO.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "tabela",
+    "opis": "Według spisu treści dalsza część zawiera schematy i tabele struktur XML (spis schematów s. 29, spis tabel s. 30).",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.3007904,
+  "tury": 5
+ },
+ "czas_s": 21.1
+}

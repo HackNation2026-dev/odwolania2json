@@ -1,0 +1,73 @@
+{
+ "id": "n_2025_bzp_00143067_01",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "To ogłoszenie o zamówieniu nr 2025/BZP 00143067 z Biuletynu Zamówień Publicznych, dotyczące usług utrzymania sieci wodociągowo-kanalizacyjnych w kompleksie wojskowym Celestynów. Nie jest odwołaniem, pełnomocnictwem ani potwierdzeniem przelewu. Dotyczy jednak postępowania o zamówienie publiczne, więc tematycznie przypomina dokumenty sprawy KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12 Ogłoszenie o zamówieniu Usługi Utrzymanie w ciągłym ruchu urządzeń, sieci wodociągowych, stacji uzdatniania wody, sieci kanalizacyjnych, oczyszczalni ścieków, kolektorów odpływowych na terenie",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12 Zamówienie udzielane jest w trybie podstawowym na podstawie: art. 275 pkt 1 ustawy SEKCJA III – UDOSTĘPNIANIE DOKUMENTÓW ZAMÓWIENIA I KOMUNIKACJA 3.1.) Adres strony internetowej",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12 inne. 4.3.5.) Nazwa kryterium: Czas reakcji na zdiagnozowanie przyczyn awarii 4.3.6.) Waga: 20 Kryterium 3 4.3.4.) Rodzaj kryterium: inne. 4.3.5.) Nazwa kryterium: Cena za jedną",
+    "problemy": [
+     {
+      "kod": "pusta_strona",
+      "opis": "Dolna część strony 3, mniej więcej od połowy wysokości, pod punktem 8.4, nie zawiera treści. Strona nie jest jednak w całości pusta.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Plik zawiera ogłoszenie o zamówieniu z BZP, czyli dokument spoza klas: odwołanie, pełnomocnictwo, przelew.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Ogłoszenie dotyczy postępowania o zamówienie publiczne i zawiera słownictwo podobne do odwołania (zamawiający, ustawa, art. 275, SWZ, wykonawcy). Może zostać błędnie uznane za odwołanie.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "uklad_wielokolumnowy",
+    "opis": "Każda strona ma w nagłówku i stopce drobny tekst biuletynu (numer ogłoszenia, data, tryb). Przy odczycie liniowym OCR może go wmieszać w treść.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.3003374,
+  "tury": 5
+ },
+ "czas_s": 18.4
+}

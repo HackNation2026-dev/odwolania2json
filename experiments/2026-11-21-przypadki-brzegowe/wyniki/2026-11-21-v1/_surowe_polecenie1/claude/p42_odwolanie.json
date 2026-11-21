@@ -1,0 +1,68 @@
+{
+ "id": "p42_odwolanie",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Strona 1 zawiera nagłówek „ODWOŁANIE” skierowany do Prezesa Krajowej Izby Odwoławczej. Są tam dane Odwołującego, dane Zamawiających i kwota wpisu, a odwołanie wniesiono na podstawie art. 505 i 513 Pzp. Na kolejnych stronach są zarzuty, wnioski i uzasadnienie.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Kraków, 02.07.2026\nPrezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nNordelia Facility Services S.A.\nul. Wielicka 250, 30-663 Kraków\nKRS: 9993307745, NIP: 9995519382, REGON: 999284670",
+    "problemy": [
+     {
+      "kod": "inne",
+      "opis": "Na stronie wymieniono dwóch Zamawiających: lidera, który prowadzi postępowanie, i partnera (wspólne postępowanie, art. 38 Pzp). Ekstrakcja musi zapisać kilku zamawiających.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr MCLM/ZP/07/2026\n1) ustaleniu treści Specyfikacji Warunków Zamówienia, opublikowanej wraz z ogłoszeniem o zamówieniu w dniu 23 czerwca 2026 r., w zakresie warunków udziału w postępowaniu, kryteriów oceny ofert oraz wzoru umowy;",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr MCLM/ZP/07/2026\n6) pisma Zamawiającego z dnia 30 czerwca 2026 r. – na okoliczność stanowiska Zamawiającego co do interpretacji postanowień SWZ;\n7) wyciągu z Krajowego Rejestru Sądowego oraz Centralnej",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "W sekcji „I. Stan faktyczny” jest tabela z kolumnami Data i Zdarzenie, która przedstawia chronologię postępowania (6 wierszy).",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "inne",
+    "opis": "W odwołaniu występuje dwóch Zamawiających, którzy wspólnie prowadzą postępowanie (lider i partner). Odwołanie podaje też NIP-y innych podmiotów: Impel-Serwis Południe oraz lidera konsorcjum Clean Expert i Ochrona Max. Mogą one zostać błędnie wyodrębnione jako dane stron.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2970388,
+  "tury": 5
+ },
+ "czas_s": 17.1
+}

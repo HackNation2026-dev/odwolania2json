@@ -1,0 +1,61 @@
+{
+ "id": "n_2025_bzp_00143067_01",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Ogłoszenie o zamówieniu nr 2025/BZP 00143067 z Biuletynu Zamówień Publicznych (26 Wojskowy Oddział Gospodarczy, usługi utrzymania sieci wod.-kan. w kompleksie Celestynów). Nie jest odwołaniem, pełnomocnictwem ani potwierdzeniem przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12 Ogłoszenie o zamówieniu Usługi Utrzymanie w ciągłym ruchu urządzeń, sieci wodociągowych, stacji uzdatniania wody, sieci kanalizacyjnych, oczyszczalni ścieków, kolektorów odpływowych na terenie kompleksu wojskowego Celestynów SEKCJA I - ZAMAWIAJĄCY",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12 Zamówienie udzielane jest w trybie podstawowym na podstawie: art. 275 pkt 1 ustawy SEKCJA III – UDOSTĘPNIANIE DOKUMENTÓW ZAMÓWIENIA I KOMUNIKACJA 3.1.) Adres strony internetowej prowadzonego postępowania",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12 inne. 4.3.5.) Nazwa kryterium: Czas reakcji na zdiagnozowanie przyczyn awarii 4.3.6.) Waga: 20 Kryterium 3 4.3.4.) Rodzaj kryterium: inne. 4.3.5.) Nazwa kryterium: Cena za jedną",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Ogłoszenie o zamówieniu z BZP, czyli dokument spoza klas odwołanie, pełnomocnictwo i przelew.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Ogłoszenie o zamówieniu publicznym ma słownictwo z postępowania (zamawiający, SWZ, art. 275 ustawy PZP). Klasyfikator może je pomylić z dokumentem sprawy odwoławczej, np. z odwołaniem.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2875546,
+  "tury": 5
+ },
+ "czas_s": 17.7
+}

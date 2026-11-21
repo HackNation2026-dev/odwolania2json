@@ -1,0 +1,31 @@
+{
+ "id": "p36_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_36/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_36",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 65532,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p36_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 557,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POLECENIE PRZELEWU Potwierdzenie przelewu krajowego · Bank Nadwiślański Płatnik Rachunek nadawcy Rubiconis Technologie S.A. PL72 3915 1428 8643 2899 8215 2746 ul. Piwna 34, 20-304 Lublin Dane odbiorcy Rachunek odbiorcy Rubiconis Technologie sp. z o.o. PL38 1182 6665 6359 4212 5524 8248 ul. Klonowa 86, 30-737 Kraków Kwota operacji Data transakcji 100,00 24.01.2026 Opis opłata skarbowa od pełnomocni"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

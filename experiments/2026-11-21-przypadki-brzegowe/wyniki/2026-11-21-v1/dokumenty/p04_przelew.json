@@ -1,0 +1,31 @@
+{
+ "id": "p04_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_04/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_04",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 61355,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p04_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 578,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Potwierdzenie transakcji Nr klienta 716025 Tytuł opłata skarbowa od pełnomocnictwa dla Patrycja Furman i Sławomir Ostrowczyk w postępowaniu przed KIO w przetargu ZP.447.2026 CEN2608246932582 Kwota 17,00 PLN Data transakcji 2026-08-12 Numer referencyjny CEN2608246932582 Nadawca Gildentia Wyposażenie sp. z o.o., ul. Nowina 87, 40-960 Katowice Rachunek zleceniodawcy: PL43 0463 3766 1291 7568 1186 920"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

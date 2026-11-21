@@ -1,0 +1,52 @@
+{
+ "id": "n_2020_03_21_22prowadzenie_postepowania_od",
+ "model": "codex",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Widoczne strony to prezentacja dydaktyczna o postępowaniu odwoławczym i sądowoadministracyjnym, a nie odwołanie do KIO, pełnomocnictwo ani potwierdzenie przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Postępowanie odwoławcze i sądowoadministracyjne – cz. 1",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "DECYZJA / POSTANOWIENIE\nOrgan administracji publicznej załatwia sprawę przez wydanie decyzji, chyba że przepisy kodeksu stanowią inaczej.\nUWAGA! Przepisy prawa materialnego nie muszą wskazywać w sposób",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "DECYZJA / POSTANOWIENIE\nW toku postępowania organ administracji publicznej wydaje postanowienia.\nPostanowienia dotyczą poszczególnych kwestii wynikających w toku postępowania, lecz nie rozstrzygają o istocie sprawy,",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Strony 1–3 przedstawiają slajdy dydaktyczne o postępowaniu administracyjnym; dokument jest spoza trzech klas docelowych.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "[]\n    }\n  ],\n  \"problemy_dokumentu\": [\n    {\n      \"kod\": \"dokument_obcy\",\n      \"opis\": \"Strony 1–3 przedstawiają slajdy dydaktyczne o postępowaniu administracyjnym; dokument jest spoza trzech klas docelowych.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n30 612\n"
+ },
+ "czas_s": 15.4
+}

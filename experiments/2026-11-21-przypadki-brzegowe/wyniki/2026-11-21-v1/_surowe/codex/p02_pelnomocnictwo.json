@@ -1,0 +1,35 @@
+{
+ "id": "p02_pelnomocnictwo",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument zatytułowany „PEŁNOMOCNICTWO” upoważnia wskazanych adwokatów do reprezentowania wykonawcy przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nMocodawca\nHartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\nDane rejestrowe\nKRS 9999669444, NIP 9990678035, REGON 999114017\nPełnomocnicy\nadw. Bartosz Szymanski, nr wpisu WA 33513",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane pełnomocnictwa w tabeli: etykiety po lewej, wartości po prawej; część wartości zajmuje kilka wierszy.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "4017\\nPełnomocnicy\\nadw. Bartosz Szymanski, nr wpisu WA 33513\",\"problemy\":[{\"kod\":\"tabela\",\"opis\":\"Dane pełnomocnictwa w tabeli: etykiety po lewej, wartości po prawej; część wartości zajmuje kilka wierszy.\",\"waga\":\"niska\"}]}],\"problemy_dokumentu\":[]}\nhook: Stop\nhook: Stop Completed\ntokens used\n4282\n"
+ },
+ "czas_s": 12.1
+}

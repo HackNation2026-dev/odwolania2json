@@ -1,0 +1,35 @@
+{
+ "id": "p40_przelew",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Potwierdzenie wykonania przelewu 34,00 PLN tytułem opłaty skarbowej od pełnomocnictwa w postępowaniu przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Polski Zachodni S.A. · wygenerowano 16.10.2026\nZleceniodawca\nValtrix Systemy Informatyczne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań\nRachunek zleceniodawcy",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu w tabeli: etykiety w lewej kolumnie, wartości w prawej; tytuł przelewu zajmuje kilka wierszy.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "\\nul. Grunwaldzka 112, 60-307 Poznań\\nRachunek zleceniodawcy\",\"problemy\":[{\"kod\":\"tabela\",\"opis\":\"Dane przelewu w tabeli: etykiety w lewej kolumnie, wartości w prawej; tytuł przelewu zajmuje kilka wierszy.\",\"waga\":\"niska\"}]}],\"problemy_dokumentu\":[]}\nhook: Stop\nhook: Stop Completed\ntokens used\n4273\n"
+ },
+ "czas_s": 10.5
+}

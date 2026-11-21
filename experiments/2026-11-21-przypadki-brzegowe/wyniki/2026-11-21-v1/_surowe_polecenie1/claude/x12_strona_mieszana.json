@@ -1,0 +1,59 @@
+{
+ "id": "x12_strona_mieszana",
+ "model": "claude",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Strona to bankowe „Potwierdzenie przelewu krajowego” (Kredyt Północny) z płatnikiem, beneficjentem, kwotą 50,00 zł, datą i numerem referencyjnym. Tytuł przelewu wskazuje opłatę skarbową od pełnomocnictwa w postępowaniu przed KIO, a nie wpis od odwołania. Mimo to dokument ma postać potwierdzenia przelewu, więc wybrano klasę przelew. Warto to zweryfikować.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "mieszana",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\nKredyt Północny - wydrukowano 26 sierpnia 2026\nPłatnik\nHartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\n53678424593392529814420143\nBeneficjent\nEurosept Infrastruktura S.A.\nul. Huta 90, 20-829 Lublin",
+    "problemy": [
+     {
+      "kod": "strona_mieszana",
+      "opis": "W prawym dolnym obszarze strony, pod cyfrowym tekstem potwierdzenia, wklejono rastrowy obraz z zaszumionym tłem. Obraz zawiera czerwoną owalną pieczątkę i niebieską kreskę podpisu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Na wklejonym obrazie jest czerwona owalna pieczątka „OP?ACONO” i niebieski podpis kreską. Nie nachodzą na tekst cyfrowy.",
+      "waga": "niska"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane płatnika i beneficjenta są w dwóch kolumnach z nagłówkami. Szczegóły operacji (kwota, data, numer, tytuł) są ułożone jako pary etykieta–wartość.",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "Na pieczątce zamiast litery „Ł” jest symbol brakującego glifu (OP?ACONO). Tekst pieczątki odczytany przez OCR będzie błędny.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "inne",
+    "opis": "Tytuł przelewu to „opłata skarbowa od pełnomocnictwa”, a nie wpis od odwołania. Beneficjentem jest spółka (Eurosept Infrastruktura S.A.), a nie rachunek UZP lub urzędu. Przypisanie do klasy przelew może wymagać weryfikacji.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2709708,
+  "tury": 3
+ },
+ "czas_s": 20.5
+}

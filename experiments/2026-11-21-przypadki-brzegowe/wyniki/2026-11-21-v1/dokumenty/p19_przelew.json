@@ -1,0 +1,31 @@
+{
+ "id": "p19_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_19/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_19",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 64140,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p19_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 748,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Bank Wielkopolski i Pomorza S.A. ul. Bankowa 44, 00-820 Warszawa Centrum Obsługi Klienta Warszawa, 29 kwietnia 2026 Corvantis Sieci sp. z o.o. ul. Orzechowa 79, 50-596 Wrocław Dotyczy: potwierdzenie operacji bankowej Bank potwierdza, że w dniu 26 kwietnia 2026 z rachunku nr PL97 5520 7608 8416 4658 2056 3693, prowadzonego dla Corvantis Sieci sp. z o.o., wykonano przelew krajowy w kwocie 100,00 na "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

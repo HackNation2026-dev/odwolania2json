@@ -1,0 +1,31 @@
+{
+ "id": "p28_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_28/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_28",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 79372,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p28_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1041,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Yldenia Sieci S.A. ul. Grabowa 44, 35-309 Rzeszów KRS 9997060431 · NIP 9997550083 · REGON 999670741 Rzeszów, 26 kwietnia 2026 PEŁNOMOCNICTWO PROCESOWE Ja, niżej podpisany(a), działając jako osoba upoważniona do reprezentacji Yldenia Sieci S.A. (KRS 9997060431, NIP 9997550083), ustanawiam pełnomocnikiem adw. Zbigniew Dobrowolski (nr wpisu na listę: WA 42160), do reprezentowania Mocodawcy w postępow"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

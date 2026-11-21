@@ -1,0 +1,72 @@
+{
+ "id": "n_2025_ojs107_00364525_pl_ts",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "To ogłoszenie o zamówieniu z TED (364525-2025, OJ S 107/2025), które dotyczy dostawy serwerów dla Narodowego Instytutu Kardiologii. Nie jest to odwołanie, pełnomocnictwo ani przelew. Dokument dotyczy zamówień publicznych, więc łatwo go pomylić z dokumentem sprawy KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "364525-2025 - Procedura konkurencyjna See the notice on TED website\nPolska – Serwery – Dostawa, wdrożenie, skonfigurowanie serwerowego środowiska teleinformatycznego wraz z serwisem i gwarancją\nOJ S 107/2025 05/06/2025\nOgłoszenie o zamówieniu lub ogłoszenie o koncesji – tryb standardowy",
+    "problemy": [
+     {
+      "kod": "podobny_do_klasy",
+      "opis": "Strona tytułowa ogłoszenia o zamówieniu z TED. Dokument dotyczy zamówień publicznych, ale nie jest odwołaniem.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "jezyk_obcy",
+      "opis": "W nagłówku jest angielski link „See the notice on TED website”, a w stopce „Page 1/9”. Pozostała treść jest po polsku.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Udział w organizacji przestępczej: Wykonawca zostanie wykluczony z postępowania na podstawie art. 108 ust. 1 pkt 1 Ustawy Prawo Zamówień Publicznych, którego skazano prawomocnie za przestępstwo wskazane w art. 258 Kodeksu karnego",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prawo Zamówień Publicznych, którego skazano prawomocnie za przestępstwo o charakterze terrorystycznym, o którym mowa w art. 115 § 20 Kodeksu karnego, lub mające na celu popełnienie tego przestępstwa lub odpowiedni czyn",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Plik zawiera ogłoszenie o zamówieniu z TED (Dz.U. S), a nie dokument z klas odwołanie, pełnomocnictwo lub przelew.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Ogłoszenie zawiera słownictwo z zamówień publicznych (Pzp, wykluczenie, wykonawca, zamawiający), przez co może zostać błędnie uznane za odwołanie.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2976334,
+  "tury": 5
+ },
+ "czas_s": 17.4
+}

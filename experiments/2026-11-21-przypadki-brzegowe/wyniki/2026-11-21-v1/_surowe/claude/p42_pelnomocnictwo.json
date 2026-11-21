@@ -1,0 +1,39 @@
+{
+ "id": "p42_pelnomocnictwo",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Tytuł „PEŁNOMOCNICTWO”. Nordelia Facility Services S.A. udziela pełnomocnictwa r. pr. i adwokatowi do reprezentowania jej w postępowaniu o udzielenie zamówienia publicznego i przed KIO, w tym do wniesienia odwołania.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Kraków, 30 czerwca 2026 r. PEŁNOMOCNICTWO Nordelia Facility Services S.A., ul. Wielicka 250, 30-663 Kraków, KRS 9993307745, NIP 9995519382, REGON 999284670 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane poniżej",
+    "problemy": [
+     {
+      "kod": "inne",
+      "opis": "Brak podpisów: w miejscach na podpis mocodawcy i obu pełnomocników są tylko wykropkowane linie. Nie ma podpisu własnoręcznego ani informacji o podpisie elektronicznym.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.24547439999999998,
+  "tury": 3
+ },
+ "czas_s": 10.3
+}

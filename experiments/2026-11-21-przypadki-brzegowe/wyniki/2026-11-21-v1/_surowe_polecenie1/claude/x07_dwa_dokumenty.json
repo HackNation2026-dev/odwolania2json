@@ -1,0 +1,63 @@
+{
+ "id": "x07_dwa_dokumenty",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "niepewne",
+  "uzasadnienie_klasy": "Plik zawiera dwa różne dokumenty. Strona 1 to pełnomocnictwo Belmoria Rozwiązania S.A. dla r. pr. A. Marciniak i J. Zajkowski. Strona 2 to potwierdzenie przelewu („Polecenie przelewu”, Ekobank, 200,00 PLN). Jedna etykieta nie opisuje całego pliku. Przed klasyfikacją plik trzeba podzielić: s. 1 → pelnomocnictwo, s. 2 → przelew. Przelew dotyczy jednak opłaty skarbowej od pełnomocnictwa, a nie wpisu od odwołania.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nŁódź, 1 kwietnia 2026\n§ 1. Mocodawca\nMocodawcą jest Belmoria Rozwiązania S.A., ul. Zaczarowana 78, 90-803 Łódź, KRS 9999405188, NIP 9999284065, REGON 999642785.\n§ 2. Pełnomocnik\nMocodawca ustanawiam",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu\nAurelink Automatyka S.A.",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu (płatnik, rachunki, kwota, data, opis, nr ref.) są w polach-ramkach w dwóch kolumnach. Odczyt liniowy może pomieszać etykiety z wartościami.",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "Przelew nie wygląda na wpis od odwołania. Odbiorcą jest Aurelink Automatyka S.A. (zamawiający z pełnomocnictwa), a nie UZP. W tytule jest „opłata skarbowa od pełnomocnictwa”. Data transakcji 2026-03-21 jest wcześniejsza niż data pełnomocnictwa (1 kwietnia 2026).",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "wiele_dokumentow",
+    "opis": "W jednym pliku są dwa dokumenty różnych klas: s. 1 to pełnomocnictwo, s. 2 to potwierdzenie przelewu. Przed klasyfikacją i ekstrakcją plik trzeba podzielić na strony.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "inne",
+    "opis": "Przelew (s. 2) dotyczy opłaty skarbowej od pełnomocnictwa i trafia na rachunek zamawiającego, a nie UZP. Może zostać błędnie uznany za wpis od odwołania.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2879762,
+  "tury": 4
+ },
+ "czas_s": 19.7
+}

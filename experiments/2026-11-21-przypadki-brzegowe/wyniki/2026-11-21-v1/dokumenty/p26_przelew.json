@@ -1,0 +1,31 @@
+{
+ "id": "p26_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_26/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_26",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 63908,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p26_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 703,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Bank Wielkopolski i Pomorza S.A. ul. Bankowa 75, 00-617 Warszawa Centrum Obsługi Klienta Warszawa, 8 czerwca 2026 Uldaris Wyposażenie sp. j. ul. Zaczarowana 78, 50-474 Wrocław Dotyczy: potwierdzenie operacji bankowej Bank potwierdza, że w dniu 07.06.2026 z rachunku nr PL00880509913633331687549357, prowadzonego dla Uldaris Wyposażenie sp. j., wykonano przelew krajowy w kwocie 34,00 na rachunek nr P"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

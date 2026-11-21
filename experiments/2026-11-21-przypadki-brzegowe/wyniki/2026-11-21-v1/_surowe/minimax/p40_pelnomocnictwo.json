@@ -1,0 +1,40 @@
+{
+ "id": "p40_pelnomocnictwo",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument ma tytuł „PEŁNOMOCNICTWO” i określa osoby upoważnione do reprezentowania Mocodawcy w postępowaniu przed Krajową Izbą Odwoławczą.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Poznań, 15 października 2026 r.\n\nPEŁNOMOCNICTWO\n\nValtrix Systemy Informatyczne sp. z o.o., ul. Grunwaldzka 112, 60-307 Poznań, KRS 9998213547, NIP\n9993380162, REGON 999517204 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane poniżej,",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2953,
+   "output_tokens": 462,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 234
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 10.3
+}

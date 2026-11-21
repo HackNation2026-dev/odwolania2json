@@ -1,0 +1,62 @@
+{
+ "id": "x08_pieczatka",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument jest potwierdzeniem realizacji polecenia przelewu bankowego i wskazuje płatnika, odbiorcę, kwotę 200,00 PLN, datę transakcji oraz numer referencyjny.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu - Ekobank\nPłatnik\nBelmor... Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu\nAurelink Automatyka S.A.\nul. Rybacka 79, 50-580 Wrocław\nRachunek odbiorcy\nPL68438223049992295262834736\nKwota operacji\n200,00 PLN\nData transakcji\n2026-03-21\nOpis\nopłata skarbowa od pełnomocnictwa dla Aleksandra Marciniak i Jolanty Zajkowski w postępowaniu przed KIO w. sprawie",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona ma wygląd zeskanowanego wydruku: widoczny jest drobny szum i liczne ciemne punkty w tle.",
+      "waga": "niska"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Czerwona pieczątka „ZAPŁACONO” nachodzi na opis transakcji i numer referencyjny; niebieski podpis/adnotacja przecina tekst u dołu strony.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "skan",
+    "opis": "Jedyny dokument w pliku jest zeskanowanym potwierdzeniem przelewu, bez możliwego rozdzielenia treści cyfrowej od obrazu strony.",
+    "waga": "niska"
+   },
+   {
+    "kod": "pieczatka_podpis",
+    "opis": "Pieczątka i podpis/adnotacja częściowo nakładają się na istotne pola dokumentu.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2755,
+   "output_tokens": 1063,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 197,
+   "output_tokens_details": {
+    "thinking_tokens": 517
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 4.9
+}

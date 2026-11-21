@@ -1,0 +1,31 @@
+{
+ "id": "p38_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_38/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_38",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 79960,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p38_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 951,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "PEŁNOMOCNICTWO PROCESOWE Mocodawca Granitix Usługi S.A. ul. Różana 6, 90-149 Łódź Dane rejestrowe KRS 9992992231, NIP 9993373158, REGON 999402472 Pełnomocnicy adw. Oliwia Wierzbicka, nr wpisu WA 41992 adw. Jolanta Jabłończyk, nr wpisu WA 23328 Zamawiający Umbria Automatyka sp. z o.o. Postępowanie Dostawa wyposażenia pomieszczeń biurowych oraz elementów wyposażenia architektonicznego nr SWZ.702.202"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

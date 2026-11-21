@@ -1,0 +1,49 @@
+{
+ "id": "x05_ksero",
+ "model": "codex",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument zatytułowany „PEŁNOMOCNICTWO” upoważnia wskazanych adwokatów do reprezentowania wykonawcy przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nMocodawca\nHartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\nDane rejestrowe\nKRS 9999669444, NIP 9990678035, REGON 999114017\nPełnomocnicy\nadw. Bartosz Szymański, nr wpisu WA 33513",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona ma postać obrazu skanu.",
+      "waga": "niska"
+     },
+     {
+      "kod": "przekrzywienie",
+      "opis": "Treść i linie tabeli są lekko przechylone zgodnie z ruchem wskazówek zegara.",
+      "waga": "niska"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie widoczny jest ziarnisty szum i szare tło typowe dla kserokopii; drobny tekst jest lekko rozmyty.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane zapisano w dwóch kolumnach tabeli: etykiety po lewej, wartości po prawej.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "waga\": \"srednia\"\n        },\n        {\n          \"kod\": \"tabela\",\n          \"opis\": \"Dane zapisano w dwóch kolumnach tabeli: etykiety po lewej, wartości po prawej.\",\n          \"waga\": \"niska\"\n        }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": []\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n14 633\n"
+ },
+ "czas_s": 16.0
+}

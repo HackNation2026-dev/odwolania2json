@@ -1,0 +1,64 @@
+{
+ "id": "p41_odwolanie",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument to odwołanie do Krajowej Izby Odwoławczej (adresat: KIO, ul. Postępu 17A) z zarzutami naruszenia ustawy Prawo zamówień publicznych, wraz z uzasadnieniem – typowa struktura odwołania do KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Krajowa Izba Odwoławcza\nul. Postepu 17A\n02-676 Warszawa\n\nZamawiający:\nGmina Brzozowo Pomorskie\nul. Ratuszowa 1, 86-170 Brzozowo Pomorskie\nNIP: 9995062817, REGON: 999871350\nprzetargi@brzozowo.example\n\nOdwołujący: Konsorcjum wykonawców wspólnie ubiegających się o udzielenie zamówienia w składzie:",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr IR.271.14.2026\n\n2) wyborze jako najkorzystniejszej oferty wykonawcy BudMax Kujawy S.A. z siedzibą we Włocławku;\n3) zaniechaniu wezwania Odwołującego do złożenia dodatkowych wyjaśnień w zakresie ceny, pomimo że pierwsze wyjaśnienia z dnia 23 lipca 2026 r. zostały złożone w terminie;",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr IR.271.14.2026\n\n7) wyciągu z Krajowego Rejestru Sądowego oraz Centralnej Ewidencji i Informacji o Działalności Gospodarczej – na okoliczność statusu wykonawców;\n\nUZASADNIENIE\n\nI. Stan faktyczny\nGmina Brzozowo Pomorskie prowadzi postępowanie na budowę sali gimnastycznej. Postępowanie jest współfinansowane ze środków Rządowego Funduszu Polski Ład. Najważniejsze zdarzenia w postępowaniu:",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dwie tabele na stronie (zestawienie zdarzeń z datami oraz zestawienie złożonych ofert z podziałem na kolumny: cena brutto, pkt cena, pkt pozost., razem) – tekst w komórkach łamany, trudny do odczytu liniowego.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 5371,
+   "output_tokens": 1283,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 128,
+   "output_tokens_details": {
+    "thinking_tokens": 479
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 11.0
+}

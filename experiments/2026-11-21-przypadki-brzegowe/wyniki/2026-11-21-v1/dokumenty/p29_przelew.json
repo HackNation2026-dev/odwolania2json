@@ -1,0 +1,31 @@
+{
+ "id": "p29_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_29/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_29",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 73807,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p29_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 532,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POLECENIE PRZELEWU Potwierdzenie wykonania przelewu · Bank Spółdzielczy Ziemi Kujawskiej Dane nadawcy Rachunek obciążany Corvella Serwis sp. k. PL78686803479783141916212008 ul. Różana 7, 30-878 Kraków Odbiorca Rachunek beneficjenta Rubiconis Wyposażenie sp. z o.o. PL04079856982163338024690274 ul. Huta 11, 35-995 Rzeszów Kwota operacji Data realizacji 200,00 zł 25.07.2026 Tytuł opłata skarbowa od p"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

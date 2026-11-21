@@ -1,0 +1,67 @@
+{
+ "id": "n_2025_ojs107_00364525_pl_ts_1",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "To ogłoszenie o zamówieniu z TED (364525-2025, OJ S 107/2025, procedura konkurencyjna, nabywca: Narodowy Instytut Kardiologii). Nie jest odwołaniem, pełnomocnictwem ani potwierdzeniem przelewu. Należy do materiałów sprawy, ale ma inną klasę.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "364525-2025 - Procedura konkurencyjna See the notice on TED website Polska – Serwery – Dostawa, wdrożenie, skonfigurowanie serwerowego środowiska teleinformatycznego wraz z serwisem i gwarancją OJ S 107/2025 05/06/2025 Ogłoszenie o zamówieniu lub ogłoszenie o koncesji – tryb standardowy",
+    "problemy": [
+     {
+      "kod": "podobny_do_klasy",
+      "opis": "Strona tytułowa ogłoszenia o zamówieniu TED. Zawiera nazwę zamawiającego, identyfikatory postępowania i kody CPV, które pokrywają się z danymi wyciąganymi z odwołania, więc łatwo pomylić ten dokument z odwołaniem.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Udział w organizacji przestępczej: Wykonawca zostanie wykluczony z postępowania na podstawie art. 108 ust. 1 pkt 1 Ustawy Prawo Zamówień Publicznych, którego skazano prawomocnie za przestępstwo wskazane w art. 258 Kodeksu karnego lub odpowiedni",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prawo Zamówień Publicznych, którego skazano prawomocnie za przestępstwo o charakterze terrorystycznym, o którym mowa w art. 115 § 20 Kodeksu karnego, lub mające na celu popełnienie tego przestępstwa lub odpowiedni czyn",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Cały plik to ogłoszenie o zamówieniu z TED (Dz.U. S), czyli dokument spoza klas odwołanie, pełnomocnictwo i przelew.",
+    "waga": "niska"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Ogłoszenie zawiera słownictwo prawne Pzp (art. 108, podstawy wykluczenia) i dane postępowania: zamawiającego, numer ZP.039.2025 i CPV. Klasyfikator może przez to uznać je za odwołanie albo wyciągnąć z niego dane do pól odwołania.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2892748,
+  "tury": 5
+ },
+ "czas_s": 18.2
+}

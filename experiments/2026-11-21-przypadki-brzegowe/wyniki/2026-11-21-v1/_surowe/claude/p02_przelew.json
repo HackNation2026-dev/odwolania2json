@@ -1,0 +1,44 @@
+{
+ "id": "p02_przelew",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument „Potwierdzenie przelewu krajowego” z banku Kredyt Północny: płatnik, beneficjent, kwota 50,00 zł, tytuł „opłata skarbowa od pełnomocnictwa (...) w postępowaniu przed KIO w przetargu ZP.431.2026”. Jest to potwierdzenie przelewu opłaty skarbowej od pełnomocnictwa związanego ze sprawą.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\nKredyt Północny - wydrukowano 26 sierpnia 2026\nPłatnik\nHartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\n53678424593392529814420143\nBeneficjent\nEurosept Infrastruktura S.A.\nul. Huta 90, 20-829 Lublin",
+    "problemy": [
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Dane płatnika i beneficjenta w dwóch kolumnach obok siebie (nagłówki „Płatnik” i „Beneficjent” na szarym tle); odczyt liniowy może wymieszać adresy i numery rachunków.",
+      "waga": "niska"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Szczegóły operacji (kwota, data, numer referencyjny, tytuł, typ, kanał) w układzie etykieta–wartość w dwóch kolumnach; tytuł przelewu zawija się na dwie linie.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.259253,
+  "tury": 3
+ },
+ "czas_s": 14.4
+}

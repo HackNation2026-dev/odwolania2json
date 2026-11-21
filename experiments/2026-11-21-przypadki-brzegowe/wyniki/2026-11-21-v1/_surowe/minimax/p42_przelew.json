@@ -1,0 +1,52 @@
+{
+ "id": "p42_przelew",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument jest potwierdzeniem wykonania przelewu bankowego na kwotę 34,00 PLN, z podanymi zleceniodawcą, odbiorcą, rachunkami, datą operacji i statusem zrealizowania.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Małopolski S.A. - wygenerowano 01.07.2026\n\nZleceniodawca Nordelia Facility Services S.A.\nul. Wielicka 250, 30-663 Kraków\nRachunek zleceniodawcy PL55 9947 7458 7693 6814 0572 7867",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane dokumentu są zestawione w czytelnym, dwukolumnowym układzie tabelarycznym: nazwa pola po lewej, wartość po prawej.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "tabela",
+    "opis": "Cały formularz wykorzystuje dwukolumnowy układ tabelaryczny do prezentacji danych przelewu.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2952,
+   "output_tokens": 1757,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 1366
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 9.4
+}

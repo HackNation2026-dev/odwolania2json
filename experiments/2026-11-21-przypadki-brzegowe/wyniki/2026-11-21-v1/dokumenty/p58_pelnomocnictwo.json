@@ -1,0 +1,31 @@
+{
+ "id": "p58_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_58/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_58",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 85636,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p58_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1316,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Kielce, 11 października 2026 r. PEŁNOMOCNICTWO Imperon Serwis sp. z o.o., ul. Lipowa 104, 25-239 Kielce, KRS 9995522683, NIP 9993124780, REGON 999513156 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane poniżej, udziela pełnomocnictwa: adw. Grzegorz Wiśniewski (nr wpisu na listę: PO-2941), adw. Leszek Wieczorek (nr wpisu na listę: GD-2492). Pełnomocnictwo udzielone zostaje do reprezentowa"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

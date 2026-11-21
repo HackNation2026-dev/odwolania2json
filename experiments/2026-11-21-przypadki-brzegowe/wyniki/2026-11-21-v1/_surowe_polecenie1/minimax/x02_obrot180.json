@@ -1,0 +1,71 @@
+{
+ "id": "x02_obrot180",
+ "model": "minimax",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument nosi tytuł „POTWIERDZENIE WYKONANIA PRZELEWU” i zawiera dane zleceniodawcy, odbiorcy, kwotę, datę operacji oraz status „ZREALIZOWANO”.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 180,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Bank Polskich Kredytów S.A. - wg dnia 16.10.2026\nPOTWIERDZENIE WYKONANIA PRZELEWU\nZleceniodawca:\nVoltex Systemy Informacyjne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań\nRachunek zleceniodawcy",
+    "problemy": [
+     {
+      "kod": "obrot",
+      "opis": "Cała treść strony jest obrócona o 180 stopni względem normalnej orientacji.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie widoczne są liczne drobne czarne punkty i szum poprawiający skan, choć tekst pozostaje czytelny.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu są rozmieszczone w uporządkowanych wierszach tabeli z układem etykieta–wartość.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "obrot",
+    "opis": "Jednostronicowy dokument jest całkowicie obrócony o 180 stopni.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "niska_jakosc",
+    "opis": "Skan zawiera rozproszony szum i liczne drobne zaburzenia na tle.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "tabela",
+    "opis": "Treść stanowi formularz z danymi w wierszach tabeli.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2797,
+   "output_tokens": 2848,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 128,
+   "output_tokens_details": {
+    "thinking_tokens": 2374
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 36.0
+}

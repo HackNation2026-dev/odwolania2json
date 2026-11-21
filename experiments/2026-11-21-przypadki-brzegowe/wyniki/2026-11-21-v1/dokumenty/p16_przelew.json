@@ -1,0 +1,31 @@
+{
+ "id": "p16_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_16/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_16",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 65726,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p16_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 607,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Potwierdzenie przelewu krajowego Bank Wielkopolski i Pomorza · wydrukowano 12 sierpnia 2026 Dane nadawcy Odbiorca Umbria Serwis S.A. Ypsilon Usługi sp. k. ul. Wiśniowa 86, 00-338 Warszawa ul. Iglasta 4, 50-341 Wrocław 33 8805 2517 7402 2639 8926 9409 03 7129 1844 2654 8930 6542 7654 Kwota przelewu 200,00 PLN Data realizacji 12 sierpnia 2026 Identyfikator operacji CEN2608223176575 Tytułem opłata sk"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

@@ -1,0 +1,52 @@
+{
+ "id": "p41_odwolanie",
+ "model": "codex",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo skierowane do Krajowej Izby Odwoławczej, zatytułowane „ODWOŁANIE”, zawiera zarzuty wobec czynności Zamawiającego, żądania i uzasadnienie.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Krajowa Izba Odwoławcza\nul. Postępu 17A\n02-676 Warszawa\nZamawiający:\nGmina Brzozowo Pomorskie\nul. Ratuszowa 1, 86-170 Brzozowo Pomorskie\nNIP: 9995062817, REGON: 999871350\nprzetargi@brzozowo.example",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr IR.271.14.2026\n2) wyborze jako najkorzystniejszej oferty wykonawcy BudMax Kujawy S.A. z siedzibą we\nWłocławku;\n3) zaniechaniu wezwania Odwołującego do złożenia dodatkowych wyjaśnień",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr IR.271.14.2026\n7) wyciągu z Krajowego Rejestru Sądowego oraz Centralnej Ewidencji i Informacji o\nDziałalności Gospodarczej – na okoliczność statusu wykonawców;\nUZASADNIENIE",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dwie tabele: chronologia postępowania oraz zestawienie ofert. W zestawieniu ofert tekst w komórkach zawija się do kilku wierszy, co utrudnia odczyt liniowy.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "\": \"Dwie tabele: chronologia postępowania oraz zestawienie ofert. W zestawieniu ofert tekst w komórkach zawija się do kilku wierszy, co utrudnia odczyt liniowy.\",\n          \"waga\": \"srednia\"\n        }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": []\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n30 805\n"
+ },
+ "czas_s": 18.9
+}

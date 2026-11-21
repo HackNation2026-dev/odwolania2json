@@ -1,0 +1,45 @@
+{
+ "id": "x04_niska_jakosc",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Widoczny nagłówek „Potwierdzenie przelewu krajowego” oraz pola płatnika, beneficjenta i szczegółów przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "slaba",
+    "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\n[nieczytelne]\nPłatnik\n[nieczytelne]\nBeneficjent\n[nieczytelne]\nKwota operacji\n[nieczytelne]\nData operacji\n[nieczytelne]\nNumer referencyjny\n[nieczytelne]",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona ma wygląd skanu; obecności ukrytej warstwy OCR nie można ustalić z obrazu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Silne rozmycie, słaby kontrast i liczne drobne plamy na całej stronie utrudniają odczyt danych przelewu.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Dane płatnika i beneficjenta umieszczono obok siebie w dwóch kolumnach.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "t i liczne drobne plamy na całej stronie utrudniają odczyt danych przelewu.\",\"waga\":\"wysoka\"},{\"kod\":\"uklad_wielokolumnowy\",\"opis\":\"Dane płatnika i beneficjenta umieszczono obok siebie w dwóch kolumnach.\",\"waga\":\"niska\"}]}],\"problemy_dokumentu\":[]}\nhook: Stop\nhook: Stop Completed\ntokens used\n14 625\n"
+ },
+ "czas_s": 15.7
+}

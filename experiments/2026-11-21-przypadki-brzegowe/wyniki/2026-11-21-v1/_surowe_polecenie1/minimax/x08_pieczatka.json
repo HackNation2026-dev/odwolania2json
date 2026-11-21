@@ -1,0 +1,71 @@
+{
+ "id": "x08_pieczatka",
+ "model": "minimax",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument ma tytuł „POLECENIE PRZELEWU” i zawiera potwierdzenie realizacji przelewu wraz z danymi płatnika, odbiorcy, kwoty oraz daty transakcji.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu - Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obliczany\nPL05470680287581539721455024\nAdresat przelewu\nAurelink Automatyka S.A.\nul. Rybacka 79, 50-580 Wrocław",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona ma wygląd skanu z licznymi drobnymi plamkami i szumem w tle.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Peryferyczny szum i plamki na tle mogą pogarszać wyniki OCR, choć główny tekst pozostaje czytelny.",
+      "waga": "niska"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Czerwona pieczątka „ZAPŁACONO” nachodzi na opis transakcji i pole numeru referencyjnego; w dolnej części widoczna jest również niebieska kreska podpisu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane płatnika, odbiorcy, kwoty i transakcji są rozmieszczone w ramkowanych polach układu tabelarycznego.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "skan",
+    "opis": "Jednostronicowy dokument ma postać skanu z widocznym szumem tła.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "pieczatka_podpis",
+    "opis": "Czerwona pieczątka „ZAPŁACONO” częściowo zasłania opis oraz numer referencyjny.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2728,
+   "output_tokens": 1997,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 197,
+   "output_tokens_details": {
+    "thinking_tokens": 1337
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 12.2
+}

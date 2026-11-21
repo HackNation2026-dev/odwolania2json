@@ -1,0 +1,31 @@
+{
+ "id": "p09_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_09/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_09",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 80301,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p09_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 619,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Potwierdzenie realizacji polecenia przelewu Bank Zachodni Handlowy · wydrukowano 09-10-2026 Zleceniodawca Beneficjent Iberis Sieci sp. z o.o. Quantis Sieci sp. j. ul. Ambrożowa 85, 30-405 Kraków ul. Błotna 67, 30-225 Kraków 57799324924791372088471594 12640046358854377576341364 Kwota operacji 100,00 PLN Data operacji 07-10-2026 Numer transakcji CEN2610289710500 Tytuł opłata skarbowa od pełnomocnict"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

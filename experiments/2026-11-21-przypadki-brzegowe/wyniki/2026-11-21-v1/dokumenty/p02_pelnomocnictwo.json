@@ -1,0 +1,157 @@
+{
+ "id": "p02_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_02/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_02",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 78480,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p02_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 696,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "PEŁNOMOCNICTWO Mocodawca Hartica Serwis S.A. ul. Akacjowa 54, 80-122 Gdańsk Dane rejestrowe KRS 9999669444, NIP 9990678035, REGON 999114017 Pełnomocnicy adw. Bartosz Szymanski, nr wpisu WA 33513 adw. Cezary Wierzbicki, nr wpisu WA 16243 Zamawiający Eurosept Infrastruktura S.A. Postępowanie Dostawa materiałów eksploatacyjnych do urządzeń biurowych nr ZP.431.2026 Zakres Mocodawca upoważniam wskazany"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 12.1,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "pelnomocnictwo",
+    "uzasadnienie_klasy": "Dokument zatytułowany „PEŁNOMOCNICTWO” upoważnia wskazanych adwokatów do reprezentowania wykonawcy przed KIO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nMocodawca\nHartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\nDane rejestrowe\nKRS 9999669444, NIP 9990678035, REGON 999114017\nPełnomocnicy\nadw. Bartosz Szymanski, nr wpisu WA 33513",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Dane pełnomocnictwa w tabeli: etykiety po lewej, wartości po prawej; część wartości zajmuje kilka wierszy.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 13.0,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "pelnomocnictwo",
+    "uzasadnienie_klasy": "Plik ma nagłówek „PEŁNOMOCNICTWO”. Wskazuje mocodawcę (wykonawcę), pełnomocników (adwokatów) i zakres umocowania: reprezentowanie przed Krajową Izbą Odwoławczą.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "PEŁNOMOCNICTWO Mocodawca Hartica Serwis S.A. ul. Akacjowa 54, 80-122 Gdańsk Dane rejestrowe KRS 9999669444, NIP 9990678035, REGON 999114017 Pełnomocnicy adw. Bartosz Szymanski, nr wpisu WA 33513 adw. Cezary Wierzbicki",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Dane pełnomocnictwa są w dwukolumnowej tabeli: etykieta pól po lewej, wartość po prawej. Wiersze to Mocodawca, Dane rejestrowe, Pełnomocnicy, Zamawiający, Postępowanie, Zakres i Data.",
+        "waga": "niska"
+       },
+       {
+        "kod": "inne",
+        "opis": "Miejsce na podpis (wykropkowana linia nad „Aleksandra Nowakowicz, Prokurent”) jest puste. Na stronie nie widać podpisu.",
+        "waga": "srednia"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 5.8,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "pelnomocnictwo",
+    "uzasadnienie_klasy": "Dokument nosi tytuł „PEŁNOMOCNICTWO” i wskazuje pełnomocników powołanych do reprezentowania wykonawcy Hartica Serwis S.A. w postępowaniu odwoławczym.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nMocodawca Hartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\nDane rejestrowe KRS 9999669444, NIP 9990678035, REGON 999114017",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Treść zorganizowana jest w dwukolumnową tabelę z etykietami po lewej i wartościami po prawej; tekst pozostaje czytelny.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

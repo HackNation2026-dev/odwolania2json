@@ -1,0 +1,35 @@
+{
+ "id": "n_16_komisja_ds_regulacji_wynagrodzen",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Pismo ogólne rektora w sprawie powołania zespołu ds. regulacji wynagrodzeń pracowników uczelni.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Pismo ogólne Nr 16/2024/2025\nRektora Uniwersytetu Kazimierza Wielkiego\nz dnia 4 marca 2025 r.\nw sprawie powołania Zespołu ds. Regulacji Wynagrodzeń Pracowników Uniwersytetu\nKazimierza Wielkiego",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Pismo dotyczące organizacji zespołu ds. wynagrodzeń uczelni, spoza klas odwołanie, pełnomocnictwo i przelew.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "dzeń Pracowników Uniwersytetu\\nKazimierza Wielkiego\",\"problemy\":[]}],\"problemy_dokumentu\":[{\"kod\":\"dokument_obcy\",\"opis\":\"Pismo dotyczące organizacji zespołu ds. wynagrodzeń uczelni, spoza klas odwołanie, pełnomocnictwo i przelew.\",\"waga\":\"wysoka\"}]}\nhook: Stop\nhook: Stop Completed\ntokens used\n4169\n"
+ },
+ "czas_s": 11.1
+}

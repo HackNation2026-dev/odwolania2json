@@ -1,0 +1,60 @@
+{
+ "id": "x07_dwa_dokumenty",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Pierwsza strona zawiera pełnomocnictwo do reprezentowania wykonawcy. Druga strona jest odrębnym potwierdzeniem przelewu, dlatego plik obejmuje dwa różne dokumenty.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nŁódź, 1 kwietnia 2026\n\n§ 1. Mocodawca\nMocodawca jest Belmoria Rozwiązania S.A., ul. Zaczarowana 78, 90-803 Łódź, KRS 9999405188, NIP 9999284065, REGON",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu • Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obliczany\nPL05470680287581539721455024\nAdresat przelewu",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu są rozmieszczone w polach tabeli; zachowanie kolejności odczytu wymaga odczytu logicznego, a nie wyłącznie liniowego.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "wiele_dokumentow",
+    "opis": "Plik łączy dwa odrębne dokumenty: pełnomocnictwo na stronie 1 oraz potwierdzenie przelewu na stronie 2.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2912,
+   "output_tokens": 1996,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 1280,
+   "output_tokens_details": {
+    "thinking_tokens": 1544
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 10.3
+}

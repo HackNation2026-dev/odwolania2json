@@ -1,0 +1,53 @@
+{
+ "id": "p42_odwolanie",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo skierowane do Prezesa Krajowej Izby Odwoławczej, zatytułowane „ODWOŁANIE”, zawiera zarzuty wobec czynności Zamawiającego, żądania oraz uzasadnienie.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Kraków, 02.07.2026\nPrezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nNordelia Facility Services S.A.\nul. Wielicka 250, 30-663 Kraków\nKRS: 9993307745, NIP: 9995519382, REGON: 999284670",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr MCLM/ZP/07/2026\n1) ustaleniu treści Specyfikacji Warunków Zamówienia, opublikowanej wraz z ogłoszeniem o zamówieniu w dniu 23 czerwca 2026 r., w zakresie warunków udziału w postępowaniu,",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr MCLM/ZP/07/2026\n6) pisma Zamawiającego z dnia 30 czerwca 2026 r. – na okoliczność stanowiska Zamawiającego co do interpretacji postanowień SWZ;\n7) wyciągu z Krajowego Rejestru Sądowego",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "W części „I. Stan faktyczny” znajduje się dwukolumnowa tabela chronologii postępowania z datami i opisami zdarzeń.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "{\n          \"kod\": \"tabela\",\n          \"opis\": \"W części „I. Stan faktyczny” znajduje się dwukolumnowa tabela chronologii postępowania z datami i opisami zdarzeń.\",\n          \"waga\": \"niska\"\n        }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": []\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n17 193\n"
+ },
+ "czas_s": 17.4
+}

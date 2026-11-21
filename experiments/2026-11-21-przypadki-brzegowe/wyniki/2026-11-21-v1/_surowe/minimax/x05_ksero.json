@@ -1,0 +1,61 @@
+{
+ "id": "x05_ksero",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument jest formularzem pełnomocnictwa upoważniającym adwokatów do reprezentowania mocodawcy w postępowaniu przed Krajową Izbą Odwoławczą.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\n\nMocodawca Hartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\nDane rejestrowe KRS 9999669444, NIP 9990678035, REGON 999114017\nPełnomocnicy adw. Bartosz Szymański, nr wpisu WA 33513",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona jest obrazem fizycznego dokumentu z widocznym tłem i fakturą papieru.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Widoczny ziarnisty szum, nierówna jakość tła i słaby kontrast tekstu, choć treść pozostaje czytelna.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "przekrzywienie",
+      "opis": "Zespółienie strony jest nieznacznie przekrzywiony względem prostych krawędzi obrazu.",
+      "waga": "niska"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Treść formularza jest zorganizowana w wierszach z etykietami w lewej kolumnie i wartościami w prawej.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2952,
+   "output_tokens": 1354,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 942
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 7.4
+}

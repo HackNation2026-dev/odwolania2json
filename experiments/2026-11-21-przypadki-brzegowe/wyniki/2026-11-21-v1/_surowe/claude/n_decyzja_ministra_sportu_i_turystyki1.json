@@ -1,0 +1,65 @@
+{
+ "id": "n_decyzja_ministra_sportu_i_turystyki1",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Decyzja administracyjna Ministra Sportu i Turystyki z 2011 r. zatwierdzająca statut Polskiego Związku Golfa. To nie jest odwołanie do KIO, pełnomocnictwo ani przelew. W pouczeniu pada słowo „odwołanie”, ale w zdaniu, że od decyzji odwołanie nie przysługuje.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "MINISTER SPORTU I TURYSTYKI Joanna Mucha Warszawa, 14 grudnia 2011 r. DP-4071-32883/2011/WCz -23855 DECYZJA Nr 14/DP/2011 Na podstawie art. 21 ust. 1 ustawy z dnia 25 czerwca 2010 r. o sporcie (Dz. U. Nr 127,",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona jest skanem dokumentu papierowego. Widać na nim szare krawędzie i drobne zabrudzenia.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "odreczne",
+      "opis": "Dzień daty („14”), końcówka sygnatury („-23855”) i numer decyzji („14/DP/2011”) są dopisane ręcznie.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Na dole strony są czerwona okrągła pieczęć ministra i odręczny podpis. Podpis nachodzi na nadrukowane imię i nazwisko „Joanna Mucha”.",
+      "waga": "niska"
+     },
+     {
+      "kod": "dokument_obcy",
+      "opis": "Decyzja administracyjna ministra nie należy do żadnej z klas: odwołanie, pełnomocnictwo, przelew.",
+      "waga": "niska"
+     },
+     {
+      "kod": "podobny_do_klasy",
+      "opis": "Urzędowe pismo z pouczeniem o środkach odwoławczych zawiera słowo „odwołanie”, więc może zostać pomylone z klasą odwołanie.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Plik zawiera decyzję Ministra Sportu i Turystyki zatwierdzającą statut PZG. Nie jest to dokument sprawy odwoławczej do KIO.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2542164,
+  "tury": 3
+ },
+ "czas_s": 13.7
+}

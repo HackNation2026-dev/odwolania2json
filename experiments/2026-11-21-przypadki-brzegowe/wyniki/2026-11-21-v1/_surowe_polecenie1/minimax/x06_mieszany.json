@@ -1,0 +1,70 @@
+{
+ "id": "x06_mieszany",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument to odwołanie od wykonawcy (Belmoria Rozwiązania S.A.) do Prezesa Krajowej Izby Odwoławczej w sprawie postępowania o udzielenie zamówienia, zawierające zarzuty naruszenia procedury i wnioski o oddalenie odwołania.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\n\nOdwołujący:\n\nBelmoria Rozwiązania S.A.\nul. Zaccarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "slaba",
+    "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w\nsposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia\nodwołania.",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona 2 jest obrazem (skan/zdjęcie), brak cyfrowej warstwy tekstu — widoczny wzór plamek i artefaktów tła.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Strona 2 ma silny szum/spepłki, ziarnistość tła i obniżony kontrast, co utrudnia rozpoznanie tekstu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "przekrzywienie",
+      "opis": "Tekst na stronie 2 jest lekko przekrzywiony względem pionowej osi strony (kilka stopni).",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_mieszany",
+    "opis": "Plik zawiera stronę 1 wygenerowaną cyfrowo (tekst) oraz stronę 2 jako skan z ukrytą warstwą graficzną.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 4077,
+   "output_tokens": 834,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 128,
+   "output_tokens_details": {
+    "thinking_tokens": 273
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 13.1
+}

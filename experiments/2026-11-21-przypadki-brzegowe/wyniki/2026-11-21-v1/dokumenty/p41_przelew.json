@@ -1,0 +1,157 @@
+{
+ "id": "p41_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_41/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_41",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 55856,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p41_przelew/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 705,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POTWIERDZENIE WYKONANIA PRZELEWU Kujawski Bank Spółdzielczy · wygenerowano 07.08.2026 Zleceniodawca Torvex Budownictwo sp. z o.o. ul. Przemysłowa 8, 87-100 Toruń Rachunek zleceniodawcy PL31305393376308813159845900 Odbiorca Gmina Brzozowo Pomorskie ul. Ratuszowa 1, 86-170 Brzozowo Pomorskie Rachunek odbiorcy PL51401314393770192584444867 Kwota 17,00 PLN Data operacji 6 sierpnia 2026 Tytuł przelewu o"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 11.7,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Potwierdzenie wykonanego przelewu 17,00 PLN tytułem opłaty skarbowej od pełnomocnictwa w postępowaniu przed KIO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nKujawski Bank Spółdzielczy · wygenerowano 07.08.2026\nZleceniodawca\nTorvex Budownictwo sp. z o.o.\nul. Przemysłowa 8, 87-100 Toruń\nRachunek zleceniodawcy",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Dane przelewu w tabeli: etykiety po lewej, wartości po prawej; tytuł przelewu zajmuje dwa wiersze.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 11.6,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Bank wygenerował „Potwierdzenie wykonania przelewu” z danymi zleceniodawcy, odbiorcy, kwotą 17,00 PLN i statusem ZREALIZOWANO. Tytuł przelewu wskazuje opłatę skarbową od pełnomocnictwa w postępowaniu przed KIO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nKujawski Bank Spółdzielczy · wygenerowano 07.08.2026\nZleceniodawca Torvex Budownictwo sp. z o.o.\nul. Przemysłowa 8, 87-100 Toruń\nRachunek zleceniodawcy PL31305393376308813159845900",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Dane przelewu są w dwukolumnowej tabeli etykieta–wartość z liniami poziomymi. Etykiety (np. Zleceniodawca, Kwota, Tytuł przelewu) trzeba powiązać z wartościami w prawej kolumnie.",
+        "waga": "niska"
+       },
+       {
+        "kod": "pusta_strona",
+        "opis": "Dolna połowa strony jest pusta: treść kończy się na mniej więcej 45% wysokości. Strona jako całość nie jest pusta.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 4.7,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Dokument jest potwierdzeniem wykonania przelewu bankowego na rzecz Gminy Brzozowo Pomorskie, zawiera numer referencyjny, datę operacji, kwotę oraz status zrealizowania.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nKujawski Bank Spółdzielczy - wygenerowano 07.08.2026\nZleceniodawca Torvex Budownictwo sp. z o.o.\nul. Przemysłowa 8, 87-100 Toruń\nRachunek zleceniodawcy PL3130539337630883159845900\nOdbiorca Gmina Brzozowo Pomorskie\nul. Ratuszowa 1, 86-170 Brzozowo Pomorskie\nRachunek odbiorcy PL5140131439377019258444867\nKwota 17,00 PLN",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Dane dokumentu są ułożone w dwukolumnową tabelę z poziomymi liniami rozdzielającymi wiersze.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.991
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "id": "x04_niska_jakosc",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument jest potwierdzeniem przelewu bankowego zawierającym dane nadawcy i odbiorcy oraz kwotę, datę, numer referencyjny i tytuł przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "slaba",
+    "transkrypcja_poczatku": "Potwierdzenie przelewu bankowego\nNadawca\nOdbiorca\nKwota przelewu\n50,00 zł\nData przelewu\n22 sierpnia 2024\nNumer referencyjny\nTytuł przelewu",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona wygląda jak obraz zeskanowanego dokumentu; widoczny jest silny szum punktowy i brak wiarygodnej cyfrowej warstwy tekstu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Tekst jest znacznie rozmytany i zakłócony licznymi plamkami, przez co wiele wartości, nazw i numerów jest słabo czytelnych.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu są rozmieszczone w tabeli z dwiema kolumnami nadawcy i odbiorcy oraz w wierszach formularza, co utrudnia odczyt liniowy.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "skan",
+    "opis": "Jednostronicowy plik zawiera obraz zeskanowanego potwierdzenia przelewu, bez czytelnej warstwy tekstowej.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "niska_jakosc",
+    "opis": "Cały dokument jest silnie rozmytany i zaśmiecony, co ogranicza odczytanie danych nadawcy, odbiorcy i numerów referencyjnych.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2824,
+   "output_tokens": 2466,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 128,
+   "output_tokens_details": {
+    "thinking_tokens": 1892
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 26.9
+}

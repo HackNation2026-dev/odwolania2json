@@ -1,0 +1,31 @@
+{
+ "id": "p24_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_24/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_24",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 60503,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p24_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 784,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "CREDIT MERIDIAN POTWIERDZENIE REALIZACJI POLECENIA PRZELEWU ------------------------------------------------- KWOTA OPERACJI ........................... 200,00 DATA OPERACJI ........................ 2026-04-18 GODZ. ..................................... 10:13 ------------------------------------------------- Z RACHUNKU PL21098240169258849380864560 NA RACHUNEK PL37497545976859306820772856 Quentavis"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

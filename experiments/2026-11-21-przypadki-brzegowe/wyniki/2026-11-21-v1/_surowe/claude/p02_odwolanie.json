@@ -1,0 +1,53 @@
+{
+ "id": "p02_odwolanie",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo do Prezesa KIO z nagłówkiem „ODWOŁANIE”. Zawiera dane Zamawiającego i Odwołującego, przedmiot postępowania, podstawę z art. 513 i 515 Pzp, zarzuty, żądania („Wnoszę o”) oraz podpisy pełnomocników.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nZamawiający:\nEurosept Infrastruktura S.A.\nul. Huta 90, 20-829 Lublin\nKRS: 9993122884, NIP: 9996097888, REGON: 999725710\nkontakt@kontakt.example",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "1. dowód uiszczenia wadium;\n2. dokument potwierdzający nadanie odwołania;\n..............................\nBartosz Szymanski, adw.\n..............................\nCezary Wierzbicki, adw.\nZgodnie z art. 527 ustawy odwołanie wnosi się w terminie 14 dni",
+    "problemy": [
+     {
+      "kod": "inne",
+      "opis": "Lista na górze strony (dowód uiszczenia wadium, dokument potwierdzający nadanie odwołania) wygląda na listę załączników, ale nie ma nagłówka „Załączniki”. Numeracja zaczyna się od 1 jak nowa lista, więc łatwo ją pomylić z dalszym ciągiem żądań ze strony 1.",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "Miejsca na podpisy to tylko wykropkowane linie bez podpisów. Pod nimi są nazwiska pełnomocników w dwóch kolumnach (lewa i prawa).",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.26923779999999997,
+  "tury": 4
+ },
+ "czas_s": 21.3
+}

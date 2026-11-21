@@ -1,0 +1,31 @@
+{
+ "id": "p18_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_18/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_18",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 77313,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p18_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 591,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Bank Zachodni Handlowy Data wygenerowania: 15-08-2026 godz. 08:57 Potwierdzenie operacji bankowej Nr klienta 686741 Tytuł przelewu opłata skarbowa od pełnomocnictwa dla Dorota Zawadzki w postępowaniu przed KIO w przetargu DI.908.2026 CEN2608281596037 Kwota 17,00 PLN Data operacji 12-08-2026 Nr ref. CEN2608281596037 Nadawca Balttec Infrastruktura S.A., ul. Grabowa 11, 40-186 Katowice Rachunek nadaw"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

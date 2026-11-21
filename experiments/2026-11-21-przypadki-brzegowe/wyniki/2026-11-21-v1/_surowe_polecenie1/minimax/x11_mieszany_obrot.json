@@ -1,0 +1,95 @@
+{
+ "id": "x11_mieszany_obrot",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument jest odwołaniem od wyniku postępowania o udzielenie zamówienia publicznego, złożonym przez Valtrix Systemy Informatyczne sp. z o.o. do Prezesa Krajowej Izby Odwoławczej.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Poznań, dnia 19 października 2026 r.\n\nPrezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\n\nOdwołujący:\nValtrix Systemy Informatyczne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań\nKRS: 9998213547, NIP: 9993380162, REGON: 999517204",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 270,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr ZP/PN/48/2026\n\n1) wyborze jako najkorzystniejszej oferty złożonej przez Medisoft Integracje S.A. z siedzibą w Warszawie, o którym Zamawiający poinformował wykonawców w dniu 9 października 2026 r.;\n2) zaniechaniu odrzuczenia oferty Medisoft Integracje S.A. jako niezgodnej z warunkami zamówienia;",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona ma postać zeskanowanej, zniekształconej reprodukcji dokumentu.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "obrot",
+      "opis": "Treść jest obrócona o 90° przeciwnie do ruchu wskazówek zegara, czyli o 270° zgodnie z ruchem wskazówek zegara. Poprawna orientacja wymaga obrotu strony o 90° w prawo.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie widoczny jest liczny szum i liczne drobne czarne punkty, choć tekst pozostaje czytelny.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "1) dokumentacji postępowania o udzielenie zamówienia, w tym protokołu postępowania wraz z załącznikami – na okoliczność przebiegu postępowania i treści czynności Zamawiającego;\n2) opinii prawnej sporządzonej przez niezależnego eksperta z zakresu przedmiotu zamówienia – na okoliczność dostępności na rynku rozwiązań spełniających wymagania Zamawiającego;",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "W środkowej części strony znajduje się tabela chronologiczna zdarzeń postępowania, wymagająca odczytu danych w układzie tabelarycznym.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_mieszany",
+    "opis": "Plik zawiera cyfrowo wygenerowane strony 1 i 3 oraz zeskanowaną stronę 2.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "obrot",
+    "opis": "Strona 2 jest obrócona o 90° przeciwnie do ruchu wskazówek zegara, czyli o 270° zgodnie z ruchem wskazówek zegara.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "niska_jakosc",
+    "opis": "Zeskanowana strona 2 zawiera liczny szum i drobne czarne punkty.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 5459,
+   "output_tokens": 3218,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 2107
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 17.1
+}

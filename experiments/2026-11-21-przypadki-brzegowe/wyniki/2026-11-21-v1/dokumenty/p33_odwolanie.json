@@ -1,0 +1,44 @@
+{
+ "id": "p33_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_33/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_33",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 88021,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p33_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1772,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Fenrix Technologie S.A. ul. Piwna 74, 30-845 Kraków KRS: 9998008097, NIP: 9991582308, REGON: 999759441 reprezentowana przez: adw. Cezary Kaczmark, r. pr. Sławomir Sadowski adres do korespondencji: Kancelaria Adwokacka i Partnerzy, ul. Iglasta 19, 35-716 Rzeszów tel. 000 000 000, biuro@kontakt.example Zamawiający: Centaur "
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p33_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1530,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "jednoznaczny, a sposób ich zastosowania przez Zamawiającego nie został wyjaśniony, co uniemożliwia zweryfikowanie poprawności dokonanej oceny. 2).2. Wobec powyższego Ocena ofert została dokonana w sposób, który nie zapewnia porównywalności ofert i nie gwarantuje wyboru najkorzystniejszej oferty zgodnie z przyjętymi kryteriami. Zarzut nr 3 naruszenia zasady równego traktowania wykonawców: 3).1. Opi"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

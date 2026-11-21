@@ -1,0 +1,31 @@
+{
+ "id": "p44_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_44/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_44",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 65816,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p44_przelew/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 744,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Lubelski Spółdzielczy · wygenerowano 17.03.2026 Zleceniodawca DUDEK-TECH Jarosław Dudek ul. Nadbystrzycka 40, 20-618 Lublin Rachunek zleceniodawcy PL47 2692 7374 9064 1859 9264 1235 Odbiorca Lubelskie Przedsiębiorstwo Wodociągów i Kanalizacji sp. z o.o. al. Kraśnicka 76, 20-718 Lublin Rachunek odbiorcy PL15 5797 6676 2935 6135 3276 8366 Kwota 34,00 PLN Data op"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

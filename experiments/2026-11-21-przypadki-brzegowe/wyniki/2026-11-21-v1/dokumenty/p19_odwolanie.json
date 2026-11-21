@@ -1,0 +1,44 @@
+{
+ "id": "p19_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_19/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_19",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 94138,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p19_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2274,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Corvantis Sieci sp. z o.o. ul. Orzechowa 79, 50-596 Wrocław KRS: 9997939273, NIP: 9995584735, REGON: 999992367 reprezentowana przez: adw. Aleksandra Wierzbicki adres do korespondencji: Kancelaria Radców Prawnych Spółka z ograniczoną odpowiedzialnością, ul. Rybacka 14, 85-408 Bydgoszcz tel. 000 000 000, biuro@kontakt.examp"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p19_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1086,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "3).2. Brak takiego uzasadnienia uniemożliwia ocenę, czy cena zaoferowana przez Odwołującego mieści się w granicach rynkowych, co w rezultacie może doprowadzić do naruszenia dyscypliny finansów publicznych. Zarzut nr 4 nieopisania parametrów technicznych przedmiotu dostawy: 4).1. Zamawiający sporządził Opis Przedmiotu Zamówienia bez podania kompletu parametrów technicznych, które powinny być wymaga"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

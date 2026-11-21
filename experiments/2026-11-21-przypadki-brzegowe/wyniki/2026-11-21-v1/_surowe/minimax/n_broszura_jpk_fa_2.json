@@ -1,0 +1,82 @@
+{
+ "id": "n_broszura_jpk_fa_2",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Dokument Ministerstwa Finansów opisuje strukturę JPK_FA i schematy pliku kontrolnego dla faktur VAT. Nie jest odwołaniem do KIO, pełnomocnictwem ani potwierdzeniem przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Struktury JPK na żądanie\nJPK_KR — księgi rachunkowe\nJPK_WB — wyciąg bankowy\nJPK_MAG — magazyn\nJPK_FA faktury VAT\nJPK_PKPiR — podatkowa księga przychodów i rozchodów\nJPK_EWP — ewidencja przychodów\nMinisterstwo Finansów, Warszawa, marzec 2019",
+    "problemy": [
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Strona zawiera nietypowy układ diagramu struktury JPK_FA z pionowymi i poziomymi połączeniami.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Spis treści\nO strukturach VAT na żądanie 4\nIle masz czasu na udostępnienie struktury JPK 4\nJak udostępniać struktury JPK 5\n1. Struktura jednolitego pliku kontrolnego dla faktur VAT (JPK_FA) 5\n2. Schemat główny 7\n2.1. Struktura 7\n2.2. Opis struktury 8\n3. Nagłówek JPK_FA 9\n3.1. Struktura nagłówka 9\n3.2. Opis struktury 10\n4. Podmiot JPK_FA 10",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Spis treści ma układ tabelaryczny: nazwy pozycji są wyrównane w jednej kolumnie, a numery stron w drugiej.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "5.2. Opis struktury 16\n6. FakturaCtrl JPK_FA 21\n6.1. Struktura sum kontrolnych dla faktur 21\n6.2. Opis struktury 21\n7. Stawki podatku 22\n7.1. Struktura stawek podatku 22\n7.2. Opis struktury 22\n8. FakturaWiersz JPK_FA 23\n8.1. Struktura FakturaWiersz JPK_FA 23\n8.2. Opis struktury 25",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Spis treści ma układ tabelaryczny: nazwy pozycji są wyrównane w jednej kolumnie, a numery stron w drugiej.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Cały plik jest dokumentacją techniczną Ministerstwa Finansów dotyczącą struktur JPK, a nie dokumentem należącym do klas odwołanie, pełnomocnictwo lub przelew.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 5487,
+   "output_tokens": 1417,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 480
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 12.4
+}

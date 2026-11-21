@@ -1,0 +1,133 @@
+{
+ "codex": {
+  "wywolan": 41,
+  "ok": 41,
+  "sredni_czas_s": 16.376,
+  "trafnosc_klasy": 0.976,
+  "trafnosc_klasy_wg_zrodla": {
+   "pozytywny": 1.0,
+   "negatywny": 1.0,
+   "szablon": 1.0,
+   "syntetyczny": 0.917
+  },
+  "srednie_podobienstwo_transkrypcji": 0.971,
+  "wstrzykniete_wykryte": {
+   "dokument_mieszany": "2/2",
+   "niska_jakosc": "2/2",
+   "obrot": "3/3",
+   "pieczatka_podpis": "1/1",
+   "przekrzywienie": "2/2",
+   "pusta_strona": "1/1",
+   "skan": "9/9",
+   "strona_mieszana": "1/1",
+   "uciety_tekst": "1/1",
+   "wiele_dokumentow": "1/1"
+  },
+  "kody_zgloszone": {
+   "skan": 16,
+   "tabela": 13,
+   "dokument_obcy": 13,
+   "niska_jakosc": 9,
+   "pieczatka_podpis": 5,
+   "przekrzywienie": 5,
+   "uklad_wielokolumnowy": 4,
+   "odreczne": 3,
+   "obrot": 3,
+   "wiele_dokumentow": 2,
+   "inne": 2,
+   "anonimizacja": 2,
+   "dokument_mieszany": 2,
+   "uciety_tekst": 2,
+   "pusta_strona": 2,
+   "podobny_do_klasy": 1,
+   "strona_mieszana": 1
+  }
+ },
+ "claude": {
+  "wywolan": 41,
+  "ok": 41,
+  "sredni_czas_s": 16.359,
+  "trafnosc_klasy": 0.976,
+  "trafnosc_klasy_wg_zrodla": {
+   "pozytywny": 1.0,
+   "negatywny": 1.0,
+   "szablon": 1.0,
+   "syntetyczny": 0.917
+  },
+  "srednie_podobienstwo_transkrypcji": 0.973,
+  "wstrzykniete_wykryte": {
+   "dokument_mieszany": "2/2",
+   "niska_jakosc": "2/2",
+   "obrot": "3/3",
+   "pieczatka_podpis": "1/1",
+   "przekrzywienie": "2/2",
+   "pusta_strona": "1/1",
+   "skan": "9/9",
+   "strona_mieszana": "1/1",
+   "uciety_tekst": "1/1",
+   "wiele_dokumentow": "1/1"
+  },
+  "kody_zgloszone": {
+   "inne": 34,
+   "skan": 20,
+   "tabela": 15,
+   "dokument_obcy": 15,
+   "podobny_do_klasy": 14,
+   "niska_jakosc": 14,
+   "uklad_wielokolumnowy": 11,
+   "pieczatka_podpis": 8,
+   "pusta_strona": 7,
+   "obrot": 5,
+   "przekrzywienie": 4,
+   "odreczne": 3,
+   "jezyk_obcy": 3,
+   "uciety_tekst": 3,
+   "wiele_dokumentow": 2,
+   "anonimizacja": 2,
+   "dokument_mieszany": 2,
+   "strona_mieszana": 1
+  }
+ },
+ "minimax": {
+  "wywolan": 41,
+  "ok": 39,
+  "sredni_czas_s": 12.417,
+  "trafnosc_klasy": 1.0,
+  "trafnosc_klasy_wg_zrodla": {
+   "pozytywny": 1.0,
+   "negatywny": 1.0,
+   "szablon": 1.0,
+   "syntetyczny": 1.0
+  },
+  "srednie_podobienstwo_transkrypcji": 0.966,
+  "wstrzykniete_wykryte": {
+   "dokument_mieszany": "2/2",
+   "niska_jakosc": "2/2",
+   "obrot": "3/3",
+   "pieczatka_podpis": "1/1",
+   "przekrzywienie": "1/2",
+   "skan": "7/9",
+   "strona_mieszana": "1/1",
+   "uciety_tekst": "1/1",
+   "wiele_dokumentow": "1/1"
+  },
+  "kody_zgloszone": {
+   "tabela": 16,
+   "dokument_obcy": 11,
+   "skan": 11,
+   "niska_jakosc": 11,
+   "odreczne": 5,
+   "obrot": 5,
+   "pieczatka_podpis": 4,
+   "dokument_mieszany": 3,
+   "uklad_wielokolumnowy": 2,
+   "wiele_dokumentow": 2,
+   "podobny_do_klasy": 2,
+   "anonimizacja": 2,
+   "uciety_tekst": 2,
+   "przekrzywienie": 1,
+   "niskajakosc": 1,
+   "strona_mieszana": 1
+  }
+ }
+}

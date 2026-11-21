@@ -1,0 +1,69 @@
+{
+ "id": "x03_przekrzywienie",
+ "model": "codex",
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument skierowany do Prezesa Krajowej Izby Odwoławczej, zatytułowany „ODWOŁANIE”, zawiera zarzuty i wnioski odwołującego.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona ma wygląd skanu; na podstawie obrazu nie można potwierdzić obecności ukrytej warstwy OCR.",
+      "waga": "niska"
+     },
+     {
+      "kod": "przekrzywienie",
+      "opis": "Tekst i linie podziału są przekrzywione o kilka stopni przeciwnie do ruchu wskazówek zegara.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie widoczny drobny, ciemny szum punktowy, również wokół liter.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w\nsposób merytoryczny; co narusza prawo Odwołującego do skutecznego wniesienia\nodwołania.",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona ma wygląd skanu; na podstawie obrazu nie można potwierdzić obecności ukrytej warstwy OCR.",
+      "waga": "niska"
+     },
+     {
+      "kod": "przekrzywienie",
+      "opis": "Wiersze tekstu są przekrzywione o kilka stopni przeciwnie do ruchu wskazówek zegara.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie widoczny drobny, ciemny szum punktowy, również wokół liter.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "ga\": \"srednia\"\n        },\n        {\n          \"kod\": \"niska_jakosc\",\n          \"opis\": \"Na całej stronie widoczny drobny, ciemny szum punktowy, również wokół liter.\",\n          \"waga\": \"niska\"\n        }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": []\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n6070\n"
+ },
+ "czas_s": 22.2
+}

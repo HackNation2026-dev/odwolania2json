@@ -1,0 +1,57 @@
+{
+ "id": "x02_obrot180",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument to potwierdzenie wykonania przelewu bankowego (Bank Polski Zachodni S.A.) zawierające zleceniodawcę, odbiorcę, kwotę 34,00 PLN, datę operacji oraz opłatę/prowizję - typowy dokument klasy 'przelew'.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 180,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Polski Zachodni S.A. - wygenerowano 16.10.2026\nZleceniodawca ValtiX Systemy Informacyjne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań\nRachunek zleceniodawcy PL54 7196 9675 3242 1141 8014 012",
+    "problemy": [
+     {
+      "kod": "obrot",
+      "opis": "Cała treść strony jest obrócona o 180 stopni (nagłówek i tabela zleceniodawca/odbiorca są do góry nogami).",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu zapisane są w dwukolumnowej tabeli z etykietami (Zleceniodawca, Odbiorca, Kwota, Status itd.), co utrudnia odczyt liniowy.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "obrot",
+    "opis": "Jedyna strona pliku jest obrócona o 180 stopni; tekst wymaga odwrócenia przed OCR.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2837,
+   "output_tokens": 1270,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 128,
+   "output_tokens_details": {
+    "thinking_tokens": 778
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 14.0
+}

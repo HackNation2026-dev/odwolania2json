@@ -1,0 +1,55 @@
+{
+ "id": "x05_ksero",
+ "model": "minimax",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument zawiera pełnomocnictwa udzielone przez Hartica Serwis S.A. adw. Bartoszowi Szymańskiemu i adw. Cezarymu Wierzbickiemu do reprezentowania wykonawcy przed Krajową Izbą Odwoławczą.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nMocodawca Hartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\nDane rejestrowe KRS 9996669444, NIP 9990678035, REGON 999114017\nPełnomocnicy adw. Bartosz Szymański, nr wpisu WA 33513",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona jest obrazem skanu lub fotografii dokumentu, bez widocznej cyfrowej warstwy tekstu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "przekrzywienie",
+      "opis": "Treść strony jest nieznacznie przekrzywiona; poziome linie formularza opadają w prawo.",
+      "waga": "niska"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Widoczny szum i ziarnistość tła oraz słaby kontrast tekstu, choć treść pozostaje czytelna.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2926,
+   "output_tokens": 1323,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 946
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 20.9
+}

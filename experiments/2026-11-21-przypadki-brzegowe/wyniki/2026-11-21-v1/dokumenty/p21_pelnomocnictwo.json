@@ -1,0 +1,31 @@
+{
+ "id": "p21_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_21/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_21",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 80770,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p21_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 876,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Kraków, 4 kwietnia 2026 PEŁNOMOCNICTWO Działając w imieniu Corvella Rozwiązania S.A. (dalej: „Wykonawca”), wpisanej do rejestru przedsiębiorców Krajowego Rejestru Sądowego pod numerem KRS 9991500432, posiadającej NIP 9990271196 oraz REGON 999066287, niniejszym udzielam pełnomocnictwa adw. Marek Sikorski (nr wpisu na listę: WA 45102) do reprezentowania Wykonawcy w postępowaniu o udzielenie zamówien"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

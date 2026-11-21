@@ -1,0 +1,50 @@
+{
+ "id": "p40_przelew",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument nosi tytuł „Potwierdzenie wykonania przelewu”. Zawiera zleceniodawcę, rachunki, kwotę 34,00 PLN, status ZREALIZOWANO i tytuł „opłata skarbowa od pełnomocnictwa … w postępowaniu przed KIO”, więc jest to przelew związany ze sprawą.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Polski Zachodni S.A. · wygenerowano 16.10.2026\nZleceniodawca Valtrix Systemy Informatyczne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań\nRachunek zleceniodawcy PL54 7164 9675 2472 1141 8071 4012",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu są w dwukolumnowej tabeli etykieta–wartość. Wartości wielowierszowe, czyli adresy i tytuł przelewu, trzeba przypisać do właściwych etykiet.",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "Odbiorcą opłaty skarbowej jest „Regionalne Centrum Usług Medycznych sp. z o.o.”, a nie urząd miasta lub gminy. Odbiorca nie pasuje do opłaty skarbowej od pełnomocnictwa, więc warto sprawdzić, czy przelew dotyczy tej sprawy.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "inne",
+    "opis": "Tytuł przelewu wskazuje opłatę skarbową od pełnomocnictwa. Odbiorcą jest jednak spółka medyczna (prawdopodobnie zamawiający), a nie organ podatkowy, czyli urząd gminy lub miasta. Klasa jest poprawna, ale zgodność merytoryczna wymaga weryfikacji.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.25415719999999997,
+  "tury": 3
+ },
+ "czas_s": 13.9
+}

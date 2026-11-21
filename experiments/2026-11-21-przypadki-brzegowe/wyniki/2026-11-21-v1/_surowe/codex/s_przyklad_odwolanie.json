@@ -1,0 +1,59 @@
+{
+ "id": "s_przyklad_odwolanie",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo skierowane do Prezesa KIO, zatytułowane „ODWOŁANIE”, zawiera zarzuty wobec dokumentacji zamówienia oraz żądanie modyfikacji OPZ.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "KANCELARIA PRAWNA [zaczernienie]\nRADCA PRAWNY [zaczernienie]\nWarszawa, dnia 16 czerwca 2025 r.\nPrezes Krajowej Izby Odwoławczej\nul. Postępu 17a\n02-676 Warszawa\nOdwołujący:",
+    "problemy": [
+     {
+      "kod": "anonimizacja",
+      "opis": "Zaczernione dane kancelarii, odwołującego, pełnomocnika oraz dane adresowe, kontaktowe i bankowe.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "podstawowym na podstawie art. 275 pkt 1 Ustawy Pzp, tj.: wobec treści dokumentów zamówienia –\nSpecyfikacji Warunków Zamówienia (zwanej dalej: SWZ).\nOdwołanie jest wniesione w terminie, bowiem zgodnie z art. 515",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Zaznaczam, że pomimo, iż Zamawiający jest związany przepisami Ustawy Pzp, to już na etapie\nprzygotowywania dokumentacji postępowania i ogłoszenia przedmiotowego postępowania nie przestrzegał\nich, przez co",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "anonimizacja",
+    "opis": "Na stronie 1 zaczernienia uniemożliwiają odczyt części danych identyfikacyjnych i kontaktowych.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "z co\",\n      \"problemy\": []\n    }\n  ],\n  \"problemy_dokumentu\": [\n    {\n      \"kod\": \"anonimizacja\",\n      \"opis\": \"Na stronie 1 zaczernienia uniemożliwiają odczyt części danych identyfikacyjnych i kontaktowych.\",\n      \"waga\": \"srednia\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n42 448\n"
+ },
+ "czas_s": 19.3
+}

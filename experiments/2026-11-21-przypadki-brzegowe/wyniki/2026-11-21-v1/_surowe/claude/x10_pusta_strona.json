@@ -1,0 +1,68 @@
+{
+ "id": "x10_pusta_strona",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo do Prezesa KIO z tytułem „ODWOŁANIE”. Zawiera dane odwołującego i zamawiającego, zarzuty nr 1–3, wnioski oraz miejsca na podpisy pełnomocników.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785\nreprezentowana przez: r. pr. Aleksandra Marciniak",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "pusta",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "",
+    "problemy": [
+     {
+      "kod": "pusta_strona",
+      "opis": "Strona 2 pliku jest całkowicie pusta. Jest wstawiona między stronę „1 z 2” a „2 z 2” dokumentu.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania.\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "pusta_strona",
+    "opis": "Plik ma 3 strony, a stopki wskazują 2 strony („Strona 1 z 2”, „Strona 2 z 2”). Strona 2 pliku jest pusta i rozdziela treść odwołania.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "inne",
+    "opis": "Treść odwołania jest niespójna. Na str. 1 zdanie „wnoszę o:” urywa się bez wniosków. W sekcji „Wnoszę o:” na str. 3 wnioski są sprzeczne: oddalenie zarzutów i uwzględnienie odwołania. Wnioski są też zmieszane z listą załączników o powtórzonym oznaczeniu a)–d).",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2850026,
+  "tury": 5
+ },
+ "czas_s": 15.9
+}

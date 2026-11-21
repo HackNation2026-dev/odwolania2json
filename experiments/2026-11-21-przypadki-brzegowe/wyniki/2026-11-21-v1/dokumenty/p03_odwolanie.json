@@ -1,0 +1,44 @@
+{
+ "id": "p03_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_03/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_03",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 90002,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p03_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1683,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Bydgoszcz, dnia 2 marca 2026 roku Zamawiający: Lunareth Automatyka sp. z o.o. ul. Piwna 34, 90-265 Łódź KRS: 9999176757, NIP: 9997945568, REGON: 999298856 kontakt@kontakt.example Odwołujący: Silvatica Automatyka sp. k. ul. Zaczarowana 74, 85-201 Bydgoszcz KRS: 9991877493, NIP: 9995501241, REGON: 999302380 reprezentowana przez: adw. Norbert Szulc adres do korespondencji: Kancelaria Adwokacka Spółka"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p03_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1270,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Zarzut nr 2 naruszenia zasady równego traktowania wykonawców: 2.1. Opis Przedmiotu Zamówienia wskazuje rozwiązania o znaczeniu znamiennym dla przedmiotu zamówienia, które w sposób nieadekwatny ograniczają krąg potencjalnych wykonawców i mogą skutkować nieuzasadnionym preferowaniem podmiotów dysponujących określoną technologią. 2.2. Wobec braku obiektywnych i sprawdzalnych kryteriów oceny ofert Zam"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

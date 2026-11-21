@@ -1,0 +1,44 @@
+{
+ "id": "p09_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_09/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_09",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 84611,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p09_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2257,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Kraków, dnia 28 października 2026 roku Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Iberis Sieci sp. z o.o. ul. Ambrożowa 85, 30-405 Kraków KRS: 9996772331, NIP: 9990796243, REGON: 999050100 reprezentowana przez: r. pr. Weronika Kaczmarek, r. pr. Weronika Chmielewski adres do korespondencji: Kancelaria Prawna i Partnerzy, ul. Miodowa 93, 20-666 Lublin tel. 000 000 0"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p09_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2290,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "c).2. Wobec braku obiektywnych i sprawdzalnych kryteriów oceny ofert Zamawiający nie wykazał, że zastosowane wymagania są proporcjonalne i niezbędne do osiągnięcia celu postępowania. Zarzut nr 4 błędnej oceny ofert ze względu na niejasne kryteria: d).1. Kryteria oceny ofert wskazane w dokumentacji postępowania nie są sformułowane w sposób jednoznaczny, a sposób ich zastosowania przez Zamawiającego"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

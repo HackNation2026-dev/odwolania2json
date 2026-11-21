@@ -1,0 +1,81 @@
+{
+ "id": "x03_przekrzywienie",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument jest odwołaniem odwołującego od wyniku postępowania o udzielenie zamówienia, złożonym do Prezesa Krajowej Izby Odwoławczej; zawiera zarzuty oraz wnioski o oddalenie odwołania.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\n\nOdwołujący:\n\nBelmoria Rozwiązania S.A.\nul. Zacarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785\nreprezentowaną przez: r. pr. Aleksandra Marciniak, r. pr. Jolanta Zajkowski",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona ma postać obrazu z rozproszonym tłem i licznymi drobnymi plamkami, a nie czystą warstwę cyfrowego tekstu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niskajakosc",
+      "waga": "niska",
+      "opis": "Na całej stronie widoczny jest silny, jednorodny szum punktowy; tekst pozostaje jednak czytelny."
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania.\n\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:\n\nb).1. Kryteria oceny ofert wskazane w dokumentacji postępowania nie są sformułowane w sposób jednoznaczny, a sposób ich zastosowania przez Zamawiającego",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona ma postać obrazu z rozproszonym tłem i licznymi drobnymi plamkami, a nie czystą warstwę cyfrowego tekstu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niskajakosc",
+      "waga": "niska",
+      "opis": "Na całej stronie widoczny jest silny, jednorodny szum punktowy; tekst pozostaje jednak czytelny."
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "skan",
+    "opis": "Obie strony wyglądają jak rastrowane obrazy dokumentu z jednorodnym szumem punktowym, bez widocznej czystej warstwy tekstowej.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "niskajakosc",
+    "waga": "niska",
+    "opis": "W całym pliku występują liczne drobne plamki i szum mogący utrudniać automatyczne rozpoznawanie tekstu."
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 1,
+   "output_tokens": 1840,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 4191,
+   "output_tokens_details": {
+    "thinking_tokens": 1077
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 10.7
+}

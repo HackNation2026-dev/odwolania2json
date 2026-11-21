@@ -1,0 +1,44 @@
+{
+ "id": "p25_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_25/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_25",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 90637,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p25_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1523,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Warszawa, dnia 27 czerwca 2026 roku Odwołujący: Belmoria Systemy S.A. ul. Wiśniowa 79, 00-344 Warszawa KRS: 9991240860, NIP: 9992160970, REGON: 999702501 reprezentowana przez: adw. Zbigniew Górnicki, adw. Zbigniew Szymanski adres do korespondencji: Kancelaria Prawna Spółka z ograniczoną odpowiedzialnością, ul. Miodowa 90, 30-762 Kraków tel. 000 000 000, biuro@biuro.example Zamawiający: Faronis Kon"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p25_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1016,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "niezbędne do osiągnięcia celu postępowania. Zarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria: 2).1. Kryteria oceny ofert wskazane w dokumentacji postępowania nie są sformułowane w sposób jednoznaczny, a sposób ich zastosowania przez Zamawiającego nie został wyjaśniony, co uniemożliwia zweryfikowanie poprawności dokonanej oceny. 2).2. Wobec powyższego Ocena ofert została dokonana w s"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

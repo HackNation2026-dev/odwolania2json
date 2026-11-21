@@ -1,0 +1,31 @@
+{
+ "id": "p35_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_35/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_35",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 80511,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p35_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 570,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Bank Nadwiślański Wydrukowano: 24.02.2026 Potwierdzenie wykonania przelewu Płatnik Rubiconis Automatyka sp. k. ul. Jasionowa 44, 30-297 Kraków Rachunek nadawcy PL97 2851 5681 1608 6564 6915 9276 Adresat przelewu Iberis Technologie sp. k. ul. Akacjowa 58, 60-238 Poznań Rachunek beneficjenta PL76 7786 0487 7565 4290 3832 7479 Wartość 100,00 Data operacji 21.02.2026 Tytuł przelewu opłata skarbowa od "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

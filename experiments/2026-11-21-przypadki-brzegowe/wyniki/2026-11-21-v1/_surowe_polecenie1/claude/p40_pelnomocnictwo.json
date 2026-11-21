@@ -1,0 +1,38 @@
+{
+ "id": "p40_pelnomocnictwo",
+ "model": "claude",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument zatytułowany „PEŁNOMOCNICTWO”. Valtrix Systemy Informatyczne sp. z o.o. upoważnia w nim radców prawnych do reprezentowania jej w postępowaniu o udzielenie zamówienia publicznego ZP/PN/48/2026, w tym do wniesienia odwołania do Prezesa KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Poznań, 15 października 2026 r.\nPEŁNOMOCNICTWO\nValtrix Systemy Informatyczne sp. z o.o., ul. Grunwaldzka 112, 60-307 Poznań, KRS 9998213547, NIP 9993380162, REGON 999517204 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane poniżej,",
+    "problemy": [
+     {
+      "kod": "inne",
+      "opis": "Brak podpisów: nad nazwiskami mocodawców (Krzysztof Nowicki, Ewa Lis) i pełnomocników (r. pr. Magdalena Wróblewska, r. pr. Tomasz Kędzierski) są tylko wykropkowane miejsca. Nie widać podpisu odręcznego, pieczątki ani oznaczenia podpisu elektronicznego.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.24860739999999998,
+  "tury": 3
+ },
+ "czas_s": 13.4
+}

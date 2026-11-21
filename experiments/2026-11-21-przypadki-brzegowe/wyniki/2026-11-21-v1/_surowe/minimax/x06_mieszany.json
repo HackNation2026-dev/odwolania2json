@@ -1,0 +1,66 @@
+{
+ "id": "x06_mieszany",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument jest odwołaniem wniesionym do Krajowej Izby Odwoławczej, zawiera zarzuty dotyczące postępowania o udzielenie zamówienia oraz wniosek o oddalenie odwołania.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\n\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaccarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "slaba",
+    "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania.\n\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona 2 jest obrazem skanu bez widocznej cyfrowej warstwy tekstu.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na stronie 2 występują liczne drobne punkty i plamy szumu w tle oraz nierówna jakość kontrastu, co może utrudniać OCR.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_mieszany",
+    "opis": "Plik zawiera stronę 1 wygenerowaną cyfrowo oraz stronę 2 będącą skanem.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 4022,
+   "output_tokens": 1323,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 197,
+   "output_tokens_details": {
+    "thinking_tokens": 828
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 6.9
+}

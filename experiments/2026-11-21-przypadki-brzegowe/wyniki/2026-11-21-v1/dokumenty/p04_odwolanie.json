@@ -1,0 +1,44 @@
+{
+ "id": "p04_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_04/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_04",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 87167,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p04_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1780,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Zamawiający: Danevia Serwis sp. k. ul. Akacjowa 83, 60-313 Poznań KRS: 9997812714, NIP: 9990342967, REGON: 999118676 kontakt@sekretariat.example Odwołujący: Gildentia Wyposażenie sp. z o.o. ul. Nowina 87, 40-960 Katowice KRS: 9992397370, NIP: 9995126748, REGON: 999165641 reprezentowana przez: adw. Patrycja Furman, r. pr. Sławomir Ostrowczyk adres do korespondencji: Kancelaria Radców Prawnych i Par"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p04_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1381,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "skutkować nieuzasadnionym preferowaniem podmiotów dysponujących określoną technologią. 2.2. Wobec braku obiektywnych i sprawdzalnych kryteriów oceny ofert Zamawiający nie wykazał, że zastosowane wymagania są proporcjonalne i niezbędne do osiągnięcia celu postępowania. Zarzut nr 3 naruszenia zasady racjonalnego gospodarowania środkami publicznymi: 3.1. Zamawiający nie przedstawił rachunku ekonomicz"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

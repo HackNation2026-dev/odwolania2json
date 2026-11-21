@@ -1,0 +1,57 @@
+{
+ "id": "n_kio_kio_2617_21",
+ "model": "codex",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Postanowienie KIO z 20 września 2021 r., sygn. KIO 2617/21, odrzucające odwołanie. Jest orzeczeniem Izby, a nie odwołaniem wnoszonym do KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Sygn. akt: KIO 2617/21\nPOSTANOWIENIE\nz dnia 20 września 2021 r.\nKrajowa Izba Odwoławcza - w składzie:\nPrzewodniczący: Ewa Kisiel\npo rozpoznaniu na posiedzeniu niejawnym bez udziału stron w dniu 20 września 2021 r.",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Gmina Cieszyn z siedzibą w Cieszynie (dalej: „Zamawiający” lub „Gmina”) prowadzi\nna podstawie przepisów ustawy z dnia 19 września 2019 r. Prawo zamówień publicznych\n(Dz. U. z 2019 r. poz. 2019 ze zm.)",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "OPZ w sposób, który naruszają zasadę uczciwej konkurencji i zasadę równego\ntraktowania wykonawców oraz zasadę udzielania zamówienia zapewniającego\nnajlepszą jakość uzasadnioną charakterem zamówienia, nie jest proporcjonalny do",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Dokument jest postanowieniem Krajowej Izby Odwoławczej, poza klasami odwołanie, pełnomocnictwo i przelew.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Uzasadnienie przytacza zarzuty i żądania odwołującego, co może prowadzić do błędnego rozpoznania dokumentu jako odwołania.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "lew.\",\n      \"waga\": \"wysoka\"\n    },\n    {\n      \"kod\": \"podobny_do_klasy\",\n      \"opis\": \"Uzasadnienie przytacza zarzuty i żądania odwołującego, co może prowadzić do błędnego rozpoznania dokumentu jako odwołania.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n7140\n"
+ },
+ "czas_s": 19.2
+}

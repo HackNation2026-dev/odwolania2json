@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Wyniki dla jednego dokumentu",
+  "type": "object",
+  "required": ["id", "plik_zrodlowy", "zrodlo", "klasa_oczekiwana", "sprawa", "metadane", "strony", "wstrzykniete", "modele"],
+  "properties": {
+    "id": {"type": "string"},
+    "plik_zrodlowy": {"type": "string", "description": "Ścieżka względna wobec katalogu repo odwolania2json"},
+    "zrodlo": {"enum": ["pozytywny", "negatywny", "szablon", "syntetyczny"]},
+    "klasa_oczekiwana": {"enum": ["odwolanie", "pelnomocnictwo", "przelew", "obcy", null]},
+    "sprawa": {"type": ["string", "null"]},
+    "metadane": {
+      "type": "object",
+      "required": ["producent", "kreator", "rozmiar_bajtow", "zaszyfrowany", "wersja_pdf"],
+      "properties": {
+        "producent": {"type": ["string", "null"]},
+        "kreator": {"type": ["string", "null"]},
+        "rozmiar_bajtow": {"type": "integer"},
+        "zaszyfrowany": {"type": "boolean"},
+        "wersja_pdf": {"type": ["string", "null"]}
+      }
+    },
+    "strony": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["nr", "obraz", "szerokosc_pt", "wysokosc_pt", "obrot_pdf", "znaki_tekstu", "obrazy", "pokrycie_obrazami", "dpi_obrazow", "typ_auto", "probka_tekstu"],
+        "properties": {
+          "nr": {"type": "integer", "minimum": 1},
+          "obraz": {"type": "string", "description": "np. strony/<id>/p001.jpg"},
+          "szerokosc_pt": {"type": "number"},
+          "wysokosc_pt": {"type": "number"},
+          "obrot_pdf": {"type": "integer"},
+          "znaki_tekstu": {"type": "integer"},
+          "obrazy": {"type": "integer"},
+          "pokrycie_obrazami": {"type": "number", "minimum": 0, "maximum": 1},
+          "dpi_obrazow": {"type": ["number", "null"]},
+          "typ_auto": {"enum": ["tekst", "skan", "skan_z_ocr", "mieszana", "pusta"]},
+          "probka_tekstu": {"type": "string", "description": "Do 400 znaków warstwy tekstowej"}
+        }
+      }
+    },
+    "wstrzykniete": {
+      "description": "Znane problemy dodane celowo (tylko dokumenty syntetyczne)",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kod", "strona", "opis"],
+        "properties": {"kod": {"type": "string"}, "strona": {"type": ["integer", "null"]}, "opis": {"type": "string"}}
+      }
+    },
+    "modele": {
+      "description": "Klucz: id modelu z manifestu",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["status", "czas_s", "blad", "strony_przeslane", "wynik", "ocena_auto"],
+        "properties": {
+          "status": {"enum": ["ok", "blad", "pominiety"]},
+          "czas_s": {"type": ["number", "null"]},
+          "blad": {"type": ["string", "null"]},
+          "strony_przeslane": {"type": "array", "items": {"type": "integer"}},
+          "wynik": {"oneOf": [{"$ref": "wynik_modelu.schema.json"}, {"type": "null"}]},
+          "ocena_auto": {
+            "type": ["object", "null"],
+            "required": ["klasa_trafiona", "podobienstwo_transkrypcji", "wykryte_wstrzykniete", "pominiete_wstrzykniete"],
+            "properties": {
+              "klasa_trafiona": {"type": ["boolean", "null"]},
+              "podobienstwo_transkrypcji": {
+                "type": "array",
+                "items": {"type": "object", "required": ["nr", "podobienstwo"], "properties": {"nr": {"type": "integer"}, "podobienstwo": {"type": ["number", "null"]}}}
+              },
+              "wykryte_wstrzykniete": {"type": "array", "items": {"type": "string"}},
+              "pominiete_wstrzykniete": {"type": "array", "items": {"type": "string"}}
+            }
+          }
+        }
+      }
+    }
+  }
+}

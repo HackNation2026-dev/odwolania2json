@@ -1,0 +1,64 @@
+{
+ "id": "n_broszura_jpk_fa_2",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Broszura Ministerstwa Finansów o strukturze JPK_FA dla faktur VAT; nie jest odwołaniem, pełnomocnictwem ani potwierdzeniem przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Struktury JPK na żądanie\nJPK_KR — księgi rachunkowe\nJPK_WB — wyciąg bankowy\nJPK_MAG — magazyn\nJPK_FA faktury VAT\nJPK_PKPiR — podatkowa księga przychodów i rozchodów\nJPK_EWP — ewidencja przychodów",
+    "problemy": [
+     {
+      "kod": "niska_jakosc",
+      "opis": "Jasnoszare opisy struktur JPK i tekst stopki mają słaby kontrast względem białego tła.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Schemat struktur JPK z liniami łączącymi oraz wyróżnionym poziomym pasem JPK_FA wymaga zachowania powiązań między nazwami a opisami.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Spis treści\nO strukturach VAT na żądanie 4\nIle masz czasu na udostępnienie struktur JPK 4\nJak udostępniać struktury JPK 5\n1. Struktura jednolitego pliku kontrolnego dla faktur\nVAT (JPK_FA) 5\n2. Schemat główny 7",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "5.2. Opis struktury 16\n6. FakturaCtrl JPK_FA 21\n6.1. Struktura sum kontrolnych dla faktur 21\n6.2. Opis struktury 21\n7. Stawki podatku 22\n7.1. Struktura stawek podatku 22\n7.2. Opis struktury 22\n8. FakturaWiersz JPK_FA 23",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Broszura informacyjna dotycząca JPK_FA, spoza klas dokumentów sprawy odwoławczej KIO.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "ersz JPK_FA 23\",\n      \"problemy\": []\n    }\n  ],\n  \"problemy_dokumentu\": [\n    {\n      \"kod\": \"dokument_obcy\",\n      \"opis\": \"Broszura informacyjna dotycząca JPK_FA, spoza klas dokumentów sprawy odwoławczej KIO.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n17 359\n"
+ },
+ "czas_s": 20.9
+}

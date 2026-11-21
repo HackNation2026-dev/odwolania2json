@@ -1,0 +1,45 @@
+{
+ "id": "p40_pelnomocnictwo",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument ma tytuł „PEŁNOMOCNICTWO”. Valtrix Systemy Informatyczne sp. z o.o. (Mocodawca) udziela w nim dwóm radcom prawnym pełnomocnictwa do reprezentowania jej w postępowaniu ZP/PN/48/2026, w tym do wniesienia odwołania do Prezesa KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Poznań, 15 października 2026 r.\nPEŁNOMOCNICTWO\nValtrix Systemy Informatyczne sp. z o.o., ul. Grunwaldzka 112, 60-307 Poznań, KRS 9998213547, NIP 9993380162, REGON 999517204 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane poniżej,",
+    "problemy": [
+     {
+      "kod": "inne",
+      "opis": "Wszystkie cztery miejsca na podpis są puste: dwa pod „Mocodawca:” (Krzysztof Nowicki, Ewa Lis) i dwa pod „Pełnomocnictwo przyjmuję:”. Na dokumencie nie ma podpisu, pieczęci ani informacji o podpisie elektronicznym.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "inne",
+    "opis": "Pełnomocnictwo wygląda na niepodpisane: wszystkie miejsca na podpis zawierają tylko kropkowane linie. Nie widać śladu podpisu odręcznego ani elektronicznego.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2505144,
+  "tury": 3
+ },
+ "czas_s": 13.7
+}

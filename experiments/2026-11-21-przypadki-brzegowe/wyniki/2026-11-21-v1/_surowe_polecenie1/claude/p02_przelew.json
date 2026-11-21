@@ -1,0 +1,54 @@
+{
+ "id": "p02_przelew",
+ "model": "claude",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument to „Potwierdzenie przelewu krajowego” z banku Kredyt Północny. Zawiera płatnika, beneficjenta, kwotę 50,00 zł, datę, numer referencyjny i tytuł przelewu. Tytuł wskazuje jednak na opłatę skarbową od pełnomocnictwa w postępowaniu przed KIO, a nie na wpis od odwołania. Kwota 50,00 zł też odpowiada opłacie skarbowej, a nie wpisowi.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\nKredyt Północny · wydrukowano 26 sierpnia 2026\nPłatnik\nHartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\n53678424593392529814420143\nBeneficjent\nEurosept Infrastruktura S.A.\nul. Huta 90, 20-829 Lublin",
+    "problemy": [
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Dane płatnika i beneficjenta stoją obok siebie w dwóch kolumnach w górnej części strony. Przy odczycie liniowym wiersze obu stron mogą się wymieszać.",
+      "waga": "niska"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Szczegóły operacji są w układzie etykieta–wartość: Kwota, Data, Numer referencyjny, Tytuł, Typ, Kanał. Etykiety i wartości stoją w osobnych kolumnach.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Jest to potwierdzenie przelewu, ale tytułem jest „opłata skarbowa od pełnomocnictwa” na kwotę 50,00 zł, a nie wpis od odwołania. Może więc nie być dowodem uiszczenia wpisu. Ekstrakcja powinna sprawdzić tytuł i kwotę.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "inne",
+    "opis": "Beneficjentem jest podmiot prywatny (Eurosept Infrastruktura S.A.), a nie rachunek UZP ani urzędu. To niespójne z opłatą skarbową i z wpisem do KIO, więc dokument trzeba zweryfikować.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2594302,
+  "tury": 3
+ },
+ "czas_s": 17.5
+}

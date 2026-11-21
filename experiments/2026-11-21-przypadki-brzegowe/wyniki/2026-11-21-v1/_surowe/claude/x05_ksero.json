@@ -1,0 +1,60 @@
+{
+ "id": "x05_ksero",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Nagłówek „PEŁNOMOCNICTWO”. Mocodawca Hartica Serwis S.A. udziela pełnomocnictwa adwokatom do reprezentowania wykonawcy przed Krajową Izbą Odwoławczą w postępowaniu nr ZP.431.2026.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO Mocodawca Hartica Serwis S.A. ul. Akacjowa 54, 80-122 Gdańsk Dane rejestrowe KRS 9999669444, NIP 9990678035, REGON 999114017 Pełnomocnicy adw. Bartosz Szymanski, nr wpisu WA 33513 adw. Cezary Wierzbicki, nr wpisu WA 16243",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona wygląda na kserokopię lub skan: szare tło, szum i ciemne krawędzie kartki.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie widać szum typu sól i pieprz oraz szare tło, co obniża kontrast. Tekst pozostaje czytelny.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "przekrzywienie",
+      "opis": "Treść jest lekko przekrzywiona, o około 1 stopień. Widać to po ramce nagłówka i liniach tabeli.",
+      "waga": "niska"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane mają układ dwukolumnowej tabeli: etykiety po lewej (Mocodawca, Pełnomocnicy, Zamawiający, Postępowanie, Zakres, Data), wartości po prawej, wiersze oddzielone liniami.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "skan",
+    "opis": "Jedyna strona pliku jest zaszumionym skanem lub kserokopią. Przed ekstrakcją potrzebny jest OCR.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2517612,
+  "tury": 3
+ },
+ "czas_s": 14.2
+}

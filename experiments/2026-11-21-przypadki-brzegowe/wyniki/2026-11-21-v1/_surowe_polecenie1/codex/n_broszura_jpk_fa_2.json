@@ -1,0 +1,63 @@
+{
+ "id": "n_broszura_jpk_fa_2",
+ "model": "codex",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Broszura Ministerstwa Finansów o strukturze JPK_FA dla faktur VAT; okładka i spis treści wskazują na dokument informacyjny.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Struktury JPK na żądanie\nJPK_KR — księgi rachunkowe\nJPK_WB — wyciąg bankowy\nJPK_MAG — magazyn\nJPK_FA faktury VAT\nJPK_PKPiR — podatkowa księga przychodów\ni rozchodów\nJPK_EWP — ewidencja przychodów",
+    "problemy": [
+     {
+      "kod": "niska_jakosc",
+      "opis": "Jasnoszare napisy schematu oraz stopka mają słaby kontrast względem białego tła.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Okładka zawiera schemat struktur JPK z połączeniami i wyróżnionym poziomym blokiem JPK_FA.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Spis treści\nO strukturach VAT na żądanie 4\nIle masz czasu na udostępnienie struktur JPK 4\nJak udostępniać struktury JPK 5\n1. Struktura jednolitego pliku kontrolnego dla faktur\nVAT (JPK_FA) 5\n2. Schemat główny 7",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "5.2. Opis struktury 16\n6. FakturaCtrl JPK_FA 21\n6.1. Struktura sum kontrolnych dla faktur 21\n6.2. Opis struktury 21\n7. Stawki podatku 22\n7.1. Struktura stawek podatku 22\n7.2. Opis struktury 22",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Broszura informacyjna dotycząca JPK_FA, spoza klas odwołanie, pełnomocnictwo i potwierdzenie przelewu.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "      \"problemy\": []\n    }\n  ],\n  \"problemy_dokumentu\": [\n    {\n      \"kod\": \"dokument_obcy\",\n      \"opis\": \"Broszura informacyjna dotycząca JPK_FA, spoza klas odwołanie, pełnomocnictwo i potwierdzenie przelewu.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n30 938\n"
+ },
+ "czas_s": 20.3
+}

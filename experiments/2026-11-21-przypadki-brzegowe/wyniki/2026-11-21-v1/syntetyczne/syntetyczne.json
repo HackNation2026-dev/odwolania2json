@@ -1,0 +1,317 @@
+{
+ "sprawy_zrodlowe": {
+  "A": "przyklad_01",
+  "B": "przyklad_40",
+  "C": "przyklad_02"
+ },
+ "dokumenty": [
+  {
+   "id": "x01_obrot90",
+   "plik": "syntetyczne/x01_obrot90.pdf",
+   "klasa": "pelnomocnictwo",
+   "sprawa": "przyklad_01",
+   "wstrzykniete": [
+    {
+     "kod": "skan",
+     "strona": 1,
+     "opis": "cała strona jako obraz"
+    },
+    {
+     "kod": "obrot",
+     "strona": 1,
+     "opis": "obrót o 90°"
+    }
+   ],
+   "strony_zrodlowe": [
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_01/pelnomocnictwo.pdf",
+     "strona": 1
+    }
+   ]
+  },
+  {
+   "id": "x02_obrot180",
+   "plik": "syntetyczne/x02_obrot180.pdf",
+   "klasa": "przelew",
+   "sprawa": "przyklad_40",
+   "wstrzykniete": [
+    {
+     "kod": "skan",
+     "strona": 1,
+     "opis": "cała strona jako obraz"
+    },
+    {
+     "kod": "obrot",
+     "strona": 1,
+     "opis": "obrót o 180°"
+    }
+   ],
+   "strony_zrodlowe": [
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_40/potwierdzenie_przelewu.pdf",
+     "strona": 1
+    }
+   ]
+  },
+  {
+   "id": "x03_przekrzywienie",
+   "plik": "syntetyczne/x03_przekrzywienie.pdf",
+   "klasa": "odwolanie",
+   "sprawa": "przyklad_01",
+   "wstrzykniete": [
+    {
+     "kod": "skan",
+     "strona": null,
+     "opis": "obie strony jako obraz"
+    },
+    {
+     "kod": "przekrzywienie",
+     "strona": null,
+     "opis": "przekrzywienie 3°"
+    }
+   ],
+   "strony_zrodlowe": [
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_01/odwolanie.pdf",
+     "strona": 1
+    },
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_01/odwolanie.pdf",
+     "strona": 2
+    }
+   ]
+  },
+  {
+   "id": "x04_niska_jakosc",
+   "plik": "syntetyczne/x04_niska_jakosc.pdf",
+   "klasa": "przelew",
+   "sprawa": "przyklad_02",
+   "wstrzykniete": [
+    {
+     "kod": "skan",
+     "strona": 1,
+     "opis": "obraz 72 dpi"
+    },
+    {
+     "kod": "niska_jakosc",
+     "strona": 1,
+     "opis": "72 dpi, rozmycie, JPEG q25"
+    }
+   ],
+   "strony_zrodlowe": [
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_02/potwierdzenie_przelewu.pdf",
+     "strona": 1
+    }
+   ]
+  },
+  {
+   "id": "x05_ksero",
+   "plik": "syntetyczne/x05_ksero.pdf",
+   "klasa": "pelnomocnictwo",
+   "sprawa": "przyklad_02",
+   "wstrzykniete": [
+    {
+     "kod": "skan",
+     "strona": 1,
+     "opis": "obraz"
+    },
+    {
+     "kod": "niska_jakosc",
+     "strona": 1,
+     "opis": "szare tło i szum jak z ksero"
+    },
+    {
+     "kod": "przekrzywienie",
+     "strona": 1,
+     "opis": "-1,5°"
+    }
+   ],
+   "strony_zrodlowe": [
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_02/pelnomocnictwo.pdf",
+     "strona": 1
+    }
+   ]
+  },
+  {
+   "id": "x06_mieszany",
+   "plik": "syntetyczne/x06_mieszany.pdf",
+   "klasa": "odwolanie",
+   "sprawa": "przyklad_01",
+   "wstrzykniete": [
+    {
+     "kod": "dokument_mieszany",
+     "strona": null,
+     "opis": "strona 1 tekst, strona 2 skan"
+    },
+    {
+     "kod": "skan",
+     "strona": 2,
+     "opis": "strona 2 jako obraz"
+    }
+   ],
+   "strony_zrodlowe": [
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_01/odwolanie.pdf",
+     "strona": 1
+    },
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_01/odwolanie.pdf",
+     "strona": 2
+    }
+   ]
+  },
+  {
+   "id": "x07_dwa_dokumenty",
+   "plik": "syntetyczne/x07_dwa_dokumenty.pdf",
+   "klasa": "pelnomocnictwo",
+   "sprawa": "przyklad_01",
+   "wstrzykniete": [
+    {
+     "kod": "wiele_dokumentow",
+     "strona": null,
+     "opis": "pełnomocnictwo i potwierdzenie przelewu w jednym pliku"
+    }
+   ],
+   "strony_zrodlowe": [
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_01/pelnomocnictwo.pdf",
+     "strona": 1
+    },
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_01/potwierdzenie_przelewu.pdf",
+     "strona": 1
+    }
+   ]
+  },
+  {
+   "id": "x08_pieczatka",
+   "plik": "syntetyczne/x08_pieczatka.pdf",
+   "klasa": "przelew",
+   "sprawa": "przyklad_01",
+   "wstrzykniete": [
+    {
+     "kod": "skan",
+     "strona": 1,
+     "opis": "obraz"
+    },
+    {
+     "kod": "pieczatka_podpis",
+     "strona": 1,
+     "opis": "czerwona pieczątka i podpis na treści"
+    }
+   ],
+   "strony_zrodlowe": [
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_01/potwierdzenie_przelewu.pdf",
+     "strona": 1
+    }
+   ]
+  },
+  {
+   "id": "x09_uciety",
+   "plik": "syntetyczne/x09_uciety.pdf",
+   "klasa": "pelnomocnictwo",
+   "sprawa": "przyklad_40",
+   "wstrzykniete": [
+    {
+     "kod": "skan",
+     "strona": 1,
+     "opis": "obraz"
+    },
+    {
+     "kod": "uciety_tekst",
+     "strona": 1,
+     "opis": "ucięte 18% szerokości z prawej"
+    }
+   ],
+   "strony_zrodlowe": [
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_40/pelnomocnictwo.pdf",
+     "strona": 1
+    }
+   ]
+  },
+  {
+   "id": "x10_pusta_strona",
+   "plik": "syntetyczne/x10_pusta_strona.pdf",
+   "klasa": "odwolanie",
+   "sprawa": "przyklad_01",
+   "wstrzykniete": [
+    {
+     "kod": "pusta_strona",
+     "strona": 2,
+     "opis": "wstawiona pusta strona"
+    }
+   ],
+   "strony_zrodlowe": [
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_01/odwolanie.pdf",
+     "strona": 1
+    },
+    null,
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_01/odwolanie.pdf",
+     "strona": 2
+    }
+   ]
+  },
+  {
+   "id": "x11_mieszany_obrot",
+   "plik": "syntetyczne/x11_mieszany_obrot.pdf",
+   "klasa": "odwolanie",
+   "sprawa": "przyklad_40",
+   "wstrzykniete": [
+    {
+     "kod": "dokument_mieszany",
+     "strona": null,
+     "opis": "strony 1 i 3 tekst, 2 skan"
+    },
+    {
+     "kod": "skan",
+     "strona": 2,
+     "opis": "obraz"
+    },
+    {
+     "kod": "obrot",
+     "strona": 2,
+     "opis": "obrót o 90°"
+    }
+   ],
+   "strony_zrodlowe": [
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_40/odwolanie.pdf",
+     "strona": 1
+    },
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_40/odwolanie.pdf",
+     "strona": 2
+    },
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_40/odwolanie.pdf",
+     "strona": 3
+    }
+   ]
+  },
+  {
+   "id": "x12_strona_mieszana",
+   "plik": "syntetyczne/x12_strona_mieszana.pdf",
+   "klasa": "przelew",
+   "sprawa": "przyklad_02",
+   "wstrzykniete": [
+    {
+     "kod": "strona_mieszana",
+     "strona": 1,
+     "opis": "tekst cyfrowy + wklejony obraz pieczątki i podpisu (nie zasłania tekstu)"
+    }
+   ],
+   "strony_zrodlowe": [
+    {
+     "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_02/potwierdzenie_przelewu.pdf",
+     "strona": 1
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "id": "p36_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_36/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_36",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 91032,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p36_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1728,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Rubiconis Technologie S.A. ul. Piwna 34, 20-304 Lublin KRS: 9995831483, NIP: 9998174794, REGON: 999481460 reprezentowana przez: adw. Dorota Siedlecki, r. pr. Ryszard Jabłończyk adres do korespondencji: Kancelaria Prawna Spółka z ograniczoną odpowiedzialnością, ul. Wiśniowa 44, 60-241 Poznań tel. 000 000 000, biuro@kontakt"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p36_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1398,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "przyjęte w Opisie Przedmiotu Zamówienia odpowiadają najkorzystniejszemu rozwiązaniu oraz nie wskazał kosztów, które poniósłby Zamawiający przy zastosowaniu rozwiązań równoważnych. b).2. Brak takiego uzasadnienia uniemożliwia ocenę, czy cena zaoferowana przez Odwołującego mieści się w granicach rynkowych, co w rezultacie może doprowadzić do naruszenia dyscypliny finansów publicznych. Zarzut nr 3 bł"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

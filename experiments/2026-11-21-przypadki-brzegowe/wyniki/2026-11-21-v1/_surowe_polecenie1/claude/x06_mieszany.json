@@ -1,0 +1,63 @@
+{
+ "id": "x06_mieszany",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo do Prezesa KIO zatytułowane „ODWOŁANIE”. Zawiera dane Odwołującego i Zamawiającego, oznaczenie postępowania, podstawę prawną z art. 513 i 515 Pzp, zarzuty nr 1–3, wnioski oraz podpisy pełnomocników.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785\nreprezentowana przez: r. pr. Aleksandra Marciniak",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania.\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona wygląda na skan: na całym tle widać ziarnisty szum, a tekst nie ma cech cyfrowego renderingu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Szum tła (punkty i kropki) na całej stronie, także między liniami tekstu. Tekst pozostaje czytelny, ale szum może dawać fałszywe znaki w OCR.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_mieszany",
+    "opis": "Strona 1 to czysty, cyfrowo wygenerowany tekst, a strona 2 to skan z szumem tła. OCR trzeba uruchomić tylko dla strony 2.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "inne",
+    "opis": "Treść na stronie 2 jest niespójna: w sekcji „Wnoszę o” jest wniosek o oddalenie zarzutów odwołania, a dalej lista załączników oznaczona a)–d) bez nagłówka. To może zaburzyć ekstrakcję żądań.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2815342,
+  "tury": 4
+ },
+ "czas_s": 16.8
+}

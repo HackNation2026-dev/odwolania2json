@@ -1,0 +1,31 @@
+{
+ "id": "p12_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_12/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_12",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 77760,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p12_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 723,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Pierwszy Bank Gospodarczy S.A. ul. Bankowa 51, 00-498 Warszawa Centrum Obsługi Klienta Warszawa, 12 lipca 2026 Wexford Usługi sp. j. ul. Sosnowa 89, 85-830 Bydgoszcz Dotyczy: potwierdzenie transakcji Bank potwierdza, że w dniu 09-07-2026 z rachunku nr 55 0135 9913 9628 4881 0643 5346, prowadzonego dla Wexford Usługi sp. j., wykonano przelew krajowy w kwocie 200.00 PLN na rachunek nr 57 4216 7791 0"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

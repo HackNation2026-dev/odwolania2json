@@ -1,0 +1,49 @@
+{
+ "id": "x12_strona_mieszana",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Strona ma nagłówek „Potwierdzenie przelewu krajowego” z banku Kredyt Północny. Są na niej płatnik, beneficjent, kwota 50,00 zł i tytuł: opłata skarbowa od pełnomocnictwa w postępowaniu przed KIO (przetarg ZP.431.2026).",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "mieszana",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\nKredyt Północny - wydrukowano 26 sierpnia 2026\nPłatnik\nHartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\n53678424593392529814420143\nBeneficjent\nEurosept Infrastruktura S.A.\nul. Huta 90, 20-829 Lublin",
+    "problemy": [
+     {
+      "kod": "strona_mieszana",
+      "opis": "Górna część strony to tekst cyfrowy z danymi przelewu. W prawej dolnej części wklejono obraz skanu z szarym, zaszumionym tłem, czerwoną owalną pieczątką „OPŁACONO” i niebieską kreską podpisu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Na wklejonym obrazie w prawym dolnym rogu jest pieczątka „OPŁACONO”, a pod nią niebieski podpis lub kreska. Litera „Ł” w pieczątce wyświetla się jako brakujący glif (OP□ACONO). Pieczątka nie zasłania danych przelewu.",
+      "waga": "niska"
+     },
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Dane płatnika i beneficjenta stoją w dwóch kolumnach obok siebie. Szczegóły operacji mają układ etykieta–wartość w dwóch kolumnach.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.251066,
+  "tury": 3
+ },
+ "czas_s": 15.9
+}

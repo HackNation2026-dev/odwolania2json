@@ -1,0 +1,45 @@
+{
+ "id": "x02_obrot180",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Potwierdzenie wykonania przelewu opłaty skarbowej od pełnomocnictwa w sprawie przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 180,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Polski Zachodni S.A. - wygenerowano 16.10.2026\nZleceniodawca\nValid-Systemy Informatyczne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań\nRachunek zleceniodawcy",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona ma postać skanu z widocznym drobnym szumem tła.",
+      "waga": "niska"
+     },
+     {
+      "kod": "obrot",
+      "opis": "Cała treść strony jest obrócona o 180 stopni.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu przedstawiono w tabeli z etykietami i wartościami.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": ",\n          \"waga\": \"wysoka\"\n        },\n        {\n          \"kod\": \"tabela\",\n          \"opis\": \"Dane przelewu przedstawiono w tabeli z etykietami i wartościami.\",\n          \"waga\": \"srednia\"\n        }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": []\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n14 528\n"
+ },
+ "czas_s": 15.7
+}

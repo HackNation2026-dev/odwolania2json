@@ -1,0 +1,44 @@
+{
+ "id": "p20_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_20/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_20",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 75020,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p20_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1712,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Warszawa, dnia 27 maja 2026 roku Zamawiający: Talveris Automatyka sp. j. ul. Uliczna 94, 90-555 Łódź KRS: 9991809197, NIP: 9994312880, REGON: 999732519 kontakt@poczta.example Odwołujący: Quentavis Usługi sp. z o.o. ul. Topolowa 78, 00-809 Warszawa KRS: 9996429969, NIP: 9992111166, REGON: 999970360 reprezentowana przez: adw. Aleksandra Wierzbicka, adw. Jolanta Najder adres do korespondencji: Kancel"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p20_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 953,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "nieprawidłowości, co narusza ich prawo do obrony swoich praw. Zarzut nr 3 nieopisania parametrów technicznych przedmiotu dostawy: 3).1. Zamawiający sporządził Opis Przedmiotu Zamówienia bez podania kompletu parametrów technicznych, które powinny być wymagane od Wykonawców, przez co nie jest możliwe złożenie ofert porównywalnych między sobą. 3).2. W szczególności dokumentacja postępowania nie wskaz"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

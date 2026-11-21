@@ -1,0 +1,59 @@
+{
+ "id": "x10_pusta_strona",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo zatytułowane „ODWOŁANIE”, skierowane do Prezesa KIO, zawiera dane stron, zarzuty i wnioski dotyczące postępowania o udzielenie zamówienia.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "pusta",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "",
+    "problemy": [
+     {
+      "kod": "pusta_strona",
+      "opis": "Cała strona jest pusta.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w\nsposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia\nodwołania.\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "pusta_strona",
+    "opis": "Między stronami oznaczonymi w stopkach „Strona 1 z 2” i „Strona 2 z 2” znajduje się pusta strona PDF (strona 2 pliku).",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "y\": []\n    }\n  ],\n  \"problemy_dokumentu\": [\n    {\n      \"kod\": \"pusta_strona\",\n      \"opis\": \"Między stronami oznaczonymi w stopkach „Strona 1 z 2” i „Strona 2 z 2” znajduje się pusta strona PDF (strona 2 pliku).\",\n      \"waga\": \"niska\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n17 240\n"
+ },
+ "czas_s": 18.8
+}

@@ -1,0 +1,44 @@
+{
+ "id": "p10_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_10/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_10",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 89366,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p10_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2561,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Gdańsk, dnia 11 października 2026 roku Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Zamawiający: Uldaris Systemy sp. j. ul. Huta 76, 60-453 Poznań KRS: 9992290948, NIP: 9998031630, REGON: 999107260 kontakt@poczta.example Odwołujący: Meridian Konsulting sp. j. ul. Huta 80, 80-587 Gdańsk KRS: 9998577437, NIP: 9992049237, REGON: 999851916 reprezentowana przez: adw. Patrycja Rutkie"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p10_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1004,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "4.1. Zamawiający sporządził Opis Przedmiotu Zamówienia bez podania kompletu parametrów technicznych, które powinny być wymagane od Wykonawców, przez co nie jest możliwe złożenie ofert porównywalnych między sobą. 4.2. W szczególności dokumentacja postępowania nie wskazuje minimalnych wartości parametrów, których spełnienie stanowi ograniczenie udziału w postępowaniu, ani dopuszczalnych odstępstw od"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

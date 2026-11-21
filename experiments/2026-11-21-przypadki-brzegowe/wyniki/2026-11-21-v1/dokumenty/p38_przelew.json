@@ -1,0 +1,31 @@
+{
+ "id": "p38_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_38/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_38",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 60883,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p38_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 863,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "KREDYT PÓŁNOCNY POTWIERDZENIE REALIZACJI POLECENIA PRZELEWU ------------------------------------------------------ KWOTA PRZELEWU .............................. 17,00 zł DATA TRANSAKCJI ........................... 23.07.2026 GODZ. .......................................... 16:27 ------------------------------------------------------ RACHUNEK ZLECENIODAWCY PL83 9460 6603 4690 1041 1234 4871 NA RACH"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

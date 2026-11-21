@@ -1,0 +1,89 @@
+{
+ "id": "x03_przekrzywienie",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo adresowane do Prezesa Krajowej Izby Odwoławczej. Ma nagłówek „ODWOŁANIE”, wskazuje Odwołującego i Zamawiającego, zawiera zarzuty nr 1–3, sekcję „Wnoszę o:” i podpisy pełnomocników.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785\nreprezentowana przez: r. pr. Aleksandra Marciniak, r. pr. Jolanta Zajkowski",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona jest obrazem rastrowym z szumem w tle. Wygląda na skan bez warstwy tekstu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "przekrzywienie",
+      "opis": "Cała treść jest przechylona o około 3–4 stopnie przeciwnie do ruchu wskazówek zegara. Linie tekstu i poziome separatory opadają ku lewej stronie.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie występuje drobny szum w postaci rozproszonych kropek. Nie zasłania tekstu.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania.\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona jest obrazem rastrowym z szumem w tle. Wygląda na skan bez warstwy tekstu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "przekrzywienie",
+      "opis": "Treść jest przechylona o około 2–3 stopnie przeciwnie do ruchu wskazówek zegara.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie występuje drobny szum w postaci rozproszonych kropek.",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "Sekcja „Wnoszę o:” ma niespójną numerację: a), b), a), b), c), d). Lista załączników nie ma osobnego nagłówka, co może utrudnić ekstrakcję żądań i załączników.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "przekrzywienie",
+    "opis": "Obie strony są lekko przekrzywione o kilka stopni. Przed OCR trzeba je wyprostować (deskew).",
+    "waga": "srednia"
+   },
+   {
+    "kod": "skan",
+    "opis": "Cały plik składa się z obrazów stron z szumem. Do odczytu potrzebny jest OCR.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2753756,
+  "tury": 4
+ },
+ "czas_s": 16.4
+}

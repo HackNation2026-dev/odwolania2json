@@ -1,0 +1,250 @@
+{
+ "id": "x07_dwa_dokumenty",
+ "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x07_dwa_dokumenty.pdf",
+ "zrodlo": "syntetyczny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_01",
+ "metadane": {
+  "producent": "pypdf",
+  "kreator": null,
+  "rozmiar_bajtow": 158821,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/x07_dwa_dokumenty/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1174,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "PEŁNOMOCNICTWO Łódź, 1 kwietnia 2026 § 1. Mocodawca Mocodawcą jest Belmoria Rozwiązania S.A., ul. Zaczarowana 78, 90-803 Łódź, KRS 9999405188, NIP 9999284065, REGON 999642785. § 2. Pełnomocnik Mocodawca ustanawiam pełnomocnikiem r. pr. Aleksandra Marciniak (nr wpisu na listę: WA 93198), r. pr. Jolanta Zajkowski (nr wpisu na listę: WA 85176). § 3. Postępowanie Pełnomocnictwo dotyczy postępowania „Z"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/x07_dwa_dokumenty/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 587,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POLECENIE PRZELEWU Potwierdzenie realizacji polecenia przelewu · Ekobank Płatnik Rachunek obciążany Belmoria Rozwiązania S.A. PL05470680287581539721455024 ul. Zaczarowana 78, 90-803 Łódź Adresat przelewu Rachunek odbiorcy Aurelink Automatyka S.A. PL68438223049992295262834736 ul. Rybacka 79, 50-580 Wrocław Kwota operacji Data transakcji 200,00 PLN 2026-03-21 Opis opłata skarbowa od pełnomocnictwa d"
+  }
+ ],
+ "wstrzykniete": [
+  {
+   "kod": "wiele_dokumentow",
+   "strona": null,
+   "opis": "pełnomocnictwo i potwierdzenie przelewu w jednym pliku"
+  }
+ ],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 16.6,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2
+   ],
+   "wynik": {
+    "klasa": "niepewne",
+    "uzasadnienie_klasy": "Plik zawiera dwa odrębne dokumenty różnych klas: pełnomocnictwo na stronie 1 oraz potwierdzenie przelewu na stronie 2.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nŁódź, 1 kwietnia 2026\n§ 1. Mocodawca\nMocodawcą jest Belmoria Rozwiązania S.A., ul. Zaczarowana 78, 90-803 Łódź, KRS 9999405188, NIP 9999284065, REGON 999642785.\n§ 2. Pełnomocnik",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Dane przelewu rozmieszczono w obramowanych polach w dwóch kolumnach; odczyt liniowy wymaga zachowania powiązań etykiet i wartości.",
+        "waga": "srednia"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "wiele_dokumentow",
+      "opis": "Strona 1 zawiera pełnomocnictwo, a strona 2 potwierdzenie przelewu opłaty skarbowej. Plik wymaga podziału przed przypisaniem jednej klasy.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": false,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 0.764
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "wiele_dokumentow"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 20.3,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2
+   ],
+   "wynik": {
+    "klasa": "niepewne",
+    "uzasadnienie_klasy": "Plik zawiera dwa różne dokumenty: na stronie 1 pełnomocnictwo dla r. pr. Aleksandry Marciniak i r. pr. Jolanty Zajkowski w postępowaniu ZS.791.2026, a na stronie 2 potwierdzenie przelewu opłaty skarbowej od tego pełnomocnictwa. Pasują do nich dwie różne klasy (pelnomocnictwo i przelew), więc pojedyncza etykieta nie opisuje pliku. Plik należy podzielić: strona 1 to pelnomocnictwo, strona 2 to przelew.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nŁódź, 1 kwietnia 2026\n$ 1. Mocodawca\nMocodawcą jest Belmoria Rozwiązania S.A., ul. Zaczarowana 78, 90-803 Łódź, KRS 9999405188, NIP 9999284065, REGON 999642785.\n$ 2. Pełnomocnik",
+      "problemy": [
+       {
+        "kod": "inne",
+        "opis": "Nagłówki paragrafów są wyrenderowane ze znakiem „$” zamiast „§” („$ 1. Mocodawca” itd.). OCR lub warstwa tekstu może zwrócić „$”.",
+        "waga": "niska"
+       },
+       {
+        "kod": "pieczatka_podpis",
+        "opis": "W miejscach na podpisy mocodawcy (Oliwia Kaczmarek, Prezes Zarządu) i pełnomocników są tylko wykropkowane linie, bez widocznych podpisów.",
+        "waga": "niska"
+       }
+      ]
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu\nAurelink Automatyka S.A.",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Dane przelewu są w ramkach ułożonych w dwie kolumny (płatnik i rachunek obciążany, adresat i rachunek odbiorcy, kwota i data). Przy odczycie liniowym etykiety mogą się pomieszać z wartościami.",
+        "waga": "niska"
+       },
+       {
+        "kod": "inne",
+        "opis": "Opłata skarbowa od pełnomocnictwa trafia do Aurelink Automatyka S.A., czyli prowadzącego postępowanie, a nie do urzędu. Data transakcji (2026-03-21) jest wcześniejsza niż data pełnomocnictwa (1 kwietnia 2026). To niespójności merytoryczne do sprawdzenia przy walidacji.",
+        "waga": "srednia"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "wiele_dokumentow",
+      "opis": "W jednym pliku są dwa dokumenty: pełnomocnictwo (strona 1) i potwierdzenie przelewu opłaty skarbowej od tego pełnomocnictwa (strona 2). Trzeba je rozdzielić i sklasyfikować osobno.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": false,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.99
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 0.733
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "wiele_dokumentow"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 18.1,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2
+   ],
+   "wynik": {
+    "klasa": "pelnomocnictwo",
+    "uzasadnienie_klasy": "Dokument zawiera pełnomocnictwo udzielone przez Mocodawcę Aleksandrze Marciniak i Jolancie Zajkowski; druga strona jest potwierdzeniem opłaty skarbowej związanej z tym pełnomocnictwem.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nŁódź, 1 kwietnia 2026\n\n§ 1. Mocodawca\nMocodawca jest Bełmoria Rozwiązania S.A., ul. Zacz arowania 78, 90-803 Łódź, KRS 9999405188, NIP 9999284065, REGON\n9999642785.",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu - Ekobank\n\nPłatnik\nBełmoria Rozwiązania S.A.\nul. Zacz arowania 78, 90-803 Łódź\n\nRachunek obciążeni\nPL05470680287581539721455024",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Dane płatnika, odbiorcy, kwoty i opisu przelewu są rozmieszczone w układzie tabelarycznym.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "wiele_dokumentow",
+      "opis": "Plik łączy dwa odrębne dokumenty: pełnomocnictwo na stronie 1 oraz potwierdzenie przelewu na stronie 2.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.98
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 0.778
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "wiele_dokumentow"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

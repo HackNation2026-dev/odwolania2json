@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Wynik modelu: przegląd dokumentu",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["klasa", "uzasadnienie_klasy", "strony", "problemy_dokumentu"],
+  "properties": {
+    "klasa": {"type": "string", "enum": ["odwolanie", "pelnomocnictwo", "przelew", "inny", "niepewne"]},
+    "uzasadnienie_klasy": {"type": "string"},
+    "strony": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["nr", "typ", "obrot_stopnie", "jakosc", "transkrypcja_poczatku", "problemy"],
+        "properties": {
+          "nr": {"type": "integer"},
+          "typ": {"type": "string", "enum": ["tekst", "skan", "mieszana", "pusta"]},
+          "obrot_stopnie": {"type": "integer", "enum": [0, 90, 180, 270]},
+          "jakosc": {"type": "string", "enum": ["dobra", "srednia", "slaba"]},
+          "transkrypcja_poczatku": {"type": "string"},
+          "problemy": {"$ref": "#/$defs/problemy"}
+        }
+      }
+    },
+    "problemy_dokumentu": {"$ref": "#/$defs/problemy"}
+  },
+  "$defs": {
+    "problemy": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kod", "opis", "waga"],
+        "properties": {
+          "kod": {"type": "string"},
+          "opis": {"type": "string"},
+          "waga": {"type": "string", "enum": ["niska", "srednia", "wysoka"]}
+        }
+      }
+    }
+  }
+}

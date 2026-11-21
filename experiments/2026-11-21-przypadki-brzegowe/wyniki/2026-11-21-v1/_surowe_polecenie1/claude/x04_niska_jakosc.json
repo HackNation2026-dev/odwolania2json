@@ -1,0 +1,64 @@
+{
+ "id": "x04_niska_jakosc",
+ "model": "claude",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Nagłówek „Potwierdzenie przelewu krajowego” z danymi płatnika, beneficjenta, kwotą, datą operacji, numerem referencyjnym i tytułem przelewu. Tytuł wskazuje jednak na opłatę skarbową od pełnomocnictwa, a nie na wpis od odwołania, więc dokument może nie być wymaganym dowodem uiszczenia wpisu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "slaba",
+    "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\nPłatnik Beneficjent\nHantica Seneis S.A. Euroinpil Infrastruktura S.A.\nul. Akacjowa 54, 80-122 Gdańsk ul. Huta 90, 20-829 Lublin\nKwota operacji 50,00 zł\nData operacji 22 sierpnia 2026\nNumer referencyjny CEN26090357607",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona jest obrazem rastrowym, bez widocznej cyfrowej warstwy tekstu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Silne rozmycie i niska rozdzielczość całego tekstu oraz szum typu „sól i pieprz” na całej stronie. Drobny tekst (podtytuł pod nagłówkiem, numery rachunków, stopka) jest praktycznie nieczytelny. Nazwy stron, kwota i numer referencyjny są odczytywalne tylko częściowo.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu w układzie etykieta–wartość (Kwota operacji, Data operacji, Numer referencyjny, Tytuł przelewu, Typ operacji, Kanał) oraz dwie kolumny Płatnik/Beneficjent w górnej części strony.",
+      "waga": "niska"
+     },
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Bloki Płatnik i Beneficjent stoją obok siebie w dwóch kolumnach, więc odczyt liniowy miesza dane obu stron.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "inne",
+    "opis": "Tytuł przelewu brzmi w przybliżeniu: „opłata skarbowa od pełnomocnictwa dla Bartosz Szymański i Cezary Wierzbicki w postępowaniu przed KIO w przetargu ZP.435.2026…”. To opłata skarbowa, a nie wpis od odwołania. Trzeba to zweryfikować przy kontroli kompletności sprawy.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "niska_jakosc",
+    "opis": "Jakość jedynej strony jest niewystarczająca do pewnego OCR kluczowych pól: kwoty, numerów rachunków i numeru referencyjnego.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.263555,
+  "tury": 3
+ },
+ "czas_s": 18.9
+}

@@ -1,0 +1,31 @@
+{
+ "id": "p14_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_14/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_14",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 67893,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p14_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 995,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "PEŁNOMOCNICTWO Mocodawca Opalit Serwis sp. k. ul. Różana 61, 80-812 Gdańsk Dane rejestrowe KRS 9996902468, NIP 9992251714, REGON 999950475 Pełnomocnicy adw. Patrycja Bartoszewicz, nr wpisu WA 84376 adw. Aleksandra Gajewicz, nr wpisu WA 42277 Zamawiający Opalit Wyposażenie S.A. Postępowanie Dostawa i wdrożenie oprogramowania do obsługi dokumentacji wraz z serwisem wsparcia technicznego nr ZP.621.20"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

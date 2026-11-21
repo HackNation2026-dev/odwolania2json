@@ -1,0 +1,31 @@
+{
+ "id": "p50_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_50/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_50",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 56901,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p50_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1623,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Częstochowa, 29 września 2026 r. PEŁNOMOCNICTWO Wykonawcy wspólnie ubiegający się o udzielenie zamówienia (Konsorcjum): 1) Norvia Ciepłownictwo sp. z o.o. sp.k., ul. Kościuszki 91, 42-620 Częstochowa, KRS 9994245738, NIP 9990838738, REGON 999328426; 2) Eltrona Instalacje Energetyczne sp. z o.o., ul. Lipowa 2, 87-539 Toruń, KRS 9995876775, NIP 9998343705, REGON 999211638 (dalej łącznie: „Mocodawca”"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

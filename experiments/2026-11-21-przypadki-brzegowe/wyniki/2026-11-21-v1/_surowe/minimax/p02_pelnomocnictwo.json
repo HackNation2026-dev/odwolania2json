@@ -1,0 +1,46 @@
+{
+ "id": "p02_pelnomocnictwo",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument nosi tytuł „PEŁNOMOCNICTWO” i wskazuje pełnomocników powołanych do reprezentowania wykonawcy Hartica Serwis S.A. w postępowaniu odwoławczym.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nMocodawca Hartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\nDane rejestrowe KRS 9999669444, NIP 9990678035, REGON 999114017",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Treść zorganizowana jest w dwukolumnową tabelę z etykietami po lewej i wartościami po prawej; tekst pozostaje czytelny.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2755,
+   "output_tokens": 765,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 197,
+   "output_tokens_details": {
+    "thinking_tokens": 512
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 5.8
+}

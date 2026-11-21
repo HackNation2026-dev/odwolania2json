@@ -1,0 +1,40 @@
+{
+ "id": "p01_przelew",
+ "model": "codex",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Potwierdzenie przelewu 200,00 PLN dotyczy opłaty skarbowej od pełnomocnictwa, a nie wpisu od odwołania do KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu rozmieszczono w obramowanych polach w dwóch kolumnach.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Dokument wygląda jak potwierdzenie wpisu od odwołania, ale opis wskazuje opłatę skarbową od pełnomocnictwa.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "   }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": [\n    {\n      \"kod\": \"podobny_do_klasy\",\n      \"opis\": \"Dokument wygląda jak potwierdzenie wpisu od odwołania, ale opis wskazuje opłatę skarbową od pełnomocnictwa.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n28 195\n"
+ },
+ "czas_s": 16.1
+}

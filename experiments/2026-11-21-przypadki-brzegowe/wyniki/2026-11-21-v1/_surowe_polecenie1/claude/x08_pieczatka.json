@@ -1,0 +1,54 @@
+{
+ "id": "x08_pieczatka",
+ "model": "claude",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument to „Polecenie przelewu – potwierdzenie realizacji polecenia przelewu” z banku (Ekobank): płatnik, rachunki, kwota 200,00 PLN, data 2026-03-21 i status „ZREALIZOWANO”. Tytuł mówi jednak o opłacie skarbowej od pełnomocnictwa w postępowaniu przed KIO, a nie o wpisie od odwołania. Odbiorcą jest spółka, a nie UZP ani urząd, więc klasyfikację trzeba sprawdzić.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu\nAurelink Automatyka S.A.",
+    "problemy": [
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Czerwona owalna pieczątka „ZAPŁACONO” (z uszkodzonym znakiem Ł) zachodzi na pole Opis (numer postępowania ZS.791.2026 i CEN2604016344389) oraz na pole Nr ref. Niebieska kreska podpisu przecina stopkę „Potwierdzenie ma charakter informacyjny…”.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie widać rozproszony szum (drobne kropki w tle). Tekst nadal jest czytelny.",
+      "waga": "niska"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu są w ramkach ułożonych w dwie kolumny (płatnik i rachunek obciążany, adresat i rachunek odbiorcy, kwota i data), więc liniowy odczyt jest utrudniony.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "inne",
+    "opis": "Tytuł przelewu to „opłata skarbowa od pełnomocnictwa”, a nie wpis od odwołania. Odbiorcą jest spółka (Aurelink Automatyka S.A.), a nie UZP. Dokument może więc nie być wymaganym potwierdzeniem wpisu, choć formalnie jest potwierdzeniem przelewu.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2715984,
+  "tury": 3
+ },
+ "czas_s": 19.8
+}

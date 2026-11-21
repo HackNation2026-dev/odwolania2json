@@ -1,0 +1,70 @@
+{
+ "id": "s_przyklad_odwolanie",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument jest odwołaniem do Prezesa Krajowej Izby Odwoławczej od unieważnienia rozstrzygnięcia w postępowaniu o udzielenie zamówienia publicznego, o czym wskazują tytuł „ODWOŁANIE”, adresat oraz wnioski o rozstrzygnięcie odwołania.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "KANCELARIA PRAWNA [ZACZERNIONE]\nRADCA PRAWNY [ZACZERNIONE] [ZACZERNIONE]\nWarszawa, dnia 16 czerwca 2025 r.\n\nPrezes Krajowej Izby Odwoławczej\nul. Postępu 17a\n02-676 Warszawa\n\nOdwołujący: [ZACZERNIONE] Spółka z ograniczoną odpowiedzialnością",
+    "problemy": [
+     {
+      "kod": "anonimizacja",
+      "opis": "Liczne dane osobowe, adresowe, identyfikacyjne i kontaktowe zostały zaczernione w nagłówku, danych stron, adresie do doręczeń, stopce oraz bloku podpisów.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "podstawowym na podstawie art. 275 pkt 1 Ustawy Pzp, tj.: wobec treści dokumentów zamówienia – Specyfikacji Warunków Zamówienia (zwanej dalej: SWZ).\n\nOdwołanie jest wniesione w terminie, bowiem zgodnie z art. 515 ust. 2 pkt 2 Ustawy Pzp, gdy wartość szacunkowa zamówienia jest mniejsza niż próg unijne",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Zaznaczam, że pomimo, iż Zamawiający jest związany przepisami Ustawy Pzp, to już na etapie przygotowywania dokumentacji postępowania i ogłoszenia przedmiotowego postępowania nie przestrzegał ich, przez co doprowadził do naruszenia wyżej wymienionego przepisu Ustawy Pzp",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "anonimizacja",
+    "opis": "W widocznych stronach dokumentu liczne dane stron, dane identyfikacyjne i kontaktowe oraz informacje w bloku podpisów zostały zaczernione.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 12722,
+   "output_tokens": 1859,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 1077
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 11.9
+}

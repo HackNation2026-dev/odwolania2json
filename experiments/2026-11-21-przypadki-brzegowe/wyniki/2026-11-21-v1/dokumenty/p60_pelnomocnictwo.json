@@ -1,0 +1,31 @@
+{
+ "id": "p60_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_60/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_60",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 86007,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p60_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1583,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Koszalin, 06.09.2026 PEŁNOMOCNICTWO Wykonawcy wspólnie ubiegający się o udzielenie zamówienia (Konsorcjum): 1) Helvix Eko-Serwis sp.k., ul. Jagiellońska 48, 75-030 Koszalin, KRS 9999233530, NIP 9995558958, REGON 999054443; 2) Nexalia Środowisko S.A., ul. Jagiellońska 2, 26-836 Radom, KRS 9998728887, NIP 9996504966, REGON 999405661 (dalej łącznie: „Mocodawca”), reprezentowani przez osoby podpisane "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

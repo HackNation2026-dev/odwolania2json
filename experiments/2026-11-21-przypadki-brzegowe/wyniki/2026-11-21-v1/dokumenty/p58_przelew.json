@@ -1,0 +1,31 @@
+{
+ "id": "p58_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_58/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_58",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 65700,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p58_przelew/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 741,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Handlowy Centrum S.A. · wygenerowano 12.10.2026 Zleceniodawca Imperon Serwis sp. z o.o. ul. Lipowa 104, 25-239 Kielce Rachunek zleceniodawcy PL52 0244 6096 4788 0440 5974 7207 Odbiorca Państwowa Akademia Nauk Stosowanych w Krzemienicy ul. Kościuszki 11, 83-226 Krzemienica Rachunek odbiorcy PL27 3137 2608 8032 8209 3042 4126 Kwota 100,00 PLN Data operacji 11 pa"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

@@ -1,0 +1,13 @@
+{
+ "id": "x03_przekrzywienie",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "blad",
+ "wynik": null,
+ "blad": "ValidationError: 'waga' is a required property\n\nFailed validating 'required' in schema['properties']['problemy_dokumentu']['items']:\n    {'type': 'object',\n     'additionalProperties': False,\n     'required': ['kod', 'opis', 'waga'],\n     'properties': {'kod': {'type': 'string'},\n                    'opis': {'type': 'string'},\n                    'waga': {'type': 'string',\n                             'enum': ['niska', 'srednia', 'wysoka']}}}\n\nOn instance['problemy_dokumentu'][0]:\n    {'kod': 'niska_jakosc',\n     'opis': 'Obie strony są silnie zabrudzone drobnym szumem i plamami, '\n             'co może pogarszać wyniki OCR.'}",
+ "meta": {},
+ "czas_s": 10.0
+}

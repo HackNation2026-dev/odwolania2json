@@ -1,0 +1,44 @@
+{
+ "id": "p15_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_15/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_15",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 77068,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p15_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2658,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Poznań, dnia 12 stycznia 2026 roku Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Belmoria Systemy sp. j. ul. Gołębia 3, 60-235 Poznań KRS: 9993682204, NIP: 9999142626, REGON: 999173770 reprezentowana przez: adw. Ryszard Lipowczyk adres do korespondencji: Kancelaria Adwokacka Spółka z ograniczoną odpowiedzialnością, ul. Topolowa 93, 40-397 Katowice tel. 000 000 000, b"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p15_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 415,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "nieprawidłowości, co narusza ich prawo do obrony swoich praw. Wnoszę o: 1.1) wnoszę o oddalenie zarzutów odwołania; 2.2) wnoszę o uwzględnienie odwołania i przekazanie sprawy Zamawiającemu do ponownej oceny ofert; 1.1) odwołanie wraz z uzasadnieniem; 2.2) oświadczenie o niezaleganiu z podatkami i składkami; .............................. Ryszard Lipowczyk, adw. Do odwołania dołączono potwierdzenie"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

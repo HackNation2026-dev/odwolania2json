@@ -1,0 +1,61 @@
+{
+ "id": "x09_uciety",
+ "model": "minimax",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument ma tytuł „PEŁNOMOCNICTWO” i upoważnia osoby podpisane do reprezentowania Mocodawcy w postępowaniu przed Krajową Izbą Odwoławczą.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Poznań, 15 październik\n\nPEŁNOMOCNICTWO\n\nValtrix Systemy Informatyczne sp. z o.o., ul. Grunwaldzka 112, 60-307 Poznań, KRS 9998213",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona jest obrazem zeskanowanego dokumentu bez widocznej cyfrowej warstwy tekstu.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "uciety_tekst",
+      "opis": "Prawa krawędź strony jest ucięta; końce wierszy daty oraz głównych akapitów są poza obszarem obrazu.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "W tle i między wierszami widoczne są liczne drobne plamki i szum typowy dla skanu, choć tekst pozostaje zasadniczo czytelny.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "uciety_tekst",
+    "opis": "W całym pliku ucięte są prawe fragmenty wierszy, przez co brakuje pełnej treści daty, zakresu pełnomocnictwa i danych końcowych akapitów.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2587,
+   "output_tokens": 834,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 128,
+   "output_tokens_details": {
+    "thinking_tokens": 333
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 21.6
+}

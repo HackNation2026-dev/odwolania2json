@@ -1,0 +1,55 @@
+{
+ "id": "x06_mieszany",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo skierowane do Prezesa KIO, zatytułowane „ODWOŁANIE”, wskazuje odwołującego, zamawiającego i zarzuty dotyczące postępowania.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w\nsposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia\nodwołania.\nZarzut nr 2 błędnej oceny ofert",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona wygląda na skan; obecności ukrytej warstwy OCR nie można ustalić z obrazu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie widoczny drobny szum i liczne ciemne punkty, również w otoczeniu liter.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_mieszany",
+    "opis": "Strona 1 wygląda na wygenerowaną cyfrowo, a strona 2 na zeskanowaną.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "iter.\",\n          \"waga\": \"niska\"\n        }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": [\n    {\n      \"kod\": \"dokument_mieszany\",\n      \"opis\": \"Strona 1 wygląda na wygenerowaną cyfrowo, a strona 2 na zeskanowaną.\",\n      \"waga\": \"srednia\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n5849\n"
+ },
+ "czas_s": 17.6
+}

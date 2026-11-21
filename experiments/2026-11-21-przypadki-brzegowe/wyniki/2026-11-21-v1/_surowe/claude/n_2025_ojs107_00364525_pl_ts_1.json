@@ -1,0 +1,68 @@
+{
+ "id": "n_2025_ojs107_00364525_pl_ts_1",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Plik to ogłoszenie o zamówieniu opublikowane w TED (364525-2025, OJ S 107/2025). Ogłoszenia nie są odwołaniem, pełnomocnictwem ani potwierdzeniem przelewu. Dokument dotyczy jednak postępowania o zamówienie publiczne i powołuje się na Pzp, więc łatwo go pomylić z dokumentem sprawy.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "364525-2025 - Procedura konkurencyjna See the notice on TED website\nPolska – Serwery – Dostawa, wdrożenie, skonfigurowanie serwerowego środowiska teleinformatycznego wraz z serwisem i gwarancją\nOJ S 107/2025 05/06/2025",
+    "problemy": [
+     {
+      "kod": "jezyk_obcy",
+      "opis": "W nagłówku strony 1 jest angielski link „See the notice on TED website”. To drobny fragment, reszta jest po polsku.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Udział w organizacji przestępczej: Wykonawca zostanie wykluczony z postępowania na podstawie art. 108 ust. 1 pkt 1 Ustawy Prawo Zamówień Publicznych, którego skazano prawomocnie za przestępstwo wskazane w art. 258 Kodeksu karnego",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prawo Zamówień Publicznych, którego skazano prawomocnie za przestępstwo o charakterze terrorystycznym, o którym mowa w art. 115 § 20 Kodeksu karnego, lub mające na celu popełnienie tego przestępstwa lub odpowiedni czyn",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Cały plik to ogłoszenie o zamówieniu z TED. Nie jest to odwołanie, pełnomocnictwo ani przelew.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Ogłoszenie o zamówieniu publicznym zawiera nazwę zamawiającego, numer referencyjny ZP.039.2025 i odwołania do art. 108 Pzp. Te dane mogą zostać błędnie wzięte za treść odwołania do KIO.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2873018,
+  "tury": 5
+ },
+ "czas_s": 16.1
+}

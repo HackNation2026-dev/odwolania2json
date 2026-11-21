@@ -1,0 +1,36 @@
+{
+ "id": "p40_pelnomocnictwo",
+ "model": "minimax",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument zatytułowany \"PEŁNOMOCNICTWO\" zawiera umocowanie Mocodawcy do reprezentowania w postępowaniu o udzielenie zamówienia przed Krajową Izbą Odwoławczą, ze wskazaniem osób podpisanych i zakresu pełnomocnictwa.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Poznań, 15 października 2026 r.\n\nPEŁNOMOCNICTWO\n\nValtrix Systemy Informatyczne sp. z o.o., ul. Grunwaldzka 112, 60-307 Poznań, KRS 9998213547, NIP 9993380162, REGON 999517204 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane poniżej, udziela pełnomocnictwa: r. pr. Magdalena Wróblewska (nr wpisu na listę: PO-2217), r. pr. Tomasz Kędzierski (nr wpisu na listę: PO-3086).",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2810,
+   "output_tokens": 347,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 128
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 5.3
+}

@@ -1,0 +1,44 @@
+{
+ "id": "p17_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_17/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_17",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 75410,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p17_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2489,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Odwołujący: Kavendis Infrastruktura sp. z o.o. ul. Uliczna 39, 20-736 Lublin KRS: 9999008184, NIP: 9999892540, REGON: 999263852 reprezentowana przez: adw. Norbert Milewski adres do korespondencji: Kancelaria Prawna i Partnerzy, ul. Topolowa 68, 40-173 Katowice tel. 000 000 000, biuro@sekretariat.example Zamawiający: Ypsilon Usługi sp. j. ul. Sosnowa 99, 35-584 Rzeszów KRS: 9998618920, NIP: 9994288"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p17_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 295,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Wnoszę o: 1. wnoszę o uwzględnienie odwołania w zakresie, w jakim zarzuty odwołania są zasadne; 2. wnoszę o uwzględnienie odwołania i przekazanie sprawy Zamawiającemu do ponownej oceny ofert; 1. dowód uiszczenia wadium; 2. oświadczenie o niezaleganiu z podatkami i składkami; .............................. Norbert Milewski, adw. Strona 2 z 2"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

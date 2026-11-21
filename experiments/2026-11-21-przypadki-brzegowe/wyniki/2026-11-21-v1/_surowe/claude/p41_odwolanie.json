@@ -1,0 +1,68 @@
+{
+ "id": "p41_odwolanie",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo skierowane do Krajowej Izby Odwoławczej z tytułem „ODWOŁANIE”. Zawiera oznaczenie Zamawiającego i Odwołującego (konsorcjum), wpis od odwołania 20 000,00 zł, zarzuty naruszenia Pzp, wnioski oraz uzasadnienie. Paginacja „Strona 1 z 11” wskazuje, że cały plik to jedno odwołanie.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Krajowa Izba Odwoławcza\nul. Postępu 17A\n02-676 Warszawa\nZamawiający:\nGmina Brzozowo Pomorskie\nul. Ratuszowa 1, 86-170 Brzozowo Pomorskie\nNIP: 9995062817, REGON: 999871350\nprzetargi@brzozowo.example",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr IR.271.14.2026\n2) wyborze jako najkorzystniejszej oferty wykonawcy BudMax Kujawy S.A. z siedzibą we Włocławku;\n3) zaniechaniu wezwania Odwołującego do złożenia dodatkowych wyjaśnień w zakresie ceny,",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr IR.271.14.2026\n7) wyciągu z Krajowego Rejestru Sądowego oraz Centralnej Ewidencji i Informacji o Działalności Gospodarczej – na okoliczność statusu wykonawców;\nUZASADNIENIE\nI. Stan faktyczny",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dwie tabele: chronologia zdarzeń (Data/Zdarzenie) oraz zestawienie ofert (Lp., Wykonawca, Siedziba/NIP, Cena brutto, Pkt cena, Pkt pozost., Razem). W drugiej tabeli komórki mają tekst w kilku wierszach, a słowa są dzielone („Lp” / „.”, „odrzuco” / „na”).",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "inne",
+    "opis": "Na stronie 1 Odwołujący to konsorcjum dwóch wykonawców (Lider i Partner), każdy z własnymi danymi KRS, NIP i REGON, a wspólnym pełnomocnikiem jest adwokat. Ekstrakcja musi poprawnie przypisać dane do każdego wykonawcy i oddzielić je od danych pełnomocnika.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "inne",
+    "opis": "Ocena obejmuje tylko strony 1–3 z 11. Nie wiadomo, czy dalsze strony nie zawierają załączników, np. pełnomocnictwa, o którym mowa na stronie 1 (wiele_dokumentow).",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.29027000000000003,
+  "tury": 5
+ },
+ "czas_s": 21.1
+}

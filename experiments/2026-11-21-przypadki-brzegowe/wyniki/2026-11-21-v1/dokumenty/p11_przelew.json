@@ -1,0 +1,31 @@
+{
+ "id": "p11_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_11/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_11",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 79779,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p11_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 603,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Nova Bank Polska Data wygenerowania: 05-08-2026 godz. 09:31 Potwierdzenie operacji bankowej Numer klienta 8095530221 Opis opłata skarbowa od pełnomocnictwa dla Cezary Bartoszewicz w postępowaniu przed KIO w przetargu DI.529.2026 CEN2608263063380 Kwota operacji 200,00 Data transakcji 03-08-2026 Numer referencyjny CEN2608263063380 Dane nadawcy Quantis Serwis sp. k., ul. Orzechowa 56, 40-199 Katowice"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

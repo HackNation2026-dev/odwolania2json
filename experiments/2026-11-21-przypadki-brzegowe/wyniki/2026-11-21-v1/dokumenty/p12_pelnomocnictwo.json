@@ -1,0 +1,31 @@
+{
+ "id": "p12_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_12/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_12",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 72749,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p12_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 580,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Pełnomocnictwo Wexford Usługi sp. j. z siedzibą w Bydgoszcz (KRS 9990299642, NIP 9999988004, REGON 999132498) udzielam pełnomocnictwa adw. Klaudia Dobrowolski (nr wpisu na listę: WA 19496) do reprezentowania spółki we wszystkich czynnościach w postępowaniu „Modernizacja instalacji wentylacyjnej w obiekcie użyteczności publicznej”, numer postępowania: SWZ.755.2026, prowadzonym przez Lunareth Sieci "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

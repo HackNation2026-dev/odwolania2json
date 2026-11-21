@@ -1,0 +1,74 @@
+{
+ "id": "n_minister_sprawiedliwosci_pismo_rdssp_z_1",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Pismo urzędowe Rzecznika Dyscyplinarnego Sędziów Sądów Powszechnych do Ministra Sprawiedliwości z 11 marca 2024 r., w którym rzecznik uznaje powołania rzeczników dyscyplinarnych za bezskuteczne. Nie jest to odwołanie do KIO, pełnomocnictwo ani potwierdzenie przelewu. Pismo nie dotyczy zamówień publicznych.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "RZECZNIK DYSCYPLINARNY SĘDZIÓW SĄDÓW POWSZECHNYCH Warszawa, 11 marca 2024 r. dot. DKO-I.565.84.2024 DKO-I.565.85.2024 DKO-I.565.86.2024 RDSP.0212.4.2024 Pan Adam Bodnar Minister Sprawiedliwości W związku z wystąpieniami Ministra",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona jest skanem pisma papierowego (widoczny lekki szum i nierówny druk). Trzeba ją przepuścić przez OCR.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Długa lista sygnatur RDSP w akapicie jest ułożona w wyrównane kolumny, przez co liniowy OCR może pomieszać ich kolejność.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "realizujących zadania publiczne (t.j. Dz.U. z 2023 r. poz. 57 ze zm.) oraz przepisy Kodeksu postępowania karnego i innych ustaw procesowych, uznać należy, że mimo wprowadzonej przez tę pierwszą ustawę zasady równoważności",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona jest skanem pisma papierowego. Trzeba ją przepuścić przez OCR.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "W prawym dolnym rogu odręczny podpis nachodzi na pieczątkę imienną 'Rzecznik Dyscyplinarny Sędziów Sądów Powszechnych SSA Piotr Schab', a jego linia schodzi na stopkę z adresem.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Pismo urzędowe rzecznika dyscyplinarnego sędziów, niezwiązane z postępowaniem przed KIO. Nie należy do żadnej z klas: odwołanie, pełnomocnictwo, przelew.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Pismo zawiera słownictwo procesowe, np. 'środka odwoławczego' i 'pismo procesowe', przez co klasyfikator słów kluczowych może je pomylić z odwołaniem.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2752864,
+  "tury": 4
+ },
+ "czas_s": 18.1
+}

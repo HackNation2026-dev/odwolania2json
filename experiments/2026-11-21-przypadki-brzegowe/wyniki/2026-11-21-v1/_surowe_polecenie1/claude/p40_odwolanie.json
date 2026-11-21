@@ -1,0 +1,56 @@
+{
+ "id": "p40_odwolanie",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Na stronie 1 jest pismo adresowane do Prezesa Krajowej Izby Odwoławczej z nagłówkiem „ODWOŁANIE”. Wskazuje Odwołującego, Zamawiającego, postępowanie ZP/PN/48/2026, wpis 15 000,00 zł oraz podstawę art. 505 i 513 Pzp. Strony 2–3 zawierają zarzuty, wnioski i uzasadnienie, a w nagłówku widnieje „Odwołanie – postępowanie nr ZP/PN/48/2026”.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Poznań, dnia 19 października 2026 r.\nPrezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nValtrix Systemy Informatyczne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań\nKRS: 9998213547, NIP: 9993380162, REGON: 999517204",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr ZP/PN/48/2026\n1) wyborze jako najkorzystniejszej oferty złożonej przez Medisoft Integracje S.A. z siedzibą w Warszawie, o którym Zamawiający poinformował wykonawców w dniu 9 października 2026 r.;",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr ZP/PN/48/2026\n1) dokumentacji postępowania o udzielenie zamówienia, w tym protokołu postępowania wraz z załącznikami – na okoliczność przebiegu postępowania i treści czynności Zamawiającego;",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "W środkowej części strony, w sekcji „I. Stan faktyczny”, jest tabela przebiegu postępowania z kolumnami Data i Zdarzenie (9 wierszy, od 14.07.2026 do 13.10.2026). Przy odczycie liniowym trzeba zachować powiązanie daty ze zdarzeniem.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.29302860000000003,
+  "tury": 5
+ },
+ "czas_s": 17.1
+}

@@ -1,0 +1,72 @@
+{
+ "id": "n_2025_s_188_641009",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "To ogłoszenie o zamówieniu z TED (641009-2025, OJ S 188/2025) dotyczące sieci WAN VPLS dla Sądu Apelacyjnego w Rzeszowie. Nie jest to odwołanie, pełnomocnictwo ani potwierdzenie przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "641009-2025 - Procedura konkurencyjna See the notice on TED website\nPolska – Usługi w zakresie sieci komputerowej – ŚWIADCZENIE USŁUGI TRANSMISJI DANYCH W POSTACI BEZPIECZNEJ I DYSPOZYCYJNEJ SIECI DOSTĘPOWEJ WAN VPLS ZGODNEJ Z PROTOKOŁEM ETHERNET",
+    "problemy": [
+     {
+      "kod": "podobny_do_klasy",
+      "opis": "Ogłoszenie o zamówieniu TED w języku polskim, w terminologii zamówień publicznych (nabywca, procedura, SWZ). Może zostać pomylone z dokumentem sprawy KIO.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "jezyk_obcy",
+      "opis": "Fragment w języku angielskim w nagłówku: odnośnik 'See the notice on TED website'.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Główna klasyfikacja (cpv): 72700000 Usługi w zakresie sieci komputerowej\nDodatkowa klasyfikacja (cpv): 72400000 Usługi internetowe\n2.1.2. Miejsce realizacji\nPodpodział krajowy (NUTS): Rzeszowski (PL823)\nKraj: Polska",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "złożenia następujących oświadczeń i dokumentów: Odpis lub informacja z Krajowego Rejestru Sądowego lub z Centralnej Ewidencji i Informacji o Działalności Gospodarczej – w celu potwierdzenia braku podstaw wykluczenia na podstawie art. 109 ust. 1 pkt 4 ustawy Pzp,",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Cały plik to ogłoszenie o zamówieniu z TED (Sąd Apelacyjny w Rzeszowie, OKAiZP.261.5.2025), a nie odwołanie, pełnomocnictwo ani przelew.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Ogłoszenie o zamówieniu powiązane z postępowaniem przetargowym. Treścią i słownictwem (Pzp, wykluczenie, wykonawca) przypomina dokumenty sprawy odwoławczej.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.29786460000000003,
+  "tury": 5
+ },
+ "czas_s": 18.9
+}

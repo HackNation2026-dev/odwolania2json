@@ -1,0 +1,48 @@
+{
+ "id": "p02_odwolanie",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument jest odwołaniem złożonym do Krajowej Izby Odwoławczej: wskazuje Prezesa KIO jako adresata, uzasadnia zarzuty postępowania i wnosi o rozpatrzenie odwołania, wysłuchanie sprawy oraz przekazanie sprawy Zamawiającemu do ponownej oceny oferty.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\n\nZamawiający:\nEuropept Infrastruktura S.A.\nul. Huta 90, 20-829 Lublin\nKRS: 9993122884, NIP: 9996097888, REGON: 999725710\nkontakt@kontakt.example",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "1. dowód uiszczenia wadium;\n2. dokument potwierdzający nadanie odwołania;\n\n...........................................    .........................................\nBartosz Szymański, adw.    Cezary Wierzbicki, adw.",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 4193,
+   "output_tokens": 1142,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 738
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 15.3
+}

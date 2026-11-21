@@ -1,0 +1,31 @@
+{
+ "id": "p15_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_15/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_15",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 62519,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p15_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 897,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Poznań, 12-01-2026 Pełnomocnictwo Działając w imieniu Belmoria Systemy sp. j. (dalej: „Wykonawca”), wpisanej do rejestru przedsiębiorców Krajowego Rejestru Sądowego pod numerem KRS 9993682204, posiadającej NIP 9999142626 oraz REGON 999173770, niniejszym upoważniam adw. Ryszard Lipowczyk (nr wpisu na listę: WA 55974) do reprezentowania Wykonawcy w postępowaniu o udzielenie zamówienia publicznego pn"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

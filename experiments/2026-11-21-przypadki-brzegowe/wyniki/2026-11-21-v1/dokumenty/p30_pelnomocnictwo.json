@@ -1,0 +1,31 @@
+{
+ "id": "p30_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_30/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_30",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 72786,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p30_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 607,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "PEŁNOMOCNICTWO Kadmos Rozwiązania sp. k. z siedzibą w Łódź (KRS 9999145542, NIP 9991006421, REGON 999692205) ustanawiam pełnomocnikiem r. pr. Grzegorz Rutkiewicz (nr wpisu na listę: WA 62573) do reprezentowania spółki we wszystkich czynnościach w postępowaniu „Świadczenie usług utrzymania infrastruktury sieciowej w budynkach administracyjnych”, numer postępowania: DI.123.2026, prowadzonym przez Ve"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

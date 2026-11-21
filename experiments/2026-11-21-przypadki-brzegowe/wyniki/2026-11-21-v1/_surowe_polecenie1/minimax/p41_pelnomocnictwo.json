@@ -1,0 +1,39 @@
+{
+ "id": "p41_pelnomocnictwo",
+ "model": "minimax",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument ma wyraźny tytuł „PEŁNOMOCNICTWO” i określa osoby udzielające pełnomocnictwa podmiotom reprezentowanym w postępowaniu o udzielenie zamówienia.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Toruń, 6 sierpnia 2026 r.\n\nPEŁNOMOCNICTWO\n\nWykonawcy wspólnie ubiegający się o udzielenie zamówienia (Konsorcjum): 1) Torvex Budownictwo sp. z o.o., ul. Przemysłowa 8, 87-100 Toruń, KRS 9995540127, NIP 9992284611,",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2925,
+   "output_tokens": 825,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 593
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 4.9
+}

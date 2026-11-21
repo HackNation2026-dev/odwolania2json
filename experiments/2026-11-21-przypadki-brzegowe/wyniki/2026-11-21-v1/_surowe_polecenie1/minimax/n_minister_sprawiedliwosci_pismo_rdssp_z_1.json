@@ -1,0 +1,71 @@
+{
+ "id": "n_minister_sprawiedliwosci_pismo_rdssp_z_1",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Pismo Rzecznika Dyscyplinarnego Sędziów Sądów Powszechnych do Ministra Sprawiedliwości w sprawie dopuszczalności stosowania podpisu elektronicznego; nie jest odwołaniem do KIO, pełnomocnictwem ani potwierdzeniem przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "RZECZNIK DYSCYPLINARNY\nSĘDZIÓW SĄDÓW POWSZECHNYCH\n\nWarszawa, 11 marca 2024 r.\n\ndot. DKO-I.565.84.2024\nDKO-I.565.85.2024\nDKO-I.565.86.2024\nRDSP.0212.4.2024\n\nPan Adam Bodnar\nMinister Sprawiedliwości",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona jest obrazem zeskanowanego pisma; brak widocznej cyfrowej warstwy tekstu.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "realizujących zadania publiczne (t.j. Dz.U. z 2023 r. poz. 57 ze zm.) oraz przepisy Kodeksu postępowania karnego i innych ustaw procesowych, uznaje należy, że mimo wprowadzonej przez tę pierwszą ustawę zasady równoważności skutków prawnych dokumentów elektronicznych z dokumentami tradycyjnymi, ustawodawca odrębnie reguluje w ustawach procesowych kwestie dopuszczalności wnoszenia pism procesowych drogą elektroniczną i posługiwania się podpisem elektronicznym.",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona jest obrazem zeskanowanego pisma; brak widocznej cyfrowej warstwy tekstu.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Podpis odręczny u dołu strony nachodzi na printed/pieczęciowy napis identyfikujący Rzecznika i krzyżuje stopkę dokumentu.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Dokument jest urzędowym pismem Rzecznika Dyscyplinarnego do ministra, nienależącym do klas: odwołanie, pełnomocnictwo ani przelew.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 4192,
+   "output_tokens": 1604,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 938
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 8.9
+}

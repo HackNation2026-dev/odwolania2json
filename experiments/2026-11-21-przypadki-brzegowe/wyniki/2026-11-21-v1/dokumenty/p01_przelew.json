@@ -1,0 +1,157 @@
+{
+ "id": "p01_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_01/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_01",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 80398,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p01_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 587,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POLECENIE PRZELEWU Potwierdzenie realizacji polecenia przelewu · Ekobank Płatnik Rachunek obciążany Belmoria Rozwiązania S.A. PL05470680287581539721455024 ul. Zaczarowana 78, 90-803 Łódź Adresat przelewu Rachunek odbiorcy Aurelink Automatyka S.A. PL68438223049992295262834736 ul. Rybacka 79, 50-580 Wrocław Kwota operacji Data transakcji 200,00 PLN 2026-03-21 Opis opłata skarbowa od pełnomocnictwa d"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 13.9,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Potwierdzenie zrealizowanego przelewu na 200,00 PLN za opłatę skarbową od pełnomocnictwa w postępowaniu przed KIO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Dane przelewu rozmieszczone w obramowanych polach, częściowo w dwóch kolumnach; odczyt liniowy wymaga zachowania powiązań etykiet z wartościami.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.764
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 12.9,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Dokument nosi tytuł „POLECENIE PRZELEWU” i podtytuł „Potwierdzenie realizacji polecenia przelewu · Ekobank”. Zawiera płatnika, odbiorcę, numery rachunków, kwotę 200,00 PLN, datę transakcji i status „ZREALIZOWANO”. W tytule przelewu wpisano opłatę skarbową od pełnomocnictwa w postępowaniu przed KIO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu\nAurelink Automatyka S.A.",
+      "problemy": [
+       {
+        "kod": "uklad_wielokolumnowy",
+        "opis": "Dane są w ramkach ułożonych w dwóch kolumnach: po lewej płatnik, adresat i kwota, po prawej rachunki i data. Przy czytaniu liniowym etykiety pól mieszają się z wartościami z sąsiedniej kolumny.",
+        "waga": "niska"
+       },
+       {
+        "kod": "inne",
+        "opis": "Odbiorcą przelewu jest Aurelink Automatyka S.A., a nie urząd. Opis wskazuje opłatę skarbową od pełnomocnictwa, więc rachunek odbiorcy (urząd czy inny podmiot) wymaga weryfikacji przy ekstrakcji.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.733
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 4.5,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Dokument jest potwierdzeniem realizacji przelewu bankowego i zawiera płatnika, adresata, numery rachunków, kwotę oraz datę transakcji.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczopowa 78, 90-803 Łódź\nRachunek obliczany\nPL05470680287581539721455024\nAdresat przelewu\nAurelink Automatyka S.A.\nul. Rybacka 79, 50-580 Wrocław\nRachunek odbiorcy\nPL64838223049992295262834736\nKwota operacji\n200,00 PLN\nData transakcji\n2026-03-21",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Dane przelewu rozmieszczono w dwukolumnowym układzie ograniczonym ramkami, co może utrudniać odczyt w sposób liniowy.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.696
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

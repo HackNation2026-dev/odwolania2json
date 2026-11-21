@@ -1,0 +1,225 @@
+{
+ "id": "x02_obrot180",
+ "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x02_obrot180.pdf",
+ "zrodlo": "syntetyczny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_40",
+ "metadane": {
+  "producent": null,
+  "kreator": null,
+  "rozmiar_bajtow": 245600,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/x02_obrot180/p001.jpg",
+   "szerokosc_pt": 595.68,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 0,
+   "obrazy": 1,
+   "pokrycie_obrazami": 1.0,
+   "dpi_obrazow": 150.0,
+   "typ_auto": "skan",
+   "probka_tekstu": ""
+  }
+ ],
+ "wstrzykniete": [
+  {
+   "kod": "skan",
+   "strona": 1,
+   "opis": "cała strona jako obraz"
+  },
+  {
+   "kod": "obrot",
+   "strona": 1,
+   "opis": "obrót o 180°"
+  }
+ ],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 15.7,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Potwierdzenie wykonania przelewu opłaty skarbowej od pełnomocnictwa w sprawie przed KIO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "skan",
+      "obrot_stopnie": 180,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Polski Zachodni S.A. - wygenerowano 16.10.2026\nZleceniodawca\nValid-Systemy Informatyczne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań\nRachunek zleceniodawcy",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Strona ma postać skanu z widocznym drobnym szumem tła.",
+        "waga": "niska"
+       },
+       {
+        "kod": "obrot",
+        "opis": "Cała treść strony jest obrócona o 180 stopni.",
+        "waga": "wysoka"
+       },
+       {
+        "kod": "tabela",
+        "opis": "Dane przelewu przedstawiono w tabeli z etykietami i wartościami.",
+        "waga": "srednia"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.974
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "skan",
+     "obrot"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 17.1,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Nagłówek „POTWIERDZENIE WYKONANIA PRZELEWU” (Bank Polski Zachodni S.A.). Tytuł przelewu to „opłata skarbowa od pełnomocnictwa” w postępowaniu przed KIO, przetarg ZP/PN/48/2026. Kwota 34,00 PLN, status ZREALIZOWANO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "skan",
+      "obrot_stopnie": 180,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Polski Zachodni S.A. · wygenerowano 16.10.2026 Zleceniodawca Valtrix Systemy Informatyczne sp. z o.o. ul. Grunwaldzka 112, 60-307 Poznań Rachunek zleceniodawcy PL54 7164 9675 2472 1141 8071 4012 Odbiorca Regionalne Centrum Usług Medycznych sp. z o.o.",
+      "problemy": [
+       {
+        "kod": "obrot",
+        "opis": "Cała treść strony jest obrócona o 180°: tekst stoi do góry nogami, a nagłówek znajduje się u dołu obrazu.",
+        "waga": "wysoka"
+       },
+       {
+        "kod": "skan",
+        "opis": "Strona wygląda na obraz z losowym szumem (kropki na całej powierzchni). Nie widać cyfrowej warstwy tekstu.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "niska_jakosc",
+        "opis": "Na całej stronie, także w obszarze tekstu, rozsiane są drobne punkty szumu. Mogą zakłócać OCR małej czcionki, np. numerów rachunków.",
+        "waga": "niska"
+       },
+       {
+        "kod": "tabela",
+        "opis": "Dane przelewu są ułożone w tabeli dwukolumnowej (etykieta i wartość) z liniami poziomymi. Tytuł przelewu zajmuje kilka wierszy.",
+        "waga": "niska"
+       },
+       {
+        "kod": "inne",
+        "opis": "Rozbieżność merytoryczna: tytuł mówi o opłacie skarbowej od pełnomocnictwa, ale odbiorcą jest spółka (Regionalne Centrum Usług Medycznych sp. z o.o.), a nie urząd gminy lub miasta. Data operacji 15.10.2026, wygenerowano 16.10.2026.",
+        "waga": "srednia"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "obrot",
+      "opis": "Jedyna strona pliku jest obrócona o 180°. Przed OCR trzeba ją obrócić.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "skan",
+      "opis": "Plik to obraz z szumem, bez cyfrowej warstwy tekstu, więc potrzebny jest OCR.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "skan",
+     "obrot"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 14.0,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Dokument to potwierdzenie wykonania przelewu bankowego (Bank Polski Zachodni S.A.) zawierające zleceniodawcę, odbiorcę, kwotę 34,00 PLN, datę operacji oraz opłatę/prowizję - typowy dokument klasy 'przelew'.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 180,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Polski Zachodni S.A. - wygenerowano 16.10.2026\nZleceniodawca ValtiX Systemy Informacyjne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań\nRachunek zleceniodawcy PL54 7196 9675 3242 1141 8014 012",
+      "problemy": [
+       {
+        "kod": "obrot",
+        "opis": "Cała treść strony jest obrócona o 180 stopni (nagłówek i tabela zleceniodawca/odbiorca są do góry nogami).",
+        "waga": "wysoka"
+       },
+       {
+        "kod": "tabela",
+        "opis": "Dane przelewu zapisane są w dwukolumnowej tabeli z etykietami (Zleceniodawca, Odbiorca, Kwota, Status itd.), co utrudnia odczyt liniowy.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "obrot",
+      "opis": "Jedyna strona pliku jest obrócona o 180 stopni; tekst wymaga odwrócenia przed OCR.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.963
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "obrot"
+    ],
+    "pominiete_wstrzykniete": [
+     "skan"
+    ]
+   }
+  }
+ }
+}

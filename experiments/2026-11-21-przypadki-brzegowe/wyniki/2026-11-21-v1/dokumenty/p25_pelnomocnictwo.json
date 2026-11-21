@@ -1,0 +1,31 @@
+{
+ "id": "p25_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_25/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_25",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 67402,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p25_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1272,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Pełnomocnictwo Warszawa, 27.06.2026 § 1. Mocodawca Mocodawcą jest Belmoria Systemy S.A., ul. Wiśniowa 79, 00-344 Warszawa, KRS 9991240860, NIP 9992160970, REGON 999702501. § 2. Pełnomocnik Mocodawca ustanawiam pełnomocnikiem adw. Zbigniew Górnicki (nr wpisu na listę: WA 50595), adw. Zbigniew Szymanski (nr wpisu na listę: WA 29741). § 3. Postępowanie Pełnomocnictwo dotyczy postępowania „Dostawa mat"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

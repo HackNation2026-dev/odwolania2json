@@ -1,0 +1,49 @@
+{
+ "id": "p42_przelew",
+ "model": "claude",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument to bankowe „Potwierdzenie wykonania przelewu” ze statusem ZREALIZOWANO, więc ma formę potwierdzenia przelewu. Nie jest to jednak typowy wpis od odwołania. Tytuł przelewu to „opłata skarbowa od pełnomocnictwa” w postępowaniu przed KIO, odbiorcą jest Małopolskie Centrum Logistyki Medycznej sp. z o.o., a nie rachunek UZP, a kwota wynosi 34,00 PLN. Dlatego warto, żeby człowiek to sprawdził.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Małopolski S.A. · wygenerowano 01.07.2026\nZleceniodawca Nordelia Facility Services S.A.\nul. Wielicka 250, 30-663 Kraków\nRachunek zleceniodawcy PL55 9947 7458 7693 6814 0572 7867",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu (zleceniodawca, rachunki, odbiorca, kwota, data, tytuł, numer referencyjny, status, opłata) są w dwukolumnowej tabeli etykieta–wartość, a niektóre wartości zajmują po dwa wiersze.",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "Tytuł przelewu to „opłata skarbowa od pełnomocnictwa” (34,00 PLN), a nie wpis od odwołania. Odbiorcą jest Małopolskie Centrum Logistyki Medycznej sp. z o.o. (prawdopodobnie zamawiający), a nie Urząd Zamówień Publicznych. Ekstrakcja może błędnie potraktować ten przelew jako wpis.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Potwierdzenie przelewu w sprawie przed KIO dotyczy opłaty skarbowej od pełnomocnictwa, a nie wpisu od odwołania, i zostało wysłane do innego odbiorcy niż UZP. Formalnie należy do klasy przelew, ale treściowo nie jest wpisem.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.271666,
+  "tury": 3
+ },
+ "czas_s": 18.6
+}

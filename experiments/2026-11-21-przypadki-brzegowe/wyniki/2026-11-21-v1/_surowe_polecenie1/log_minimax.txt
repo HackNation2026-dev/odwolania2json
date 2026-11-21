@@ -1,0 +1,49 @@
+[minimax] p01_odwolanie: ok (6.4 s)
+[minimax] p01_pelnomocnictwo: ok (6.0 s)
+[minimax] p01_przelew: ok (15.9 s)
+[minimax] p02_odwolanie: ok (15.3 s)
+[minimax] p02_pelnomocnictwo: ok (6.9 s)
+[minimax] p02_przelew: ok (9.4 s)
+[minimax] p40_odwolanie: ok (7.1 s)
+[minimax] p40_pelnomocnictwo: ok (5.3 s)
+[minimax] p40_przelew: ok (5.3 s)
+[minimax] p41_odwolanie: ok (24.4 s)
+[minimax] p41_pelnomocnictwo: ok (4.9 s)
+[minimax] p41_przelew: ok (4.9 s)
+[minimax] p42_odwolanie: ok (6.8 s)
+[minimax] p42_pelnomocnictwo: ok (9.8 s)
+[minimax] p42_przelew: ok (14.5 s)
+[minimax] n_1648041143_1647951357decyzja_ministraspo: ok (26.4 s)
+[minimax] n_16_komisja_ds_regulacji_wynagrodzen: ok (3.4 s)
+[minimax] n_2020_03_21_22prowadzenie_postepowania_od: ok (7.3 s)
+[minimax] n_2025_ojs107_00364525_pl_ts_1: blad (6.0 s) ValidationError: Additional properties are not allowed ('$defs', '$schema', 'additionalProperties', 'properties', 'required', 'title', 'type' were unexpected)
+
+
+[minimax] n_2025_ojs107_00364525_pl_ts: ok (7.1 s)
+[minimax] n_2025_bzp_00143067_01: ok (8.7 s)
+[minimax] n_2025_s_112_383751: ok (7.9 s)
+[minimax] n_2025_s_188_641009: blad (7.9 s) ValidationError: Additional properties are not allowed ('$defs', '$schema', 'additionalProperties', 'properties', 'required', 'title', 'type' were unexpected)
+
+
+[minimax] n_broszura_jpk_fa_2: ok (18.6 s)
+[minimax] n_decyzja_ministra_sportu_i_turystyki1: ok (27.4 s)
+[minimax] n_kio_kio_2617_21: ok (10.3 s)
+[minimax] n_minister_sprawiedliwosci_pismo_rdssp_z_1: ok (8.9 s)
+[minimax] s_negatywny_przyklad: ok (9.2 s)
+[minimax] s_przyklad_odwolanie: ok (19.3 s)
+[minimax] x01_obrot90: pominięto (jest)
+[minimax] x02_obrot180: ok (36.0 s)
+[minimax] x03_przekrzywienie: blad (10.0 s) ValidationError: 'waga' is a required property
+
+Failed validating 'required' in schema['properties']['problemy_dokumentu']['items']:
+    {'type': 'object',
+    
+[minimax] x04_niska_jakosc: ok (14.0 s)
+[minimax] x05_ksero: ok (20.9 s)
+[minimax] x06_mieszany: ok (13.1 s)
+[minimax] x07_dwa_dokumenty: ok (10.3 s)
+[minimax] x08_pieczatka: ok (12.2 s)
+[minimax] x09_uciety: ok (21.6 s)
+[minimax] x10_pusta_strona: ok (20.0 s)
+[minimax] x11_mieszany_obrot: ok (17.1 s)
+[minimax] x12_strona_mieszana: ok (8.8 s)

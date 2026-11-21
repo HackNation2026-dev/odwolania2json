@@ -1,0 +1,44 @@
+{
+ "id": "p38_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_38/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_38",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 92787,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p38_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1816,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Łódź, dnia 12 sierpnia 2026 roku Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Zamawiający: Umbria Automatyka sp. z o.o. ul. Gołębia 17, 00-470 Warszawa KRS: 9998396331, NIP: 9990955300, REGON: 999022723 kontakt@biuro.example Odwołujący: Granitix Usługi S.A. ul. Różana 6, 90-149 Łódź KRS: 9992992231, NIP: 9993373158, REGON: 999402472 reprezentowana przez: adw. Oliwia Wierzbicka,"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p38_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1097,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "poniósłby Zamawiający przy zastosowaniu rozwiązań równoważnych. 2.2. Brak takiego uzasadnienia uniemożliwia ocenę, czy cena zaoferowana przez Odwołującego mieści się w granicach rynkowych, co w rezultacie może doprowadzić do naruszenia dyscypliny finansów publicznych. Zarzut nr 3 nieopisania parametrów technicznych przedmiotu dostawy: 3.1. Zamawiający sporządził Opis Przedmiotu Zamówienia bez poda"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

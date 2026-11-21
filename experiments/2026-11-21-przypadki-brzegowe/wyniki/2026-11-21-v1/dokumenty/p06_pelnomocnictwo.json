@@ -1,0 +1,31 @@
+{
+ "id": "p06_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_06/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_06",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 73408,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p06_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 708,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "PEŁNOMOCNICTWO PROCESOWE Silvatica Technologie sp. z o.o. z siedzibą w Bydgoszcz (KRS 9999360925, NIP 9998966348, REGON 999450212) udzielam pełnomocnictwa r. pr. Jolanta Szulc (nr wpisu na listę: WA 28042) do reprezentowania spółki we wszystkich czynnościach w postępowaniu „Świadczenie usług pocztowych i kurierskich na potrzeby urzędu”, numer postępowania: DI.579.2026, prowadzonym przez Aurelink S"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

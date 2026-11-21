@@ -1,0 +1,44 @@
+{
+ "id": "p41_przelew",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Bank wygenerował „Potwierdzenie wykonania przelewu” z danymi zleceniodawcy, odbiorcy, kwotą 17,00 PLN i statusem ZREALIZOWANO. Tytuł przelewu wskazuje opłatę skarbową od pełnomocnictwa w postępowaniu przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nKujawski Bank Spółdzielczy · wygenerowano 07.08.2026\nZleceniodawca Torvex Budownictwo sp. z o.o.\nul. Przemysłowa 8, 87-100 Toruń\nRachunek zleceniodawcy PL31305393376308813159845900",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu są w dwukolumnowej tabeli etykieta–wartość z liniami poziomymi. Etykiety (np. Zleceniodawca, Kwota, Tytuł przelewu) trzeba powiązać z wartościami w prawej kolumnie.",
+      "waga": "niska"
+     },
+     {
+      "kod": "pusta_strona",
+      "opis": "Dolna połowa strony jest pusta: treść kończy się na mniej więcej 45% wysokości. Strona jako całość nie jest pusta.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.257133,
+  "tury": 3
+ },
+ "czas_s": 11.6
+}

@@ -1,0 +1,46 @@
+{
+ "id": "x12_strona_mieszana",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument jest potwierdzeniem przelewu krajowego i zawiera dane płatnika, beneficjenta oraz kwotę i tytuł operacji związanej ze sprawą przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "mieszana",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\nKredyt Północny - wydrukowano 26 sierpnia 2026\nPłatnik Beneficjent\nHartica Serwis S.A. Eurosept Infrastruktura S.A.\nul. Akacjowa 54, 80-122 Gdańsk ul. Huta 90, 20-829 Lublin\n5367842459339529814420143 91159952782597505141926044",
+    "problemy": [
+     {
+      "kod": "strona_mieszana",
+      "opis": "Tekst dokumentu jest wygenerowany cyfrowo, a w prawej dolnej części strony znajduje się wklejony obraz pieczątki i podpisu.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2755,
+   "output_tokens": 1181,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 197,
+   "output_tokens_details": {
+    "thinking_tokens": 893
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 5.5
+}

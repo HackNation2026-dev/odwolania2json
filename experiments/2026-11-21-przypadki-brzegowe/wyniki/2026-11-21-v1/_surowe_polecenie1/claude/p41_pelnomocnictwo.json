@@ -1,0 +1,43 @@
+{
+ "id": "p41_pelnomocnictwo",
+ "model": "claude",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Nagłówek „PEŁNOMOCNICTWO”. Wykonawcy wspólnie ubiegający się o zamówienie (konsorcjum Torvex Budownictwo sp. z o.o. i Hydromel Instalacje sp.j.) udzielają adw. Piotrowi Zalewskiemu umocowania do wniesienia odwołania i reprezentowania ich przed KIO w postępowaniu IR.271.14.2026.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Toruń, 6 sierpnia 2026 r.\nPEŁNOMOCNICTWO\nWykonawcy wspólnie ubiegający się o udzielenie zamówienia (Konsorcjum): 1) Torvex Budownictwo sp. z o.o., ul. Przemysłowa 8, 87-100 Toruń, KRS 9995540127, NIP 9992284611, REGON 999473016; 2) Hydromel",
+    "problemy": [
+     {
+      "kod": "inne",
+      "opis": "Miejsca na podpisy (Marek Domański, Agnieszka Kurek, Robert Kurek, adw. Piotr Zalewski) zawierają tylko kropkowane linie. Na stronie nie widać podpisu odręcznego ani elektronicznego, więc ważności umocowania nie da się potwierdzić z samego obrazu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "inne",
+      "opis": "Mocodawcą jest konsorcjum dwóch wykonawców, a za Hydromel podpisuje dwóch wspólników. Ekstrakcja musi zwrócić kilku mocodawców i kilku sygnatariuszy. Tekst mówi też o „Pełnomocnicy” w liczbie mnogiej, choć wskazano jednego pełnomocnika.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2519874,
+  "tury": 3
+ },
+ "czas_s": 14.1
+}

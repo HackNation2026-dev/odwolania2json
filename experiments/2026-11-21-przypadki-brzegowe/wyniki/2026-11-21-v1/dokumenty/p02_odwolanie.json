@@ -1,0 +1,197 @@
+{
+ "id": "p02_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_02/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_02",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 71787,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p02_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2196,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Zamawiający: Eurosept Infrastruktura S.A. ul. Huta 90, 20-829 Lublin KRS: 9993122884, NIP: 9996097888, REGON: 999725710 kontakt@kontakt.example Odwołujący: Hartica Serwis S.A. ul. Akacjowa 54, 80-122 Gdańsk KRS: 9999669444, NIP: 9990678035, REGON: 999114017 reprezentowana przez: adw. Bartosz Szymanski, adw. Cezary Wierzbicki adres do"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p02_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 302,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "1. dowód uiszczenia wadium; 2. dokument potwierdzający nadanie odwołania; .............................. .............................. Bartosz Szymanski, adw. Cezary Wierzbicki, adw. Zgodnie z art. 527 ustawy odwołanie wnosi się w terminie 14 dni od dnia, w którym Wykonawca powziął lub dowiedział się o zaskarżonym rozstrzygnięciu. Strona 2 z 2"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 14.2,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2
+   ],
+   "wynik": {
+    "klasa": "odwolanie",
+    "uzasadnienie_klasy": "Dokument zatytułowany „ODWOŁANIE”, skierowany do Prezesa Krajowej Izby Odwoławczej, zawiera zarzuty wobec zamawiającego i żądania odwołującego.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\n\nZamawiający:\nEurosept Infrastruktura S.A.\nul. Huta 90, 20-829 Lublin\nKRS: 9993122884, NIP: 9996097888, REGON: 999725710",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "1. dowód uiszczenia wadium;\n2. dokument potwierdzający nadanie odwołania;\n\n...............................\nBartosz Szymanski, adw.\n\n...............................\nCezary Wierzbicki, adw.",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 0.87
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 21.3,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2
+   ],
+   "wynik": {
+    "klasa": "odwolanie",
+    "uzasadnienie_klasy": "Pismo do Prezesa KIO z nagłówkiem „ODWOŁANIE”. Zawiera dane Zamawiającego i Odwołującego, przedmiot postępowania, podstawę z art. 513 i 515 Pzp, zarzuty, żądania („Wnoszę o”) oraz podpisy pełnomocników.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nZamawiający:\nEurosept Infrastruktura S.A.\nul. Huta 90, 20-829 Lublin\nKRS: 9993122884, NIP: 9996097888, REGON: 999725710\nkontakt@kontakt.example",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "1. dowód uiszczenia wadium;\n2. dokument potwierdzający nadanie odwołania;\n..............................\nBartosz Szymanski, adw.\n..............................\nCezary Wierzbicki, adw.\nZgodnie z art. 527 ustawy odwołanie wnosi się w terminie 14 dni",
+      "problemy": [
+       {
+        "kod": "inne",
+        "opis": "Lista na górze strony (dowód uiszczenia wadium, dokument potwierdzający nadanie odwołania) wygląda na listę załączników, ale nie ma nagłówka „Załączniki”. Numeracja zaczyna się od 1 jak nowa lista, więc łatwo ją pomylić z dalszym ciągiem żądań ze strony 1.",
+        "waga": "niska"
+       },
+       {
+        "kod": "inne",
+        "opis": "Miejsca na podpisy to tylko wykropkowane linie bez podpisów. Pod nimi są nazwiska pełnomocników w dwóch kolumnach (lewa i prawa).",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 0.907
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 4.8,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2
+   ],
+   "wynik": {
+    "klasa": "odwolanie",
+    "uzasadnienie_klasy": "Dokument jest odwołaniem do orzeczenia Krajowej Izby Odwoławczej, złożonym w imieniu wykonawcy przez pełnomocników, i wskazuje na naruszenia parametrów technicznych oraz wezwanie do wyjaśnień i przedstawienia dokumentów.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Przesz Krajowej Izby Odwoławczej\nul. Postepu 17A\n02-676 Warszawa\n\nZamawiający:\nEurosept Infrastruktura S.A.\nul. Huta 90, 20-829 Lublin\nKRS: 9993122884, NIP: 9996097888, REGON: 999725710\nkontakt@kontakt.example",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "1. dowód uiszczenia wadium;\n2. dokument potwierdzający nadanie odwołania;\n\n..............................                      ..............................\nBartosz Szymanski, adv.                              Cezary Wierzbicki, adv.\n\nZgodnie z art. 527 ustawy odwołanie wnosi się w terminie 14 dni od dnia, w którym Wykonawca powziął lub\ndowiedział się o zaskarżonym rozstrzygnięciu.",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.99
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 0.994
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

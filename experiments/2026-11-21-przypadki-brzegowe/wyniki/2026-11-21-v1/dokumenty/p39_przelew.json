@@ -1,0 +1,31 @@
+{
+ "id": "p39_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_39/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_39",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 65097,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p39_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 616,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Bank Zachodni Handlowy Data wygenerowania: 28 grudnia 2025 godz. 13:18 Potwierdzenie przelewu krajowego Nr klienta 3125345512 Tytułem opłata skarbowa od pełnomocnictwa dla Aleksandra Bartoszewicz i Halina Różański w postępowaniu przed KIO w przetargu ZS.550.2026 CEN2601077049872 Wartość 100,00 PLN Data transakcji 27 grudnia 2025 Numer referencyjny CEN2601077049872 Zleceniodawca Xenonix Technologie"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

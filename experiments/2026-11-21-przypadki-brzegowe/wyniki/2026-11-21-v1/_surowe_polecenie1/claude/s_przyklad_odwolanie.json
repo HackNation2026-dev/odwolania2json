@@ -1,0 +1,72 @@
+{
+ "id": "s_przyklad_odwolanie",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo jest zaadresowane do Prezesa Krajowej Izby Odwoławczej i ma tytuł „ODWOŁANIE”. Wskazuje Odwołującego i Zamawiającego, a w treści pada formuła „wnoszę odwołanie” na podstawie art. 513 pkt 1 Pzp. Są też sekcje typowe dla odwołania: interes, szkoda, naruszenia, żądania i uzasadnienie.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "KANCELARIA PRAWNA RADCA PRAWNY Warszawa, dnia 16 czerwca 2025 r. Prezes Krajowej Izby Odwoławczej ul. Postępu 17a 02-676 Warszawa Spółka z ograniczona odpowiedzialnością Odwołujący: Warszawa KRS: tel. fax. e-mail:",
+    "problemy": [
+     {
+      "kod": "anonimizacja",
+      "opis": "Czarne prostokąty zakrywają nazwę kancelarii i radcy w nagłówku, nazwę, adres, KRS, telefon, faks i e-mail Odwołującego, adres do doręczeń oraz adres i dane kontaktowe Zamawiającego. Zakryta jest też prawie cała stopka z danymi banku i numerem konta.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Dane stron są ułożone w dwóch kolumnach: po lewej etykiety „Odwołujący:”, „Adres do doręczeń”, „Zamawiający:”, a po prawej ich wartości. Przy odczycie liniowym etykiety mogą się pomieszać z wartościami.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "podstawowym na podstawie art. 275 pkt 1 Ustawy Pzp, tj.: wobec treści dokumentów zamówienia – Specyfikacji Warunków Zamówienia (zwanej dalej: SWZ). Odwołanie jest wniesione w terminie, bowiem zgodnie z art. 515 ust. 2 pkt 2 Ustawy Pzp, gdy",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Zaznaczam, że pomimo, iż Zamawiający jest związany przepisami Ustawy Pzp, to już na etapie przygotowywania dokumentacji postępowania i ogłoszenia przedmiotowego postępowania nie przestrzegał ich, przez co doprowadził",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "anonimizacja",
+    "opis": "Na stronie 1 zaczerniono dane identyfikujące Odwołującego, pełnomocnika i Zamawiającego (adresy, KRS, telefony, e-maile) oraz stopkę. Z tego powodu nie da się z dokumentu wyciągnąć tych pól.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "inne",
+    "opis": "Ocena obejmuje tylko strony 1–3 z 7. Strony 4–7 nie zostały sprawdzone, więc mogą zawierać podpis, załączniki albo inne dokumenty.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.3782974,
+  "tury": 8
+ },
+ "czas_s": 19.7
+}

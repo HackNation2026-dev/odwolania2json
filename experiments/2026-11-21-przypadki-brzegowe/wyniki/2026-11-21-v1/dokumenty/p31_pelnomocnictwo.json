@@ -1,0 +1,31 @@
+{
+ "id": "p31_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_31/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_31",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 76618,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p31_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1188,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Pełnomocnictwo Kraków, 9 kwietnia 2026 § 1. Mocodawca Mocodawcą jest Zorina Rozwiązania S.A., ul. Ambrożowa 22, 30-159 Kraków, KRS 9997648224, NIP 9996669445, REGON 999481164. § 2. Pełnomocnik Mocodawca upoważniam r. pr. Halina Ostrowczyk (nr wpisu na listę: WA 50065), r. pr. Grzegorz Dudek (nr wpisu na listę: WA 19208). § 3. Postępowanie Pełnomocnictwo dotyczy postępowania „Świadczenie usług pocz"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

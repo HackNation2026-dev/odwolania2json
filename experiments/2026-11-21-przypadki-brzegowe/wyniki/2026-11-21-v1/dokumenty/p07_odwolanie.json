@@ -1,0 +1,44 @@
+{
+ "id": "p07_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_07/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_07",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 92772,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p07_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2669,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Warszawa, dnia 15 lipca 2026 roku Zamawiający: Ilystera Automatyka sp. k. ul. Cedrowa 63, 30-569 Kraków KRS: 9993983774, NIP: 9992131944, REGON: 999136289 kontakt@biuro.example Odwołujący: Zarendel Automatyka sp. j. ul. Sosnowa 41, 00-234 Warszawa KRS: 9999063951, NIP: 9995283985, REGON: 999485311 reprezentowana przez: r. pr. Cezary Walczak adres do korespondencji: Kancelaria Adwokacka Spółka z og"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p07_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 782,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "nie gwarantuje wyboru najkorzystniejszej oferty zgodnie z przyjętymi kryteriami. Wnoszę o: 1. wnoszę o uwzględnienie odwołania i przekazanie sprawy Zamawiającemu do ponownej oceny ofert; 2. wnoszę o uwzględnienie odwołania w zakresie, w jakim zarzuty odwołania są zasadne; 3. wnoszę o oddalenie zarzutów odwołania; Załączniki: 1. oświadczenie o niezaleganiu z podatkami i składkami; 2. dowód uiszczen"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

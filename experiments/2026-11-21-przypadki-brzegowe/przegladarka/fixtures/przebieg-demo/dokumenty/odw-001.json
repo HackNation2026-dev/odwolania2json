@@ -1,0 +1,38 @@
+{
+  "id": "odw-001",
+  "plik_zrodlowy": "dane/pozytywne/odw-001.pdf",
+  "zrodlo": "pozytywny",
+  "klasa_oczekiwana": "odwolanie",
+  "sprawa": "KIO 1234/26",
+  "metadane": {"producent": "LibreOffice 7.6", "kreator": "Writer", "rozmiar_bajtow": 48211, "zaszyfrowany": false, "wersja_pdf": "1.7"},
+  "strony": [
+    {"nr": 1, "obraz": "strony/odw-001/p001.jpg", "szerokosc_pt": 595.3, "wysokosc_pt": 841.9, "obrot_pdf": 0, "znaki_tekstu": 2140, "obrazy": 0, "pokrycie_obrazami": 0.0, "dpi_obrazow": null, "typ_auto": "tekst", "probka_tekstu": "Krajowa Izba Odwoławcza\nul. Postępu 17a, 02-676 Warszawa\nODWOŁANIE\nod czynności Zamawiającego polegającej na odrzuceniu oferty Odwołującego..."},
+    {"nr": 2, "obraz": "strony/odw-001/p002.jpg", "szerokosc_pt": 595.3, "wysokosc_pt": 841.9, "obrot_pdf": 0, "znaki_tekstu": 1210, "obrazy": 1, "pokrycie_obrazami": 0.08, "dpi_obrazow": 150, "typ_auto": "mieszana", "probka_tekstu": "Wnoszę o uwzględnienie odwołania w całości. Załączniki: pełnomocnictwo, dowód uiszczenia wpisu."}
+  ],
+  "wstrzykniete": [],
+  "modele": {
+    "codex": {"status": "ok", "czas_s": 12.4, "blad": null, "strony_przeslane": [1, 2],
+      "wynik": {"klasa": "odwolanie", "uzasadnienie_klasy": "Nagłówek ODWOŁANIE i adresat KIO.",
+        "strony": [
+          {"nr": 1, "typ": "tekst", "obrot_stopnie": 0, "jakosc": "dobra", "transkrypcja_poczatku": "Krajowa Izba Odwoławcza ul. Postępu 17a 02-676 Warszawa ODWOŁANIE", "problemy": []},
+          {"nr": 2, "typ": "mieszana", "obrot_stopnie": 0, "jakosc": "dobra", "transkrypcja_poczatku": "Wnoszę o uwzględnienie odwołania w całości.", "problemy": [{"kod": "pieczec_naklada_tekst", "opis": "Podpis częściowo na tekście", "waga": "niska"}]}
+        ],
+        "problemy_dokumentu": []},
+      "ocena_auto": {"klasa_trafiona": true, "podobienstwo_transkrypcji": [{"nr": 1, "podobienstwo": 0.93}, {"nr": 2, "podobienstwo": 0.97}], "wykryte_wstrzykniete": [], "pominiete_wstrzykniete": []}},
+    "claude": {"status": "ok", "czas_s": 9.8, "blad": null, "strony_przeslane": [1, 2],
+      "wynik": {"klasa": "odwolanie", "uzasadnienie_klasy": "Pismo do KIO zawierające żądania odwołania.",
+        "strony": [
+          {"nr": 1, "typ": "tekst", "obrot_stopnie": 0, "jakosc": "dobra", "transkrypcja_poczatku": "Krajowa Izba Odwoławcza, ul. Postępu 17a, 02-676 Warszawa. ODWOŁANIE od czynności", "problemy": []},
+          {"nr": 2, "typ": "tekst", "obrot_stopnie": 0, "jakosc": "dobra", "transkrypcja_poczatku": "Wnoszę o uwzględnienie odwołania w całości. Załączniki:", "problemy": []}
+        ],
+        "problemy_dokumentu": [{"kod": "zalaczniki_w_osobnym_pliku", "opis": "Wymienione załączniki nie są częścią PDF", "waga": "srednia"}]},
+      "ocena_auto": {"klasa_trafiona": true, "podobienstwo_transkrypcji": [{"nr": 1, "podobienstwo": 0.95}, {"nr": 2, "podobienstwo": null}], "wykryte_wstrzykniete": [], "pominiete_wstrzykniete": []}},
+    "minimax": {"status": "ok", "czas_s": 21.0, "blad": null, "strony_przeslane": [1, 2],
+      "wynik": {"klasa": "pelnomocnictwo", "uzasadnienie_klasy": "Wzmianka o pełnomocnictwie.",
+        "strony": [
+          {"nr": 1, "typ": "tekst", "obrot_stopnie": 0, "jakosc": "srednia", "transkrypcja_poczatku": "Krajowa Izba Odwolawcza ODWOLANIE", "problemy": []}
+        ],
+        "problemy_dokumentu": [{"kod": "wiele_dokumentow_w_pliku", "opis": "Może zawierać pełnomocnictwo", "waga": "wysoka"}]},
+      "ocena_auto": {"klasa_trafiona": false, "podobienstwo_transkrypcji": [{"nr": 1, "podobienstwo": 0.61}], "wykryte_wstrzykniete": [], "pominiete_wstrzykniete": []}}
+  }
+}
