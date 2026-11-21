@@ -213,7 +213,7 @@ Brak uwierzytelniania (prototyp lokalny), brak edycji danych, brak mechanizmu se
 
 ## 10. Docker
 
-`infra/docker/Dockerfile`: `python:3.13-slim` z przypiętą wersją, użytkownik bez roota, `pip install --no-cache-dir` z plików przypiętych w `apps/backend/requirements.txt` oraz `requirements-ocr.txt`, katalog `input/` i `output/` jako wolumeny, healthcheck na `/healthz`, brak modelu LLM w obrazie.
+`infra/docker/Dockerfile`: `python:3.13.18-slim` z przypiętą wersją (digest `sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90`, sprawdzony 2026-11-21), użytkownik bez roota, `pip install --no-cache-dir` z plików przypiętych w `apps/backend/requirements.txt` oraz `requirements-ocr.txt`, katalog `input/` i `output/` jako wolumeny, healthcheck na `/healthz`, brak modelu LLM w obrazie.
 
 `docker-compose.yml`: usługi `api` (FastAPI na porcie 8000) i `db` (`postgres:16-alpine`, hasło z `.env`), wolumen `input`, `output`, `pgdata`. Klucze API i hasło bazy wyłącznie w `.env` (ignorowanym przez Git); `.env.example` dostaje `DATABASE_URL`, `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB`.
 
