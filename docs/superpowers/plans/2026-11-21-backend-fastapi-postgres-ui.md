@@ -96,8 +96,8 @@ openapi-spec-validator==0.9.0
 rapidocr==3.10.0
 onnxruntime==1.32.0
 ```
-`apps/backend/pyproject.toml`: nazwa `odwolania2json`, `requires-python = ">=3.13"`, `[tool.setuptools.dynamic] dependencies = {file = ["requirements.txt"]}`.
-`packages/contracts/pyproject.toml`: nazwa `odwolania2json-contracts`, `requires-python = ">=3.13"`, bez zależności poza `pydantic`.
+`apps/backend/pyproject.toml`: nazwa `odwolania2json`, `requires-python = ">=3.11"` (próg metadanych zgodny z lokalną iteracją na 3.11; wymagany runtime to 3.13 w Dockerze i CI), `dynamic = ["version", "dependencies"]`, `version = {attr = "odwolania2json.__version__"}`, `[tool.setuptools.dynamic] dependencies = {file = ["requirements.txt"]}`.
+`packages/contracts/pyproject.toml`: nazwa `odwolania2json-contracts`, `requires-python = ">=3.11"`, `dynamic = ["version"]`, `version = {attr = "odwolania2json_contracts.__version__"}`, jedyna zależność `pydantic==2.14.4`, `[tool.setuptools.package-data] odwolania2json_contracts = ["*.yaml"]` (plik `openapi.yaml` musi trafić do koła).
 `requirements.txt` (root):
 ```
 -r apps/backend/requirements.txt
@@ -990,7 +990,7 @@ exec python scripts/precommit.py --fast
 ```
 Po utworzeniu pliku ustaw bit wykonywalności w indeksie: `git update-index --chmod=+x .githooks/pre-commit`.
 
-`.github/workflows/ci.yml`: workflow `on: [push, pull_request]`, `permissions: contents: read`, każdy job z `actions/checkout@v4`, `actions/setup-python@v5` (`python-version: '3.13'`, `cache: pip`) i instalacją `pip install -r apps/backend/requirements.txt` tam, gdzie są potrzebne zależności.
+`.github/workflows/ci.yml`: workflow `on: [push, pull_request]`, `permissions: contents: read`, każdy job z `actions/checkout@v4`, `actions/setup-python@v5` (`python-version: '3.13'`, `cache: pip`) i instalacją **pliku `requirements.txt` z korzenia repozytorium** (`pip install -r requirements.txt`), który instaluje zależności oraz oba pakiety lokalne w trybie edytowalnym — samo `apps/backend/requirements.txt` nie instaluje pakietów `odwolania2json` i `odwolania2json_contracts`, a testy ich importują.
 
 - [ ] **Step 5: Uruchom testy, mają przejść**
 
