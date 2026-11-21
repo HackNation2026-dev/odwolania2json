@@ -1,5 +1,5 @@
 ---
-wersja: 0.2.0
+wersja: 0.4.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
@@ -398,3 +398,58 @@ Każdy odnośnik prowadzi do zachowanego oryginału. Pochodzenie i rewizję opis
 - [docs/02-materialy/organizator-uzp/szablon-aplikacja/output/case1/przyklad odwolanie.json](<organizator-uzp/szablon-aplikacja/output/case1/przyklad odwolanie.json>)
 
 - [UZP — doprecyzowania Discord](../01-zadanie/zrodla/UZP-Discord-doprecyzowania-2026-11-21.md)
+
+## Uzupełnienie 0.4.0 — późniejsze rewizje i gałęzie organizatora
+
+Rejestr: [uzp-aktualizacje.json](uzp-aktualizacje.json). Kopia bazowa bez zmian.
+
+- [docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/dane/przyklad_19/odwolanie.json](<organizator-uzp-aktualizacje/main-7590db8/dane/przyklad_19/odwolanie.json>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/dane/przyklad_23/odwolanie.json](<organizator-uzp-aktualizacje/main-7590db8/dane/przyklad_23/odwolanie.json>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/dane/przyklad_25/odwolanie.json](<organizator-uzp-aktualizacje/main-7590db8/dane/przyklad_25/odwolanie.json>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/dane/przyklad_44/odwolanie.json](<organizator-uzp-aktualizacje/main-7590db8/dane/przyklad_44/odwolanie.json>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/dane/przyklad_55/odwolanie.json](<organizator-uzp-aktualizacje/main-7590db8/dane/przyklad_55/odwolanie.json>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/oczekiwane-json/czynnosc_powod_id_dict.md](<organizator-uzp-aktualizacje/main-7590db8/oczekiwane-json/czynnosc_powod_id_dict.md>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/README.md](<organizator-uzp-aktualizacje/galaz-dane-26a3363/README.md>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_01/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_01/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_02/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_02/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_03/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_03/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_04/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_04/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_05/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_05/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_06/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_06/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_07/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_07/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_08/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_08/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_09/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_09/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_10/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_10/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_11/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_11/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_12/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_12/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_13/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_13/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_14/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_14/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_15/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_15/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_16/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_16/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_17/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_17/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_18/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_18/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_19/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_19/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_19/odwolanie.json](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_19/odwolanie.json>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_20/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_20/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_21/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_21/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_22/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_22/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_23/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_23/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_24/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_24/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_25/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_25/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_26/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_26/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_27/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_27/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_28/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_28/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_29/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_29/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_30/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_30/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_31/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_31/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_32/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_32/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_33/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_33/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_34/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_34/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_35/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_35/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_36/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_36/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_37/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_37/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_38/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_38/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_39/ground_truth.yaml](<organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_39/ground_truth.yaml>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/oczekiwane-json/odwolanie.json](<organizator-uzp-aktualizacje/galaz-dane-26a3363/oczekiwane-json/odwolanie.json>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-mateusz-readme-changes-b9373d6/README.md](<organizator-uzp-aktualizacje/galaz-mateusz-readme-changes-b9373d6/README.md>)
+- [docs/02-materialy/organizator-uzp-aktualizacje/galaz-mateusz-readme-changes-b9373d6/oczekiwane-json/odwolanie.json](<organizator-uzp-aktualizacje/galaz-mateusz-readme-changes-b9373d6/oczekiwane-json/odwolanie.json>)

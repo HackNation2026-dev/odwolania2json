@@ -1,6 +1,6 @@
 # Odwołania2JSON — UZP
 
-Prywatne repozytorium przygotowawcze dla HackNation 2026. Organizacja docelowa: `HackNation2026-dev`. Wersja dokumentacji: **0.3.0**.
+Prywatne repozytorium przygotowawcze dla HackNation 2026. Organizacja docelowa: `HackNation2026-dev`. Wersja dokumentacji: **0.4.0**.
 
 ## Stan
 

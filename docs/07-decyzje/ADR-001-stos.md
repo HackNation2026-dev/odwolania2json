@@ -1,5 +1,5 @@
 ---
-wersja: 0.3.0
+wersja: 0.4.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
@@ -15,3 +15,7 @@ Decyzja proponowana: zastosować podział opisany w [architekturze](../04-archit
 Alternatywa: wyłącznie Python dla silnika i API, TypeScript dla opcjonalnego GUI. Mniejszy koszt integracji, mniejszy udział preferowanego Rusta.
 
 Konsekwencje: wspólny kontrakt między komponentami, test samodzielnego startu i kontrola licencji. Wybór modelu wymaga pomiaru oraz potwierdzenia warunków organizatora. Dokument nie oznacza, że aplikacja, model i dostawca już istnieją.
+
+## Uzupełnienie 0.4.0 (2026-11-21)
+
+Szczegółowa propozycja na podstawie konsultacji Fable: [proponowany stos](../04-architektura/proponowany-stos.md). Status bez zmian: proponowana. Decyzja wymaga akceptacji zespołu.

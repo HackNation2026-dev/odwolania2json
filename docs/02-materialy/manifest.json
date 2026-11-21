@@ -1945,6 +1945,256 @@
       "path": "docs/02-materialy/organizator-uzp/szablon-aplikacja/output/case1/przyklad odwolanie.json",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/README.md",
+      "bytes": 5806,
+      "sha256": "88a6499dd1741f7e801c01f8647f67315fcb8bbcd08e500d5d1da85aa5076f43"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_01/ground_truth.yaml",
+      "bytes": 2318,
+      "sha256": "e1fbd646f0525856dfb52a3a77f904403c16bbda0b01fc19d2696e7c8a1b3dcf"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_02/ground_truth.yaml",
+      "bytes": 2269,
+      "sha256": "60e35e4f9c8012926f0af6da3e9e3a3e08bcf16d3a2e31ebb8c5951c8abaa306"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_03/ground_truth.yaml",
+      "bytes": 2273,
+      "sha256": "211965b4b3b1eb87a5fc4464755927ebbe7f9e4e7a7b4249381fbfcf3606e39f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_04/ground_truth.yaml",
+      "bytes": 2306,
+      "sha256": "281575c5c02b27748f368ad9cf3138da50a8e420665635da658f9398b0b52703"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_05/ground_truth.yaml",
+      "bytes": 2252,
+      "sha256": "233b12e2fb06dc173c5d92ef270dfb53824fdeb8d45f26f478471c05f9470e26"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_06/ground_truth.yaml",
+      "bytes": 2283,
+      "sha256": "1c037ff48301ecf5d661fa04caa3d36e8cdb7e2df6b824a7bee10fb09f33a96f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_07/ground_truth.yaml",
+      "bytes": 2291,
+      "sha256": "b59a6e881b56baa28495ae24516455afe3c20e14b60807c5f34e60899c335499"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_08/ground_truth.yaml",
+      "bytes": 2363,
+      "sha256": "3cd467fc0b498f6f78acddc5d33c7480a545fe0279a1b4af0360bef77d5d667d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_09/ground_truth.yaml",
+      "bytes": 2300,
+      "sha256": "9223008ebbffcfbb43b83704eb142a0b909591442e140845a0a54c1235955460"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_10/ground_truth.yaml",
+      "bytes": 2371,
+      "sha256": "cbb4f15c8abc590b4ef2bad275b65d3f46b72d438fd680496c8d9e157d25f0b2"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_11/ground_truth.yaml",
+      "bytes": 2261,
+      "sha256": "69633955d154cf82120fecb540a99b26f74dac8bd8e036cea206b2d904a034b3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_12/ground_truth.yaml",
+      "bytes": 2239,
+      "sha256": "2beed7c145d93c1d613f67c7dde5919db562c104daec5589463561ddba33d430"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_13/ground_truth.yaml",
+      "bytes": 2320,
+      "sha256": "720c0f6a80cf984b28dc73feddcb22cd5379e986c645c618208d24052bade32f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_14/ground_truth.yaml",
+      "bytes": 2376,
+      "sha256": "3d4ce8f2c0c24d91e4d938fbbfa33d516ce45b8acda3fef07068819d7ae0ca8d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_15/ground_truth.yaml",
+      "bytes": 2227,
+      "sha256": "56736915892d3e58d4da994cc580f7988782a00486c7d6fed65cf23a0cf804b5"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_16/ground_truth.yaml",
+      "bytes": 2307,
+      "sha256": "6aecb201690296e5b5603d3a40779b02cd5751c9945d96d2dcfa069b67d0683b"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_17/ground_truth.yaml",
+      "bytes": 2234,
+      "sha256": "b4c453b67dd8fa35c21cfb03a4c9c4560055cac9c7d1a667fe03317d1efc5e56"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_18/ground_truth.yaml",
+      "bytes": 2227,
+      "sha256": "0a956bc468a38efbca7d2133f6d897036ae0046a1bd461050e72ec4d217b3939"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_19/ground_truth.yaml",
+      "bytes": 2285,
+      "sha256": "37c91c901beb008730438c956b7b1c7e9a5d40333114e2df124494862db874be"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_19/odwolanie.json",
+      "bytes": 1027,
+      "sha256": "809e2bb9903ed86667f632b4aefc05d6e66d0c1f57adbbfc44fa4418ddc9af66"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_20/ground_truth.yaml",
+      "bytes": 2340,
+      "sha256": "eb882aafe2a24feb5d87602a91881ae09a2765697a1609152bf54aaae3d41eba"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_21/ground_truth.yaml",
+      "bytes": 2254,
+      "sha256": "c6049b99ddeb9b36cace60bbfedd146c7d89cb0db644bfb539e326cb176571e0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_22/ground_truth.yaml",
+      "bytes": 2288,
+      "sha256": "f089a322d5f9e495a9768e056f8c7c7b8ca5edb28ff380c4b89ac72af4169aa0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_23/ground_truth.yaml",
+      "bytes": 2371,
+      "sha256": "05f00ede6795053a20335eff9cc4959cf0fcf0fcc0cce56335869acb88736aaf"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_24/ground_truth.yaml",
+      "bytes": 2279,
+      "sha256": "923ba1a71810509962ff40458a3c1634b5e6f786a3e805eb0df47e83b547d5a0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_25/ground_truth.yaml",
+      "bytes": 2327,
+      "sha256": "5bfe623de906548e2ad3916106b36f1732c38c4ffccd99697d91e9255b7197cc"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_26/ground_truth.yaml",
+      "bytes": 2283,
+      "sha256": "2542e93df34eb983fc699c28cec55e67b0054f93631199b856bc705cc52dc4ef"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_27/ground_truth.yaml",
+      "bytes": 2298,
+      "sha256": "1aa18a27b0312eb7070b789f978e9f3ecb6e0a4a2fe30225c1541276cc115987"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_28/ground_truth.yaml",
+      "bytes": 2262,
+      "sha256": "90a23151a5378ac4d442badea56630da90d335ddf66132a5d226502dd8b1a561"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_29/ground_truth.yaml",
+      "bytes": 2296,
+      "sha256": "ae638dc7e9e4a1e4ed38ba7b2eba1aa550ca385795c6d1c43be63601ec4af8e4"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_30/ground_truth.yaml",
+      "bytes": 2274,
+      "sha256": "e56702dbafc6eb98343cab3267aa7f51c62948a59c6181a6bdf780a25a3f63de"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_31/ground_truth.yaml",
+      "bytes": 2300,
+      "sha256": "9def8fda9fadc458012d7015746858c7cf41107d6f1e140a72ee6ba347f3f077"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_32/ground_truth.yaml",
+      "bytes": 2300,
+      "sha256": "1ef4eb61d3887aa6b1730c0e474c53c452f0f6bbb74058d7faaa289b2f51dfd6"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_33/ground_truth.yaml",
+      "bytes": 2272,
+      "sha256": "813868125399d39c5e84b0923103ba986ae951547cd515c2b0eacf801b88c18a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_34/ground_truth.yaml",
+      "bytes": 2291,
+      "sha256": "1f988b0a3735fa0371af9d3a6fe5b4892d305f3f83cd4a5d2e237d36033f0428"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_35/ground_truth.yaml",
+      "bytes": 2315,
+      "sha256": "7505b10d5c1877b1bd7beb9ac95d5fee6bbc60836068c2ee4a454ead6675d326"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_36/ground_truth.yaml",
+      "bytes": 2360,
+      "sha256": "f4a60f73bbd2d448d6365fe50d686f2f40ba0b7edeb1f8a4f15e769dce7a6837"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_37/ground_truth.yaml",
+      "bytes": 2282,
+      "sha256": "e5351fabc6d7e784270ebd1cbf5809a922732febac54854796e7576332b5c418"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_38/ground_truth.yaml",
+      "bytes": 2372,
+      "sha256": "60ba88b5f72d1e519719b7d241dd5023f5427734a95ee384e52bb396c19abbc0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/dane/przyklad_39/ground_truth.yaml",
+      "bytes": 2330,
+      "sha256": "4f513652e0f04df2290ad6e47225b756e124ede435006998972836b3a88e4310"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-dane-26a3363/oczekiwane-json/odwolanie.json",
+      "bytes": 3411,
+      "sha256": "4b4b3f7070b9691d90817f7c0fcd71a84d5149bf2f15684f608bb9c35b3ec8ac"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-mateusz-readme-changes-b9373d6/README.md",
+      "bytes": 6908,
+      "sha256": "dc86cd9b2208676593d4369ff387e9a40eddd73eaf3b4e6023115e547e715337"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/galaz-mateusz-readme-changes-b9373d6/oczekiwane-json/odwolanie.json",
+      "bytes": 3411,
+      "sha256": "4b4b3f7070b9691d90817f7c0fcd71a84d5149bf2f15684f608bb9c35b3ec8ac"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/dane/przyklad_19/odwolanie.json",
+      "bytes": 1027,
+      "sha256": "809e2bb9903ed86667f632b4aefc05d6e66d0c1f57adbbfc44fa4418ddc9af66"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/dane/przyklad_23/odwolanie.json",
+      "bytes": 1009,
+      "sha256": "5f20ab18375f02462adde52187d0fd9f6c85b8de6640ca660da08d9dde298211"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/dane/przyklad_25/odwolanie.json",
+      "bytes": 1001,
+      "sha256": "4970de9269a53ede6af0713f7e02fece348e672bf9dcbcec1febcb542d38de14"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/dane/przyklad_44/odwolanie.json",
+      "bytes": 1096,
+      "sha256": "e9e86c33ced6dd2e109e9e558aaaee3c01eb2f8cc5b2744604a597c9f3d64a7c"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/dane/przyklad_55/odwolanie.json",
+      "bytes": 1052,
+      "sha256": "b9dd941d2751c2f74ec4be7cc93212efe561c2333aeb8aba6f8b580e96893513"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/oczekiwane-json/czynnosc_powod_id_dict.md",
+      "bytes": 443,
+      "sha256": "cb955f03c9bc587a8c59568eef32e9687a6adb8c856fda898bdaad3102fdd83b"
     }
   ]
 }

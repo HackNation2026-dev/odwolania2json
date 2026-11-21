@@ -1,5 +1,5 @@
 ---
-wersja: 0.2.0
+wersja: 0.4.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
@@ -29,3 +29,7 @@ Kompletność i identyczność bajtów nie oznaczają audytu merytorycznego wszy
 ## Dodatkowe uwagi organizatorów
 
 [Komunikaty Discord](../01-zadanie/zrodla/UZP-Discord-doprecyzowania-2026-11-21.md) przekazał użytkownik. FAQ v1.0 pozostaje osobnym źródłem. Wskazanego załącznika ODWOLANIA2JSON_HackNation2026.pdf nie znaleziono lokalnie; posiadamy jego opis w wiadomości, nie sam plik. ground_truth.yaml usunięto u organizatora i nie jest brakującym materiałem.
+
+## Uzupełnienie 0.4.0
+
+Późniejsze rewizje `main` i gałęzie `dane` oraz `mateusz-readme-changes` organizatora zapisano addytywnie w [organizator-uzp-aktualizacje](organizator-uzp-aktualizacje/). Opis w [kompletności](kompletnosc.md#uzupełnienie-040--pełny-przegląd-repo-organizatora-2026-11-21). Zachowano 39 plików `ground_truth.yaml` z gałęzi `dane`.

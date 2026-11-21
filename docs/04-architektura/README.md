@@ -1,5 +1,5 @@
 ---
-wersja: 0.2.0
+wersja: 0.4.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
@@ -34,3 +34,7 @@ Zobacz [pełną aplikację i wybór interfejsu](pelna-aplikacja.md).
 ## Doprecyzowanie wykonania
 
 Według Discorda 12:47 jury nie instaluje modelu na laptopie. Aplikacja/CLI działa lokalnie, a LLM przez publicznie dostępny endpoint. Model może być na własnym serwerze albo przez darmowe lub płatne API, z zachowaniem wymagań licencji i regionu. [Źródło](../01-zadanie/zrodla/UZP-Discord-doprecyzowania-2026-11-21.md).
+
+## Proponowany stos
+
+[Proponowany stos](proponowany-stos.md) — status: PROPONOWANY, nie decyzja zespołu. Wersja 0.4.0.

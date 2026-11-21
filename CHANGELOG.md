@@ -1,5 +1,15 @@
 # Historia zmian
 
+## 0.4.0 — 2026-11-21
+
+- Odnotowano zmianę widoczności repo na publiczną przez użytkownika; skrypt publikacji prywatnej nie jest używany dla tego wydania.
+- Dodano `docs/04-architektura/proponowany-stos.md` ze statusem PROPONOWANY (nie decyzja): Python 3.13, pip + CLI, hybryda reguł i LLM po API w UE, GUI PDF|JSON wcześnie.
+- Addytywnie dodano późniejsze rewizje organizatora: `main` `7590db8` (poprawki `czynnosc_opis` w 5 sprawach, słownik), gałąź `dane` `26a3363` z 39 plikami `ground_truth.yaml` i gałąź `mateusz-readme-changes`. Kopia bazowa `f60ca6f` bez zmian; rejestr `uzp-aktualizacje.json`, manifest +50 plików.
+- `verify_docs.py` dodatkowo sprawdza blob SHA-1 i komplet aktualizacji.
+- Uzupełniono kompletność (brak prezentacji PDF i skryptu F1 potwierdzony w całej historii repo organizatora), rozbieżności, punktację GUI z cytatami i uwagę do rekomendacji Fable.
+- Przywrócono jako sekcje historyczne treść nadpisaną w 0.3.0 (zlecenie i status konsultacji, status publikacji).
+- Zmiany wyłącznie addytywne.
+
 ## 0.3.0 — 2026-11-21
 
 - Opublikowano prywatne repo `HackNation2026-dev/odwolania2json` (organizację utworzył użytkownik ręcznie); potwierdzono prywatność, SHA i drzewo.

@@ -23,6 +23,23 @@ if lock.exists():
   if not p.exists():continue
   b=p.read_bytes();sha=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()
   if sha!=row['git_blob_sha1'] or len(b)!=row['size']:errors.append(f'Niezgodny blob UZP: {row["path"]}')
+upd=root/'docs/02-materialy/uzp-aktualizacje.json'
+if upd.exists():
+ # Uzupełnienie addytywne: późniejsze rewizje i gałęzie organizatora UZP.
+ data=json.loads(upd.read_text());ubase=root/'docs/02-materialy/organizator-uzp-aktualizacje'
+ stored=set()
+ for snap in data['snapshots']:
+  for row in snap['files']:
+   if not row['stored']:
+    q=root/'docs/02-materialy/organizator-uzp'/row['path']
+    if not q.exists():errors.append(f'Brak pliku bazowego UZP: {row["path"]}');continue
+   else:
+    q=ubase/snap['dir']/row['path'];stored.add(q.relative_to(ubase).as_posix())
+    if not q.exists():errors.append(f'Brak aktualizacji UZP: {snap["dir"]}/{row["path"]}');continue
+   b=q.read_bytes()
+   if hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()!=row['git_blob_sha1']:errors.append(f'Niezgodny blob aktualizacji UZP: {snap["dir"]}/{row["path"]}')
+ found={p.relative_to(ubase).as_posix() for p in ubase.rglob('*') if p.is_file()}
+ if found!=stored:errors.append(f'Niezgodny zestaw aktualizacji UZP: brak {sorted(stored-found)}, nadmiar {sorted(found-stored)}')
 # Kontrola tylko dokumentacji zespołu; odnośniki w oryginałach nie są przez nas naprawiane.
 count=0
 for p in root.rglob('*.md'):

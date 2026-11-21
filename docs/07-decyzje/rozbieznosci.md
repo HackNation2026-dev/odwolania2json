@@ -1,5 +1,5 @@
 ---
-wersja: 0.2.0
+wersja: 0.4.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
@@ -23,3 +23,11 @@ status: dokumentacja przygotowawcza
 | Region | FAQ UE, README UE/EOG | brak nowego doprecyzowania | wyjaśnić |
 
 Nie utożsamiaj braku opłaty licencyjnej za model z brakiem opłaty za usługę API. Pozostałe ograniczenia licencji i lokalizacji nie zostały uchylone.
+
+## Uzupełnienie 0.4.0 (2026-11-21)
+
+| Temat | Źródło | Stan |
+|---|---|---|
+| `czynnosc_opis` w referencjach | `main` `7590db8`: 5 plików poprawiono na brzmienie słownika „Odpowiedzi/wyjaśnienia do SWZ” | wskazuje, że opis ma dosłownie odpowiadać słownikowi |
+| `ground_truth.yaml` | Discord 13:27: usunięty; gałąź `dane`: 39 plików nadal istnieje | zachowane jako starszy materiał, nie referencja aktualna |
+| Wzorzec `oczekiwane-json/odwolanie.json` | różne wersje w `main`, `dane` i `mateusz-readme-changes` | wszystkie wersje zachowane; aktualna w `main` |

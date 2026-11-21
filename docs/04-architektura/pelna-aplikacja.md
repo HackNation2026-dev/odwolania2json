@@ -1,5 +1,5 @@
 ---
-wersja: 0.3.0
+wersja: 0.4.0
 aktualizacja: 2026-11-21
 status: propozycja autora; wynik konsultacji Fable w docs/07-decyzje/konsultacja-fable.md
 ---
@@ -44,3 +44,7 @@ Konsultacja nie została uruchomiona: bieżący wątek poboczny nie pozwala na d
 ## Warunki z komunikatów UZP
 
 Silnik i CLI: Python 3.13+. Dopuszczalność pomocniczego Rusta nadal wymaga potwierdzenia. Jury nie instaluje modelu lokalnie; endpoint musi być publiczny. Otwarte modele przez płatne API są dozwolone, ale klucz trzeba przekazać do oceny. Zasady regionu pozostają z FAQ/README.
+
+## Historia statusu
+
+Status nagłówka do wersji 0.2.1: „propozycja autora; konsultacja Fable niewykonana”. Zmieniony w kolejnej wersji po wykonaniu konsultacji. Proponowany stos po konsultacji: [proponowany-stos.md](proponowany-stos.md).
