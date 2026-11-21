@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "odwolania2json-contracts"
+version = "0.5.0"
+description = "Kontrakt danych Odwołania2JSON — modele pydantic generowane z openapi.yaml."
+requires-python = ">=3.13"
+dependencies = ["pydantic==2.14.4"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["odwolania2json_contracts*"]

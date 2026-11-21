@@ -4,6 +4,8 @@ from pathlib import Path
 from urllib.parse import unquote
 import hashlib,json,re,sys
 root=Path(__file__).resolve().parents[1];errors=[]
+for _s in (sys.stdout,sys.stderr):
+ if hasattr(_s,'reconfigure'):_s.reconfigure(encoding='utf-8',errors='replace')
 manifest=json.loads((root/'docs/02-materialy/manifest.json').read_text(encoding='utf-8'))
 listed=set()
 for row in manifest['files']:
@@ -44,7 +46,7 @@ if upd.exists():
 count=0
 for p in root.rglob('*.md'):
  rel=p.relative_to(root)
- if '.git' in rel.parts or 'zrodla' in rel.parts or any(s.startswith('organizator') for s in rel.parts):continue
+ if '.git' in rel.parts or '.venv' in rel.parts or 'zrodla' in rel.parts or any(s.startswith('organizator') for s in rel.parts):continue
  count+=1;s=p.read_text(encoding='utf-8')
  for link in re.findall(r'(?<!!)\[[^\]]*\]\((<[^>]+>|[^)\n]+)\)',s):
   link=link.strip().split(' "')[0].strip('<>');link=unquote(link.split('#',1)[0])

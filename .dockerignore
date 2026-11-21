@@ -1,0 +1,26 @@
+# Katalog Git i środowiska lokalne — nie trafiają do obrazu.
+.git
+.github
+.venv
+venv
+__pycache__
+*.py[cod]
+*.egg-info
+build
+dist
+.pytest_cache
+.mypy_cache
+.ruff_cache
+node_modules
+
+# Konfiguracja lokalna (ignorowana przez Git) — w obrazie tylko wzorzec.
+.env
+.env.*
+!.env.example
+
+# Katalogi aplikacji to wolumeny montowane w trakcie działania.
+input
+output
+
+# Materiały organizatora (około 24 MB) są montowane tylko do odczytu.
+docs/02-materialy
