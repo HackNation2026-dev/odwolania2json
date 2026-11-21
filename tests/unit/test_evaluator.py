@@ -118,6 +118,26 @@ def test_classification_verdict() -> None:
     assert metrics.classification == "fn"
 
 
+def test_obcy_matched_class_is_classification_tp() -> None:
+    metrics = evaluate_document(
+        _case("obcy"),
+        predicted={},
+        reference={},
+        predicted_class="obcy",
+    )
+
+    assert metrics.classification == "tp"
+
+
+def test_bool_versus_int_is_field_error() -> None:
+    predicted: dict[str, object] = {"flaga": 1}
+    reference: dict[str, object] = {"flaga": True}
+
+    outcomes = compare_document(predicted, reference)
+
+    assert _outcomes(outcomes) == [("flaga", "fn"), ("flaga", "fp")]
+
+
 def test_summarize_report_shape() -> None:
     metrics = [
         evaluate_document(_case("przelew"), {"kwota": 1}, {"kwota": 1}, "przelew"),

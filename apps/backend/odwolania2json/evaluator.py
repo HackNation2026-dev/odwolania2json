@@ -46,7 +46,7 @@ class DocumentMetrics(BaseModel):
     input_name: str
     document_class: DocumentClass
     outcomes: list[FieldOutcome]
-    classification: Verdict | None
+    classification: Verdict
 
 
 class ClassTotals(BaseModel):
@@ -66,10 +66,10 @@ class ClassTotals(BaseModel):
         Przy mianowniku 0 zwracamy 0.0: brak trafień nie może wyglądać jak wynik
         idealny, a dzielenie przez zero byłoby mylące w raporcie.
         """
-        mianownik = 2 * self.tp + self.fp + self.fn
-        if mianownik == 0:
+        denominator = 2 * self.tp + self.fp + self.fn
+        if denominator == 0:
             return 0.0
-        return 2 * self.tp / mianownik
+        return 2 * self.tp / denominator
 
 
 def compare_document(
@@ -104,12 +104,14 @@ def evaluate_document(
 
 def summarize(metrics: list[DocumentMetrics]) -> dict[str, object]:
     """Raport JSON: totaly, podział na klasy i dokumenty oraz klasyfikacja osobno."""
-    klasy: tuple[str, ...] = get_args(DocumentClass)
+    classes: tuple[str, ...] = get_args(DocumentClass)
     per_class = {
-        klasa: _report(
-            _totals(o.verdict for m in metrics if m.document_class == klasa for o in m.outcomes)
+        document_class: _report(
+            _totals(
+                o.verdict for m in metrics if m.document_class == document_class for o in m.outcomes
+            )
         )
-        for klasa in klasy
+        for document_class in classes
     }
     per_document = [
         {
@@ -185,7 +187,8 @@ def _compare_value(
         _compare_lists(path, predicted, reference, outcomes)
         return
     # Zła wartość lub zmiana typu: jednocześnie fałszywie wykryta i brakująca.
-    if predicted == reference:
+    # `True == 1` w Pythonie, więc typ bool sprawdzamy osobno: zmiana bool<->liczba to błąd pola.
+    if predicted == reference and isinstance(predicted, bool) == isinstance(reference, bool):
         _add(outcomes, path, "tn")
     else:
         _add(outcomes, path, "fp")
@@ -199,24 +202,24 @@ def _compare_lists(
     outcomes: list[FieldOutcome],
 ) -> None:
     # Dopasowanie po treści, bo kolejność osób i pozycji w listach bywa różna.
-    niedopasowane = list(predicted)
+    unmatched = list(predicted)
     for element in reference:
-        if element in niedopasowane:
-            niedopasowane.remove(element)
+        if element in unmatched:
+            unmatched.remove(element)
             _add(outcomes, path, "tn")
         else:
             _add(outcomes, path, "fn")
-    for _ in niedopasowane:
+    for _ in unmatched:
         _add(outcomes, path, "fp")
 
 
 def _totals(verdicts: Iterable[Verdict]) -> ClassTotals:
-    liczniki = Counter(verdicts)
+    counts = Counter(verdicts)
     return ClassTotals(
-        tp=liczniki["tp"],
-        tn=liczniki["tn"],
-        fp=liczniki["fp"],
-        fn=liczniki["fn"],
+        tp=counts["tp"],
+        tn=counts["tn"],
+        fp=counts["fp"],
+        fn=counts["fn"],
     )
 
 
@@ -225,7 +228,7 @@ def _classification_verdicts(metrics: list[DocumentMetrics]) -> list[Verdict]:
     for m in metrics:
         if m.classification == "fn":
             verdicts.extend(("fp", "fn"))
-        elif m.classification is not None:
+        else:
             verdicts.append(m.classification)
     return verdicts
 
