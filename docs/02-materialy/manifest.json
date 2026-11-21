@@ -1,0 +1,1945 @@
+{
+  "format_version": 1,
+  "files": [
+    {
+      "path": "docs/01-zadanie/zrodla/FAQ-Odwolania2JSON-v1.0.md",
+      "bytes": 4951,
+      "sha256": "1f2e70aaade04d93d3cf0b2d04a859ca7e48f3a510097d956d2ef50804ddd988"
+    },
+    {
+      "path": "docs/01-zadanie/zrodla/UZP - Pełna treść zadania konkursowego.pdf",
+      "bytes": 279838,
+      "sha256": "8703fcd990201e518e37e479072507c70e9212a44048189b7bb40d685c51dad3"
+    },
+    {
+      "path": "docs/01-zadanie/zrodla/UZP - Regulamin zadania konkursowego.pdf",
+      "bytes": 305139,
+      "sha256": "a17ef52c2b6ac36c67d5dfd678b72c5717383fb865d70a28f95fd809dc713121"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/README.md",
+      "bytes": 8238,
+      "sha256": "86d49aec1ba9a70f652f5adf5ff11d6d35288858f6ccce71ea3ffbac3629d780"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/negatywne/1648041143_1647951357decyzja-ministrasportu-pzn.pdf",
+      "bytes": 1032007,
+      "sha256": "648cb112f22ddad663ca6e882c0341c7d987e98878ec477954ac819594df69d7"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/negatywne/16_komisja_ds._regulacji_wynagrodzeń.pdf",
+      "bytes": 130816,
+      "sha256": "a0bd9f6392ed01def9749c560120e1019aed5f1a7512c67c5218419dfa863903"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/negatywne/2020_03_21-22prowadzenie_postepowania_odwolawczego.pdf",
+      "bytes": 500902,
+      "sha256": "14cdc52d8f84b9eac1c70e4bdb5f8a838edb61e6acd79a19185282b4c88d28fb"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/negatywne/2025-OJS107-00364525-pl-ts-1.pdf",
+      "bytes": 114801,
+      "sha256": "c9f874f28ee7575beaffb34343d64a956553deab96e448226d5c067a16191fa3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/negatywne/2025-OJS107-00364525-pl-ts.pdf",
+      "bytes": 114801,
+      "sha256": "c9f874f28ee7575beaffb34343d64a956553deab96e448226d5c067a16191fa3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/negatywne/2025_BZP 00143067_01.pdf",
+      "bytes": 79156,
+      "sha256": "e83ef1275467b152cf95bc51fa860794b3f6aaa3e818ea976fd7e1cc2880e4f7"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/negatywne/2025_S 112-383751.pdf",
+      "bytes": 104481,
+      "sha256": "eb7d9d0a25819ae260b8bb04642a777be19a8e9beb35999c3f28f68981f5b380"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/negatywne/2025_S 188-641009.pdf",
+      "bytes": 98469,
+      "sha256": "9a92a0197874faa60526bd7b3604b336fcd2123adfb7b7af1b89f86e995a6739"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/negatywne/Broszura_JPK_FA(2).pdf",
+      "bytes": 764943,
+      "sha256": "086447c9a45d5b493a5d6b2ed53e2465448fc13e2a87ec07b57e013b1f48e618"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/negatywne/Decyzja-Ministra-Sportu-i-Turystyki1.pdf",
+      "bytes": 312640,
+      "sha256": "f5a12de5efe7356ce9927138a9966556aa387d213bf6ec00e68694a4824ec088"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/negatywne/KIO_KIO 2617-21.pdf",
+      "bytes": 56602,
+      "sha256": "cd129ef691812129eb8e45ee403f77b8bf6b19a6d82bf3d33038648aa69ac0f3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/negatywne/Minister-Sprawiedliwosci-pismo-RDSSP-z-11.03.2024-r..pdf",
+      "bytes": 857335,
+      "sha256": "8b1a16777fed9377dc1dc12c5eada52bb22ba7f2ad833eca099326038c0f0968"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/negatywne/readme.md",
+      "bytes": 159,
+      "sha256": "76d1a106774690c8ac03f621fd40d2cc16470f92597a40b78689f5699c9650f1"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_01/odwolanie.json",
+      "bytes": 1038,
+      "sha256": "f76d7102953fe56c676a4192ec654a1a9f9fb7f9e09288a96ee69c22043be274"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_01/odwolanie.pdf",
+      "bytes": 92163,
+      "sha256": "fefe2d2b2d8fb124803d65f499536f7412d6469e7a2b940213863167b9477fa4"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_01/pelnomocnictwo.json",
+      "bytes": 506,
+      "sha256": "a31d5f4271b885eb64414898c1bc656cfc6efe1f3d4e86730b5566ebc7304cc2"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_01/pelnomocnictwo.pdf",
+      "bytes": 76491,
+      "sha256": "1ccda932ca2e961e3e1f3fc6eea0f01a9015c6b1d4c01aa128eb952d3a3186c3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_01/potwierdzenie_przelewu.pdf",
+      "bytes": 80398,
+      "sha256": "6470c51d6b8a2a35ea734db7a80d16b5461a5658946eb9fe92a04888ea48975b"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_01/przelew.json",
+      "bytes": 390,
+      "sha256": "2cc3aa5db41ed8a48d0ab1b00d1e480e5be04aaaf934026c08d98e6b1717a043"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_02/odwolanie.json",
+      "bytes": 963,
+      "sha256": "94cc6ac6b585778ac6c8a34bde5a4fc0cdaa07bbb0d2502e96f47b393333063f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_02/odwolanie.pdf",
+      "bytes": 71787,
+      "sha256": "71dec9ce1d77792fbe84685035a784f1024703b9d9badc630f64ee3aff6c2d93"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_02/pelnomocnictwo.json",
+      "bytes": 501,
+      "sha256": "374b67e5abf1905f66876c9caa9056db9e84818fa8b00dd737cd954cde9cd1cd"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_02/pelnomocnictwo.pdf",
+      "bytes": 78480,
+      "sha256": "c560925ccb270810a824146a53ceb02c3c3776a1462d8e21cc647d40d68b7a47"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_02/potwierdzenie_przelewu.pdf",
+      "bytes": 77558,
+      "sha256": "36ff6205a457214f3324617228449a3e64d4da9e44ac700f030699e0930f1443"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_02/przelew.json",
+      "bytes": 386,
+      "sha256": "68151318100880a04ef9ad6de0feaf918615c102569766ca61b51a2904982895"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_03/odwolanie.json",
+      "bytes": 1059,
+      "sha256": "7a2734572e12a5ebacbadde5198b12a5e1e0d6c5594356677292ec6563f0b132"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_03/odwolanie.pdf",
+      "bytes": 90002,
+      "sha256": "e2b234b701c180e66b78f3c63996535d98bb7962766727b3bf14fc8b3d1523f3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_03/pelnomocnictwo.json",
+      "bytes": 428,
+      "sha256": "b630622d0bcdb7e01afd29308b92cbeda30d5d4555090dc020c9aef2975a1c05"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_03/pelnomocnictwo.pdf",
+      "bytes": 62540,
+      "sha256": "2dfc2607251b0cf8e7c8cfd70aec8850bb82bb0edc371f40f4ea78849a0c332c"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_03/potwierdzenie_przelewu.pdf",
+      "bytes": 61352,
+      "sha256": "111faaf6c552eb95207c5a14ca9a1b35002c15278e22e5fe6a32970f9344b484"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_03/przelew.json",
+      "bytes": 362,
+      "sha256": "9da192a4aeab2f952a6359ba8d4f9b43a1a201ec3e10ad6813bc7ab639fa738b"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_04/2025_S 112-383751.pdf",
+      "bytes": 104481,
+      "sha256": "eb7d9d0a25819ae260b8bb04642a777be19a8e9beb35999c3f28f68981f5b380"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_04/odwolanie.json",
+      "bytes": 1001,
+      "sha256": "0bdcbe57b0a1779df14ba55ede0c39252ddd9e32f478ab70634658e3c57290e5"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_04/odwolanie.pdf",
+      "bytes": 87167,
+      "sha256": "1a2f3e4464fde13ea3b81074d0bffd2d518b695739b089595536b7f9936d00a7"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_04/pelnomocnictwo.json",
+      "bytes": 504,
+      "sha256": "a65eea7517f7c600d37636fcb97e315819b5afb0cab09e41ce7c67e3bfc19fcd"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_04/pelnomocnictwo.pdf",
+      "bytes": 63661,
+      "sha256": "bb439062f226e0b2886818d3c9c7d7a8799233c34027ac7e9a1d0896bed37999"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_04/potwierdzenie_przelewu.pdf",
+      "bytes": 61355,
+      "sha256": "01274eeeeee3d111bff889a16fe6506c3f0254c294be206d26ebbc760aa9ba42"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_04/przelew.json",
+      "bytes": 387,
+      "sha256": "9b535bb184a0f87478c788880ee0721332c3bbd00ccb6084a8e162a64bf5b652"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_05/odwolanie.json",
+      "bytes": 995,
+      "sha256": "d80a9ef9c420c6e432e7025e4783b4754d9c9f303a9afdc9d19f45a2af1f1d0f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_05/odwolanie.pdf",
+      "bytes": 87546,
+      "sha256": "af3169477709d2d4311090500a83d51700361782f631f073cbde5d6bafcb8013"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_05/pelnomocnictwo.json",
+      "bytes": 434,
+      "sha256": "6ded7cc6bb33b6e00678feb00a18a092ee68e00a00115991795e9b71972fe55a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_05/pelnomocnictwo.pdf",
+      "bytes": 75274,
+      "sha256": "414fbd7134acfb69562f66b9488bc830a67729ac7614dbef807981463b580973"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_05/potwierdzenie_przelewu.pdf",
+      "bytes": 77858,
+      "sha256": "145ab1ff12eb8012450e277f25fdc0f02509889d2107763248ff4f0f18f12644"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_05/przelew.json",
+      "bytes": 365,
+      "sha256": "f430304da9518f5902545904fcd27908bf7634d2e48b3600b7d08e5f60848cde"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_06/odwolanie.json",
+      "bytes": 1032,
+      "sha256": "b13580bb992425b6f5c6c0ffda34ee1101c70850b87e61773e588c06649f6917"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_06/odwolanie.pdf",
+      "bytes": 77748,
+      "sha256": "fe96ea67895156760773f97a322b6b743dceec6331dc55902a44a6d5c6b3f300"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_06/pelnomocnictwo.json",
+      "bytes": 495,
+      "sha256": "493b565e440734b1307e8183cd52002b93180bc062ca301feec11c168a689966"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_06/pelnomocnictwo.pdf",
+      "bytes": 73408,
+      "sha256": "6e3e37642b8a70e50ce932ac1b3dcaf1a06b39c868b3d898c54828c3456651f1"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_06/potwierdzenie_przelewu.pdf",
+      "bytes": 61987,
+      "sha256": "b810f49fd31ea28b1bfdaa9aba83a61d59c7dc54bd04a9136af9605995822b5c"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_06/przelew.json",
+      "bytes": 362,
+      "sha256": "3b2c6bd167710a3c90afe9062386c41369908defad7fd2ad9a391b55cbc6d8ea"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_07/odwolanie.json",
+      "bytes": 1040,
+      "sha256": "82f87c36146b7855e42b3d15990227b3da7e9708b7cba4f203feaafeec49d736"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_07/odwolanie.pdf",
+      "bytes": 92772,
+      "sha256": "8093bfdc7fd0f6b3f952894bfbf8c7f7a4092f3221b8987bae38ebc1ddf612d8"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_07/pelnomocnictwo.json",
+      "bytes": 492,
+      "sha256": "7e68749492be4c7ce4b23bd0db3a77700f0e061e29b33969a9081470fe30444a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_07/pelnomocnictwo.pdf",
+      "bytes": 66534,
+      "sha256": "53e5c7f3f249b49e7b3719cda544ba788734b5ceb8bab26d12a635577fd32fcf"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_07/potwierdzenie_przelewu.pdf",
+      "bytes": 64795,
+      "sha256": "643aa8ba114356f16da23db54fbac6a59ca74cfff856fff55cde0e2af8cab515"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_07/przelew.json",
+      "bytes": 363,
+      "sha256": "aaf5ed124583bda068c4b73064005b462a1b1f52a64934f3ee46e5edfeeb12c5"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_08/odwolanie.json",
+      "bytes": 1052,
+      "sha256": "12a6f3b6069dcdd31a1c400c60dec7914844be2f2122fdfcbc9c4370488313ff"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_08/odwolanie.pdf",
+      "bytes": 97902,
+      "sha256": "19dcb3b8b6f3b2da4d05e3acf4dd7a710c507de15c7b28dc4a0eb6cbd3cd6b92"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_08/pelnomocnictwo.json",
+      "bytes": 576,
+      "sha256": "5434bbe49e3de6b96ac7926bc2c5e04b4df258ce02c2fbf4cffae8ca9f437147"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_08/pelnomocnictwo.pdf",
+      "bytes": 82214,
+      "sha256": "ed4384531c6feb94d823c3b7c8d6404d9472173f392302523b0613b9b62b5ad3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_08/potwierdzenie_przelewu.pdf",
+      "bytes": 61932,
+      "sha256": "394b7e39c5e5e0e81f90dc9b52d8af8ffc52d3e6b50e6d12ed39abe291487b1a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_08/przelew.json",
+      "bytes": 388,
+      "sha256": "64a49a46b5d88b0e826ad9bc3788bcb607095cce51305c0b6336e53f788d227b"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_09/odwolanie.json",
+      "bytes": 977,
+      "sha256": "77229a32925bdd9774daa6fb0474fdcb4b53be46cc49b25a17f1f3e123463f08"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_09/odwolanie.pdf",
+      "bytes": 84611,
+      "sha256": "ba1b31c900843d9a408bb19300d06107a3e1609da78d52350c0f53779fbe43cc"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_09/pelnomocnictwo.json",
+      "bytes": 504,
+      "sha256": "a1a6e66e2d7c9728f9f58b774a40af116a9d7f9228c3af3a49297ef8a6e96fc3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_09/pelnomocnictwo.pdf",
+      "bytes": 78483,
+      "sha256": "b3f0b59f4cb372413ee660b5ae9e38442451423e9e51ca96613306938303700d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_09/potwierdzenie_przelewu.pdf",
+      "bytes": 80301,
+      "sha256": "2dcad28696bb0ed22c8769d68abc8bb4e03260c0e96bb222c6ea38f0427de936"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_09/przelew.json",
+      "bytes": 392,
+      "sha256": "c76b7ccb8dd4f7027b4ab432f6dd4b88b5abaa822e2b0f9a44d8a5dabf6898c4"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_10/2025-OJS107-00364525-pl-ts.pdf",
+      "bytes": 114801,
+      "sha256": "c9f874f28ee7575beaffb34343d64a956553deab96e448226d5c067a16191fa3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_10/odwolanie.json",
+      "bytes": 1025,
+      "sha256": "e6ffa607894ecb3bec56b42a360b28fab432c0a58bf52b51bc3ee2eebea10305"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_10/odwolanie.pdf",
+      "bytes": 89366,
+      "sha256": "98cbece5ecead3f8441956fb524ee74d99f2700c5d6473a4c6dae2a60c5cc122"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_10/pelnomocnictwo.json",
+      "bytes": 573,
+      "sha256": "d10e2efb7c6e7e07f9957565971f3124ed1e8da209626b5b6e240ea55f4bd3a6"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_10/pelnomocnictwo.pdf",
+      "bytes": 81601,
+      "sha256": "d86a928b48da17ebce17280e825049b1f16c5a27c17e1d99d0580183a5b8f19a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_10/potwierdzenie_przelewu.pdf",
+      "bytes": 60695,
+      "sha256": "e38699819b49a7a8835a2d8e7466423c9e39669990694f9b725c83d5273a79c1"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_10/przelew.json",
+      "bytes": 390,
+      "sha256": "2bb014a4b271d953dedb85379c847e2018aa494b88c251063b7f8f0f1acc1ca4"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_11/odwolanie.json",
+      "bytes": 1053,
+      "sha256": "b94f132ec4ceaa40dbeaf5839ed45a60597851656b977bc518f779eea69e3248"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_11/odwolanie.pdf",
+      "bytes": 70571,
+      "sha256": "0dfa11d2433050e5e554019929957249dd3767041b4adba23b6de5703f758750"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_11/pelnomocnictwo.json",
+      "bytes": 421,
+      "sha256": "62b3c76904b4b45039c8c232616cb0f68951a8ffbe671d00cfc4f1f47cba1674"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_11/pelnomocnictwo.pdf",
+      "bytes": 78230,
+      "sha256": "fbc057c66d1abf54c20a3d6a602a491849faf80d3313f8c64fffb2787b3827d1"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_11/potwierdzenie_przelewu.pdf",
+      "bytes": 79779,
+      "sha256": "3edeacc9a880a3a8757a042faad9ca8c48a1111d765b8355f422ad9e11cbe875"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_11/przelew.json",
+      "bytes": 369,
+      "sha256": "43172245c9a3357777c9490bdc37c2f68e1d016895e7cdb1356c05e099b0b82b"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_12/odwolanie.json",
+      "bytes": 1026,
+      "sha256": "9ad547b3c731297a6c8792b7a533892bb8809d75ff1160f5ddb7394e60dce563"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_12/odwolanie.pdf",
+      "bytes": 69677,
+      "sha256": "9b1ef721153c8add542c7957a63854d2d07b97959b8cd4d0363bdce0711f295a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_12/pelnomocnictwo.json",
+      "bytes": 425,
+      "sha256": "c1818f1b983ab743157769ed1402ff3608002d7491513c7b79147e3cd33d5019"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_12/pelnomocnictwo.pdf",
+      "bytes": 72749,
+      "sha256": "9b73ca148d6efa6d0c2039fec5cb7e0325f0c1a291e2cb17dd7a7c8c918ca6f0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_12/potwierdzenie_przelewu.pdf",
+      "bytes": 77760,
+      "sha256": "a342d1182bb765e54b0c9b9b290cea141488a0b35615922a46d31e6d03392aef"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_12/przelew.json",
+      "bytes": 370,
+      "sha256": "c0fdb03abffec862c36420aa75ab1ecf43934135840e50f88a6d7e1243419ff2"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_13/odwolanie.json",
+      "bytes": 1017,
+      "sha256": "be3361fcd154cad5aa31cd1510f57547f05362c5176548fa76831497d8609b41"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_13/odwolanie.pdf",
+      "bytes": 88175,
+      "sha256": "3784e36df338a94ef25c30db89ece3d0939ca0c5b7d0e3cb580e6413746f0028"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_13/pelnomocnictwo.json",
+      "bytes": 567,
+      "sha256": "d2f84183c3ffd38dbd27b6dda7e6ae1d990467051ab416739c71990a0b272a25"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_13/pelnomocnictwo.pdf",
+      "bytes": 66570,
+      "sha256": "3df024b21b58f4bf191e9100d19f79c0d47797a34789eae525617a28721bf483"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_13/potwierdzenie_przelewu.pdf",
+      "bytes": 77902,
+      "sha256": "98cc5e9bf4f70a66b93898c61ddf663eb2f2c83bb16064cdfecf8fe6b3169054"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_13/przelew.json",
+      "bytes": 384,
+      "sha256": "e51509934f98dfafae1574ac84e16a40b260a331c2f8b2ace837af518290daf1"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_14/odwolanie.json",
+      "bytes": 1023,
+      "sha256": "46b0ec97c9485c55dde63185758b3dbc10ae9de5710cb2b984f2e801f5ca32a2"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_14/odwolanie.pdf",
+      "bytes": 91174,
+      "sha256": "9bf7165f7c9e0e25c9bb322c1cf18050a8e0de024619786095ce8425a9391fdb"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_14/pelnomocnictwo.json",
+      "bytes": 574,
+      "sha256": "f9e3141cb76cecf77b059f99719d072fc4c0ef292eb78c5369e0109754a6cad0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_14/pelnomocnictwo.pdf",
+      "bytes": 67893,
+      "sha256": "f55ba8655c5b7921de7c14a1baa57490893dac8488fd5bf55254aac4ff631fc0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_14/potwierdzenie_przelewu.pdf",
+      "bytes": 78729,
+      "sha256": "fb342ba1e30206e6b8a9f861d7f1c2c98d3535c5956e9c3324a37ec5a261bade"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_14/przelew.json",
+      "bytes": 392,
+      "sha256": "0c92ae30f65463e63c6c3051960e8931c1cc0c7618a9985798b284dd12955521"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_15/odwolanie.json",
+      "bytes": 1018,
+      "sha256": "af46c62f1031d77897eb5324681ee4d58c3288c3ade7be2c8858d985541c1c15"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_15/odwolanie.pdf",
+      "bytes": 77068,
+      "sha256": "81714ff907b32078b6a7cb1479719599d9b19b3aab9dfedfaa759522c91e68e1"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_15/pelnomocnictwo.json",
+      "bytes": 423,
+      "sha256": "b4cda857f7495d8db697b9944fa083e4542804b4edfea928e9949c1436d2ba6d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_15/pelnomocnictwo.pdf",
+      "bytes": 62519,
+      "sha256": "4a698c87e0ded6fc1238f5fdf43c7e6f9640980893f826fc780f54d6555310f4"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_15/potwierdzenie_przelewu.pdf",
+      "bytes": 61940,
+      "sha256": "9606e891489e9ebc2485b259cb4662bb21411137ceb57c3529911829016a52ac"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_15/przelew.json",
+      "bytes": 368,
+      "sha256": "f6fca4aadc8b07af7d14d04d181a43922870eaf745e408cbd4ac5eda1725d3e8"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_16/odwolanie.json",
+      "bytes": 1002,
+      "sha256": "1872329c617a82e2c4f245636c6f7b57d1ae888944dfba275e425116826dc0e2"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_16/odwolanie.pdf",
+      "bytes": 97717,
+      "sha256": "3377e4f660151c4b1d67716050b584919f85814275eae0a6f4eb2608e8d1c1d6"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_16/pelnomocnictwo.json",
+      "bytes": 565,
+      "sha256": "e64d98c1fc74c5a3fd3f5e6c8c8f0d915416c2519f336ca54f87a214a276dd09"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_16/pelnomocnictwo.pdf",
+      "bytes": 67328,
+      "sha256": "7042edbf957a01be7774721be284e830947609c65690936a2aa4bdcb3c854648"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_16/potwierdzenie_przelewu.pdf",
+      "bytes": 65726,
+      "sha256": "529b3519d41cee75989a2478b3211062e5237efc81050ce59c888d9ae21fba7c"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_16/przelew.json",
+      "bytes": 388,
+      "sha256": "b3037b516e05c1848656ea117f6e30771e9bc5f04d25812d68f206557f021a59"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_17/odwolanie.json",
+      "bytes": 981,
+      "sha256": "b35378bfbe0c5db80d4a0cdf2860ef73bcdb94cb1aed39301a5d91fbc87ebec0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_17/odwolanie.pdf",
+      "bytes": 75410,
+      "sha256": "cca9ff79076dfda1cfcfcbf50572c2201ef0a1aa63095eb6f9b6911ac66e2bff"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_17/pelnomocnictwo.json",
+      "bytes": 436,
+      "sha256": "7e4aa6b8ee19d8933441f77599b2d5229cadb4ee8cf972ab346c76e7deb07b05"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_17/pelnomocnictwo.pdf",
+      "bytes": 81464,
+      "sha256": "0d423220173b5e728214d0e6e33eb72b71191066784971ea392b74225088a789"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_17/potwierdzenie_przelewu.pdf",
+      "bytes": 62204,
+      "sha256": "eb5e525610a25cbf818a2d836c7695918377e9eee701f3f0edd44edbbed50038"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_17/przelew.json",
+      "bytes": 366,
+      "sha256": "8d06d4e4d9fbb775cf6e98d98f0410fcb85f081055222f1727d485897d076f61"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_18/odwolanie.json",
+      "bytes": 1020,
+      "sha256": "fb62f73422b6909b9d443864674e14a56e4574c2666bc30497cdbc639fd894b3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_18/odwolanie.pdf",
+      "bytes": 92343,
+      "sha256": "74858b6da09ba93e2622d05991f7cd7d987675708ad644017ea047ec59c9aff3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_18/pelnomocnictwo.json",
+      "bytes": 428,
+      "sha256": "af0bf22eeeecec652bda910d97881648fd7005488e150232bb3ef57f2f8da4ad"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_18/pelnomocnictwo.pdf",
+      "bytes": 72812,
+      "sha256": "824f58229330f033ee44a5d76ab0ca619d178c2783e07dfcf3250aa67f77f6ac"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_18/potwierdzenie_przelewu.pdf",
+      "bytes": 77313,
+      "sha256": "a6498271331f36d2e02fb502dc7f2fd810c81873fb1901347161ae1c0b134c46"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_18/przelew.json",
+      "bytes": 364,
+      "sha256": "e9e0874b990ecb88d1714056a05988302ae29184a7b83182b3c1f57d06f37db8"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_19/odwolanie.json",
+      "bytes": 1029,
+      "sha256": "4c023baae72bfbdb94efdb5cf8219199ac77fbc9948e287ae311d9d49a66055a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_19/odwolanie.pdf",
+      "bytes": 94138,
+      "sha256": "87e357c9b9053067116548f4aada7b63c68788ee0e0b38d87d85c48b590de31c"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_19/pelnomocnictwo.json",
+      "bytes": 501,
+      "sha256": "c5f43e43b8ae08a0f6f350582ad35dfd61eb13653c284d1044ec55fed3a3e798"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_19/pelnomocnictwo.pdf",
+      "bytes": 76411,
+      "sha256": "40310cc7fa444590280a6667ef735918af19f17bc0e462040b1db8d0dfdd151d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_19/potwierdzenie_przelewu.pdf",
+      "bytes": 64140,
+      "sha256": "e868ed4fc2ac78a09a7309ebc25a21a9b58a7a6234ce41fb89cee043ab0b3cd0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_19/przelew.json",
+      "bytes": 371,
+      "sha256": "e999bfee292c6dadf50a51f7ef49c1b0d433dd49c7318ac1db7fc6423756c0d6"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_20/odwolanie.json",
+      "bytes": 990,
+      "sha256": "7b888c2b407af471a38e840c70f7ee157ee9ad17324b22081466a8f8d6dab184"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_20/odwolanie.pdf",
+      "bytes": 75020,
+      "sha256": "3ebd4a494af8e4fe70d120672a470c23591900d32e73622e2a663f8a9c55182e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_20/pelnomocnictwo.json",
+      "bytes": 578,
+      "sha256": "f98fa38bdcea35d752749e471b194a7e15a58d83272a24b95113694101373821"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_20/pelnomocnictwo.pdf",
+      "bytes": 64032,
+      "sha256": "963aa83dba2021cacb65ecfa38fc6fbef36a32bfcc9cf49f7c0d65a564eb510a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_20/potwierdzenie_przelewu.pdf",
+      "bytes": 65603,
+      "sha256": "4de5cabe945c59cb3da38bb55f4433c61806862aee614f13e2d757ed88a3ecbc"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_20/przelew.json",
+      "bytes": 387,
+      "sha256": "1eccdf219df8272450bb34904748a5b6acc6f1be3713512c131b18e88b39a4f4"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_21/odwolanie.json",
+      "bytes": 1005,
+      "sha256": "5bd7d2f1bf3fa46394c9d02d089f4528441ad3dbcc89ca970f803589c8f9f188"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_21/odwolanie.pdf",
+      "bytes": 83011,
+      "sha256": "51833ac47fe351f308339e1b3de2aa7bf9b04c173dc12e86f7d1c44cec74bf0a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_21/pelnomocnictwo.json",
+      "bytes": 427,
+      "sha256": "c04580b8a7bb86db7863c3e4cd114da775387a6572ea6cf0c1841cb821b8c89f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_21/pelnomocnictwo.pdf",
+      "bytes": 80770,
+      "sha256": "744c1339a12449e4852f8a9c2a8453c4e9106cc2225cf06d7eab4395fe51d062"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_21/potwierdzenie_przelewu.pdf",
+      "bytes": 66620,
+      "sha256": "01e55a5728faed08ffcd8d71df862bcb7715604ebe5687d7042175237aa5c236"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_21/przelew.json",
+      "bytes": 365,
+      "sha256": "4290719d90da141aacd06d59b9e471a89cae96e8f104913a92560bb1b87cb7a4"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_22/odwolanie.json",
+      "bytes": 1019,
+      "sha256": "0042c7f0424f59d4127ad236ee13386c596a544039db4156c5026f571f38512e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_22/odwolanie.pdf",
+      "bytes": 87742,
+      "sha256": "163f6415aea93f003f0c005816781c90704a52ac38a33121f69109da730e2742"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_22/pelnomocnictwo.json",
+      "bytes": 500,
+      "sha256": "648aba80f33fe2830e2d87439f7cfa09e7e20dea5cef88be04ec6da930a3ed3f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_22/pelnomocnictwo.pdf",
+      "bytes": 75236,
+      "sha256": "71394236fe6981ce8d09bb0a5b8039bec8c0a375683d9a17fffa551e988905e6"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_22/potwierdzenie_przelewu.pdf",
+      "bytes": 64117,
+      "sha256": "c6fe24bccacf02f60b764f094e006b10d27bf710f46790f663ddb54023053ff8"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_22/przelew.json",
+      "bytes": 381,
+      "sha256": "52837340d6b6c3ba796ad9906ded12c448395ac8d2565166cf5a6a73cd8a8ffd"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_23/odwolanie.json",
+      "bytes": 1011,
+      "sha256": "8ad7e237da6f5ef15ef46edbcf05c3b0692dc16651ba3a3cb16b2c2bc02bd194"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_23/odwolanie.pdf",
+      "bytes": 97066,
+      "sha256": "c85d7a9cda0b46d772d730d424f826393bba74c82fdb0f981da82f289a4216ce"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_23/pelnomocnictwo.json",
+      "bytes": 576,
+      "sha256": "9058eb0a0bbfc1d68748581765a8e563162f451105c1e5907faa2b22c98b4b46"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_23/pelnomocnictwo.pdf",
+      "bytes": 66444,
+      "sha256": "8cdccec2f6b1ac4373f4e910ec42e1c3cbdb980215d34faf6d06bb5a8e993ef9"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_23/potwierdzenie_przelewu.pdf",
+      "bytes": 61787,
+      "sha256": "0c98d368372cefa3d5f06bc28913bcc1dc88003806d82f7eac66ab74ca6c0d27"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_23/przelew.json",
+      "bytes": 386,
+      "sha256": "06961e5c0ffe7c94b947bbe9b9446513a91854cc4b516de51f4e57666ec26dc0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_24/odwolanie.json",
+      "bytes": 996,
+      "sha256": "abeea59100706d752a412cab64ee76ff8d72d641614c88f9abd0a43e9f1b2a61"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_24/odwolanie.pdf",
+      "bytes": 73447,
+      "sha256": "119df4b1665047acfb590711b3420424a67eb96a0ae7e3020af86a0130a19a6a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_24/pelnomocnictwo.json",
+      "bytes": 494,
+      "sha256": "70717bbb333631e74507deda223a1d82ee5015aca50e6bab2a5f64fb8a9038d0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_24/pelnomocnictwo.pdf",
+      "bytes": 73474,
+      "sha256": "d9151983e36c350ccfdda8e17e309f14892385c24fa7f40d5bcb23b63d544d66"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_24/potwierdzenie_przelewu.pdf",
+      "bytes": 60503,
+      "sha256": "c9ad36b3b186aacb26412f2964edeb6a476fefb9f7f7a80764cff9455b8ff558"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_24/prowadzenie_postepowania_odwolawczego.pdf",
+      "bytes": 500902,
+      "sha256": "14cdc52d8f84b9eac1c70e4bdb5f8a838edb61e6acd79a19185282b4c88d28fb"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_24/przelew.json",
+      "bytes": 369,
+      "sha256": "5383a0ba6f09e08ce4f063e2eada4519a79bd1a33eb5844e4ecf38d149b789ea"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_25/odwolanie.json",
+      "bytes": 1003,
+      "sha256": "a243e4a9a58cf532e3d41de38138237daf19c71e0dea2262eb56f5fa2a8f95f5"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_25/odwolanie.pdf",
+      "bytes": 90637,
+      "sha256": "f5a256b2f51bcb55053d55e86c0ba51a651901951427d4534664faef95d87334"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_25/pelnomocnictwo.json",
+      "bytes": 571,
+      "sha256": "30cd8fb0398ee8e529ba01661b894643595254a2cd9cdff7246c32edec86643b"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_25/pelnomocnictwo.pdf",
+      "bytes": 67402,
+      "sha256": "22b1ee9770f82bd6e393c3995e7b03034dc3c6df7b7111972fbcd06a4ac52f69"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_25/potwierdzenie_przelewu.pdf",
+      "bytes": 79470,
+      "sha256": "0c5cd00f3cdd06834b3c1ac2c4999181fb2a25ea98e4f77bf67b850ab8e5891c"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_25/przelew.json",
+      "bytes": 390,
+      "sha256": "d53f4c2ff277b32d3bbe443d4a49dce4f8b3958341700a941622136e91e37e5d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_26/odwolanie.json",
+      "bytes": 969,
+      "sha256": "8737df5f2c3bce0a1f58fb3ee4cbab76cc83852251c7f3bd847bf8f705bc330f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_26/odwolanie.pdf",
+      "bytes": 81170,
+      "sha256": "189672f170117c8473616ca8160ec1fac940193b929d27df5ec7d40e57696d6e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_26/pelnomocnictwo.json",
+      "bytes": 510,
+      "sha256": "da4d6735ee72d59341bdd912ebd2731b997a93f9cf595284aea13ad43ab9aa57"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_26/pelnomocnictwo.pdf",
+      "bytes": 81978,
+      "sha256": "619777d550e66ce1b3c609d6919e76c3be9793145173720b4980a891bc28c4dd"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_26/potwierdzenie_przelewu.pdf",
+      "bytes": 63908,
+      "sha256": "54523de83cc38f2210d8fbebc23afc499fe76b5b8952f18d5cdaf2e4c6438624"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_26/przelew.json",
+      "bytes": 389,
+      "sha256": "9a9a2eed6823fdf3c27f4412a5ee435cf22934227be22c758f9c5e1f20c785fe"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_27/odwolanie.json",
+      "bytes": 1014,
+      "sha256": "5a204ec0f7af062fb43d034a7ef2e47ff8433151c38fe184900e87f6aafc613d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_27/odwolanie.pdf",
+      "bytes": 73131,
+      "sha256": "8c21ec67c6f492cfc228b1db4c1bc5b251e90f92d3ea97d7e9a567f9b6a7aa6f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_27/pelnomocnictwo.json",
+      "bytes": 506,
+      "sha256": "055b099edde9ae24912359bc4ac27daf296aba8536402396d62917cdd2a142c8"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_27/pelnomocnictwo.pdf",
+      "bytes": 78995,
+      "sha256": "8f2b56e018141c447a9eef8f63e42924f0a1c039ccc1b5c116ae11c1de77b455"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_27/potwierdzenie_przelewu.pdf",
+      "bytes": 80014,
+      "sha256": "a4e3acd5ae1f700ed2416c0340aa9031f32af52abe702980e16cd2ccf2d9f81e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_27/przelew.json",
+      "bytes": 395,
+      "sha256": "d16940c533a18e38b90a37f2e007f5c2d8da44e25ebae1c3b2428e263e6d990c"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_28/odwolanie.json",
+      "bytes": 979,
+      "sha256": "f888e2f4ecd3e6ec1295a458dd89a4ed60ac67b4cd1fe786016cedd3dc3f345a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_28/odwolanie.pdf",
+      "bytes": 70706,
+      "sha256": "d173666ebdfa66717fa5a0f5ffa88388aea5c81067c3bf1c7ea4f1de72749948"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_28/pelnomocnictwo.json",
+      "bytes": 489,
+      "sha256": "261d55f96f9c2e4530227ee29d48e9eeeae2e00fe1e9f1c9ba456bb8a0e18f2e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_28/pelnomocnictwo.pdf",
+      "bytes": 79372,
+      "sha256": "93229212a18f28f18a62f4ad1146b9227608db7a0ed0fc2ee8a5415c70c0293f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_28/potwierdzenie_przelewu.pdf",
+      "bytes": 78503,
+      "sha256": "2a73e2917d50a3b440001d5aaa1107f0ef103d42235a25b830e23cbbb58e6dda"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_28/przelew.json",
+      "bytes": 370,
+      "sha256": "2eb714db3364d783a574069e85ce41a12ca9b757149d9e42546306a5a36efb18"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_29/odwolanie.json",
+      "bytes": 1010,
+      "sha256": "f83d81208b9e75e57d4ccb36608b5193d0b035383e71a39eef73d48f545c24f3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_29/odwolanie.pdf",
+      "bytes": 85628,
+      "sha256": "7d18b54be73c75baa0c0ed6dca394b77c7203f8dd191b0ceafdec48c3f1d9f29"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_29/pelnomocnictwo.json",
+      "bytes": 494,
+      "sha256": "493d757575d8bf839ec65f872a0d6a43e4f8b15a5036677eac0b4ffa09f7b67a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_29/pelnomocnictwo.pdf",
+      "bytes": 66134,
+      "sha256": "52afc0079d1c92b08784a844787eb3e076b7573a1c4f5385a38215616d96bca3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_29/potwierdzenie_przelewu.pdf",
+      "bytes": 73807,
+      "sha256": "0ee8046170ac0e18ce97d76d81b5e454d9f814e3f0cf4380bf7189a42d972c07"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_29/przelew.json",
+      "bytes": 365,
+      "sha256": "116b7e1349286471fa25ed3811ec7ece5747c13ec30d851830def9fd1d1eb42b"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_30/odwolanie.json",
+      "bytes": 1021,
+      "sha256": "8a45f739e622add96a1f9bb81ee5cbff2e576510d8c7e0c0402f2addbc344389"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_30/odwolanie.pdf",
+      "bytes": 83214,
+      "sha256": "76698b558bce6700bc6ea57894fa683ea76d7109a25a24149142c873f0c2c6a3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_30/pelnomocnictwo.json",
+      "bytes": 432,
+      "sha256": "d20b99f0ad372ccec7f952144daaba17112b86918d5384ef6c4bbf443b562049"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_30/pelnomocnictwo.pdf",
+      "bytes": 72786,
+      "sha256": "a01829742513da2d484e95a5e5e4f094090c2e009732aca6b5d73b86dcf3371f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_30/potwierdzenie_przelewu.pdf",
+      "bytes": 61406,
+      "sha256": "f7853f2b5187474dfc47c191d6e8b6ac2010f24fa78aa9f213a66259e2dfe5ca"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_30/przelew.json",
+      "bytes": 368,
+      "sha256": "95913e43ccc4554f9ffd6515a5dbfaee2900ad53644536487784c762e2bee109"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_31/odwolanie.json",
+      "bytes": 996,
+      "sha256": "b91a9b18cc06adb2568fb956a74b7413b0526237f428d02e33009fa225b5e57d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_31/odwolanie.pdf",
+      "bytes": 90885,
+      "sha256": "3871b20c75ecac2fb479187f84fe0b777a7a119531def5393b102c90434d4c52"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_31/pelnomocnictwo.json",
+      "bytes": 503,
+      "sha256": "7736cc0bbc6f448426886f7a47b24e625572fabe255b86ae22ad06fa5c59f21e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_31/pelnomocnictwo.pdf",
+      "bytes": 76618,
+      "sha256": "4c2872a718c7f984f2d6f7b2b24815eb829568c2b294703bd5a2da4796c0b9b0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_31/potwierdzenie_przelewu.pdf",
+      "bytes": 62351,
+      "sha256": "59ccbd449a120031df460c991630e46396ff13ea0cfa54bd8f3741ef2724f70e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_31/przelew.json",
+      "bytes": 383,
+      "sha256": "a805f9aad3b0cc6e1131d92d9a90e23bfa0209191bf85ad76f05bd5bb48a393b"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_32/odwolanie.json",
+      "bytes": 1025,
+      "sha256": "82be99bf4df65531380884133d1a3d08948d33dece8571ca6aef0869d52a2bb1"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_32/odwolanie.pdf",
+      "bytes": 90252,
+      "sha256": "737cd45caf31e487f3873b899f96d9643d7e7d9e4c0b8bc70a959d7bdd210bdd"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_32/pelnomocnictwo.json",
+      "bytes": 492,
+      "sha256": "177aab726489e3a56249bc0019c29ff1f2b98f05e2afa2ebad6b9d3475f07c05"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_32/pelnomocnictwo.pdf",
+      "bytes": 81876,
+      "sha256": "f4d23aa8f4f7068719d536bc5efdbe703dfc614abf5de7bde0b12542efa755ee"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_32/potwierdzenie_przelewu.pdf",
+      "bytes": 76631,
+      "sha256": "6282bd1b64a1c720b7b84dfb4941d3353af2e8d591ae69ca01713beb9047f7a9"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_32/przelew.json",
+      "bytes": 366,
+      "sha256": "f0694bd304c300a5a0488ca2512132fe998749a96cce51ce399b5212d176e9e9"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_33/odwolanie.json",
+      "bytes": 962,
+      "sha256": "cf638d68b6f5cbd5c6f99f00bdbd2cab409cd4f0cd3229ddaabfb27171032178"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_33/odwolanie.pdf",
+      "bytes": 88021,
+      "sha256": "b8153c1ab2801fd0c2843447be5b552fb873b8b04967ad8aef3665a351a8a731"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_33/pelnomocnictwo.json",
+      "bytes": 503,
+      "sha256": "f302a3afafe715f2759a33ffc58b66a50303cf7c5caf924a75b4848a70c8fa87"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_33/pelnomocnictwo.pdf",
+      "bytes": 65977,
+      "sha256": "e3b336436cc99eaea501cf006ab724af27bd4b1a6dd18e1cc742cfa226f04f68"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_33/potwierdzenie_przelewu.pdf",
+      "bytes": 74038,
+      "sha256": "c14ffe0245a41a14025484d0e0b08573ce2a91c5b48df220f830f65506b6580c"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_33/przelew.json",
+      "bytes": 386,
+      "sha256": "6b26bae03aa17e30a63e910b83f0b70f8acd8e9780b674ec1ba2f61a0e5245ab"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_34/odwolanie.json",
+      "bytes": 979,
+      "sha256": "b237efc462123c0b98bdf5f06201c90b03a9f89978e92bd3f121ab4d1496c7bd"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_34/odwolanie.pdf",
+      "bytes": 85416,
+      "sha256": "7df7416d8b13aeb5447132ec7834c1c01da72368aaf8cd864ca7d09b1c303538"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_34/pelnomocnictwo.json",
+      "bytes": 504,
+      "sha256": "81b7ea1551ec062c0a16429c9b30e5b06a99476fb2e50dd396b621ed73e8ec41"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_34/pelnomocnictwo.pdf",
+      "bytes": 81330,
+      "sha256": "0f4f7c5f7114139f585b8cdab9523c624111fd9cfa1b6c396442e1513b20057a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_34/potwierdzenie_przelewu.pdf",
+      "bytes": 80237,
+      "sha256": "2d4e9f2137da0067486a6cb6222aaae7fabb9c99cffce5cc744adc7918cc36d7"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_34/przelew.json",
+      "bytes": 387,
+      "sha256": "bac76d5579692d9dbce119db4f59a0db328ae23a9cb7952c52138d27a85aca80"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_35/odwolanie.json",
+      "bytes": 1006,
+      "sha256": "a995e9f23b7409b2edba43254a31b7768db55cdaa5e363da749ed47526f3aab6"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_35/odwolanie.pdf",
+      "bytes": 85321,
+      "sha256": "7dd490cc875c766e62d8573b6d70af18da58cf1727a9dcb8e74e31773b0859a1"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_35/pelnomocnictwo.json",
+      "bytes": 503,
+      "sha256": "a22fd7bfbf4887c29db657ed1c132f5aacaf5513bc6171dba9698c422033cf02"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_35/pelnomocnictwo.pdf",
+      "bytes": 64608,
+      "sha256": "27f0ffc00a8bdfc132907e2c522f979d0d3273138ae80fe98b4ec0d5fed49703"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_35/potwierdzenie_przelewu.pdf",
+      "bytes": 80511,
+      "sha256": "77063773a072dbd9f58f921b1628eb908d089915873f47ae5d65b8e3662280be"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_35/przelew.json",
+      "bytes": 386,
+      "sha256": "7a0cdee5260adc1c1de86f231f7fbccd629c3dd412148ad6c26c302eedd9f733"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_36/odwolanie.json",
+      "bytes": 1026,
+      "sha256": "d9e3f7633b74afe39aa83e444439c19134dabba4ccef80f09c1b01d843003f85"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_36/odwolanie.pdf",
+      "bytes": 91032,
+      "sha256": "d7045901b7841bca1c3032582a3fa0bcb4e1de5d1f930beb781ef0a5d9b12c17"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_36/pelnomocnictwo.json",
+      "bytes": 579,
+      "sha256": "38bec3b83c91adb5a639c809c5970ae43b34771d21870a070910a4a9b7dfcb84"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_36/pelnomocnictwo.pdf",
+      "bytes": 64067,
+      "sha256": "21e871cc8d30bd9d59c2e31cced2ced2716fc6f8023679e09e65ebf61504e54e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_36/potwierdzenie_przelewu.pdf",
+      "bytes": 65532,
+      "sha256": "55712db58eb70c9f676833ca3cc1ddd31c2eff94f1e5e3cd6785365e53f5a261"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_36/przelew.json",
+      "bytes": 390,
+      "sha256": "ec3b560d65ec26f1b4431951627414d9a83e3d1dae3b5d57f2930069483e808a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_37/2025_BZP 00143067_01.pdf",
+      "bytes": 79156,
+      "sha256": "e83ef1275467b152cf95bc51fa860794b3f6aaa3e818ea976fd7e1cc2880e4f7"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_37/odwolanie.json",
+      "bytes": 1031,
+      "sha256": "a5b0bde778e4beaa1c30611198dfb49969aff8d56ee568ef09b8b7f7d36a4c3d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_37/odwolanie.pdf",
+      "bytes": 91394,
+      "sha256": "07c19e4b744c3749a7172b05ccf59d1900dc9d78ec27b4903f6fda331c3107aa"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_37/pelnomocnictwo.json",
+      "bytes": 498,
+      "sha256": "ee7e0ea9e436d866905dcb7ad0ba7ff407d61b7825b0981a1c7d19fddaf651c6"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_37/pelnomocnictwo.pdf",
+      "bytes": 66356,
+      "sha256": "2d8c2993c955dd1e22cc5ee6203561613753cdf4c2a3fadd6b88728ec4ec66f0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_37/potwierdzenie_przelewu.pdf",
+      "bytes": 77460,
+      "sha256": "e92765e3f0d7a7fb51f8e5b3af8444000889468fee2f197ab08bbaa141191cfa"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_37/przelew.json",
+      "bytes": 368,
+      "sha256": "cee3538020b71157d8aa5a38df29affcfba70232e6b3a8086547ea2c2bd1238c"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_38/odwolanie.json",
+      "bytes": 1054,
+      "sha256": "5ebef4023b486919bf502e94ede30fa5695c2d0dc35dc5138ee509f75b3d850b"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_38/odwolanie.pdf",
+      "bytes": 92787,
+      "sha256": "f3250765383c1b94c0880f9feb0cfe6e2a10804d3975dc450a183f987b677081"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_38/pelnomocnictwo.json",
+      "bytes": 573,
+      "sha256": "c80bfc08e67f3c7af5e0cd75b1650033a0b286bfda5653fb3d2ad8a1104e47ae"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_38/pelnomocnictwo.pdf",
+      "bytes": 79960,
+      "sha256": "e0c5eadd41cb6ad4f9aec666e1c23015fd97cc022f60268267ade2d6bfae081f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_38/potwierdzenie_przelewu.pdf",
+      "bytes": 60883,
+      "sha256": "3848dc97c24a0f4ef66e9c4c8f008e8a13299efe37c35cccf0603598e8478e05"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_38/przelew.json",
+      "bytes": 390,
+      "sha256": "3373cba1546f7400d5669498de43df232b2e8ccc58be40455089ab5dd9886c19"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_39/odwolanie.json",
+      "bytes": 1014,
+      "sha256": "d0dc84a58a4e1f8f06cd2f500f250a465b755e87924c8366932f448cdfe41965"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_39/odwolanie.pdf",
+      "bytes": 90195,
+      "sha256": "af0d58f753fcb0772cd96139c9570d47301c8679d2677a9a079960650addfb49"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_39/pelnomocnictwo.json",
+      "bytes": 578,
+      "sha256": "ed4d084bd6ee80d0232e036c6e23523cbcf8e823bb8be5c189d46cb49d0a8980"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_39/pelnomocnictwo.pdf",
+      "bytes": 63638,
+      "sha256": "3ae6957ca1dabb02faeebccf428229aeaae0c5ae70367f4b5b968473c2d47a07"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_39/potwierdzenie_przelewu.pdf",
+      "bytes": 65097,
+      "sha256": "5356498eece0f366754bb4d0bdfd7751d86fd19759158f2bf45bbe130f23a668"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_39/przelew.json",
+      "bytes": 394,
+      "sha256": "a7dbe4340717bc8665477c5e7e87760e3b50a20e258f2bafdccd85241674bc93"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_40/odwolanie.json",
+      "bytes": 1155,
+      "sha256": "e7538dbe87c56adbe687962840370ec7829a13022d4d788aaa9626d51ac27580"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_40/odwolanie.pdf",
+      "bytes": 149826,
+      "sha256": "00684aa051d2b908d663f249db463ce12be9de6bf3391e76c9982fd37b56b6ab"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_40/pelnomocnictwo.json",
+      "bytes": 581,
+      "sha256": "3e0b0b688caa9e6468fa9d06051cb584bf85055c0b57167fea1c2c6594cb39e4"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_40/pelnomocnictwo.pdf",
+      "bytes": 85757,
+      "sha256": "b9260395c6d8d40ba4d7678fb0caee7910d16c7ddcc623f6528de124e793cd04"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_40/potwierdzenie_przelewu.pdf",
+      "bytes": 65685,
+      "sha256": "965fb1282fc1ca56825247a4a8617a90cadd5462a93a6c6081bea25c56d4a3e4"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_40/przelew.json",
+      "bytes": 393,
+      "sha256": "673a94ab87ba7e91b8cb4aa2c39f2bd1807bd4393acab71a7fab17c162517287"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_41/odwolanie.json",
+      "bytes": 1047,
+      "sha256": "66491967b4be1689fb5d0ed2c05b204e00046d16c2a399a631b7e47f92dcc62e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_41/odwolanie.pdf",
+      "bytes": 122953,
+      "sha256": "1a1f2a652ef13e1694b50cef7ea06adef132cf5297fddaddc190de88210e5416"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_41/pelnomocnictwo.json",
+      "bytes": 787,
+      "sha256": "03ec3b5b3c550dd6c6b151af00a33db52106fd0ceda21fc9e17bef53d6e8acdb"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_41/pelnomocnictwo.pdf",
+      "bytes": 66763,
+      "sha256": "b1abb0ecdbf2ae97e6875fb799015bcda7bad19fb90d8970d8a045bfae10940a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_41/potwierdzenie_przelewu.pdf",
+      "bytes": 55856,
+      "sha256": "6e5df4e2c81ffbfcc007f4ca7b86d63196bf7abbe89441c357e9b714d640813d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_41/przelew.json",
+      "bytes": 366,
+      "sha256": "02414ae2c326f70679f987baf0d8e1be2f6e247538b2a1ebc39bcabe856b2b04"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_42/odwolanie.json",
+      "bytes": 1300,
+      "sha256": "f388cc3550f21af067c786b22a05d8965c34751b6dc7cca564ec5efd1ec44a2c"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_42/odwolanie.pdf",
+      "bytes": 115083,
+      "sha256": "ce42678373661a74631047c034c72184532823014383d1a75ab628561336993c"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_42/pelnomocnictwo.json",
+      "bytes": 507,
+      "sha256": "66d69859fb7339c05000689848298bcde61409e02b107f71dc380bd5597616b8"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_42/pelnomocnictwo.pdf",
+      "bytes": 56754,
+      "sha256": "042bb3412ade18a17e7b0b0169e591c7a7818c874d969ac13f43e208c326eff5"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_42/potwierdzenie_przelewu.pdf",
+      "bytes": 84756,
+      "sha256": "ab73ca4aa160c004fc3b20a88b0fb3c3f00842e3633920083a8799ee55bd5eb9"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_42/przelew.json",
+      "bytes": 389,
+      "sha256": "c07d2e48adcdd056163f8fff365eb56f0b7b31cd94c2f3f71e8a1cdb80f51b51"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_43/odwolanie.json",
+      "bytes": 1098,
+      "sha256": "02d14ea3a73335326fbf843f3375d30868b7662d26aee9b86742ed3e5f74da99"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_43/odwolanie.pdf",
+      "bytes": 148388,
+      "sha256": "8839b6e6d70ea46ccdf2a2756c375ce11e5825cc34061278d14e4ee95dd11019"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_43/pelnomocnictwo.json",
+      "bytes": 506,
+      "sha256": "a3deb0342b7fb4010465de45cb838b145054723d52da03f5384c8309b8bb5e20"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_43/pelnomocnictwo.pdf",
+      "bytes": 66593,
+      "sha256": "3c8d46a690736ae6526038d371f18ad078bb762b41aa1656780e7cb0ef39cd10"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_43/potwierdzenie_przelewu.pdf",
+      "bytes": 44932,
+      "sha256": "c458fa4aaf2875cf9fb8f5a7d6d12a4bf21dae6468adf71a57a5f04bac954347"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_43/przelew.json",
+      "bytes": 371,
+      "sha256": "499aed00162b9652069040888e2b94be7cc1dc6c7279ef808ed9c32557e0cfa9"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_44/odwolanie.json",
+      "bytes": 1098,
+      "sha256": "7f3627e341e457f8f43ebf7f49cb44602bb3de35a24335d0aee8e4fbc9ace894"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_44/odwolanie.pdf",
+      "bytes": 122920,
+      "sha256": "540271bc8aad5e802f98819eaedc8d185cab917f3c535adbb79c901b9b3fedac"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_44/pelnomocnictwo.json",
+      "bytes": 505,
+      "sha256": "eea4dcfe0b9936c29680e3addffed725beecbc28eef34e85f93493f584664e3f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_44/pelnomocnictwo.pdf",
+      "bytes": 86081,
+      "sha256": "1ee9601d2070839510416680ceddd9353576ed0c37210144825bf5bb70785eb8"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_44/potwierdzenie_przelewu.pdf",
+      "bytes": 65816,
+      "sha256": "d93c4ece53f9e78c6571afcdd5d1720882d5590da86fbcbed09b87a9477ab940"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_44/przelew.json",
+      "bytes": 387,
+      "sha256": "807442c46c5e77cd2215ae4fad17d38bb4d4a4f0c55648e40a5eba7132a3bc43"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_45/odwolanie.json",
+      "bytes": 1105,
+      "sha256": "93fc1f1c307413f65fd2c452940e9f0a3f19f726b860adbbdc8f39b5d944356f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_45/odwolanie.pdf",
+      "bytes": 96553,
+      "sha256": "33ed4fda9600344391ee6459b7d14b744c3c473733b341476d4fca4a503f31e2"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_45/pelnomocnictwo.json",
+      "bytes": 525,
+      "sha256": "7e0a31943fad9b07762b207fcf2611f2fcb44b6ed28f9bac6a2975804d0235f3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_45/pelnomocnictwo.pdf",
+      "bytes": 45792,
+      "sha256": "24fa7b00f3913bed22ffb5b5f7dcbce0cb646a838d2740e0d7109ba9eec4dd4a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_45/potwierdzenie_przelewu.pdf",
+      "bytes": 84700,
+      "sha256": "d8e64fd6ae45f28121a5e56d1d9cca530c08969f9c33adc629010715a1bc814f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_45/przelew.json",
+      "bytes": 393,
+      "sha256": "9388740e6acde372cd0a8ac16467e3979c55703324d6cfde1896e0a672c52c08"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_46/odwolanie.json",
+      "bytes": 1039,
+      "sha256": "a00db9965e28dc9e1cf6ba2a519574581602acb231c6be7f7fe372eb9e8b214e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_46/odwolanie.pdf",
+      "bytes": 150657,
+      "sha256": "afd64e7a7ac94cec505d2c644044c448f8b48110adcbc88e76910c8eebed8f9e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_46/pelnomocnictwo.json",
+      "bytes": 874,
+      "sha256": "26d18a18ba6b7fe802bbe6c87e9fad6faa73292fe590a83ef6c0bf2ae514d2ad"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_46/pelnomocnictwo.pdf",
+      "bytes": 56966,
+      "sha256": "0d576d7f6676549743a3b22a38db57771ef63fbe30e4e20df1ee154cd3efcd04"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_46/potwierdzenie_przelewu.pdf",
+      "bytes": 65633,
+      "sha256": "bb2ab60b26fa5be02fc7481c6c20bb6b5ad2447685f6cb8ac5a7d5d96585debf"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_46/przelew.json",
+      "bytes": 385,
+      "sha256": "7e436638c45aeef63c47a86bf411987994936f8a22dd85a9e57e252a0fe33ccb"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_47/odwolanie.json",
+      "bytes": 1074,
+      "sha256": "29ed0b274e959a987cf014ef80cf551286ee74887671cd7dfe55d14fe82307fc"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_47/odwolanie.pdf",
+      "bytes": 113718,
+      "sha256": "1c9c50cef422179de9772c92b51fab0427669903097765378eb7ad85b0e2f051"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_47/pelnomocnictwo.json",
+      "bytes": 526,
+      "sha256": "b8871832ec7f8299c0bbca3a27b2c15c557827c4fcc42060038f16b6d3ab4761"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_47/pelnomocnictwo.pdf",
+      "bytes": 85837,
+      "sha256": "67ac14e82aa673b58841ae02a018fe8e32fc5283d9eb990f71eb32b17b97fa3b"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_47/potwierdzenie_przelewu.pdf",
+      "bytes": 65859,
+      "sha256": "efdf3d3f87d26f3e4b328f10057d939d6e545228e534d1f1e060d2f74f30c94f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_47/przelew.json",
+      "bytes": 390,
+      "sha256": "71c57a9fff7899e032675754cdedaa4b7970749a82d9fc7fc097dba14f905e3f"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_48/odwolanie.json",
+      "bytes": 1047,
+      "sha256": "46665991a6fa257b4ac83f3d92344f50534183898ebf523386bb490a03e4eadc"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_48/odwolanie.pdf",
+      "bytes": 122785,
+      "sha256": "170abdb362bd85457add387faa0442aa432f0ea8ecf6482ad370a19c92a5cdb9"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_48/pelnomocnictwo.json",
+      "bytes": 941,
+      "sha256": "0407044a6759b48f86ae37631eaf9162d01c0156ef67dbc9ddca7f502ffde59d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_48/pelnomocnictwo.pdf",
+      "bytes": 86532,
+      "sha256": "6c123036164fe6456a85d76fda19a8f8d2489219b6197f6efaf03bc8a5399034"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_48/potwierdzenie_przelewu.pdf",
+      "bytes": 45027,
+      "sha256": "95ce6ce22ddb7feab3a4cafdacd46d6fe02b2ef2dbf4b6f24a676d708d1518e0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_48/przelew.json",
+      "bytes": 388,
+      "sha256": "414f8d76b4c7de4e68d187b3a55f399951cee78a66fb4a374b24fb92ab59b94d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_49/odwolanie.json",
+      "bytes": 1040,
+      "sha256": "0344ce3dbcc5f4d4b7a428704d16c065e83f61a11c7a7e3a80de3ce5de45edf9"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_49/odwolanie.pdf",
+      "bytes": 93331,
+      "sha256": "c2a1f7f0c8e9dd2d9fa2234e4ae797179f3cb1ba2306fc81d45d05ca4e68f9f3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_49/pelnomocnictwo.json",
+      "bytes": 875,
+      "sha256": "553b600a1d56d5dd67130fa6d2ef03c8336347978cc9bf7e41ce1067162fc1d7"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_49/pelnomocnictwo.pdf",
+      "bytes": 66803,
+      "sha256": "781edcb05aa93ec2701fa2068544e0117d26f166d41faeb0377524e2458799f4"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_49/potwierdzenie_przelewu.pdf",
+      "bytes": 84758,
+      "sha256": "165e21d395358d81b783890ea67f4a0feabcba079a8fffe3d6b139140b3abb67"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_49/przelew.json",
+      "bytes": 380,
+      "sha256": "8292c4d2066f3896f78a9deb28ce03a27a4f1c969d91fa743315f9fd5102fa09"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_50/odwolanie.json",
+      "bytes": 1055,
+      "sha256": "f99317f72159ec7beb50689e548061eb2506928334dbdbe2480ba130310f6604"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_50/odwolanie.pdf",
+      "bytes": 94117,
+      "sha256": "be6b80a7656d8f4d1ca469c65510f81800f531c59b8dfe1d367dc0f2424d346d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_50/pelnomocnictwo.json",
+      "bytes": 824,
+      "sha256": "ad244b3f519f21154366081c8315274d5b21670cf98135ec06a3c2849843dd72"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_50/pelnomocnictwo.pdf",
+      "bytes": 56901,
+      "sha256": "c7519bc8e402c9b23cd2900d52246b008a40d49533321581361d74280908329e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_50/potwierdzenie_przelewu.pdf",
+      "bytes": 84662,
+      "sha256": "626f1647846efec298bb190d1b36f881ef35d881078ab2a22622d1e4af2660b3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_50/przelew.json",
+      "bytes": 367,
+      "sha256": "67428da962d01bc885aa80eefe6e6cf4245d0e9e59e842504606b9104d88f406"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_51/odwolanie.json",
+      "bytes": 1245,
+      "sha256": "fb54b6611c3eed9c382829b36c604a660d1035853fb82284226b0b6b26898956"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_51/odwolanie.pdf",
+      "bytes": 115222,
+      "sha256": "ed43daa14359dc7ec2407148641f122c6d4e30ec84451417c0e3c3fd60238d47"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_51/pelnomocnictwo.json",
+      "bytes": 492,
+      "sha256": "39c45350ba303f7e36188394f2fe4085a0290c5fe94307703020997997913764"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_51/pelnomocnictwo.pdf",
+      "bytes": 56904,
+      "sha256": "673ba99784a6317587caa0b4dde89701d0ce43c114ba1285c677e5da0d61bb7d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_51/potwierdzenie_przelewu.pdf",
+      "bytes": 65828,
+      "sha256": "6d0dcb16ea305217581dcdf8bebb04ec4b16d039805ef3c82e0beedbf4774ea0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_51/przelew.json",
+      "bytes": 388,
+      "sha256": "98df68ec06106fd28864081badd99223a5dea9984e0c91349d6bece94797d3a1"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_52/odwolanie.json",
+      "bytes": 1016,
+      "sha256": "73b8b55ae39509986dc6e554dc8ac0e558151535e57b95cae7e351069abffb76"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_52/odwolanie.pdf",
+      "bytes": 119514,
+      "sha256": "aabffabee223ce4c76d8ebcdc499c6eda6be9b8babefd7ad9c96baf472270ced"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_52/pelnomocnictwo.json",
+      "bytes": 436,
+      "sha256": "098843abf7babe467524d2d5efc87f293b0217c689ec217ea54652233cd11918"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_52/pelnomocnictwo.pdf",
+      "bytes": 66521,
+      "sha256": "2f6861469bb23d5e17b5cad29886ade230bd733cd4284089271f91d5c4559a12"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_52/potwierdzenie_przelewu.pdf",
+      "bytes": 55984,
+      "sha256": "b717f67671b76bb101a789ae435c7dbbfd405dbde3387dbcb201a802c226fc91"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_52/przelew.json",
+      "bytes": 373,
+      "sha256": "c5e8b7c3b29f59b265ca2284935fc797287ed8d2b1ded36487d8bca13439db9e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_53/odwolanie.json",
+      "bytes": 1076,
+      "sha256": "f8aa7c2bf2b5166df2c1a6da11f04b985d4f5c09f037c3f5f84dd31051225de6"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_53/odwolanie.pdf",
+      "bytes": 120135,
+      "sha256": "c75d6308159819fb8cb4b9bc955e331278a017d34d8b70e7691cda32c9821a23"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_53/pelnomocnictwo.json",
+      "bytes": 507,
+      "sha256": "3f438ff0a429ba674447ee700c98b2050a0f2fd88bd77e4c3a943a47a8bfd7d0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_53/pelnomocnictwo.pdf",
+      "bytes": 45745,
+      "sha256": "65eed92fed3543d1d1fb3e01b464cb522e1baf443dd1b10a97925edf0c9457fe"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_53/potwierdzenie_przelewu.pdf",
+      "bytes": 44998,
+      "sha256": "31c4516bf3da815c3c92990435a7bb7dd9e134820230a8a21227ea549c598d15"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_53/przelew.json",
+      "bytes": 385,
+      "sha256": "70a124aa39912d817e9476a967e669a801b752a5a72f71ac090fe7697d4ca880"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_54/odwolanie.json",
+      "bytes": 1060,
+      "sha256": "622adf71adef3de52e306c9cc2c91999b6fef4dd5b12e1e440dd61cc568ed313"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_54/odwolanie.pdf",
+      "bytes": 115089,
+      "sha256": "d5c5e1b1d022566d6e781d5f2c565dd9d55bffd1b516c71a441775d517a356f2"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_54/pelnomocnictwo.json",
+      "bytes": 570,
+      "sha256": "beb5006f40b0b988a839a80b4a8fd7eb3ba617fb7e56756a8342cb96b77b3606"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_54/pelnomocnictwo.pdf",
+      "bytes": 66535,
+      "sha256": "54ede4fd9bcf0593ecf13678084dea0415184da811de72c332f687431e57924e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_54/potwierdzenie_przelewu.pdf",
+      "bytes": 55993,
+      "sha256": "3afdf63926bae4617a8d1845ca180e403abc1a32dddae75aa9458cbc5f4d5505"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_54/przelew.json",
+      "bytes": 378,
+      "sha256": "65b6a449b98ce5a32efb94749245b8645170b57987316c53e7631ede9ca9d78d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_55/odwolanie.json",
+      "bytes": 1054,
+      "sha256": "f73a34e91fe74bda9a4485db28cbe06f574bc1a44016be273501f48969a5f82e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_55/odwolanie.pdf",
+      "bytes": 149220,
+      "sha256": "6c1c32fabe2c1344e77beb5366c525a807aac5d967d643e7929e2fdae27e2d85"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_55/pelnomocnictwo.json",
+      "bytes": 512,
+      "sha256": "63760ba071412dc2a09a86bd566a1cc12f0103b0c996cb8210915eac7fdcbbdf"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_55/pelnomocnictwo.pdf",
+      "bytes": 56623,
+      "sha256": "5fa00befe998d537b1404bf8926013600fbd544d5eceea8da4ea737dcf9c2eb7"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_55/potwierdzenie_przelewu.pdf",
+      "bytes": 45009,
+      "sha256": "b9c04a4dc845c9ec59f53a5a04c17798a7225494e4e22c6ba5a8d6c82faf92cd"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_55/przelew.json",
+      "bytes": 390,
+      "sha256": "c18fc68423c2ef4bd1f66ec91beed6d86c0dd3066570046bbc4f301e7a3a4413"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_56/odwolanie.json",
+      "bytes": 1025,
+      "sha256": "0db9d10681d676d5915730f6492b516d1be4cf260daef37c0d2846f75dab0b59"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_56/odwolanie.pdf",
+      "bytes": 94427,
+      "sha256": "c63cb45b9e1214a50e73afc0e91d1a80e7efaacdd6500a02df135d4a87cc6042"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_56/pelnomocnictwo.json",
+      "bytes": 568,
+      "sha256": "8a0305cee22aa5ded808238e05ee1cd32f05e08abefbfb7ea63c35588f16c3a0"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_56/pelnomocnictwo.pdf",
+      "bytes": 85646,
+      "sha256": "65a7f7bcf9f8098a98c29bb45fe6849df06b1915bb4ae1a4cb3518345c335cb8"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_56/potwierdzenie_przelewu.pdf",
+      "bytes": 84723,
+      "sha256": "675e28b2802da097f8b89b0a6eacf8a353e401e13ba7a64e82aae97ae8e3c4b8"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_56/przelew.json",
+      "bytes": 381,
+      "sha256": "4279d457b17880cb8e462f886656f1cfa6e7b5b301d038e4e625956232fbc6c1"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_57/odwolanie.json",
+      "bytes": 1045,
+      "sha256": "debd4bdb444b8934557839c5a5dcf9f5763c21fa53ebfdad431c2aa58b2cd7df"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_57/odwolanie.pdf",
+      "bytes": 151113,
+      "sha256": "23aef4c108ad4580c641aa0c639104432ba4f39444a7e5c392b9f31b0fa7700d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_57/pelnomocnictwo.json",
+      "bytes": 435,
+      "sha256": "d950631744646c8d3bbb8f5d154de8b24fea60e15a833f511cf854e0a7dcb8a8"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_57/pelnomocnictwo.pdf",
+      "bytes": 45623,
+      "sha256": "66cdf4f8b693cf770420254bb2cb3ed6e92efd27261fc8186ec9316fd8e85c57"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_57/potwierdzenie_przelewu.pdf",
+      "bytes": 65569,
+      "sha256": "23d49f129a6dd26e57aa93643eb1349fd774cf446160fb13fdcfb95aaea9c371"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_57/przelew.json",
+      "bytes": 368,
+      "sha256": "e04d71788554663941a0f1d74f6fe86a537fad567d27df65b385cda3cc9211f8"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_58/odwolanie.json",
+      "bytes": 1056,
+      "sha256": "4c674fe5a9871e4d8805314b9855d309f0dec8fa4742a43afdadb9d1504622b9"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_58/odwolanie.pdf",
+      "bytes": 93608,
+      "sha256": "adfa4b73a3bf2d7cb1829513a795e4ff0d603ac6993f7aa3d4cbb818a2e82609"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_58/pelnomocnictwo.json",
+      "bytes": 503,
+      "sha256": "13a570f3df80e0d52eaf318f94927c4dcc47a90db363fe5446b09fcda8e5b80a"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_58/pelnomocnictwo.pdf",
+      "bytes": 85636,
+      "sha256": "1a696037abb56a8459e78c9012c904a1862107e1dc0c291516cbc0b9759612ee"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_58/potwierdzenie_przelewu.pdf",
+      "bytes": 65700,
+      "sha256": "35ad7c266374a0c564c5e47879d283456321bcd10cf99a7d06df797e301c40f9"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_58/przelew.json",
+      "bytes": 390,
+      "sha256": "3e136bb021b03dad95818aa1aef5d1bf1ea79a4f350283e318e1fb5d8778b16d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_59/odwolanie.json",
+      "bytes": 1258,
+      "sha256": "a6a4ef560fd9bfadbe2c13869d0a7e1c8d731aa7e6c745a09c59ca1792dbce1c"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_59/odwolanie.pdf",
+      "bytes": 151196,
+      "sha256": "e597ef173746ddc2992629d489c4c66fb0c54ffacbb073761bcc5bf36c02b29d"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_59/pelnomocnictwo.json",
+      "bytes": 497,
+      "sha256": "867c67370dd2c1254a0142a8f0c7f29d160f205cb59e9248c48d5606a14aa594"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_59/pelnomocnictwo.pdf",
+      "bytes": 56694,
+      "sha256": "c4d809f963fefbbc982139394b21b99addb3cdd3941a1c18fd790cd08e5ccfa2"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_59/potwierdzenie_przelewu.pdf",
+      "bytes": 84715,
+      "sha256": "7dffd83b9ea3c035597b217e109757b85a7634460b1c6755e2b8bb64f13b865e"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_59/przelew.json",
+      "bytes": 383,
+      "sha256": "5fb29b335d09c841f2abfef1f5c4f53db6dcde86bc6e5e0fda5d787f98f37c04"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_60/odwolanie.json",
+      "bytes": 1041,
+      "sha256": "4723a198807c630c8238cfaf1d7866eb909ad6cab3fcd7ddb0e1ada2bf744947"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_60/odwolanie.pdf",
+      "bytes": 123055,
+      "sha256": "b6f26335c90cd670876adb1e7b195176e14492c9e845e2cdca9190e2100290ba"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_60/pelnomocnictwo.json",
+      "bytes": 790,
+      "sha256": "fd4356cafabbd0466d9eec47eaa411a48b092ea24339af971cec4bce03428dd1"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_60/pelnomocnictwo.pdf",
+      "bytes": 86007,
+      "sha256": "b43217df3c0931fa29498594eee3f27aaf9f38bc4df218cf70b87f10b79260d4"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_60/potwierdzenie_przelewu.pdf",
+      "bytes": 44960,
+      "sha256": "1557974d2f55aaf29c8dcdbda57802c84c154455e29428af4b9f0cf3ec6ac9c7"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/dane/przyklad_60/przelew.json",
+      "bytes": 378,
+      "sha256": "6bd2a74bc6f30a29ee566ea5f67577cac93192ffb5361f5419ed7a13781d6a41"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/oczekiwane-json/czynnosc_powod_id_dict.md",
+      "bytes": 455,
+      "sha256": "b00c969720d77f8d908958e01b5202ab4f991af1d8c48097012ce30c563119ab"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/oczekiwane-json/odwolanie.json",
+      "bytes": 3853,
+      "sha256": "19439555ef5b8fed40be1d0b560091507c663ae3e356c677f385ddb070b7c2c3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/oczekiwane-json/pelnomocnictwo.json",
+      "bytes": 971,
+      "sha256": "4664656e6c139adef6f8a495cd17062895a1a19e312a5904e0ccf38e18b3a46c"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/oczekiwane-json/przelew.json",
+      "bytes": 354,
+      "sha256": "ccb92ef69dcc5118d72d9b13c89086f68188e7b55961990211e3f093f7fea2ea"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/szablon-aplikacja/input/case1/negatywny przyklad.pdf",
+      "bytes": 114801,
+      "sha256": "c9f874f28ee7575beaffb34343d64a956553deab96e448226d5c067a16191fa3"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/szablon-aplikacja/input/case1/przyklad odwolanie.pdf",
+      "bytes": 4048111,
+      "sha256": "7c58dfec107544f1bc46011806100167f6c311414c9b8dbdf4cc2a3a42e93209"
+    },
+    {
+      "path": "docs/02-materialy/organizator-uzp/szablon-aplikacja/output/case1/przyklad odwolanie.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+"""Kontrola dokumentacji i kopii źródeł, bez testowania aplikacji."""
+from pathlib import Path
+from urllib.parse import unquote
+import hashlib,json,re,sys
+root=Path(__file__).resolve().parents[1];errors=[]
+manifest=json.loads((root/'docs/02-materialy/manifest.json').read_text())
+listed=set()
+for row in manifest['files']:
+ p=root/row['path'];listed.add(row['path'])
+ if not p.is_file():errors.append(f'Brak materiału: {row["path"]}');continue
+ if p.stat().st_size!=row['bytes'] or hashlib.sha256(p.read_bytes()).hexdigest()!=row['sha256']:errors.append(f'Zmieniony materiał: {row["path"]}')
+folders=[root/'docs/01-zadanie/zrodla']+[p for p in (root/'docs/02-materialy').glob('organizator*') if p.is_dir()]
+actual={p.relative_to(root).as_posix() for f in folders for p in f.rglob('*') if p.is_file()}
+for p in sorted(actual-listed):errors.append(f'Materiał poza manifestem: {p}')
+lock=root/'docs/02-materialy/uzp-revision.json'
+if lock.exists():
+ data=json.loads(lock.read_text());base=root/'docs/02-materialy/organizator-uzp'
+ expected={r['path'] for r in data['files']};found={p.relative_to(base).as_posix() for p in base.rglob('*') if p.is_file()}
+ if expected!=found:errors.append(f'Niezgodny zestaw UZP: brak {sorted(expected-found)}, nadmiar {sorted(found-expected)}')
+ for row in data['files']:
+  p=base/row['path']
+  if not p.exists():continue
+  b=p.read_bytes();sha=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest()
+  if sha!=row['git_blob_sha1'] or len(b)!=row['size']:errors.append(f'Niezgodny blob UZP: {row["path"]}')
+# Kontrola tylko dokumentacji zespołu; odnośniki w oryginałach nie są przez nas naprawiane.
+count=0
+for p in root.rglob('*.md'):
+ rel=p.relative_to(root)
+ if '.git' in rel.parts or 'zrodla' in rel.parts or any(s.startswith('organizator') for s in rel.parts):continue
+ count+=1;s=p.read_text()
+ for link in re.findall(r'(?<!!)\[[^\]]*\]\((<[^>]+>|[^)\n]+)\)',s):
+  link=link.strip().split(' "')[0].strip('<>');link=unquote(link.split('#',1)[0])
+  if not link or re.match(r'^[a-zA-Z][a-zA-Z0-9+.-]*:',link):continue
+  if not (p.parent/link).exists():errors.append(f'Nieistniejący link: {rel} -> {link}')
+ if rel.parts[0]=='docs' and 'wersja:' not in s:errors.append(f'Brak wersji dokumentu: {rel}')
+for f in ['README.md','VERSION','CHANGELOG.md','docs/README.md','docs/02-materialy/rejestr.md']:
+ if not (root/f).exists():errors.append(f'Brak pliku: {f}')
+if errors:print('\n'.join(errors));sys.exit(1)
+print(f'OK: {len(listed)} materiałów, {count} dokumentów, odnośniki lokalne i integralność źródeł.')

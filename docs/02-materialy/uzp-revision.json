@@ -1,0 +1,1933 @@
+{
+  "repository": "https://github.com/Urzad-Zamowien-Publicznych/hacknation-2026",
+  "revision": "f60ca6f9fcd1a624ba145dbc6c658bfb076ece79",
+  "reported_tree_sha": "f60ca6f9fcd1a624ba145dbc6c658bfb076ece79",
+  "acquired_at": "2026-11-21",
+  "files": [
+    {
+      "path": "README.md",
+      "git_blob_sha1": "e0dd3143825f1294b7ab29676f4851cc742a02bf",
+      "size": 8238
+    },
+    {
+      "path": "dane/negatywne/1648041143_1647951357decyzja-ministrasportu-pzn.pdf",
+      "git_blob_sha1": "e02a97a61267fc12bd37a9bbd66ee042d25690ff",
+      "size": 1032007
+    },
+    {
+      "path": "dane/negatywne/16_komisja_ds._regulacji_wynagrodzeń.pdf",
+      "git_blob_sha1": "6dbc7fc0c389592f77ff2ba4b572ba6291fa5276",
+      "size": 130816
+    },
+    {
+      "path": "dane/negatywne/2020_03_21-22prowadzenie_postepowania_odwolawczego.pdf",
+      "git_blob_sha1": "1f17b555ebef7e166c9cb24ed9958c734f182634",
+      "size": 500902
+    },
+    {
+      "path": "dane/negatywne/2025-OJS107-00364525-pl-ts-1.pdf",
+      "git_blob_sha1": "daabede6a9e8bb3f9d671ea99662dfa1515090b5",
+      "size": 114801
+    },
+    {
+      "path": "dane/negatywne/2025-OJS107-00364525-pl-ts.pdf",
+      "git_blob_sha1": "daabede6a9e8bb3f9d671ea99662dfa1515090b5",
+      "size": 114801
+    },
+    {
+      "path": "dane/negatywne/2025_BZP 00143067_01.pdf",
+      "git_blob_sha1": "37444dc4171f66f71e6e365864c8f3eef9886ea3",
+      "size": 79156
+    },
+    {
+      "path": "dane/negatywne/2025_S 112-383751.pdf",
+      "git_blob_sha1": "bbb822d4de6a8234f6d374bacfe0af8b11832524",
+      "size": 104481
+    },
+    {
+      "path": "dane/negatywne/2025_S 188-641009.pdf",
+      "git_blob_sha1": "b95564e347fe0b67428b6de1cce3e117ca45f4a8",
+      "size": 98469
+    },
+    {
+      "path": "dane/negatywne/Broszura_JPK_FA(2).pdf",
+      "git_blob_sha1": "f64224311e9cde288b11849b028f9c4c7fdca617",
+      "size": 764943
+    },
+    {
+      "path": "dane/negatywne/Decyzja-Ministra-Sportu-i-Turystyki1.pdf",
+      "git_blob_sha1": "5a83ca08da9ee142af19c390c63f1e3e52a9a0e8",
+      "size": 312640
+    },
+    {
+      "path": "dane/negatywne/KIO_KIO 2617-21.pdf",
+      "git_blob_sha1": "9232fc5be18503bfd5a41f4415779048951d23ed",
+      "size": 56602
+    },
+    {
+      "path": "dane/negatywne/Minister-Sprawiedliwosci-pismo-RDSSP-z-11.03.2024-r..pdf",
+      "git_blob_sha1": "3eee6b6a982ed9ae9eb9f81171e22a092613dc16",
+      "size": 857335
+    },
+    {
+      "path": "dane/negatywne/readme.md",
+      "git_blob_sha1": "7967452ffbe90dc9953bc571dd19d8fa12956c25",
+      "size": 159
+    },
+    {
+      "path": "dane/przyklad_01/odwolanie.json",
+      "git_blob_sha1": "40301b3fb8eb4b0b82e719e32a4b579574b1c0a2",
+      "size": 1038
+    },
+    {
+      "path": "dane/przyklad_01/odwolanie.pdf",
+      "git_blob_sha1": "e2050577c2bd73bf9c38a105ae2c47819d61e742",
+      "size": 92163
+    },
+    {
+      "path": "dane/przyklad_01/pelnomocnictwo.json",
+      "git_blob_sha1": "053e50fdd2a46b8f50ba41c66d38f471804e9fb0",
+      "size": 506
+    },
+    {
+      "path": "dane/przyklad_01/pelnomocnictwo.pdf",
+      "git_blob_sha1": "aa8e8c16a09eae8030e5cdd43b4037c1ecad38f3",
+      "size": 76491
+    },
+    {
+      "path": "dane/przyklad_01/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "fea6cb688b0c4c8ff200cd169d656bdf3e3d630b",
+      "size": 80398
+    },
+    {
+      "path": "dane/przyklad_01/przelew.json",
+      "git_blob_sha1": "9b284e09b5eb1072d347c990a1846e3172f49306",
+      "size": 390
+    },
+    {
+      "path": "dane/przyklad_02/odwolanie.json",
+      "git_blob_sha1": "308e3942f5e795ee81de066cd1236362fa6ba1e3",
+      "size": 963
+    },
+    {
+      "path": "dane/przyklad_02/odwolanie.pdf",
+      "git_blob_sha1": "8b2d519381f5fca3cd338d7ccde417590f3109da",
+      "size": 71787
+    },
+    {
+      "path": "dane/przyklad_02/pelnomocnictwo.json",
+      "git_blob_sha1": "c9b6f78b2d69d4e7cf653fedd3d8f1b4df1648c1",
+      "size": 501
+    },
+    {
+      "path": "dane/przyklad_02/pelnomocnictwo.pdf",
+      "git_blob_sha1": "353b5609444190a979a64a9acced2585d4e835a4",
+      "size": 78480
+    },
+    {
+      "path": "dane/przyklad_02/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "df5b01af65793b6ccf6e0fbda782fa39e212aa66",
+      "size": 77558
+    },
+    {
+      "path": "dane/przyklad_02/przelew.json",
+      "git_blob_sha1": "2a85377713aa85a7ff932af48e3cae181d85e127",
+      "size": 386
+    },
+    {
+      "path": "dane/przyklad_03/odwolanie.json",
+      "git_blob_sha1": "7b8b9b96c8a77764d5263252011c69d8a9deb289",
+      "size": 1059
+    },
+    {
+      "path": "dane/przyklad_03/odwolanie.pdf",
+      "git_blob_sha1": "fe32552bf420e210b1e419232aa9f6b7b7b90225",
+      "size": 90002
+    },
+    {
+      "path": "dane/przyklad_03/pelnomocnictwo.json",
+      "git_blob_sha1": "e517eac1f17f87c7b03e73c0ce4e491499495526",
+      "size": 428
+    },
+    {
+      "path": "dane/przyklad_03/pelnomocnictwo.pdf",
+      "git_blob_sha1": "1a79781ee38a733d67771273a4bd46b916afb35d",
+      "size": 62540
+    },
+    {
+      "path": "dane/przyklad_03/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "41e436841788456cef95263c6f91e63079e16677",
+      "size": 61352
+    },
+    {
+      "path": "dane/przyklad_03/przelew.json",
+      "git_blob_sha1": "3206ed781871a75bba3cc1cbbbe759a3a6372d03",
+      "size": 362
+    },
+    {
+      "path": "dane/przyklad_04/2025_S 112-383751.pdf",
+      "git_blob_sha1": "bbb822d4de6a8234f6d374bacfe0af8b11832524",
+      "size": 104481
+    },
+    {
+      "path": "dane/przyklad_04/odwolanie.json",
+      "git_blob_sha1": "db057d11ed65e831e970b4b8df80b74fcbf1774e",
+      "size": 1001
+    },
+    {
+      "path": "dane/przyklad_04/odwolanie.pdf",
+      "git_blob_sha1": "78ed0d5010ec599758cb9de0b8a72e98b79233bc",
+      "size": 87167
+    },
+    {
+      "path": "dane/przyklad_04/pelnomocnictwo.json",
+      "git_blob_sha1": "bc3b564461da9d26ed99097db82183a6aa935e5d",
+      "size": 504
+    },
+    {
+      "path": "dane/przyklad_04/pelnomocnictwo.pdf",
+      "git_blob_sha1": "b3eb0e1af2b7fcb690f7bc2f556e46002432afbe",
+      "size": 63661
+    },
+    {
+      "path": "dane/przyklad_04/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "d9e1f746e06c0ffaba52a7baa9d2730a11661888",
+      "size": 61355
+    },
+    {
+      "path": "dane/przyklad_04/przelew.json",
+      "git_blob_sha1": "24013b521510b984ae1c1b0d7bc3eace89b31f4e",
+      "size": 387
+    },
+    {
+      "path": "dane/przyklad_05/odwolanie.json",
+      "git_blob_sha1": "8242d129337a2e829cdf1ce4d12dd5cc5e97a6ee",
+      "size": 995
+    },
+    {
+      "path": "dane/przyklad_05/odwolanie.pdf",
+      "git_blob_sha1": "8e50fa3d4c1f0038fda96703690e8ea354d99d6a",
+      "size": 87546
+    },
+    {
+      "path": "dane/przyklad_05/pelnomocnictwo.json",
+      "git_blob_sha1": "3d1616b4bcdc372295e76757fdb2af188761ff42",
+      "size": 434
+    },
+    {
+      "path": "dane/przyklad_05/pelnomocnictwo.pdf",
+      "git_blob_sha1": "5e0602f365e1a29c38d73742d7805e6b75dcb015",
+      "size": 75274
+    },
+    {
+      "path": "dane/przyklad_05/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "99e94c6a2f2f0c881073d3d43e81c9effe65f1c5",
+      "size": 77858
+    },
+    {
+      "path": "dane/przyklad_05/przelew.json",
+      "git_blob_sha1": "e2402babd5d827ebc5a44314d9815a6472e22024",
+      "size": 365
+    },
+    {
+      "path": "dane/przyklad_06/odwolanie.json",
+      "git_blob_sha1": "12297f711ee9533a5d91a367c82e02f63a4f04b7",
+      "size": 1032
+    },
+    {
+      "path": "dane/przyklad_06/odwolanie.pdf",
+      "git_blob_sha1": "b94264123adb263e38cf1734b69ca7a4f03777c9",
+      "size": 77748
+    },
+    {
+      "path": "dane/przyklad_06/pelnomocnictwo.json",
+      "git_blob_sha1": "393e053c717b6b8536f735b8cdaf5ae81351de0a",
+      "size": 495
+    },
+    {
+      "path": "dane/przyklad_06/pelnomocnictwo.pdf",
+      "git_blob_sha1": "d1263384bba3e08d39c9816a66a66ccb166b3779",
+      "size": 73408
+    },
+    {
+      "path": "dane/przyklad_06/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "62af307524ace458ec50ba8f80157cc23e7f205f",
+      "size": 61987
+    },
+    {
+      "path": "dane/przyklad_06/przelew.json",
+      "git_blob_sha1": "b4c4720f8d240bd6d98fcd27c11d06a612d4c8b7",
+      "size": 362
+    },
+    {
+      "path": "dane/przyklad_07/odwolanie.json",
+      "git_blob_sha1": "8d06186f7704b2b572233a2c38ed306f2d7c7366",
+      "size": 1040
+    },
+    {
+      "path": "dane/przyklad_07/odwolanie.pdf",
+      "git_blob_sha1": "e0b007ebc2e0bee62b82b8145acf2c65169918da",
+      "size": 92772
+    },
+    {
+      "path": "dane/przyklad_07/pelnomocnictwo.json",
+      "git_blob_sha1": "991b42b8bc7da07ae17fd21b95641edec0fea734",
+      "size": 492
+    },
+    {
+      "path": "dane/przyklad_07/pelnomocnictwo.pdf",
+      "git_blob_sha1": "060766e5cce44351578d60da6ed48ad3ea5d83af",
+      "size": 66534
+    },
+    {
+      "path": "dane/przyklad_07/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "86779f848f5ecf7c04f5dbf1895ebbbf8978dd6a",
+      "size": 64795
+    },
+    {
+      "path": "dane/przyklad_07/przelew.json",
+      "git_blob_sha1": "e1741ee0be4553e591bbd5640bcd3239a247898c",
+      "size": 363
+    },
+    {
+      "path": "dane/przyklad_08/odwolanie.json",
+      "git_blob_sha1": "d062dda62c94ca5ff8bba1b93ada5efbb7fd14cd",
+      "size": 1052
+    },
+    {
+      "path": "dane/przyklad_08/odwolanie.pdf",
+      "git_blob_sha1": "e442de5ffa351f5c4489851841e487ba42eb896b",
+      "size": 97902
+    },
+    {
+      "path": "dane/przyklad_08/pelnomocnictwo.json",
+      "git_blob_sha1": "b92a0a043edb76ae8e5f5309e81585694735e61e",
+      "size": 576
+    },
+    {
+      "path": "dane/przyklad_08/pelnomocnictwo.pdf",
+      "git_blob_sha1": "3eee9b45240593c08624a94db9c08ff016274a1d",
+      "size": 82214
+    },
+    {
+      "path": "dane/przyklad_08/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "fa982ad1a3cf6df36957142e188a3a207925bf1b",
+      "size": 61932
+    },
+    {
+      "path": "dane/przyklad_08/przelew.json",
+      "git_blob_sha1": "22f99403fcda3eeabf7eee144ab27099be711aa0",
+      "size": 388
+    },
+    {
+      "path": "dane/przyklad_09/odwolanie.json",
+      "git_blob_sha1": "ca45f6f5cf5a2b69bfc812288b4904c58d052e4c",
+      "size": 977
+    },
+    {
+      "path": "dane/przyklad_09/odwolanie.pdf",
+      "git_blob_sha1": "dca23d93c83f61e54bf96e4060fb28ed5165ba5a",
+      "size": 84611
+    },
+    {
+      "path": "dane/przyklad_09/pelnomocnictwo.json",
+      "git_blob_sha1": "8ef3bbaff830d9491163f643f8c4c210654d8573",
+      "size": 504
+    },
+    {
+      "path": "dane/przyklad_09/pelnomocnictwo.pdf",
+      "git_blob_sha1": "6fb0332f8d2cc53677cf2f00cae23139d7a756a2",
+      "size": 78483
+    },
+    {
+      "path": "dane/przyklad_09/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "36dd65a431af5928adc6cb286b9730fc6206d5cb",
+      "size": 80301
+    },
+    {
+      "path": "dane/przyklad_09/przelew.json",
+      "git_blob_sha1": "fd1586c4c036db8659a25de2511cfdfdce30cf02",
+      "size": 392
+    },
+    {
+      "path": "dane/przyklad_10/2025-OJS107-00364525-pl-ts.pdf",
+      "git_blob_sha1": "daabede6a9e8bb3f9d671ea99662dfa1515090b5",
+      "size": 114801
+    },
+    {
+      "path": "dane/przyklad_10/odwolanie.json",
+      "git_blob_sha1": "f019f43e559f5ae6809c50f8547bd14401f0fcd0",
+      "size": 1025
+    },
+    {
+      "path": "dane/przyklad_10/odwolanie.pdf",
+      "git_blob_sha1": "6fa4f402967f4bbec2d0af27d84682daf4fa275b",
+      "size": 89366
+    },
+    {
+      "path": "dane/przyklad_10/pelnomocnictwo.json",
+      "git_blob_sha1": "d0e2db8d82654df03e12191398d8e838d401cd11",
+      "size": 573
+    },
+    {
+      "path": "dane/przyklad_10/pelnomocnictwo.pdf",
+      "git_blob_sha1": "460f1c31ba17a933e04d59db6399d05713af2392",
+      "size": 81601
+    },
+    {
+      "path": "dane/przyklad_10/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "ef740a960d24d7dffb7c40d4b75af21105016cbf",
+      "size": 60695
+    },
+    {
+      "path": "dane/przyklad_10/przelew.json",
+      "git_blob_sha1": "5e32ee8a66d3d350328bdb9ccdb618fefca5c2a1",
+      "size": 390
+    },
+    {
+      "path": "dane/przyklad_11/odwolanie.json",
+      "git_blob_sha1": "87d22796bc99061bb9b7e19e594d0548f444d5ca",
+      "size": 1053
+    },
+    {
+      "path": "dane/przyklad_11/odwolanie.pdf",
+      "git_blob_sha1": "bc12d3c34d6c756490923539e56aeaabc5af20a4",
+      "size": 70571
+    },
+    {
+      "path": "dane/przyklad_11/pelnomocnictwo.json",
+      "git_blob_sha1": "e7674f2f5f9fef3d81d995e0c3c51db1173709f1",
+      "size": 421
+    },
+    {
+      "path": "dane/przyklad_11/pelnomocnictwo.pdf",
+      "git_blob_sha1": "9b6aca4e13f6ad5683643f5830ab08cfd92637fb",
+      "size": 78230
+    },
+    {
+      "path": "dane/przyklad_11/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "8e5abd1c62f3e9364cf6a993b495db1b8a473d65",
+      "size": 79779
+    },
+    {
+      "path": "dane/przyklad_11/przelew.json",
+      "git_blob_sha1": "bd24ded043c76d466697fc4b9d158445346756a0",
+      "size": 369
+    },
+    {
+      "path": "dane/przyklad_12/odwolanie.json",
+      "git_blob_sha1": "92351c6fa7533bff5a5c238bcf7f9eb312bbd3ee",
+      "size": 1026
+    },
+    {
+      "path": "dane/przyklad_12/odwolanie.pdf",
+      "git_blob_sha1": "c7a21f9f704ac97aa5acafba4370fb6deb39e8cd",
+      "size": 69677
+    },
+    {
+      "path": "dane/przyklad_12/pelnomocnictwo.json",
+      "git_blob_sha1": "b9644d5e198ba439417b96314f70a66bf693506b",
+      "size": 425
+    },
+    {
+      "path": "dane/przyklad_12/pelnomocnictwo.pdf",
+      "git_blob_sha1": "f12468fa701063a550dedd2b3793b44c197f0d93",
+      "size": 72749
+    },
+    {
+      "path": "dane/przyklad_12/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "9f05531471224ad0825f2c2a31e81239125c8f26",
+      "size": 77760
+    },
+    {
+      "path": "dane/przyklad_12/przelew.json",
+      "git_blob_sha1": "159c8ccd3d509dc7c42786667a56ee218d7d6120",
+      "size": 370
+    },
+    {
+      "path": "dane/przyklad_13/odwolanie.json",
+      "git_blob_sha1": "673b00deb2f2730d5d2ad18f6812192b2bb1ea47",
+      "size": 1017
+    },
+    {
+      "path": "dane/przyklad_13/odwolanie.pdf",
+      "git_blob_sha1": "c6e63965953adb9f5e04e96d1b26e2521dd18412",
+      "size": 88175
+    },
+    {
+      "path": "dane/przyklad_13/pelnomocnictwo.json",
+      "git_blob_sha1": "04d10dd1e946936e78448c95c292160bf93f544e",
+      "size": 567
+    },
+    {
+      "path": "dane/przyklad_13/pelnomocnictwo.pdf",
+      "git_blob_sha1": "a8fbd5b26844ffcce9780a2065750ac06018d724",
+      "size": 66570
+    },
+    {
+      "path": "dane/przyklad_13/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "2193cbd5073ecfae5280a08015e9aba9298c12ec",
+      "size": 77902
+    },
+    {
+      "path": "dane/przyklad_13/przelew.json",
+      "git_blob_sha1": "9af47f4086b893aabda710098c7b74414b4ac94c",
+      "size": 384
+    },
+    {
+      "path": "dane/przyklad_14/odwolanie.json",
+      "git_blob_sha1": "72f311513cf5cc64bfbc099edaf7c6776d86602f",
+      "size": 1023
+    },
+    {
+      "path": "dane/przyklad_14/odwolanie.pdf",
+      "git_blob_sha1": "e435943ff533858b4fc65906cbaa3061dfb50c6b",
+      "size": 91174
+    },
+    {
+      "path": "dane/przyklad_14/pelnomocnictwo.json",
+      "git_blob_sha1": "5002f1b2ceb4f1781e378eacba25f3e257fecba6",
+      "size": 574
+    },
+    {
+      "path": "dane/przyklad_14/pelnomocnictwo.pdf",
+      "git_blob_sha1": "de34a6914cd4bbece1c2539906a2ca66c183b0cf",
+      "size": 67893
+    },
+    {
+      "path": "dane/przyklad_14/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "587e3ecd13e0f5b711b9c5a875b9282966ea1323",
+      "size": 78729
+    },
+    {
+      "path": "dane/przyklad_14/przelew.json",
+      "git_blob_sha1": "0346d95fbd2cd63706cd8ca4c6959c34a269e684",
+      "size": 392
+    },
+    {
+      "path": "dane/przyklad_15/odwolanie.json",
+      "git_blob_sha1": "58cfd8c15e8d25e504888b0607fa3fb60af7c554",
+      "size": 1018
+    },
+    {
+      "path": "dane/przyklad_15/odwolanie.pdf",
+      "git_blob_sha1": "c8b021116e6bc1ac21679aa788a9cc5d1c6a6b34",
+      "size": 77068
+    },
+    {
+      "path": "dane/przyklad_15/pelnomocnictwo.json",
+      "git_blob_sha1": "10910a426679ed38aec5d2579e1244456f014ce4",
+      "size": 423
+    },
+    {
+      "path": "dane/przyklad_15/pelnomocnictwo.pdf",
+      "git_blob_sha1": "46ae02f8c387ea0610f3e39ee0913fa37abbd14d",
+      "size": 62519
+    },
+    {
+      "path": "dane/przyklad_15/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "0d9bcb3d7e69dcc45d83e18d28494e233fab6efc",
+      "size": 61940
+    },
+    {
+      "path": "dane/przyklad_15/przelew.json",
+      "git_blob_sha1": "a9255eb716b3378a29374f2c950f3d9b3bc5eb31",
+      "size": 368
+    },
+    {
+      "path": "dane/przyklad_16/odwolanie.json",
+      "git_blob_sha1": "2322dcb454212ed5df427e0d549d5a6c16489e53",
+      "size": 1002
+    },
+    {
+      "path": "dane/przyklad_16/odwolanie.pdf",
+      "git_blob_sha1": "d83f1a9f5cd730adaf44b8badf023a8416b824a5",
+      "size": 97717
+    },
+    {
+      "path": "dane/przyklad_16/pelnomocnictwo.json",
+      "git_blob_sha1": "a5dabcf095efda6785006c9fa07ec68c9e294002",
+      "size": 565
+    },
+    {
+      "path": "dane/przyklad_16/pelnomocnictwo.pdf",
+      "git_blob_sha1": "5d852877beccd2d5e4d9e760db55c4fea86a6943",
+      "size": 67328
+    },
+    {
+      "path": "dane/przyklad_16/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "8f9594f9f624aa241010251cdf0191a140baff61",
+      "size": 65726
+    },
+    {
+      "path": "dane/przyklad_16/przelew.json",
+      "git_blob_sha1": "64afbfd1f37d5b455800a75ee9dc9bfa9f8d2d13",
+      "size": 388
+    },
+    {
+      "path": "dane/przyklad_17/odwolanie.json",
+      "git_blob_sha1": "3a27c698baddb2fb385a5cc04276642611bfabb9",
+      "size": 981
+    },
+    {
+      "path": "dane/przyklad_17/odwolanie.pdf",
+      "git_blob_sha1": "7868c06518b64838b4c0a6f2d7728bf5b00490a6",
+      "size": 75410
+    },
+    {
+      "path": "dane/przyklad_17/pelnomocnictwo.json",
+      "git_blob_sha1": "3beba97e0e905d2c5e484e3f9bfecc13489bbabc",
+      "size": 436
+    },
+    {
+      "path": "dane/przyklad_17/pelnomocnictwo.pdf",
+      "git_blob_sha1": "c14a9a4adcc416b3057333c232a8863e43dc59d8",
+      "size": 81464
+    },
+    {
+      "path": "dane/przyklad_17/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "fbe19f644c60d19716bc7d864c043ec8569c08d9",
+      "size": 62204
+    },
+    {
+      "path": "dane/przyklad_17/przelew.json",
+      "git_blob_sha1": "c9df56734fa808a77c2d728a402809bc86aa53d6",
+      "size": 366
+    },
+    {
+      "path": "dane/przyklad_18/odwolanie.json",
+      "git_blob_sha1": "0e3f7e3155d7a96fb7d5af9aebef3a2a913450de",
+      "size": 1020
+    },
+    {
+      "path": "dane/przyklad_18/odwolanie.pdf",
+      "git_blob_sha1": "3365fa44a996ef15423c2ba8c3d291bc84d7245c",
+      "size": 92343
+    },
+    {
+      "path": "dane/przyklad_18/pelnomocnictwo.json",
+      "git_blob_sha1": "8d9a5444a1ed112bf902d584ed83d2c3e03912ce",
+      "size": 428
+    },
+    {
+      "path": "dane/przyklad_18/pelnomocnictwo.pdf",
+      "git_blob_sha1": "fa7446b5f029068eacbf39c8c4679e774691b6de",
+      "size": 72812
+    },
+    {
+      "path": "dane/przyklad_18/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "b6495e855dd3e44738336ee6b3ad1bbbba98c5af",
+      "size": 77313
+    },
+    {
+      "path": "dane/przyklad_18/przelew.json",
+      "git_blob_sha1": "3ab138abfda856fb43c82c09dfca1e5afcd74056",
+      "size": 364
+    },
+    {
+      "path": "dane/przyklad_19/odwolanie.json",
+      "git_blob_sha1": "7742470b368e4d2a60948ffc5c2691b2dcf55066",
+      "size": 1029
+    },
+    {
+      "path": "dane/przyklad_19/odwolanie.pdf",
+      "git_blob_sha1": "f2a4a54b7051c67bf59a2eb11ee88e5e02810fbb",
+      "size": 94138
+    },
+    {
+      "path": "dane/przyklad_19/pelnomocnictwo.json",
+      "git_blob_sha1": "6e023e6ac1044a183f9031617071b8445eeaea7a",
+      "size": 501
+    },
+    {
+      "path": "dane/przyklad_19/pelnomocnictwo.pdf",
+      "git_blob_sha1": "c2fd1663e7ce4fb338d87621ce4a48825ec92a5e",
+      "size": 76411
+    },
+    {
+      "path": "dane/przyklad_19/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "e47a7c758634c34904eb5c3395c8e61c4c16650a",
+      "size": 64140
+    },
+    {
+      "path": "dane/przyklad_19/przelew.json",
+      "git_blob_sha1": "0cf89cdd0c49cafa23a14d5ac8a7075dbdd05a36",
+      "size": 371
+    },
+    {
+      "path": "dane/przyklad_20/odwolanie.json",
+      "git_blob_sha1": "86fa318ec14b681e2d32cd245f90576994b0980a",
+      "size": 990
+    },
+    {
+      "path": "dane/przyklad_20/odwolanie.pdf",
+      "git_blob_sha1": "41fcfec4454920b36731b55002aa635b1bed8d3c",
+      "size": 75020
+    },
+    {
+      "path": "dane/przyklad_20/pelnomocnictwo.json",
+      "git_blob_sha1": "41f2db73c83f007243df4d0e2ec45f32b6faf0bd",
+      "size": 578
+    },
+    {
+      "path": "dane/przyklad_20/pelnomocnictwo.pdf",
+      "git_blob_sha1": "8f84e7b53649320a95585af5057bfd4f2bd4d958",
+      "size": 64032
+    },
+    {
+      "path": "dane/przyklad_20/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "222daaf9b60d3f64281da6176bdfcfb8c8a9f185",
+      "size": 65603
+    },
+    {
+      "path": "dane/przyklad_20/przelew.json",
+      "git_blob_sha1": "7614fdd4f53dbf0a3a365727fe8e5625f45d4025",
+      "size": 387
+    },
+    {
+      "path": "dane/przyklad_21/odwolanie.json",
+      "git_blob_sha1": "7a8ca53a8efdfa63f5341d864eefff2abd39e63d",
+      "size": 1005
+    },
+    {
+      "path": "dane/przyklad_21/odwolanie.pdf",
+      "git_blob_sha1": "74715e9956d7d406f8c0857bd5b30fbe035c401b",
+      "size": 83011
+    },
+    {
+      "path": "dane/przyklad_21/pelnomocnictwo.json",
+      "git_blob_sha1": "19454b729602a29d926fbfbf454391373ada07d3",
+      "size": 427
+    },
+    {
+      "path": "dane/przyklad_21/pelnomocnictwo.pdf",
+      "git_blob_sha1": "79add52cf670254cd9a57f7b37c0d3e030c571f4",
+      "size": 80770
+    },
+    {
+      "path": "dane/przyklad_21/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "77a34c7f2040716a6bc490b5f8f3b7dbf75673eb",
+      "size": 66620
+    },
+    {
+      "path": "dane/przyklad_21/przelew.json",
+      "git_blob_sha1": "bc03fcce6e1f32e5b182da568a031cb8abb51b52",
+      "size": 365
+    },
+    {
+      "path": "dane/przyklad_22/odwolanie.json",
+      "git_blob_sha1": "2806015129c9dd214bd58a999a789c0524c9b60d",
+      "size": 1019
+    },
+    {
+      "path": "dane/przyklad_22/odwolanie.pdf",
+      "git_blob_sha1": "7e8fd56e1aecb812ec14a9896e5523f9d93d72f3",
+      "size": 87742
+    },
+    {
+      "path": "dane/przyklad_22/pelnomocnictwo.json",
+      "git_blob_sha1": "3d047ac11b7dcfd6421888fe4de8a0b9ee5f12af",
+      "size": 500
+    },
+    {
+      "path": "dane/przyklad_22/pelnomocnictwo.pdf",
+      "git_blob_sha1": "9e7a88aaebe46f78b47e9cd141ca031437a69e41",
+      "size": 75236
+    },
+    {
+      "path": "dane/przyklad_22/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "0b891e338e6c797df00fe9d4d050be7696a6f67d",
+      "size": 64117
+    },
+    {
+      "path": "dane/przyklad_22/przelew.json",
+      "git_blob_sha1": "16585482fd99777493cc1f862693001ae13f8064",
+      "size": 381
+    },
+    {
+      "path": "dane/przyklad_23/odwolanie.json",
+      "git_blob_sha1": "8049af6d3f0527585c6a87a7be9c73c60ea676e3",
+      "size": 1011
+    },
+    {
+      "path": "dane/przyklad_23/odwolanie.pdf",
+      "git_blob_sha1": "afced3bbaf2d9d8d226e879356c8574270a895b0",
+      "size": 97066
+    },
+    {
+      "path": "dane/przyklad_23/pelnomocnictwo.json",
+      "git_blob_sha1": "827b51759b8e6d3b859d3cad38834c8a470615eb",
+      "size": 576
+    },
+    {
+      "path": "dane/przyklad_23/pelnomocnictwo.pdf",
+      "git_blob_sha1": "8d185ab02edbafec7d7099ccb543b59cb462dafc",
+      "size": 66444
+    },
+    {
+      "path": "dane/przyklad_23/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "07f8a82dc98dc89440f71525a22a3db0e0b880d7",
+      "size": 61787
+    },
+    {
+      "path": "dane/przyklad_23/przelew.json",
+      "git_blob_sha1": "45efa9b1c3aab3e04cce26218350af887b5fdc9f",
+      "size": 386
+    },
+    {
+      "path": "dane/przyklad_24/odwolanie.json",
+      "git_blob_sha1": "c0da5f258469e68cfe0887b780076b4d841874cf",
+      "size": 996
+    },
+    {
+      "path": "dane/przyklad_24/odwolanie.pdf",
+      "git_blob_sha1": "2c149bad60c07ed8eb5d6379b3747fff7825d1f5",
+      "size": 73447
+    },
+    {
+      "path": "dane/przyklad_24/pelnomocnictwo.json",
+      "git_blob_sha1": "784d5e91573bd6b7560b6fd5cdd1c34b01bf907e",
+      "size": 494
+    },
+    {
+      "path": "dane/przyklad_24/pelnomocnictwo.pdf",
+      "git_blob_sha1": "901d89b5b969dd378059013e75bfe5bd70e3fba3",
+      "size": 73474
+    },
+    {
+      "path": "dane/przyklad_24/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "bd102ed9bc9e89b3a903c9638d01faa56642fd8d",
+      "size": 60503
+    },
+    {
+      "path": "dane/przyklad_24/prowadzenie_postepowania_odwolawczego.pdf",
+      "git_blob_sha1": "1f17b555ebef7e166c9cb24ed9958c734f182634",
+      "size": 500902
+    },
+    {
+      "path": "dane/przyklad_24/przelew.json",
+      "git_blob_sha1": "87ee460a17d8cb0497186332fa1dda2f68bfd6e2",
+      "size": 369
+    },
+    {
+      "path": "dane/przyklad_25/odwolanie.json",
+      "git_blob_sha1": "b41b315bb780a3f435fe5257da65406ec3782b4f",
+      "size": 1003
+    },
+    {
+      "path": "dane/przyklad_25/odwolanie.pdf",
+      "git_blob_sha1": "b1bd5d5976326ca67cae254e866dfc033e45ffe4",
+      "size": 90637
+    },
+    {
+      "path": "dane/przyklad_25/pelnomocnictwo.json",
+      "git_blob_sha1": "c51707f826cb3739f3e498bf92608eb06b372186",
+      "size": 571
+    },
+    {
+      "path": "dane/przyklad_25/pelnomocnictwo.pdf",
+      "git_blob_sha1": "53454cb9feb91d5ebcb7b3c2b3321d579cc9cf78",
+      "size": 67402
+    },
+    {
+      "path": "dane/przyklad_25/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "4ed4e453cd1cbfd566034ff82dd02186edc4da91",
+      "size": 79470
+    },
+    {
+      "path": "dane/przyklad_25/przelew.json",
+      "git_blob_sha1": "8fe8ac331db0545d670e2ceba6b4490d73382ed9",
+      "size": 390
+    },
+    {
+      "path": "dane/przyklad_26/odwolanie.json",
+      "git_blob_sha1": "f72a0a2e137369ca7e01cad12af9a776bb87bf1a",
+      "size": 969
+    },
+    {
+      "path": "dane/przyklad_26/odwolanie.pdf",
+      "git_blob_sha1": "b093b4219506baa06901d5466311020dc94f450c",
+      "size": 81170
+    },
+    {
+      "path": "dane/przyklad_26/pelnomocnictwo.json",
+      "git_blob_sha1": "d18a874f7182f5b248de885c6b55ba4b894e25a0",
+      "size": 510
+    },
+    {
+      "path": "dane/przyklad_26/pelnomocnictwo.pdf",
+      "git_blob_sha1": "bf34099946346083bdbcf3679cedec1580e05d90",
+      "size": 81978
+    },
+    {
+      "path": "dane/przyklad_26/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "5d2e96da9b09a78dbe8048bf7d9a4f12b7b590c7",
+      "size": 63908
+    },
+    {
+      "path": "dane/przyklad_26/przelew.json",
+      "git_blob_sha1": "109ad74a0008e1465d4857b95135141ef732b1fb",
+      "size": 389
+    },
+    {
+      "path": "dane/przyklad_27/odwolanie.json",
+      "git_blob_sha1": "ca9c0a16801b5e0351e1dee0df428c6f30aa46e5",
+      "size": 1014
+    },
+    {
+      "path": "dane/przyklad_27/odwolanie.pdf",
+      "git_blob_sha1": "8e434946a00468054de411d954f9b6dfae09fe69",
+      "size": 73131
+    },
+    {
+      "path": "dane/przyklad_27/pelnomocnictwo.json",
+      "git_blob_sha1": "0655d9dbde03a9533c7cc428da2c04084c4eadca",
+      "size": 506
+    },
+    {
+      "path": "dane/przyklad_27/pelnomocnictwo.pdf",
+      "git_blob_sha1": "4a66c7a235a3356d8fef555c12a78400a8ee65c0",
+      "size": 78995
+    },
+    {
+      "path": "dane/przyklad_27/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "e778eab42ba8c4f81d6a20dd97a85b83fc0d8a0a",
+      "size": 80014
+    },
+    {
+      "path": "dane/przyklad_27/przelew.json",
+      "git_blob_sha1": "f73c8db08884238d31fdfcff8fc6eca0c9917edf",
+      "size": 395
+    },
+    {
+      "path": "dane/przyklad_28/odwolanie.json",
+      "git_blob_sha1": "0970933555071459aa53df3af25b9ce69ed4525d",
+      "size": 979
+    },
+    {
+      "path": "dane/przyklad_28/odwolanie.pdf",
+      "git_blob_sha1": "d847875b84eeb63c77af83dac6c2d9f8083be5e5",
+      "size": 70706
+    },
+    {
+      "path": "dane/przyklad_28/pelnomocnictwo.json",
+      "git_blob_sha1": "938586076780bcdf0cdf103026dcd09f1d29884b",
+      "size": 489
+    },
+    {
+      "path": "dane/przyklad_28/pelnomocnictwo.pdf",
+      "git_blob_sha1": "2aec7dd0dee55288af8f50ce2faa59f3b831b52e",
+      "size": 79372
+    },
+    {
+      "path": "dane/przyklad_28/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "86ead9a8f47a1a4e134be7098c4b99d280320cf1",
+      "size": 78503
+    },
+    {
+      "path": "dane/przyklad_28/przelew.json",
+      "git_blob_sha1": "c780cebe88ba5b92b004287c4e8848809a004d4e",
+      "size": 370
+    },
+    {
+      "path": "dane/przyklad_29/odwolanie.json",
+      "git_blob_sha1": "745a7bfbb03e6ecb5566668aab048e6ec237450c",
+      "size": 1010
+    },
+    {
+      "path": "dane/przyklad_29/odwolanie.pdf",
+      "git_blob_sha1": "a8e4c0b41775d25421310cf40b9cab622eed9af3",
+      "size": 85628
+    },
+    {
+      "path": "dane/przyklad_29/pelnomocnictwo.json",
+      "git_blob_sha1": "3f841b37dde0b2c458f27237189da74b2bb39e2e",
+      "size": 494
+    },
+    {
+      "path": "dane/przyklad_29/pelnomocnictwo.pdf",
+      "git_blob_sha1": "b1f3dd5cb36308e60eff779c05a493b5029721d0",
+      "size": 66134
+    },
+    {
+      "path": "dane/przyklad_29/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "00e8471cecf92283a2a4effc5c1dd075c78ed2ed",
+      "size": 73807
+    },
+    {
+      "path": "dane/przyklad_29/przelew.json",
+      "git_blob_sha1": "aaa85eadd82a52cb47fca09adda8e6677dc1de2c",
+      "size": 365
+    },
+    {
+      "path": "dane/przyklad_30/odwolanie.json",
+      "git_blob_sha1": "e2673de0a9cb08f48bd96877b28d7378fc48c7b7",
+      "size": 1021
+    },
+    {
+      "path": "dane/przyklad_30/odwolanie.pdf",
+      "git_blob_sha1": "396aac9f046881f9bb712b681173ae0685d8c4a5",
+      "size": 83214
+    },
+    {
+      "path": "dane/przyklad_30/pelnomocnictwo.json",
+      "git_blob_sha1": "fabec6799093cd9b96a6fec8bf3090ada4461c70",
+      "size": 432
+    },
+    {
+      "path": "dane/przyklad_30/pelnomocnictwo.pdf",
+      "git_blob_sha1": "2c8e356099b5626fdf3d3164f6da65ab6377667f",
+      "size": 72786
+    },
+    {
+      "path": "dane/przyklad_30/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "35dc0cb33f6a3f08a14416cfe365076de4ff6341",
+      "size": 61406
+    },
+    {
+      "path": "dane/przyklad_30/przelew.json",
+      "git_blob_sha1": "b557378e1bdedeeff92098e548178e8d295a815c",
+      "size": 368
+    },
+    {
+      "path": "dane/przyklad_31/odwolanie.json",
+      "git_blob_sha1": "237c7fc53c1ce1c4c6fa5f101323cac90c56eb9a",
+      "size": 996
+    },
+    {
+      "path": "dane/przyklad_31/odwolanie.pdf",
+      "git_blob_sha1": "09a6078dcc24384b8d4633fc3a6b454500eefd7a",
+      "size": 90885
+    },
+    {
+      "path": "dane/przyklad_31/pelnomocnictwo.json",
+      "git_blob_sha1": "b84975eecb20b5feb227e89c6990aa43d432f3a1",
+      "size": 503
+    },
+    {
+      "path": "dane/przyklad_31/pelnomocnictwo.pdf",
+      "git_blob_sha1": "c7f57cc928804657f9080d3a089e4762d479eee9",
+      "size": 76618
+    },
+    {
+      "path": "dane/przyklad_31/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "f9cb8096c3992b3143db3d515c88fca53f991972",
+      "size": 62351
+    },
+    {
+      "path": "dane/przyklad_31/przelew.json",
+      "git_blob_sha1": "f5746fe1f34a405edc38328346d0efc4d2b6909a",
+      "size": 383
+    },
+    {
+      "path": "dane/przyklad_32/odwolanie.json",
+      "git_blob_sha1": "1505bf4c48eb477f2575d3350252f778e0427d78",
+      "size": 1025
+    },
+    {
+      "path": "dane/przyklad_32/odwolanie.pdf",
+      "git_blob_sha1": "383fb36c1884c03b47e644648ff24e80abb27e6a",
+      "size": 90252
+    },
+    {
+      "path": "dane/przyklad_32/pelnomocnictwo.json",
+      "git_blob_sha1": "c6ec7935c2e94d89e3ad6b3f37166eed6df7a379",
+      "size": 492
+    },
+    {
+      "path": "dane/przyklad_32/pelnomocnictwo.pdf",
+      "git_blob_sha1": "bbc46428ca342a697005d8415b572dc36942f754",
+      "size": 81876
+    },
+    {
+      "path": "dane/przyklad_32/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "67118beccf1a7a1d23cfa8ad8d7bbc5eb50da63b",
+      "size": 76631
+    },
+    {
+      "path": "dane/przyklad_32/przelew.json",
+      "git_blob_sha1": "d8766227275ab3383e46478492fd0b5f504fb69f",
+      "size": 366
+    },
+    {
+      "path": "dane/przyklad_33/odwolanie.json",
+      "git_blob_sha1": "7b84e9a4ee49adf4a093baaaa1aa937eda512831",
+      "size": 962
+    },
+    {
+      "path": "dane/przyklad_33/odwolanie.pdf",
+      "git_blob_sha1": "611710426f7425c60b9c47f64a0c49e26f1af7de",
+      "size": 88021
+    },
+    {
+      "path": "dane/przyklad_33/pelnomocnictwo.json",
+      "git_blob_sha1": "6f27e69d762fefd3fed440b998d65f3982c54988",
+      "size": 503
+    },
+    {
+      "path": "dane/przyklad_33/pelnomocnictwo.pdf",
+      "git_blob_sha1": "d310a31d145b3b7b417b72dcef168dda87bca908",
+      "size": 65977
+    },
+    {
+      "path": "dane/przyklad_33/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "02c4c928ccbc4e5e093feeb0831fcaa89416cb76",
+      "size": 74038
+    },
+    {
+      "path": "dane/przyklad_33/przelew.json",
+      "git_blob_sha1": "846f8b4b718f719f33f1e169ceadbd3c4ecb16e3",
+      "size": 386
+    },
+    {
+      "path": "dane/przyklad_34/odwolanie.json",
+      "git_blob_sha1": "e9cc8ab52d7d74c06980ebc42eac788a36158938",
+      "size": 979
+    },
+    {
+      "path": "dane/przyklad_34/odwolanie.pdf",
+      "git_blob_sha1": "914d47258fa68aebe16e97dd9b9d65ae273c1aa1",
+      "size": 85416
+    },
+    {
+      "path": "dane/przyklad_34/pelnomocnictwo.json",
+      "git_blob_sha1": "a63c9989d2f4955cbdc7adfc337312f36a31433f",
+      "size": 504
+    },
+    {
+      "path": "dane/przyklad_34/pelnomocnictwo.pdf",
+      "git_blob_sha1": "cfab9ee57e0c64e16d4c146ce57e886a3e893cc0",
+      "size": 81330
+    },
+    {
+      "path": "dane/przyklad_34/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "61745360e20487fe44eb75f489c4f3a74dd17b57",
+      "size": 80237
+    },
+    {
+      "path": "dane/przyklad_34/przelew.json",
+      "git_blob_sha1": "372139ccfd0a7c645f05b358ac258c6015c7465b",
+      "size": 387
+    },
+    {
+      "path": "dane/przyklad_35/odwolanie.json",
+      "git_blob_sha1": "23db38fd4bb131c5c0f43d7d31f26d184759e247",
+      "size": 1006
+    },
+    {
+      "path": "dane/przyklad_35/odwolanie.pdf",
+      "git_blob_sha1": "803df02f184b9751fba9a1bcb745a138c9bc65e0",
+      "size": 85321
+    },
+    {
+      "path": "dane/przyklad_35/pelnomocnictwo.json",
+      "git_blob_sha1": "73bbfe45534181c659b2b73e2f96b0c226016f32",
+      "size": 503
+    },
+    {
+      "path": "dane/przyklad_35/pelnomocnictwo.pdf",
+      "git_blob_sha1": "9ddb12b069ffc2c18892e5a8e98024de1366e71d",
+      "size": 64608
+    },
+    {
+      "path": "dane/przyklad_35/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "358f82a1b7bfeffd57da1a3e8f29996c9480ca24",
+      "size": 80511
+    },
+    {
+      "path": "dane/przyklad_35/przelew.json",
+      "git_blob_sha1": "11fbdd6b2a0a3a2b9cc9122c2ab98bfdfbbd80c4",
+      "size": 386
+    },
+    {
+      "path": "dane/przyklad_36/odwolanie.json",
+      "git_blob_sha1": "769bc9019e70c31bfdf9c70ad725dbb7fd7ce3d9",
+      "size": 1026
+    },
+    {
+      "path": "dane/przyklad_36/odwolanie.pdf",
+      "git_blob_sha1": "c25274291fec6f18a84de3c49e57e977ca39ad6e",
+      "size": 91032
+    },
+    {
+      "path": "dane/przyklad_36/pelnomocnictwo.json",
+      "git_blob_sha1": "aa4766b3e17c3b0c204c8537ab0155a23e2def32",
+      "size": 579
+    },
+    {
+      "path": "dane/przyklad_36/pelnomocnictwo.pdf",
+      "git_blob_sha1": "b516e5c551420c635ed80ef3ea5bcb07764ba300",
+      "size": 64067
+    },
+    {
+      "path": "dane/przyklad_36/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "13fef1114c9a7d1d26795a1191293397d16d5568",
+      "size": 65532
+    },
+    {
+      "path": "dane/przyklad_36/przelew.json",
+      "git_blob_sha1": "797d2f8b31e4c3163afb1f43e91a0da1e92fa0a1",
+      "size": 390
+    },
+    {
+      "path": "dane/przyklad_37/2025_BZP 00143067_01.pdf",
+      "git_blob_sha1": "37444dc4171f66f71e6e365864c8f3eef9886ea3",
+      "size": 79156
+    },
+    {
+      "path": "dane/przyklad_37/odwolanie.json",
+      "git_blob_sha1": "a8c6f3734c43373bf9881cd9f0e07749b43355c7",
+      "size": 1031
+    },
+    {
+      "path": "dane/przyklad_37/odwolanie.pdf",
+      "git_blob_sha1": "bffc5b9842d73aaade198d6e83d7e7139f266442",
+      "size": 91394
+    },
+    {
+      "path": "dane/przyklad_37/pelnomocnictwo.json",
+      "git_blob_sha1": "7adf0acfe3355bb5ad93d68219b0854c904a8691",
+      "size": 498
+    },
+    {
+      "path": "dane/przyklad_37/pelnomocnictwo.pdf",
+      "git_blob_sha1": "5b1668c3135b0dc5f3c953265d5c38c8f3d74726",
+      "size": 66356
+    },
+    {
+      "path": "dane/przyklad_37/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "8629ce440c9b6b30018e8f15e83a0fc512f79f19",
+      "size": 77460
+    },
+    {
+      "path": "dane/przyklad_37/przelew.json",
+      "git_blob_sha1": "c176eadccfde63b64617b7abb2c21e2651d48456",
+      "size": 368
+    },
+    {
+      "path": "dane/przyklad_38/odwolanie.json",
+      "git_blob_sha1": "062077a0920ca33384d4bfd99ee1a5e76722ded1",
+      "size": 1054
+    },
+    {
+      "path": "dane/przyklad_38/odwolanie.pdf",
+      "git_blob_sha1": "934b77bcd4c5229119dec053e43b913c24360b9d",
+      "size": 92787
+    },
+    {
+      "path": "dane/przyklad_38/pelnomocnictwo.json",
+      "git_blob_sha1": "6b2fd89a71e76f94f4879960ae70bda37f3b7768",
+      "size": 573
+    },
+    {
+      "path": "dane/przyklad_38/pelnomocnictwo.pdf",
+      "git_blob_sha1": "b1a60f0b4ffbaa394d0abab8c44d5d1bb32c37cf",
+      "size": 79960
+    },
+    {
+      "path": "dane/przyklad_38/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "cdff2af38519d284f8502336156253a26dc71017",
+      "size": 60883
+    },
+    {
+      "path": "dane/przyklad_38/przelew.json",
+      "git_blob_sha1": "626b15177eb96e072f845a1249f00cabc87dba69",
+      "size": 390
+    },
+    {
+      "path": "dane/przyklad_39/odwolanie.json",
+      "git_blob_sha1": "56e59d70532009f1829edc7b0fc5ad9c28c5089a",
+      "size": 1014
+    },
+    {
+      "path": "dane/przyklad_39/odwolanie.pdf",
+      "git_blob_sha1": "4daa0164d97ba5de72843736686fbec1d2a27d6a",
+      "size": 90195
+    },
+    {
+      "path": "dane/przyklad_39/pelnomocnictwo.json",
+      "git_blob_sha1": "e1b55eb74609a4fd40ac3d7e78cef7e216e07ac0",
+      "size": 578
+    },
+    {
+      "path": "dane/przyklad_39/pelnomocnictwo.pdf",
+      "git_blob_sha1": "2238d1941fdaa9ca1e5c0109d9f1d2e737c74fea",
+      "size": 63638
+    },
+    {
+      "path": "dane/przyklad_39/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "0a5908a5670f27824163e98b59195226dae32deb",
+      "size": 65097
+    },
+    {
+      "path": "dane/przyklad_39/przelew.json",
+      "git_blob_sha1": "6b4e4ff9e948b30cbf0e5dc03ca320891da3ab92",
+      "size": 394
+    },
+    {
+      "path": "dane/przyklad_40/odwolanie.json",
+      "git_blob_sha1": "9b01c4cbbe0eafb055b6cd88cbaa47cd890d3dad",
+      "size": 1155
+    },
+    {
+      "path": "dane/przyklad_40/odwolanie.pdf",
+      "git_blob_sha1": "8b6b4483ca22d6d51c686d3854fc72e6027623cc",
+      "size": 149826
+    },
+    {
+      "path": "dane/przyklad_40/pelnomocnictwo.json",
+      "git_blob_sha1": "0bbc3ff10c0f32b04762979653b6bd80829bda44",
+      "size": 581
+    },
+    {
+      "path": "dane/przyklad_40/pelnomocnictwo.pdf",
+      "git_blob_sha1": "e5c732e823f6c8a0fbca7cf7142bfa2d59e1ce5f",
+      "size": 85757
+    },
+    {
+      "path": "dane/przyklad_40/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "bd77fb1bbaf4ac1cc31b72902100044cba86bf1e",
+      "size": 65685
+    },
+    {
+      "path": "dane/przyklad_40/przelew.json",
+      "git_blob_sha1": "094a40a6e1fea0dde6ae25735f9bcb31d61f918d",
+      "size": 393
+    },
+    {
+      "path": "dane/przyklad_41/odwolanie.json",
+      "git_blob_sha1": "fb79a4f694ddf87f1b3e3f2727473e4e74225c5a",
+      "size": 1047
+    },
+    {
+      "path": "dane/przyklad_41/odwolanie.pdf",
+      "git_blob_sha1": "39d24b4e4f15ae449a2ce5fc3945af8d50889bef",
+      "size": 122953
+    },
+    {
+      "path": "dane/przyklad_41/pelnomocnictwo.json",
+      "git_blob_sha1": "46a57bbdfb4578e3fd4ffe26799bcdc8b84a64ff",
+      "size": 787
+    },
+    {
+      "path": "dane/przyklad_41/pelnomocnictwo.pdf",
+      "git_blob_sha1": "1cfd0c1a30b2fff2484c73cd359e1e34786c10e4",
+      "size": 66763
+    },
+    {
+      "path": "dane/przyklad_41/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "557b440004f31cedeaeb75dd224a801911e65fd2",
+      "size": 55856
+    },
+    {
+      "path": "dane/przyklad_41/przelew.json",
+      "git_blob_sha1": "3f97480504cee7b9835b3af33e2a02ae91a00bcf",
+      "size": 366
+    },
+    {
+      "path": "dane/przyklad_42/odwolanie.json",
+      "git_blob_sha1": "9a0f48f674bee708c3f87e0659223840fa2825d8",
+      "size": 1300
+    },
+    {
+      "path": "dane/przyklad_42/odwolanie.pdf",
+      "git_blob_sha1": "08edcfe9ef22eb3f813c68fd0a9d1595174fdd51",
+      "size": 115083
+    },
+    {
+      "path": "dane/przyklad_42/pelnomocnictwo.json",
+      "git_blob_sha1": "23a4a21fefde3575d3405ec089f6c47137f902c6",
+      "size": 507
+    },
+    {
+      "path": "dane/przyklad_42/pelnomocnictwo.pdf",
+      "git_blob_sha1": "484fa50cddf7e2b0bb649ccffd2c506373d93beb",
+      "size": 56754
+    },
+    {
+      "path": "dane/przyklad_42/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "389fd06d56998f7bf0fbfbb38205459ea5b5b7e4",
+      "size": 84756
+    },
+    {
+      "path": "dane/przyklad_42/przelew.json",
+      "git_blob_sha1": "c1cb79179cdbee260a9c6c4b660c3e8d5bc64a04",
+      "size": 389
+    },
+    {
+      "path": "dane/przyklad_43/odwolanie.json",
+      "git_blob_sha1": "6b1073ac2ef66969b9a5485695ce1d64245b82af",
+      "size": 1098
+    },
+    {
+      "path": "dane/przyklad_43/odwolanie.pdf",
+      "git_blob_sha1": "e209c582a72e02426b679353ecfa8dae96448385",
+      "size": 148388
+    },
+    {
+      "path": "dane/przyklad_43/pelnomocnictwo.json",
+      "git_blob_sha1": "05d3ac50744a3b7625b9b5487af830bb7f51624b",
+      "size": 506
+    },
+    {
+      "path": "dane/przyklad_43/pelnomocnictwo.pdf",
+      "git_blob_sha1": "097c7f8fef410e951d47eeeb9bab3663ab95fb9f",
+      "size": 66593
+    },
+    {
+      "path": "dane/przyklad_43/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "0a34f5087e4c45a5951c60489d7caed181aba357",
+      "size": 44932
+    },
+    {
+      "path": "dane/przyklad_43/przelew.json",
+      "git_blob_sha1": "9c8e6cbe1bfab67d206711170656d68225b1525d",
+      "size": 371
+    },
+    {
+      "path": "dane/przyklad_44/odwolanie.json",
+      "git_blob_sha1": "dca5a0ef292c635f58420e85124e8231a90dbca0",
+      "size": 1098
+    },
+    {
+      "path": "dane/przyklad_44/odwolanie.pdf",
+      "git_blob_sha1": "2b15542108fb724f52c288f3f2f542c947f0ca09",
+      "size": 122920
+    },
+    {
+      "path": "dane/przyklad_44/pelnomocnictwo.json",
+      "git_blob_sha1": "854a49f1e8416650f7861e872cc7f5c9662568fc",
+      "size": 505
+    },
+    {
+      "path": "dane/przyklad_44/pelnomocnictwo.pdf",
+      "git_blob_sha1": "2ab1844c0444f49b6b2faff08e786141c7f1f78c",
+      "size": 86081
+    },
+    {
+      "path": "dane/przyklad_44/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "9e276ff763282cef4e519bd580204e06e130710b",
+      "size": 65816
+    },
+    {
+      "path": "dane/przyklad_44/przelew.json",
+      "git_blob_sha1": "29bd8c0a0a84d3c216c34307d28dbbbafab123fe",
+      "size": 387
+    },
+    {
+      "path": "dane/przyklad_45/odwolanie.json",
+      "git_blob_sha1": "5a333ffaeb94d2349fa05d49074dd00bae247537",
+      "size": 1105
+    },
+    {
+      "path": "dane/przyklad_45/odwolanie.pdf",
+      "git_blob_sha1": "47a39c7993153d84b8701622fc51d40f7b647a54",
+      "size": 96553
+    },
+    {
+      "path": "dane/przyklad_45/pelnomocnictwo.json",
+      "git_blob_sha1": "acda67667cc293f0717ddf4c735281d0b198edc5",
+      "size": 525
+    },
+    {
+      "path": "dane/przyklad_45/pelnomocnictwo.pdf",
+      "git_blob_sha1": "ed805b658c87976c8371b9287b50718cb40aee73",
+      "size": 45792
+    },
+    {
+      "path": "dane/przyklad_45/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "08b3841ad177cd3bf6e8c8736a4b52510fe3c697",
+      "size": 84700
+    },
+    {
+      "path": "dane/przyklad_45/przelew.json",
+      "git_blob_sha1": "408145bc00ca574ab854e4636ae1ae5338b7d5d0",
+      "size": 393
+    },
+    {
+      "path": "dane/przyklad_46/odwolanie.json",
+      "git_blob_sha1": "e3921ff03c7f4866a176b9c25895d758a01934dd",
+      "size": 1039
+    },
+    {
+      "path": "dane/przyklad_46/odwolanie.pdf",
+      "git_blob_sha1": "50eca1be1f4c467726c19d062463204018211e1b",
+      "size": 150657
+    },
+    {
+      "path": "dane/przyklad_46/pelnomocnictwo.json",
+      "git_blob_sha1": "c76145620dceb1d0c2d6dd8fa56e442f47d1e3ba",
+      "size": 874
+    },
+    {
+      "path": "dane/przyklad_46/pelnomocnictwo.pdf",
+      "git_blob_sha1": "38679e40705169ca367274c687c4463ad823727c",
+      "size": 56966
+    },
+    {
+      "path": "dane/przyklad_46/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "bf5b5370e9cf38f4ec22622dd72deda3385a51d1",
+      "size": 65633
+    },
+    {
+      "path": "dane/przyklad_46/przelew.json",
+      "git_blob_sha1": "515daf74d1dcb2945570439a5dc5589f25f21a91",
+      "size": 385
+    },
+    {
+      "path": "dane/przyklad_47/odwolanie.json",
+      "git_blob_sha1": "e0f84cd57994bdab0626db096ce86180e6cf6baf",
+      "size": 1074
+    },
+    {
+      "path": "dane/przyklad_47/odwolanie.pdf",
+      "git_blob_sha1": "af191cbf39c5504cc376f4e666203906856cbd3a",
+      "size": 113718
+    },
+    {
+      "path": "dane/przyklad_47/pelnomocnictwo.json",
+      "git_blob_sha1": "8cd4ffe832cda739a2e43be5160fe2ccc74de956",
+      "size": 526
+    },
+    {
+      "path": "dane/przyklad_47/pelnomocnictwo.pdf",
+      "git_blob_sha1": "d099ed1de5d8ad2c474c38b9651a9352bb8606e7",
+      "size": 85837
+    },
+    {
+      "path": "dane/przyklad_47/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "6cc0d4e7fccce2fd85f20b04735037b595561847",
+      "size": 65859
+    },
+    {
+      "path": "dane/przyklad_47/przelew.json",
+      "git_blob_sha1": "1315b8b3cbcd82d5bd083231bea7eaccbbfa3486",
+      "size": 390
+    },
+    {
+      "path": "dane/przyklad_48/odwolanie.json",
+      "git_blob_sha1": "8e26f82b9ef104439301f20638f6925b986dff43",
+      "size": 1047
+    },
+    {
+      "path": "dane/przyklad_48/odwolanie.pdf",
+      "git_blob_sha1": "e5be2d9b9729f814bd3f3689180328c59b093998",
+      "size": 122785
+    },
+    {
+      "path": "dane/przyklad_48/pelnomocnictwo.json",
+      "git_blob_sha1": "a7fbbc379402c39e2f853678bb5b7d04d78c0295",
+      "size": 941
+    },
+    {
+      "path": "dane/przyklad_48/pelnomocnictwo.pdf",
+      "git_blob_sha1": "86666eafc3f3621c2fc9c0781f2bb6793f3af953",
+      "size": 86532
+    },
+    {
+      "path": "dane/przyklad_48/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "a6275a2f3313f0906d13135efb8d7009fac9a17e",
+      "size": 45027
+    },
+    {
+      "path": "dane/przyklad_48/przelew.json",
+      "git_blob_sha1": "deff33fc336e8e3fdc0b7cfc0ba97d17105983a3",
+      "size": 388
+    },
+    {
+      "path": "dane/przyklad_49/odwolanie.json",
+      "git_blob_sha1": "5408436261672025c3ba8d8a1c8c2676b139c43c",
+      "size": 1040
+    },
+    {
+      "path": "dane/przyklad_49/odwolanie.pdf",
+      "git_blob_sha1": "07883a087f419bde11f5cbece5374c769e77d117",
+      "size": 93331
+    },
+    {
+      "path": "dane/przyklad_49/pelnomocnictwo.json",
+      "git_blob_sha1": "63f5ce7745c9b9842446458908919698c2e23451",
+      "size": 875
+    },
+    {
+      "path": "dane/przyklad_49/pelnomocnictwo.pdf",
+      "git_blob_sha1": "c0f6940c8180d2c9daf6c571dd944fa77884e1b9",
+      "size": 66803
+    },
+    {
+      "path": "dane/przyklad_49/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "ada0111701e45d44ea41eb248cbc1e3f381508a1",
+      "size": 84758
+    },
+    {
+      "path": "dane/przyklad_49/przelew.json",
+      "git_blob_sha1": "92d664a13b2a953980bf4e582a8560ba49f21ab5",
+      "size": 380
+    },
+    {
+      "path": "dane/przyklad_50/odwolanie.json",
+      "git_blob_sha1": "cec6fe1896ff1fe4b3b901529031d16f3e16d1e6",
+      "size": 1055
+    },
+    {
+      "path": "dane/przyklad_50/odwolanie.pdf",
+      "git_blob_sha1": "8127a26d5f59d012ea1ef23f147bc5fbca021d92",
+      "size": 94117
+    },
+    {
+      "path": "dane/przyklad_50/pelnomocnictwo.json",
+      "git_blob_sha1": "f9185e549300bce6a1b38a3c241479729fcf5db1",
+      "size": 824
+    },
+    {
+      "path": "dane/przyklad_50/pelnomocnictwo.pdf",
+      "git_blob_sha1": "8a4bf3548334ba27a21fe6c4189b36649e81a261",
+      "size": 56901
+    },
+    {
+      "path": "dane/przyklad_50/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "587c59f988fd1517750f5a634845aa446a767e89",
+      "size": 84662
+    },
+    {
+      "path": "dane/przyklad_50/przelew.json",
+      "git_blob_sha1": "6fbc9205eaef9a3e54a3291087fb3b3c76947263",
+      "size": 367
+    },
+    {
+      "path": "dane/przyklad_51/odwolanie.json",
+      "git_blob_sha1": "fd0bf01aeb2c7c727854d6f343f33eb9b3c8332b",
+      "size": 1245
+    },
+    {
+      "path": "dane/przyklad_51/odwolanie.pdf",
+      "git_blob_sha1": "3ae6dcd37152408f182db70991303d5a91a2a9ef",
+      "size": 115222
+    },
+    {
+      "path": "dane/przyklad_51/pelnomocnictwo.json",
+      "git_blob_sha1": "1b8aa24ea42e2b10b0d18e0ffa331a29f150d61e",
+      "size": 492
+    },
+    {
+      "path": "dane/przyklad_51/pelnomocnictwo.pdf",
+      "git_blob_sha1": "8256b0de1d1accdca6ce304495a2aae3902e3762",
+      "size": 56904
+    },
+    {
+      "path": "dane/przyklad_51/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "fd6721dbc7f3bb77a7dd87f5cc118c2424e4204b",
+      "size": 65828
+    },
+    {
+      "path": "dane/przyklad_51/przelew.json",
+      "git_blob_sha1": "6382773de6caebd4bee4b54c5076f8bbab17211b",
+      "size": 388
+    },
+    {
+      "path": "dane/przyklad_52/odwolanie.json",
+      "git_blob_sha1": "6303e827d4e9bab9f982df6d7c3db29747722b8e",
+      "size": 1016
+    },
+    {
+      "path": "dane/przyklad_52/odwolanie.pdf",
+      "git_blob_sha1": "1f7f80a0ae67c10f3dc8fb4d89658fc8af6f0c46",
+      "size": 119514
+    },
+    {
+      "path": "dane/przyklad_52/pelnomocnictwo.json",
+      "git_blob_sha1": "b75af68fa15ef64fbebdcb1e6381f22c22a69765",
+      "size": 436
+    },
+    {
+      "path": "dane/przyklad_52/pelnomocnictwo.pdf",
+      "git_blob_sha1": "10f56bee87c42b68dc046ac9f80a78ea435e86e0",
+      "size": 66521
+    },
+    {
+      "path": "dane/przyklad_52/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "7177bda519ef6c460b5d14fa5d0e73aa4bfa469b",
+      "size": 55984
+    },
+    {
+      "path": "dane/przyklad_52/przelew.json",
+      "git_blob_sha1": "5d454abcc1933c72d45528179321c83a13ab5236",
+      "size": 373
+    },
+    {
+      "path": "dane/przyklad_53/odwolanie.json",
+      "git_blob_sha1": "75d00b3b1b3d53a44499288b4102a9e888b83178",
+      "size": 1076
+    },
+    {
+      "path": "dane/przyklad_53/odwolanie.pdf",
+      "git_blob_sha1": "46b6af36dffb4132ece9fd1fe42e071aed6d404b",
+      "size": 120135
+    },
+    {
+      "path": "dane/przyklad_53/pelnomocnictwo.json",
+      "git_blob_sha1": "de11dff085ed7e416943dafc110d6d22dc0814f6",
+      "size": 507
+    },
+    {
+      "path": "dane/przyklad_53/pelnomocnictwo.pdf",
+      "git_blob_sha1": "d29c053769352312c3c9b1dc3bbec733c1639655",
+      "size": 45745
+    },
+    {
+      "path": "dane/przyklad_53/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "ae90e0c25b9bf5b76bda88078d120dca9132da5d",
+      "size": 44998
+    },
+    {
+      "path": "dane/przyklad_53/przelew.json",
+      "git_blob_sha1": "07186a6d16b9cf3e70a089594a5a78bfc2896f50",
+      "size": 385
+    },
+    {
+      "path": "dane/przyklad_54/odwolanie.json",
+      "git_blob_sha1": "2c444db291e44ed15e87692dba9f9d1ed9df451f",
+      "size": 1060
+    },
+    {
+      "path": "dane/przyklad_54/odwolanie.pdf",
+      "git_blob_sha1": "de1f6561881ad552ae0ff5a1f1df62ad49538515",
+      "size": 115089
+    },
+    {
+      "path": "dane/przyklad_54/pelnomocnictwo.json",
+      "git_blob_sha1": "1ab3932895efb47693fe52cdffec2b48ea24895e",
+      "size": 570
+    },
+    {
+      "path": "dane/przyklad_54/pelnomocnictwo.pdf",
+      "git_blob_sha1": "25c94fdc69eb3aaef2480c08f88dc2ae11dcbbac",
+      "size": 66535
+    },
+    {
+      "path": "dane/przyklad_54/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "6f4bdec39c7a688a162ecc4333fde294b93eb6a7",
+      "size": 55993
+    },
+    {
+      "path": "dane/przyklad_54/przelew.json",
+      "git_blob_sha1": "e1e3a2804e316469a9eb212395b49217623a36e1",
+      "size": 378
+    },
+    {
+      "path": "dane/przyklad_55/odwolanie.json",
+      "git_blob_sha1": "9efc08812eef322810102e578db6243f2d614791",
+      "size": 1054
+    },
+    {
+      "path": "dane/przyklad_55/odwolanie.pdf",
+      "git_blob_sha1": "003fdf6910f841531401790d853f04b7455b2f73",
+      "size": 149220
+    },
+    {
+      "path": "dane/przyklad_55/pelnomocnictwo.json",
+      "git_blob_sha1": "1796d33d3a413e323901fc6ab55b45de2369da37",
+      "size": 512
+    },
+    {
+      "path": "dane/przyklad_55/pelnomocnictwo.pdf",
+      "git_blob_sha1": "5ce228baeed201354c42da015b0bb0ae04513dc2",
+      "size": 56623
+    },
+    {
+      "path": "dane/przyklad_55/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "b66a218e9a97cd7e95c4ef60892a4e8e96e5f6cc",
+      "size": 45009
+    },
+    {
+      "path": "dane/przyklad_55/przelew.json",
+      "git_blob_sha1": "332239bfd0407fd0bf30fec7fed0953b1a719d06",
+      "size": 390
+    },
+    {
+      "path": "dane/przyklad_56/odwolanie.json",
+      "git_blob_sha1": "75b6d669d9e3a3113ca439d3248f1e4d1b8da626",
+      "size": 1025
+    },
+    {
+      "path": "dane/przyklad_56/odwolanie.pdf",
+      "git_blob_sha1": "6b7d25bb8467dcaddb60e973273ea6f0473db136",
+      "size": 94427
+    },
+    {
+      "path": "dane/przyklad_56/pelnomocnictwo.json",
+      "git_blob_sha1": "fdea6f5437cb5312d86459126f9051fd8588f1bd",
+      "size": 568
+    },
+    {
+      "path": "dane/przyklad_56/pelnomocnictwo.pdf",
+      "git_blob_sha1": "f5ee86034cc5a962e82e4734c8c9993054f51216",
+      "size": 85646
+    },
+    {
+      "path": "dane/przyklad_56/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "bbc8fc773d70b7ab14fcdfaf18cbee09d0d88944",
+      "size": 84723
+    },
+    {
+      "path": "dane/przyklad_56/przelew.json",
+      "git_blob_sha1": "fbc71bb79c16a7bda84127ab0aff31e5518fe01e",
+      "size": 381
+    },
+    {
+      "path": "dane/przyklad_57/odwolanie.json",
+      "git_blob_sha1": "e409153c54c046219816cda47ddc50cbfc209d68",
+      "size": 1045
+    },
+    {
+      "path": "dane/przyklad_57/odwolanie.pdf",
+      "git_blob_sha1": "0ffa809f2df4992465e42abfcefd79c70ad75249",
+      "size": 151113
+    },
+    {
+      "path": "dane/przyklad_57/pelnomocnictwo.json",
+      "git_blob_sha1": "015e89adb99f4a7719ab3fbde42bf6307998c2f0",
+      "size": 435
+    },
+    {
+      "path": "dane/przyklad_57/pelnomocnictwo.pdf",
+      "git_blob_sha1": "31dfdeb61bbf3a28567ad0188ce0f0aaadc9fc11",
+      "size": 45623
+    },
+    {
+      "path": "dane/przyklad_57/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "ce7e7e62f4b95017f3cc1a17831ef214d783db61",
+      "size": 65569
+    },
+    {
+      "path": "dane/przyklad_57/przelew.json",
+      "git_blob_sha1": "1542c1c70acdd6a891a8f9e15af5922191e3422f",
+      "size": 368
+    },
+    {
+      "path": "dane/przyklad_58/odwolanie.json",
+      "git_blob_sha1": "7a3aee9f5b66a0c6cc2c635e90010bd3d94b51ba",
+      "size": 1056
+    },
+    {
+      "path": "dane/przyklad_58/odwolanie.pdf",
+      "git_blob_sha1": "1396bcf160a52757a6bbd98786bd7020d906cef0",
+      "size": 93608
+    },
+    {
+      "path": "dane/przyklad_58/pelnomocnictwo.json",
+      "git_blob_sha1": "ebfdfb13084083b98e32635b0cf137bf2ba5d6cd",
+      "size": 503
+    },
+    {
+      "path": "dane/przyklad_58/pelnomocnictwo.pdf",
+      "git_blob_sha1": "cff4a04cb61bb8ce33b701b0b1607dfde9fa6df3",
+      "size": 85636
+    },
+    {
+      "path": "dane/przyklad_58/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "5aa9a99b82ed711d7894c73c9380c9d2c058b11a",
+      "size": 65700
+    },
+    {
+      "path": "dane/przyklad_58/przelew.json",
+      "git_blob_sha1": "3622ec5212786836b8f63313917364250d0b8cef",
+      "size": 390
+    },
+    {
+      "path": "dane/przyklad_59/odwolanie.json",
+      "git_blob_sha1": "f2d2867d141f39b8cf892fb97b4bf723da1b6031",
+      "size": 1258
+    },
+    {
+      "path": "dane/przyklad_59/odwolanie.pdf",
+      "git_blob_sha1": "c8d55558e691fd3aafddf6b248191c326e358b52",
+      "size": 151196
+    },
+    {
+      "path": "dane/przyklad_59/pelnomocnictwo.json",
+      "git_blob_sha1": "2038444be33fdc5cb8ecc7c4bba6c4f151a80cd9",
+      "size": 497
+    },
+    {
+      "path": "dane/przyklad_59/pelnomocnictwo.pdf",
+      "git_blob_sha1": "c9c07293c1ef8ec368dc09e3415f5ef0afd22ed5",
+      "size": 56694
+    },
+    {
+      "path": "dane/przyklad_59/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "b033ad1ae76faa7dc0a0c454f70bf266e92e231d",
+      "size": 84715
+    },
+    {
+      "path": "dane/przyklad_59/przelew.json",
+      "git_blob_sha1": "4a87a99976b126c1be5c2b254a35a899a7ebc10e",
+      "size": 383
+    },
+    {
+      "path": "dane/przyklad_60/odwolanie.json",
+      "git_blob_sha1": "8145f3152a2d69200bb75913eba78056f4e21556",
+      "size": 1041
+    },
+    {
+      "path": "dane/przyklad_60/odwolanie.pdf",
+      "git_blob_sha1": "11ebe3fa3b184427172a220b12ad97cd06b39144",
+      "size": 123055
+    },
+    {
+      "path": "dane/przyklad_60/pelnomocnictwo.json",
+      "git_blob_sha1": "57b807f2f4a571f28172ca0b18909c8ab6ca3ba3",
+      "size": 790
+    },
+    {
+      "path": "dane/przyklad_60/pelnomocnictwo.pdf",
+      "git_blob_sha1": "35e56cad7f004d8e60cbfdfac4ac51a8bbaf9732",
+      "size": 86007
+    },
+    {
+      "path": "dane/przyklad_60/potwierdzenie_przelewu.pdf",
+      "git_blob_sha1": "be03569c6de2b2fbfb44e466ad110241216ec273",
+      "size": 44960
+    },
+    {
+      "path": "dane/przyklad_60/przelew.json",
+      "git_blob_sha1": "db7347b039a753e9e8a111db302b3c32a4575b38",
+      "size": 378
+    },
+    {
+      "path": "oczekiwane-json/czynnosc_powod_id_dict.md",
+      "git_blob_sha1": "976e029d75d2a03d5ed8690fa38693bb520808ca",
+      "size": 455
+    },
+    {
+      "path": "oczekiwane-json/odwolanie.json",
+      "git_blob_sha1": "54c83874677ba4185b9a479d60bd284f8710492c",
+      "size": 3853
+    },
+    {
+      "path": "oczekiwane-json/pelnomocnictwo.json",
+      "git_blob_sha1": "9d63024b59a02b52f6726478b3bbffeb3b989d49",
+      "size": 971
+    },
+    {
+      "path": "oczekiwane-json/przelew.json",
+      "git_blob_sha1": "076650d8b953d2c2b5dfb678eae29bd84b67111b",
+      "size": 354
+    },
+    {
+      "path": "szablon-aplikacja/input/case1/negatywny przyklad.pdf",
+      "git_blob_sha1": "daabede6a9e8bb3f9d671ea99662dfa1515090b5",
+      "size": 114801
+    },
+    {
+      "path": "szablon-aplikacja/input/case1/przyklad odwolanie.pdf",
+      "git_blob_sha1": "aecf1cfe3b8703e544d80cb96740ebd6971f0b51",
+      "size": 4048111
+    },
+    {
+      "path": "szablon-aplikacja/output/case1/przyklad odwolanie.json",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    }
+  ]
+}

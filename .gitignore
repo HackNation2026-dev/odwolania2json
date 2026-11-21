@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+.secrets/
+.venv/
+__pycache__/
+node_modules/
+target/
+/input/
+/output/
+*.part
+.DS_Store
