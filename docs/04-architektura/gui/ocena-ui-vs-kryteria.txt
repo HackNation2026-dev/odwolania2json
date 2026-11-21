@@ -1,0 +1,131 @@
+**Werdykt: tak z brakami — projekt GUI 0.2.0 spełnia podstawowy zakres interfejsu, ale MVP nie wykorzystuje przekonująco kryterium rozbudowy klas i pozostawia otwarte warunki eksportu oraz uruchomienia u jury.**
+
+Oceniam specyfikację, nie implementację. Nagłówek `docs/04-architektura/gui/projekt-ui.md` potwierdza wersję **0.2.0** i status „nie opis implementacji”. Nie zmieniałem plików ani nie uruchamiałem testów.
+
+**1. Podstawa oceny**
+
+Skróty używane poniżej oznaczają konkretne pliki:
+
+| Skrót | Plik |
+|---|---|
+| **UI** | `docs/04-architektura/gui/projekt-ui.md` |
+| **ORG** | `docs/02-materialy/organizator-uzp/README.md` |
+| **FAQ** | `docs/01-zadanie/zrodla/FAQ-Odwolania2JSON-v1.0.md` |
+| **Discord** | `docs/01-zadanie/zrodla/UZP-Discord-doprecyzowania-2026-11-21.md` |
+| **Mentor** | `docs/01-zadanie/zrodla/odpowiedzi-mentora-2026-11-21.md` |
+| **ADR** | `docs/07-decyzje/ADR-002-decyzje-po-recenzji.md` |
+
+Uwzględniłem aktualizacje źródeł. Według `docs/02-materialy/kompletnosc.md`, „referencją aktualną jest `main` `7590db8`”; zmiany tej rewizji dotyczą słownika i pięciu referencji JSON. Nie zawierają nowego README. README z gałęzi `dane` i `mateusz-readme-changes` są tam oznaczone jako **starsze** — ich odmienne zapisy nie zastępują aktualnych kryteriów.
+
+Wypowiedzi mentora traktuję zgodnie z zastrzeżeniem w źródle: „nie jest dosłownym zapisem rozmowy z mentorem”. Cytaty z tego pliku są cytatami z lokalnego zapisu odpowiedzi.
+
+**2. Macierz zgodności**
+
+Oznaczenia: **O** — obowiązkowe dla zgłoszenia lub uruchomienia; **Z** — obowiązkowe z decyzji zespołu; **P** — punktowane; **R** — preferencja organizatora. „Spełnia” oznacza pokrycie w projekcie, nie potwierdzenie działania.
+
+| Wymóg — cytat i plik | Gdzie w projekcie | Ocena | Dowód projektowy | Luka | Poprawka |
+|---|---|---|---|---|---|---|
+| **O — zgłoszenie:** „tytuł projektu”, „Link do GitHub działającego prototypu umożliwiający wgranie dokumentów i odczytanie rezultatów” — ORG §4 | §2.2, §3.1–3.3, §8.1; S01–S03 | częściowo | Nazwa aplikacji, upload, odczyt i pobranie wyniku | Specyfikacja nie jest działającym prototypem; nie określa kompletnej instrukcji zgłoszenia | Dopisać warunek odbioru: repo, instalacja, start, własny PDF jury, pobranie wyniku |
+| **O — CLI:** „konieczne jest przygotowanie CLI razem z instrukcją” — FAQ 12a; ORG „Interfejs wykonawczy” | §4.1, §8.1 | nie dotyczy GUI | CLI wskazane jako źródło pliku ocenianego; wspólny silnik | Samo GUI nie spełnia obowiązku CLI | W instrukcji wyraźnie rozdzielić komendę batch i komendę serwera GUI |
+| **O — foldery:** „Foldery o nazwie `input` oraz `output`”; JSON „nazwany jest tak samo jak plik z katalogu input” — ORG §3 | §4.1, §4.7; F42, F54 | spełnia | CLI zachowuje drzewo; GUI zachowuje nazwę bazową; ZIP po MVP | Foldery i ZIP nie są w MVP GUI, co samo w sobie nie narusza wymogu CLI | Dopisać wspólny przykład wyniku CLI i pobrania GUI dla tego samego PDF |
+| **O — trzy klasy:** „odwołanie do KIO, pełnomocnictwo oraz potwierdzenie przelewu”; „automatyczna klasyfikacja” — FAQ 1/4 | §3.1–3.3.6; S02–S03 | spełnia | Trzy formularze, rozpoznana klasa i uzasadnienie | Brak scenariusza pokazu wszystkich trzech klas | Dodać trzy syntetyczne PDF do scenariusza |
+| **O — klasyfikacja treścią:** „nie sugerujcie się nazwą pliku” — ORG §3 | §3.1, §3.3.4 | spełnia | Jawna deklaracja klasyfikacji po treści i panel „Dlaczego?” | Deklaracja nie dowodzi działania | Pokazać PDF pod neutralną lub mylącą nazwą |
+| **O — kontrakt:** „JSON ściśle zgodny z formatem” — Discord 12:47; „Obowiązuje najnowszy kod” — Mentor | §3.3.9, §4.1, §10 pkt 4 | częściowo | Pobierany zapisany wynik silnika, dowody osobno | Konflikt `null` z walidatorem może zablokować wynik; brak jawnego identyfikatora rewizji kontraktu | Uzgodnić politykę braków i pokazać rewizję kontraktu przy wyniku |
+| **O — braki:** „Nie należy wymyślać brakujących danych”; `null` tam, gdzie schemat dopuszcza — FAQ 2/4 | §3.3.5; F51 | częściowo | Pięć powodów braku, pokrycie stron, bez wartości zastępczych | Nierozstrzygnięta zgodność `null`; niespójność, czy lista sprawdzonych stron jest już w MVP | Ujednolicić P0 i kontrakt eksportu; nie ukrywać nieprzetworzonej treści jako „brak” |
+| **O — obcy:** „pusty JSON z nazwą oryginalnego pliku” — Discord 13:27; „`{}` pod nazwą pliku wejściowego” — Mentor | §3.2.1, §3.3.14; F13 | spełnia | `{}` do podglądu i pobrania, odrębny status | Brak istotnej luki | Zachować; demonstracja musi obejmować faktycznie pobrany plik |
+| **O — skany:** „zarówno PDF-y zawierające tekst, jak i dokumenty wymagające […] OCR” — FAQ 2/4; „raz skan, raz jedno i drugie” — Mentor | §3.3.3–4a, §4.4; F52 | częściowo | OCR, dokument mieszany, tekst strony, ostrzeżenia jakości | UI bezwarunkowo obiecuje obsługę OCR, podczas gdy ADR dopuszcza etap bez modelu OCR | Uzależnić tekst i etykiety od rzeczywistej dostępności OCR; brak OCR jawnie oznaczyć |
+| **O — Python:** „Python 3.13+”, „requirements.txt” — ORG §5, Discord 09:42 | §8.1 | częściowo | Python serwuje gotowy frontend React/TS | Brak dokładnej procedury instalacji/startu; interpretacja dopuszczająca statyczny JS nie jest osobno potwierdzona przez organizatora | Opisać Python jako aplikację wykonawczą i dołączone zasoby przeglądarki; dodać procedurę odbioru |
+| **O — pip:** „Wyłącznie pip” — Mentor; ADR, uzupełnienie mentora | §8.1 | spełnia | Gotowe JS/CSS/fonty w pakiecie; bez Node, npm, CDN i serwera Next.js | Nie wymieniono wszystkich zasobów przeglądarki PDF | Objąć pakowaniem również worker PDF i pozostałe pliki wymagane przez viewer |
+| **O — zasoby:** „16GB RAM i Intel i7. Bez GPU”; „LLM po API” — ORG §5–6 | §8.1 | częściowo | Lokalny backend i zdalny model | Brak budżetu pamięci i współbieżności PDF/OCR | Dopisać ograniczenie równoległych zadań i próbę na sprzęcie docelowym |
+| **O — otwartość:** „wyłącznie komponenty open source”; modele umożliwiające „lokalną instalacje” — ORG §5, FAQ 3/4 | §2.4, §3.8, §8.1, §10 | częściowo | Licencja z backendu; blokada niepotwierdzonego modelu | Nie ma wybranego modelu i bibliotek; lokalna instalowalność modelu nie jest pokazana w tabeli | Dodać odnośniki do modelu, licencji i źródła wag oraz wykaz licencji komponentów |
+| **O — lokalizacja:** „usługodawcy i serwera […] na terenie UE” — FAQ 3/4; ORG: „firma i […] serwery […] EU/EOG” | §2.4, §3.8, §8.1 | częściowo | Dostawca, region, licencja i blokada wywołań | „Kraj w Europie” nie dowodzi spełnienia literalnego wymogu UE/UE–EOG; brak osobnego kraju firmy | Pokazać kraj usługodawcy i serwera oraz podstawę akceptacji |
+| **O — API jury:** „potrzebujemy Waszych kluczy” — Discord 11:28; „endpoint musi być publicznie dostępny” — Discord 12:47 | §3.3.14, §10 pkt 5 | częściowo | Klucz poza Git, jawny timeout i ponowienie | Brak scenariuszy braku klucza, 401/403, limitu środków i niedostępnego endpointu | Dodać sprawdzenie gotowości i komunikaty bez ujawniania sekretów |
+| **P — moc modelu:** „1-20 pkt za moc modelu LLM”; większy model — mniej punktów — ORG §7; „największy model” — Mentor | §3.8; S08/F22 | częściowo | Nazwa, liczba parametrów, dostawca, licencja | S08 poza MVP; pojedynczy model w tabeli nie obejmuje jednoznacznie wszystkich komponentów i fallbacków | Przenieść krótką kartę modeli do P0; wskazać największy model systemu |
+| **P — rozbudowa:** „1-20 Łatwość dodawania nowych typów dokumentów i nowych klas danych” — ORG §7 | §3.6–3.7, §4.6; F20–21, F36–37, F47–48, F55 | częściowo | YAML, pola, formularz, test i aktywacja; uczciwa granica „bez kodu” | Odczyt w E1, edycja w E2; MVP nie pokazuje dodania klasy ani pola | Dodać mały scenariusz konfiguracji do pokazu finałowego |
+| **P — inne funkcje:** „1-10 Inne ciekawe funkcje […] (np. GUI)” — ORG §7 | §3, §7–9 | spełnia | Przegląd, dowody, diagnostyka, pobieranie, dostępność | Nadmiar zakresu może utrudnić ukończenie | Skupić pokaz na sprawdzaniu danych i obsłudze odstępstw |
+| **P — transparentność:** „Szczególnie premiowane […] wspierające transparentność procesu ekstrakcji danych” — ORG §5 | §3.3.3–5, §3.3.10; F51–52 | spełnia | Strona, cytat, źródło PDF/OCR, metoda, reguła i przesłanki, powody braków | P0 jest zależne od raportu silnika; dokładna geometria dopiero później | Zachować dowód tekstowy w P0; nie uzależniać pokazu od geometrii |
+| **P/R — interfejs FAQ:** „wgranie PDF, uruchomienie analizy i podgląd […] JSON”; „widok obok siebie” — FAQ 12b | S01–S03; §3.3.15, §8.1 | spełnia | Pełna ścieżka; dwa panele od 1024 px | Na telefonie i tablecie pionowym są zakładki, co jest rozsądnym dostosowaniem | Pokaz jury prowadzić na desktopie |
+| **Z — GUI i zakres urzędu:** „GUI jest obowiązkowe”; pełna wersja: „wersjonowanie […] spraw, użytkownicy, uprawnienia” — ADR | §1–5, §8.2 | spełnia | Minimum w P0; funkcje urzędowe rozpisane na E1–E3 | Brak istotnej luki zakresowej | Nie przedstawiać E1–E3 jako funkcji MVP |
+| **Z — stos:** „React + TypeScript; gotowa biblioteka komponentów UI” — ADR | §8.1, §10 pkt 1 | spełnia | Technologia ustalona, wybór biblioteki pozostawiony użytkownikowi | Nazwa biblioteki nadal otwarta, zgodnie z decyzją | Zamknąć wybór przed implementacją |
+| **Z — logowanie i OpenUI:** „MVP bez logowania”; „Bez OpenUI” — ADR | §1.1, §6, §8 | spełnia | Syntetyczne demo bez kont; brak asystenta generatywnego | Brak | Zachować |
+| **Z — dowody i typy:** „Dowody […] poza ocenianym JSON-em”; „typy jak w referencjach” — ADR pkt 9–10 | §3.3.6, §3.3.9–10, §5 | spełnia | Dowody osobno; identyfikatory jako tekst; maskowany podgląd odróżniony od eksportu | Zgodność konkretnych payloadów wymaga późniejszej weryfikacji | Dodać kryterium zgodności podglądu i pobranego wyniku silnika |
+| **Z — awaria i cache:** „Błąd techniczny to osobny stan”; „Nie zwracać automatycznie starego wyniku” — ADR pkt 11–12 | §3.2.1, §3.3.14, §4.7 | spełnia | Brak JSON przy awarii, kontynuacja wsadu, jawna poprzednia wersja | Ponowienie nie ma pełnego scenariusza wielokrotnego kliknięcia/odświeżenia | Dopisać ochronę przed podwójnym uruchomieniem i kosztami |
+| **Z — niezależność i braki:** „każdy dokument niezależnie”; „Braki trzeba jawnie wskazywać” — ADR | §3.1–3.3.5, §4.7 | spełnia | Brak uzupełniania z innych plików, pięć powodów braków | Brak istotnej luki koncepcyjnej | Pokazać dwa dokumenty z różnymi danymi tego samego podmiotu |
+| **Z — odstępstwa:** „Nie zakładamy ścieżki idealnej”; „klasyfikacja dokumentu, strony i regionu” — ADR | §3.2.1, §3.3.4a, §5; F23, F40–41, F51 | spełnia | Sześć stanów, kody, diagnoza i niepewność | Pełne drzewo regionów dopiero po MVP | W P0 zachować podstawową diagnozę i jawne braki danych diagnostycznych |
+| **Z — etap bez OCR:** „do czasu dostarczenia modelu działać bez niego i jawnie diagnozować strony wymagające OCR” — ADR, ostatnie uzupełnienie | §3.1, §3.3.3, §8.1 | częściowo | Projekt przewiduje nieprzetworzone regiony | Brak odrębnego komunikatu „OCR niedostępny”; upload obiecuje obsługę | Dodać stan dostępności OCR i warunkowe teksty |
+
+**3. Wpływ na punktację finału**
+
+Nie przypisuję konkretnych punktów na podstawie samych opisów ekranów. ORG §7 podaje pule, ale nie podaje szczegółowej skali przyznawania punktów.
+
+| Składowa | Ocena projektu i rekomendacja |
+|---|---|
+| **F1 — 50% finału** | GUI pomaga wykrywać błędy przez dowody, role, źródło tekstu i listę braków. Nie zwiększa samo wyniku automatycznej ekstrakcji. ORG §7 mówi o „zgodności wyników z danymi referencyjnymi na nieznanym zbiorze testowym”. Pokaz i ewentualne pomiary muszą dotyczyć wyniku silnika przed korektami. |
+| **Moc modelu — 1–20** | Pełny projekt pokazuje rozmiar i dostawcę w S08, ale MVP pozostawia głównie nazwę i region w stopce. Najtańsza poprawka: rozwijana karta w S01/S03 z listą modeli, parametrami i wskazaniem największego. Mentor: „Liczy się największy model”. Samo ujawnienie danych nie zastąpi wyboru oszczędnego modelu. |
+| **Dodawanie typów i klas danych — 1–20** | Docelowy projekt jest przekonujący, bo obejmuje konfigurację, test i aktywację. MVP tego nie demonstruje. To największa utracona możliwość: ORG §5 premiuje „jedynie […] pliki konfiguracyjne”, a §7 przyznaje osobną pulę za rozbudowę. Wystarczy mały pokaz zmiany YAML i rzeczywistej analizy; pełny edytor w przeglądarce nie jest konieczny. |
+| **Inne funkcje — 1–10** | Jury zobaczy użyteczne narzędzie: PDF obok danych, dowody, JSON, pobranie, kody i obsługę awarii. To silniejszy argument niż liczba stron administracyjnych. ORG §7: „Inne ciekawe funkcje […] (np. GUI)”. |
+| **Transparentność** | Najmocniejsza część projektu: dowód wartości, źródło tekstu, metoda, przesłanki wyliczeń i powód `null`. ORG §5 mówi „Szczególnie premiowane”, ale nie przydziela temu osobnej puli — nie należy dopisywać dodatkowych punktów ponad znane kryteria. |
+
+**Największy zwrot z małego nakładu:** demonstracja dodania klasy i pola, karta największego modelu, pobranie dowodów oraz niezawodna ścieżka podstawowa. Role, SSO, rozbudowany audyt i zatwierdzanie mogą pozostać w E3. FAQ 4/4 wyraźnie mówi: „Nie jest wymagane tworzenie pełnego systemu prowadzenia spraw odwoławczych”.
+
+**4. MVP na pokaz jury**
+
+**Zakres funkcjonalny MVP wystarcza do interfejsowej części zgłoszenia**, jeśli działa na rzeczywistym silniku i pozwala analizować własny dokument jury. Podstawa: ORG §4 — „wgranie dokumentów i odczytanie rezultatów”; FAQ 12b — upload, analiza, JSON i preferowany widok dzielony.
+
+Nie wystarcza jednak sam projekt, a obecny scenariusz nie pokazuje pełnej wartości finałowej. Rekomenduję następujący przebieg:
+
+| Krok | Co pokazać | Co dopisać do specyfikacji demonstracji |
+|---|---|---|
+| 1. Gotowość | Lokalny start, wersja, dostępność modelu i OCR | Komenda startu, brak klucza, dostępność endpointu, aktywny zestaw klas |
+| 2. Wgranie | Trzy typy PDF, w tym jeden pod neutralną nazwą | Konkretne syntetyczne pliki i oczekiwane rezultaty |
+| 3. Analiza | Postęp i niezależne zakończenie każdego dokumentu | Widoczny czas; brak zależności od innych dokumentów |
+| 4. PDF obok danych | S03 na desktopie | Pokaz roli podmiotu i przynajmniej jednego pola wymagającego uwagi |
+| 5. Dowód | Strona, cytat, PDF/OCR; dla pola wyliczonego reguła i przesłanki | Wyraźne rozróżnienie dowodu od przybliżonej lokalizacji |
+| 6. JSON i pobranie | Ten sam zapisany wynik silnika, oryginalna nazwa bazowa | Jawny krok przejścia do JSON i sprawdzenia pobranego pliku |
+| 7. Obcy dokument | Uzasadnienie i pobrane `{}` | Nie kończyć na samym statusie „obcy” |
+| 8. Skan i dokument mieszany | Tekst OCR, źródło dowodu, ostrzeżenie jakości | Osobny wariant braku OCR; diagnoza bez OCR nie dowodzi obsługi skanów |
+| 9. Błąd techniczny | Jawna awaria, brak JSON, pozostałe wyniki zachowane, ponowienie | Kontrolowany scenariusz awarii; bez podsuwania cache |
+| 10. Dodanie klasy i pola | Zmiana konfiguracji → rozpoznanie → ekstrakcja → formularz → JSON | Ten pokaz dziś wypada poza MVP; należy go przyspieszyć |
+
+Dla kroku 10 **sam podgląd wygenerowanego formularza nie wystarczy jako dowód rozbudowy ekstrakcji**. Konsultacja `docs/07-decyzje/konsultacja-pipeline-2026-11-21/codex-odpowiedz.txt` zastrzega o eksperymencie YAML: „Nie sprawdził ekstrakcji, routera ani przypisywania ról”.
+
+**5. Ryzyka uruchomieniowe wynikające z GUI**
+
+| Obszar | Fakt i ocena ryzyka | Rekomendacja |
+|---|---|---|
+| **Tylko pip** | Mentor: „Wyłącznie pip”. UI §8.1 poprawnie przewiduje gotowy frontend bez Node. Ryzykiem są pominięte zasoby PDF, odwołania do CDN i niedziałające bezpośrednie adresy S03 po odświeżeniu. | Dopisać odbiór z czystej instalacji: zasoby lokalne, worker PDF, fonty, odświeżenie adresu dokumentu. |
+| **Bez GPU, 16 GB RAM** | ORG §6: „16GB RAM i Intel i7. Bez GPU”. Projekt nie ogranicza liczby jednocześnie renderowanych stron ani zadań OCR. | Kolejkowanie, ograniczona współbieżność, renderowanie widocznych stron; pomiar pamięci na docelowym laptopie. |
+| **Windows/Linux** | W przeczytanych źródłach nie znalazłem literalnego obowiązku obsługi obu systemów. To ryzyko przenośności, nie wykazana niezgodność. UI §4.7 uwzględnia kolizje wielkości liter, lecz brak procedury uruchomienia na obu systemach. | Dopisać wspólną komendę Python i próbę instalacji na Windows oraz Linux, bez zależności od bash. |
+| **Klucz API** | Discord 11:28: „potrzebujemy Waszych kluczy do oceny”. UI pozostawia kanał przekazania otwarty. | Konfiguracja po stronie backendu, klucz poza Git i frontendem; sprawdzenie gotowości oraz jasne błędy autoryzacji i limitów. |
+| **Internet** | Discord 12:47: „Mamy dostęp do Internetu, endpoint musi być publicznie dostępny”. Nie znalazłem osobnego wymogu, by model nie miał dostępu do Internetu. | Rozróżnić brak połączenia aplikacji z API od braku narzędzi internetowych modelu. Brak połączenia ma dawać błąd techniczny; frontend powinien działać bez CDN. |
+| **Dane osobowe w demo** | UI §1.1 ustanawia „wyłącznie dane syntetyczne”; to ograniczenie projektu demo. Brak kont nie zapewnia ochrony wgranego rzeczywistego dokumentu. | Dopisać przygotowane syntetyczne zestawy, przycisk zakończenia/wyczyszczenia sesji i konkretną retencję. Publiczny serwer wymaga opisanej izolacji. |
+| **Brak OCR** | ADR dopuszcza etap bez dostarczonego OCR; Mentor potwierdza skany w teście. Jest to dopuszczalny etap prac, lecz nie gotowość konkursowa do obsługi skanów. | Interfejs musi uczciwie pokazać niedostępność; przed pokazem spełnienia wymogu skanów potrzebny jest działający OCR. |
+
+**6. Poprawki według wpływu na zgodność i punkty**
+
+1. **[OBOWIĄZKOWE] Zamknąć politykę eksportu przy brakach.**  
+   UI §3.3.5 i §10 pkt 4 pozostawiają konflikt `null` z walidatorem. Dopisać jednoznaczne zachowanie zgodne z aktualnym kontraktem. Podstawa: Discord 12:47 — „JSON ściśle zgodny z formatem”; FAQ 2/4 — `null` tam, gdzie schemat dopuszcza.
+
+2. **[OBOWIĄZKOWE] Dodać odbiór uruchomienia u jury.**  
+   Czysta instalacja przez pip, dokładna komenda CLI i GUI, komplet lokalnych zasobów oraz instrukcja konfiguracji API. Podstawa: Mentor — „Wyłącznie pip”; FAQ 12a — CLI „razem z instrukcją”.
+
+3. **[OBOWIĄZKOWE] Uwarunkować komunikaty OCR i modelu faktyczną gotowością.**  
+   Brak OCR nie może wyświetlać „Skany […] są obsługiwane”. Niepotwierdzone API powinno mieć przyczynę blokady i instrukcję konfiguracji. Podstawa: ADR — „jawnie diagnozować strony wymagające OCR”; FAQ 2/4 — obsługa OCR.
+
+4. **[PUNKTY] Przenieść małą demonstrację konfiguracji przed E2.**  
+   Nowa klasa oraz nowe pole, rzeczywisty PDF i wynik bez zmian kodu. Można edytować YAML poza GUI i przeładować konfigurację; pełny edytor nie jest konieczny. Podstawa: ORG §7 — pula **1–20** za rozbudowę.
+
+5. **[PUNKTY] Dodać kartę modeli do P0, dostępną także z S03.**  
+   Wszystkie modele i role, największy model, parametry, licencja, dostawca i lokalizacja. Nie ograniczać się do stopki z nazwą. Podstawa: ORG §7 — **1–20** za moc modelu; Mentor — „największy model”.
+
+6. **[PUNKTY] Dopisać kompletny scenariusz demonstracji i jawnie włączyć pobranie dowodów do P0.**  
+   Oprócz podstawowej ścieżki: obcy PDF, skan, dokument mieszany i awaria. Podstawa: ORG §5 — „transparentność procesu ekstrakcji danych”; FAQ 12b — pełny przepływ GUI.
+
+7. **[PUNKTY] Uprościć zakres pokazu do funkcji wspierających ocenę danych.**  
+   Utrzymać E3 poza pokazem; nie rozbudowywać administracji kosztem konfiguracji klas, dowodów i stabilności. Podstawa: FAQ 4/4 — pełny system prowadzenia spraw „nie jest wymagany”.
+
+8. **[DROBNE] Usunąć niespójności oznaczeń MVP.**  
+   Przycisk „Zmień” przy klasie i akcje dodawania/usuwania elementów muszą być jednoznacznie oznaczone jako po MVP; lista sprawdzonych stron powinna mieć jeden zakres we wszystkich opisach.
+
+9. **[DROBNE] Doprecyzować prezentację i konfigurację.**  
+   Wskazać desktopowy rozmiar pokazu, rzeczywisty limit pliku zamiast przykładowych `50 MB`, rewizję kontraktu i dostępny z S03 skrót informacji technicznych. To poprawki czytelności i wiarygodności, bez osobno zadeklarowanej puli punktowej.

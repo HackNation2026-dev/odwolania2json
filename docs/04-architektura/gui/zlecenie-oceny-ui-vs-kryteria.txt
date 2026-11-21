@@ -1,0 +1,25 @@
+Jesteś niezależnym oceniającym (jak jury konkursu). Odpowiadasz po polsku. Tylko czytasz repozytorium w bieżącym katalogu (odwolania2json); niczego nie zmieniasz.
+
+Cel: sprawdzić, czy **planowane GUI** aplikacji Odwołania2JSON spełnia wymogi i maksymalizuje punkty według kryteriów oceny. Oceniasz projekt (specyfikację), nie działający kod.
+
+## Do przeczytania
+
+Projekt GUI (oceniany): `docs/04-architektura/gui/projekt-ui.md` (wersja 0.2.0, jeśli jest; sprawdź nagłówek) i ewentualnie `docs/04-architektura/gui/zmiany-ui-0.2.0.md`.
+
+Kryteria i wymogi — czytaj oryginały, nie tylko nasze streszczenia:
+- `docs/02-materialy/organizator-uzp/README.md` (najnowsza rewizja; uwzględnij `docs/02-materialy/organizator-uzp-aktualizacje/`), zwłaszcza: interfejs wykonawczy, kryteria oceny finału (1–20 moc modelu, 1–20 łatwość dodawania typów dokumentów i klas danych, 1–10 inne funkcje np. GUI), §5 transparentność („szczególnie premiowane”), wymagania zgłoszenia (prototyp umożliwiający wgranie dokumentów i odczytanie rezultatów).
+- `docs/01-zadanie/zrodla/FAQ-Odwolania2JSON-v1.0.md` (pkt 12b: wgranie PDF, uruchomienie analizy, podgląd JSON, widok obok siebie dokument i dane), `docs/01-zadanie/zrodla/UZP-Discord-doprecyzowania-2026-11-21.md`, `docs/01-zadanie/zrodla/odpowiedzi-mentora-2026-11-21.md`.
+- Nasze streszczenie punktacji: `docs/01-zadanie/punktacja.md`; wymagania: `docs/03-wymagania/README.md`.
+- Decyzje zespołu dotyczące GUI i systemu: `docs/07-decyzje/ADR-002-decyzje-po-recenzji.md` (z uzupełnieniami: GUI obowiązkowe, React/TS, biblioteka komponentów, MVP bez logowania, bez OpenUI, tylko pip na teście, każdy dokument niezależnie, braki jawnie, brak „happy path”).
+- Kontekst systemu: `docs/07-decyzje/konsultacja-pipeline-2026-11-21/codex-odpowiedz.txt`, `docs/05-weryfikacja/katalog-przypadkow-brzegowych.md`.
+
+## Odpowiedz
+
+1. Werdykt jednym zdaniem: czy planowane GUI spełnia wymogi (tak / tak z brakami / nie).
+2. **Macierz zgodności**: wiersz na każdy wymóg lub kryterium (organizator: README, FAQ, Discord, mentor; zespół: ADR-002). Kolumny: wymóg (cytat i plik) | gdzie w projekcie (sekcja, strona, ramka) | ocena: spełnia / częściowo / nie / nie dotyczy GUI | dowód | luka | poprawka. Osobno oznacz wymogi obowiązkowe (zgłoszenie, uruchomienie u jury) i punktowane.
+3. **Punktacja finału**: jak planowane GUI wpływa na każdą składową (F1 — pośrednio; moc modelu — czy GUI pokazuje rozmiar i dostawcę; łatwość dodawania klas — czy GUI to demonstruje przekonująco; inne funkcje — co jury zobaczy; transparentność). Co dodać lub uprościć, by zyskać najwięcej punktów najmniejszym kosztem.
+4. **MVP na pokaz jury**: czy zakres MVP wystarcza do zgłoszenia i pokazu; czego brakuje w scenariuszu demonstracji krok po kroku (wgranie → analiza → PDF obok danych → dowód → JSON → pobranie; obcy dokument; skan; błąd techniczny; dodanie klasy).
+5. **Ryzyka uruchomieniowe** wynikające z GUI: tylko pip (frontend jako gotowe pliki), brak GPU, Windows/Linux, klucz API, brak Internetu po stronie modelu, dane osobowe w trybie demo.
+6. **Lista poprawek** posortowana według wpływu na punkty i zgodność: [OBOWIĄZKOWE | PUNKTY | DROBNE], co zmienić w projekcie.
+
+Każde twierdzenie o wymaganiach poprzyj ścieżką pliku i cytatem. Oddziel fakty od rekomendacji.
