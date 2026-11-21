@@ -1,5 +1,5 @@
 ---
-wersja: 0.1.0
+wersja: 0.2.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
@@ -24,3 +24,7 @@ GUI, jeśli jest gotowe: dokument i JSON obok siebie. Nie zastępuje CLI.
 Wymagane: tytuł i link GitHub do działającego prototypu. Dodatkowo dokumentacja, opis LLM i wyniki testów. Regulamin przy wypłacie wymienia też kod, instrukcję, Docker Compose i opis konfiguracji klas. Klucz API dla jury przekazać osobno.
 
 Limit 3 minut powyżej jest propozycją zespołu, nie potwierdzonym obowiązkowym limitem filmu UZP. Dostęp jury do prywatnego repo wymaga uzgodnienia kont.
+
+## Warunki demonstracji po wyjaśnieniach
+
+Pokaż zgodność ścisłego JSON, publiczny endpoint i pusty wynik dla obcego dokumentu pod jego nazwą. Własne F1 opisz metodą; nie deklaruj zgodności z nieudostępnionym ewaluatorem. Brak limitu czasu w teście nie jest wymogiem długości prezentacji.

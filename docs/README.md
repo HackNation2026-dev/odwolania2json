@@ -1,12 +1,12 @@
 ---
-wersja: 0.1.0
+wersja: 0.2.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
 
 # Dokumentacja
 
-Wersja: 0.1.0. Organizacja docelowa: `HackNation2026ORG`.
+Wersja: 0.2.0. Organizacja docelowa: `HackNation2026-dev`.
 
 | Obszar | Zawartość |
 |---|---|
@@ -20,3 +20,7 @@ Wersja: 0.1.0. Organizacja docelowa: `HackNation2026ORG`.
 | [07 — Decyzje](07-decyzje/README.md) | decyzje, konflikty i pytania do mentorów |
 
 Nazwy plików źródłowych zachowano. Większe zestawy znajdziesz przez rejestr materiałów, nie przez ręczne przeglądanie całego repo.
+
+Bieżące doprecyzowania UZP: [źródło Discord](01-zadanie/zrodla/UZP-Discord-doprecyzowania-2026-11-21.md) i [zasady F1](05-weryfikacja/zasady-f1.md).
+
+[Kompletność pakietu materiałów](02-materialy/kompletnosc.md).

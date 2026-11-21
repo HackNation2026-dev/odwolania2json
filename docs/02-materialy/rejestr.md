@@ -1,5 +1,5 @@
 ---
-wersja: 0.1.0
+wersja: 0.2.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
@@ -396,3 +396,5 @@ Każdy odnośnik prowadzi do zachowanego oryginału. Pochodzenie i rewizję opis
 - [docs/02-materialy/organizator-uzp/szablon-aplikacja/input/case1/negatywny przyklad.pdf](<organizator-uzp/szablon-aplikacja/input/case1/negatywny przyklad.pdf>)
 - [docs/02-materialy/organizator-uzp/szablon-aplikacja/input/case1/przyklad odwolanie.pdf](<organizator-uzp/szablon-aplikacja/input/case1/przyklad odwolanie.pdf>)
 - [docs/02-materialy/organizator-uzp/szablon-aplikacja/output/case1/przyklad odwolanie.json](<organizator-uzp/szablon-aplikacja/output/case1/przyklad odwolanie.json>)
+
+- [UZP — doprecyzowania Discord](../01-zadanie/zrodla/UZP-Discord-doprecyzowania-2026-11-21.md)

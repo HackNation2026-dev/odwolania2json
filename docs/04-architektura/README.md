@@ -1,5 +1,5 @@
 ---
-wersja: 0.1.1
+wersja: 0.2.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
@@ -30,3 +30,7 @@ Klucz dla jury: osobny plik lokalny lub zmienna środowiska, poza Git. Awaria AP
 Zobacz [ADR-001](../07-decyzje/ADR-001-stos.md).
 
 Zobacz [pełną aplikację i wybór interfejsu](pelna-aplikacja.md).
+
+## Doprecyzowanie wykonania
+
+Według Discorda 12:47 jury nie instaluje modelu na laptopie. Aplikacja/CLI działa lokalnie, a LLM przez publicznie dostępny endpoint. Model może być na własnym serwerze albo przez darmowe lub płatne API, z zachowaniem wymagań licencji i regionu. [Źródło](../01-zadanie/zrodla/UZP-Discord-doprecyzowania-2026-11-21.md).

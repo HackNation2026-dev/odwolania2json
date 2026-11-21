@@ -1,5 +1,5 @@
 ---
-wersja: 0.1.1
+wersja: 0.2.0
 aktualizacja: 2026-11-21
 status: propozycja autora; konsultacja Fable niewykonana
 ---
@@ -40,3 +40,7 @@ Konsultacja nie została uruchomiona: bieżący wątek poboczny nie pozwala na d
 - Wymagania: [dokumentacja zadania](../03-wymagania/README.md) i oryginały organizatora.
 - React: https://react.dev/learn — komponenty i obsługa interfejsu.
 - egui: https://github.com/emilk/egui — web/native, eframe i dostępność; odczyt 2026-11-21.
+
+## Warunki z komunikatów UZP
+
+Silnik i CLI: Python 3.13+. Dopuszczalność pomocniczego Rusta nadal wymaga potwierdzenia. Jury nie instaluje modelu lokalnie; endpoint musi być publiczny. Otwarte modele przez płatne API są dozwolone, ale klucz trzeba przekazać do oceny. Zasady regionu pozostają z FAQ/README.

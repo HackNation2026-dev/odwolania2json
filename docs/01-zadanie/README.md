@@ -1,5 +1,5 @@
 ---
-wersja: 0.1.0
+wersja: 0.2.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
@@ -18,3 +18,5 @@ Nie budujemy pełnego systemu prowadzenia spraw KIO.
 - [Punktacja](punktacja.md).
 
 FAQ i README doprecyzowują starszy PDF. Ich status i konflikty opisuje [rejestr rozbieżności](../07-decyzje/rozbieznosci.md).
+
+Nowsze uzupełnienie: [komunikaty Discord](zrodla/UZP-Discord-doprecyzowania-2026-11-21.md). FAQ v1.0 jest zachowane, a korygowane punkty zestawiono w rejestrze rozbieżności.

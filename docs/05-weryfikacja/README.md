@@ -1,5 +1,5 @@
 ---
-wersja: 0.1.0
+wersja: 0.2.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
@@ -21,3 +21,7 @@ Własne wyniki F1 opisuj z dokładną metodą normalizacji i zliczania. Nie nazy
 FAQ dopuszcza wgląd w materiały testowe na stoisku. Oznacz każdy obejrzany przypadek jako znany; nie używaj go do niezależnej oceny uogólniania.
 
 Kontrola dokumentacji: `python3 scripts/verify_docs.py`. Jej wynik nie potwierdza jakości ekstrakcji.
+
+## Uzupełnienie organizatora
+
+[Zasady F1](zasady-f1.md) zapisują próg 80%, pola długiego tekstu i dopasowanie list po treści. Dane referencyjne to JSON-y 60 spraw; ground_truth.yaml usunięto. Testy są syntetyczne. Brak skanów w przykładach nie rozstrzyga ukrytego testu. Testuj publiczny endpoint z innej sieci; nie zakładaj lokalnej instalacji modelu u jury.

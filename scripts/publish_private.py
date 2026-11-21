@@ -21,7 +21,10 @@ try:
  elif origin.stdout.strip()!=target:fail('Przerwano: istniejący origin wskazuje inne miejsce.')
  remote=run(['git','ls-remote','origin','refs/heads/main'])
  local=run(['git','rev-parse','HEAD']).stdout.strip()
- if remote.stdout.strip() and remote.stdout.split()[0]!=local:fail('Repo ma już inną gałąź main. Nie nadpisano zdalnej historii.')
+ if remote.stdout.strip() and remote.stdout.split()[0]!=local:
+  run(['git','fetch','origin','main'])
+  ancestor=run(['git','merge-base','--is-ancestor','FETCH_HEAD','HEAD'],False)
+  if ancestor.returncode:fail('Przerwano: zdalny main nie jest przodkiem lokalnego HEAD. Nie nadpisano historii.')
  run(['python3','scripts/verify_docs.py'])
  run(['git','push','-u','origin','main'])
  run(['git','push','origin','v'+(root/'VERSION').read_text().strip()])

@@ -1,5 +1,5 @@
 ---
-wersja: 0.1.0
+wersja: 0.2.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
@@ -25,3 +25,7 @@ README i wzorce mogą zmieniać się na main. Kopia w tym repo jest zamrożona n
 ## Granice audytu
 
 Kompletność i identyczność bajtów nie oznaczają audytu merytorycznego wszystkich przykładów. Nie uruchomiono ekstrakcji ani oficjalnego ewaluatora. Model i dostawca API nie zostali jeszcze wybrani.
+
+## Dodatkowe uwagi organizatorów
+
+[Komunikaty Discord](../01-zadanie/zrodla/UZP-Discord-doprecyzowania-2026-11-21.md) przekazał użytkownik. FAQ v1.0 pozostaje osobnym źródłem. Wskazanego załącznika ODWOLANIA2JSON_HackNation2026.pdf nie znaleziono lokalnie; posiadamy jego opis w wiadomości, nie sam plik. ground_truth.yaml usunięto u organizatora i nie jest brakującym materiałem.

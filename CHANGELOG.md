@@ -1,5 +1,16 @@
 # Historia zmian
 
+## 0.2.0 — 2026-11-21
+
+- Dodano źródło Discord z godzinami i autorami przekazanymi przez użytkownika.
+- Uwzględniono 60 spraw, usunięcie ground_truth.yaml i syntetyczny zbiór testowy.
+- Doprecyzowano darmowe/płatne/własne API, publiczny endpoint i brak instalacji modelu u jury.
+- Dodano zasady F1: 80% dla wskazanych tekstów i listy dopasowywane po treści.
+- Korekta 13:27: obcy dokument daje pusty JSON pod oryginalną nazwą.
+- Zachowano nierozstrzygnięte szczegóły ewaluacji i oryginalne FAQ v1.0.
+- Dodano wykaz kompletności i zlecenie Fable ze statusem niewykonane.
+- Publikacja dopuszcza bezpieczne aktualizacje fast-forward.
+
 ## 0.1.1 — 2026-11-21
 
 - Zmieniono organizację docelową na `HackNation2026-dev` zgodnie z poleceniem użytkownika.
