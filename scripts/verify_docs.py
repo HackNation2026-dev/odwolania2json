@@ -93,6 +93,7 @@ for p in root.rglob("*.md"):
     if (
         ".git" in rel.parts
         or ".ci" in rel.parts
+        or ".superpowers" in rel.parts
         or ".venv" in rel.parts
         or "zrodla" in rel.parts
         or any(s.startswith("organizator") for s in rel.parts)

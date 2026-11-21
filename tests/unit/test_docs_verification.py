@@ -15,3 +15,15 @@ def test_docs_ignore_temporary_ci_copies():
             [sys.executable, "scripts/verify_docs.py"], cwd=root, capture_output=True, text=True
         )
     assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_docs_ignore_sdd_workspace():
+    """Scratch SDD (.superpowers) to notatnik sterujący, nie dokumentacja repozytorium."""
+    root = Path(__file__).resolve().parents[2]
+    (root / ".superpowers").mkdir(exist_ok=True)
+    with tempfile.TemporaryDirectory(dir=root / ".superpowers") as directory:
+        (Path(directory) / "broken.md").write_text("[broken](missing.md)\n")
+        result = subprocess.run(
+            [sys.executable, "scripts/verify_docs.py"], cwd=root, capture_output=True, text=True
+        )
+    assert result.returncode == 0, result.stdout + result.stderr
