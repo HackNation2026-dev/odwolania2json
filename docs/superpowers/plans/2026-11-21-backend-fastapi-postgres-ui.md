@@ -28,7 +28,7 @@ status: plan implementacji
 - Nazwa pliku wyniku = nazwa bazowa PDF + `.json`; podfoldery `input/` odtwarzane w `output/`.
 - Klasyfikacja po treści dokumentu, nigdy po nazwie pliku.
 - Brak danych → `null`, nigdy wartość zmyślona; brak warstwy tekstowej → błąd techniczny, nie `{}`.
-- Dokumentacja, komunikaty CLI i nazwy testów po polsku; **identyfikatory w kodzie po angielsku** (wyjątek: `APPEAL_REASONS` jako stała słownika powodów).
+- Dokumentacja, komunikaty CLI i opisy w testach po polsku; **identyfikatory w kodzie po angielsku, w tym nazwy testów** (wyjątek: `APPEAL_REASONS` jako stała słownika powodów).
 - Zmiana stosu wymaga ADR w `docs/07-decyzje/` z konsekwencjami.
 
 ## Review Focus
