@@ -34,6 +34,7 @@ STAGES = ("docs", "lint", "types", "api", "test", "mutation", "audit")
 # Budżety czasu w sekundach: informacyjne, przekroczenie jest raportowane, nie blokuje.
 BUDGETS = {"commit": 10.0, "push": 120.0}
 PUSH_BASE = "main"
+REMOTE_PUSH_BASE = "origin/main"
 ENGINE_VERSION = "3"
 CACHE_PATH = ".ci/mutation-cache.json"
 SCOPE_ROOTS = ("apps", "packages")
@@ -115,6 +116,18 @@ def git_names(root: Path, *args: str) -> set[str]:
 def changed_paths(root: Path) -> set[str]:
     """Nazwy po rename pochodzą wyłącznie z indeksu Git, także ze spacjami."""
     return git_names(root, "diff", "--cached", "--name-only", "--diff-filter=ACMR")
+
+
+def push_base(root: Path) -> str:
+    """Baza porównania przy push: zdalny main, bo lokalny main bywa nieaktualny."""
+    result = subprocess.run(
+        ["git", "rev-parse", "--verify", "--quiet", f"{REMOTE_PUSH_BASE}^{{commit}}"],
+        cwd=root,
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    return REMOTE_PUSH_BASE if result.returncode == 0 else PUSH_BASE
 
 
 def since_paths(root: Path, ref: str) -> set[str] | None:
@@ -864,7 +877,7 @@ def build_plan(args: argparse.Namespace, root: Path) -> dict[str, Options]:
     if args.profile == "commit":
         return commit_plan(changed_paths(root))
     if args.profile == "push":
-        shared = Options(jobs=jobs, since=PUSH_BASE, max_survivors=10)
+        shared = Options(jobs=jobs, since=push_base(root), max_survivors=10)
         return dict.fromkeys(STAGES[:6], shared)
     selected = STAGES[:4] if args.fast else STAGES if args.stage == "all" else (args.stage,)
     options = Options(
