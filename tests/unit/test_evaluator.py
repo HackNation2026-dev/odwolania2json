@@ -32,15 +32,24 @@ def _outcomes(
     return sorted((o.path, o.verdict) for o in outcomes)
 
 
-def test_identical_documents_all_tn() -> None:
+def test_identical_documents_all_tp() -> None:
     dokument = {"przelew_bankowy": {"kwota": 200.0, "na_rachunek": "PL01"}}
 
     outcomes = compare_document(dokument, dokument)
 
     assert _outcomes(outcomes) == [
-        ("przelew_bankowy.kwota", "tn"),
-        ("przelew_bankowy.na_rachunek", "tn"),
+        ("przelew_bankowy.kwota", "tp"),
+        ("przelew_bankowy.na_rachunek", "tp"),
     ]
+
+
+def test_matching_present_value_is_tp_and_both_absent_is_tn() -> None:
+    predicted: dict[str, object] = {"kwota": 200.0, "tytul": None}
+    reference: dict[str, object] = {"kwota": 200.0, "tytul": None}
+
+    outcomes = compare_document(predicted, reference)
+
+    assert _outcomes(outcomes) == [("kwota", "tp"), ("tytul", "tn")]
 
 
 def test_wrong_value_is_fp_and_fn_not_tn() -> None:
@@ -91,7 +100,7 @@ def test_lists_matched_by_content() -> None:
     assert _outcomes(outcomes) == [
         ("osoby", "fn"),
         ("osoby", "fp"),
-        ("osoby", "tn"),
+        ("osoby", "tp"),
     ]
 
 
@@ -147,7 +156,8 @@ def test_summarize_report_shape() -> None:
     report = summarize(metrics)
 
     assert set(report) == {"totals", "per_class", "per_document", "classification"}
-    assert report["totals"]["tn"] == 1
+    assert report["totals"]["tp"] == 1
+    assert report["totals"]["tn"] == 0
     assert report["classification"]["tp"] == 1
     assert report["classification"]["fp"] == 1
     assert report["classification"]["fn"] == 1
