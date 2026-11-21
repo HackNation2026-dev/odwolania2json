@@ -3,9 +3,8 @@
 import runpy
 import sys
 
-import pytest
-
 import odwolania2json_contracts
+import pytest
 from odwolania2json.__main__ import main
 
 

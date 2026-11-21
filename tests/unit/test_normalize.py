@@ -82,6 +82,7 @@ def test_find_value_uses_label_window():
 
 # --- tekst ---
 
+
 def test_fold_removes_diacritics_and_lowercases():
     assert fold("P E Ł N O M O C N I C T W O") == "p e l n o m o c n i c t w o"
 
@@ -103,6 +104,7 @@ def test_strip_quotes_removes_straight_quotes():
 
 
 # --- identyfikatory ---
+
 
 def test_normalize_nip_takes_first_ten_digits_from_line():
     """W PDF identyfikatory występują w jednym wierszu, po etykiecie."""
@@ -139,6 +141,7 @@ def test_normalize_account_rejects_wrong_length():
 
 
 # --- sumy kontrolne: tylko sygnał rankingowy ---
+
 
 def test_checksum_valid_nip_distinguishes_valid_and_invalid():
     # Oba NIP-y pochodzą z materiałów organizatora.
@@ -180,6 +183,7 @@ def test_checksum_valid_is_false_for_unknown_kind():
 
 # --- daty ---
 
+
 def test_normalize_date_accepts_iso_text():
     assert normalize_date("2026-03-21") == "2026-03-21"
 
@@ -212,6 +216,7 @@ def test_normalize_date_returns_none_without_date():
 
 # --- kwoty ---
 
+
 def test_normalize_amount_accepts_pln():
     assert normalize_amount("200,00 PLN") == 200.0
 
@@ -225,6 +230,7 @@ def test_normalize_amount_returns_none_without_number():
 
 
 # --- numery referencyjne ---
+
 
 def test_normalize_ted_accepts_reference_format():
     assert normalize_ted("numer ogłoszenia TED: 999137-2026") == "999137-2026"
@@ -246,7 +252,9 @@ def test_normalize_ted_takes_first_number_in_text():
 
 
 def test_find_postepowanie_number_reads_dotted_format():
-    assert find_postepowanie_number("nr referencyjny sprawy: ZS.791.2026, ogłoszenie") == "ZS.791.2026"
+    assert (
+        find_postepowanie_number("nr referencyjny sprawy: ZS.791.2026, ogłoszenie") == "ZS.791.2026"
+    )
 
 
 def test_find_postepowanie_number_reads_slashed_format():
@@ -263,10 +271,11 @@ def test_find_postepowanie_number_ignores_legal_quotes():
 
 # --- wyszukiwanie po etykiecie ---
 
+
 def test_find_value_takes_value_on_next_line():
-    assert find_value("Rachunek obciążany\nPL05470680287581539721455024", ["Rachunek obciążany"]) == (
-        "PL05470680287581539721455024"
-    )
+    assert find_value(
+        "Rachunek obciążany\nPL05470680287581539721455024", ["Rachunek obciążany"]
+    ) == ("PL05470680287581539721455024")
 
 
 def test_find_value_skips_leading_dots():

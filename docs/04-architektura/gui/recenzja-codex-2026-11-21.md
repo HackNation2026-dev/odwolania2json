@@ -6,7 +6,7 @@ status: surowa recenzja Codex (codex exec, tylko odczyt) projektu projekt-ui.md 
 
 **Akceptuję z poprawkami — projekt spełnia główny kierunek wymagań, ale przed budową makiet trzeba rozstrzygnąć ochronę danych, zapisywanie korekt, zakres MVP i brakujące stany.**
 
-Odwołania do sekcji i linii poniżej dotyczą [projekt-ui.md](/home/user/Muzyka/HackNation%202026%20-%20Zadania%20dla%20Uczestników/odwolania2json/docs/04-architektura/gui/projekt-ui.md). To ocena specyfikacji, nie działającego interfejsu. Nie zmieniałem plików.
+Odwołania do sekcji i linii poniżej dotyczą [projekt-ui.md](projekt-ui.md). To ocena specyfikacji, nie działającego interfejsu. Nie zmieniałem plików.
 
 1. **[KRYTYCZNE] Ochronę danych można ominąć innymi widokami.**  
    **Miejsce:** §3.3.9–13, l. 457–485; §6.5, l. 775.  

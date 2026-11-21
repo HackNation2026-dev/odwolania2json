@@ -6,7 +6,6 @@ import re
 from pathlib import Path
 
 import yaml
-
 from odwolania2json_contracts import APPEAL_REASONS
 from odwolania2json_contracts.powody import APPEAL_REASONS as POWODY_REASONS
 
@@ -36,7 +35,7 @@ def _organizer_reasons() -> dict[int, str]:
 
 
 def test_powody_match_organizer_dictionary():
-    assert APPEAL_REASONS == _organizer_reasons()
+    assert _organizer_reasons() == APPEAL_REASONS
 
 
 def test_powod_ids_are_1_to_12():

@@ -1,6 +1,7 @@
 """Słownik przyczyn odwołania organizatora UZP.
 
-Źródło: ``docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/oczekiwane-json/czynnosc_powod_id_dict.md``
+Identyfikatory i opisy pochodzą z kontraktu organizatora.
+Słownik jest wspólny dla walidacji i prezentacji wyniku.
 (rewizja ``main-7590db8``). Zmiana pliku organizatora musi odzwierciedlać się
 w teście ``tests/contract/test_powody.py``.
 """
