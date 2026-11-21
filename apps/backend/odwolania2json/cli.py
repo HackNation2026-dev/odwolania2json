@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import contextlib
 import sys
+from pathlib import Path
 
 from .config import Settings
 
@@ -35,6 +36,16 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="adres bazy; domyślnie ze zmiennej DATABASE_URL",
     )
+    process_parser = subparsers.add_parser(
+        "process",
+        help="przetwarza PDF-y z katalogu wejściowego do JSON w katalogu wyjściowym",
+        description=(
+            "Odtwarza strukturę katalogów wejścia; "
+            "kody wyjścia: 0 OK, 1 błąd dokumentu, 2 błąd użycia."
+        ),
+    )
+    process_parser.add_argument("input_dir", help="katalog z PDF-ami (przeszukiwany rekurencyjnie)")
+    process_parser.add_argument("output_dir", help="katalog na wyniki JSON")
     return parser
 
 
@@ -61,6 +72,13 @@ def _run_migrate(arguments: argparse.Namespace) -> int:
     return 0
 
 
+def _run_process(arguments: argparse.Namespace) -> int:
+    """Wykonuje polecenie ``process`` — PDF-y wejściowe na wyniki JSON (atrapa silnika)."""
+    from .engine import StubEngine, run_process
+
+    return run_process(Path(arguments.input_dir), Path(arguments.output_dir), StubEngine())
+
+
 def main(argv: list[str] | None = None) -> int:
     """Uruchamia CLI i zwraca kod wyjścia procesu."""
     arguments = list(sys.argv[1:] if argv is None else argv)
@@ -71,6 +89,8 @@ def main(argv: list[str] | None = None) -> int:
     parsed = parser.parse_args(arguments)
     if parsed.command == "migrate":
         return _run_migrate(parsed)
+    if parsed.command == "process":
+        return _run_process(parsed)
     parser.print_help()
     return 0
 
