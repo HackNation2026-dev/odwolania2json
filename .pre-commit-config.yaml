@@ -1,0 +1,40 @@
+minimum_pre_commit_version: '4.5.0'
+default_install_hook_types: [pre-commit, pre-push]
+# Materiały organizatora są niezmienne, także dla hooków naprawiających pliki.
+exclude: ^docs/02-materialy/
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-added-large-files
+      - id: detect-private-key
+  - repo: local
+    hooks:
+      # Poziom 1 (budżet ~10 s): tylko zmienione pliki; etapy bez zmian są jawnie pomijane.
+      # Python wybiera ci.py: CI_PYTHON, potem .venv projektu, potem python3 z PATH.
+      - id: ci-commit
+        name: "Szybka bramka commita (docs, ruff, mypy, testy zmian, mutacje staged)"
+        entry: python3 scripts/ci.py --profile commit
+        language: system
+        pass_filenames: false
+        always_run: true
+        require_serial: true
+        verbose: true
+        stages: [pre-commit]
+      # Poziom 2 (budżet ~2 min): pełne testy z pokryciem, API, mutacje od merge-base z main.
+      # Pełne mutacje: python3 scripts/ci.py --stage mutation (ręcznie lub z crona).
+      - id: ci-push
+        name: "Bramka push (pełne testy, API, mutacje przyrostowe)"
+        entry: python3 scripts/ci.py --profile push
+        language: system
+        pass_filenames: false
+        always_run: true
+        require_serial: true
+        verbose: true
+        stages: [pre-push]

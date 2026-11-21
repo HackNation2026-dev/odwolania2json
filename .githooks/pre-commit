@@ -1,5 +1,0 @@
-#!/bin/sh
-# Uruchamiaj z katalogu repozytorium także przy git -C.
-set -eu
-cd "$(git rev-parse --show-toplevel)"
-exec "${PYTHON:-python3}" scripts/ci.py --fast
