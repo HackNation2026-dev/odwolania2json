@@ -6,9 +6,15 @@ from pathlib import Path
 
 import pytest
 from odwolania2json.dataset import DATA_SPLIT, load_split
+from odwolania2json.loader import MATERIALS_DIR
 
-PODZIAL_SHA256 = "551adfe41f9bdeac960e00f6179df6f5ba836fcdfba43d87cfecff833352dc1a"
+PODZIAL_SHA256 = "3cf406a84c22424e1555e5a6192cd18f3247a9da6c2fd4d20a8dcc12f0122e2e"
 WSZYSTKIE_SPRAWY = frozenset(f"przyklad_{numer:02d}" for numer in range(1, 61))
+DANE = MATERIALS_DIR / "dane"
+
+
+def _sha256(sciezka: Path) -> str:
+    return hashlib.sha256(sciezka.read_bytes()).hexdigest()
 
 
 def _zapisz_podzial(sciezka: Path, rozwojowy: list[str], kontrolny: list[str]) -> Path:
@@ -30,6 +36,19 @@ def test_split_is_disjoint() -> None:
     split = load_split()
 
     assert split.rozwojowy.isdisjoint(split.kontrolny)
+
+
+def test_control_side_holds_no_duplicate_of_negative_pdf() -> None:
+    negatywy = {_sha256(pdf) for pdf in (DANE / "negatywne").rglob("*.pdf")}
+
+    duplikaty = [
+        f"{sprawa}/{pdf.name}"
+        for sprawa in sorted(load_split().kontrolny)
+        for pdf in (DANE / sprawa).rglob("*.pdf")
+        if _sha256(pdf) in negatywy
+    ]
+
+    assert duplikaty == []
 
 
 def test_split_file_frozen() -> None:

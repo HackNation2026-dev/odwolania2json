@@ -1,5 +1,5 @@
 {
-  "metoda": "co-piata-sprawa; brak potwierdzonych rodzin duplikatow; negatywy: rozwojowy; szablony PDF: rozwojowy",
+  "metoda": "co-piata-sprawa z wyjatkiem: sprawy z PDF-em blizniakiem z dane/negatywne przeniesione do rozwojowego (rodzina duplikatow cala po stronie rozwojowej); negatywy i dystraktory w katalogach spraw nie sa ocenianymi dokumentami sprawy",
   "rozwojowy": [
     "przyklad_01",
     "przyklad_02",
@@ -9,6 +9,7 @@
     "przyklad_07",
     "przyklad_08",
     "przyklad_09",
+    "przyklad_10",
     "przyklad_11",
     "przyklad_12",
     "przyklad_13",
@@ -52,7 +53,6 @@
   ],
   "kontrolny": [
     "przyklad_05",
-    "przyklad_10",
     "przyklad_15",
     "przyklad_20",
     "przyklad_25",
