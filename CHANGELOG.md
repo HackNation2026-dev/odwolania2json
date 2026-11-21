@@ -11,6 +11,8 @@
 
 ## 0.6.1 — 2026-11-21
 
+- Dodano lokalne CI/CD: runner etapów, hooki Git, kontrole mutacji, budowanie pakietów pip z SHA-256 i opcjonalnym lokalnym tagiem; konfigurację i konsekwencje opisuje ADR-003. Bez push i publikacji.
+
 - Trwałość zamknięta: SQLite w wersji demo, PostgreSQL przy skalowanym wdrożeniu (ADR-002, architektura §10).
 
 - MiniMax hostowany w Europie potwierdzony przez użytkownika; punkt 8 zamknięty (ADR-002, architektura §10).

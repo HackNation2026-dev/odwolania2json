@@ -10,7 +10,7 @@ Klucze i tokeny przechowuj poza Git. Potwierdzenie API/modelu obejmuje licencję
 
 ## Standardy kodu
 
-Stan narzędzi ustal w repozytorium: dziś działa tylko `.github/workflows/docs.yml` (`verify_docs.py`). Brakujące narzędzia poniżej to wymagania do wdrożenia; ich wybór i wersje zapisz w ADR (zmiana stosu).
+Stan narzędzi ustal w repozytorium i raporcie lokalnego `scripts/ci.py`; konfiguracja nie dowodzi zielonych kontroli. Wybór i wersje narzędzi opisuje [ADR-003](docs/07-decyzje/ADR-003-lokalne-ci-cd.md).
 
 ### Typowanie w Pythonie
 
@@ -36,11 +36,11 @@ Stan narzędzi ustal w repozytorium: dziś działa tylko `.github/workflows/docs
 
 ### CI/CD
 
-- CI (GitHub Actions, Python 3.13) uruchamia na każdy push i PR: `docs` (`verify_docs.py`), `lint` (ruff), `types` (mypy), `api` (`validate_api.py --stage all`), `test` (pytest), `mutation` (mutanty dla normalizatorów i regex; może działać na zmienionych plikach lub nocą).
-- Joby mają przypięte wersje akcji i narzędzi, minimalne `permissions` i cache zależności.
-- Merge do `main` tylko przez PR z zielonym CI. Brak bezpośrednich pushy i `--force` na `main`.
-- CD: dostarczenie u jury to wyłącznie pakiet instalowany przez pip; Docker tylko deweloperski (ADR-002). Wydanie = tag zgodny z `VERSION` + wpis w `CHANGELOG.md` + budowa pakietu w CI. Automatycznego wdrożenia nie ma, dopóki nie zapadnie decyzja o serwerze.
-- Hook pre-commit (`.githooks/`, `git config core.hooksPath .githooks`) uruchamia szybkie kontrole: docs, ruff, mypy, walidacja spec.
+- CI działa lokalnie na Pythonie 3.13: `python scripts/ci.py --stage all` uruchamia docs, lint, types, api, test (bez eval) i mutation. Przed każdym push i merge wymagany jest zielony wynik wszystkich etapów.
+- Narzędzia mają przypięte wersje w `requirements-dev.txt`. Brak narzędzia lub niepełny raport mutacji oznacza FAIL.
+- Hook pre-commit uruchamia `ci.py --fast` (docs, lint, types, api spec), pre-push pełne `ci.py --stage all` z mutacjami. Instalacja: `sh scripts/install_hooks.sh`. Hooki można ominąć, więc odpowiedzialność za pełny przebieg pozostaje po stronie dewelopera. Bez `--force` na `main`.
+- CD działa lokalnie: `python scripts/release.py` sprawdza czysty Git, VERSION, CHANGELOG, pełne CI i buduje pakiety pip do `dist/` z sumami SHA-256. `--tag` tworzy lokalny tag `v<VERSION>` po udanej budowie. Push i publikacja pozostają ręczne.
+- Dostarczenie u jury wyłącznie przez pip; Docker tylko deweloperski (ADR-002). Automatycznego wdrożenia nie ma. Instrukcja: [lokalne CI/CD](docs/00-organizacja/lokalne-ci-cd.md).
 
 ### Dobre praktyki
 
