@@ -72,3 +72,34 @@ Każdy ma: hipotezę, dane, miarę, kryterium decyzji i artefakt (JSON z surowym
 ## Wynik końcowy
 
 Raport zbiorczy `experiments/2026-11-21-wybor-modulow/RAPORT.md`: tabela decyzji (moduł → wybór → dowód → ryzyko), wyniki E01–E16 z liczbami, budżet zasobów na i7/16 GB, lista otwartych problemów i propozycja ADR. Wyniki surowe i skrypty w katalogu eksperymentu; powtarzalne jednym poleceniem.
+
+## Korekta 0.2 po recenzjach (Fable i Codex, 2026-11-22)
+
+Recenzje: `experiments/2026-11-21-wybor-modulow/recenzje/fable.md` i `codex.md`. Poniższe zapisy mają pierwszeństwo nad tabelami wyżej.
+
+**P0 — warunki przed jakimkolwiek rankingiem**
+
+1. **E00: ewaluator.** Zgodna wartość to TP (naprawione, PR #8). Do zrobienia: błędna wartość obecna po obu stronach to wyłącznie FP (architektura §11), próg 80% dla pięciu pól tekstowych z `zasady-f1.md` (kilka wariantów podobieństwa, raportowany rozrzut), listy dopasowane element do elementu z oceną pól wewnątrz elementu. Test: referencja kontra referencja daje F1 = 1,0.
+2. **Zakaz przecieku.** Warianty pochodzące ze spraw kontrolnych (m.in. `przyklad_40`) nie służą do strojenia; wariant dziedziczy podział rodzica; manifest pochodzenia i test blokujący. Kontrolny zbiór: jeden wcześniej zapisany wybór, jeden przebieg; licznik użyć w repozytorium.
+3. **Skany z referencją pól.** Rasteryzacja 49 spraw rozwojowych (147 dokumentów) w profilach dopasowanych do skanów organizatora (rozdzielczość, kompresja, szum, kąt, zagięcia) oraz dokumenty mieszane, S2 (dane tylko w obrazie na stronie tekstowej) i S5 (poprawny obraz z błędną niewidoczną warstwą). Referencja pól dziedziczona z oryginału. Fizyczne skany około 10 spraw są walidacją generatora i pozostają do wykonania ręcznie; plan tego nie udaje.
+4. **Miara decyzyjna to F1 pól end-to-end, osobno dla tekstu, skanu i mieszanych**, z przedziałem z bootstrapu po sprawach i porównaniem sparowanym. CER/WER i pokrycie słów są tylko diagnostyczne. Progi zapisujemy przed pomiarem albo zastępujemy regułą porównawczą (wariant zastępuje drugi, gdy dolna granica przedziału różnicy F1 jest dodatnia).
+
+**Nowe i zmienione eksperymenty**
+
+| Nr | Zmiana |
+|---|---|
+| E00 | patrz wyżej |
+| E01, E05 | zamiast „pokrycia słów” i „IoU z wzorcem”: odnajdywalność wartości referencyjnych w tekście odczytu po normalizacji, test obiegowy bbox (wytnij bbox, porównaj z cytatem), narożniki po `/Rotate`, kolejność czytania na dwóch układach przelewów |
+| E02–E04 | dodatkowo F1 pól na skanach; CER tylko na rasteryzacji dokumentów z warstwą tekstu; E04 z kosztem po obu stronach (strony tekstowe wysłane do OCR) |
+| E06 | miara dwustronna (pozytyw odrzucony kosztuje wszystkie pola), negatywy zbliżone do klas, losowe nazwy plików |
+| E10 | co najmniej 5 powtórzeń, bootstrap po sprawach, zapis rewizji modelu, odsetek odpowiedzi poza schematem, test długiego dokumentu (fakt po stronie 3) |
+| E11 | dodatkowo wariant D (tekst + obraz strony) i dolna granica „sam regex bez LLM”; ablacje jednego modułu naraz; F1 per typ wejścia i per pole |
+| E16 | determinizm kodu na zapisanych odpowiedziach LLM, osobno od wariancji modelu |
+| E17 | polityka `null` i eksportu a F1: `ambiguous` bez pliku vs najlepsza klasa, pole niezakotwiczone `null` vs wartość, awaria LLM `{}` vs wynik z reguł; bbox nie decyduje o treści ocenianego JSON |
+| E18 | wybór modelu LLM: ten sam prompt i dane na 2–3 modelach różnej wielkości; reguła rozstrzygająca zapisana z góry |
+| E19 | normalizatory kontra referencje (daty, kwoty, NIP, rachunki, wielkość liter), bez LLM i OCR |
+| E20 | obecność pola: FP na polach z referencją `null`; luki: brak pełnomocnika, powód 12, brak BZP/TED, wpis |
+
+**Zakres części D.** Backend z kontraktu v1 nie istnieje, więc E12–E16 uruchamiamy na uprzęży (`harness/server.py`) wiernie odwzorowującej trasy v1 i zapisujemy wprost: wynik opisuje uprząż, a luki przenosimy jako testy do produktu. Dołączone wektory z recenzji: wyciek klucza-kanarka, ścieżki w uploadzie, wyczerpanie zasobów, bomby PDF z izolacją parsera, rozszerzona prompt injection, SSRF z PDF i przez konfigurację, IDOR, wyścigi i `kill -9`, zatrucie cache, wyczerpanie budżetu LLM.
+
+**Pomiar zasobów.** Szczyt pamięci całej grupy procesów, jawna liczba wątków, zimny i ciepły start, mediana i p95 z co najmniej 5 powtórzeń, czas LLM osobno od CPU.
