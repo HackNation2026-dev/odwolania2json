@@ -27,3 +27,14 @@ def test_docs_ignore_sdd_workspace():
             [sys.executable, "scripts/verify_docs.py"], cwd=root, capture_output=True, text=True
         )
     assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_docs_ignore_any_virtualenv_directory():
+    """Środowiska `.venv*` (także `.venv-exp`) zawierają cudze pliki Markdown z własnymi linkami."""
+    root = Path(__file__).resolve().parents[2]
+    with tempfile.TemporaryDirectory(dir=root, prefix=".venv-test-") as directory:
+        (Path(directory) / "broken.md").write_text("[broken](missing.md)\n")
+        result = subprocess.run(
+            [sys.executable, "scripts/verify_docs.py"], cwd=root, capture_output=True, text=True
+        )
+    assert result.returncode == 0, result.stdout + result.stderr
