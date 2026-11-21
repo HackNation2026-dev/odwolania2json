@@ -1,12 +1,12 @@
 ---
-wersja: 0.2.0
+wersja: 0.3.0
 aktualizacja: 2026-11-21
-status: załącznik do planu głównego — szczegół zadań 10–13, nie jest planem zapisu
+status: plan implementacji — decyzja zespołu 2026-11-21
 ---
 
-# Postgres + przeglądarka bazy + Docker — załącznik do planu głównego
+# Postgres + przeglądarka bazy + Docker — plan implementacji
 
-> **Rozstrzygnięcie kontrolera (2026-11-21).** Ten dokument powstał w trakcie implementacji jako szczegółowy podplan fazy Postgres + przeglądarka bazy + Docker. **Planem zapisu pozostaje** [plan wdrożenia](2026-11-21-backend-fastapi-postgres-ui.md) — briefy zadań 10–13 są generowane z niego. Ten załącznik zawiera dodatkowe szczegóły implementacji (kroki, testy, kryteria akceptacji) i nie dubluje zadań: gdy jego opis różni się od planu głównego, obowiązuje plan główny. Powstał z projektu [wariant przebiegu](../specs/2026-11-21-postgres-ui-docker-design.md), którego rozstrzygnięcie (kolejność: najpierw silnik ekstrakcji) opisuje blok rozstrzygnięcia w nagłówku tamtego dokumentu.
+> **Decyzja zespołu (2026-11-21, obowiązująca).** Zakres i kolejność tego planu są obowiązujące dla bieżącego przebiegu: **Postgres, przeglądarka bazy i Docker powstają teraz**; silnik ekstrakcji, CLI `run` i „główne GUI" (wgrywanie PDF-ów) zostają na później. Rozstrzygnięcie kontrolera z 2026-11-21, według którego planem zapisu pozostawał [plan wdrożenia](2026-11-21-backend-fastapi-postgres-ui.md) z silnikiem najpierw (zadania 3–9), **zostało przez zespół odwołane** 2026-11-21. Z rozstrzygnięcia zachowano: komendę `import-organizer` (zadanie 2 tego planu, w masterze zadanie 10), montaż materiałów organizatora tylko do odczytu w Compose (zadanie 5, master 13), kryteria akceptacji jako podstawę skryptów `verify_docker.*` (zadanie 6, master 15) oraz powstanie ADR-002 przy zadaniu 5 (master 13). W razie rozbieżności treści zadań z masterem obowiązuje ten dokument.
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
