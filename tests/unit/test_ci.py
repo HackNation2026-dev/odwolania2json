@@ -401,6 +401,23 @@ def test_no_cache_option_forces_rerun(mutation_tree):
     assert run.call_count >= 2
 
 
+def test_shadow_copies_repository_data_for_baseline_tests(tmp_path):
+    root = tmp_path / "repo"
+    shadow = tmp_path / "shadow"
+    (root / "apps").mkdir(parents=True)
+    (root / "apps/mod.py").write_text("value = 1\n", encoding="utf-8")
+    (root / "tests").mkdir()
+    (root / "data").mkdir()
+    (root / "data/podzial.json").write_text("{}\n", encoding="utf-8")
+    (root / "docs/02-materialy/organizator-uzp").mkdir(parents=True)
+    (root / "docs/02-materialy/organizator-uzp/x.md").write_text("# x\n", encoding="utf-8")
+
+    ci.make_shadow(root, shadow, [])
+
+    assert (shadow / "data/podzial.json").read_text(encoding="utf-8") == "{}\n"
+    assert (shadow / "docs/02-materialy/organizator-uzp/x.md").is_file()
+
+
 def test_mutants_run_in_parallel_with_separate_workspaces(mutation_tree):
     (mutation_tree / "normalizer.py").write_text("a = 1\nb = 2\nc = 3\nd = 4\n")
     workdirs: set[str] = set()

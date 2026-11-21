@@ -37,6 +37,7 @@ PUSH_BASE = "main"
 ENGINE_VERSION = "3"
 CACHE_PATH = ".ci/mutation-cache.json"
 SCOPE_ROOTS = ("apps", "packages")
+SHADOW_DATA_ROOTS = ("data", "docs/02-materialy")
 MODEL_TESTS = ("tests/contract", "tests/unit/test_base.py")
 DOCS_TRIGGERS = (
     "docs/",
@@ -373,7 +374,9 @@ def save_cache(root: Path, entries: dict[str, dict[str, object]]) -> None:
 def make_shadow(root: Path, shadow: Path, paths: list[str]) -> None:
     """Kopia źródeł, w której podmieniamy mutanta; repozytorium i testy pozostają nietknięte."""
     ignore = shutil.ignore_patterns("__pycache__", "*.egg-info", "build")
-    for top in SCOPE_ROOTS:
+    # Moduły domyślnie czytają dane spoza SCOPE_ROOTS (loader, dataset), więc ich
+    # bazowe testy w kopii muszą widzieć te same dane, inaczej mutacje się nie uruchomią.
+    for top in (*SCOPE_ROOTS, *SHADOW_DATA_ROOTS):
         if (root / top).is_dir():
             shutil.copytree(root / top, shadow / top, ignore=ignore)
     for relative in paths:
