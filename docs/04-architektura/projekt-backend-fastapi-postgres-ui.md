@@ -25,7 +25,7 @@ Wymagania organizatora, które gałąź musi spełnić od razu: Python 3.13+, `r
 | CLI | `run` (batch `input` → `output`), `classify`, `extract`, `evaluate`, `serve` |
 | API | FastAPI: upload i analiza PDF, odczyt dokumentów i wyników, health, spis klas |
 | Postgres | Opcjonalny magazyn dokumentów, przebiegów i wyników; schemat SQL, warstwa dostępu, migracja idempotentna |
-| UI | Pulpit z listą dokumentów, widok PDF obok JSON, tabela pól z dowodem źródłowym, upload i analiza |
+| UI | Przeglądarka bazy Postgres: tabele, wiersze, schemat, migracje, konsola SQL; widok PDF obok JSON odłożony na późniejszy przyrost (decyzja w ADR-002) |
 | Dostarczenie | `Dockerfile` (`python:3.13-slim`, użytkownik bez roota, healthcheck), `docker-compose.yml` z Postgres, `start.bat` i `start.sh`, instrukcja uruchomienia |
 | Weryfikacja | Testy jednostkowe, kontraktowe i wdrożeniowe; batch na 60 sprawach; własny F1 przybliżony; skrypt testu w Dockerze; raport w dokumentacji |
 
@@ -203,13 +203,16 @@ Migracje to pliki `apps/backend/odwolania2json/db/migrations/NNNN_nazwa.sql` nak
 
 ## 9. UI
 
-Serwowane przez FastAPI, bez etapu budowania, bez CDN, bez Node — uruchamialne u jury samym Dockerem.
+Serwowane przez FastAPI, bez etapu budowania, bez CDN, bez Node — uruchamialne u jury samym Dockerem. **UI jest przeglądarką bazy danych**, nie podglądem dokumentu (decyzja: w tej gałęzi widok PDF obok JSON zostawiamy na późniejszy przyrost — zapisane w ADR-002).
 
-1. **Pulpit**: tabela dokumentów (nazwa, klasa, rozmiar, strony, czas, data), filtry po klasie, przycisk „Analizuj nowy PDF”.
-2. **Widok dokumentu**: PDF po lewej (natywny `<embed>` na pliku PDF), JSON po prawej, pod spodem tabela „pole / wartość / dowód (strona, fragment)”. To realizuje „widok obok siebie" z FAQ 12b oraz punktowane transparentność.
-3. **Upload**: przeciągnij PDF, uruchom analizę, przejdź do widoku wyniku.
+1. **Pulpit**: kafelki z liczbami dokumentów, ekstrakcji i przebiegów, rozkład ekstrakcji według klas, tabela zastosowanych migracji.
+2. **Dokumenty**: tabela `documents` z filtrem po nazwie pliku, liczbą stron, rozmiarem, klasą i linkiem do wyniku.
+3. **Ekstrakcje**: lista `extractions` oraz widok szczegółów — `payload` (jsonb) obok `evidence` (jsonb) i tabeli „pole → dowód (strona, fragment)".
+4. **Przebiegi**: tabela `runs` (start, koniec, status, czas, liczba dokumentów).
+5. **Schemat**: kolumny, typy i nullability każdej tabeli z `information_schema`.
+6. **Konsola SQL**: dowolne `SELECT` z widokiem wyniku; zapytania zmieniające dane są odrzucane, sterownik dostaje tylko odczyt.
 
-Brak uwierzytelniania (prototyp lokalny), brak edycji danych, brak mechanizmu sesji.
+Brak uwierzytelniania (prototyp lokalny), brak edycji danych, brak mechanizmu sesji. Bez `DATABASE_URL` strony renderują się z bannerem „baza wyłączona" zamiast awarii.
 
 ## 10. Docker
 

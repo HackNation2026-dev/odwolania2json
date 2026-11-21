@@ -741,27 +741,37 @@ git commit -m "feat: API FastAPI zgodne z kontraktem OpenAPI"
 
 ---
 
-### Task 12: UI przeglądarkowa
+### Task 12: UI przeglądarki bazy Postgres
 
 **Files:**
-- Create: `apps/web/templates/base.html`, `apps/web/templates/pulpit.html`, `apps/web/templates/dokument.html`, `apps/web/static/style.css`, `apps/web/static/app.js`
+- Create: `apps/web/templates/base.html`, `apps/web/templates/pulpit.html`, `apps/web/templates/dokumenty.html`, `apps/web/templates/ekstrakcje.html`, `apps/web/templates/ekstrakcja.html`, `apps/web/templates/przebiegi.html`, `apps/web/templates/schemat.html`, `apps/web/templates/konsola.html`
+- Create: `apps/web/static/style.css`, `apps/web/static/app.js`
 - Test: `tests/integration/test_ui.py`
 
 **Interfaces:**
-- Produces: strony `GET /` (pulpit), `GET /dokumenty/{id}` (widok dokumentu), `POST /ui/analiza` (upload formularzem) oraz `GET /api/documents/{id}/pdf` używany przez `<embed>`.
+- Produces: strony serwowane przez FastAPI — `GET /` (pulpit ze statystykami, rozkładem klas i zastosowanymi migracjami), `GET /dokumenty` (tabela `documents` z filtrem po nazwie), `GET /ekstrakcje` (lista `extractions`), `GET /ekstrakcje/{document_id}` (szczegóły: `payload` i `evidence` obok siebie plus tabela „pole → dowód"), `GET /przebiegi` (tabela `runs`), `GET /schemat` (kolumny i typy z `information_schema`), `GET /konsola` (zapytanie `sql`, tylko odczyt).
+- Konsumuje: `odwolania2json.db.repository.DocumentRepository` (Task 10) oraz `odwolania2json.api.app.create_app` (Task 11).
+
+**Zakres świadomie pominięty:** widok dokumentu „PDF obok JSON". Decyzja: w tej gałęzi UI jest przeglądarką bazy; widok PDF|JSON (punktowany w FAQ 12b) to osobny, późniejszy przyrost — zapisane w ADR-002.
 
 - [ ] **Step 1: Napisz testy UI**
 
 ```python
 def test_pulpit_renders():
-    # GET / -> 200, zawiera znacznik "Odwołania2JSON" i tabelę dokumentow
+    # GET / -> 200, zawiera "Odwołania2JSON" i kafelki statystyk
 def test_pulpit_shows_banner_without_database():
     # bez DATABASE_URL -> komunikat "baza wyłączona"
-def test_document_view_shows_pdf_and_json():
-    # GET /dokumenty/{id} -> 200, zawiera <embed src="/api/documents/{id}/pdf"> i blok JSON
-def test_document_view_lists_evidence():
-    # tabela dowodow zawiera numer strony
-def test_unknown_document_view_returns_404():
+def test_documents_page_lists_documents():
+    # GET /dokumenty -> 200, zawiera "documents"
+def test_extractions_page_and_detail():
+    # GET /ekstrakcje -> 200; GET /ekstrakcje/{document_id} -> 200, zawiera "payload" i "evidence"
+def test_schema_page_lists_tables():
+    # GET /schemat -> 200, zawiera "documents" i "extractions"
+def test_sql_console_runs_select():
+    # GET /konsola?sql=SELECT+1+AS+x -> 200, zawiera wynik
+def test_sql_console_refuses_mutation():
+    # DELETE/UPDATE/INSERT -> komunikat o blokadzie, baza bez zmian
+def test_unknown_document_returns_404():
 ```
 
 - [ ] **Step 2: Uruchom testy, mają paść**
@@ -771,7 +781,9 @@ Expected: FAIL — brak szablonów.
 
 - [ ] **Step 3: Zaimplementuj szablony**
 
-Pulpit: tabela (nazwa, klasa, rozmiar, strony, czas, data) z filtrem po klasie i formularzem uploadu. Widok dokumentu: dwie kolumny — `<embed>` z PDF i `<pre>` z pretty-printed JSON; pod spodem tabela „pole / wartość / dowód (strona)" z danych `evidence`. Bez zewnętrznych zasobów (żadnego CDN), CSS i JS w `static/`.
+`base.html` wspólny układ: nagłówek z nazwą projektu i stanem bazy, pasek nawigacji (pulpit, dokumenty, ekstrakcje, przebiegi, schemat, konsola), blok treści. Pulpit: kafelki z liczbami dokumentów, ekstrakcji i przebiegów, tabela rozkładu klas, tabela zastosowanych migracji z `schema_migrations`. Dokumenty: tabela z filtrem po nazwie pliku, liczbą stron, rozmiarem, klasą i linkiem do wyniku. Ekstrakcja: dwie kolumny — `payload` (jsonb, pretty-printed) i `evidence` (metadane dokumentu + tabela „pole → strona i fragment"). Schemat: dla każdej tabeli kolumna, typ i nullability. Konsola: pole na `SELECT`, tabela wyniku; zapytania niebędące odczytem są odrzucane z komunikatem, a sterownik dostaje tylko `SELECT`.
+
+Baza bez `DATABASE_URL`: strony renderują się z bannerem „baza wyłączona" zamiast awarii. Bez zewnętrznych zasobów (żadnego CDN), CSS i JS w `static/`.
 
 - [ ] **Step 4: Uruchom testy, mają przejść**
 
@@ -782,7 +794,7 @@ Expected: PASS.
 
 ```bash
 git add apps/web apps/backend/odwolania2json/api tests/integration/test_ui.py
-git commit -m "feat: UI przegladarki z widokiem PDF obok JSON"
+git commit -m "feat: UI przegladarki bazy Postgres"
 ```
 
 ---
