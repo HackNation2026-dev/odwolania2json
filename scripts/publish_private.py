@@ -2,7 +2,7 @@
 """Publikuje przygotowany commit wyłącznie w prywatnym repo wskazanej organizacji."""
 from pathlib import Path
 import subprocess,json,sys
-root=Path(__file__).resolve().parents[1];org='HackNation2026ORG';name=root.name;full=f'{org}/{name}'
+root=Path(__file__).resolve().parents[1];org='HackNation2026-dev';name=root.name;full=f'{org}/{name}'
 def run(args,check=True):return subprocess.run(args,cwd=root,text=True,capture_output=True,check=check)
 def fail(text):print(text,file=sys.stderr);sys.exit(1)
 try:
@@ -24,7 +24,7 @@ try:
  if remote.stdout.strip() and remote.stdout.split()[0]!=local:fail('Repo ma już inną gałąź main. Nie nadpisano zdalnej historii.')
  run(['python3','scripts/verify_docs.py'])
  run(['git','push','-u','origin','main'])
- run(['git','push','origin','v0.1.0'])
+ run(['git','push','origin','v'+(root/'VERSION').read_text().strip()])
  confirm=json.loads(run(['gh','api',f'repos/{full}']).stdout)
  if confirm.get('private') is not True:fail('Nie potwierdzono prywatności.')
  sha=run(['git','ls-remote','origin','refs/heads/main']).stdout.split()[0]

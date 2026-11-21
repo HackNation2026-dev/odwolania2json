@@ -1,5 +1,5 @@
 ---
-wersja: 0.1.0
+wersja: 0.1.1
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
@@ -28,3 +28,5 @@ Model, endpoint i klucz mają być konfigurowalne. Dokumentuj rozmiar modelu, li
 Klucz dla jury: osobny plik lokalny lub zmienna środowiska, poza Git. Awaria API ma dawać błąd techniczny, nie zmyślone dane. Limity i ponowienia muszą być ograniczone.
 
 Zobacz [ADR-001](../07-decyzje/ADR-001-stos.md).
+
+Zobacz [pełną aplikację i wybór interfejsu](pelna-aplikacja.md).
