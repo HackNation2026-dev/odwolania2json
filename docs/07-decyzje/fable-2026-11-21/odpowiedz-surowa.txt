@@ -1,0 +1,244 @@
+# Recenzja architektury: UZP „Odwołania2JSON” i COI „Cyfryzacja Formularzy”
+
+Wynik w skrócie: w obu zadaniach zalecam rdzeń w Pythonie bez własnego kodu Rust. UZP to czysty pakiet pip z hybrydą reguł i małego modelu po API w UE. COI to FastAPI z lokalnym modelem i parserem dokumentów w osobnych kontenerach oraz frontendem React. Niczego nie uruchamiałem ani nie mierzyłem; liczby dotyczące RAM i czasu są szacunkami.
+
+---
+
+## A. UZP — Odwołania2JSON
+
+### 1. Wymagania organizatora (fakty)
+
+| Fakt | Źródło |
+|---|---|
+| Python 3.13+, `requirements.txt`, instalacja przez pip, wyłącznie open source (także modele), uruchomienie lokalne bez GPU, LLM po API | `docs/02-materialy/organizator-uzp/README.md` §5; Discord 09:42 |
+| CLI lub wrapper (np. `start.bat`); foldery `input` i `output` w katalogu głównym; drzewo odtworzone; JSON nazwany jak plik wejściowy | README organizatora §3 |
+| Klasyfikacja po treści, nie po nazwie pliku | README organizatora §3 |
+| Laptop i7, 16 GB, bez GPU; klucz API dostarczony; dostawca i serwery w UE/EOG (FAQ: UE) | README organizatora §6; FAQ 3/4 |
+| Jury nie instaluje modelu; endpoint publiczny; brak limitu czasu; JSON „ściśle zgodny z formatem” | Discord 12:47 |
+| Obcy dokument: „pusty JSON z nazwą oryginalnego pliku”; README mówi „pusty plik `.json`” | Discord 13:27; README organizatora §6 |
+| TP/FP/FN, próg 80% dla 4 pól długich, listy po treści | Discord 11:26, 13:26; `docs/05-weryfikacja/zasady-f1.md` |
+| Finał: 1–20 pkt za mały model, 1–20 za konfigurowalność, 1–10 za dodatki (GUI); premiowana „transparentność ekstrakcji” | README organizatora §5, §7 |
+
+Obserwacje z materiałów, których nie ma w Waszych docs:
+- Wzorzec `oczekiwane-json/odwolanie.json` to JSON z komentarzami i brakującym przecinkiem po `pelnomocnik.nazwa` (linia 18). Nie da się go parsować wprost.
+- Typy w referencjach: `kwota` i `przez-pelnomocnika` to liczby, a `numer_bzp` jest znormalizowany bez spacji (`2026/BZP00999778`). `pesel` jest liczbą tylko we wzorcu; w przykładzie 01 ma wartość `null`.
+- `przyklad_04` zawiera negatywny PDF (`2025_S 112-383751.pdf`) bez odpowiadającego JSON-a. Nie ma więc wzorca „pustego” wyniku, a pytanie U-Q03 pozostaje krytyczne.
+
+### 2. Tabela decyzji
+
+| | Zalecany | Alternatywa |
+|---|---|---|
+| Rdzeń | Czysty Python 3.13, jeden pakiet, instalacja tylko przez pip | To samo |
+| Ekstrakcja | Hybryda: reguły i regex dla pól formalnych (NIP, REGON, KRS, rachunki, daty, BZP/TED, kwota); mały LLM tylko dla pól semantycznych (nazwy, tytuł, `czynnosc_powod_id`, role osób) | Samo LLM z większym modelem: szybsze w budowie, ale mniej punktów za rozmiar modelu i większa zależność od endpointu |
+| Konfiguracja klas | YAML na klasę: słowa kluczowe klasyfikacji, pola, typy, opisy do promptu, normalizatory; z tego dynamiczny model Pydantic i JSON Schema dla odpowiedzi | — |
+| LLM | Klient zgodny z OpenAI; `base_url`, model i klucz z env | Własny serwer vLLM lub llama.cpp w UE |
+| GUI | FastAPI i statyczny frontend (zbudowany `dist` w repo) | Streamlit lub Gradio |
+
+Uzasadnienie: dokumenty testowe są syntetyczne (Discord 12:47), więc reguły dadzą stabilny wynik na polach formalnych. Model może być wtedy mały, co punktuje w finale.
+
+### 3. Rola Rusta
+
+Rezygnacja z własnego kodu Rust. README wymaga rozwiązania „opracowanego w Python 3.13+” z instalacją pip, a ocena jest zautomatyzowana. Rozszerzenie Rust wymagałoby gotowych kół dla systemu jury (wzmianka o `.bat` sugeruje Windows) albo toolchaina. Czas zdominuje wywołanie sieciowe LLM, więc nie ma czego przyspieszać. Pytanie U-Q06 przestaje być potrzebne.
+
+### 4. Biblioteki i licencje
+
+| Rola | Zalecenie | Licencja i ryzyko |
+|---|---|---|
+| Tekst z PDF | `pypdfium2` | Apache-2.0 lub BSD-3, PDFium BSD (sprawdzone). Nie używać PyMuPDF: AGPL-3.0 albo licencja komercyjna (sprawdzone) |
+| OCR | `rapidocr` z `onnxruntime` (sam pip, bez instalacji systemowej) | Apache-2.0 i MIT (sprawdzone). Jakość polskich znaków i licencja wag PP-OCR niesprawdzone |
+| OCR, opcja | Tesseract | Apache-2.0 (sprawdzone), ale wymaga binarki systemowej, co jest złe dla jury na Windows |
+| Walidacja i typy | `pydantic` | z pamięci MIT |
+| Podobieństwo we własnym F1 | `rapidfuzz` | z pamięci MIT |
+| HTTP i CLI | `httpx`, `typer` lub `argparse` | z pamięci permisywne |
+
+„Open source” dotyczy też wag modelu. Unikaj modeli z własnymi licencjami (Gemma, Llama) i wariantów niekomercyjnych.
+
+### 5. Model i inferencja
+
+- Na laptopie jury nie działa żaden LLM. Lokalnie pracuje tylko OCR na CPU, rzędu setek MB RAM (szacunek).
+- Kandydat startowy: Bielik. Karta `Bielik-11B-v2.3-Instruct` podaje Apache 2.0 i 11 mld parametrów; repo GGUF dopisuje „Terms of Use”. Karta `Bielik-4.5B-v3.0-Instruct` podaje Apache 2.0 według wyniku wyszukiwania.
+- Dostawca: dokumentacja CloudFerro Sherlock wymienia `speakleash/Bielik-11B-v3.0-Instruct` pod API zgodnym z OpenAI (wynik wyszukiwania). Lokalizacji serwerów, licencji v3 i obsługi JSON Schema nie potwierdziłem.
+- Scaleway Generative APIs deklaruje hosting w Europie; listy modeli nie potwierdziłem.
+- Zmierz własne F1 dla 2–3 rozmiarów modelu i wybierz najmniejszy, który nie traci jakości. Preselekcja to 100% F1, więc jakość ma pierwszeństwo.
+- Awaria API ma dawać błąd techniczny z ograniczonym ponawianiem, nigdy zgadywane dane.
+
+### 6. Docker
+
+Docker jest tu dodatkiem, nie drogą dostarczenia. Jury instaluje przez pip i uruchamia komendę. Jeśli go dodasz dla GUI: `python:3.13-slim` z przypiętym tagiem, `USER` nieuprzywilejowany, bez modelu w obrazie, klucz przez env. Obowiązkowo przetestuj czysty `venv` i `pip install -r requirements.txt` na Windows i Linux.
+
+### 7. Ryzyka formatów
+
+- OCR: uruchamiaj tylko, gdy strona nie ma warstwy tekstowej. Skany w ukrytym teście są niepotwierdzone (U-Q08).
+- Zakres stron: README mówi o informacjach „z reguły na pierwszych trzech stronach”, ale podpisujący pełnomocnictwo bywają na końcu. Nie ucinaj na ślepo.
+- JSON: końcowy plik zawsze serializuje kod (Pydantic, stała kolejność kluczy, `null` zamiast braku klucza), nigdy model.
+- Pusty wynik: domyślnie `{}` w pliku o nazwie wejścia, z przełącznikiem w konfiguracji. To moja interpretacja, do potwierdzenia u mentora.
+- F1: algorytm 80% jest nieznany. Własny ewaluator (np. `rapidfuzz.ratio` i dopasowanie list po podobieństwie) jest tylko przybliżeniem.
+
+### 8. GUI
+
+Potrzeba to wgranie PDF, uruchomienie analizy i widok PDF obok JSON (FAQ 12b). Wystarczy jeden ekran: natywny podgląd PDF w przeglądarce i panel JSON. React/TypeScript jest w porządku pod warunkiem, że zbudowany `dist` leży w repo i jury nie potrzebuje Node. egui odrzucam: nie znam dojrzałego komponentu PDF dla egui, a wymóg Pythona go wyklucza. GUI jest warte najwyżej 10 pkt, więc rób je na końcu.
+
+### 9. Kolejność implementacji
+
+1. Loader 60 spraw i własny ewaluator F1 z podziałem według spraw.
+2. CLI `input` → `output` z odtworzeniem drzewa i pustym wynikiem.
+3. Ekstrakcja tekstu i klasyfikacja regułowa, w tym dane negatywne.
+4. Przelew samymi regułami.
+5. Pełnomocnictwo i odwołanie: YAML → schemat → LLM → normalizatory.
+6. Zapasowy OCR.
+7. Porównanie rozmiarów modeli.
+8. Demonstracja czwartej klasy dodanej samym YAML-em.
+9. Raport dowodów (fragment źródłowy dla pola) poza ocenianym JSON-em.
+10. GUI.
+11. Test czystej instalacji i przekazanie klucza.
+
+### 10. Uwagi do ADR-001
+
+- ADR nie zawiera decyzji, tylko odsyła do architektury. Brakuje bibliotek, modelu, dostawcy i strategii ekstrakcji.
+- „Rust: istniejący moduł pomocniczy” należy usunąć. To ryzyko bez korzyści.
+- „Dostarczenie: Docker” jest błędne jako ścieżka główna.
+- `pelna-aplikacja.md` jest wklejony z COI (wzmianka o CDN w COI, układ `apps/`, `packages/`). Dla UZP ten układ koliduje z wymogiem `input`, `output` i `requirements.txt` w katalogu głównym.
+- Brakuje decyzji o pustym wyniku i odnotowania wadliwego wzorca `odwolanie.json`. Nagłówek wersji 0.1.0 nie zgadza się z repo 0.2.1.
+
+---
+
+## B. COI — Cyfryzacja Formularzy
+
+### 1. Wymagania organizatora (fakty)
+
+Źródło wszystkich wierszy: `docs/02-materialy/tekst/01-zadanie/zrodla/COI - Pełna treść zadania konkursowego.pdf.txt`.
+
+| Fakt | Punkt |
+|---|---|
+| REST API przyjmujące pojedynczy plik: PDF, DOC/DOCX, ODS, XLSX, JPG/JPEG, PNG; zwraca JSON zgodny z przykładami i regułami projektowania | §3.2, §5 |
+| Preferowane Java 21+ lub Python 3.14+ | §5 |
+| Open source bez copyleft (przykłady: AGPL, GPL); bez zewnętrznych API, MCP, SaaS; bez LLM dostępnych wyłącznie przez API; bez licencji komercyjnych | §5 |
+| Weryfikacja MIME; nazwa do 250 znaków bez `; : > < / \ | ' * % $`; konfigurowalny rozmiar; plik tylko tymczasowo | §5 |
+| Docker: oficjalne obrazy bazowe, preferowane lekkie (Alpine), jawne wersje, bez `latest`, dedykowany użytkownik, tylko potrzebne porty, sekrety w runtime | §5 |
+| Konfiguracja: limit rozmiaru i parametry uwierzytelniania JWT | §5 |
+| Zgłoszenie: wynikowe JSON-y, PDF do 10 slajdów, film do 3 min, repo; finaliści dostają nowe pliki na obronie | §4, §6 |
+| Punktacja 30/20/10/20/20 | §8 |
+
+Obserwacje z materiałów, których nie ma w `rozbieznosci.md`:
+- Oba referencyjne JSON-y używają `repeatingSectionGrid` (98 i 104 wystąpień), `MAIN`/`FINISH` i `CONSENT_SECTION`. Pisownia `repetingSectionGrid` występuje tylko raz, w schemacie.
+- Schemat nie ma `required` ani `additionalProperties: false`, więc niczego nie egzekwuje.
+- `dictionaryName` w referencjach to `TERYT_DOWODOWY`, `TERYT_4G_DOWODOWY` i `Kraje`. Dokument słowników używa nazw „Województwo, Powiat, Gmina, Miejscowość”.
+- Regulamin §4 przewiduje przeniesienie autorskich praw majątkowych (czytałem tylko wyniki wyszukiwania w tym pliku). To dodatkowy powód, by unikać copyleft.
+
+### 2. Tabela decyzji
+
+| | Zalecany | Alternatywa |
+|---|---|---|
+| API i logika | Python 3.14, FastAPI, jeden serwis | Java 21, Spring Boot z wbudowanym Tika: mniej kontenerów i stos z listy preferowanej, ale tylko jeśli ktoś w zespole zna Javę |
+| Adaptery formatów | Apache Tika jako lokalny kontener: jedna ścieżka dla wszystkich 8 formatów z OCR Tesseract | Docling (MIT) dla PDF, DOCX, XLSX, ODS i obrazów, plus osobne rozwiązanie dla DOC |
+| Generacja | LLM zwraca zwarty model pośredni (strony → sekcje → pola: typ, etykieta, wymagalność, opcje, zależność); kompilator w kodzie tworzy JSON COI | LLM generuje cały JSON COI: odradzam |
+| Model | Lokalny GGUF w llama.cpp jako kontener, wyjście ograniczone gramatyką lub schematem | Wbudowany `llama-cpp-python` |
+| GUI | React/TypeScript | — |
+
+Najważniejsza decyzja to kompilator. Referencyjna konfiguracja ma około 1700 linii z UUID-ami, siatką `x/y/rows/cols`, `flow.links` i JSONatą. Mały model na CPU tego nie wygeneruje wiarygodnie. Kod powinien tworzyć UUID-y, `techName`, siatkę, przepływ, stronę `FINISH` z `INFO_SECTION` i JSONatę z szablonów. Adaptery trzymaj za interfejsem, żeby dało się podmienić Tika na Docling.
+
+### 3. Rola Rusta
+
+Rezygnacja z API w Rust/Axum. Rust nie jest na liście preferowanej, a jakość kodu (20%) i potencjał wdrożeniowy (20%) ocenia zespół pracujący w Javie i Pythonie. Dodatkowa granica serwisów nie daje żadnej korzyści, bo czas zdominuje model. Pytanie C-Q05 staje się zbędne.
+
+### 4. Biblioteki i licencje
+
+| Rola | Zalecenie | Licencja i ryzyko |
+|---|---|---|
+| DOC, DOCX, ODS, XLSX, PDF, OCR | Apache Tika 4.x | Projekt ASF; strona potwierdza OOXML, PDF i OCR Tesseract w procesie. Obsługi starego `.doc` i ODS nie potwierdziłem (z pamięci: tak, przez POI i ODF) |
+| OCR | Tesseract z danymi `pol` | Kod Apache-2.0, Leptonica BSD (sprawdzone). Licencja tessdata i obecność `pol` w obrazie niesprawdzone |
+| Podgląd PDF | `pypdfium2` lub PDF.js w przeglądarce | Apache/BSD (sprawdzone); PDF.js z pamięci Apache-2.0 |
+| JSONata | `jsonata-python` w backendzie; `jsonata` JS we frontendzie | Apache-2.0 (sprawdzone); JS z pamięci MIT |
+| Inferencja | llama.cpp | MIT (sprawdzone) |
+| Odrzucone | PyMuPDF | AGPL-3.0 albo komercyjna (sprawdzone), wprost wykluczona |
+| Odrzucone | antiword | z pamięci GPL |
+| Ryzykowne | LibreOffice headless do konwersji DOC | MPL-2.0 (sprawdzone): słaby copyleft na poziomie pliku. Organizator pisze o licencjach „wymagających upublicznienia całości lub części kodu”, więc użyj dopiero po zgodzie mentora |
+| Ciężkie | Docling | MIT, wspiera 3.14, XLSX, ODS i obrazy, ale nie wymienia `.doc` (sprawdzone). Ciągnie duże zależności i wagi modeli, których licencji nie sprawdziłem |
+
+Zależności przechodnie sprawdź automatycznie (`pip-licenses`, `license-checker`) i dołącz raport do repo.
+
+### 5. Model i inferencja
+
+- Sprzęt jest nieznany (C-Q07). Projektuj pod CPU i 16 GB.
+- Model domyślny: Bielik 4.5B v3 Instruct w GGUF, kwantyzacja Q4 lub Q5, około 3–4 GB RAM (szacunek). Ścieżka modelu jest konfigurowalna, z opcją Bielik 11B Q4 (około 7 GB, szacunek) na mocniejszej maszynie. Warunki „Terms of Use” w repo GGUF trzeba przeczytać.
+- Czas: na CPU spodziewaj się minut na formularz (szacunek). Pomagają zwarty model pośredni, przetwarzanie stronami i limit tokenów.
+- Zbuduj tryb heurystyczny bez LLM, który zawsze zwraca poprawny JSON. To zabezpieczenie na obronę przy słabym sprzęcie.
+- Wagi pobieraj przy budowie obrazu albo montuj jako wolumen. W runtime nie może być sieci; testuj z siecią `internal`.
+
+### 6. Docker
+
+Compose z czterema usługami:
+- `api`: `python:3.14-slim` przypięty tagiem i digestem. Alpine jest możliwy tylko bez `onnxruntime`, bo jego koła wymagają glibc 2.28+ (sprawdzone).
+- `tika`: zbudowany z oficjalnego `eclipse-temurin:21-jre` z jarem Tika i Tesseractem. Gotowy obraz `apache/tika` nie jest „Docker Official Image”, więc warto dopytać o interpretację „oficjalnych obrazów”.
+- `llm`: llama.cpp zbudowany wieloetapowo na oficjalnym obrazie Debiana.
+- `web`: nginx w wariancie Alpine, nieuprzywilejowany, albo statyki serwowane z `api`.
+
+Wszędzie `USER` bez uprawnień roota, `read_only` i `tmpfs` na `/tmp` (to realizuje też wymóg plików tymczasowych). Publikuj jeden port, sidecary trzymaj w sieci wewnętrznej, sekret JWT podawaj przez env. Rozmiar zdominuje model (3–7 GB), więc lepiej trzymać go w wolumenie.
+
+### 7. Ryzyka formatów
+
+- DOC: w materiałach są rozszerzenia `.DOC` wielkimi literami; sygnatura OLE jest wspólna z XLS, więc sprawdzaj typ po zawartości.
+- DOCX, XLSX i ODS to archiwa ZIP: weryfikacja MIME musi zajrzeć do środka i mieć limity rozpakowania.
+- ODS i XLSX to formularze rysowane komórkami: trzeba czytać scalenia i kolejność.
+- OCR: jakość skanów JPG/PNG, obrót, pola wyboru jako glify. `.JPE` z materiałów odrzucaj do decyzji C-Q08.
+- JSON: trzymaj się pisowni z przykładów (`repeatingSectionGrid`, `MAIN`/`FINISH`), bo §3.2 wskazuje je jako oczekiwany wynik. Zrób z tego przełącznik w konfiguracji do czasu odpowiedzi na C-Q01–03.
+- JSONata: generuj z szablonów z dokumentu reguł, sprawdzaj składnię i istnienie wskazanych `techName`.
+- Walidator semantyczny jest obowiązkowy, bo schemat niczego nie sprawdza.
+
+### 8. GUI
+
+React/TypeScript jest tu uzasadniony. Potrzebne są trzy widoki: upload, podgląd źródła obok JSON oraz renderer e-usługi z JSON. Specyfikacja definiuje układ wprost jako CSS (`grid-area: {y+1}/{x+1}/span rows/span cols`), a stany `SHOW`/`READ_ONLY` można liczyć na żywo biblioteką `jsonata`. Renderer pokrywa rozszerzenia IV i V oraz „intuicyjność” (20%). egui odrzucam: wymagałby odtwarzania siatki CSS, kontrolek formularza i dostępności na canvasie.
+
+### 9. Kolejność implementacji
+
+1. Kompilator modelu pośredniego do JSON COI i walidator semantyczny, sprawdzone na dwóch referencjach.
+2. Szkielet REST: walidacja pliku, katalog tymczasowy, JWT, Docker bez roota.
+3. Adaptery ośmiu formatów na dziewięciu formularzach.
+4. Ekstraktor heurystyczny bez LLM.
+5. Kontener LLM z gramatyką.
+6. Regułowe mapowanie słowników, danych inicjalnych (`PESEL.name` itd.) i walidatorów (PESEL, NIP, REGON, EMAIL, ZIP_CODE).
+7. Zależności i JSONata.
+8. Upload i podgląd JSON.
+9. Renderer e-usługi.
+10. Test bez sieci, wynikowe JSON-y dla formularzy 2–4 i 6–9, README, dokument architektury, slajdy, film.
+
+### 10. Uwagi do ADR-001
+
+- Dokument jest identyczny jak w UZP i nie zawiera decyzji.
+- „API: Rust/Axum, jeśli gotowa baza” należy usunąć.
+- Brakuje strategii generacji (kompilator czy LLM), wyboru adaptera DOC, runtime'u modelu i progu sprzętowego.
+- COI-12 traktuje JWT tylko jako parametr. Zalecam faktyczną walidację tokenu z możliwością wyłączenia.
+- COI-11 pomija oficjalne obrazy, preferencję Alpine, porty i sekrety w runtime.
+- `rozbieznosci.md` nie odnotowuje, że przykłady rozstrzygają pisownię, ani niezgodności nazw słowników.
+
+---
+
+## Źródła, ograniczenia, model
+
+**Przeczytane lokalnie**
+- UZP: `README.md`, `docs/01-zadanie/` (README, punktacja, FAQ, Discord), `03-wymagania/`, `04-architektura/`, `05-weryfikacja/`, `07-decyzje/` (ADR, pytania, rozbieżności, konsultacja-fable), README organizatora, `kompletnosc.md`, trzy wzorce i słownik w `oczekiwane-json/`, `przyklad_01` (odwołanie, pełnomocnictwo), readme danych negatywnych.
+- COI: `README.md`, `docs/01-zadanie/`, `03-wymagania/`, `04-architektura/`, `05-weryfikacja/`, `07-decyzje/`, `02-materialy/README.md`, pełna treść zadania, reguły techniczne, opis JSON, słowniki, początek danych inicjalnych, schemat, pierwsze 220 linii jednej konfiguracji referencyjnej.
+
+**Sprawdzone w sieci (21.11.2026)**
+- [PyMuPDF](https://pypi.org/project/PyMuPDF/), [pypdfium2](https://pypi.org/project/pypdfium2/), [docling](https://pypi.org/project/docling/), [rapidocr](https://pypi.org/project/rapidocr/), [onnxruntime](https://pypi.org/project/onnxruntime/)
+- [Tesseract](https://github.com/tesseract-ocr/tesseract), [licencje LibreOffice](https://www.libreoffice.org/licenses/), [jsonata-python](https://github.com/rayokota/jsonata-python), [llama.cpp](https://github.com/ggml-org/llama.cpp), [Apache Tika](https://tika.apache.org/)
+- [Bielik-11B-v2.3-Instruct](https://huggingface.co/speakleash/Bielik-11B-v2.3-Instruct)
+- Tylko wyniki wyszukiwania, bez otwierania stron: [Bielik-4.5B-v3.0-Instruct](https://huggingface.co/speakleash/Bielik-4.5B-v3.0-Instruct), [modele CloudFerro Sherlock](https://docs.cloudferro.com/en/latest/sherlock/Sherlock-AI-models-on-CloudFerro-Cloud.html), [FAQ Scaleway Generative APIs](https://www.scaleway.com/en/docs/generative-apis/faq)
+
+**Ograniczenia**
+- Nie uruchomiłem żadnych poleceń. Nie mogłem więc użyć `ctx7` z Twoich reguł globalnych i korzystałem z WebFetch/WebSearch.
+- Nie otwierałem binarnych PDF, DOC, ODS, XLSX ani obrazów, więc nie oceniałem ich układu ani warstwy tekstowej.
+- Przejrzałem 1 z 60 spraw UZP w całości; pozostałe tylko wyszukiwaniem po kluczach.
+- Nie czytałem `00-organizacja`, `06-prezentacja`, rejestrów, manifestów ani oryginalnych PDF-ów UZP. Regulamin COI znam tylko z wyników wyszukiwania.
+- Strony PyPI `jsonata-python` i pierwszy adres licencji LibreOffice nie załadowały się; użyłem GitHuba i drugiego adresu.
+
+**Fakty niezweryfikowane**
+- Obsługa `.doc` i ODS przez Tika oraz `pol` w jego obrazie.
+- Licencje: tessdata, wagi PP-OCR, modele Docling, Bielik v3 11B, „Terms of Use” GGUF, PDF.js, `jsonata` JS, pydantic, rapidfuzz, Streamlit, Gradio (te ostatnie z pamięci).
+- Lokalizacja serwerów i lista modeli Sherlock oraz Scaleway; obsługa wyjścia strukturalnego u dostawców i w `llama-server`.
+- Koła `rapidocr` dla 3.14 (klasyfikatory kończą się na 3.13).
+- System operacyjny jury UZP.
+- Wszystkie liczby RAM i czasu.
+- Jakość polskiego OCR i jakość małych modeli na tych danych.
+
+**Model:** Claude Fable 5.2, ID `claude-fable-5-2`.

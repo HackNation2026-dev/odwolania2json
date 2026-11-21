@@ -1,5 +1,12 @@
 # Historia zmian
 
+## 0.3.0 — 2026-11-21
+
+- Opublikowano prywatne repo `HackNation2026-dev/odwolania2json` (organizację utworzył użytkownik ręcznie); potwierdzono prywatność, SHA i drzewo.
+- Dodano wynik niezależnej konsultacji Fable (`claude-fable-5-2`, bezpośrednie CLI): surowa odpowiedź, zlecenie i metadane.
+- Rekomendacja Fable dla UZP: czysty Python 3.13 (pip, CLI), hybryda reguł i małego LLM po API w UE, `pypdfium2` + `rapidocr`, GUI na końcu, bez Rusta. To nie jest decyzja zespołu; ADR-001 pozostaje propozycją.
+- Materiały organizatora bez zmian.
+
 ## 0.2.1 — 2026-11-21
 
 - Potwierdzono działające CLI Claude i alias modelu fable w pomocy.

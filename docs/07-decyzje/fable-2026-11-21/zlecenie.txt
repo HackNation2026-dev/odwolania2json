@@ -1,0 +1,28 @@
+Jesteś niezależnym recenzentem architektury (konsultacja Fable). Pracujesz TYLKO w trybie odczytu.
+
+Katalog bieżący zawiera dwa osobne monorepo przygotowawcze HackNation 2026:
+- ./formularze — zadanie COI „Cyfryzacja Formularzy” (wersja docs 0.1.1),
+- ./odwolania2json — zadanie UZP „Odwołania2JSON” (wersja docs 0.2.1, z doprecyzowaniami z Discorda).
+
+Przeczytaj w obu repo co najmniej: README.md, docs/01-zadanie/, docs/03-wymagania/ (README.md, kontrakt-danych.md), docs/04-architektura/, docs/05-weryfikacja/, docs/07-decyzje/ (ADR-001-stos.md, pytania-otwarte.md, rozbieznosci.md) oraz w razie potrzeby teksty materiałów w docs/02-materialy/tekst/ i oryginały organizatora. Wolno Ci też sprawdzić publiczną dokumentację techniczną bibliotek i licencji (WebSearch/WebFetch). Nie zmieniaj żadnych plików, nie uruchamiaj poleceń, nie odczytuj sekretów (.env, tokeny, klucze, ~/.config itp.), nie twórz repo i nie publikuj.
+
+Istniejący ADR-001-stos.md i pelna-aplikacja.md to propozycje poprzedniego autora — NIE traktuj ich jako decyzji; oceń je krytycznie.
+
+Preferencje zespołu: Rust, Python, TypeScript, Docker. Rust jest preferencją, nie warunkiem. Zgodność z wymaganiami organizatora i dojrzałość narzędzi są ważniejsze niż Rust — wybierz dojrzalszy stos, jeżeli lepiej spełnia wymagania i skraca wykonanie.
+
+Kluczowe ograniczenia (zweryfikuj w docs):
+UZP: Python 3.13+, requirements.txt, obowiązkowe CLI; PDF tekst i OCR wg FAQ; klasyfikacja odwołanie/pełnomocnictwo/przelew; ścisły JSON, klasy konfigurowalne; otwarte komponenty i model możliwy do instalacji lokalnej, ale jury NIE instaluje modelu na laptopie (bez GPU) — LLM przez publiczny endpoint; darmowe, płatne i własne API dozwolone, z ograniczeniami regionu (FAQ: UE; README: UE/EOG dla dostawcy i serwera). 60 syntetycznych spraw z JSON; brak ground_truth.yaml, brak załącznika ODWOLANIA2JSON_HackNation2026.pdf i oficjalnego skryptu F1. Listy porównywane po treści, próg 80% dla wskazanych długich pól; dokładny algorytm nieznany. Korekta Discord 13:27: obcy dokument -> pusty JSON pod nazwą oryginalnego PDF. Finał: 50% F1, 50% elastyczność (rozmiar modelu, konfiguracja, GUI premiowane).
+COI: REST API; PDF/DOC/DOCX/ODS/XLSX/JPG/JPEG/PNG -> konfiguracja formularza COI (title/tabs/flow, sekcje, pola, walidacje, reguły, JSONata, słowniki). Java 21+/Python 3.14+ preferowane. Brak zależności runtime od zewnętrznych API/MCP/SaaS; wykluczone wskazane licencje copyleft; bez zakupu licencji. Pliki użytkownika tylko tymczasowo, walidacja MIME/nazwy/rozmiaru. Docker z przypiętymi wersjami i nieuprzywilejowanym użytkownikiem. GUI i podgląd e-usługi dodatkowo punktowane. Sprzęt i model COI nieznane.
+
+Odpowiedz po polsku, zwięźle, w IDENTYCZNEJ strukturze dla obu zadań:
+1. Wymagania organizatora (fakty z docs, z odnośnikiem do pliku) — oddzielone od rekomendacji.
+2. Wariant zalecany i alternatywa (tabela decyzji).
+3. Rola Rusta: uzasadniony udział albo rezygnacja.
+4. Biblioteki, zależności i ryzyka licencji (także zależności przechodnie, np. PyMuPDF/AGPL, LibreOffice/MPL, Tesseract, modele).
+5. Model i inferencja; ryzyka CPU/RAM.
+6. Docker (budowa, obrazy bazowe, użytkownik, rozmiar).
+7. Ryzyka formatów: DOC/OCR/JSON.
+8. GUI: React/TypeScript vs egui — tylko w zakresie rzeczywistych potrzeb (PDF|JSON, edytor/podgląd formularza).
+9. Kolejność implementacji (pełna ścieżka).
+10. Uwagi do istniejącej propozycji ADR-001.
+Na końcu: źródła dokumentacji, które faktycznie przeczytałeś, ograniczenia sprawdzenia, fakty niezweryfikowane oraz rzeczywista nazwa/ID modelu, którym jesteś. Nie udawaj pomiarów ani przeglądu, którego nie wykonałeś.

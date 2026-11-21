@@ -1,12 +1,12 @@
 ---
-wersja: 0.1.0
+wersja: 0.3.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
 
 # ADR-001 — stos i granice implementacji
 
-Status: proponowana. Data: 2026-11-21.
+Status: proponowana. Data: 2026-11-21. Niezależna [konsultacja Fable](konsultacja-fable.md) zaleca rezygnację z Rusta w obu zadaniach i zawiera uwagi do tego ADR. To rekomendacja, nie decyzja: wybór stosu czeka na akceptację użytkownika i nowy ADR.
 
 Kontekst: zespół preferuje Rust, Python, TypeScript i Docker. Zadania mają różne warunki użycia modeli i języków.
 

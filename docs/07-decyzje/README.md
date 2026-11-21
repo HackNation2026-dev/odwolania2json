@@ -1,5 +1,5 @@
 ---
-wersja: 0.2.0
+wersja: 0.3.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
@@ -12,4 +12,4 @@ status: dokumentacja przygotowawcza
 
 Odpowiedź mentora zapisz jako źródło z datą, treścią i kanałem. Dopiero potem oznacz pytanie jako zamknięte. Nie usuwaj poprzedniej interpretacji z historii Git.
 
-[Konsultacja Fable — zlecenie i status](konsultacja-fable.md).
+[Konsultacja Fable — wynik i surowa odpowiedź](konsultacja-fable.md).

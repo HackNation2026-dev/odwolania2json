@@ -1,5 +1,5 @@
 ---
-wersja: 0.2.0
+wersja: 0.3.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
@@ -18,4 +18,4 @@ Skrypt sprawdza konto, organizację, prywatność i właściciela. Tworzy repo t
 
 Pierwszy tag: v0.1.0. Sam lokalny origin nie potwierdza istnienia repo na GitHub. Status publikacji ustala wynik skryptu i odczyt zdalnego repo.
 
-Aktualny cel: `https://github.com/HackNation2026-dev/odwolania2json`. Organizacja ani publikacja nie zostały potwierdzone. Ostatnia kontrola: CLI nie łączy się z api.github.com; brak zainstalowanej integracji GitHub oraz zapisanej sesji przeglądarki. Skrypt nie tworzy organizacji: musi ona istnieć i być dostępna dla zalogowanego konta.
+Stan 2026-11-21: organizację `HackNation2026-dev` utworzył użytkownik ręcznie, bo GitHub.com nie udostępnia API do zakładania organizacji. Konto `kacperpaczos` ma w niej rolę admin. Repo `https://github.com/HackNation2026-dev/odwolania2json` utworzył skrypt. Odczyt API przed wysłaniem materiałów potwierdził `private=true` i właściciela `HackNation2026-dev`. Pierwsza publikacja wysłała `main` = `9762c12` i tagi v0.1.0–v0.2.1, bez force push. Hash drzewa zdalnego był równy lokalnemu. Kolejne wydania wysyła ten sam skrypt i potwierdza ponownym odczytem.

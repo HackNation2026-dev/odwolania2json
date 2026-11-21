@@ -1,7 +1,7 @@
 ---
-wersja: 0.2.0
+wersja: 0.3.0
 aktualizacja: 2026-11-21
-status: propozycja autora; konsultacja Fable niewykonana
+status: propozycja autora; wynik konsultacji Fable w docs/07-decyzje/konsultacja-fable.md
 ---
 
 # Pełna aplikacja i wybór interfejsu
@@ -22,7 +22,7 @@ Docelowo: `apps/web/` dla React/TypeScript, `apps/backend/` dla API i CLI, `pack
 
 ## Decyzja i konsekwencje
 
-Status: proponowana, rozwinięcie ADR-001. Wariant domyślny to Python + React/TypeScript + Docker. Rust dodajemy tam, gdzie istnieje sprawdzony komponent lub pomiar uzasadnia jego koszt. Dodatkowy język oznacza dodatkowe budowanie, kontrakty i testy uruchomienia. Nie przypisujemy tej rekomendacji Fable.
+Status: proponowana, rozwinięcie ADR-001. Wariant domyślny to Python + React/TypeScript + Docker. Rust dodajemy tam, gdzie istnieje sprawdzony komponent lub pomiar uzasadnia jego koszt. Dodatkowy język oznacza dodatkowe budowanie, kontrakty i testy uruchomienia. Nie przypisujemy tej rekomendacji Fable. Rekomendacja Fable (wyłącznie Python, bez Rusta) jest osobno w [konsultacji Fable](../07-decyzje/konsultacja-fable.md).
 
 ## Pytania do niezależnej konsultacji Fable
 
