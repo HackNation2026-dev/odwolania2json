@@ -43,3 +43,7 @@ Wnioski (interpretacja zespołu, do weryfikacji na ewaluatorze):
 3. Kluczowa decyzja to więc „czy pole występuje w dokumencie”, a nie „czy jestem pewien wartości”. Klasyfikator obecności pola jest ważniejszy niż próg pewności wartości.
 4. Próg 80% dotyczy tylko długich tekstów (nazwy firm i pozostałe pola wskazane 13:26). Dla identyfikatorów i dat zakładamy dokładną zgodność, więc normalizacja formatu decyduje o TP.
 5. Zasada „brak zmyślania” (UZP-04) pozostaje: wartość musi pochodzić z dokumentu. Wniosek 1 nie pozwala zgadywać wartości spoza tekstu.
+
+## Przyjęta interpretacja w ewaluatorze (2026-11-22, ADR-005)
+
+Do czasu potwierdzenia z mentorem (U-Q01, U-Q02) ewaluator zespołu liczy błędną obecną wartość wyłącznie jako FP, bez dodatkowego FN; wariant FP+FN jest konfigurowalny tylko do porównania. Próg 0,8 (włącznie) stosuje się do pięciu pól tekstowych, podobieństwem wybieranym spośród `ratio` (domyślne), `token_sort_ratio` i `partial_ratio`, a raport pokazuje rozrzut F1 dla każdego. Listy parujemy po najlepszym przypisaniu element do elementu. Szczegóły i konsekwencje: [ADR-005](../07-decyzje/ADR-005-interpretacja-f1.md). Wcześniejsze akapity pozostają bez zmian jako historia.

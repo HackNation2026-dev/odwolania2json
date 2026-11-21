@@ -41,7 +41,7 @@ Brak skanów w przykładach nie jest potwierdzeniem ich braku w teście. Brak li
 
 | ID | Stan | Odpowiedź |
 |---|---|---|
-| U-Q01, U-Q02 | częściowo | Liczone TP, TN, FP, FN (Discord 11:26). Miara podobieństwa 80%, normalizacja i agregacja nadal nieznane. |
+| U-Q01, U-Q02 | częściowo | Liczone TP, TN, FP, FN (Discord 11:26). Miara podobieństwa 80%, normalizacja i agregacja nadal nieznane; przyjęta robocza interpretacja w [ADR-005](ADR-005-interpretacja-f1.md). |
 | U-Q03 | częściowo | Obcy dokument: `{}` pod nazwą pliku — potwierdzone. `null` a brak klucza: nie pytano. |
 | U-Q05 | zamknięte | Hosting w Europie; modele i inne komponenty mogą być po API, jeśli spełniają wymogi. |
 | U-Q06 | nieaktualne | Dostarczenie wyłącznie przez pip; Docker tylko deweloperski. |

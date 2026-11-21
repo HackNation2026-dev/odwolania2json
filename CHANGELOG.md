@@ -29,6 +29,9 @@
 - Ujednolicono angielskie nazwy kontraktów, artefaktów i stanów; zaproponowano mapowanie polskich kodów katalogu bez zmiany katalogu i ocenianego JSON.
 - Opisano konfigurację, pobranie klucza, zgodę na zapis, CLI `selfcheck` i stan API; zaktualizowano diagram i pozostałe decyzje. Projekt GUI bez zmian w tym zleceniu.
 
+- Ewaluator F1 v2 (ADR-005): błędna obecna wartość to wyłącznie FP (wariant FP+FN konfigurowalny do porównania); próg podobieństwa 0,8 dla pięciu pól tekstowych z wymiennym algorytmem (`ratio` domyślnie, `token_sort_ratio`, `partial_ratio`) i raportem rozrzutu F1; listy parowane element do elementu po najlepszym przypisaniu, pola oceniane osobno.
+- Dodano bootstrap po sprawach (przedział F1) i porównanie sparowane ΔF1 z jawnym ziarnem (`bootstrap.py`) oraz testy: referencja kontra referencja daje F1 = 1,0 na 180 plikach.
+
 ## 0.5.0 — 2026-11-21
 
 - Dodano ADR-002 z decyzjami użytkownika po recenzji architektury przez Codex: odrzucone `pypdfium2` i `rapidocr` (będzie własne rozwiązanie), klasyfikacja i LLM otwarte, regex tylko z eksperymentami i testami mutacyjnymi, zgodność API (MiniMax: Claude; DeepSeek, GLM, OpenAI: OpenAI), zakaz zwracania starego wyniku z cache przy awarii API, GUI React/TS (prawdopodobnie Next.js).
