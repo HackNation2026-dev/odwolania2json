@@ -2,7 +2,7 @@
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { getApi } from "./index";
-import type { DocumentQuery } from "./schemas";
+import type { CheckStep, DocumentQuery } from "./schemas";
 
 export const keys = {
   key: ["key"] as const,
@@ -58,3 +58,17 @@ export function useUpdateField() {
 export function useExportJson() {
   return useMutation({ mutationFn: (id: string) => getApi().exportJson(id) });
 }
+
+export function useRunSelfCheck() {
+  const qc = useQueryClient();
+  return useMutation({
+    retry: false,
+    mutationFn: (onStep: (steps: CheckStep[]) => void) => getApi().runSelfCheck(onStep),
+    onSettled: () => qc.invalidateQueries({ queryKey: keys.key }),
+  });
+}
+
+export const useSystemInfo = () => useQuery({ queryKey: ["system-info"], queryFn: () => getApi().getSystemInfo() });
+export const useUsers = () => useQuery({ queryKey: ["users"], queryFn: () => getApi().listUsers() });
+
+export const useEvents = () => useQuery({ queryKey: ["events"], queryFn: () => getApi().listEvents() });

@@ -1,3 +1,5 @@
+import { DashboardView } from "@/features/pulpit/DashboardView";
+
 export default function Page() {
-  return <h1 className="text-2xl font-semibold">Pulpit</h1>;
+  return <DashboardView />;
 }

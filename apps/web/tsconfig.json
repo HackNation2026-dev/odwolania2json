@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
@@ -14,9 +18,41 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "plugins": [{ "name": "next" }],
-    "paths": { "@/*": ["./src/*"] }
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next-e2e-3105/types/**/*.ts",
+    ".next-e2e-3105/dev/types/**/*.ts",
+    ".next-e2e-3101/types/**/*.ts",
+    ".next-e2e-3101/dev/types/**/*.ts",
+    ".next-e2e-3103/types/**/*.ts",
+    ".next-e2e-3103/dev/types/**/*.ts",
+    ".next-e2e-3102/types/**/*.ts",
+    ".next-e2e-3102/dev/types/**/*.ts",
+    ".next-e2e-3104/types/**/*.ts",
+    ".next-e2e-3104/dev/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    ".next-e2e-3190/types/**/*.ts",
+    ".next-e2e-3190/dev/types/**/*.ts",
+    ".next-w1-review/types/**/*.ts",
+    ".next-w1-review/dev/types/**/*.ts",
+    ".next-shot/types/**/*.ts",
+    ".next-shot/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

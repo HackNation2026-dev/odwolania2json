@@ -29,3 +29,12 @@ export class ApiError extends Error {
     this.name = "ApiError";
   }
 }
+
+export interface ApiClient {
+  getSystemInfo(): Promise<import("./schemas").SystemInfo>;
+  listUsers(): Promise<import("./schemas").UserRecord[]>;
+}
+
+export interface ApiClient {
+  listEvents(): Promise<import("./schemas").EventRecord[]>;
+}

@@ -30,17 +30,17 @@
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #141814;
-  --surface: #1b211c;
-  --surface-raised: #232a24;
-  --border: #2f382f;
-  --border-control: #8aa597;
-  --text: #e6eae4;
-  --muted: #a6aea3;
-  --primary: #a8c9b6;
-  --on-primary: #0f1a14;
-  --subtle: #222923;
-  --focus: #a8c9b6;
+  --bg: #141815;
+  --surface: #1c211d;
+  --surface-raised: #232a25;
+  --border: #2e352f;
+  --border-control: #7f9688;
+  --text: #e6ebe5;
+  --muted: #a7b0a6;
+  --primary: #a9c4b6;
+  --on-primary: #17201b;
+  --subtle: #263029;
+  --focus: #8fb09e;
 
   --full-bg: #173024;       --full-fg: #7fd1a4;
   --partial-bg: #382c12;    --partial-fg: #efc377;
@@ -50,7 +50,7 @@
   --foreign-bg: #262d27;    --foreign-fg: #b6beb3;
 
   --evidence-border: #8a5300;
-  --pdf-canvas: #0d100d;
+  --pdf-canvas: #0e110f;
   --shadow-1: none;
   --shadow-2: none;
 }

@@ -48,6 +48,8 @@ export function createMockClient(options: MockOptions = {}): ApiClient {
   };
 
   return {
+    ...createMockInfoMethods(wait),
+    ...createMockEventMethods(wait),
     getKeyStatus: () => wait(key),
     async saveKey({ value, persist }) {
       if (!value.trim()) throw new ApiError("KEY_EMPTY", "Podaj klucz API.");
@@ -128,4 +130,37 @@ export function createMockClient(options: MockOptions = {}): ApiClient {
     },
     listClasses: () => wait(classes),
   };
+}
+
+/** Syntetyczna konfiguracja demonstracji; nie potwierdza zgodności rzeczywistego dostawcy. */
+function createMockInfoMethods(wait: <T>(value: T) => Promise<T>): Pick<ApiClient, "getSystemInfo" | "listUsers"> {
+  return {
+    getSystemInfo: () => wait({
+      demo: true,
+      models: [{ id: "demo-llm", name: "MiniMax-M3.1-Flash-Preview", version: null, role: "Klasyfikacja i ekstrakcja", state: "configured", parameters: null, license: "MiniMax Community License — niepotwierdzona", weights: "Publiczne wagi: wymagają weryfikacji", localInstallation: "Instrukcja lokalnej instalacji: niepotwierdzona", provider: "api.minimax.io · protokół zgodny z Anthropic", companyCountry: null, serverCountry: null, region: "Europa — wpis demonstracyjny, niepotwierdzony", confirmation: "Brak źródła i daty potwierdzenia licencji oraz lokalizacji. Wywołania rzeczywistego modelu zablokowane." }],
+      ocr: { name: "rapidocr", version: null, mode: "shim", execution: "Lokalnie, CPU urządzenia jury — konfiguracja demonstracyjna", license: null, parameters: null, detail: "OCR tymczasowy (shim). Docelowy własny model OCR nie jest podłączony. Mock nie wykonuje OCR ani nie potwierdza gotowości komponentu." },
+      largestModel: null,
+      versions: { application: "0.1.0", engine: null, classes: "demo-v1", contract: null },
+      limits: { fileMb: 20, batch: null, concurrency: null },
+      licenses: null,
+    }),
+    listUsers: () => wait([
+      { id: "demo-anna", name: "Anna Kowalska", email: "anna.kowalska@example.test", role: "Administrator", personalData: true, status: "active", lastLogin: "2026-11-21T21:58:00+01:00" },
+      { id: "demo-jan", name: "Jan Nowak", email: "jan.nowak@example.test", role: "Operator", personalData: false, status: "active", lastLogin: "2026-11-21T20:41:00+01:00" },
+      { id: "demo-ewa", name: "Ewa Wiśniewska", email: "ewa.wisniewska@example.test", role: "Weryfikator", personalData: true, status: "active", lastLogin: "2026-11-21T18:12:00+01:00" },
+      { id: "demo-piotr", name: "Piotr Zieliński", email: "piotr.zielinski@example.test", role: "Obserwator", personalData: false, status: "invited", lastLogin: null },
+      { id: "demo-marta", name: "Marta Lis", email: "marta.lis@example.test", role: "Konfigurator", personalData: false, status: "blocked", lastLogin: "2026-11-14T09:30:00+01:00" },
+    ]),
+  };
+}
+
+function createMockEventMethods(wait: <T>(value: T) => Promise<T>): Pick<ApiClient, "listEvents"> {
+  return { listEvents: () => wait([
+    { id: "evt-6", occurredAt: "2026-11-21T14:12:00+01:00", type: "export", description: "Eksport JSON", documentName: "nota-testowa.pdf", result: "success", detail: "Zapisano nota-testowa.json po walidacji. Dowody zapisano osobno." },
+    { id: "evt-5", occurredAt: "2026-11-21T14:11:00+01:00", type: "correction", description: "Korekta pola", documentName: "nota-testowa.pdf", result: "success", detail: "Pole numer_noty. Było: •••; Jest: •••. Wartości zamaskowane." },
+    { id: "evt-4", occurredAt: "2026-11-21T14:10:00+01:00", type: "export", description: "Próba eksportu JSON", documentName: "skan-testowy.pdf", result: "blocked", detail: "Niedozwolony null w wymaganym polu. Wariant A blokuje eksport." },
+    { id: "evt-3", occurredAt: "2026-11-21T14:09:00+01:00", type: "error", description: "Błąd OCR", documentName: "skan-testowy.pdf", result: "error", detail: "OCR niedostępny. Nie zapisano pliku wynikowego ani zastępczego {}." },
+    { id: "evt-2", occurredAt: "2026-11-21T14:08:00+01:00", type: "analysis", description: "Zakończono analizę", documentName: "nota-testowa.pdf", result: "success", detail: "Wynik zgodny z kontraktem demonstracyjnym." },
+    { id: "evt-1", occurredAt: "2026-11-21T14:07:00+01:00", type: "upload", description: "Wgranie PDF", documentName: "nota-testowa.pdf", result: "success", detail: "Przyjęto syntetyczny dokument do analizy." },
+  ]) };
 }

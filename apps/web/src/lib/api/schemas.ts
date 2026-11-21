@@ -91,3 +91,35 @@ export type DocumentQuery = {
   classId?: string;
   sort?: "newest" | "oldest" | "name" | "status";
 };
+
+export const systemInfoSchema = z.object({
+  demo: z.literal(true),
+  models: z.array(z.object({
+    id: z.string(), name: z.string(), version: z.string().nullable(), role: z.string(),
+    state: z.enum(["configured", "used", "disabled"]), parameters: z.string().nullable(),
+    license: z.string().nullable(), weights: z.string().nullable(), localInstallation: z.string().nullable(),
+    provider: z.string().nullable(), companyCountry: z.string().nullable(), serverCountry: z.string().nullable(),
+    region: z.string().nullable(), confirmation: z.string(),
+  })),
+  ocr: z.object({ name: z.string(), version: z.string().nullable(), mode: z.enum(["target", "shim", "unavailable"]), execution: z.string(), license: z.string().nullable(), parameters: z.string().nullable(), detail: z.string() }),
+  largestModel: z.string().nullable(),
+  versions: z.object({ application: z.string(), engine: z.string().nullable(), classes: z.string(), contract: z.string().nullable() }),
+  limits: z.object({ fileMb: z.number().positive().nullable(), batch: z.number().int().positive().nullable(), concurrency: z.number().int().positive().nullable() }),
+  licenses: z.string().nullable(),
+});
+export type SystemInfo = z.infer<typeof systemInfoSchema>;
+
+export const userRecordSchema = z.object({
+  id: z.string(), name: z.string(), email: z.string(), role: z.enum(["Administrator", "Operator", "Weryfikator", "Obserwator", "Konfigurator"]),
+  personalData: z.boolean(), status: z.enum(["active", "invited", "blocked"]), lastLogin: z.string().nullable(),
+});
+export type UserRecord = z.infer<typeof userRecordSchema>;
+
+export const eventTypeSchema = z.enum(["upload", "analysis", "error", "correction", "export", "configuration"]);
+export type EventType = z.infer<typeof eventTypeSchema>;
+export const eventRecordSchema = z.object({
+  id: z.string(), occurredAt: z.string().datetime({ offset: true }), type: eventTypeSchema,
+  description: z.string(), documentName: z.string().nullable(),
+  result: z.enum(["success", "blocked", "error"]), detail: z.string(),
+});
+export type EventRecord = z.infer<typeof eventRecordSchema>;
