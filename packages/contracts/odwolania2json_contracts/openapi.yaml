@@ -1,0 +1,342 @@
+openapi: 3.1.0
+info:
+  title: Odwołania2JSON — kontrakt danych
+  version: 0.5.0
+  summary: Kontrakt danych spraw odwoławczych UZP.
+  description: |
+    Schematy dokumentów organizatora UZP: odwołanie, pełnomocnictwo i przelew.
+
+    Nazwy kluczy, ich kolejność oraz typy odpowiadają wzorcom z
+    `docs/02-materialy/organizator-uzp/oczekiwane-json/`. Każdy klucz jest
+    zawsze obecny; brak danych oznacza `null`, nigdy pominięty klucz.
+
+    Modele pydantic generuje `scripts/generate_contracts.py`; pliku `models.py`
+    nie wolno edytować ręcznie.
+paths:
+  /healthz:
+    get:
+      operationId: healthz
+      summary: Sprawdzenie dostępności usługi.
+      responses:
+        "200":
+          description: "Usługa odpowiada."
+components:
+  schemas:
+    Odwolanie:
+      type: object
+      description: "Odwołanie do KIO wraz ze stronami postępowania i zamówieniem."
+      additionalProperties: false
+      properties:
+        OdwolanieKIO:
+          $ref: "#/components/schemas/OdwolanieKIO"
+        Odwolujacy:
+          type: array
+          description: "Strony odwołujące (przy konsorcjum: lider konsorcjum)."
+          items:
+            $ref: "#/components/schemas/Odwolujacy"
+        Zamawiajacy:
+          type: array
+          description: "Zamawiający (przy wielu zamawiających: wszyscy)."
+          items:
+            $ref: "#/components/schemas/Zamawiajacy"
+        ZamowieniePubliczne:
+          $ref: "#/components/schemas/ZamowieniePubliczne"
+      required:
+        - OdwolanieKIO
+        - Odwolujacy
+        - Zamawiajacy
+        - ZamowieniePubliczne
+
+    OdwolanieKIO:
+      type: object
+      description: "Nagłówek odwołania oraz zaskarżona czynność."
+      additionalProperties: false
+      properties:
+        data:
+          type: ["string", "null"]
+          description: "Data z nagłówka pierwszej strony (w dokumencie jako DD.MM.RRRR)."
+          pattern: '^\d{4}-\d{2}-\d{2}$'
+        czynnosc_dzien:
+          type: ["string", "null"]
+          description: "Data czynności uruchamiającej bieg terminu odwołania dla pierwszego zarzutu."
+          pattern: '^\d{4}-\d{2}-\d{2}$'
+        czynnosc_powod_id:
+          type: ["integer", "null"]
+          description: "Identyfikator powodu odwołania (1-12), ustalany wyłącznie z pierwszego zarzutu."
+          minimum: 1
+          maximum: 12
+        czynnosc_opis:
+          type: ["string", "null"]
+          description: "Kanoniczny opis zaskarżonej czynności, zgodny 1:1 z czynnosc_powod_id."
+          enum:
+            - "Decyzja o odrzuceniu oferty"
+            - "Ogłoszenie wyboru oferty"
+            - "Decyzja o wykluczeniu wykonawcy"
+            - "Publikacja specyfikacji warunków zamówienia (SWZ)"
+            - "Modyfikacja treści SWZ"
+            - "Odpowiedzi/wyjaśnienia do SWZ"
+            - "Zaniechanie odrzucenia oferty"
+            - "Zaniechanie wykluczenia wykonawcy"
+            - "Decyzja o unieważnieniu postępowania"
+            - "Zaniechanie unieważnienia postępowania"
+            - "Opis przedmiotu zamówienia (OPZ)"
+            - "Projektowane postanowienia umowy"
+            - null
+        miejscowosc:
+          type: ["string", "null"]
+          description: "Miejscowość z nagłówka pierwszej strony."
+      required:
+        - data
+        - czynnosc_dzien
+        - czynnosc_powod_id
+        - czynnosc_opis
+        - miejscowosc
+
+    Odwolujacy:
+      type: object
+      description: "Odwołujący (przy konsorcjum: lider konsorcjum)."
+      additionalProperties: false
+      properties:
+        krs:
+          type: ["string", "null"]
+          description: "KRS odwołującego lub lidera konsorcjum, jeśli występuje."
+        nazwa:
+          type: ["string", "null"]
+          description: "Pełna nazwa podmiotu opisanego w tekście jako Odwołujący."
+        nip:
+          type: ["string", "null"]
+          description: "NIP odwołującego lub lidera konsorcjum, jeśli występuje."
+        regon:
+          type: ["string", "null"]
+          description: "REGON odwołującego lub lidera konsorcjum, jeśli występuje."
+        przez-pelnomocnika:
+          type: ["integer", "null"]
+          description: "1 — odwołanie przez pełnomocnika, 0 — bez pełnomocnika."
+          enum:
+            - 0
+            - 1
+            - null
+        pelnomocnik:
+          description: "Pełnomocnik odwołującego."
+          anyOf:
+            - $ref: "#/components/schemas/PelnomocnikOdwolania"
+            - type: "null"
+      required:
+        - krs
+        - nazwa
+        - nip
+        - regon
+        - przez-pelnomocnika
+        - pelnomocnik
+
+    PelnomocnikOdwolania:
+      type: object
+      description: "Dane pełnomocnika odwołującego."
+      additionalProperties: false
+      properties:
+        imie_nazwisko:
+          type: ["string", "null"]
+          description: "Imię i nazwisko pełnomocnika, jeśli występuje."
+        nazwa:
+          type: ["string", "null"]
+          description: "Nazwa podmiotu zatrudniającego pełnomocnika."
+        mail:
+          type: ["string", "null"]
+          description: "Adres e-mail kontaktowy do pełnomocnika."
+      required:
+        - imie_nazwisko
+        - nazwa
+        - mail
+
+    Zamawiajacy:
+      type: object
+      description: "Zamawiający w postępowaniu."
+      additionalProperties: false
+      properties:
+        krs:
+          type: ["string", "null"]
+          description: "KRS zamawiającego, jeśli jawnie podany."
+        nazwa:
+          type: ["string", "null"]
+          description: "Pełna nazwa podmiotu opisanego w tekście jako Zamawiający."
+        nip:
+          type: ["string", "null"]
+          description: "NIP zamawiającego, jeśli jawnie podany."
+        regon:
+          type: ["string", "null"]
+          description: "REGON zamawiającego, jeśli jawnie podany."
+        prowadzacy_postepowanie:
+          type: ["integer", "null"]
+          description: "1 — prowadzący postępowanie, 0 — wskazany, ale inny, null — brak informacji."
+          enum:
+            - 0
+            - 1
+            - null
+      required:
+        - krs
+        - nazwa
+        - nip
+        - regon
+        - prowadzacy_postepowanie
+
+    ZamowieniePubliczne:
+      type: object
+      description: "Dane zamówienia publicznego, o którym odwołanie."
+      additionalProperties: false
+      properties:
+        numer_bzp:
+          type: ["string", "null"]
+          description: "Numer ogłoszenia w BZP (format YYYY/BZP ########), jeśli występuje."
+        numer_postepowania:
+          type: ["string", "null"]
+          description: "Numer referencyjny postępowania (np. ZP.039.2025), jeśli występuje."
+        numer_ted:
+          type: ["string", "null"]
+          description: "Numer TED w formacie NNNNNN-YYYY, jeśli występuje."
+        tytul:
+          type: ["string", "null"]
+          description: "Tytuł zamówienia lub postępowania, jeśli występuje."
+      required:
+        - numer_bzp
+        - numer_postepowania
+        - numer_ted
+        - tytul
+
+    Pelnomocnictwo:
+      type: object
+      description: "Pełnomocnictwo: mocodawcy, osoby podpisujące i pełnomocnicy."
+      additionalProperties: false
+      properties:
+        mocodawca:
+          type: array
+          description: "Mocodawcy udzielający pełnomocnictwa (może być więcej niż jeden)."
+          items:
+            $ref: "#/components/schemas/Mocodawca"
+        pelnomocnicy:
+          type: array
+          description: "Osoby otrzymujące pełnomocnictwo."
+          items:
+            $ref: "#/components/schemas/PelnomocnikPelnomocnictwa"
+      required:
+        - mocodawca
+        - pelnomocnicy
+
+    Mocodawca:
+      type: object
+      description: "Mocodawca pełnomocnictwa wraz z osobami podpisującymi."
+      additionalProperties: false
+      properties:
+        data:
+          $ref: "#/components/schemas/MocodawcaDane"
+        podpisujacy:
+          type: array
+          description: "Osoby podpisujące w imieniu mocodawcy."
+          items:
+            $ref: "#/components/schemas/Podpisujacy"
+      required:
+        - data
+        - podpisujacy
+
+    MocodawcaDane:
+      type: object
+      description: "Dane mocodawcy: osoby fizycznej albo prawnej."
+      additionalProperties: false
+      properties:
+        imie_nazwisko:
+          type: ["string", "null"]
+          description: "Imię i nazwisko mocodawcy, jeśli jest osobą fizyczną (dla osoby prawnej null)."
+        krs:
+          type: ["string", "null"]
+          description: "KRS mocodawcy będącego osobą prawną."
+        nazwa:
+          type: ["string", "null"]
+          description: "Pełna nazwa mocodawcy."
+        nip:
+          type: ["string", "null"]
+          description: "NIP mocodawcy."
+        typ:
+          type: ["string", "null"]
+          description: "Typ mocodawcy: osoba_prawna albo osoba_fizyczna."
+          enum:
+            - osoba_prawna
+            - osoba_fizyczna
+            - null
+      required:
+        - imie_nazwisko
+        - krs
+        - nazwa
+        - nip
+        - typ
+
+    Podpisujacy:
+      type: object
+      description: "Osoba podpisująca w imieniu mocodawcy."
+      additionalProperties: false
+      properties:
+        imie_nazwisko:
+          type: ["string", "null"]
+          description: "Imię i nazwisko osoby podpisującej."
+      required:
+        - imie_nazwisko
+
+    PelnomocnikPelnomocnictwa:
+      type: object
+      description: "Osoba otrzymująca pełnomocnictwo."
+      additionalProperties: false
+      properties:
+        imie_nazwisko:
+          type: ["string", "null"]
+          description: "Imię i nazwisko pełnomocnika w mianowniku."
+        pesel:
+          type: ["string", "null"]
+          description: "PESEL pełnomocnika, jeśli jest podany."
+      required:
+        - imie_nazwisko
+        - pesel
+
+    Przelew:
+      type: object
+      description: "Potwierdzenie przelewu opłaty odwoławczej."
+      additionalProperties: false
+      properties:
+        przelew_bankowy:
+          $ref: "#/components/schemas/PrzelewBankowy"
+      required:
+        - przelew_bankowy
+
+    PrzelewBankowy:
+      type: object
+      description: "Dane przelewu bankowego."
+      additionalProperties: false
+      properties:
+        data_operacji:
+          type: ["string", "null"]
+          description: "Data operacji bankowej."
+          pattern: '^\d{4}-\d{2}-\d{2}$'
+        kwota:
+          type: ["number", "null"]
+          description: "Kwota przelewu."
+        na_rachunek:
+          type: ["string", "null"]
+          description: "Numer rachunku odbiorcy."
+        numer_transakcji:
+          type: ["string", "null"]
+          description: "Numer transakcji bankowej, jeśli jest podany."
+        tytul:
+          type: ["string", "null"]
+          description: "Tytuł przelewu."
+        z_rachunku:
+          type: ["string", "null"]
+          description: "Numer rachunku nadawcy."
+      required:
+        - data_operacji
+        - kwota
+        - na_rachunek
+        - numer_transakcji
+        - tytul
+        - z_rachunku
+
+    PustyWynik:
+      type: object
+      description: "Pusty wynik dla dokumentu spoza zakresu (dokument obcy)."
+      additionalProperties: false

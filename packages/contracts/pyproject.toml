@@ -15,3 +15,6 @@ version = {attr = "odwolania2json_contracts.__version__"}
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["odwolania2json_contracts*"]
+
+[tool.setuptools.package-data]
+odwolania2json_contracts = ["*.yaml"]
