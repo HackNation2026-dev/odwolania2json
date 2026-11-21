@@ -38,7 +38,6 @@ Rozszerzenia T2, T4, analiza regionów włączamy tylko po poprawie F1 na zbiorz
 | Dług | Szczegóły | Jak naprawić |
 |---|---|---|
 | Przeżyłe mutanty | `normalize.py` 83 z 216, `db/repository.py` 8 z 17, `db/data_repository.py` 21 z 63 (pomiar `ci.py --stage mutation`) | testy zabijające mutanty: wagi PESEL, miesiące, wzorce dat; osobna gałąź na plik |
-| Rozbieżność wersji | pakiety mają 0.5.0, `VERSION` ma 0.6.1; `release.py` to blokuje | ujednolicić wersje w `pyproject.toml` |
 | Dwa repozytoria danych | stary `CatalogRepository` obok `SqliteDataRepository` | decyzja użytkownika: zachować czy usunąć |
 | Semantyka `payload` | tekst JSON czy napis | decyzja użytkownika, zapis w ADR |
 | Kontrakt OpenAPI | `openapi.yaml` opisuje schematy dokumentów i `/healthz`, bez zasobów v1 | zadanie 5 |

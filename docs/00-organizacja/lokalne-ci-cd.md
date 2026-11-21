@@ -81,4 +81,4 @@ Domyślnie runner wykonuje pełne CI, buduje wheel i sdist obu pakietów na kopi
 
 ## Ograniczenia
 
-Weryfikacja etapu 2 używa CPythona 3.13.18 i przypiętych zależności. Systemowy python3 w środowisku roboczym ma wersję 3.15.2 i nie ma narzędzi projektu; do poleceń należy aktywować środowisko 3.13. Wersje pakietów nadal deklarują 0.5.0 przy VERSION 0.6.1: przed wydaniem trzeba je uzgodnić. W tym zadaniu nie wykonujemy wydania, commita ani push.
+Weryfikacja etapu 2 używa CPythona 3.13.18 i przypiętych zależności. Systemowy python3 w środowisku roboczym ma wersję 3.15.2 i nie ma narzędzi projektu; do poleceń należy aktywować środowisko 3.13. Wersje obu pakietów są ujednolicone na 0.6.1 zgodnie z VERSION (`__version__` i pyproject); `release.py` blokuje rozjazd. Wersja `info.version` w `openapi.yaml` (0.5.0) to osobna, niezależnie wersjonowana rewizja kontraktu; zmienia ją zadanie 5 z backlogu.
