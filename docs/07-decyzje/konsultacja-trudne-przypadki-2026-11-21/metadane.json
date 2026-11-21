@@ -1,0 +1,19 @@
+{
+ "konsultacja": "Trudne przypadki testowe UZP (Fable i Codex, niezależnie, to samo zlecenie)",
+ "fable": {
+  "polecenie": "claude -p --model fable --output-format json --no-session-persistence --allowedTools \"Read Glob Grep WebSearch WebFetch\" --disallowedTools \"Bash Edit Write NotebookEdit Agent\" < zlecenie.txt",
+  "model": [
+   "claude-fable-5-2"
+  ],
+  "tury": 53,
+  "czas_ms": 228202,
+  "koszt_usd": 3.386806,
+  "is_error": false
+ },
+ "codex": {
+  "polecenie": "codex exec -s read-only --skip-git-repo-check -C <repo> -o codex-odpowiedz.md - < zlecenie.txt",
+  "model": "gpt-6.1-sol (konfiguracja ~/.codex/config.toml)"
+ },
+ "start": "2026-11-21T18:00:52+01:00",
+ "koniec": "2026-11-21T18:05:56+01:00"
+}

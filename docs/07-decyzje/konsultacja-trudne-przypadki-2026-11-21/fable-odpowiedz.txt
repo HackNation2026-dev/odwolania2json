@@ -1,0 +1,161 @@
+Nie mogłem uruchamiać kodu, więc liczby pochodzą z przeszukania 180 referencyjnych JSON-ów w `docs/02-materialy/organizator-uzp/dane/` (migawka bazowa, bez pięciu poprawek z `main-7590db8`). PDF-ów nie parsowałem; obejrzałem sześć obrazów stron z `experiments/.../wyniki/2026-11-21-v1/strony/`.
+
+Najważniejszy wniosek: organizator ma ten sam problem co wy. Test jest „syntetyczny na podstawie prawdziwych przypadków" (`docs/03-wymagania/README.md`, l. 29), więc skany z referencjami najtaniej powstają przez rasteryzację lub wydruk i skan dokumentów z tego samego generatora. Najpierw trzeba więc bezbłędnie obsłużyć zwykły skan znanych układów, dopiero potem egzotykę.
+
+## 1. Przypadki brzegowe
+
+### Fakty: warianty treściowe w 60 sprawach
+
+| Wariant | Liczność | Gdzie |
+|---|---|---|
+| Więcej niż jeden odwołujący (konsorcjum) | 0/60 | `przez-pelnomocnika` występuje dokładnie raz w każdym `odwolanie.json` |
+| Odwołujący bez pełnomocnika (`przez-pelnomocnika: 0`, `pelnomocnik: null`) | 0/60 | jw. |
+| Dwóch zamawiających, `prowadzacy_postepowanie` 1/0 | 3/60 | przyklad_42, 51, 59 |
+| `data` i `miejscowosc` równe `null` (zawsze razem) | 15/60 | m.in. przyklad_01, 13, 19 |
+| `numer_bzp: null` / `numer_ted: null` / oba naraz | 12 / 13 / 0 | np. przyklad_02 / przyklad_07 |
+| `numer_postepowania`, `tytul`, `nip`, `regon`, `mail` równe `null` | 0 | — |
+| `krs: null` w odwołaniu | 9 podmiotów w 7 plikach | przyklad_41, 44, 46, 47, 51, 52, 58 |
+| `czynnosc_powod_id` 1–11 | po 4–9 | — |
+| `czynnosc_powod_id` = 12 (jest w słowniku) | 0 | `organizator-uzp-aktualizacje/main-7590db8/oczekiwane-json/czynnosc_powod_id_dict.md` |
+| Dwóch mocodawców | 6/60 | przyklad_41, 46, 48, 49, 50, 60 |
+| Mocodawca `osoba_fizyczna` | 4/66 | przyklad_44, 47, 51, 52 |
+| `pesel` inny niż `null` | 1/98 pełnomocników | przyklad_43 |
+| Trzech lub więcej pełnomocników | 0 (22 pliki z jednym, 38 z dwoma) | — |
+| Przelew inny niż opłata skarbowa od pełnomocnictwa | 0/60 | wszystkie `przelew.json` mają ten sam szablon tytułu |
+| Kwoty przelewu | tylko 17, 34, 50, 100, 200 | brak kwot z separatorem tysięcy |
+| Jakiekolwiek `null` w przelewie | 0/60 | `numer_transakcji` to zawsze `CEN…` |
+
+Dodatkowe obserwacje:
+
+- **Słownik zamiast cytatu:** poprawka przyklad_44 zmienia `czynnosc_opis` z „Odpowiedzi i wyjaśnienia do SWZ" na „Odpowiedzi/wyjaśnienia do SWZ". Wygląda na to, że to etykieta słownika, nie tekst z dokumentu (wniosek z jednej pary plików).
+- **Pierwszy pełnomocnik:** w przyklad_01 odwołanie wymienia dwóch radców, a referencja zawiera tylko pierwszego. Data czynności jest tam zapisana słownie („20 marca 2026 roku").
+- **Rachunki:** na przelewie jest „PL0547…", w referencji bez „PL"; kwota to „200,00 PLN" (`strony/p01_przelew/p001.jpg`).
+- **Szablon organizatora ma inny układ niż generator** (`strony/s_przyklad_odwolanie/p001.jpg`):
+  - papier firmowy kancelarii i czarne paski anonimizacji;
+  - „Warszawa, dnia 16 czerwca 2025 r." w prawym górnym rogu;
+  - „2025/BZP 00270698" ze spacją (w referencjach bez spacji);
+  - numer „RZP.27.29.2025.KD";
+  - na stronie 1 widać tylko etykietę KRS z zaczernioną wartością, bez NIP i REGON;
+  - na stronie 7 lista załączników z „dowodem uiszczenia wpisu".
+- **Szablon to czysty render, nie skan z papieru:** 96 dpi, 0 znaków tekstu (`dokumenty/s_przyklad_odwolanie.json`).
+- **Prawdziwy skan z papieru jest wśród negatywów:** odręczne dopiski w dacie i numerze, okrągła czerwona pieczęć, podpis na pieczątce (`strony/n_decyzja_ministra_sportu_i_turystyki1/p001.jpg`).
+
+### Rekomendacja: ranking (prawdopodobieństwo × wpływ)
+
+**Wizualne**
+
+| # | Przypadek | P | Wpływ na F1 |
+|---|---|---|---|
+| 1 | Czysty skan bez warstwy tekstowej (raster dokumentu z generatora) | pewne (mentor) | cały plik: same FN albo błędne `{}` |
+| 2 | Dokument mieszany: część stron tekst, część obraz | pewne | tracicie pola ze stron-obrazów, jeśli decyzja „tekst czy OCR" zapada na dokument, a nie na stronę |
+| 3 | Skan biurowy: 200–300 dpi, szarość lub 1-bit, przekrzywienie 0,5–3°, JPEG | wysokie | pojedyncze cyfry w NRB (26), KRS, NIP, `CEN…` i znaki diakrytyczne w nazwiskach; przy dokładnym porównaniu każda pomyłka to FP |
+| 4 | Obrót 90/180/270°, także flagą `/Rotate` (jest w negatywie Ministra Sprawiedliwości) | średnie | cała strona |
+| 5 | Skan z warstwą OCR z urządzenia, z błędami | średnie | wysoki i cichy: system ufa błędnemu tekstowi |
+| 6 | Pieczątki, podpisy, prezentata z datą wpływu | średnie | dodatkowa data konkuruje z `data` (FP), zasłonięte pola |
+| 7 | Zaczernienia (anonimizacja jak w szablonie) | średnie–niskie | pole powinno być `null`; zgadywanie daje FP |
+| 8 | Ksero drugiej generacji, 72–100 dpi | niskie–średnie | jak nr 3, mocniej |
+| 9 | Zdjęcie telefonem, faks, pola odręczne | niskie | wysoki, ale organizator rzadko ma do tego referencje |
+
+**Strukturalne**
+
+| # | Przypadek | P | Wpływ |
+|---|---|---|---|
+| 1 | Długie odwołania (10–11 stron), pola poza pierwszymi stronami | wysokie (są w danych) | eksperyment wysyłał modelom tylko ≤3 strony (`eksperyment-przypadki-brzegowe-2026-11-21.md`, pkt 3) |
+| 2 | Nazwy ze spacją i polskimi znakami, podfoldery, `.PDF` | wysokie (szablon: `case1/przyklad odwolanie.pdf`) | brak pliku wynikowego to utrata całego dokumentu |
+| 3 | Puste lub obrócone pojedyncze strony | średnie | niski–średni |
+| 4 | Kilka dokumentów lub załączniki w jednym pliku | niskie–średnie | referencja nieznana; zapytajcie mentora |
+| 5 | Uszkodzony, zaszyfrowany lub pusty PDF | niskie | awaria nie może zatrzymać całego batcha |
+
+**Treściowe** (według luk z tabeli faktów)
+
+1. Przelew będący wpisem od odwołania (kwoty rzędu tysięcy złotych, inny tytuł). To największa luka: 0 przykładów, a szablon wymienia taki załącznik.
+2. Konsorcjum i odwołujący bez pełnomocnika: 0 przykładów.
+3. Powód nr 12 oraz brak obu numerów (BZP i TED).
+4. Formaty zapisu: daty słowne i `dd.mm.rrrr`, BZP ze spacją, NRB w grupach po 4 cyfry, kwoty „7 500,00 zł".
+5. Trzech lub więcej pełnomocników, PESEL, mocodawca będący osobą fizyczną.
+6. Trudne negatywy bliskie klasom: odpowiedź na odwołanie, przystąpienie do postępowania, skarga na wyrok KIO, pełnomocnictwo procesowe w innej sprawie, faktura, wyciąg bankowy.
+
+## 2. Budowa trudnego zbioru z poprawnymi odpowiedziami
+
+| Grupa | Przekształcenia | Referencja |
+|---|---|---|
+| A: bez zmian | rasteryzacja ≥150 dpi; szarość lub 1-bit; JPEG; przekrzywienie ≤5°; obrót (obraz lub `/Rotate`); perspektywa; strony mieszane; pusta strona; pieczątka poza polami; zmiana metadanych | kopia oryginału |
+| B: wyprowadzana | ucięcie marginesu; usunięcie strony; zaczernienie; pieczątka na polu | pole → `null`, gdy zakryte są wszystkie jego wystąpienia |
+| C: nowa treść | własne szablony z nowymi wariantami (wpis, konsorcjum itd.) | zapisywana z tego samego rekordu, z którego powstaje PDF |
+| D: nieoceniane | dwa dokumenty w pliku; warstwa tekstu sprzeczna z obrazem; degradacja nieczytelna dla człowieka | brak; tylko test „nie wywraca się" i przegląd ręczny |
+
+- **Automatyzacja grupy B:** źródłowe PDF-y są tekstowe, więc dla każdej wartości referencyjnej da się znaleźć jej prostokąty na stronie. Po nałożeniu maski (ucięcie, pasek, pieczątka) skrypt sam ustala, które pola znikają.
+- **Założenie do potwierdzenia u mentora:** pole nieczytelne lub zakryte ma w referencji `null`.
+- **Kontrola czytelności:** każdy plik z grup A–B musi dać się odczytać człowiekowi. Jeśli nie, trafia do D. Inaczej mierzycie zgodność z referencją, której nikt nie potrafi odtworzyć.
+- **Poprawki:** w obecnym `syntetyczne.py` x09 (ucięte 18%) i x07 (dwa dokumenty) nie mają skorygowanej referencji.
+
+Jak uniknąć przeuczenia na własnym generatorze:
+
+1. Dzielcie po sprawach: około 40 do strojenia, 20 zamrożonych i uruchamianych rzadko.
+2. Odłóżcie całe rodziny przekształceń: strójcie na własnym potoku, sprawdzajcie na fizycznych skanach i na drugim, niezależnym narzędziu.
+3. Losujcie parametry z zapisanym ziarnem zamiast 12 stałych plików.
+4. Zróbcie drugi układ treści (grupa C); wszystkie 180 PDF-ów pochodzi z jednego generatora, a szablon pokazuje zupełnie inny układ.
+5. Wydrukujcie i zeskanujcie część spraw. To jedyne dane z rozkładu, którego nie zaprojektowaliście.
+
+## 3. Narzędzia i realizm
+
+Co jest nierealistyczne w `syntetyczne.py`:
+
+- **Szum:** niezależny szum Gaussa na piksel i kanał daje kolorowe ziarno. Skaner daje rozmycie optyczne, nierówne tło, progowanie i artefakty kompresji.
+- **Brak rozmycia i skanu 1-bitowego:** tekst po renderze 150 dpi pozostaje ostry jak wektor. Brakuje wariantu czarno-białego 1-bit, typowego dla urządzeń biurowych.
+- **Obrót:** `rotate(expand=False)` obcina rogi i wypełnia je jednolitym tłem. Brak ciemnych krawędzi i cienia grzbietu.
+- **Brak warstwy tekstu:** nie ma ani poprawnej, ani błędnej warstwy OCR i brak obrotu flagą `/Rotate`.
+- **Słabe przypadki:** pusta strona (x10) jest wektorowa, bez szumu. Pieczątka w x12 niczego nie zasłania, więc niczego nie testuje.
+- **Skala:** trzy sprawy źródłowe (01, 40, 02), każde przekształcenie raz, jedno ziarno. To demonstracja, nie pomiar.
+- **Co mierzono:** wykrycie problemu przez model, a nie F1 pól.
+
+| Cel | Narzędzie | Licencja | Uwagi |
+|---|---|---|---|
+| Druk→skan, ksero, faks, przebicie, zagięcia, cienie | `augraphy` | MIT | pip, offline; zgodność z Pythonem 3.13 sprawdźcie przed użyciem |
+| Zdjęcie telefonem (perspektywa, cień, rozmycie ruchu) | `opencv-python-headless` | Apache-2.0 | `warpPerspective`, gradient oświetlenia, tło biurka |
+| Skan 1-bit i faks | `Pillow` + `img2pdf` | HPND / LGPL-3.0 | faks: 204×98 dpi, próg, nagłówek nadawcy, wypadające linie |
+| Operacje na stronach, `/Rotate`, metadane | `pikepdf` lub obecny `pypdf` | MPL-2.0 / BSD-3 | — |
+| Nowe treści (grupa C) i niewidoczna warstwa tekstu | `reportlab` | BSD | tryb renderowania tekstu 3 daje dowolnie błędną warstwę |
+| Prawdziwa zła warstwa OCR | `ocrmypdf` | MPL-2.0 | wymaga Tesseracta i Ghostscripta z systemu, więc tylko do generowania danych |
+| Wszystko naraz | `PyMuPDF` | AGPL-3.0 | wygodne, ale licencja wyklucza je z produktu |
+
+Licencje i zgodność wersji podaję z pamięci; potwierdźcie je przed wpisaniem do dokumentacji. Żadne narzędzie nie zastąpi fizycznego wydruku i skanu: godzina pracy przy urządzeniu biurowym i telefonie daje najbardziej wiarygodny podzbiór.
+
+## 4. Pomiar
+
+- **Jednostka raportu:** (klasa × pole × rodzina przekształcenia × nasilenie) → TP/TN/FP/FN i F1 według wzoru z `docs/05-weryfikacja/zasady-f1.md`.
+- **Osobno:** macierz klasyfikacji 4×4 oraz odsetek plików bezbłędnych w całości.
+- **Pomiar parami:** ten sam dokument czysty i zdegradowany, raportowana różnica. Oddziela to straty odczytu od strat ekstrakcji.
+- **Krzywe nasilenia:** F1 względem dpi, kąta i jakości JPEG pokazują, gdzie odczyt się załamuje.
+- **Negatywy:** każde pole zwrócone dla dokumentu obcego to FP; pozytyw uznany za obcy to FN wszystkich pól (przybliżenie, oficjalny ewaluator jest nieznany).
+- **Manifest zestawu:** id, sprawa źródłowa, lista przekształceń z parametrami i ziarnem, ścieżka referencji, pola wyzerowane z powodem, flaga `oceniany`.
+- **Rozmiar:** co najmniej 30 dokumentów na rodzinę (10 spraw × 3 klasy). Przy zerze błędów w n dokumentach górna granica 95% odsetka plików z błędem to około 3/n, czyli 10% dla 30 i 3% dla 100. Błędy skupiają się w dokumentach, więc przedziały liczcie metodą bootstrap po sprawach.
+
+## 5. Plan na 24 h
+
+1. **0–2 h:** ewaluator na czystych 180 + 12 plikach, podział spraw 40/20, format manifestu.
+2. **2–5 h:** generator grupy A na wszystkich sprawach: trzy profile skanu, obroty obrazem i `/Rotate`, przekrzywienie, losowe strony mieszane, warstwa tekstu dobra i zła. Uruchomić i znaleźć progi załamania.
+3. **5–6 h:** wydruk i skan 10 spraw w dwóch ustawieniach urządzenia plus zdjęcia telefonem.
+4. **6–10 h:** naprawy według wyników: decyzja o trybie odczytu na stronę, orientacja, nieufność wobec podejrzanej warstwy tekstu, czytanie wszystkich stron.
+5. **10–12 h:** odporność batcha: nazwy plików, podfoldery, uszkodzone PDF-y, `{}` dla obcych.
+6. **12–16 h:** grupa C: przelew-wpis, konsorcjum, brak pełnomocnika, powód 12, formaty dat, kwot i rachunków.
+7. **16–20 h:** grupa B z referencjami wyprowadzanymi z prostokątów pól; trudne negatywy i negatywy zamienione w skany.
+8. **20–24 h:** jedno uruchomienie na zamrożonych 20 sprawach, pomiar czasu na i7 bez GPU, zestaw regresyjny.
+
+Pytania do mentora, które zmieniają priorytety:
+
+- Czy skany w teście pochodzą z tego samego generatora?
+- Co ma być wynikiem dla pliku z dwoma dokumentami?
+- Czy pole nieczytelne ma być `null`?
+
+## 6. Co opisać ręcznie
+
+- **`szablon-aplikacja/input/case1/przyklad odwolanie.pdf`: tak.**
+  - `output/case1/przyklad odwolanie.json` jest pusty (0 bajtów), więc referencji rzeczywiście nie ma.
+  - To jedyny pozytyw w realnym układzie.
+  - Niech dwie osoby opiszą go niezależnie i oznaczą wynik jako „referencja zespołu, niepotwierdzona".
+  - Spisane decyzje (zaczerniony KRS → `null`, BZP ze spacją lub bez, wybór powodu ze słownika) są cenniejsze niż sam plik.
+  - Widziałem tylko strony 1 i 7.
+- **12 negatywów i `negatywny przyklad.pdf`:** referencja `{}` już jest. Trzy skany i jeden plik mieszany to jedyne prawdziwe skany, więc użyjcie ich do kalibracji wyglądu degradacji. Wyrok KIO traktujcie jako stały test regresyjny klasyfikacji.
+- **Negatywy w folderach przykładów:** README organizatora (l. 145) mówi, że negatywy są też „w wybranych przykładach". W przejrzanej części listingu każdy `przyklad_XX` ma tylko trzy PDF-y. Sprawdźcie, czy najnowsza rewizja repozytorium organizatora czegoś nie dodała.
+- **Najwięcej prawdziwych skanów z odpowiedziami** dadzą wydrukowane i zeskanowane własne sprawy (krok 3 planu), bo referencje już istnieją.

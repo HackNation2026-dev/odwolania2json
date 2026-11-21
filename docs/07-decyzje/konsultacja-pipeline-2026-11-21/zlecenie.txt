@@ -1,0 +1,35 @@
+Jesteś niezależnym architektem systemów ekstrakcji danych z dokumentów. Odpowiadasz po polsku. Tylko czytasz repozytorium w bieżącym katalogu (odwolania2json); niczego nie zmieniasz.
+
+## Pipeline zaproponowany przez użytkownika (oceń go)
+
+Wejście: dokument PDF (tekstowy, skan albo mieszany).
+1. **Router na typ dokumentu**: klasyfikacja (odwołanie do KIO, pełnomocnictwo, potwierdzenie przelewu, obcy → `{}`). Pytania użytkownika: jak klasyfikować i jak router rozszerzać o nowe typy?
+2. **Systematyczny model każdego typu dokumentu**: dla każdej klasy opis, z jakich grup informacji się składa i jakie pola mają grupy.
+3. **Ekstrakcja grupami i etapami** wszystkich informacji z dokumentu tekstowego, skanu lub mieszanego.
+4. **Oznaczanie graficzne dla operatora**, gdzie w dokumencie jest dana grupa lub informacja (ramki nad grupami na stronie).
+
+Pytanie użytkownika: **czy taki pipeline wystarczy dla tego problemu?**
+
+## Kontekst do przeczytania
+
+- Wymagania i decyzje: `docs/03-wymagania/README.md`, `docs/07-decyzje/ADR-002-decyzje-po-recenzji.md` (zwłaszcza uzupełnienia na końcu: każdy dokument niezależnie, braki wskazywane jawnie, najpierw zestaw testowy), `docs/01-zadanie/zrodla/odpowiedzi-mentora-2026-11-21.md`, `docs/01-zadanie/punktacja.md`, `docs/05-weryfikacja/zasady-f1.md` (TP/TN/FP/FN, błędna wartość = FP).
+- Przypadki brzegowe: `docs/05-weryfikacja/katalog-przypadkow-brzegowych.md`, `docs/05-weryfikacja/przypadki-brzegowe.json` (kody), `docs/07-decyzje/konsultacja-trudne-przypadki-2026-11-21/zestawienie.md`.
+- Model klas w YAML (wynik eksperymentu): `docs/05-weryfikacja/eksperyment-yaml-klasy-2026-11-21.md`, `experiments/2026-11-21-yaml-klasy/klasy/*.yaml`.
+- Wzorce wyniku: `docs/02-materialy/organizator-uzp/oczekiwane-json/*.json`, README organizatora `docs/02-materialy/organizator-uzp/README.md`.
+- Projekt UI (operator, dowody, PDF obok danych): `docs/04-architektura/gui/projekt-ui.md` i recenzja `docs/04-architektura/gui/recenzja-codex-2026-11-21.md`.
+- Trwają prace nad „kartami dokumentów” (gdzie leży każda wartość, grupy, ocena spójności grup): zlecenie `experiments/2026-11-21-przypadki-brzegowe/zlecenia/01-karty-dokumentow.md`; jeśli istnieją już wyniki w `experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/karty/`, możesz z nich skorzystać.
+
+Ograniczenia: na teście wyłącznie `pip install` (Python 3.13, laptop i7 16 GB bez GPU, Windows/Linux), LLM tylko po API hostowanym w Europie, punkty za mniejszy model (liczy się największy model w systemie), odczyt PDF/OCR to własne rozwiązanie zespołu (nie wybieraj biblioteki), regex tylko dla stałych formatów z testami mutacyjnymi, role (zamawiający, odwołujący…) nie mogą zależeć od etykiet, GUI obowiązkowe.
+
+## Odpowiedz
+
+1. Werdykt: czy pipeline wystarcza (tak / tak z uzupełnieniami / nie) — jedno zdanie.
+2. Czego brakuje między krokami albo poza nimi (np. odczyt i normalizacja stron/regionów, decyzja OCR per region, kolejność czytania i układ, przypisanie ról, scalanie wystąpień, walidacja i normalizacja wartości, pola wyliczane ze słownika, polityka `null`/braków, pewność i „do sprawdzenia”, dowody, stany błędu technicznego vs obcy, wsad z niezależnymi dokumentami, wersjonowanie konfiguracji, obserwowalność, ewaluacja). Dla każdego braku: dlaczego jest potrzebny w tym zadaniu (odwołaj się do pliku), gdzie go wstawić.
+3. Router: jak klasyfikować (sygnały tekstowe/układ/LLM, kolejność, próg, odrzucenie do obcy), jak go rozszerzać o nową klasę bez zmiany kodu (co musi być w konfiguracji klasy), jak obsłużyć wiele dokumentów w jednym pliku i trudne negatywy (wyrok KIO, ogłoszenia).
+4. „Systematyczny model dokumentu”: czym ma się różnić od modelu wyniku JSON (YAML z eksperymentu) — grupy, role, kotwice, oczekiwane położenie, warianty zapisu, zależności między polami; propozycja minimalnej struktury.
+5. Ekstrakcja „grupami i etapami”: proponowane etapy z wejściem/wyjściem każdego; co robi LLM, a co kod; jak to wpływa na F1 i na rozmiar modelu.
+6. Oznaczanie dla operatora: czego potrzeba w danych (współrzędne, strona, region obrazu po OCR), ograniczenia przy skanach i grupach rozproszonych po stronach; co jeśli grupa nie jest spójna.
+7. Największe ryzyka tego pipeline'u dla F1 w ukrytym teście i jak je zmierzyć zestawem testowym.
+8. Diagram tekstowy docelowego pipeline'u (po uzupełnieniach), krótki.
+
+Fakty z repo poprzyj ścieżką pliku. Oddziel fakty od rekomendacji. Zwięźle, tabele tam, gdzie pomagają.

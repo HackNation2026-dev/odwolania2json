@@ -1,0 +1,187 @@
+**Tak z uzupełnieniami — pipeline ma właściwy kierunek, ale wymaga warstwy odczytu przestrzennego, rozstrzygania ról i wystąpień, kontroli kompletności oraz walidacji, zanim da wiarygodny JSON i oznaczenia dla operatora.**
+
+Poniżej **fakty** oznaczają ustalenia lub wyniki zapisane w repozytorium; **rekomendacje** są moją propozycją architektury. Niczego nie zmieniałem ani nie uruchamiałem testów.
+
+**1. Co już potwierdza repozytorium**
+
+- Eksperyment YAML sprawdził kontrakt wyniku: walidację i zgodną serializację 180 referencji oraz dodanie czwartej klasy konfiguracją. **Nie sprawdził ekstrakcji, routera ani przypisywania ról.** Źródło: `docs/05-weryfikacja/eksperyment-yaml-klasy-2026-11-21.md`, kod: `experiments/2026-11-21-yaml-klasy/silnik.py`.
+- Każdy dokument ma być analizowany niezależnie; braków nie wolno uzupełniać z innych dokumentów sprawy. Braki mają być jawnie raportowane, a dowody przechowywane poza ocenianym JSON-em. Źródło: `docs/07-decyzje/ADR-002-decyzje-po-recenzji.md`.
+- Skany i dokumenty mieszane są w zakresie testu. GUI jest wymaganiem zespołu; instalacja u jury ma odbywać się wyłącznie przez pip. Źródło: `docs/01-zadanie/zrodla/odpowiedzi-mentora-2026-11-21.md`.
+
+**2. Brakujące elementy i ich miejsce**
+
+Wszystkie proponowane uzupełnienia w tabeli są **rekomendacjami**; kolumna uzasadnienia wskazuje podstawę w repozytorium.
+
+| Uzupełnienie | Dlaczego potrzebne w tym zadaniu | Gdzie |
+|---|---|---|
+| Wspólna reprezentacja stron, słów, linii, bloków i obrazów | Niewidoczne tabele i kolumny rozrywają powiązania przy odczycie liniowym — `docs/05-weryfikacja/katalog-przypadkow-brzegowych.md`, S1 | Przed routerem |
+| Ocena jakości tekstu i OCR **per region** | Strona tekstowa może zawierać istotny obraz; istniejąca warstwa OCR może być błędna — ten sam plik, S2–S5 | Podczas odczytu |
+| Kolejność czytania, orientacja i mapowanie współrzędnych | Obrót, `/Rotate`, wielokolumnowość i wartości wieloliniowe mają osobne kody — `docs/05-weryfikacja/przypadki-brzegowe.json` | Po odczycie, przed interpretacją |
+| Wykrywanie granic dokumentów | Kilka dokumentów w PDF jest znanym, nierozstrzygniętym przypadkiem — kod `wiele_dokumentow` | Przed ostateczną klasyfikacją |
+| Identyfikacja podmiotów i relacji między nimi | Role nie mogą zależeć od etykiet; trzeba rozróżnić m.in. mocodawcę, podpisującego i pełnomocnika — katalog, T1–T4 | Przed przypisaniem pól do grup |
+| Kandydaci wartości i scalanie wystąpień | Ten sam podmiot występuje wielokrotnie; YAML v0 nie określa połączenia nazw z LLM i identyfikatorów z reguł — eksperyment YAML | Między ekstrakcją a budową JSON |
+| Normalizacja, walidacja semantyczna i pola pochodne | Daty, TED, rachunki i kwoty mają różne zapisy; opis czynności pochodzi ze słownika — `experiments/2026-11-21-yaml-klasy/klasy/*.yaml` | Po scaleniu |
+| Kontrola kompletności oraz polityka braków | Wymagany jawny raport braków; `null` nie może ukrywać nieprzeczytanych stron — ADR-002 | Przed serializacją |
+| Oddzielna ocena obecności, poprawności wartości i jakości dowodu | Według interpretacji zasad F1 błędna wartość to FP, brak istniejącej wartości to FN — `docs/05-weryfikacja/zasady-f1.md` | Przy wyborze kandydatów |
+| Rozdzielenie „obcy”, „niejednoznaczny” i „błąd techniczny” | Awaria OCR/API lub konfiguracji nie uzasadnia `{}` — ADR-002; recenzja GUI | Na każdym etapie |
+| Obsługa wsadu i ścisły eksport | Zachowanie nazw i drzewa katalogów; niezależność dokumentów, kontynuacja po błędzie i zapis atomowy — ADR-002 oraz README organizatora | Warstwa wykonawcza |
+| Wersjonowanie i obserwowalność | Wynik zależy od modelu, promptu, konfiguracji i ekstraktora; taki zestaw określa też poprawny klucz cache — ADR-002 | Przekrojowo |
+| Ewaluacja przed strojeniem | Zasada „najpierw zestaw testowy”; obecne eksperymenty nie dowodzą skuteczności całego systemu — ADR-002 i konsultacja trudnych przypadków | Przed implementacją i po zmianach |
+
+W logach zapisywałbym etap, czas, liczbę odczytanych stron/regionów, ponowienia, zużycie API i powód decyzji. Treść dokumentów oraz dane osobowe nie powinny trafiać do zwykłych logów.
+
+**3. Router**
+
+**Fakty:** YAML zawiera listy sygnałów i `min_trafien`, lecz eksperyment nie sprawdzał jakości klasyfikacji. Organizator wymaga klasyfikowania po zawartości, bez sugerowania się nazwą pliku: `docs/02-materialy/organizator-uzp/README.md`.
+
+**Rekomendowana kolejność:**
+
+1. Sprawdź, czy odczyt zapewnia wystarczającą treść. Brak tekstu po nieskutecznym OCR oznacza problem odczytu, nie „obcy”.
+2. Zbierz tanie sygnały tekstowe i przestrzenne: tytuł, początek dokumentu, charakterystyczne sekcje, układ potwierdzenia bankowego. Służą do wyboru kandydatów, nie do przypisywania ról.
+3. Rozstrzygnij funkcję dokumentu: wniesienie odwołania, udzielenie umocowania, potwierdzenie wykonanej płatności czy inna funkcja. Mały LLM może wykonywać tę ocenę na oznaczonych fragmentach.
+4. Przyjmij klasę po przekroczeniu **progu właściwego dla klasy** i wymaganego odstępu od drugiego kandydata. Progi dobierz na zbiorze rozwojowym; nie ustalaj arbitralnie „trzech słów”.
+5. Jeśli odczyt jest dobry, ale żadna klasa nie spełnia warunków, zwróć „obcy” → `{}`. Konflikt klas najpierw kieruj do dodatkowej analizy; nierozstrzygnięty konflikt pokaż jako osobny stan.
+
+**Trudne negatywy:** wyrok KIO zawiera odwołującego, zamawiającego i zarzuty, lecz jego funkcją jest rozstrzygnięcie. Ogłoszenie BZP/TED zawiera zamawiającego, tytuł i numery, lecz nie wnosi odwołania. Potrzebne są sygnały przeciwne, przykłady kontrastowe i ocena funkcji całego dokumentu. Sama obecność słowa „wyrok” również nie wystarczy — odwołanie może cytować orzeczenie.
+
+**Nowa klasa bez zmiany kodu:** konfiguracja powinna zawierać:
+
+- identyfikator, wersję, opis funkcji i zakres klasy;
+- sygnały dodatnie, przeciwne oraz przykłady pozytywne i trudne negatywy;
+- wymagane przesłanki, progi i politykę konfliktów;
+- model dokumentu, kontrakt JSON i mapowanie między nimi;
+- odwołania do istniejących strategii ekstrakcji, scalania, normalizacji i walidacji;
+- etykiety GUI oraz przypadki testowe.
+
+Granica jest taka sama jak w eksperymencie YAML: nowa klasa korzystająca z istniejących mechanizmów wymaga konfiguracji; **nowy rodzaj mechanizmu** wymaga rozszerzenia silnika.
+
+**Wiele dokumentów w jednym PDF:** wykrywaj segmenty i klasyfikuj je osobno, zachowując strony oryginału. Nie przenoś danych między segmentami. Kontrakt ocenianego wyniku pozostaje otwarty — nie ma podstaw do samodzielnego wprowadzenia tablicy JSON ani wybrania pierwszego dokumentu. GUI może pokazać segmenty i ostrzeżenie, a eksport wymaga ustalonej polityki. Źródło nierozstrzygnięcia: `docs/07-decyzje/konsultacja-trudne-przypadki-2026-11-21/zestawienie.md`.
+
+**4. Model dokumentu a model JSON**
+
+**Fakt:** obecny YAML opisuje głównie **jak ma wyglądać wynik**. Pola `rola`, `zakres` i `opis` nie są wykonywanymi regułami rozumienia dokumentu. Źródło: eksperyment YAML.
+
+**Rekomendacja:** model dokumentu powinien opisywać **jak rozpoznać i powiązać informacje**. Grupa logiczna nie musi odpowiadać jednemu obiektowi JSON ani jednemu obszarowi strony.
+
+Minimalny szkic rozszerzenia — propozycja, nie obecny format:
+
+```yaml
+klasa: odwolanie
+wersja: 2
+kontrakt_wyniku: odwolanie-v1
+klasyfikacja:
+  opis_funkcji: Wykonawca wnosi odwołanie do KIO
+  sygnaly_dodatnie: [...]
+  sygnaly_przeciwne: [...]
+  profil_progow: router-v1
+
+grupy:
+  - id: uczestnicy
+    powtarzalna: true
+    role: [odwolujacy, zamawiajacy, pelnomocnik]
+    kotwice: [...]                    # pomocnicze
+    polozenie:
+      preferowane: poczatek
+      przeszukaj_caly_dokument: true
+    pola: [nazwa, nip, krs, regon]
+    relacje: [reprezentuje, lider_konsorcjum]
+    scalanie: ta_sama_encja_v1
+
+  - id: pierwszy_zarzut
+    wybor: pierwszy_merytoryczny_zarzut_v1
+    pola: [czynnosc, data_czynnosci]
+
+mapowanie: {...}
+normalizatory: {...}
+pochodne: {...}
+polityka_brakow: {...}
+```
+
+Dla pól potrzebne są też warianty zapisu, zakres znaczeniowy, wymagana relacja z podmiotem, sposób wyboru wystąpienia i zależności. Położenie i kotwice powinny być wskazówkami, poza polami z wyraźnym ograniczeniem kontraktu, np. datą z nagłówka pierwszej strony.
+
+Wzorzec wymaga ustalania czynności **wyłącznie z pierwszego zarzutu**. To osobna reguła wyboru treści, której nie zastąpi wspólna grupa „daty i czynności”. Źródło: `docs/02-materialy/organizator-uzp/oczekiwane-json/odwolanie.json`.
+
+**5. Ekstrakcja grupami i etapami**
+
+Rekomenduję następujący podział:
+
+| Etap | Wejście → wyjście | Odpowiedzialność |
+|---|---|---|
+| Odczyt | PDF → tekst i obrazy z geometrią, jakością oraz kolejnością | Własne rozwiązanie zespołu |
+| Lokalizacja grup | Dokument przestrzenny + model klasy → fragmenty i możliwe grupy | Kod wybiera fragmenty; LLM interpretuje ich funkcję |
+| Podmioty i role | Fragmenty + kontekst → encje, stabilne identyfikatory i relacje | LLM; etykiety jako pomoc |
+| Kandydaci pól | Encje i fragmenty → wartości surowe z dowodami | Regex dla stałych formatów; LLM dla semantyki |
+| Scalanie | Kandydaci → wartości przypisane konkretnym encjom, konflikty i duplikaty | Kod oraz ograniczona analiza LLM przy sporach |
+| Kontrola pokrycia | Oczekiwane pola + dotychczasowe wyniki → braki i dodatkowe wyszukiwanie | Kod planuje; LLM analizuje pominięte fragmenty |
+| Normalizacja i pochodne | Wybrane wartości → wartości kanoniczne i wyniki reguł | Kod |
+| Walidacja i zapis | Dane kanoniczne → JSON, osobne dowody i raport | Kod |
+
+Każdy kandydat powinien zawierać co najmniej: `pole`, `entity_id`, wartość surową, dowody, metodę, ocenę obecności i status konfliktu.
+
+**Wpływ na F1:** role ograniczają zamianę NIP-ów i rachunków, kontrola pokrycia zmniejsza FN, normalizacja zamienia poprawnie rozpoznane dane w wartości zgodne z kontraktem, a słownik eliminuje warianty opisu czynności. Nadmiernie małe fragmenty mogą jednak odciąć kontekst i pogorszyć wynik — zachowaj możliwość rozszerzenia kontekstu.
+
+**Wpływ na rozmiar modelu:** ograniczone zadania z dobrymi fragmentami mogą umożliwić użycie mniejszego modelu, ale wymaga to pomiaru. Więcej etapów oznacza też więcej wywołań i możliwą propagację błędów. Duży model „tylko awaryjnie” nadal zwiększa największy model systemu, według odpowiedzi mentora.
+
+**Polityka braków:** rozdzielaj wewnętrznie: „brak”, „nie dotyczy”, „nieczytelne”, „sprzeczne” i „nieprzetworzone”. W ocenianym JSON stosuj uzgodniony kontrakt; wyjaśnienia zapisuj osobno. Pozostaje luka: obecny YAML nie dopuszcza `null` dla części pól, a decyzja zespołu nakazuje jawne braki. Nie należy jej rozwiązywać pustym tekstem ani zmyśloną wartością; potrzebna jest jawna polityka zgodności. Źródła: YAML klas, ADR-002 i `docs/07-decyzje/pytania-otwarte.md`.
+
+**6. Oznaczanie dla operatora**
+
+**Fakty z dostępnych kart:** podsumowanie obejmuje 180 dokumentów. Heurystyka oznaczyła jako spójne m.in. 26/60 grup odwołujących, 52/63 grup zamawiających i 48/98 grup pełnomocników w pełnomocnictwach. Źródło: `experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/karty/podsumowanie.json`.
+
+To **nie jest pomiar skuteczności ekstraktora**. Kod lokalizuje znane wartości referencyjne, buduje obwiednie z pierwszych wystąpień i sprawdza kolizje. Wyniki pokazują ograniczenia tej heurystyki; nie dowodzą, że grup nie da się poprawniej oznaczać. Źródło: `experiments/2026-11-21-przypadki-brzegowe/narzedzia/karty.py`.
+
+**Rekomendacja dotycząca danych dowodowych:**
+
+- identyfikator i skrót dokumentu, numer strony oryginału;
+- identyfikatory słów/regionów, cytat oraz lista prostokątów lub wielokątów;
+- jawny układ współrzędnych i wymiary strony;
+- źródło: tekst PDF albo OCR;
+- dla OCR: region obrazu i transformacja z obrazu po obrocie/prostowaniu do oryginału;
+- powiązanie z polem, podmiotem i grupą;
+- dla wartości wyliczonej: reguła i dowody jej przesłanek.
+
+**Grupę rozproszoną pokazuj kilkoma obrysami**, również na różnych stronach, połączonymi identyfikatorem i kolorem. Przy kolizji z innymi grupami przejdź na oznaczenia pól; nie rysuj ogromnej ramki obejmującej cudze dane.
+
+Na skanie wyszukiwanie cytatu nie wystarczy — potrzebna jest geometria OCR. Brak geometrii powinien dawać stronę i fragment z komunikatem o braku dokładnej lokalizacji. Projekt UI przewiduje położenie przybliżone, lecz wybór pierwszego wystąpienia może wskazać niewłaściwy podmiot. Źródło: `docs/04-architektura/gui/projekt-ui.md`, §3.3.3.
+
+**7. Największe ryzyka F1 i pomiar**
+
+Najpierw zamroziłbym test, zgodnie z ADR-002. Poniższe testy są rekomendacjami opartymi na katalogu kodów i konsultacji trudnych przypadków.
+
+| Ryzyko | Próba testowa | Co mierzyć |
+|---|---|---|
+| Cichy błąd odczytu | Skan, błędna warstwa OCR, pole tylko w obrazie na stronie tekstowej | Zmiana F1 względem oryginału; dokładność identyfikatorów |
+| Utrata danych poza wybranymi fragmentami | Pola po 3. stronie, wieloliniowe nazwy i kolumny | Pokrycie lokalizacji pól przed ekstrakcją |
+| Zamiana ról i kierunku płatności | Usunięte/przestawione etykiety, wielu uczestników, zamiana układu rachunków | Poprawność par „wartość–podmiot–rola” |
+| Błędny pierwszy zarzut | Kilka zarzutów z różnymi datami i czynnościami, cytaty wcześniejszych zdarzeń | Trafność wyboru zarzutu oraz pary kod–data |
+| Nadmierne odrzucanie lub przyjmowanie klas | Wyroki KIO, ogłoszenia BZP/TED, pozytywy bez typowego tytułu | Macierz klas, odsetek fałszywie obcych i fałszywie przyjętych |
+| Dopasowanie do generatora przykładów | Brak pełnomocnika, powód 12, brak BZP/TED, przelew wpisu | F1 osobno dla rzadkich wariantów |
+| Zła polityka `null` i normalizacji | Pole usunięte we wszystkich wystąpieniach; mutacja cyfry, daty lub formatu | TP/TN/FP/FN per pole; zgodność struktury |
+| Awaria wyglądająca jak poprawny wynik | Niedostępne API, błędna konfiguracja, uszkodzony PDF | Liczba awarii ukrytych pod `{}`; kompletność raportu wsadu |
+
+**Podział po całych sprawach i rodzinach duplikatów**; oryginał i jego warianty muszą zostać w tej samej części. Przekształcenia niedestrukcyjne zachowują referencję, destrukcyjne wymagają ponownej adnotacji wszystkich wystąpień. Źródło: `docs/07-decyzje/konsultacja-trudne-przypadki-2026-11-21/zestawienie.md`.
+
+Porównałbym także warianty z wyłączonym scalaniem, kontrolą pokrycia i analizą ról — na zbiorze rozwojowym pokaże to, czy każdy etap rzeczywiście pomaga.
+
+Raportuj F1 jako **przybliżenie**: sposób agregacji i podobieństwa oficjalnego ewaluatora nadal nie jest znany. Zliczaj TP/TN/FP/FN; TN nie występuje w standardowym wzorze F1. Nie stosuj progu 80% do wszystkich pól i nie zamieniaj automatycznie niepewnej, obecnej wartości na `null`. Źródło: `docs/05-weryfikacja/zasady-f1.md`.
+
+**8. Docelowy pipeline**
+
+```text
+Zamrożony zestaw testowy + wersjonowane konfiguracje
+                         ↓
+Wsad → każdy dokument niezależnie
+  → odczyt stron i regionów, ocena jakości, OCR, układ i geometria
+  → wykrycie segmentów → router
+       ├─ obcy → {}
+       ├─ błąd / nierozstrzygnięcie → osobny raport i stan GUI
+       └─ klasa
+           → grupy, podmioty i role
+           → kandydaci pól z dowodami
+           → scalanie + kontrola pokrycia ↺ dodatkowa analiza
+           → normalizacja + słowniki + walidacja
+           → ścisły JSON + osobne dowody i raport braków
+           → GUI: PDF obok danych, wiele obrysów, „do sprawdzenia”
+```
+
+Wspólny silnik dla CLI i GUI, gotowe zasoby interfejsu w pakiecie instalowanym przez pip oraz pomiar czasu i pamięci na docelowym sprzęcie domykają stronę wykonawczą. Korekty operatora powinny tworzyć osobną wersję wyniku; jakość automatycznej ekstrakcji trzeba mierzyć przed nimi.

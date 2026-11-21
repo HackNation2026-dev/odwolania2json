@@ -1,0 +1,32 @@
+Jesteś niezależnym ekspertem od ekstrakcji danych z dokumentów (OCR, klasyfikacja, ocena jakości). Odpowiadasz po polsku. Nie modyfikujesz plików; tylko czytasz repozytorium w bieżącym katalogu (odwolania2json).
+
+## Problem
+
+Zadanie konkursowe UZP „Odwołania2JSON”: PDF → klasyfikacja (odwołanie do KIO, pełnomocnictwo, potwierdzenie przelewu, dokument obcy → {}) → JSON według wzorców. Ocena: F1 z TP/TN/FP/FN (błędna wartość = FP) na ukrytym zbiorze testowym. Preselekcja to 100% F1.
+
+Mentor potwierdził: ukryty test zawiera pliki tekstowe, skany i dokumenty mieszane (tekst + skan). Tymczasem nasz materiał tego nie pokrywa:
+- 60 spraw × 3 pliki: wszystkie 180 PDF-ów pozytywnych są czysto tekstowe, z jednego generatora (LAPFormalDoc), z referencyjnymi JSON-ami.
+- Negatywy: 12 plików (3 skany, 1 mieszany, trudne negatywy: wyrok KIO, ogłoszenia BZP/TED).
+- Szablon organizatora: jeden 7-stronicowy skan odwołania (bez referencyjnego JSON).
+Musimy przejść „trudne testy”, a nie wiemy, jak zbudować z tego, co mamy, zbiór, który zawiera przypadki brzegowe i ma poprawne odpowiedzi.
+
+## Co już zrobiliśmy (przeczytaj)
+
+- Inwentarz i eksperyment: `docs/05-weryfikacja/eksperyment-przypadki-brzegowe-2026-11-21.md`
+- Generator syntetycznych przypadków (12 plików: obroty, przekrzywienie, niska jakość, ksero, dokument mieszany, dwa dokumenty w pliku, pieczątka, ucięty margines, pusta strona, strona mieszana): `experiments/2026-11-21-przypadki-brzegowe/narzedzia/syntetyczne.py`
+- Metryki stron i wyniki modeli: `experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/podsumowanie.md`, `manifest.json`, `dokumenty/*.json`
+- Wymagania i ograniczenia: `docs/03-wymagania/README.md`, `docs/07-decyzje/ADR-002-decyzje-po-recenzji.md`, `docs/01-zadanie/zrodla/odpowiedzi-mentora-2026-11-21.md`, `docs/05-weryfikacja/zasady-f1.md`
+- Dane: `docs/02-materialy/organizator-uzp/dane/` (przyklad_XX z PDF i JSON, negatywne/), poprawki referencji w `docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/`, wzorce `docs/02-materialy/organizator-uzp/oczekiwane-json/`, README organizatora.
+
+Ograniczenia rozwiązania: na teście wyłącznie `pip install` (Python 3.13, laptop i7 16 GB bez GPU, Windows lub Linux), LLM tylko po API hostowanym w Europie, punkty za mniejszy model (liczy się największy model w systemie), własne rozwiązanie do odczytu PDF/OCR powstaje u zespołu (nie wybieraj za nas biblioteki OCR do produktu; narzędzia do GENEROWANIA danych testowych możesz proponować).
+
+## Pytania
+
+1. Jakie przypadki brzegowe najpewniej są w ukrytym teście? Uszereguj według (prawdopodobieństwo × wpływ na F1). Rozdziel: wizualne (skan, mieszany, jakość, obrót, zdjęcie telefonem, faks, pieczątki, pismo odręczne, warstwa OCR złej jakości, PDF z obrazem i niewidocznym błędnym tekstem itd.), strukturalne (kilka dokumentów w pliku, załączniki, dodatkowe strony, kolejność stron, brakujące strony) i treściowe (konsorcja, wielu zamawiających, wielu mocodawców, brak pełnomocnika, inne formaty dat/kwot/rachunków, TED vs BZP, numer postępowania itd.). Sprawdź w danych, które warianty treściowe są w 60 sprawach słabo reprezentowane.
+2. Jak z 60 spraw z referencjami zbudować trudny zbiór testowy z poprawnymi odpowiedziami? Które przekształcenia zachowują referencję bez zmian, a które wymagają jej modyfikacji (np. obcięcie strony usuwa pole → null)? Jak uniknąć przeuczenia na naszym generatorze?
+3. Konkretne techniki i narzędzia do realistycznej symulacji druk→skan, ksero, faksu, zdjęcia telefonem, dokumentów mieszanych, złej warstwy OCR — z licencją, instalacją przez pip i pracą offline. Co z obecnego `syntetyczne.py` jest nierealistyczne?
+4. Jak mierzyć: jakie podzbiory i raporty (F1 per typ przekształcenia, per pole, per klasa), jaki rozmiar, żeby wynik był wiarygodny; jak włączyć to do ewaluatora z TP/TN/FP/FN.
+5. Plan na ~24 h: co zrobić najpierw, żeby najszybciej podnieść odporność na trudne testy, w kolejności.
+6. Czy jest coś w danych organizatora (np. skan szablonu, negatywy), co powinniśmy ręcznie opisać jako referencję, żeby mieć choć kilka prawdziwych skanów z odpowiedziami?
+
+Format: zwięźle, tabele tam, gdzie pomagają. Każde twierdzenie o danych poprzyj ścieżką pliku. Oddziel fakty z repo od rekomendacji.
