@@ -74,8 +74,12 @@ infra/
     postgres/init.sql
 scripts/
   generate_contracts.py     generuje modele pydantic z openapi.yaml
+  validate_api.py           walidacja specyfikacji i rozjazdu z aplikacją FastAPI
+  precommit.py              kontrola przed commitem (dokumenty, API, testy)
   verify_docker.ps1         test w Dockerze (Windows)
   verify_docker.sh          test w Dockerze (Linux)
+.githooks/pre-commit        hook gitowy wskazujący na skrypt precommit
+.github/workflows/ci.yml    joby CI: docs, api, test, eval
 docs/…                dokumentacja (bez zmian w katalogach organizatora)
 input/  output/       foldery aplikacji (ignorowane przez Git)
 requirements.txt      ścieżka dla jury: zależności + instalacja pakietów
@@ -182,7 +186,7 @@ Błędy: niepoprawny PDF i brak warstwy tekstowej to błąd techniczny z kodem H
 
 Baza jest **opcjonalna**. Kod nie wymaga jej; bez `DATABASE_URL` API działa, zapis jest pomijany, a UI pokazuje banner „baza wyłączona”. Uzasadnienie: jury może uruchomić rozwiązanie z `pip install -r requirements.txt` bez Dockera i bez bazy, a Docker Compose uruchamia komplet.
 
-Schemat (SQL, idempotentnie nakładany przy starcie):
+Schemat (SQL w numerowanych plikach migracji, nakładany idempotentnie przy starcie):
 
 ```sql
 documents(id uuid pk, filename text, sha256 text unique, size_bytes bigint,
@@ -193,7 +197,9 @@ extractions(id uuid pk, document_id uuid fk, run_id uuid fk, class text,
             schema_version text, payload jsonb, evidence jsonb, created_at timestamptz)
 ```
 
-`payload` to pełny JSON wyniku (ta sama postać co plik w `output/`), `evidence` to mapa „ścieżka pola → {strona, fragment}”. Deduplikacja po `sha256` dokumentu: ponowne przetworzenie nie tworzy duplikatu, a bieg jest zapisywany w `runs`.
+Migracje to pliki `apps/backend/odwolania2json/db/migrations/NNNN_nazwa.sql` nakładane po kolei przez `odwolania2json.db.migrate.migrate()`; zastosowane wersje zapisywane są w tabeli `schema_migrations`, więc migracja nigdy nie wykonuje się dwa razy. Polecenie `python -m odwolania2json migrate` stosuje migracje ręcznie, a kontener `api` stosuje je przy starcie — baza po `docker compose up` jest gotowa do użycia bez ręcznych kroków. Plik `infra/docker/postgres/init.sql` zawiera tylko bootstrap bazy; schemat aplikacji tworzą migracje.
+
+`payload` to pełny JSON wyniku (ta sama postać co plik w `output/`), `evidence` to mapa „ścieżka pola → {strona, fragment}". Deduplikacja po `sha256` dokumentu: ponowne przetworzenie nie tworzy duplikatu, a bieg jest zapisywany w `runs`.
 
 ## 9. UI
 
@@ -244,6 +250,21 @@ Powtarzalny skrypt sprawdzający, czy całość działa w kontenerze: `scripts/v
 11. `docker compose down -v` nie zostawia stanu; powtórzenie skryptu przechodzi bez ręcznych poprawek.
 
 Skrypt wypisuje raport krok po kroku (OK/FAIL) i zapisuje go do `docs/05-weryfikacja/`.
+
+### 11.2 Walidacja API, CI i hook pre-commit
+
+Jedno narzędzie sprawdza kontrakt w trzech miejscach, więc rozjazd specyfikacji i kodu wychodzi na jawę:
+
+| Narzędzie | Zadanie |
+|---|---|
+| `scripts/generate_contracts.py` | generuje modele pydantic z `packages/contracts/openapi.yaml` do pliku `models.py` |
+| `scripts/validate_api.py --stage spec` | waliduje `openapi.yaml` (openapi-spec-validator) i porównuje wygenerowane modele z plikiem w repo — rozjazd oznacza, że ktoś zmienił spec without regenerowania |
+| `scripts/validate_api.py --stage app` | porównuje `app.openapi()` aplikacji FastAPI ze specyfikacją: ścieżki i metody, `operationId`, schematy składowe, odwołania do schematów w treściach |
+| `scripts/precommit.py` | uruchamia kontrolę dokumentacji, walidację API i testy; `--fast` pomija testy i etap `app` |
+| `.githooks/pre-commit` | hook gitowy włączany poleceniem `git config core.hooksPath .githooks`; blokuje commit, gdy kontrakt się rozjechał |
+| `.github/workflows/ci.yml` | joby na Pythonie 3.13: `docs` (kontrola dokumentacji), `api` (walidacja API, etap `all`), `test` (pełny zestaw testów), `eval` (pomiar F1 na 60 sprawach) |
+
+Pełna weryfikacja w kontenerze pozostaje skryptem z §11.1; CI używa tego samego kodu walidacji, więc rozjazd kontraktu blokuje i lokalnie, i na serwerze.
 
 ## 12. Ryzyka
 

@@ -132,7 +132,7 @@ git commit -m "feat: szkielet pakietów odwolania2json i odwolania2json_contract
 
 **Files:**
 - Create: `packages/contracts/openapi.yaml`
-- Create: `scripts/generate_contracts.py`
+- Create: `scripts/generate_contracts.py`, `scripts/validate_api.py`
 - Create: `packages/contracts/odwolania2json_contracts/models.py` (generowany, w repo)
 - Create: `packages/contracts/odwolania2json_contracts/powody.py`
 - Modify: `packages/contracts/odwolania2json_contracts/__init__.py`
@@ -196,16 +196,24 @@ Uruchamia `datamodel-code-generator` z `--input packages/contracts/openapi.yaml 
 ```
 `__init__.py` eksponuje `models`, `APPEAL_REASONS`, `Wynik = Union[Odwolanie, Pelnomocnictwo, Przelew, PustyWynik]`.
 
-- [ ] **Step 6: Uruchom testy, mają przejść**
+- [ ] **Step 6: Napisz `scripts/validate_api.py`**
 
-Run: `python -m pytest tests/contract -v`
-Expected: PASS (klucze w kolejności organizatora potwierdzone testem).
+Jeden skrypt walidujący kontrakt, używany później przez CI i hook pre-commit. CLI: `python scripts/validate_api.py [--stage spec|app|all]`, kod wyjścia 0 przy sukcesie, 1 przy niezgodności.
 
-- [ ] **Step 7: Commit**
+- `--stage spec` (domyślnie): waliduje `openapi.yaml` przez `openapi-spec-validator`; regeneruje modele do katalogu tymczasowego przez `scripts/generate_contracts.py` i porównuje z plikiem `packages/contracts/odwolania2json_contracts/models.py` — rozjazd kończy się błędem „modele nie zgadzają się ze specyfikacją, uruchom scripts/generate_contracts.py".
+- `--stage app`: importuje aplikację FastAPI (`odwolania2json.api.app`) i porównuje jej `app.openapi()` ze specyfikacją (ścieżki i metody, `operationId`, schematy składowe, odwołania do schematów w treściach). Jeśli aplikacja jeszcze nie istnieje, skrypt wypisuje „pominięto: aplikacja niedostępna" i kończy się kodem 0 (etap `app` włącza się w Task 11).
+- Każdy krok wypisuje `OK <opis>` albo `FAIL <opis> <powód>`.
+
+- [ ] **Step 7: Uruchom testy, mają przejść**
+
+Run: `python -m pytest tests/contract -v` oraz `python scripts/validate_api.py --stage spec`
+Expected: PASS; skrypt kończy się kodem 0 i wypisuje `OK` dla walidacji specyfikacji i zgodności modeli.
+
+- [ ] **Step 8: Commit**
 
 ```bash
-git add packages/contracts scripts/generate_contracts.py tests/contract
-git commit -m "feat: kontrakt OpenAPI i generowane modele pydantic"
+git add packages/contracts scripts/generate_contracts.py scripts/validate_api.py tests/contract
+git commit -m "feat: kontrakt OpenAPI, generowane modele pydantic i walidacja API"
 ```
 
 ---
@@ -615,19 +623,30 @@ git commit -m "feat: serializacja JSON, potok dokumentu, port LLM i CLI"
 ### Task 10: Warstwa Postgres (opcjonalna)
 
 **Files:**
-- Create: `apps/backend/odwolania2json/db/__init__.py`, `apps/backend/odwolania2json/db/schema.sql`, `apps/backend/odwolania2json/db/repository.py`
+- Create: `apps/backend/odwolania2json/db/__init__.py`, `apps/backend/odwolania2json/db/migrate.py`
+- Create: `apps/backend/odwolania2json/db/migrations/0001_initial.sql`
+- Create: `apps/backend/odwolania2json/db/repository.py`
+- Modify: `apps/backend/odwolania2json/cli.py` (podkomenda `migrate`)
 - Test: `tests/integration/test_db.py`
 
 **Interfaces:**
 - Produces:
-  - `odwolania2json.db.repository.DocumentRepository(database_url: str)` — metody `ensure_schema()`, `save_result(result: ProcessingResult, run_id: str | None) -> str`, `list_documents(limit: int = 50, offset: int = 0, document_class: str | None = None) -> list[dict]`, `get_document(document_id: str) -> dict | None`, `get_extraction(document_id: str) -> dict | None`, `count_documents() -> int`
+  - `odwolania2json.db.migrate.MIGRATIONS_DIR: Path` — katalog z plikami migracji `NNNN_nazwa.sql`
+  - `odwolania2json.db.migrate.migrate(database_url: str) -> list[str]` — stosuje brakujące migracje po kolei, każdą w własnej transakcji, i zwraca listę zastosowanych wersji; migracja już zastosowana nie jest powtarzana
+  - `odwolania2json.db.migrate.applied_versions(database_url: str) -> list[str]`
+  - `odwolania2json.db.repository.DocumentRepository(database_url: str)` — metody `migrate()` (woła `migrate`), `save_result(result: ProcessingResult, run_id: str | None) -> str`, `list_documents(limit: int = 50, offset: int = 0, document_class: str | None = None) -> list[dict]`, `get_document(document_id: str) -> dict | None`, `get_extraction(document_id: str) -> dict | None`, `count_documents() -> int`
   - `odwolania2json.db.repository.is_configured(database_url: str | None) -> bool`
+  - CLI: `python -m odwolania2json migrate` — stosuje migracje i wypisuje ich wersje
 
 - [ ] **Step 1: Napisz testy**
 
 ```python
 def test_repository_skipped_without_database_url():
     # pytest.mark.skipif(not os.getenv("DATABASE_URL")) -> testy DB pomijane
+def test_migrate_creates_expected_tables():
+    # po migrate() tabele documents, runs, extractions, schema_migrations istnieja
+def test_migrate_is_idempotent():
+    # drugie wywolanie migrate() zwraca pusta liste zastosowanych wersji
 def test_save_result_is_idempotent_by_sha256():
     # ten sam PDF dwa razy -> jeden wiersz w documents, dwa w extractions
 def test_list_documents_returns_newest_first():
@@ -640,20 +659,26 @@ Testy DB pomijają się bez `DATABASE_URL` (mark `skipif`), a w kontenerze Compo
 Run: `python -m pytest tests/integration/test_db.py -v`
 Expected: FAIL — brak modułu `db`.
 
-- [ ] **Step 3: Zaimplementuj warstwę**
+- [ ] **Step 3: Napisz migrację i migrator**
 
-`schema.sql` zawiera `CREATE TABLE IF NOT EXISTS` dla `documents`, `runs`, `extractions` (kolumny i typy zgodne ze specyfikacją §8) plus indeksy na `documents(sha256)` i `extractions(document_id)`. `ensure_schema` czyta plik i wykonuje go w jednej transakcji. Dostęp przez SQLAlchemy Core z `postgresql+pg8000://`; `payload` i `evidence` jako `JSONB`.
+`migrations/0001_initial.sql` tworzy tabele `documents`, `runs`, `extractions` (kolumny i typy zgodne ze specyfikacją §8) oraz indeksy na `documents(sha256)` i `extractions(document_id)`; plik używa `CREATE TABLE IF NOT EXISTS`, żeby powtórne zastosowanie nie kończyło się błędem.
 
-- [ ] **Step 4: Uruchom testy (bez bazy = pomijane, potem z bazą)**
+`migrate.py`: przed migracją zakłada tabelę `schema_migrations(version text primary key, applied_at timestamptz default now())`; wczytuje pliki `*.sql` z `MIGRATIONS_DIR` posortowane po nazwie; każdy niezastosowany plik wykonuje w jednej transakcji i dopisuje wersję do `schema_migrations`; pliki zastosowane są pomijane. Dostęp przez SQLAlchemy Core z `postgresql+pg8000://`.
+
+- [ ] **Step 4: Zaimplementuj repozytorium i podkomendę CLI**
+
+`DocumentRepository.migrate()` woła `migrate(database_url)`. `save_result` zapisuje dokument (deduplikacja po `sha256`) i ekstrakcję (`payload` i `evidence` jako `JSONB`). CLI `migrate` przyjmuje `--database-url` (domyślnie ze zmiennej `DATABASE_URL`), stosuje migracje i wypisuje po jednej linii na wersję.
+
+- [ ] **Step 5: Uruchom testy (bez bazy = pomijane, potem z bazą)**
 
 Run: `python -m pytest tests/integration/test_db.py -v`
 Expected: PASS lub SKIPPED z powodu braku `DATABASE_URL`.
 
-- [ ] **Step 5: Commit**
+- [ ] **Step 6: Commit**
 
 ```bash
-git add apps/backend/odwolania2json/db tests/integration/test_db.py
-git commit -m "feat: opcjonalna warstwa Postgres"
+git add apps/backend/odwolania2json/db apps/backend/odwolania2json/cli.py tests/integration/test_db.py
+git commit -m "feat: opcjonalna warstwa Postgres z migracjami"
 ```
 
 ---
@@ -704,8 +729,8 @@ Expected: FAIL — brak modułu `api`.
 
 - [ ] **Step 5: Uruchom testy, mają przejść**
 
-Run: `python -m pytest tests/integration/test_api.py tests/contract/test_openapi.py -v`
-Expected: PASS — test rozjazdu potwierdza zgodność `app.openapi()` ze specyfikacją.
+Run: `python -m pytest tests/integration/test_api.py tests/contract/test_openapi.py -v` oraz `python scripts/validate_api.py --stage app`
+Expected: PASS — test rozjazdu oraz skrypt potwierdzają zgodność `app.openapi()` ze specyfikacją; skrypt wypisuje `OK` dla etapu `app`.
 
 - [ ] **Step 6: Commit**
 
@@ -792,8 +817,9 @@ Expected: FAIL — brak plików.
 
 - [ ] **Step 3: Napisz Dockerfile i Compose**
 
-`Dockerfile`: `FROM python:3.13.5-slim` (przypięta wersja), `ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1`, `WORKDIR /app`, `COPY packages/contracts /app/packages/contracts`, `COPY apps/backend /app/apps/backend`, `RUN pip install --no-cache-dir ./packages/contracts ./apps/backend -r apps/backend/requirements-ocr.txt`, użytkownik bez roota (`useradd -m -u 10001 app`), `COPY apps/web /app/apps/web`, `COPY input output` jako katalogi, `EXPOSE 8000`, `HEALTHCHECK` na `/healthz`, `CMD ["uvicorn", "odwolania2json.api.app:app", "--host", "0.0.0.0", "--port", "8000"]`.
+`Dockerfile`: `FROM python:3.13.5-slim` (przypięta wersja), `ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1`, `WORKDIR /app`, `COPY packages/contracts /app/packages/contracts`, `COPY apps/backend /app/apps/backend`, `COPY apps/web /app/apps/web`, `COPY tests /app/tests`, `RUN pip install --no-cache-dir ./packages/contracts ./apps/backend -r apps/backend/requirements-ocr.txt`, użytkownik bez roota (`useradd -m -u 10001 app`), `COPY input output` jako katalogi, `EXPOSE 8000`, `HEALTHCHECK` na `/healthz`, `CMD ["uvicorn", "odwolania2json.api.app:app", "--host", "0.0.0.0", "--port", "8000"]`.
 `docker-compose.yml`: usługa `api` (`build.context: .`, `dockerfile: infra/docker/Dockerfile`, port 8000, wolumeny `input`, `output`, zmienne z `.env`), usługa `db` (`postgres:16-alpine`, `healthcheck: pg_isready`, wolumen `pgdata`).
+`infra/docker/postgres/init.sql`: tylko bootstrap bazy (np. rozszerzenia); **schemat aplikacji tworzą migracje**, które `api` stosuje przy starcie przez `python -m odwolania2json migrate`.
 `start.bat` i `start.sh`: `docker compose up --build`, a gdy Dockera brak — instrukcja uruchomienia przez `pip install -r requirements.txt` i `python -m odwolania2json run`.
 
 - [ ] **Step 4: Uruchom test i zbuduj obraz**
@@ -917,6 +943,75 @@ git add scripts docs README.md CHANGELOG.md VERSION
 git commit -m "docs: ADR-002, instrukcja uruchomienia, raport pomiaru i skrypty testu w Dockerze"
 ```
 
+### Task 16: CI/CD i hook pre-commit
+
+**Files:**
+- Create: `scripts/precommit.py`
+- Create: `.githooks/pre-commit`
+- Create: `.github/workflows/ci.yml`
+- Modify: `README.md` (instrukcja włączenia hooka i opis CI)
+- Test: `tests/integration/test_ci_files.py`
+
+**Interfaces:**
+- Produces:
+  - `scripts/precommit.py` — CLI `python scripts/precommit.py [--fast]`; kod wyjścia 0 przy sukcesie, 1 przy błędzie; domyślnie uruchamia w kolejności: `scripts/verify_docs.py`, `scripts/validate_api.py --stage all`, `python -m pytest`; z `--fast` pomija `pytest` i etap `app` walidacji API (szybka kontrola przed commitem)
+  - `.githooks/pre-commit` — skrypt sh uruchamiający `python scripts/precommit.py --fast`; włączany poleceniem `git config core.hooksPath .githooks`
+  - `.github/workflows/ci.yml` — cztery joby na `ubuntu-latest` z `actions/setup-python@v5` i Pythonem 3.13: `docs` (`python3 scripts/verify_docs.py`), `api` (`python scripts/validate_api.py --stage all`), `test` (`python -m pytest`), `eval` (`python -m pytest -m eval`)
+
+- [ ] **Step 1: Napisz testy statyczne**
+
+```python
+def test_ci_workflow_defines_required_jobs():
+    # .github/workflows/ci.yml zawiera joby docs, api, test, eval
+def test_ci_workflow_uses_python_313():
+def test_ci_runs_api_validation():
+    # w jobie api jest krok z validate_api.py
+def test_precommit_hook_calls_script():
+    # .githooks/pre-commit wywoluje scripts/precommit.py
+def test_precommit_script_help_runs():
+    # python scripts/precommit.py --help -> kod 0
+```
+
+- [ ] **Step 2: Uruchom testy, mają paść**
+
+Run: `python -m pytest tests/integration/test_ci_files.py -v`
+Expected: FAIL — brak plików CI i hooka.
+
+- [ ] **Step 3: Napisz `scripts/precommit.py`**
+
+Skrypt uruchamia kolejno polecenia jako procesy, wypisuje `OK <opis>` lub `FAIL <opis> <powód>` dla każdego kroku i kończy się kodem 1 po pierwszym błędzie. Kroki: kontrola dokumentacji, walidacja API (etap `all`), testy. Opcja `--fast` ogranicza się do kontroli dokumentacji i walidacji etapu `spec`. Skrypt nie wymaga dodatkowych zależności poza standardową biblioteką.
+
+- [ ] **Step 4: Napisz hook i workflow**
+
+`.githooks/pre-commit`:
+```sh
+#!/bin/sh
+exec python scripts/precommit.py --fast
+```
+Po utworzeniu pliku ustaw bit wykonywalności w indeksie: `git update-index --chmod=+x .githooks/pre-commit`.
+
+`.github/workflows/ci.yml`: workflow `on: [push, pull_request]`, `permissions: contents: read`, każdy job z `actions/checkout@v4`, `actions/setup-python@v5` (`python-version: '3.13'`, `cache: pip`) i instalacją `pip install -r apps/backend/requirements.txt` tam, gdzie są potrzebne zależności.
+
+- [ ] **Step 5: Uruchom testy, mają przejść**
+
+Run: `python -m pytest tests/integration/test_ci_files.py -v` oraz `python scripts/precommit.py`
+Expected: PASS; skrypt wypisuje `OK` dla każdego kroku i kończy się kodem 0.
+
+- [ ] **Step 6: Sprawdź hook w praktyce**
+
+Run: `git config core.hooksPath .githooks` potem próba commita bez zmian — hook nie blokuje; przy celowo zepsutej specyfikacji hook kończy się błędem (sprawdź na kopii, bez commitowania).
+
+- [ ] **Step 7: Opisz w README**
+
+Sekcja „Kontrola jakości”: jak włączyć hook (`git config core.hooksPath .githooks`), co sprawdza (`scripts/precommit.py`), jakie są joby CI i jak uruchomić pełną weryfikację w Dockerze (`scripts/verify_docker.ps1` / `.sh`).
+
+- [ ] **Step 8: Commit**
+
+```bash
+git add scripts/precommit.py .githooks/pre-commit .github/workflows/ci.yml tests/integration/test_ci_files.py README.md
+git commit -m "feat: CI, skrypt walidacji API i hook pre-commit"
+```
+
 ---
 
 ## Śledzenie wykonania
@@ -936,3 +1031,4 @@ git commit -m "docs: ADR-002, instrukcja uruchomienia, raport pomiaru i skrypty 
 - [ ] Task 13: Docker, Compose i skrypty startowe
 - [ ] Task 14: Własny ewaluator F1 i raport pomiaru
 - [ ] Task 15: Skrypty testu w Dockerze, ADR i dokumentacja
+- [ ] Task 16: CI/CD i hook pre-commit
