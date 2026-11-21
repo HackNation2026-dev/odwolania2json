@@ -647,9 +647,9 @@ git commit -m "feat: serializacja JSON, potok dokumentu, port LLM i CLI"
 **Files:**
 - Create: `apps/backend/odwolania2json/db/__init__.py`, `apps/backend/odwolania2json/db/migrate.py`
 - Create: `apps/backend/odwolania2json/db/migrations/0001_initial.sql`
-- Create: `apps/backend/odwolania2json/db/repository.py`
-- Modify: `apps/backend/odwolania2json/cli.py` (podkomenda `migrate`)
-- Test: `tests/integration/test_db.py`
+- Create: `apps/backend/odwolania2json/db/repository.py`, `apps/backend/odwolania2json/db/import_organizer.py`
+- Modify: `apps/backend/odwolania2json/cli.py` (podkomendy `migrate` i `import-organizer`)
+- Test: `tests/integration/test_db.py`, `tests/integration/test_import_organizer.py`
 
 **Interfaces:**
 - Produces:
@@ -658,7 +658,9 @@ git commit -m "feat: serializacja JSON, potok dokumentu, port LLM i CLI"
   - `odwolania2json.db.migrate.applied_versions(database_url: str) -> list[str]`
   - `odwolania2json.db.repository.DocumentRepository(database_url: str)` — metody `migrate()` (woła `migrate`), `save_result(result: ProcessingResult, run_id: str | None) -> str`, `list_documents(limit: int = 50, offset: int = 0, document_class: str | None = None) -> list[dict]`, `get_document(document_id: str) -> dict | None`, `get_extraction(document_id: str) -> dict | None`, `count_documents() -> int`
   - `odwolania2json.db.repository.is_configured(database_url: str | None) -> bool`
+  - `odwolania2json.db.import_organizer.import_organizer(data_dir: Path, repository: DocumentRepository) -> dict` — raport: `{"documents": int, "extractions": int, "runs": int, "skipped": list[str], "drift": list[str]}`
   - CLI: `python -m odwolania2json migrate` — stosuje migracje i wypisuje ich wersje
+  - CLI: `python -m odwolania2json import-organizer --data KATALOG` — wypełnia bazę referencyjnymi danymi organizatora (60 spraw × 3 klasy), idempotentnie po `sha256`; **rozjazd kontraktu jest raportowany, nie blokuje importu**
 
 - [ ] **Step 1: Napisz testy**
 
@@ -687,20 +689,22 @@ Expected: FAIL — brak modułu `db`.
 
 `migrate.py`: przed migracją zakłada tabelę `schema_migrations(version text primary key, applied_at timestamptz default now())`; wczytuje pliki `*.sql` z `MIGRATIONS_DIR` posortowane po nazwie; każdy niezastosowany plik wykonuje w jednej transakcji i dopisuje wersję do `schema_migrations`; pliki zastosowane są pomijane. Dostęp przez SQLAlchemy Core z `postgresql+pg8000://`.
 
-- [ ] **Step 4: Zaimplementuj repozytorium i podkomendę CLI**
+- [ ] **Step 4: Zaimplementuj repozytorium, migracje w CLI i import referencyjnych danych**
 
 `DocumentRepository.migrate()` woła `migrate(database_url)`. `save_result` zapisuje dokument (deduplikacja po `sha256`) i ekstrakcję (`payload` i `evidence` jako `JSONB`). CLI `migrate` przyjmuje `--database-url` (domyślnie ze zmiennej `DATABASE_URL`), stosuje migracje i wypisuje po jednej linii na wersję.
 
+CLI `import-organizer --data KATALOG [--database-url URL]`: czyta `KATALOG/przyklad_*/`, paruje `odwolanie.json`↔`odwolanie.pdf`, `pelnomocnictwo.json`↔`pelnomocnictwo.pdf`, `przelew.json`↔`potwierdzenie_przelewu.pdf`; liczy `sha256` z PDF, `page_count` i `has_text_layer` przez `pypdfium2`; tworzy po jednym przebiegu na sprawę (`runs.status = 'import'`, `documents_count = 3`) i po jednej ekstrakcji na dokument (`payload` = referencyjny JSON organizatora, `evidence` = `{}` — referencje nie zawierają dowodu, więc go nie wymyślamy). Import jest idempotentny po `sha256`; powtórny import aktualizuje wiersze, nie duplikuje. Walidacja każdego JSON-a modelem pydantic daje **raport rozjazdów, nie bramkę** (plik jest importowany mimo rozjazdu). Raport na stdout: liczba wstawionych dokumentów, ekstrakcji i przebiegów, lista pominiętych plików, lista rozjazdów.
+
 - [ ] **Step 5: Uruchom testy (bez bazy = pomijane, potem z bazą)**
 
-Run: `python -m pytest tests/integration/test_db.py -v`
+Run: `python -m pytest tests/integration/test_db.py tests/integration/test_import_organizer.py -v`
 Expected: PASS lub SKIPPED z powodu braku `DATABASE_URL`.
 
 - [ ] **Step 6: Commit**
 
 ```bash
-git add apps/backend/odwolania2json/db apps/backend/odwolania2json/cli.py tests/integration/test_db.py
-git commit -m "feat: opcjonalna warstwa Postgres z migracjami"
+git add apps/backend/odwolania2json/db apps/backend/odwolania2json/cli.py tests/integration/test_db.py tests/integration/test_import_organizer.py
+git commit -m "feat: opcjonalna warstwa Postgres z migracjami i importem referencyjnych danych"
 ```
 
 ---
@@ -825,6 +829,7 @@ git commit -m "feat: UI przegladarki bazy Postgres"
 
 **Files:**
 - Create: `infra/docker/Dockerfile`, `infra/docker/postgres/init.sql`, `docker-compose.yml`, `start.bat`, `start.sh`
+- Create: `docs/07-decyzje/ADR-002-fastapi-postgres-ui.md`
 - Modify: `.env.example`
 - Test: `tests/integration/test_docker_files.py` (test statyczny obrazu i compose)
 
@@ -852,9 +857,11 @@ Expected: FAIL — brak plików.
 - [ ] **Step 3: Napisz Dockerfile i Compose**
 
 `Dockerfile`: `FROM python:3.13.18-slim` (przypięta wersja; obraz zweryfikowany lokalnie 2026-11-21: digest `sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90`, Python 3.13.18), `ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1`, `WORKDIR /app`, `COPY packages/contracts /app/packages/contracts`, `COPY apps/backend /app/apps/backend`, `COPY apps/web /app/apps/web`, `COPY tests /app/tests`, `RUN pip install --no-cache-dir ./packages/contracts ./apps/backend -r apps/backend/requirements-ocr.txt`, użytkownik bez roota (`useradd -m -u 10001 app`), `COPY input output` jako katalogi, `EXPOSE 8000`, `HEALTHCHECK` na `/healthz`, `CMD ["uvicorn", "odwolania2json.api.app:app", "--host", "0.0.0.0", "--port", "8000"]`.
-`docker-compose.yml`: usługa `api` (`build.context: .`, `dockerfile: infra/docker/Dockerfile`, port 8000, wolumeny `input`, `output`, zmienne z `.env`), usługa `db` (`postgres:16-alpine`, `healthcheck: pg_isready`, wolumen `pgdata`).
+`docker-compose.yml`: usługa `api` (`build.context: .`, `dockerfile: infra/docker/Dockerfile`, port 8000, wolumeny `input`, `output`, zmienne z `.env`), usługa `db` (`postgres:16-alpine`, `healthcheck: pg_isready`, wolumen `pgdata`). Katalog materiałów organizatora montowany **tylko do odczytu**: `./docs/02-materialy:/materials:ro`, żeby import referencyjnych danych działał w kontenerze bez umieszczania materiałów w obrazie.
 `infra/docker/postgres/init.sql`: tylko bootstrap bazy (np. rozszerzenia); **schemat aplikacji tworzą migracje**, które `api` stosuje przy starcie przez `python -m odwolania2json migrate`.
 `start.bat` i `start.sh`: `docker compose up --build`, a gdy Dockera brak — instrukcja uruchomienia przez `pip install -r requirements.txt` i `python -m odwolania2json run`.
+
+W tym zadaniu powstaje `docs/07-decyzje/ADR-002-fastapi-postgres-ui.md` — decyzja o stosie (FastAPI, Postgres opcjonalny, UI przeglądarka bazy bez etapu budowania, OpenAPI jako źródło prawdy) z konsekwencjami i warunkami powrotu do Reacta.
 
 - [ ] **Step 4: Uruchom test i zbuduj obraz**
 
@@ -866,11 +873,15 @@ Expected: PASS; obraz zbudowany bez błędów.
 Run: `docker compose up -d && docker compose ps && curl http://localhost:8000/healthz`
 Expected: `api` i `db` w stanie `running`, `/healthz` zwraca `{"status":"ok"}`.
 
-- [ ] **Step 6: Commit**
+- [ ] **Step 6: Napisz ADR-002**
+
+Treść: kontekst (FastAPI, Postgres opcjonalny, UI przeglądarka bazy bez etapu budowania, OpenAPI jako źródło prawdy), decyzja, alternatywy (React/TypeScript, baza obowiązkowa, OCR w podstawie, widok PDF obok JSON), konsekwencje, warunki powrotu do Reacta, status (zaakceptowane 2026-11-21).
+
+- [ ] **Step 7: Commit**
 
 ```bash
-git add infra docker-compose.yml start.bat start.sh .env.example tests/integration/test_docker_files.py
-git commit -m "feat: obraz Docker, Compose i skrypty startowe"
+git add infra docker-compose.yml start.bat start.sh .env.example docs/07-decyzje/ADR-002-fastapi-postgres-ui.md tests/integration/test_docker_files.py
+git commit -m "feat: obraz Docker, Compose, skrypty startowe i ADR-002"
 ```
 
 ---

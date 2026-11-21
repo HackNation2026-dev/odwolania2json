@@ -1,10 +1,12 @@
 ---
-wersja: 0.1.0
+wersja: 0.2.0
 aktualizacja: 2026-11-21
-status: zatwierdzone do implementacji
+status: wariant projektu — rozstrzygnięty przez kontrolera 2026-11-21
 ---
 
 # Projekt przebiegu — Postgres, przeglądarka bazy i Docker
+
+> **Rozstrzygnięcie kontrolera (2026-11-21).** Ten dokument powstał w trakcie implementacji jako wariant kolejności zadań. **Planem zapisu pozostaje** [plan wdrożenia](../plans/2026-11-21-backend-fastapi-postgres-ui.md): najpierw silnik ekstrakcji (zadania 3–9), potem Postgres, API, UI i Docker (10–13). Uzasadnienie: preselekcja jest mierzona w 100% wskaźnikiem F1, więc silnik daje wartość konkursową, a baza i UI są własnym dodatkiem, którego organizator nie wymaga. Z tego dokumentu **przyjęto do planu**: komenda `import-organizer` (zadanie 10), montaż materiałów organizatora tylko do odczytu w Compose (zadanie 13), kryteria akceptacji §4 jako podstawa skryptu `scripts/verify_docker.*` (zadanie 15) oraz powstanie ADR-002 w zadaniu 13, a nie 15. Wersja 0.1.0 deklarowała „zatwierdzone do implementacji" bez zatwierdzenia — zatwierdza zespół, nie autor dokumentu.
 
 ## 1. Cel
 
