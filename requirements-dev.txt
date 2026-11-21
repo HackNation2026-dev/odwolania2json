@@ -1,0 +1,5 @@
+# Python 3.13; zgodność instalacji wymaga weryfikacji w środowisku z dostępem do PyPI.
+ruff==0.14.6
+mypy==1.18.2
+mutmut==3.3.1
+build==1.3.0

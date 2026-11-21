@@ -1,0 +1,20 @@
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+extend-exclude = [".ci", "docs/02-materialy", "experiments", "apps/backend/build"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = true
+mypy_path = ["apps/backend", "packages/contracts"]
+explicit_package_bases = true
+cache_dir = ".ci/mypy"
+
+[tool.mutmut]
+paths_to_mutate = ["src/odwolania2json", "src/odwolania2json_contracts"]
+do_not_mutate = ["*/__init__.py", "*/__main__.py", "*/config.py", "*/cli.py", "*/domain/base.py", "*/db/*", "*/powody.py"]
+tests_dir = ["tests/unit", "tests/contract"]
+also_copy = ["scripts", "pytest.ini", "packages", "docs"]
