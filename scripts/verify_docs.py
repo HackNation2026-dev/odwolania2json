@@ -4,7 +4,7 @@ from pathlib import Path
 from urllib.parse import unquote
 import hashlib,json,re,sys
 root=Path(__file__).resolve().parents[1];errors=[]
-manifest=json.loads((root/'docs/02-materialy/manifest.json').read_text())
+manifest=json.loads((root/'docs/02-materialy/manifest.json').read_text(encoding='utf-8'))
 listed=set()
 for row in manifest['files']:
  p=root/row['path'];listed.add(row['path'])
@@ -15,7 +15,7 @@ actual={p.relative_to(root).as_posix() for f in folders for p in f.rglob('*') if
 for p in sorted(actual-listed):errors.append(f'Materiał poza manifestem: {p}')
 lock=root/'docs/02-materialy/uzp-revision.json'
 if lock.exists():
- data=json.loads(lock.read_text());base=root/'docs/02-materialy/organizator-uzp'
+ data=json.loads(lock.read_text(encoding='utf-8'));base=root/'docs/02-materialy/organizator-uzp'
  expected={r['path'] for r in data['files']};found={p.relative_to(base).as_posix() for p in base.rglob('*') if p.is_file()}
  if expected!=found:errors.append(f'Niezgodny zestaw UZP: brak {sorted(expected-found)}, nadmiar {sorted(found-expected)}')
  for row in data['files']:
@@ -26,7 +26,7 @@ if lock.exists():
 upd=root/'docs/02-materialy/uzp-aktualizacje.json'
 if upd.exists():
  # Uzupełnienie addytywne: późniejsze rewizje i gałęzie organizatora UZP.
- data=json.loads(upd.read_text());ubase=root/'docs/02-materialy/organizator-uzp-aktualizacje'
+ data=json.loads(upd.read_text(encoding='utf-8'));ubase=root/'docs/02-materialy/organizator-uzp-aktualizacje'
  stored=set()
  for snap in data['snapshots']:
   for row in snap['files']:
@@ -45,7 +45,7 @@ count=0
 for p in root.rglob('*.md'):
  rel=p.relative_to(root)
  if '.git' in rel.parts or 'zrodla' in rel.parts or any(s.startswith('organizator') for s in rel.parts):continue
- count+=1;s=p.read_text()
+ count+=1;s=p.read_text(encoding='utf-8')
  for link in re.findall(r'(?<!!)\[[^\]]*\]\((<[^>]+>|[^)\n]+)\)',s):
   link=link.strip().split(' "')[0].strip('<>');link=unquote(link.split('#',1)[0])
   if not link or re.match(r'^[a-zA-Z][a-zA-Z0-9+.-]*:',link):continue
