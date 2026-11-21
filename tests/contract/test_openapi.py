@@ -14,12 +14,11 @@ import subprocess
 import sys
 from pathlib import Path
 
-import yaml
-from openapi_spec_validator import validate
-
 import odwolania2json_contracts
+import yaml
 from odwolania2json_contracts import models
 from odwolania2json_contracts.models import Odwolanie, Pelnomocnictwo, Przelew, PustyWynik
+from openapi_spec_validator import validate
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PACKAGE_DIR = REPO_ROOT / "packages" / "contracts" / "odwolania2json_contracts"

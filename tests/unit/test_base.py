@@ -2,9 +2,8 @@
 
 from __future__ import annotations
 
-from odwolania2json_contracts.models import PustyWynik
-
 from odwolania2json.domain.base import Ekstrakcja
+from odwolania2json_contracts.models import PustyWynik
 
 
 def test_ekstrakcja_holds_model_and_evidence():

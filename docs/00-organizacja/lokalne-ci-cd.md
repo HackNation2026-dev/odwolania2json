@@ -1,12 +1,12 @@
 ---
 wersja: 0.6.1
 aktualizacja: 2026-11-21
-status: wdrożone skrypty; pełna bramka wymaga zielonego przebiegu
+status: wdrożone kontrole lokalne
 ---
 
 # Lokalne CI/CD
 
-Wszystkie polecenia wykonuje deweloper. Wymagany Python 3.13, Git oraz Linux/macOS lub WSL (mutmut wymaga fork). Decyzję i ograniczenia opisuje [ADR-003](../07-decyzje/ADR-003-lokalne-ci-cd.md).
+Wymagane Python 3.13 i Git. Narzędzia i konsekwencje opisuje [ADR-003](../07-decyzje/ADR-003-lokalne-ci-cd.md); bazę [ADR-004](../07-decyzje/ADR-004-sqlalchemy-sqlite-bez-postgres.md).
 
 ## Instalacja
 
@@ -17,45 +17,68 @@ python -m pip install -r requirements.txt -r requirements-dev.txt
 sh scripts/install_hooks.sh
 ```
 
-Instalator ustawia lokalne `core.hooksPath=.githooks`. Hooki korzystają z `python3` w PATH; można wskazać interpreter zmienną `PYTHON`. Nie należy wskazywać ścieżki ze spacjami wraz z argumentami. Odłączenie: `git config --unset core.hooksPath`.
+Framework pre-commit zarządza hookami pre-commit i pre-push (hooki ci-commit i ci-push); `.githooks/` nie istnieje. Instalator usuwa stare core.hooksPath=.githooks, ale nie nadpisuje obcej konfiguracji. Hooki wołają python3 z PATH, a ci.py sam przełącza się na interpreter z CI_PYTHON albo .venv/bin/python, więc Git nie wymaga aktywnego środowiska. Odinstalowanie: python -m pre_commit uninstall --hook-type pre-commit --hook-type pre-push.
 
-## Kontrole
+## Poziomy kontroli
+
+| Poziom | Polecenie | Budżet | Co sprawdza |
+|---|---|---|---|
+| pre-commit | `python scripts/ci.py --profile commit` | ~10 s | tylko pliki z indeksu: docs przy zmianie dokumentów, Ruff, mypy z cache, testy zmienionych modułów bez pokrycia, API spec przy zmianie kontraktu, mutacje zmienionych linii |
+| pre-push | `python scripts/ci.py --profile push` | ~2 min | docs, Ruff, mypy, API, pełne testy z progiem 90%, mutacje modułów zmienionych od merge-base z main |
+| pełne mutacje | `python scripts/ci.py --stage mutation` | bez limitu | wszystkie moduły z zakresu; ręcznie lub z crona |
+| wydanie | `python scripts/ci.py --stage all` | bez limitu | wszystko plus audit (release.py) |
+
+Wszystkie poziomy są obowiązkowe; **zakaz --no-verify, SKIP i PRE_COMMIT_ALLOW_NO_CONFIG**. Etap bez zmian w zakresie jest jawnym SKIP z powodem. Każdy przebieg profilu kończy się linią `razem` z czasem i oceną budżetu; przekroczenie jest raportowane, nie blokuje. Mutacje zmieniają budżet commita tylko wtedy, gdy zmieniasz plik z zakresu (normalizatory, regex, walidator, modele): płacisz za mutanty zmienionych linii, resztę modułu sprawdza push, a zielony wynik zostaje w cache.
+
+Przykład crona dla pełnych mutacji (nie blokuje pracy, wynik w .ci/mutation-report.txt i logu):
+
+```sh
+0 3 * * * cd /ścieżka/do/repo && python3 scripts/ci.py --stage mutation >> .ci/mutation-cron.log 2>&1
+```
+
+## Kontrole ręczne
 
 ```sh
 python scripts/ci.py --fast
 python scripts/ci.py --stage all
-python scripts/ci.py --stage mutation
+python scripts/ci.py --stage mutation                 # pełne, z cache
+python scripts/ci.py --stage mutation --no-cache      # pełne, bez cache
+python scripts/ci.py --stage mutation --since main    # moduły zmienione od merge-base
+python scripts/ci.py --stage mutation --changed       # kopia indeksu
+python scripts/ci.py --stage lint --files a.py b.py
+python scripts/ci.py --stage test --files tests/unit/test_x.py
+python scripts/ci.py --stage audit
 python scripts/ci.py --stage all --keep-going
+pre-commit run --all-files
 ```
+
+Opcje mutacji: `--jobs N` (domyślnie do 8 równoległych mutantów), `--mutant-timeout S`, `--no-cache`.
 
 | Etap | Kontrola |
 |---|---|
-| docs | `scripts/verify_docs.py`: integralność materiałów i linki |
-| lint | `ruff check` i `ruff format --check` całego repo, według wykluczeń w pyproject.toml |
-| types | `mypy --strict apps/ packages/`, bez wyłączania błędów istniejącego kodu |
-| api | `validate_api.py --stage all`; w `--fast` tylko `--stage spec` |
-| test | pytest z `-m "not eval"`; eval uruchamiany osobno |
-| mutation | mutmut dla normalizatorów i modeli walidujących, dodatkowe mutacje deklaracji regex i typów pól |
+| docs | integralność materiałów i linków przez verify_docs.py; błędy są raportowane jawnie |
+| lint | Ruff check i format --check (z --force-exclude); reguły w pyproject.toml |
+| types | mypy --strict apps/ packages/ scripts/ci.py, cache przyrostowy .ci/mypy |
+| api | validate_api.py --stage all; z --fast lub --stage api --spec tylko spec |
+| test | pytest bez eval, pytest-cov, próg 90%; z --files tylko testy zmienionych modułów, bez pokrycia |
+| mutation | lokalne operatory AST; wymagane 100% zabitych |
+| audit | pip-audit zależności backendu; brak sieci = jawny SKIP |
 
-Kolejność jest stała. Domyślnie pierwszy FAIL zatrzymuje kolejne etapy; `--keep-going` zbiera dalsze błędy. Raport pokazuje OK/FAIL/SKIP i czas każdego etapu. Kod 0 oznacza sukces wybranych kontroli, 1 błąd kontroli, 2 błędne argumenty. SKIP dotyczy etapów niewybranych lub zatrzymanych; brak narzędzia jest FAIL z poleceniem instalacji.
+Mutacje działają równolegle na kopiach źródeł w .ci/ (repozytorium nie jest modyfikowane), dla modułu uruchamiają tylko testy go obejmujące, a każdy mutant ma limit czasu. Moduł najpierw przechodzi testy bazowe: ich błąd to FAIL modułu z nazwami testów, a nie przeżyły mutant. Zielony wynik jest zapisany w .ci/mutation-cache.json pod skrótem kodu modułu, jego testów i operatorów; niezmienione moduły są jawnym SKIP (cache). Wynik niezielony nigdy nie trafia do cache. Raport: .ci/mutation-report.txt, niezabite warianty: .ci/mutation-failures/. Kod pytest 1 zabija mutanta; przeżycie, timeout lub inny błąd blokują. Szczegóły i ograniczenia skrótu: [ADR-003](../07-decyzje/ADR-003-lokalne-ci-cd.md).
 
-Cache, pliki tymczasowe i kopie mutacyjne trafiają do ignorowanego `.ci/`; runner nie formatuje ani nie poprawia kodu. Runner odwzorowuje pakiety do `src/` w kopii roboczej (układ obsługiwany przez mutmut 3); konfiguracja mutmut wskazuje te ścieżki, dlatego uruchamiaj mutacje przez `ci.py`. Kopie robocze mutacji są usuwane po zakończeniu, raport pozostaje na terminalu. Mutacje dotyczą także pojedynczych cyfr, liter wzorców i formatów; dla modeli zmieniają typy i cyfry ograniczeń pattern. Każdy niezabity mutant, błąd przebiegu lub pusty raport blokuje etap. Testy bazowe muszą przechodzić. Aktualizacja mutmut wymaga sprawdzenia formatu metadanych `.meta`.
-
-Pre-commit wykonuje szybkie kontrole. Pre-push wykonuje pełne CI, także mutacje, co może długo trwać. Zielony pełny przebieg jest wymagany przed push i merge również po pominięciu hooka. Istniejący `.github/workflows/docs.yml` zachowano bez zmian; nie jest częścią tej lokalnej bramki.
+Kolejność etapów jest stała. Pierwszy FAIL zatrzymuje kolejne; --keep-going zbiera dalsze wyniki. Kody runnera: 0 sukces wybranych kontroli (także jawny SKIP), 1 błąd, 2 błędne argumenty. Brak narzędzia to FAIL z instrukcją instalacji. Cache i kopie trafiają do ignorowanego .ci/. Materiały organizatora są wykluczone ze standardowych hooków naprawiających pliki. Historyczny workflow docs nie zastępuje lokalnej bramki.
 
 ## Wydawanie
 
-Uzgodnij VERSION, wpis CHANGELOG i `__version__` obu pakietów. Drzewo Git musi być czyste, także bez plików nieśledzonych. Po kontroli i zapisaniu zmian w historii można uruchomić:
+Uzgodnij VERSION, CHANGELOG i wersje obu pakietów. Z czystego Git uruchom:
 
 ```sh
 python scripts/release.py
 python scripts/release.py --tag
 ```
 
-Domyślny dry-run wykonuje pełne CI i rzeczywistą budowę wheel oraz sdist dla `packages/contracts` i `apps/backend`. Zapisuje artefakty w `dist/` i wypisuje SHA-256; nie zmienia historii ani tagów. Budowanie odbywa się na kopiach w `.ci/`, żeby setuptools nie zapisywał przy źródłach. Niezgodna wersja zbudowanego pakietu blokuje wydanie. `dist/` może zawierać starsze pliki; raport SHA-256 dotyczy wyłącznie bieżącej budowy.
+Domyślnie runner wykonuje pełne CI, buduje wheel i sdist obu pakietów na kopiach i zapisuje dist/ z SHA-256, bez tagu. Niezgodna wersja artefaktu blokuje wydanie. --tag tworzy lokalny v<VERSION> po sukcesie; istniejący tag nie jest nadpisywany. Nie ma automatycznej publikacji ani push. Dostarczenie jury pozostaje ręczne przez pip. Starsze artefakty w dist/ nie są częścią raportu bieżącej budowy.
 
-`--tag` po sukcesie tworzy lokalny `v<VERSION>`; istniejący tag powoduje błąd, nie jest nadpisywany. Skrypt nigdy nie wykonuje push, publikacji ani wdrożenia. Przekazanie pakietów jury pozostaje ręczne. Wycofanie lokalnego błędnego wydania polega na ręcznym usunięciu jego artefaktów; tag usuwa się ręcznie dopiero po sprawdzeniu, czy nie został udostępniony.
+## Ograniczenia
 
-## Stan weryfikacji
-
-Znany wcześniejszy błąd linku bezwzględnego w `docs/04-architektura/gui/recenzja-codex-2026-11-21.md` pozostaje bez zmian i blokuje docs. Obecnie pakiety deklarują 0.5.0, podczas gdy VERSION zawiera 0.6.1; wydanie wymaga uzgodnienia tych wersji. Skrypty nie podmieniają ich automatycznie. Instalacja przypiętych narzędzi wymaga weryfikacji na Pythonie 3.13 z dostępem do PyPI; próby pip index oraz pip install --dry-run w tym środowisku nie znalazły dostępnych dystrybucji, a pobieranie przez uv zakończyło się błędem DNS.
+Weryfikacja etapu 2 używa CPythona 3.13.18 i przypiętych zależności. Systemowy python3 w środowisku roboczym ma wersję 3.15.2 i nie ma narzędzi projektu; do poleceń należy aktywować środowisko 3.13. Wersje pakietów nadal deklarują 0.5.0 przy VERSION 0.6.1: przed wydaniem trzeba je uzgodnić. W tym zadaniu nie wykonujemy wydania, commita ani push.

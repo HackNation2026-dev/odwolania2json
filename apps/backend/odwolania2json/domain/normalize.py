@@ -249,7 +249,9 @@ def normalize_ted(text: str) -> str | None:
 
 
 # Numer postępowania: „ZS.791.2026”, „ZP/PN/48/2026”, „IR.271-35/2026”.
-_POSTEPOWANIE = re.compile(r"(?<![A-Za-z0-9])[A-Za-z]{2,6}(?:[./-][A-Za-z0-9]{1,5}){1,5}(?![A-Za-z0-9])")
+_POSTEPOWANIE = re.compile(
+    r"(?<![A-Za-z0-9])[A-Za-z]{2,6}(?:[./-][A-Za-z0-9]{1,5}){1,5}(?![A-Za-z0-9])"
+)
 _ROK_CZTEROCYFRONY = re.compile(r"(?:19|20)\d{2}")
 
 
@@ -325,24 +327,25 @@ def find_value(text: str, labels: Sequence[str], window: int = 120) -> str | Non
 
 # --- sumy kontrolne: sygnał rankingowy, nigdy filtr twardy ---
 
+
 def _suma_nip(cyfry: str) -> bool:
     """Czy 10 cyfr ma poprawną sumę kontrolną NIP (suma 10 oznacza brak NIP-u)."""
     if len(cyfry) != 10:
         return False
-    suma = sum(int(c) * waga for c, waga in zip(cyfry[:9], _WAGI_NIP)) % 11
+    suma = sum(int(c) * waga for c, waga in zip(cyfry[:9], _WAGI_NIP, strict=False)) % 11
     return suma != 10 and suma == int(cyfry[9])
 
 
 def _suma_regon(cyfry: str) -> bool:
     """Czy 9 albo 14 cyfr ma poprawną sumę kontrolną REGON."""
     if len(cyfry) == 9:
-        suma = sum(int(c) * waga for c, waga in zip(cyfry[:8], _WAGI_REGON)) % 11
+        suma = sum(int(c) * waga for c, waga in zip(cyfry[:8], _WAGI_REGON, strict=False)) % 11
         oczekiwana = 0 if suma == 10 else suma
         return oczekiwana == int(cyfry[8])
     if len(cyfry) == 14:
         if not _suma_regon(cyfry[:9]):
             return False
-        suma = sum(int(c) * waga for c, waga in zip(cyfry[:13], _WAGI_REGON_14)) % 11
+        suma = sum(int(c) * waga for c, waga in zip(cyfry[:13], _WAGI_REGON_14, strict=False)) % 11
         oczekiwana = 0 if suma == 10 else suma
         return oczekiwana == int(cyfry[13])
     return False
@@ -352,7 +355,7 @@ def _suma_pesel(cyfry: str) -> bool:
     """Czy 11 cyfr ma poprawną sumę kontrolną PESEL."""
     if len(cyfry) != 11:
         return False
-    suma = sum(int(c) * waga for c, waga in zip(cyfry[:10], _WAGI_PESEL)) % 10
+    suma = sum(int(c) * waga for c, waga in zip(cyfry[:10], _WAGI_PESEL, strict=False)) % 10
     return (10 - suma) % 10 == int(cyfry[10])
 
 

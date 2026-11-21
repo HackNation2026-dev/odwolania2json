@@ -1,10 +1,34 @@
 [tool.ruff]
 target-version = "py313"
 line-length = 100
-extend-exclude = [".ci", "docs/02-materialy", "experiments", "apps/backend/build"]
+extend-exclude = [".ci", "docs/02-materialy", "experiments", "apps/backend/build", "packages/contracts/odwolania2json_contracts/models.py"]
 
 [tool.ruff.lint]
-select = ["E4", "E7", "E9", "F"]
+select = ["E", "F", "I", "B", "UP", "SIM", "C4", "PT", "RUF", "N", "ANN", "S", "TID"]
+# Polskie komentarze i kontrakt organizatora zawierają znaki Unicode.
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.ruff.lint.per-file-ignores]
+# Testy sprawdzają asercje i fikcyjne sekrety; adnotacje wymagane w apps/packages.
+"tests/**" = ["ANN", "S101", "S105", "S106", "S603", "S607"]
+# Skrypty uruchamiają jawnie skonstruowane polecenia deweloperskie.
+"scripts/**" = ["S603", "S607", "ANN"]
+# Jedyny moduł ma dostęp do DBAPI dla konfiguracji połączenia i parsera SQL.
+"apps/backend/odwolania2json/db/engine.py" = ["TID251"]
+
+[tool.ruff.lint.flake8-tidy-imports.banned-api]
+"sqlite3" = { msg = "Używaj DataRepository; sterownik tylko w db/engine.py." }
+"pg8000" = { msg = "PostgreSQL odłożony w ADR-004." }
+"psycopg" = { msg = "PostgreSQL odłożony w ADR-004." }
+"psycopg2" = { msg = "PostgreSQL odłożony w ADR-004." }
+
+[tool.coverage.run]
+source = ["odwolania2json", "odwolania2json_contracts"]
+data_file = ".ci/.coverage"
+
+[tool.coverage.report]
+fail_under = 90
+show_missing = true
 
 [tool.mypy]
 python_version = "3.13"
@@ -13,8 +37,6 @@ mypy_path = ["apps/backend", "packages/contracts"]
 explicit_package_bases = true
 cache_dir = ".ci/mypy"
 
-[tool.mutmut]
-paths_to_mutate = ["src/odwolania2json", "src/odwolania2json_contracts"]
-do_not_mutate = ["*/__init__.py", "*/__main__.py", "*/config.py", "*/cli.py", "*/domain/base.py", "*/db/*", "*/powody.py"]
-tests_dir = ["tests/unit", "tests/contract"]
-also_copy = ["scripts", "pytest.ini", "packages", "docs"]
+[tool.datamodel-codegen]
+builtin-format-line-length = 88
+

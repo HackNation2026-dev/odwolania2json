@@ -81,7 +81,7 @@ def check_spec() -> bool:
         spec = _load_spec()
         validate(spec)
         _ok(f"specyfikacja {SPEC_PATH.relative_to(ROOT).as_posix()} jest poprawnym OpenAPI 3.1")
-    except Exception as error:  # noqa: BLE001 - raportujemy dowolny błąd walidacji
+    except Exception as error:
         _fail("walidacja specyfikacji", f"{error}")
         return False
 
@@ -112,7 +112,7 @@ def check_app() -> bool:
         exists = importlib.util.find_spec(APP_MODULE) is not None
     except (ImportError, ModuleNotFoundError):
         exists = False
-    except Exception as error:  # noqa: BLE001 - pakiet aplikacji istnieje, ale nie działa
+    except Exception as error:
         _fail("import aplikacji", f"{type(error).__name__}: {error}")
         return False
     if not exists:
@@ -120,8 +120,8 @@ def check_app() -> bool:
         return True
 
     try:
-        from odwolania2json.api.app import app  # noqa: PLC0415 - import warunkowy
-    except Exception as error:  # noqa: BLE001 - aplikacja istnieje, ale nie działa
+        from odwolania2json.api.app import app
+    except Exception as error:
         _fail("import aplikacji", f"{type(error).__name__}: {error}")
         return False
 

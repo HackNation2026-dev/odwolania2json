@@ -103,7 +103,8 @@ def main(argv: list[str] | None = None, *, root: Path | None = None) -> int:
         if isinstance(error, subprocess.CalledProcessError) and error.stdout:
             print(error.stdout)
         print(
-            f"FAIL wydanie: {error}; instalacja narzędzi: python -m pip install -r requirements-dev.txt"
+            f"FAIL wydanie: {error}; instalacja narzędzi: "
+            "python -m pip install -r requirements-dev.txt"
         )
         return 1
 

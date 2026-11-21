@@ -61,7 +61,7 @@ def validate_spec(spec_path: Path) -> int:
     try:
         spec = yaml.safe_load(spec_path.read_text(encoding="utf-8"))
         validate(spec)
-    except Exception as error:  # noqa: BLE001 - skrypt raportuje dowolny błąd walidacji
+    except Exception as error:
         return _fail(f"specyfikacja {spec_path} jest niepoprawna: {error}")
     return 0
 
@@ -78,7 +78,8 @@ def generate(spec_path: Path, output_path: Path) -> int:
         "--output",
         str(output_path),
     ]
-    result = subprocess.run(command, capture_output=True, text=True)
+    # Konfiguracja formatera w pyproject.toml musi być taka sama także poza repo.
+    result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True)
     if result.returncode != 0:
         details = (result.stdout + result.stderr).strip()
         return _fail(f"generowanie modeli nie powiodło się: {details}")
@@ -90,9 +91,13 @@ def generate(spec_path: Path, output_path: Path) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Generuje modele pydantic ze specyfikacji OpenAPI.")
+    parser = argparse.ArgumentParser(
+        description="Generuje modele pydantic ze specyfikacji OpenAPI."
+    )
     parser.add_argument("--spec", type=Path, default=SPEC_PATH, help="plik ze specyfikacją OpenAPI")
-    parser.add_argument("--output", type=Path, default=MODELS_PATH, help="plik z wygenerowanymi modelami")
+    parser.add_argument(
+        "--output", type=Path, default=MODELS_PATH, help="plik z wygenerowanymi modelami"
+    )
     args = parser.parse_args(argv)
 
     spec_path: Path = args.spec.resolve()
