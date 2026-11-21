@@ -211,11 +211,25 @@ def test_profile_reports_exceeded_budget(tmp_path, capsys, monkeypatch):
     assert "BUDŻET PRZEKROCZONY" in capsys.readouterr().out
 
 
-def test_push_profile_uses_incremental_mutation_and_no_audit(tmp_path):
+def test_push_profile_uses_incremental_mutation_and_no_audit(tmp_path, monkeypatch):
+    # Hooki gita ustawiają GIT_DIR, więc baza zależałaby od otoczenia; ustalamy ją jawnie.
+    monkeypatch.setattr(ci, "push_base", lambda root: "main")
     with patch.object(ci, "run_stage", return_value=True) as run:
         assert ci.main(["--profile", "push"], root=tmp_path) == 0
     assert [call.args[0] for call in run.call_args_list] == list(ci.STAGES[:6])
     assert run.call_args.args[2].since == "main"
+
+
+def test_push_base_prefers_remote_main_over_stale_local_main(tmp_path):
+    init_repo(tmp_path)
+    (tmp_path / "base.py").write_text("a = 1\n")
+    git(tmp_path, "add", ".")
+    git(tmp_path, "commit", "-qm", "base")
+    git(tmp_path, "branch", "-M", "main")
+    git(tmp_path, "update-ref", "refs/remotes/origin/main", "HEAD")
+    assert ci.push_base(tmp_path) == "origin/main"
+    git(tmp_path, "update-ref", "-d", "refs/remotes/origin/main")
+    assert ci.push_base(tmp_path) == "main"
 
 
 def test_failing_stage_is_reported_in_profile_summary(tmp_path, capsys):
