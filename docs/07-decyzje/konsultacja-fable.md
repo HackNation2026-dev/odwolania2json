@@ -1,12 +1,16 @@
 ---
-wersja: 0.2.0
+wersja: 0.2.1
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
 
 # Konsultacja Fable — zlecenie i status
 
-Status: niewykonana. Brak opinii drugiego modelu. Próba uruchomienia Orca zakończyła się błędem „Timed out waiting for an Orca desktop window”; następnie status wskazał runtime not_running. Nazwy i identyfikatora modelu Fable nie potwierdzono. Nie zastąpiono go innym modelem.
+Status: konsultację odłożono na prośbę użytkownika do ponownego uruchomienia z innymi uprawnieniami. Nie uzyskano opinii drugiego modelu.
+
+Orca nie uruchomiła runtime. Bezpośrednie CLI `claude --version` działało (2.1.330), a pomoc potwierdziła alias `fable` w `--model`. Bezpośrednią próbę konsultacji uruchomiono, a następnie przerwano na prośbę użytkownika; sesja zakończyła się kodem 130. Nie potwierdzono kanonicznego modelu odpowiedzi ani rekomendacji.
+
+Kolejna próba powinna użyć bezpośredniego CLI z aktualną konfiguracją użytkownika. Brak runtime Orca nie jest dowodem awarii CLI Claude.
 
 ## Zlecenie do przekazania Fable
 

@@ -1,5 +1,11 @@
 # Historia zmian
 
+## 0.2.1 — 2026-11-21
+
+- Potwierdzono działające CLI Claude i alias modelu fable w pomocy.
+- Konsultację i publikację odłożono na prośbę użytkownika do nowej sesji.
+- Bezpośrednią próbę konsultacji przerwano bez uzyskania opinii.
+
 ## 0.2.0 — 2026-11-21
 
 - Dodano źródło Discord z godzinami i autorami przekazanymi przez użytkownika.
