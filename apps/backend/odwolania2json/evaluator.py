@@ -189,7 +189,8 @@ def _compare_value(
     # Zła wartość lub zmiana typu: jednocześnie fałszywie wykryta i brakująca.
     # `True == 1` w Pythonie, więc typ bool sprawdzamy osobno: zmiana bool<->liczba to błąd pola.
     if predicted == reference and isinstance(predicted, bool) == isinstance(reference, bool):
-        _add(outcomes, path, "tn")
+        # Wartość obecna i zgodna z referencją to TP; TN oznacza brak po obu stronach.
+        _add(outcomes, path, "tp")
     else:
         _add(outcomes, path, "fp")
         _add(outcomes, path, "fn")
@@ -206,7 +207,7 @@ def _compare_lists(
     for element in reference:
         if element in unmatched:
             unmatched.remove(element)
-            _add(outcomes, path, "tn")
+            _add(outcomes, path, "tp")
         else:
             _add(outcomes, path, "fn")
     for _ in unmatched:

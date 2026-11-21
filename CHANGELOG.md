@@ -91,3 +91,5 @@
 - Dodano skill projektowy `.claude/skills/generate-api` (generowanie API z kontraktu OpenAPI zgodnie z architekturą 0.6.1 i ADR-002).
 
 - Dodano backlog (`docs/00-organizacja/backlog.md`) z kolejką prac, znanymi długami i definicją ukończenia oraz `CLAUDE.md` odsyłający do `AGENTS.md`.
+
+- Naprawa ewaluatora: wartość obecna i zgodna z referencją liczy się jako TP (wcześniej TN, więc F1 pól wynosiło 0). Wykryte w recenzji planu eksperymentów.
