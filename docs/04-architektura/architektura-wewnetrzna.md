@@ -294,7 +294,7 @@ Poniższe decyzje zespołu są **zamknięte** na podstawie ostatniego uzupełnie
 | Zakres | Stan / konsekwencja |
 |---|---|
 | PostgreSQL | **Do potwierdzenia przez użytkownika** jako opcja serwerowa za `DataRepository`; jury bez serwera bazy. |
-| Dostawca i model LLM | Decyzja użytkownika (ADR-002 pkt 8): MiniMax przez `api.minimax.io`, protokół zgodny z Anthropic. **Ryzyko zgodności** z wymogiem UE/EOG i open source (operator w Singapurze, MiniMax Community License, duży model) — do potwierdzenia u mentora przed zgłoszeniem; klient pozostaje niezależny od dostawcy. |
+| Dostawca i model LLM | **Zamknięte** (ADR-002 pkt 8 i uzupełnienie): MiniMax hostowany w Europie, protokół zgodny z Anthropic; klient niezależny od dostawcy. |
 | Biblioteka UI | Decyzja użytkownika (ADR-002 pkt 10): React, TypeScript, Zod, Next.js (statyczny eksport w pip), gluestack-ui; PDF: `@react-pdf/renderer` (generowanie) i `react-web-pdf-editor` (podgląd; worker lokalnie, programowe ramki dowodów do sprawdzenia). |
 | Pytania do mentora | [Rejestr pytań](../07-decyzje/pytania-otwarte.md): miara 80%, normalizacja/agregacja i punktacja modeli, kanał/budżet klucza i konta jury, generator skanów, ocena wielu treści w PDF, nieczytelne pola, eksport awarii i udział OCR w rozmiarze modelu. Odpowiedzi nie cofają automatycznie zamkniętych decyzji zespołu. |
 

@@ -119,3 +119,7 @@ Numeracja według listy decyzji z rozmowy (i `architektura-wewnetrzna.md` §9–
 12. **Nazwa projektu: Arkadiana** (Odwołania2JSON pozostaje nazwą zadania konkursowego).
 13. **Commity etapami** zaakceptowane.
 14. **Push na `origin`** zaakceptowany.
+
+## Uzupełnienie: MiniMax zamknięty (użytkownik, 2026-11-21)
+
+Użytkownik potwierdza: używany MiniMax jest hostowany w Europie. Punkt 8 jest **zamknięty decyzją zespołu**; wcześniejsze „ryzyko zgodności” (oparte na wyszukiwaniu asystenta) nie jest już otwartą kwestią.

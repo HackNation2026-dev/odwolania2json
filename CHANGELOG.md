@@ -11,6 +11,8 @@
 
 ## 0.6.1 — 2026-11-21
 
+- MiniMax hostowany w Europie potwierdzony przez użytkownika; punkt 8 zamknięty (ADR-002, architektura §10).
+
 - Uzupełnienia po zleceniu C: domyślny `error_export=empty_json` (potwierdzona rekomendacja użytkownika), decyzje ADR-002 pkt 8 (MiniMax, ryzyko zgodności) i pkt 10 (stos GUI) w §10 architektury; nazwa projektu Arkadiana i decyzje o repozytorium w ADR-002.
 
 - Naniesiono decyzje ADR-002 przed OpenAPI w całej architekturze wewnętrznej: jeden PDF = jeden dokument bez limitu stron w kontrakcie, pięć wyników, zamknięte polityki braków, błędów i `{}` dla obcego.
