@@ -1,0 +1,15 @@
+Zaktualizowano architekturę, `CHANGELOG.md` i `VERSION` do **0.6.1**. GUI bez zmian.
+
+Opis obejmuje repozytorium danych, obowiązkowe bbox i kotwiczenie cytatów, jeden wynik na PDF, zamknięte polityki braków i błędów, konfigurację z `selfcheck` oraz poprawiony diagram.
+
+| Wcześniej | Teraz |
+|---|---|
+| `wynik.json` | `result.json` |
+| `dowody.json` | `evidence.json` |
+| `kandydaci.json` | `candidates.json` |
+| `postep`, `stan_wyniku` | `progress`, `outcome` |
+| `w_kolejce/w_toku/zakonczony` | `queued/running/done` |
+
+Otwarte pozostają: PostgreSQL, dostawca/model LLM, biblioteka UI i pytania do mentora.
+
+**Weryfikacja:** `verify_docs.py` — OK: 440 materiałów, 50 dokumentów. Sprawdzono również poprawność 10 przykładów JSON i zgodność przykładowego dowodu z warstwą odczytu.
