@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "odwolania2json"
-version = "0.5.0"
 description = "Odwołania2JSON — konwerter PDF-ów spraw odwoławczych do ścisłego JSON."
-requires-python = ">=3.13"
-dynamic = ["dependencies"]
+requires-python = ">=3.11"
+dynamic = ["version", "dependencies"]
 
 [tool.setuptools.dynamic]
+version = {attr = "odwolania2json.__version__"}
 dependencies = {file = ["requirements.txt"]}
 
 [tool.setuptools.packages.find]
