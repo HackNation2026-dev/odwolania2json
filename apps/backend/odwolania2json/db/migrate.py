@@ -8,27 +8,26 @@ nie jest wykonywana ponownie.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import os
 import sys
 from pathlib import Path
 
-from sqlalchemy import create_engine, text
+from sqlalchemy import inspect, text
+from sqlalchemy.engine import Connection
 
-from .repository import normalize_url
+from .engine import create_database_engine, split_statements, write_transaction
 
 __all__ = ["MIGRATIONS_DIR", "applied_versions", "migrate", "migrate_with_directory"]
 
 #: Katalog z plikami migracji.
 MIGRATIONS_DIR = Path(__file__).resolve().parent / "migrations"
 
-#: Klucz blokady doradczej — chroni przed równoczesnym nakładaniem migracji.
-_ADVISORY_LOCK_KEY = 8420113
-
 #: Tabela z listą zastosowanych migracji.
 _SCHEMA_MIGRATIONS = """
 CREATE TABLE IF NOT EXISTS schema_migrations (
     version text PRIMARY KEY,
-    applied_at timestamptz NOT NULL DEFAULT now()
+    applied_at text NOT NULL DEFAULT CURRENT_TIMESTAMP
 )
 """
 
@@ -49,17 +48,9 @@ def _version_of(path: Path) -> str:
     return path.stem
 
 
-def _table_exists(connection, table_name: str) -> bool:
-    """Czy wskazana tabela istnieje w schemacie ``public``."""
-    return bool(
-        connection.execute(
-            text(
-                "SELECT count(*) FROM information_schema.tables "
-                "WHERE table_schema = 'public' AND table_name = :name"
-            ),
-            {"name": table_name},
-        ).scalar()
-    )
+def _table_exists(connection: Connection, table_name: str) -> bool:
+    """Introspekcja przez SQLAlchemy nie zależy od katalogów serwera."""
+    return inspect(connection).has_table(table_name)
 
 
 def applied_versions(database_url: str) -> list[str]:
@@ -68,7 +59,7 @@ def applied_versions(database_url: str) -> list[str]:
     Funkcja jest czystym odczytem: nie tworzy żadnych tabel. Gdy tabela
     ``schema_migrations`` jeszcze nie istnieje, zwraca pustą listę.
     """
-    engine = create_engine(normalize_url(database_url), future=True)
+    engine = create_database_engine(database_url)
     try:
         with engine.connect() as connection:
             if not _table_exists(connection, _SCHEMA_MIGRATIONS_TABLE):
@@ -76,7 +67,7 @@ def applied_versions(database_url: str) -> list[str]:
             rows = connection.execute(
                 text("SELECT version FROM schema_migrations ORDER BY version ASC")
             )
-        return [row[0] for row in rows]
+        return [str(row[0]) for row in rows]
     finally:
         engine.dispose()
 
@@ -89,38 +80,27 @@ def migrate(database_url: str) -> list[str]:
 def migrate_with_directory(database_url: str, directory: Path) -> list[str]:
     """Nakłada migracje z podanego katalogu; zwraca zastosowane wersje.
 
-    Blokada doradcza jest pobierana **przed** odczytem zastosowanych wersji i
-    trzymana przez cały przebieg, więc dwa procesy nie wykonają tej samej
-    migracji równolegle. Każdy plik migracji jest jedną transakcją: albo
-    wykonuje się w całości, albo zostaje cofnięty w całości.
+    BEGIN IMMEDIATE blokuje konkurencyjny zapis przed sprawdzeniem wersji.
+    Błąd DDL lub DML cofa cały plik razem z wpisem wersji.
     """
-    engine = create_engine(normalize_url(database_url), future=True)
+    engine = create_database_engine(database_url)
     applied: list[str] = []
     try:
         for path in _migration_files(directory):
             version = _version_of(path)
             script = path.read_text(encoding="utf-8")
-            with engine.begin() as connection:
-                # Blokada na poziomie sesji trzymana do końca transakcji.
-                connection.execute(
-                    text("SELECT pg_advisory_xact_lock(:key)"),
-                    {"key": _ADVISORY_LOCK_KEY},
-                )
+            with write_transaction(engine) as connection:
                 connection.execute(text(_SCHEMA_MIGRATIONS))
                 already_applied = bool(
                     connection.execute(
-                        text(
-                            "SELECT count(*) FROM schema_migrations "
-                            "WHERE version = :version"
-                        ),
+                        text("SELECT count(*) FROM schema_migrations WHERE version = :version"),
                         {"version": version},
                     ).scalar()
                 )
                 if already_applied:
                     continue
-                # Cały plik jako jeden skrypt — bez własnego dzielenia na
-                # wyrażenia, żeby nie rozrywać napisów i komentarzy.
-                connection.exec_driver_sql(script)
+                for statement in split_statements(script):
+                    connection.exec_driver_sql(statement)
                 connection.execute(
                     text(
                         "INSERT INTO schema_migrations (version) VALUES (:version) "
@@ -140,10 +120,8 @@ def _use_utf8_output() -> None:
         reconfigure = getattr(stream, "reconfigure", None)
         if reconfigure is None:
             continue
-        try:
+        with contextlib.suppress(ValueError, OSError):
             reconfigure(encoding="utf-8", errors="replace")
-        except (ValueError, OSError):
-            pass
 
 
 def main(argv: list[str] | None = None) -> int:

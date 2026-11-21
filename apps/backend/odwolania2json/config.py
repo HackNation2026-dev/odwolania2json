@@ -1,7 +1,8 @@
 """Ustawienia aplikacji Odwołania2JSON odczytane ze środowiska.
 
-Baza jest opcjonalna: brak ``DATABASE_URL`` nie jest błędem, a warstwa dostępu
-do danych po prostu nie powstaje.
+Baza (SQLite przez SQLAlchemy, ADR-004) jest opcjonalna: brak ``DATABASE_URL`` nie
+jest błędem, a warstwa dostępu do danych po prostu nie powstaje. ``WORK_DIR`` to
+katalog roboczy z bajtami PDF i artefaktami (architektura §7).
 """
 
 from __future__ import annotations
@@ -40,6 +41,7 @@ class Settings:
 
     input_dir: Path
     output_dir: Path
+    work_dir: Path
     database_url: str | None
     llm_base_url: str | None
     llm_model: str | None
@@ -49,12 +51,13 @@ class Settings:
     web_dir: Path
 
     @classmethod
-    def from_env(cls, env: Mapping[str, str] | None = None) -> "Settings":
+    def from_env(cls, env: Mapping[str, str] | None = None) -> Settings:
         """Buduje ustawienia z podanego mapowania albo ze środowiska procesu."""
         environment: Mapping[str, str] = os.environ if env is None else env
         return cls(
             input_dir=Path(environment.get("INPUT_DIR", "input")),
             output_dir=Path(environment.get("OUTPUT_DIR", "output")),
+            work_dir=Path(environment.get("WORK_DIR", "work")),
             database_url=_optional(environment, "DATABASE_URL"),
             llm_base_url=_optional(environment, "LLM_BASE_URL"),
             llm_model=_optional(environment, "LLM_MODEL"),

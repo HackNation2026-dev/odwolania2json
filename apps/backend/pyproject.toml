@@ -15,3 +15,7 @@ dependencies = {file = ["requirements.txt"]}
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["odwolania2json*"]
+
+[tool.setuptools.package-data]
+# Migracje SQL muszą trafić do pakietu pip, inaczej `migrate` nie ma schematu.
+odwolania2json = ["db/migrations/*.sql"]

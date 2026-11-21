@@ -5,6 +5,7 @@ jedynie je udostępnia, żeby ``python -m odwolania2json`` i testy szkieletu
 widziały to samo API.
 """
 
+import contextlib
 import sys
 
 from .cli import APP_NAME, build_parser, main
@@ -18,10 +19,8 @@ def _use_utf8_output() -> None:
         reconfigure = getattr(stream, "reconfigure", None)
         if reconfigure is None:
             continue
-        try:
+        with contextlib.suppress(ValueError, OSError):
             reconfigure(encoding="utf-8", errors="replace")
-        except (ValueError, OSError):
-            pass
 
 
 if __name__ == "__main__":
