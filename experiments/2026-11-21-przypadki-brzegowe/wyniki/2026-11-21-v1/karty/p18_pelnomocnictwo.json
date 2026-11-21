@@ -1,0 +1,340 @@
+{
+ "format": "uzp-karta-dokumentu",
+ "wersja": 1,
+ "id": "p18_pelnomocnictwo",
+ "klasa": "pelnomocnictwo",
+ "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_18/pelnomocnictwo.pdf",
+ "referencja": "docs/02-materialy/organizator-uzp/dane/przyklad_18/pelnomocnictwo.json",
+ "metoda": "Heurystyka referencja → pdftotext -bbox-layout; każdy PDF niezależnie",
+ "pola": {
+  "mocodawca[0].data.imie_nazwisko": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  },
+  "mocodawca[0].data.krs": {
+   "wartosc": "9990428468",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      352.01,
+      146.1,
+      418.79,
+      156.1
+     ],
+     "tekst_w_dokumencie": "9990428468,",
+     "etykieta_pola": "KRS",
+     "etykieta_roli": {
+      "tekst": "reprezentowania",
+      "polozenie": "po",
+      "odleglosc_linii": 2.29,
+      "strona": 1,
+      "bbox": [
+       172.98,
+       178.1,
+       258.57,
+       188.1
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.nazwa": {
+   "wartosc": "Balttec Infrastruktura S.A.",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      69.8,
+      146.1,
+      205.12,
+      156.1
+     ],
+     "tekst_w_dokumencie": "Balttec Infrastruktura S.A.",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "reprezentowania",
+      "polozenie": "po",
+      "odleglosc_linii": 2.29,
+      "strona": 1,
+      "bbox": [
+       172.98,
+       178.1,
+       258.57,
+       188.1
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.nip": {
+   "wartosc": "9995059584",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      444.58,
+      146.1,
+      511.36,
+      156.1
+     ],
+     "tekst_w_dokumencie": "9995059584,",
+     "etykieta_pola": "NIP",
+     "etykieta_roli": {
+      "tekst": "reprezentowania",
+      "polozenie": "po",
+      "odleglosc_linii": 2.29,
+      "strona": 1,
+      "bbox": [
+       172.98,
+       178.1,
+       258.57,
+       188.1
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.typ": {
+   "wartosc": "osoba_prawna",
+   "dopasowanie": "wyliczana",
+   "wystapienia": []
+  },
+  "mocodawca[0].podpisujacy[0].imie_nazwisko": {
+   "wartosc": "Grzegorz Bąkiewicz",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      367.61,
+      358.7,
+      468.34,
+      368.7
+     ],
+     "tekst_w_dokumencie": "Grzegorz Bąkiewicz",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Prezes",
+      "polozenie": "po",
+      "odleglosc_linii": 1.0,
+      "strona": 1,
+      "bbox": [
+       378.63,
+       372.7,
+       412.38,
+       382.7
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].imie_nazwisko": {
+   "wartosc": "Dorota Zawadzki",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      355.28,
+      162.1,
+      441.64,
+      172.1
+     ],
+     "tekst_w_dokumencie": "Dorota Zawadzki",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "pełnomocnikiem",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 1,
+      "bbox": [
+       241.4,
+       162.1,
+       324.82,
+       172.1
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].pesel": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  }
+ },
+ "grupy": [
+  {
+   "id": "mocodawca[0]",
+   "typ": "mocodawca[]",
+   "pola": [
+    "mocodawca[0].data.imie_nazwisko",
+    "mocodawca[0].data.krs",
+    "mocodawca[0].data.nazwa",
+    "mocodawca[0].data.nip",
+    "mocodawca[0].data.typ"
+   ],
+   "etykieta_roli": {
+    "tekst": "reprezentowania",
+    "polozenie": "po",
+    "odleglosc_linii": 2.29,
+    "strona": 1,
+    "bbox": [
+     172.98,
+     178.1,
+     258.57,
+     188.1
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      69.8,
+      146.1,
+      511.36,
+      188.1
+     ],
+     "spojna": false,
+     "kolidujace_pola": [
+      "pelnomocnicy[0].imie_nazwisko"
+     ],
+     "wysokosc_linii": 4.2
+    }
+   ],
+   "spojna": false,
+   "pola_zlokalizowane": 3,
+   "pola_do_lokalizacji": 3
+  },
+  {
+   "id": "mocodawca[0].podpisujacy[0]",
+   "typ": "mocodawca[].podpisujacy[]",
+   "pola": [
+    "mocodawca[0].podpisujacy[0].imie_nazwisko"
+   ],
+   "etykieta_roli": {
+    "tekst": "Prezes",
+    "polozenie": "po",
+    "odleglosc_linii": 1.0,
+    "strona": 1,
+    "bbox": [
+     378.63,
+     372.7,
+     412.38,
+     382.7
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      367.61,
+      358.7,
+      468.34,
+      382.7
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.4
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  },
+  {
+   "id": "pelnomocnicy[0]",
+   "typ": "pelnomocnicy[]",
+   "pola": [
+    "pelnomocnicy[0].imie_nazwisko",
+    "pelnomocnicy[0].pesel"
+   ],
+   "etykieta_roli": {
+    "tekst": "pełnomocnikiem",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.0,
+    "strona": 1,
+    "bbox": [
+     241.4,
+     162.1,
+     324.82,
+     172.1
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      241.4,
+      162.1,
+      441.64,
+      172.1
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 1.0
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  }
+ ],
+ "uklad": [
+  {
+   "strona": 1,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  }
+ ],
+ "kody": [
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].data.nazwa",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wartosc_wyliczana",
+   "pole": "mocodawca[0].data.typ",
+   "dowod": "wyliczana; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].podpisujacy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "pelnomocnicy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "etykieta_po_danych",
+   "pole": "mocodawca[0]",
+   "dowod": "reprezentowania"
+  },
+  {
+   "kod": "etykieta_synonim",
+   "pole": "mocodawca[0]",
+   "dowod": "reprezentowania"
+  },
+  {
+   "kod": "etykieta_po_danych",
+   "pole": "mocodawca[0].podpisujacy[0]",
+   "dowod": "Prezes"
+  }
+ ],
+ "braki": []
+}

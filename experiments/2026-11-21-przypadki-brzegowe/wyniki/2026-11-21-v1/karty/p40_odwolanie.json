@@ -1,0 +1,1452 @@
+{
+ "format": "uzp-karta-dokumentu",
+ "wersja": 1,
+ "id": "p40_odwolanie",
+ "klasa": "odwolanie",
+ "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_40/odwolanie.pdf",
+ "referencja": "docs/02-materialy/organizator-uzp/dane/przyklad_40/odwolanie.json",
+ "metoda": "Heurystyka referencja → pdftotext -bbox-layout; każdy PDF niezależnie",
+ "pola": {
+  "OdwolanieKIO.data": {
+   "wartosc": "2026-10-19",
+   "dopasowanie": "inny_zapis",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      419.292,
+      66.373,
+      532.583,
+      77.283
+     ],
+     "tekst_w_dokumencie": "19 października 2026 r.",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 5,
+     "bbox": [
+      331.916,
+      444.173,
+      446.445,
+      455.083
+     ],
+     "tekst_w_dokumencie": "19 października 2026 r.",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 5,
+     "bbox": [
+      299.959,
+      462.173,
+      459.263,
+      473.083
+     ],
+     "tekst_w_dokumencie": "19 października 2026 r.",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 4
+    }
+   ]
+  },
+  "OdwolanieKIO.czynnosc_dzien": {
+   "wartosc": "2026-10-09",
+   "dopasowanie": "inny_zapis",
+   "wystapienia": [
+    {
+     "strona": 2,
+     "bbox": [
+      78.693,
+      84.373,
+      532.583,
+      113.283
+     ],
+     "tekst_w_dokumencie": "9 października 2026 r.;",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 2
+    },
+    {
+     "strona": 2,
+     "bbox": [
+      181.426,
+      246.773,
+      288.79,
+      257.683
+     ],
+     "tekst_w_dokumencie": "9 października 2026",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 3,
+     "bbox": [
+      62.693,
+      664.463,
+      109.943,
+      674.009
+     ],
+     "tekst_w_dokumencie": "09.10.2026",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 5,
+     "bbox": [
+      424.519,
+      426.173,
+      532.583,
+      437.083
+     ],
+     "tekst_w_dokumencie": "9 października 2026 r.",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "OdwolanieKIO.czynnosc_powod_id": {
+   "wartosc": 2,
+   "dopasowanie": "wyliczana",
+   "wystapienia": []
+  },
+  "OdwolanieKIO.czynnosc_opis": {
+   "wartosc": "Ogłoszenie wyboru oferty",
+   "dopasowanie": "wyliczana",
+   "wystapienia": []
+  },
+  "OdwolanieKIO.miejscowosc": {
+   "wartosc": "Poznań",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      354.305,
+      66.373,
+      392.631,
+      77.283
+     ],
+     "tekst_w_dokumencie": "Poznań,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      206.664,
+      198.373,
+      241.99,
+      209.283
+     ],
+     "tekst_w_dokumencie": "Poznań",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      191.675,
+      270.373,
+      227.002,
+      281.283
+     ],
+     "tekst_w_dokumencie": "Poznań",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      180.677,
+      350.373,
+      216.003,
+      361.283
+     ],
+     "tekst_w_dokumencie": "Poznań",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 4,
+     "bbox": [
+      218.598,
+      279.213,
+      249.509,
+      288.759
+     ],
+     "tekst_w_dokumencie": "Poznań",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "Odwolujacy[0].krs": {
+   "wartosc": "9998213547",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      92.371,
+      216.373,
+      155.371,
+      227.283
+     ],
+     "tekst_w_dokumencie": "9998213547,",
+     "etykieta_pola": "KRS",
+     "etykieta_roli": {
+      "tekst": "Odwołujący",
+      "polozenie": "przed",
+      "odleglosc_linii": 3.84,
+      "strona": 1,
+      "bbox": [
+       62.693,
+       162.566,
+       128.693,
+       173.283
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "Odwolujacy[0].nazwa": {
+   "wartosc": "Valtrix Systemy Informatyczne sp. z o.o.",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      62.693,
+      180.566,
+      269.992,
+      191.283
+     ],
+     "tekst_w_dokumencie": "Valtrix Systemy Informatyczne sp. z o.o.",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Odwołujący",
+      "polozenie": "przed",
+      "odleglosc_linii": 1.29,
+      "strona": 1,
+      "bbox": [
+       62.693,
+       162.566,
+       128.693,
+       173.283
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      174.784,
+      687.073,
+      392.842,
+      697.983
+     ],
+     "tekst_w_dokumencie": "Valtrix Systemy Informatyczne sp. z o.o.",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Odwołujący",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 1,
+      "bbox": [
+       437.801,
+       687.073,
+       514.102,
+       697.983
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 4,
+     "bbox": [
+      88.205,
+      279.213,
+      189.667,
+      301.884
+     ],
+     "tekst_w_dokumencie": "Valtrix Systemy Informatyczne sp. z o.o.",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Wykonawca",
+      "polozenie": "przed",
+      "odleglosc_linii": 4.6,
+      "strona": 4,
+      "bbox": [
+       88.205,
+       214.882,
+       143.627,
+       224.259
+      ]
+     },
+     "liczba_linii": 2
+    }
+   ]
+  },
+  "Odwolujacy[0].nip": {
+   "wartosc": "9993380162",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      184.041,
+      216.373,
+      247.041,
+      227.283
+     ],
+     "tekst_w_dokumencie": "9993380162,",
+     "etykieta_pola": "NIP",
+     "etykieta_roli": {
+      "tekst": "Odwołujący",
+      "polozenie": "przed",
+      "odleglosc_linii": 3.84,
+      "strona": 1,
+      "bbox": [
+       62.693,
+       162.566,
+       128.693,
+       173.283
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 4,
+     "bbox": [
+      257.676,
+      279.213,
+      310.176,
+      288.759
+     ],
+     "tekst_w_dokumencie": "9993380162",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Wykonawca",
+      "polozenie": "przed",
+      "odleglosc_linii": 4.6,
+      "strona": 4,
+      "bbox": [
+       88.205,
+       214.882,
+       143.627,
+       224.259
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "Odwolujacy[0].regon": {
+   "wartosc": "999517204",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      297.707,
+      216.373,
+      351.707,
+      227.283
+     ],
+     "tekst_w_dokumencie": "999517204",
+     "etykieta_pola": "REGON",
+     "etykieta_roli": {
+      "tekst": "Odwołujący",
+      "polozenie": "przed",
+      "odleglosc_linii": 3.84,
+      "strona": 1,
+      "bbox": [
+       62.693,
+       162.566,
+       128.693,
+       173.283
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "Odwolujacy[0].przez-pelnomocnika": {
+   "wartosc": 1,
+   "dopasowanie": "wyliczana",
+   "wystapienia": []
+  },
+  "Odwolujacy[0].pelnomocnik.imie_nazwisko": {
+   "wartosc": "Magdalena Wróblewska",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      200.617,
+      234.373,
+      320.57,
+      245.283
+     ],
+     "tekst_w_dokumencie": "Magdalena Wróblewska,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "reprezentowany",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 1,
+      "bbox": [
+       62.693,
+       234.373,
+       139.316,
+       245.283
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 11,
+     "bbox": [
+      386.637,
+      98.373,
+      506.591,
+      109.283
+     ],
+     "tekst_w_dokumencie": "Magdalena Wróblewska,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "Odwolujacy[0].pelnomocnik.nazwa": {
+   "wartosc": "Kancelaria Radców Prawnych Wróblewska i Wspólnicy sp.k.",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      185.658,
+      252.373,
+      484.568,
+      263.283
+     ],
+     "tekst_w_dokumencie": "Kancelaria Radców Prawnych Wróblewska i Wspólnicy sp.k.,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "reprezentowany",
+      "polozenie": "przed",
+      "odleglosc_linii": 1.29,
+      "strona": 1,
+      "bbox": [
+       62.693,
+       234.373,
+       139.316,
+       245.283
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "Odwolujacy[0].pelnomocnik.mail": {
+   "wartosc": "kancelaria@wroblewska.example",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      183.671,
+      288.373,
+      345.648,
+      299.283
+     ],
+     "tekst_w_dokumencie": "kancelaria@wroblewska.example",
+     "etykieta_pola": "e-mail",
+     "etykieta_roli": {
+      "tekst": "reprezentowany",
+      "polozenie": "przed",
+      "odleglosc_linii": 3.86,
+      "strona": 1,
+      "bbox": [
+       62.693,
+       234.373,
+       139.316,
+       245.283
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "Zamawiajacy[0].krs": {
+   "wartosc": "9994470318",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      92.371,
+      368.373,
+      155.371,
+      379.283
+     ],
+     "tekst_w_dokumencie": "9994470318,",
+     "etykieta_pola": "KRS",
+     "etykieta_roli": {
+      "tekst": "Zamawiającego",
+      "polozenie": "po",
+      "odleglosc_linii": 3.16,
+      "strona": 1,
+      "bbox": [
+       349.369,
+       412.566,
+       438.009,
+       423.283
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "Zamawiajacy[0].nazwa": {
+   "wartosc": "Regionalne Centrum Usług Medycznych sp. z o.o.",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      62.693,
+      332.566,
+      316.351,
+      343.283
+     ],
+     "tekst_w_dokumencie": "Regionalne Centrum Usług Medycznych sp. z o.o.",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Zamawiający",
+      "polozenie": "przed",
+      "odleglosc_linii": 1.29,
+      "strona": 1,
+      "bbox": [
+       62.693,
+       314.566,
+       136.011,
+       325.283
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 3,
+     "bbox": [
+      142.046,
+      404.073,
+      392.504,
+      414.983
+     ],
+     "tekst_w_dokumencie": "Regionalne Centrum Usług Medycznych sp. z o.o.",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Zamawiający",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 3,
+      "bbox": [
+       62.693,
+       404.073,
+       127.322,
+       414.983
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "Zamawiajacy[0].nip": {
+   "wartosc": "9991723094",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      184.041,
+      368.373,
+      247.041,
+      379.283
+     ],
+     "tekst_w_dokumencie": "9991723094,",
+     "etykieta_pola": "NIP",
+     "etykieta_roli": {
+      "tekst": "Zamawiającego",
+      "polozenie": "po",
+      "odleglosc_linii": 3.16,
+      "strona": 1,
+      "bbox": [
+       349.369,
+       412.566,
+       438.009,
+       423.283
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "Zamawiajacy[0].regon": {
+   "wartosc": "999806551",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      297.707,
+      368.373,
+      351.707,
+      379.283
+     ],
+     "tekst_w_dokumencie": "999806551",
+     "etykieta_pola": "REGON",
+     "etykieta_roli": {
+      "tekst": "Zamawiającego",
+      "polozenie": "po",
+      "odleglosc_linii": 3.16,
+      "strona": 1,
+      "bbox": [
+       349.369,
+       412.566,
+       438.009,
+       423.283
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "Zamawiajacy[0].prowadzacy_postepowanie": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  },
+  "ZamowieniePubliczne.numer_bzp": {
+   "wartosc": "2026/BZP00999412",
+   "dopasowanie": "inny_zapis",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      139.803,
+      564.373,
+      244.041,
+      575.283
+     ],
+     "tekst_w_dokumencie": "2026/BZP 00999412,",
+     "etykieta_pola": "BZP",
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "ZamowieniePubliczne.numer_postepowania": {
+   "wartosc": "ZP/PN/48/2026",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      211.096,
+      546.373,
+      289.441,
+      557.283
+     ],
+     "tekst_w_dokumencie": "ZP/PN/48/2026,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 2,
+     "bbox": [
+      485.213,
+      28.122,
+      538.583,
+      35.85
+     ],
+     "tekst_w_dokumencie": "ZP/PN/48/2026",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 3,
+     "bbox": [
+      485.213,
+      28.122,
+      538.583,
+      35.85
+     ],
+     "tekst_w_dokumencie": "ZP/PN/48/2026",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 4,
+     "bbox": [
+      485.213,
+      28.122,
+      538.583,
+      35.85
+     ],
+     "tekst_w_dokumencie": "ZP/PN/48/2026",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 5,
+     "bbox": [
+      485.213,
+      28.122,
+      538.583,
+      35.85
+     ],
+     "tekst_w_dokumencie": "ZP/PN/48/2026",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 6,
+     "bbox": [
+      485.213,
+      28.122,
+      538.583,
+      35.85
+     ],
+     "tekst_w_dokumencie": "ZP/PN/48/2026",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 7,
+     "bbox": [
+      485.213,
+      28.122,
+      538.583,
+      35.85
+     ],
+     "tekst_w_dokumencie": "ZP/PN/48/2026",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 8,
+     "bbox": [
+      485.213,
+      28.122,
+      538.583,
+      35.85
+     ],
+     "tekst_w_dokumencie": "ZP/PN/48/2026",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 9,
+     "bbox": [
+      485.213,
+      28.122,
+      538.583,
+      35.85
+     ],
+     "tekst_w_dokumencie": "ZP/PN/48/2026",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 10,
+     "bbox": [
+      485.213,
+      28.122,
+      538.583,
+      35.85
+     ],
+     "tekst_w_dokumencie": "ZP/PN/48/2026",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 11,
+     "bbox": [
+      485.213,
+      28.122,
+      538.583,
+      35.85
+     ],
+     "tekst_w_dokumencie": "ZP/PN/48/2026",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "ZamowieniePubliczne.numer_ted": {
+   "wartosc": "999584-2026",
+   "dopasowanie": "inny_zapis",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      62.693,
+      582.373,
+      157.697,
+      593.283
+     ],
+     "tekst_w_dokumencie": "2026/S 187-999584",
+     "etykieta_pola": "ogłoszenie",
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "ZamowieniePubliczne.tytul": {
+   "wartosc": "Dostawa, instalacja i konfiguracja zintegrowanego systemu informatycznego klasy HIS wraz ze świadczeniem usług serwisu pogwarancyjnego przez okres 36 miesięcy",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      62.693,
+      510.373,
+      532.583,
+      557.283
+     ],
+     "tekst_w_dokumencie": "„Dostawa, instalacja i konfiguracja zintegrowanego systemu informatycznego klasy HIS wraz ze świadczeniem usług serwisu pogwarancyjnego przez okres 36 miesięcy”,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 3
+    }
+   ]
+  }
+ },
+ "grupy": [
+  {
+   "id": "OdwolanieKIO",
+   "typ": "OdwolanieKIO",
+   "pola": [
+    "OdwolanieKIO.data",
+    "OdwolanieKIO.czynnosc_dzien",
+    "OdwolanieKIO.czynnosc_powod_id",
+    "OdwolanieKIO.czynnosc_opis",
+    "OdwolanieKIO.miejscowosc"
+   ],
+   "etykieta_roli": null,
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      354.305,
+      66.373,
+      532.583,
+      77.283
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 1.0
+    },
+    {
+     "strona": 2,
+     "bbox": [
+      78.693,
+      84.373,
+      532.583,
+      113.283
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.65
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 3,
+   "pola_do_lokalizacji": 3
+  },
+  {
+   "id": "Odwolujacy[0]",
+   "typ": "Odwolujacy[]",
+   "pola": [
+    "Odwolujacy[0].krs",
+    "Odwolujacy[0].nazwa",
+    "Odwolujacy[0].nip",
+    "Odwolujacy[0].regon",
+    "Odwolujacy[0].przez-pelnomocnika"
+   ],
+   "etykieta_roli": {
+    "tekst": "Odwołujący",
+    "polozenie": "przed",
+    "odleglosc_linii": 1.29,
+    "strona": 1,
+    "bbox": [
+     62.693,
+     162.566,
+     128.693,
+     173.283
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      62.693,
+      162.566,
+      351.707,
+      227.283
+     ],
+     "spojna": false,
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ],
+     "wysokosc_linii": 5.93
+    }
+   ],
+   "spojna": false,
+   "pola_zlokalizowane": 4,
+   "pola_do_lokalizacji": 4
+  },
+  {
+   "id": "Odwolujacy[0].pelnomocnik",
+   "typ": "Odwolujacy[].pelnomocnik",
+   "pola": [
+    "Odwolujacy[0].pelnomocnik.imie_nazwisko",
+    "Odwolujacy[0].pelnomocnik.nazwa",
+    "Odwolujacy[0].pelnomocnik.mail"
+   ],
+   "etykieta_roli": {
+    "tekst": "reprezentowany",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.0,
+    "strona": 1,
+    "bbox": [
+     62.693,
+     234.373,
+     139.316,
+     245.283
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      62.693,
+      234.373,
+      484.568,
+      299.283
+     ],
+     "spojna": false,
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ],
+     "wysokosc_linii": 5.95
+    }
+   ],
+   "spojna": false,
+   "pola_zlokalizowane": 3,
+   "pola_do_lokalizacji": 3
+  },
+  {
+   "id": "Zamawiajacy[0]",
+   "typ": "Zamawiajacy[]",
+   "pola": [
+    "Zamawiajacy[0].krs",
+    "Zamawiajacy[0].nazwa",
+    "Zamawiajacy[0].nip",
+    "Zamawiajacy[0].regon",
+    "Zamawiajacy[0].prowadzacy_postepowanie"
+   ],
+   "etykieta_roli": {
+    "tekst": "Zamawiający",
+    "polozenie": "przed",
+    "odleglosc_linii": 1.29,
+    "strona": 1,
+    "bbox": [
+     62.693,
+     314.566,
+     136.011,
+     325.283
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      62.693,
+      314.566,
+      351.707,
+      379.283
+     ],
+     "spojna": false,
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ],
+     "wysokosc_linii": 5.93
+    }
+   ],
+   "spojna": false,
+   "pola_zlokalizowane": 4,
+   "pola_do_lokalizacji": 4
+  },
+  {
+   "id": "ZamowieniePubliczne",
+   "typ": "ZamowieniePubliczne",
+   "pola": [
+    "ZamowieniePubliczne.numer_bzp",
+    "ZamowieniePubliczne.numer_postepowania",
+    "ZamowieniePubliczne.numer_ted",
+    "ZamowieniePubliczne.tytul"
+   ],
+   "etykieta_roli": null,
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      62.693,
+      510.373,
+      532.583,
+      593.283
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 7.6
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 4,
+   "pola_do_lokalizacji": 4
+  }
+ ],
+ "uklad": [
+  {
+   "strona": 1,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  },
+  {
+   "strona": 2,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  },
+  {
+   "strona": 3,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [
+    {
+     "y": 486,
+     "odstep_pt": 49.29,
+     "rozne_bloki": true
+    }
+   ],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  },
+  {
+   "strona": 4,
+   "przyblizenie": true,
+   "liczba_kolumn": 2,
+   "linie_z_odstepami": [
+    {
+     "y": 216,
+     "odstep_pt": 74.97,
+     "rozne_bloki": true
+    },
+    {
+     "y": 228,
+     "odstep_pt": 261.0,
+     "rozne_bloki": true
+    },
+    {
+     "y": 228,
+     "odstep_pt": 61.96,
+     "rozne_bloki": true
+    },
+    {
+     "y": 246,
+     "odstep_pt": 58.46,
+     "rozne_bloki": true
+    },
+    {
+     "y": 279,
+     "odstep_pt": 61.86,
+     "rozne_bloki": true
+    }
+   ],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  },
+  {
+   "strona": 5,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  },
+  {
+   "strona": 6,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  },
+  {
+   "strona": 7,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  },
+  {
+   "strona": 8,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  },
+  {
+   "strona": 9,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  },
+  {
+   "strona": 10,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  },
+  {
+   "strona": 11,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  }
+ ],
+ "kody": [
+  {
+   "kod": "inny_zapis_wartosci",
+   "pole": "OdwolanieKIO.data",
+   "dowod": "inny_zapis; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "OdwolanieKIO.data",
+   "dowod": "3 wystąpień"
+  },
+  {
+   "kod": "wartosc_w_kilku_liniach",
+   "pole": "OdwolanieKIO.data",
+   "dowod": "BBox obejmuje kilka linii Popplera"
+  },
+  {
+   "kod": "dane_dalej_niz_3_strona",
+   "pole": "OdwolanieKIO.data",
+   "dowod": "Wystąpienie na stronie >3"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "OdwolanieKIO.data",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "inny_zapis_wartosci",
+   "pole": "OdwolanieKIO.czynnosc_dzien",
+   "dowod": "inny_zapis; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "OdwolanieKIO.czynnosc_dzien",
+   "dowod": "4 wystąpień"
+  },
+  {
+   "kod": "wartosc_w_kilku_liniach",
+   "pole": "OdwolanieKIO.czynnosc_dzien",
+   "dowod": "BBox obejmuje kilka linii Popplera"
+  },
+  {
+   "kod": "dane_dalej_niz_3_strona",
+   "pole": "OdwolanieKIO.czynnosc_dzien",
+   "dowod": "Wystąpienie na stronie >3"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "OdwolanieKIO.czynnosc_dzien",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wartosc_wyliczana",
+   "pole": "OdwolanieKIO.czynnosc_powod_id",
+   "dowod": "wyliczana; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "wartosc_wyliczana",
+   "pole": "OdwolanieKIO.czynnosc_opis",
+   "dowod": "wyliczana; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "OdwolanieKIO.miejscowosc",
+   "dowod": "5 wystąpień"
+  },
+  {
+   "kod": "dane_dalej_niz_3_strona",
+   "pole": "OdwolanieKIO.miejscowosc",
+   "dowod": "Wystąpienie na stronie >3"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "OdwolanieKIO.miejscowosc",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "Odwolujacy[0].nazwa",
+   "dowod": "3 wystąpień"
+  },
+  {
+   "kod": "wartosc_w_kilku_liniach",
+   "pole": "Odwolujacy[0].nazwa",
+   "dowod": "BBox obejmuje kilka linii Popplera"
+  },
+  {
+   "kod": "dane_dalej_niz_3_strona",
+   "pole": "Odwolujacy[0].nazwa",
+   "dowod": "Wystąpienie na stronie >3"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "Odwolujacy[0].nazwa",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "Odwolujacy[0].nip",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "dane_dalej_niz_3_strona",
+   "pole": "Odwolujacy[0].nip",
+   "dowod": "Wystąpienie na stronie >3"
+  },
+  {
+   "kod": "wartosc_wyliczana",
+   "pole": "Odwolujacy[0].przez-pelnomocnika",
+   "dowod": "wyliczana; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "Odwolujacy[0].pelnomocnik.imie_nazwisko",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "dane_dalej_niz_3_strona",
+   "pole": "Odwolujacy[0].pelnomocnik.imie_nazwisko",
+   "dowod": "Wystąpienie na stronie >3"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "Odwolujacy[0].pelnomocnik.imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "Odwolujacy[0].pelnomocnik.nazwa",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "Zamawiajacy[0].nazwa",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "Zamawiajacy[0].nazwa",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "inny_zapis_wartosci",
+   "pole": "ZamowieniePubliczne.numer_bzp",
+   "dowod": "inny_zapis; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "ZamowieniePubliczne.numer_postepowania",
+   "dowod": "11 wystąpień"
+  },
+  {
+   "kod": "dane_dalej_niz_3_strona",
+   "pole": "ZamowieniePubliczne.numer_postepowania",
+   "dowod": "Wystąpienie na stronie >3"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "ZamowieniePubliczne.numer_postepowania",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "inny_zapis_wartosci",
+   "pole": "ZamowieniePubliczne.numer_ted",
+   "dowod": "inny_zapis; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "wartosc_w_kilku_liniach",
+   "pole": "ZamowieniePubliczne.tytul",
+   "dowod": "BBox obejmuje kilka linii Popplera"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "ZamowieniePubliczne.tytul",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "etykieta_synonim",
+   "pole": "Odwolujacy[0].pelnomocnik",
+   "dowod": "reprezentowany"
+  },
+  {
+   "kod": "uklad_wielokolumnowy",
+   "pole": null,
+   "dowod": "Kandydat: strona 4, duże odstępy"
+  }
+ ],
+ "braki": []
+}

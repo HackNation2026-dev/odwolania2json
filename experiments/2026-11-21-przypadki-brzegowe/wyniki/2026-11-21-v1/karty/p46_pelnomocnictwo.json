@@ -1,0 +1,845 @@
+{
+ "format": "uzp-karta-dokumentu",
+ "wersja": 1,
+ "id": "p46_pelnomocnictwo",
+ "klasa": "pelnomocnictwo",
+ "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_46/pelnomocnictwo.pdf",
+ "referencja": "docs/02-materialy/organizator-uzp/dane/przyklad_46/pelnomocnictwo.json",
+ "metoda": "Heurystyka referencja → pdftotext -bbox-layout; każdy PDF niezależnie",
+ "pola": {
+  "mocodawca[0].data.imie_nazwisko": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  },
+  "mocodawca[0].data.krs": {
+   "wartosc": "9997450782",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      375.433,
+      148.901,
+      436.69,
+      159.119
+     ],
+     "tekst_w_dokumencie": "9997450782,",
+     "etykieta_pola": "KRS",
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 2.25,
+      "strona": 1,
+      "bbox": [
+       381.334,
+       180.401,
+       526.913,
+       190.619
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.nazwa": {
+   "wartosc": "Korvel Serwis sp. z o.o. sp.k.",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      133.151,
+      526.913,
+      159.119
+     ],
+     "tekst_w_dokumencie": "Korvel Serwis sp. z o.o. sp.k.,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 3.38,
+      "strona": 1,
+      "bbox": [
+       381.334,
+       180.401,
+       526.913,
+       190.619
+      ]
+     },
+     "liczba_linii": 2
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      127.676,
+      443.976,
+      284.889,
+      454.194
+     ],
+     "tekst_w_dokumencie": "Korvel Serwis sp. z o.o. sp.k.:",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "udzielania",
+      "polozenie": "przed",
+      "odleglosc_linii": 4.73,
+      "strona": 1,
+      "bbox": [
+       83.272,
+       377.801,
+       131.02,
+       388.019
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.nip": {
+   "wartosc": "9996998288",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      463.785,
+      148.901,
+      526.913,
+      159.119
+     ],
+     "tekst_w_dokumencie": "9996998288,",
+     "etykieta_pola": "NIP",
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 2.25,
+      "strona": 1,
+      "bbox": [
+       381.334,
+       180.401,
+       526.913,
+       190.619
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.typ": {
+   "wartosc": "osoba_prawna",
+   "dopasowanie": "wyliczana",
+   "wystapienia": []
+  },
+  "mocodawca[0].podpisujacy[0].imie_nazwisko": {
+   "wartosc": "Wojciech Zieliński",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      489.476,
+      153.654,
+      499.694
+     ],
+     "tekst_w_dokumencie": "Wojciech Zieliński",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Członek",
+      "polozenie": "po",
+      "odleglosc_linii": 1.12,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       505.226,
+       105.333,
+       515.444
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].podpisujacy[1].imie_nazwisko": {
+   "wartosc": "Natalia Maciejewska",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      550.726,
+      163.811,
+      560.944
+     ],
+     "tekst_w_dokumencie": "Natalia Maciejewska",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "prezes",
+      "polozenie": "po",
+      "odleglosc_linii": 1.12,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       566.476,
+       121.175,
+       576.694
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[1].data.imie_nazwisko": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  },
+  "mocodawca[1].data.krs": {
+   "wartosc": "9990093297",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      180.401,
+      130.726,
+      190.619
+     ],
+     "tekst_w_dokumencie": "9990093297,",
+     "etykieta_pola": "KRS",
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 1,
+      "bbox": [
+       381.334,
+       180.401,
+       526.913,
+       190.619
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[1].data.nazwa": {
+   "wartosc": "Lumerio Facility sp.j.",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      192.56,
+      164.651,
+      320.563,
+      174.869
+     ],
+     "tekst_w_dokumencie": "Lumerio Facility sp.j.,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 1.12,
+      "strona": 1,
+      "bbox": [
+       381.334,
+       180.401,
+       526.913,
+       190.619
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      127.676,
+      590.226,
+      246.493,
+      600.444
+     ],
+     "tekst_w_dokumencie": "Lumerio Facility sp.j.:",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[1].data.nip": {
+   "wartosc": "9999917794",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      155.202,
+      180.401,
+      214.679,
+      190.619
+     ],
+     "tekst_w_dokumencie": "9999917794,",
+     "etykieta_pola": "NIP",
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 1,
+      "bbox": [
+       381.334,
+       180.401,
+       526.913,
+       190.619
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[1].data.typ": {
+   "wartosc": "osoba_prawna",
+   "dopasowanie": "wyliczana",
+   "wystapienia": []
+  },
+  "mocodawca[1].podpisujacy[0].imie_nazwisko": {
+   "wartosc": "Wojciech Majewski",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      635.726,
+      157.812,
+      645.944
+     ],
+     "tekst_w_dokumencie": "Wojciech Majewski",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Prezes",
+      "polozenie": "po",
+      "odleglosc_linii": 1.12,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       651.476,
+       98.416,
+       661.694
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].imie_nazwisko": {
+   "wartosc": "Rafał Piotrowski",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      381.608,
+      196.151,
+      460.157,
+      206.369
+     ],
+     "tekst_w_dokumencie": "Rafał Piotrowski",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "udzielają",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 1,
+      "bbox": [
+       222.306,
+       196.151,
+       347.921,
+       206.369
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      93.689,
+      718.726,
+      170.296,
+      728.944
+     ],
+     "tekst_w_dokumencie": "Rafał Piotrowski",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Pełnomocnictwo",
+      "polozenie": "przed",
+      "odleglosc_linii": 3.11,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       675.226,
+       158.627,
+       685.444
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].pesel": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  },
+  "pelnomocnicy[1].imie_nazwisko": {
+   "wartosc": "Rafał Czajka",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      170.614,
+      211.901,
+      228.19,
+      222.119
+     ],
+     "tekst_w_dokumencie": "Rafał Czajka",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "udzielają",
+      "polozenie": "przed",
+      "odleglosc_linii": 1.12,
+      "strona": 1,
+      "bbox": [
+       222.306,
+       196.151,
+       347.921,
+       206.369
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      93.689,
+      762.226,
+      151.265,
+      772.444
+     ],
+     "tekst_w_dokumencie": "Rafał Czajka",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Pełnomocnictwo",
+      "polozenie": "przed",
+      "odleglosc_linii": 6.21,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       675.226,
+       158.627,
+       685.444
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[1].pesel": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  }
+ },
+ "grupy": [
+  {
+   "id": "mocodawca[0]",
+   "typ": "mocodawca[]",
+   "pola": [
+    "mocodawca[0].data.imie_nazwisko",
+    "mocodawca[0].data.krs",
+    "mocodawca[0].data.nazwa",
+    "mocodawca[0].data.nip",
+    "mocodawca[0].data.typ"
+   ],
+   "etykieta_roli": {
+    "tekst": "Mocodawca",
+    "polozenie": "po",
+    "odleglosc_linii": 2.25,
+    "strona": 1,
+    "bbox": [
+     381.334,
+     180.401,
+     526.913,
+     190.619
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      133.151,
+      526.913,
+      190.619
+     ],
+     "spojna": false,
+     "kolidujace_pola": [
+      "mocodawca[1].data.krs",
+      "mocodawca[1].data.nazwa",
+      "mocodawca[1].data.nip"
+     ],
+     "wysokosc_linii": 5.62
+    }
+   ],
+   "spojna": false,
+   "pola_zlokalizowane": 3,
+   "pola_do_lokalizacji": 3
+  },
+  {
+   "id": "mocodawca[0].podpisujacy[0]",
+   "typ": "mocodawca[].podpisujacy[]",
+   "pola": [
+    "mocodawca[0].podpisujacy[0].imie_nazwisko"
+   ],
+   "etykieta_roli": {
+    "tekst": "Członek",
+    "polozenie": "po",
+    "odleglosc_linii": 1.12,
+    "strona": 1,
+    "bbox": [
+     68.362,
+     505.226,
+     105.333,
+     515.444
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      489.476,
+      153.654,
+      515.444
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.54
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  },
+  {
+   "id": "mocodawca[0].podpisujacy[1]",
+   "typ": "mocodawca[].podpisujacy[]",
+   "pola": [
+    "mocodawca[0].podpisujacy[1].imie_nazwisko"
+   ],
+   "etykieta_roli": {
+    "tekst": "prezes",
+    "polozenie": "po",
+    "odleglosc_linii": 1.12,
+    "strona": 1,
+    "bbox": [
+     68.362,
+     566.476,
+     121.175,
+     576.694
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      550.726,
+      163.811,
+      576.694
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.54
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  },
+  {
+   "id": "mocodawca[1]",
+   "typ": "mocodawca[]",
+   "pola": [
+    "mocodawca[1].data.imie_nazwisko",
+    "mocodawca[1].data.krs",
+    "mocodawca[1].data.nazwa",
+    "mocodawca[1].data.nip",
+    "mocodawca[1].data.typ"
+   ],
+   "etykieta_roli": {
+    "tekst": "Mocodawca",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.0,
+    "strona": 1,
+    "bbox": [
+     381.334,
+     180.401,
+     526.913,
+     190.619
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      164.651,
+      526.913,
+      190.619
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.54
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 3,
+   "pola_do_lokalizacji": 3
+  },
+  {
+   "id": "mocodawca[1].podpisujacy[0]",
+   "typ": "mocodawca[].podpisujacy[]",
+   "pola": [
+    "mocodawca[1].podpisujacy[0].imie_nazwisko"
+   ],
+   "etykieta_roli": {
+    "tekst": "Prezes",
+    "polozenie": "po",
+    "odleglosc_linii": 1.12,
+    "strona": 1,
+    "bbox": [
+     68.362,
+     651.476,
+     98.416,
+     661.694
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      635.726,
+      157.812,
+      661.694
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.54
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  },
+  {
+   "id": "pelnomocnicy[0]",
+   "typ": "pelnomocnicy[]",
+   "pola": [
+    "pelnomocnicy[0].imie_nazwisko",
+    "pelnomocnicy[0].pesel"
+   ],
+   "etykieta_roli": {
+    "tekst": "udzielają",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.0,
+    "strona": 1,
+    "bbox": [
+     222.306,
+     196.151,
+     347.921,
+     206.369
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      222.306,
+      196.151,
+      460.157,
+      206.369
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 1.0
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  },
+  {
+   "id": "pelnomocnicy[1]",
+   "typ": "pelnomocnicy[]",
+   "pola": [
+    "pelnomocnicy[1].imie_nazwisko",
+    "pelnomocnicy[1].pesel"
+   ],
+   "etykieta_roli": {
+    "tekst": "udzielają",
+    "polozenie": "przed",
+    "odleglosc_linii": 1.12,
+    "strona": 1,
+    "bbox": [
+     222.306,
+     196.151,
+     347.921,
+     206.369
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      170.614,
+      196.151,
+      347.921,
+      222.119
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.54
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  }
+ ],
+ "uklad": [
+  {
+   "strona": 1,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  }
+ ],
+ "kody": [
+  {
+   "kod": "wiele_wystapien",
+   "pole": "mocodawca[0].data.nazwa",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "wartosc_w_kilku_liniach",
+   "pole": "mocodawca[0].data.nazwa",
+   "dowod": "BBox obejmuje kilka linii Popplera"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].data.nazwa",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wartosc_wyliczana",
+   "pole": "mocodawca[0].data.typ",
+   "dowod": "wyliczana; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].podpisujacy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].podpisujacy[1].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "mocodawca[1].data.nazwa",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[1].data.nazwa",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wartosc_wyliczana",
+   "pole": "mocodawca[1].data.typ",
+   "dowod": "wyliczana; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[1].podpisujacy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "pelnomocnicy[0].imie_nazwisko",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "pelnomocnicy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "pelnomocnicy[1].imie_nazwisko",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "pelnomocnicy[1].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "etykieta_po_danych",
+   "pole": "mocodawca[0]",
+   "dowod": "Mocodawca"
+  },
+  {
+   "kod": "etykieta_po_danych",
+   "pole": "mocodawca[0].podpisujacy[0]",
+   "dowod": "Członek"
+  },
+  {
+   "kod": "etykieta_po_danych",
+   "pole": "mocodawca[0].podpisujacy[1]",
+   "dowod": "prezes"
+  },
+  {
+   "kod": "etykieta_po_danych",
+   "pole": "mocodawca[1].podpisujacy[0]",
+   "dowod": "Prezes"
+  },
+  {
+   "kod": "etykieta_synonim",
+   "pole": "pelnomocnicy[0]",
+   "dowod": "udzielają"
+  },
+  {
+   "kod": "etykieta_synonim",
+   "pole": "pelnomocnicy[1]",
+   "dowod": "udzielają"
+  },
+  {
+   "kod": "wielu_mocodawcow",
+   "pole": null,
+   "dowod": "Więcej niż jeden element referencji"
+  }
+ ],
+ "braki": []
+}

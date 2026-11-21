@@ -1,0 +1,275 @@
+{
+ "format": "uzp-karta-dokumentu",
+ "wersja": 1,
+ "id": "p03_przelew",
+ "klasa": "przelew",
+ "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_03/potwierdzenie_przelewu.pdf",
+ "referencja": "docs/02-materialy/organizator-uzp/dane/przyklad_03/przelew.json",
+ "metoda": "Heurystyka referencja → pdftotext -bbox-layout; każdy PDF niezależnie",
+ "pola": {
+  "przelew_bankowy.data_operacji": {
+   "wartosc": "2026-02-17",
+   "dopasowanie": "inny_zapis",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      408.06,
+      157.739,
+      459.06,
+      164.548
+     ],
+     "tekst_w_dokumencie": "17.02.2026",
+     "etykieta_pola": "DATA REALIZACJI",
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "przelew_bankowy.kwota": {
+   "wartosc": 50.0,
+   "dopasowanie": "inny_zapis",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      413.16,
+      144.109,
+      459.06,
+      150.918
+     ],
+     "tekst_w_dokumencie": "50,00 PLN",
+     "etykieta_pola": "KWOTA",
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "przelew_bankowy.na_rachunek": {
+   "wartosc": "09460896147587484470692985",
+   "dopasowanie": "inny_zapis",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      132.66,
+      236.32,
+      275.46,
+      243.476
+     ],
+     "tekst_w_dokumencie": "PL09460896147587484470692985",
+     "etykieta_pola": "RACHUNEK ODBIORCY",
+     "etykieta_roli": {
+      "tekst": "RACHUNEK ODBIORCY",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.75,
+      "strona": 1,
+      "bbox": [
+       178.56,
+       225.859,
+       219.36,
+       232.668
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "przelew_bankowy.numer_transakcji": {
+   "wartosc": "CEN2603024646444",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      372.36,
+      310.24,
+      453.96,
+      317.048
+     ],
+     "tekst_w_dokumencie": "CEN2603024646444",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      377.46,
+      323.86,
+      459.06,
+      330.668
+     ],
+     "tekst_w_dokumencie": "CEN2603024646444",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "przelew_bankowy.tytul": {
+   "wartosc": "opłata skarbowa od pełnomocnictwa dla Norbert Szulc w postępowaniu przed KIO w przetargu ZP.154.2026 CEN2603024646444",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      132.66,
+      299.61,
+      453.96,
+      317.048
+     ],
+     "tekst_w_dokumencie": "opłata skarbowa od pełnomocnictwa dla Norbert Szulc w postępowaniu przed KIO w przetargu ZP.154.2026 CEN2603024646444",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 2
+    }
+   ]
+  },
+  "przelew_bankowy.z_rachunku": {
+   "wartosc": "39203888965989833490230983",
+   "dopasowanie": "inny_zapis",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      132.66,
+      211.07,
+      275.46,
+      218.226
+     ],
+     "tekst_w_dokumencie": "PL39203888965989833490230983",
+     "etykieta_pola": "RACHUNEK NADAWCY",
+     "etykieta_roli": {
+      "tekst": "RACHUNEK NADAWCY",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.75,
+      "strona": 1,
+      "bbox": [
+       178.56,
+       200.609,
+       214.26,
+       207.418
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  }
+ },
+ "grupy": [
+  {
+   "id": "przelew_bankowy",
+   "typ": "przelew_bankowy",
+   "pola": [
+    "przelew_bankowy.data_operacji",
+    "przelew_bankowy.kwota",
+    "przelew_bankowy.na_rachunek",
+    "przelew_bankowy.numer_transakcji",
+    "przelew_bankowy.tytul",
+    "przelew_bankowy.z_rachunku"
+   ],
+   "etykieta_roli": {
+    "tekst": "RACHUNEK ODBIORCY",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.75,
+    "strona": 1,
+    "bbox": [
+     178.56,
+     225.859,
+     219.36,
+     232.668
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      132.66,
+      144.109,
+      459.06,
+      317.048
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 25.4
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 6,
+   "pola_do_lokalizacji": 6
+  }
+ ],
+ "uklad": [
+  {
+   "strona": 1,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  }
+ ],
+ "kody": [
+  {
+   "kod": "inny_zapis_wartosci",
+   "pole": "przelew_bankowy.data_operacji",
+   "dowod": "inny_zapis; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "inny_zapis_wartosci",
+   "pole": "przelew_bankowy.kwota",
+   "dowod": "inny_zapis; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "inny_zapis_wartosci",
+   "pole": "przelew_bankowy.na_rachunek",
+   "dowod": "inny_zapis; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "przelew_bankowy.numer_transakcji",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "przelew_bankowy.numer_transakcji",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wartosc_w_kilku_liniach",
+   "pole": "przelew_bankowy.tytul",
+   "dowod": "BBox obejmuje kilka linii Popplera"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "przelew_bankowy.tytul",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "inny_zapis_wartosci",
+   "pole": "przelew_bankowy.z_rachunku",
+   "dowod": "inny_zapis; wynik heurystyki, nie potwierdzenie braku w PDF"
+  }
+ ],
+ "braki": []
+}

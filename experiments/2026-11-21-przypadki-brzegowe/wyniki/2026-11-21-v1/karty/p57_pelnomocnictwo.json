@@ -1,0 +1,362 @@
+{
+ "format": "uzp-karta-dokumentu",
+ "wersja": 1,
+ "id": "p57_pelnomocnictwo",
+ "klasa": "pelnomocnictwo",
+ "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_57/pelnomocnictwo.pdf",
+ "referencja": "docs/02-materialy/organizator-uzp/dane/przyklad_57/pelnomocnictwo.json",
+ "metoda": "Heurystyka referencja → pdftotext -bbox-layout; każdy PDF niezależnie",
+ "pola": {
+  "mocodawca[0].data.imie_nazwisko": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  },
+  "mocodawca[0].data.krs": {
+   "wartosc": "9999271101",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      148.814,
+      138.935,
+      159.012
+     ],
+     "tekst_w_dokumencie": "9999271101,",
+     "etykieta_pola": "KRS",
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 1,
+      "bbox": [
+       448.404,
+       148.814,
+       526.913,
+       159.012
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.nazwa": {
+   "wartosc": "Lantis Aparatura Medyczna sp.j.",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      133.064,
+      273.258,
+      143.262
+     ],
+     "tekst_w_dokumencie": "Lantis Aparatura Medyczna sp.j.,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 1.12,
+      "strona": 1,
+      "bbox": [
+       448.404,
+       148.814,
+       526.913,
+       159.012
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.nip": {
+   "wartosc": "9999915346",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      186.5,
+      148.814,
+      257.072,
+      159.012
+     ],
+     "tekst_w_dokumencie": "9999915346,",
+     "etykieta_pola": "NIP",
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 1,
+      "bbox": [
+       448.404,
+       148.814,
+       526.913,
+       159.012
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.typ": {
+   "wartosc": "osoba_prawna",
+   "dopasowanie": "wyliczana",
+   "wystapienia": []
+  },
+  "mocodawca[0].podpisujacy[0].imie_nazwisko": {
+   "wartosc": "Tadeusz Szymański",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      489.389,
+      171.896,
+      499.587
+     ],
+     "tekst_w_dokumencie": "Tadeusz Szymański",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "prezes",
+      "polozenie": "po",
+      "odleglosc_linii": 1.12,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       505.139,
+       127.871,
+       515.337
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].imie_nazwisko": {
+   "wartosc": "Barbara Włodarczyk",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      180.314,
+      174.157,
+      190.512
+     ],
+     "tekst_w_dokumencie": "Barbara Włodarczyk",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "udziela",
+      "polozenie": "przed",
+      "odleglosc_linii": 1.12,
+      "strona": 1,
+      "bbox": [
+       355.733,
+       164.564,
+       492.034,
+       174.762
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      97.314,
+      572.389,
+      203.109,
+      582.587
+     ],
+     "tekst_w_dokumencie": "Barbara Włodarczyk",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Pełnomocnictwo",
+      "polozenie": "przed",
+      "odleglosc_linii": 3.11,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       528.889,
+       165.431,
+       539.087
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].pesel": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  }
+ },
+ "grupy": [
+  {
+   "id": "mocodawca[0]",
+   "typ": "mocodawca[]",
+   "pola": [
+    "mocodawca[0].data.imie_nazwisko",
+    "mocodawca[0].data.krs",
+    "mocodawca[0].data.nazwa",
+    "mocodawca[0].data.nip",
+    "mocodawca[0].data.typ"
+   ],
+   "etykieta_roli": {
+    "tekst": "Mocodawca",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.0,
+    "strona": 1,
+    "bbox": [
+     448.404,
+     148.814,
+     526.913,
+     159.012
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      133.064,
+      526.913,
+      159.012
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.54
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 3,
+   "pola_do_lokalizacji": 3
+  },
+  {
+   "id": "mocodawca[0].podpisujacy[0]",
+   "typ": "mocodawca[].podpisujacy[]",
+   "pola": [
+    "mocodawca[0].podpisujacy[0].imie_nazwisko"
+   ],
+   "etykieta_roli": {
+    "tekst": "prezes",
+    "polozenie": "po",
+    "odleglosc_linii": 1.12,
+    "strona": 1,
+    "bbox": [
+     68.362,
+     505.139,
+     127.871,
+     515.337
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      489.389,
+      171.896,
+      515.337
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.54
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  },
+  {
+   "id": "pelnomocnicy[0]",
+   "typ": "pelnomocnicy[]",
+   "pola": [
+    "pelnomocnicy[0].imie_nazwisko",
+    "pelnomocnicy[0].pesel"
+   ],
+   "etykieta_roli": {
+    "tekst": "udziela",
+    "polozenie": "przed",
+    "odleglosc_linii": 1.12,
+    "strona": 1,
+    "bbox": [
+     355.733,
+     164.564,
+     492.034,
+     174.762
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      164.564,
+      492.034,
+      190.512
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.54
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  }
+ ],
+ "uklad": [
+  {
+   "strona": 1,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  }
+ ],
+ "kody": [
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].data.nazwa",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wartosc_wyliczana",
+   "pole": "mocodawca[0].data.typ",
+   "dowod": "wyliczana; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].podpisujacy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "pelnomocnicy[0].imie_nazwisko",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "pelnomocnicy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "etykieta_po_danych",
+   "pole": "mocodawca[0].podpisujacy[0]",
+   "dowod": "prezes"
+  },
+  {
+   "kod": "etykieta_synonim",
+   "pole": "pelnomocnicy[0]",
+   "dowod": "udziela"
+  }
+ ],
+ "braki": []
+}

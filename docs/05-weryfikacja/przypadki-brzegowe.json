@@ -1,0 +1,689 @@
+{
+  "format": "uzp-katalog-przypadkow-brzegowych",
+  "wersja": 2,
+  "aktualizacja": "2026-11-21",
+  "zrodla": {
+    "U": "wiedza użytkownika o prawdziwych dokumentach (rozmowa 2026-11-21)",
+    "M": "mentor UZP (docs/01-zadanie/zrodla/odpowiedzi-mentora-2026-11-21.md)",
+    "K": "konsultacja Fable i Codex (docs/07-decyzje/konsultacja-trudne-przypadki-2026-11-21/)",
+    "D": "sprawdzone w danych organizatora (inwentarz, karty dokumentów)",
+    "A": "propozycja asystenta"
+  },
+  "grupy": {
+    "uklad": "Układ i etykiety: rola lub pole nie wynika wprost z etykiety",
+    "tresc": "Treść i zapis wartości",
+    "wariant": "Rzadkie warianty treści sprawy",
+    "pdf": "Struktura PDF, skan i odczyt",
+    "klasa": "Klasyfikacja i dokumenty obce",
+    "wykonanie": "Wykonanie: dostępność komponentów, błędy techniczne i nierozstrzygnięcia silnika"
+  },
+  "przypadki": [
+    {
+      "kod": "brak_etykiety_roli",
+      "grupa": "uklad",
+      "nazwa": "Brak etykiety roli",
+      "definicja": "Nie wykryto lokalnej etykiety roli podmiotu: zamawiającego, odwołującego, pełnomocnika, mocodawcy, podpisującego albo płatnika/odbiorcy. Rola może wynikać ze zdania. Dotyczy tylko podmiotów, nie grup metadanych; tytuł dokumentu (np. ODWOŁANIE) nie jest etykietą roli. Brak wykrycia w karcie nie dowodzi braku etykiety w PDF.",
+      "zrodla": [
+        "U"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "nowe układy (grupa C) z usuniętą etykietą"
+    },
+    {
+      "kod": "etykieta_po_danych",
+      "grupa": "uklad",
+      "nazwa": "Etykieta po danych",
+      "definicja": "Lokalna etykieta roli podmiotu (zamawiający, odwołujący, pełnomocnik, mocodawca, podpisujący, płatnik/odbiorca) stoi po jego danych albo w środku bloku. Tytuł dokumentu (np. ODWOŁANIE) ani etykieta metadanych nie jest etykietą roli.",
+      "zrodla": [
+        "U"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "nowe układy z permutacją kolejności"
+    },
+    {
+      "kod": "etykieta_synonim",
+      "grupa": "uklad",
+      "nazwa": "Synonim etykiety",
+      "definicja": "Rola nazwana innym słowem niż klucz JSON (np. Wykonawca, Skarżący, Strona, „w imieniu”).",
+      "zrodla": [
+        "U",
+        "D"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "mutacje etykiet w nowych układach"
+    },
+    {
+      "kod": "brak_etykiety_przy_wartosci",
+      "grupa": "uklad",
+      "nazwa": "Wartość bez etykiety pola",
+      "definicja": "Wartość stoi bez etykiety typu „NIP:”, „KRS:”, „Data:” w tej samej lub poprzedniej linii.",
+      "zrodla": [
+        "U"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "nowe układy bez etykiet pól"
+    },
+    {
+      "kod": "niewidoczna_tabela",
+      "grupa": "uklad",
+      "nazwa": "Niewidoczna tabela",
+      "definicja": "Układ oparty na tabeli bez widocznych krawędzi (białe na białym); tekst jednego wiersza trafia do różnych bloków przy ekstrakcji.",
+      "zrodla": [
+        "U"
+      ],
+      "wykrywanie": "karta (heurystyka) + ręczne",
+      "testowanie": "nowe układy z niewidoczną tabelą 2–3 kolumny"
+    },
+    {
+      "kod": "uklad_wielokolumnowy",
+      "grupa": "uklad",
+      "nazwa": "Układ wielokolumnowy",
+      "definicja": "Tekst w kilku kolumnach lub ramkach obok siebie.",
+      "zrodla": [
+        "D"
+      ],
+      "wykrywanie": "karta (heurystyka)",
+      "testowanie": "regresja na oryginałach"
+    },
+    {
+      "kod": "tabela",
+      "grupa": "uklad",
+      "nazwa": "Tabela",
+      "definicja": "Dane w tabeli z widocznymi krawędziami, trudne do odczytu liniowego.",
+      "zrodla": [
+        "D"
+      ],
+      "wykrywanie": "ręczne",
+      "testowanie": "regresja"
+    },
+    {
+      "kod": "brak_informacji_wprost",
+      "grupa": "tresc",
+      "nazwa": "Brak informacji wprost",
+      "definicja": "Wartość referencji nie występuje dosłownie w dokumencie; trzeba ją wywnioskować z treści albo jej brakuje (wtedy null i jawne wskazanie braku).",
+      "zrodla": [
+        "U"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "dokumenty z usuniętymi wprost podanymi faktami"
+    },
+    {
+      "kod": "wartosc_wyliczana",
+      "grupa": "tresc",
+      "nazwa": "Wartość wyliczana",
+      "definicja": "Wartość pochodzi z reguły lub słownika (np. czynnosc_opis, przez-pelnomocnika, prowadzacy_postepowanie, typ mocodawcy).",
+      "zrodla": [
+        "D"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "regresja; walidacja reguł"
+    },
+    {
+      "kod": "inny_zapis_wartosci",
+      "grupa": "tresc",
+      "nazwa": "Inny zapis wartości",
+      "definicja": "Wartość zapisana inaczej niż w referencji (rachunek z PL i spacjami, data słownie lub DD.MM.RRRR, BZP ze spacją, TED jako RRRR/S…, kwota z przecinkiem).",
+      "zrodla": [
+        "K",
+        "D"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "regresja; mutacje zapisu w nowych układach"
+    },
+    {
+      "kod": "inna_forma_gramatyczna",
+      "grupa": "tresc",
+      "nazwa": "Inna forma gramatyczna",
+      "definicja": "Imię i nazwisko albo nazwa w innym przypadku niż w referencji (np. dopełniacz zamiast mianownika).",
+      "zrodla": [
+        "D"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "regresja"
+    },
+    {
+      "kod": "wiele_wystapien",
+      "grupa": "tresc",
+      "nazwa": "Wiele wystąpień",
+      "definicja": "Ta sama wartość występuje w dokumencie kilka razy (różne strony, role lub zapisy).",
+      "zrodla": [
+        "K",
+        "D"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "warianty zasłaniające jedno wystąpienie (grupa B)"
+    },
+    {
+      "kod": "wartosc_w_kilku_liniach",
+      "grupa": "tresc",
+      "nazwa": "Wartość w kilku liniach",
+      "definicja": "Wartość (np. długi tytuł, nazwa firmy) jest rozbita na kilka linii lub bloków.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "regresja"
+    },
+    {
+      "kod": "dane_dalej_niz_3_strona",
+      "grupa": "tresc",
+      "nazwa": "Dane dalej niż na 3. stronie",
+      "definicja": "Co najmniej jedna wartość występuje wyłącznie po 3. stronie.",
+      "zrodla": [
+        "K",
+        "D"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "regresja"
+    },
+    {
+      "kod": "konsorcjum",
+      "grupa": "wariant",
+      "nazwa": "Konsorcjum",
+      "definicja": "Odwołujący to konsorcjum; referencja zawiera lidera.",
+      "zrodla": [
+        "K",
+        "D"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "regresja"
+    },
+    {
+      "kod": "wielu_zamawiajacych",
+      "grupa": "wariant",
+      "nazwa": "Wielu zamawiających",
+      "definicja": "Więcej niż jeden zamawiający; prowadzacy_postepowanie 1/0.",
+      "zrodla": [
+        "D"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "regresja"
+    },
+    {
+      "kod": "wielu_mocodawcow",
+      "grupa": "wariant",
+      "nazwa": "Wielu mocodawców",
+      "definicja": "Pełnomocnictwo udzielone przez więcej niż jeden podmiot.",
+      "zrodla": [
+        "D"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "regresja"
+    },
+    {
+      "kod": "mocodawca_osoba_fizyczna",
+      "grupa": "wariant",
+      "nazwa": "Mocodawca: osoba fizyczna",
+      "definicja": "Mocodawca jest osobą fizyczną (imie_nazwisko, typ osoba_fizyczna).",
+      "zrodla": [
+        "D"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "regresja"
+    },
+    {
+      "kod": "pesel_obecny",
+      "grupa": "wariant",
+      "nazwa": "PESEL obecny",
+      "definicja": "Pełnomocnik ma PESEL w dokumencie.",
+      "zrodla": [
+        "D"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "nowe treści (grupa C)"
+    },
+    {
+      "kod": "brak_pelnomocnika",
+      "grupa": "wariant",
+      "nazwa": "Brak pełnomocnika",
+      "definicja": "Odwołujący działa bez pełnomocnika (przez-pelnomocnika 0).",
+      "zrodla": [
+        "K",
+        "D"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "nowe treści (grupa C)"
+    },
+    {
+      "kod": "brak_bzp_i_ted",
+      "grupa": "wariant",
+      "nazwa": "Brak BZP i TED",
+      "definicja": "Odwołanie bez numeru BZP i bez numeru TED.",
+      "zrodla": [
+        "K",
+        "D"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "nowe treści (grupa C)"
+    },
+    {
+      "kod": "powod_12",
+      "grupa": "wariant",
+      "nazwa": "Powód czynności 12",
+      "definicja": "Zaskarżone projektowane postanowienia umowy (kod 12).",
+      "zrodla": [
+        "K",
+        "D"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "nowe treści (grupa C)"
+    },
+    {
+      "kod": "przelew_wpis",
+      "grupa": "wariant",
+      "nazwa": "Przelew: wpis od odwołania",
+      "definicja": "Potwierdzenie przelewu wpisu od odwołania (kwoty rzędu tysięcy zł), a nie opłaty skarbowej.",
+      "zrodla": [
+        "K",
+        "D"
+      ],
+      "wykrywanie": "karta",
+      "testowanie": "nowe treści (grupa C)"
+    },
+    {
+      "kod": "skan",
+      "grupa": "pdf",
+      "nazwa": "Skan",
+      "definicja": "Strona jest obrazem (zdjęcie lub skan), bez cyfrowej warstwy tekstu.",
+      "zrodla": [
+        "M",
+        "D"
+      ],
+      "wykrywanie": "inwentarz",
+      "testowanie": "grupa A"
+    },
+    {
+      "kod": "skan_z_ocr",
+      "grupa": "pdf",
+      "nazwa": "Skan z warstwą OCR",
+      "definicja": "Obraz strony z ukrytą warstwą tekstu z OCR.",
+      "zrodla": [
+        "K"
+      ],
+      "wykrywanie": "inwentarz",
+      "testowanie": "grupa A"
+    },
+    {
+      "kod": "zla_warstwa_ocr",
+      "grupa": "pdf",
+      "nazwa": "Błędna warstwa OCR",
+      "definicja": "Warstwa tekstu niezgodna z obrazem (błędne cyfry, znaki, kolejność, braki); cichy błąd.",
+      "zrodla": [
+        "K"
+      ],
+      "wykrywanie": "ręczne",
+      "testowanie": "grupa A: obraz poprawny + błędny niewidoczny tekst"
+    },
+    {
+      "kod": "strona_mieszana",
+      "grupa": "pdf",
+      "nazwa": "Obraz z treścią na stronie tekstowej",
+      "definicja": "Strona ma warstwę tekstu, ale część treści (także dane do JSON) jest wklejonym obrazem; wymaga OCR regionu.",
+      "zrodla": [
+        "U",
+        "K"
+      ],
+      "wykrywanie": "inwentarz",
+      "testowanie": "grupa A: blok danych jako obraz"
+    },
+    {
+      "kod": "dokument_mieszany",
+      "grupa": "pdf",
+      "nazwa": "Dokument mieszany",
+      "definicja": "W jednym pliku strony tekstowe i zeskanowane.",
+      "zrodla": [
+        "M"
+      ],
+      "wykrywanie": "inwentarz",
+      "testowanie": "grupa A"
+    },
+    {
+      "kod": "obrot",
+      "grupa": "pdf",
+      "nazwa": "Obrót treści",
+      "definicja": "Treść obrócona o 90/180/270° w obrazie.",
+      "zrodla": [
+        "K",
+        "D"
+      ],
+      "wykrywanie": "ręczne / model",
+      "testowanie": "grupa A"
+    },
+    {
+      "kod": "obrot_flaga_pdf",
+      "grupa": "pdf",
+      "nazwa": "Obrót flagą PDF",
+      "definicja": "Strona obrócona atrybutem /Rotate.",
+      "zrodla": [
+        "D"
+      ],
+      "wykrywanie": "inwentarz",
+      "testowanie": "grupa A"
+    },
+    {
+      "kod": "przekrzywienie",
+      "grupa": "pdf",
+      "nazwa": "Przekrzywienie",
+      "definicja": "Skan lekko przekrzywiony (kilka stopni).",
+      "zrodla": [
+        "K"
+      ],
+      "wykrywanie": "ręczne / model",
+      "testowanie": "grupa A"
+    },
+    {
+      "kod": "niska_jakosc",
+      "grupa": "pdf",
+      "nazwa": "Niska jakość",
+      "definicja": "Niska rozdzielczość, rozmycie, szum, kompresja, ksero, faks, słaby kontrast.",
+      "zrodla": [
+        "K"
+      ],
+      "wykrywanie": "ręczne / model",
+      "testowanie": "grupa A"
+    },
+    {
+      "kod": "pieczatka_podpis",
+      "grupa": "pdf",
+      "nazwa": "Pieczątka lub podpis na treści",
+      "definicja": "Pieczątka, podpis lub adnotacja nachodzi na tekst.",
+      "zrodla": [
+        "K",
+        "D"
+      ],
+      "wykrywanie": "ręczne / model",
+      "testowanie": "grupa B"
+    },
+    {
+      "kod": "odreczne",
+      "grupa": "pdf",
+      "nazwa": "Pismo odręczne",
+      "definicja": "Istotna treść napisana ręcznie.",
+      "zrodla": [
+        "K",
+        "D"
+      ],
+      "wykrywanie": "ręczne / model",
+      "testowanie": "fizyczne skany"
+    },
+    {
+      "kod": "pusta_strona",
+      "grupa": "pdf",
+      "nazwa": "Pusta strona",
+      "definicja": "Strona bez treści lub prawie pusta.",
+      "zrodla": [
+        "K",
+        "D"
+      ],
+      "wykrywanie": "inwentarz",
+      "testowanie": "grupa A"
+    },
+    {
+      "kod": "uciety_tekst",
+      "grupa": "pdf",
+      "nazwa": "Ucięty tekst",
+      "definicja": "Tekst ucięty przy krawędzi strony.",
+      "zrodla": [
+        "K"
+      ],
+      "wykrywanie": "ręczne / model",
+      "testowanie": "grupa B"
+    },
+    {
+      "kod": "anonimizacja",
+      "grupa": "pdf",
+      "nazwa": "Anonimizacja",
+      "definicja": "Zaczernienia lub usunięte dane.",
+      "zrodla": [
+        "D"
+      ],
+      "wykrywanie": "ręczne / model",
+      "testowanie": "grupa B"
+    },
+    {
+      "kod": "znak_wodny",
+      "grupa": "pdf",
+      "nazwa": "Znak wodny",
+      "definicja": "Znak wodny lub tło utrudniające odczyt.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "ręczne / model",
+      "testowanie": "grupa A"
+    },
+    {
+      "kod": "nietypowy_rozmiar_strony",
+      "grupa": "pdf",
+      "nazwa": "Nietypowy rozmiar strony",
+      "definicja": "Rozmiar strony daleki od A4 (np. piksele zapisane jako punkty).",
+      "zrodla": [
+        "D"
+      ],
+      "wykrywanie": "inwentarz",
+      "testowanie": "grupa A"
+    },
+    {
+      "kod": "wiele_dokumentow",
+      "grupa": "klasa",
+      "nazwa": "Wiele dokumentów w pliku",
+      "definicja": "Kilka różnych dokumentów w jednym pliku; wynik do ustalenia z mentorem.",
+      "zrodla": [
+        "K"
+      ],
+      "wykrywanie": "ręczne / model",
+      "testowanie": "test „nie wywraca się”"
+    },
+    {
+      "kod": "dokument_obcy",
+      "grupa": "klasa",
+      "nazwa": "Dokument obcy",
+      "definicja": "Dokument spoza klas: odwołanie, pełnomocnictwo, przelew.",
+      "zrodla": [
+        "M",
+        "D"
+      ],
+      "wykrywanie": "referencja",
+      "testowanie": "negatywy"
+    },
+    {
+      "kod": "podobny_do_klasy",
+      "grupa": "klasa",
+      "nazwa": "Trudny negatyw",
+      "definicja": "Dokument obcy łudząco podobny do jednej z klas (np. wyrok KIO, ogłoszenie BZP/TED).",
+      "zrodla": [
+        "K",
+        "D"
+      ],
+      "wykrywanie": "ręczne / model",
+      "testowanie": "negatywy"
+    },
+    {
+      "kod": "duplikat_pliku",
+      "grupa": "klasa",
+      "nazwa": "Duplikat pliku",
+      "definicja": "Plik identyczny bajtowo z innym (traktować jako jedną rodzinę przy podziale).",
+      "zrodla": [
+        "K",
+        "D"
+      ],
+      "wykrywanie": "inwentarz",
+      "testowanie": "kontrola podziału"
+    },
+    {
+      "kod": "jezyk_obcy",
+      "grupa": "klasa",
+      "nazwa": "Język obcy",
+      "definicja": "Treść w języku innym niż polski.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "ręczne / model",
+      "testowanie": "negatywy"
+    },
+    {
+      "kod": "inne",
+      "grupa": "klasa",
+      "nazwa": "Inne",
+      "definicja": "Problem spoza listy, opisany w polu opis; kandydat na nowy kod.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "ręczne",
+      "testowanie": "—"
+    },
+    {
+      "kod": "ocr_niedostepny",
+      "grupa": "wykonanie",
+      "nazwa": "OCR niedostępny",
+      "definicja": "Strona wymaga OCR, ale dostawca jest wyłączony lub niegotowy. Nie oznacza dokumentu obcego.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "E: gotowość dostawcy i diagnoza strony",
+      "testowanie": "wyłączenie OCR dla skanu i dokumentu mieszanego; jawne nieprzetworzone pola"
+    },
+    {
+      "kod": "ocr_blad",
+      "grupa": "wykonanie",
+      "nazwa": "Błąd OCR",
+      "definicja": "Dostępny dostawca OCR nie zakończył odczytu strony lub regionu.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "E: wyjątek lub wadliwy wynik adaptera",
+      "testowanie": "atrapa awarii OCR; zachowanie odczytu innych stron"
+    },
+    {
+      "kod": "pdf_uszkodzony",
+      "grupa": "wykonanie",
+      "nazwa": "Uszkodzony PDF",
+      "definicja": "Struktury PDF nie można odczytać; to nie to samo co ucięta treść strony.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "E: błąd parsera",
+      "testowanie": "uszkodzona kopia PDF poza oryginałami; kontynuacja wsadu"
+    },
+    {
+      "kod": "pdf_zaszyfrowany",
+      "grupa": "wykonanie",
+      "nazwa": "Zaszyfrowany PDF",
+      "definicja": "Treść PDF wymaga hasła lub pozostaje niedostępna dla czytnika.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "E: informacja czytnika o szyfrowaniu i braku dostępu",
+      "testowanie": "zaszyfrowana kopia bez hasła; jawny raport"
+    },
+    {
+      "kod": "llm_niedostepny",
+      "grupa": "wykonanie",
+      "nazwa": "LLM niedostępny",
+      "definicja": "Brak sieci lub niedostępność usługi AI uniemożliwia analizę.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "T1/T3/T4: błąd połączenia lub niedostępności API",
+      "testowanie": "atrapa niedostępnej sieci/usługi; brak podmiany starym cache"
+    },
+    {
+      "kod": "llm_autoryzacja",
+      "grupa": "wykonanie",
+      "nazwa": "Błąd autoryzacji LLM",
+      "definicja": "API odrzuca klucz lub uprawnienia (401/403).",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "T1/T3/T4: status API",
+      "testowanie": "atrapa 401/403; bez ujawnienia klucza i bez automatycznej pętli prób"
+    },
+    {
+      "kod": "llm_limit",
+      "grupa": "wykonanie",
+      "nazwa": "Limit LLM",
+      "definicja": "API ogranicza wywołania (429) albo wyczerpano budżet.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "T1/T3/T4: status API lub kontrola budżetu",
+      "testowanie": "atrapa 429; ograniczenie ponowień i czasu"
+    },
+    {
+      "kod": "llm_odpowiedz_niepoprawna",
+      "grupa": "wykonanie",
+      "nazwa": "Niepoprawna odpowiedź LLM",
+      "definicja": "Odpowiedź AI nie spełnia kontraktu: np. wadliwy JSON, nieznane pola lub brak wymaganych dowodów.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "T1/T3/T4: walidacja odpowiedzi i dowodów",
+      "testowanie": "wadliwy JSON i cytat bez pokrycia; jawny stan błędu"
+    },
+    {
+      "kod": "konfiguracja_niepoprawna",
+      "grupa": "wykonanie",
+      "nazwa": "Niepoprawna konfiguracja",
+      "definicja": "YAML klasy, słownik lub ustawienia silnika nie spełniają kontraktu.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "start/T5: walidacja konfiguracji",
+      "testowanie": "brak słownika, nieznana reguła i błędny typ; brak pozornego wyniku"
+    },
+    {
+      "kod": "limit_czasu",
+      "grupa": "wykonanie",
+      "nazwa": "Limit czasu",
+      "definicja": "Etap przekroczył skonfigurowany limit zadania; nie jest to deklaracja limitu jury.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "wykonawca: pomiar czasu etapu",
+      "testowanie": "kontrolowane opóźnienie; zakończenie zadania i kontynuacja wsadu"
+    },
+    {
+      "kod": "limit_kontekstu",
+      "grupa": "wykonanie",
+      "nazwa": "Limit kontekstu",
+      "definicja": "Cała treść dokumentu nie mieści się w kontekście modelu; zakresu nie wolno cicho uciąć.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "T1/T3: obliczenie rozmiaru wejścia",
+      "testowanie": "długi dokument; jawne wskazanie nieprzetworzonych zakresów"
+    },
+    {
+      "kod": "zapis_nieudany",
+      "grupa": "wykonanie",
+      "nazwa": "Błąd zapisu",
+      "definicja": "Nie udało się zatwierdzić stagingu lub artefaktu wynikowego na dysku.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "L/eksport: wyjątek zapisu lub zastąpienia pliku",
+      "testowanie": "atrapa błędu dysku/uprawnień; atomowość i brak niepełnego wyniku"
+    },
+    {
+      "kod": "walidacja_wyniku_nieudana",
+      "grupa": "wykonanie",
+      "nazwa": "Błąd walidacji wyniku",
+      "definicja": "Dane kanoniczne nie spełniają YAML klasy lub referencyjnego kontraktu eksportu.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "T5: błędy walidatora",
+      "testowanie": "brak nienullowalnego pola, zły typ i dodatkowy klucz; raport poza JSON"
+    },
+    {
+      "kod": "klasa_niejednoznaczna",
+      "grupa": "wykonanie",
+      "nazwa": "Niejednoznaczna klasa",
+      "definicja": "Router nie rozstrzyga klasy: konflikt kandydatów lub za mało przesłanek przy dostępnym odczycie. To nierozstrzygnięcie, nie awaria infrastruktury.",
+      "zrodla": [
+        "A"
+      ],
+      "wykrywanie": "T1: progi per klasa i odstęp kandydatów",
+      "testowanie": "trudny negatyw i konflikt funkcji; nie zastępować stanem obcy"
+    }
+  ]
+}

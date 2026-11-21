@@ -1,0 +1,327 @@
+{
+ "format": "uzp-karta-dokumentu",
+ "wersja": 1,
+ "id": "p03_pelnomocnictwo",
+ "klasa": "pelnomocnictwo",
+ "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_03/pelnomocnictwo.pdf",
+ "referencja": "docs/02-materialy/organizator-uzp/dane/przyklad_03/pelnomocnictwo.json",
+ "metoda": "Heurystyka referencja → pdftotext -bbox-layout; każdy PDF niezależnie",
+ "pola": {
+  "mocodawca[0].data.imie_nazwisko": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  },
+  "mocodawca[0].data.krs": {
+   "wartosc": "9991877493",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      76.3,
+      178.818,
+      147.524,
+      190.262
+     ],
+     "tekst_w_dokumencie": "9991877493,",
+     "etykieta_pola": "KRS",
+     "etykieta_roli": {
+      "tekst": "reprezentowania",
+      "polozenie": "po",
+      "odleglosc_linii": 1.13,
+      "strona": 1,
+      "bbox": [
+       434.297,
+       194.678,
+       524.479,
+       206.122
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.nazwa": {
+   "wartosc": "Silvatica Automatyka sp. k.",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      183.404,
+      147.098,
+      329.182,
+      158.542
+     ],
+     "tekst_w_dokumencie": "Silvatica Automatyka sp. k.",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "reprezentowania",
+      "polozenie": "po",
+      "odleglosc_linii": 3.4,
+      "strona": 1,
+      "bbox": [
+       434.297,
+       194.678,
+       524.479,
+       206.122
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.nip": {
+   "wartosc": "9995501241",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      245.843,
+      178.818,
+      313.675,
+      190.262
+     ],
+     "tekst_w_dokumencie": "9995501241",
+     "etykieta_pola": "NIP",
+     "etykieta_roli": {
+      "tekst": "reprezentowania",
+      "polozenie": "po",
+      "odleglosc_linii": 1.13,
+      "strona": 1,
+      "bbox": [
+       434.297,
+       194.678,
+       524.479,
+       206.122
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.typ": {
+   "wartosc": "osoba_prawna",
+   "dopasowanie": "wyliczana",
+   "wystapienia": []
+  },
+  "mocodawca[0].podpisujacy[0].imie_nazwisko": {
+   "wartosc": "Sławomir Jabłoński",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      382.84,
+      456.858,
+      487.235,
+      468.302
+     ],
+     "tekst_w_dokumencie": "Sławomir Jabłoński",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].imie_nazwisko": {
+   "wartosc": "Norbert Szulc",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      177.328,
+      194.678,
+      251.224,
+      206.122
+     ],
+     "tekst_w_dokumencie": "Norbert Szulc",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "upoważniam",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 1,
+      "bbox": [
+       76.3,
+       194.678,
+       144.779,
+       206.122
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].pesel": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  }
+ },
+ "grupy": [
+  {
+   "id": "mocodawca[0]",
+   "typ": "mocodawca[]",
+   "pola": [
+    "mocodawca[0].data.imie_nazwisko",
+    "mocodawca[0].data.krs",
+    "mocodawca[0].data.nazwa",
+    "mocodawca[0].data.nip",
+    "mocodawca[0].data.typ"
+   ],
+   "etykieta_roli": {
+    "tekst": "reprezentowania",
+    "polozenie": "po",
+    "odleglosc_linii": 1.13,
+    "strona": 1,
+    "bbox": [
+     434.297,
+     194.678,
+     524.479,
+     206.122
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      76.3,
+      147.098,
+      524.479,
+      206.122
+     ],
+     "spojna": false,
+     "kolidujace_pola": [
+      "pelnomocnicy[0].imie_nazwisko"
+     ],
+     "wysokosc_linii": 5.16
+    }
+   ],
+   "spojna": false,
+   "pola_zlokalizowane": 3,
+   "pola_do_lokalizacji": 3
+  },
+  {
+   "id": "mocodawca[0].podpisujacy[0]",
+   "typ": "mocodawca[].podpisujacy[]",
+   "pola": [
+    "mocodawca[0].podpisujacy[0].imie_nazwisko"
+   ],
+   "etykieta_roli": null,
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      382.84,
+      456.858,
+      487.235,
+      468.302
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 1.0
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  },
+  {
+   "id": "pelnomocnicy[0]",
+   "typ": "pelnomocnicy[]",
+   "pola": [
+    "pelnomocnicy[0].imie_nazwisko",
+    "pelnomocnicy[0].pesel"
+   ],
+   "etykieta_roli": {
+    "tekst": "upoważniam",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.0,
+    "strona": 1,
+    "bbox": [
+     76.3,
+     194.678,
+     144.779,
+     206.122
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      76.3,
+      194.678,
+      251.224,
+      206.122
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 1.0
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  }
+ ],
+ "uklad": [
+  {
+   "strona": 1,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  }
+ ],
+ "kody": [
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].data.nazwa",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wartosc_wyliczana",
+   "pole": "mocodawca[0].data.typ",
+   "dowod": "wyliczana; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].podpisujacy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "pelnomocnicy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "etykieta_po_danych",
+   "pole": "mocodawca[0]",
+   "dowod": "reprezentowania"
+  },
+  {
+   "kod": "etykieta_synonim",
+   "pole": "mocodawca[0]",
+   "dowod": "reprezentowania"
+  },
+  {
+   "kod": "brak_etykiety_roli",
+   "pole": "mocodawca[0].podpisujacy[0]",
+   "dowod": "Nie wykryto lokalnej etykiety roli podmiotu (okno 8 linii)"
+  },
+  {
+   "kod": "etykieta_synonim",
+   "pole": "pelnomocnicy[0]",
+   "dowod": "upoważniam"
+  }
+ ],
+ "braki": []
+}

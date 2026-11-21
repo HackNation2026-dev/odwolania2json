@@ -1,0 +1,797 @@
+{
+ "dokumenty": 180,
+ "referencje_z_aktualizacji": [
+  "p19_odwolanie",
+  "p23_odwolanie",
+  "p25_odwolanie",
+  "p44_odwolanie",
+  "p55_odwolanie"
+ ],
+ "klasy": {
+  "odwolanie": 60,
+  "pelnomocnictwo": 60,
+  "przelew": 60
+ },
+ "dopasowanie": {
+  "null_w_referencji": 284,
+  "inny_zapis": 370,
+  "wyliczana": 248,
+  "dokladne": 1414,
+  "inna_forma_gramatyczna": 0,
+  "nieznaleziona": 0
+ },
+ "dopasowanie_per_pole": {
+  "OdwolanieKIO.data": {
+   "null_w_referencji": 15,
+   "inny_zapis": 45
+  },
+  "OdwolanieKIO.czynnosc_dzien": {
+   "inny_zapis": 60
+  },
+  "OdwolanieKIO.czynnosc_powod_id": {
+   "wyliczana": 60
+  },
+  "OdwolanieKIO.czynnosc_opis": {
+   "wyliczana": 56,
+   "dokladne": 4
+  },
+  "OdwolanieKIO.miejscowosc": {
+   "null_w_referencji": 15,
+   "dokladne": 45
+  },
+  "Odwolujacy[].krs": {
+   "dokladne": 56,
+   "null_w_referencji": 4
+  },
+  "Odwolujacy[].nazwa": {
+   "dokladne": 60
+  },
+  "Odwolujacy[].nip": {
+   "dokladne": 60
+  },
+  "Odwolujacy[].regon": {
+   "dokladne": 60
+  },
+  "Odwolujacy[].przez-pelnomocnika": {
+   "wyliczana": 60
+  },
+  "Odwolujacy[].pelnomocnik.imie_nazwisko": {
+   "dokladne": 60
+  },
+  "Odwolujacy[].pelnomocnik.nazwa": {
+   "dokladne": 60
+  },
+  "Odwolujacy[].pelnomocnik.mail": {
+   "dokladne": 60
+  },
+  "Zamawiajacy[].krs": {
+   "dokladne": 58,
+   "null_w_referencji": 5
+  },
+  "Zamawiajacy[].nazwa": {
+   "dokladne": 63
+  },
+  "Zamawiajacy[].nip": {
+   "dokladne": 63
+  },
+  "Zamawiajacy[].regon": {
+   "dokladne": 63
+  },
+  "Zamawiajacy[].prowadzacy_postepowanie": {
+   "null_w_referencji": 57,
+   "wyliczana": 6
+  },
+  "ZamowieniePubliczne.numer_bzp": {
+   "dokladne": 33,
+   "null_w_referencji": 12,
+   "inny_zapis": 15
+  },
+  "ZamowieniePubliczne.numer_postepowania": {
+   "dokladne": 60
+  },
+  "ZamowieniePubliczne.numer_ted": {
+   "dokladne": 14,
+   "inny_zapis": 33,
+   "null_w_referencji": 13
+  },
+  "ZamowieniePubliczne.tytul": {
+   "dokladne": 60
+  },
+  "mocodawca[].data.imie_nazwisko": {
+   "null_w_referencji": 62,
+   "dokladne": 4
+  },
+  "mocodawca[].data.krs": {
+   "dokladne": 62,
+   "null_w_referencji": 4
+  },
+  "mocodawca[].data.nazwa": {
+   "dokladne": 66
+  },
+  "mocodawca[].data.nip": {
+   "dokladne": 66
+  },
+  "mocodawca[].data.typ": {
+   "wyliczana": 66
+  },
+  "mocodawca[].podpisujacy[].imie_nazwisko": {
+   "dokladne": 95
+  },
+  "pelnomocnicy[].imie_nazwisko": {
+   "dokladne": 98
+  },
+  "pelnomocnicy[].pesel": {
+   "null_w_referencji": 97,
+   "dokladne": 1
+  },
+  "przelew_bankowy.data_operacji": {
+   "dokladne": 13,
+   "inny_zapis": 47
+  },
+  "przelew_bankowy.kwota": {
+   "inny_zapis": 60
+  },
+  "przelew_bankowy.na_rachunek": {
+   "inny_zapis": 55,
+   "dokladne": 5
+  },
+  "przelew_bankowy.numer_transakcji": {
+   "dokladne": 60
+  },
+  "przelew_bankowy.tytul": {
+   "dokladne": 60
+  },
+  "przelew_bankowy.z_rachunku": {
+   "inny_zapis": 55,
+   "dokladne": 5
+  }
+ },
+ "kody": {
+  "brak_etykiety_roli": {
+   "razem": 18,
+   "per_klasa": {
+    "pelnomocnictwo": 15,
+    "przelew": 3
+   }
+  },
+  "etykieta_po_danych": {
+   "razem": 62,
+   "per_klasa": {
+    "pelnomocnictwo": 55,
+    "przelew": 7
+   }
+  },
+  "etykieta_synonim": {
+   "razem": 94,
+   "per_klasa": {
+    "odwolanie": 60,
+    "pelnomocnictwo": 34
+   }
+  },
+  "brak_etykiety_przy_wartosci": {
+   "razem": 180,
+   "per_klasa": {
+    "odwolanie": 60,
+    "pelnomocnictwo": 60,
+    "przelew": 60
+   }
+  },
+  "niewidoczna_tabela": {
+   "razem": 32,
+   "per_klasa": {
+    "przelew": 32
+   }
+  },
+  "uklad_wielokolumnowy": {
+   "razem": 78,
+   "per_klasa": {
+    "pelnomocnictwo": 26,
+    "przelew": 38,
+    "odwolanie": 14
+   }
+  },
+  "tabela": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "brak_informacji_wprost": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "wartosc_wyliczana": {
+   "razem": 120,
+   "per_klasa": {
+    "odwolanie": 60,
+    "pelnomocnictwo": 60
+   }
+  },
+  "inny_zapis_wartosci": {
+   "razem": 120,
+   "per_klasa": {
+    "odwolanie": 60,
+    "przelew": 60
+   }
+  },
+  "inna_forma_gramatyczna": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "wiele_wystapien": {
+   "razem": 162,
+   "per_klasa": {
+    "odwolanie": 60,
+    "pelnomocnictwo": 42,
+    "przelew": 60
+   }
+  },
+  "wartosc_w_kilku_liniach": {
+   "razem": 135,
+   "per_klasa": {
+    "odwolanie": 59,
+    "pelnomocnictwo": 17,
+    "przelew": 59
+   }
+  },
+  "dane_dalej_niz_3_strona": {
+   "razem": 21,
+   "per_klasa": {
+    "odwolanie": 21
+   }
+  },
+  "konsorcjum": {
+   "razem": 6,
+   "per_klasa": {
+    "odwolanie": 6
+   }
+  },
+  "wielu_zamawiajacych": {
+   "razem": 3,
+   "per_klasa": {
+    "odwolanie": 3
+   }
+  },
+  "wielu_mocodawcow": {
+   "razem": 6,
+   "per_klasa": {
+    "pelnomocnictwo": 6
+   }
+  },
+  "mocodawca_osoba_fizyczna": {
+   "razem": 4,
+   "per_klasa": {
+    "pelnomocnictwo": 4
+   }
+  },
+  "pesel_obecny": {
+   "razem": 1,
+   "per_klasa": {
+    "pelnomocnictwo": 1
+   }
+  },
+  "brak_pelnomocnika": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "brak_bzp_i_ted": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "powod_12": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "przelew_wpis": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "skan": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "skan_z_ocr": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "zla_warstwa_ocr": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "strona_mieszana": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "dokument_mieszany": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "obrot": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "obrot_flaga_pdf": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "przekrzywienie": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "niska_jakosc": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "pieczatka_podpis": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "odreczne": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "pusta_strona": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "uciety_tekst": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "anonimizacja": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "znak_wodny": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "nietypowy_rozmiar_strony": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "wiele_dokumentow": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "dokument_obcy": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "podobny_do_klasy": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "duplikat_pliku": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "jezyk_obcy": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "inne": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "ocr_niedostepny": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "ocr_blad": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "pdf_uszkodzony": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "pdf_zaszyfrowany": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "llm_niedostepny": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "llm_autoryzacja": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "llm_limit": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "llm_odpowiedz_niepoprawna": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "konfiguracja_niepoprawna": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "limit_czasu": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "limit_kontekstu": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "zapis_nieudany": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "walidacja_wyniku_nieudana": {
+   "razem": 0,
+   "per_klasa": {}
+  },
+  "klasa_niejednoznaczna": {
+   "razem": 0,
+   "per_klasa": {}
+  }
+ },
+ "najczestsze_braki": [],
+ "grupowanie": {
+  "odwolanie / OdwolanieKIO": {
+   "wszystkie": 60,
+   "spojne": 21,
+   "bez_obszaru": 0,
+   "kompletne": 60,
+   "odsetek_spojnych": 35.0,
+   "przyklady_niespojnych": [
+    {
+     "id": "p02_odwolanie",
+     "grupa": "OdwolanieKIO",
+     "kolidujace_pola": [
+      "Odwolujacy[0].nip",
+      "Odwolujacy[0].pelnomocnik.mail"
+     ]
+    },
+    {
+     "id": "p03_odwolanie",
+     "grupa": "OdwolanieKIO",
+     "kolidujace_pola": [
+      "Odwolujacy[0].nazwa",
+      "Odwolujacy[0].nip",
+      "Odwolujacy[0].pelnomocnik.imie_nazwisko",
+      "Odwolujacy[0].pelnomocnik.mail",
+      "Odwolujacy[0].pelnomocnik.nazwa",
+      "Odwolujacy[0].regon",
+      "Zamawiajacy[0].nip",
+      "Zamawiajacy[0].regon",
+      "ZamowieniePubliczne.numer_bzp",
+      "ZamowieniePubliczne.numer_ted",
+      "ZamowieniePubliczne.tytul"
+     ]
+    },
+    {
+     "id": "p04_odwolanie",
+     "grupa": "OdwolanieKIO",
+     "kolidujace_pola": [
+      "Odwolujacy[0].nazwa",
+      "Odwolujacy[0].nip",
+      "Odwolujacy[0].pelnomocnik.imie_nazwisko",
+      "Odwolujacy[0].pelnomocnik.mail",
+      "Odwolujacy[0].pelnomocnik.nazwa",
+      "Odwolujacy[0].regon",
+      "ZamowieniePubliczne.numer_postepowania",
+      "ZamowieniePubliczne.numer_ted",
+      "ZamowieniePubliczne.tytul"
+     ]
+    },
+    {
+     "id": "p05_odwolanie",
+     "grupa": "OdwolanieKIO",
+     "kolidujace_pola": [
+      "Odwolujacy[0].nazwa",
+      "Odwolujacy[0].nip",
+      "Odwolujacy[0].pelnomocnik.imie_nazwisko",
+      "Odwolujacy[0].pelnomocnik.mail",
+      "Odwolujacy[0].pelnomocnik.nazwa",
+      "Odwolujacy[0].regon",
+      "Zamawiajacy[0].nip",
+      "Zamawiajacy[0].regon",
+      "ZamowieniePubliczne.numer_bzp",
+      "ZamowieniePubliczne.numer_ted",
+      "ZamowieniePubliczne.tytul"
+     ]
+    },
+    {
+     "id": "p06_odwolanie",
+     "grupa": "OdwolanieKIO",
+     "kolidujace_pola": [
+      "Odwolujacy[0].nazwa",
+      "Odwolujacy[0].nip",
+      "Odwolujacy[0].pelnomocnik.imie_nazwisko",
+      "Odwolujacy[0].pelnomocnik.mail",
+      "Odwolujacy[0].pelnomocnik.nazwa",
+      "Odwolujacy[0].regon",
+      "Zamawiajacy[0].nip",
+      "Zamawiajacy[0].regon",
+      "ZamowieniePubliczne.numer_postepowania",
+      "ZamowieniePubliczne.tytul"
+     ]
+    }
+   ]
+  },
+  "odwolanie / Odwolujacy[]": {
+   "wszystkie": 60,
+   "spojne": 26,
+   "bez_obszaru": 0,
+   "kompletne": 60,
+   "odsetek_spojnych": 43.33,
+   "przyklady_niespojnych": [
+    {
+     "id": "p02_odwolanie",
+     "grupa": "Odwolujacy[0]",
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ]
+    },
+    {
+     "id": "p03_odwolanie",
+     "grupa": "Odwolujacy[0]",
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ]
+    },
+    {
+     "id": "p04_odwolanie",
+     "grupa": "Odwolujacy[0]",
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ]
+    },
+    {
+     "id": "p05_odwolanie",
+     "grupa": "Odwolujacy[0]",
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ]
+    },
+    {
+     "id": "p06_odwolanie",
+     "grupa": "Odwolujacy[0]",
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ]
+    }
+   ]
+  },
+  "odwolanie / Odwolujacy[].pelnomocnik": {
+   "wszystkie": 60,
+   "spojne": 43,
+   "bez_obszaru": 0,
+   "kompletne": 60,
+   "odsetek_spojnych": 71.67,
+   "przyklady_niespojnych": [
+    {
+     "id": "p11_odwolanie",
+     "grupa": "Odwolujacy[0].pelnomocnik",
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ]
+    },
+    {
+     "id": "p31_odwolanie",
+     "grupa": "Odwolujacy[0].pelnomocnik",
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ]
+    },
+    {
+     "id": "p40_odwolanie",
+     "grupa": "Odwolujacy[0].pelnomocnik",
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ]
+    },
+    {
+     "id": "p42_odwolanie",
+     "grupa": "Odwolujacy[0].pelnomocnik",
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ]
+    },
+    {
+     "id": "p43_odwolanie",
+     "grupa": "Odwolujacy[0].pelnomocnik",
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ]
+    }
+   ]
+  },
+  "odwolanie / Zamawiajacy[]": {
+   "wszystkie": 63,
+   "spojne": 52,
+   "bez_obszaru": 0,
+   "kompletne": 63,
+   "odsetek_spojnych": 82.54,
+   "przyklady_niespojnych": [
+    {
+     "id": "p09_odwolanie",
+     "grupa": "Zamawiajacy[0]",
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ]
+    },
+    {
+     "id": "p21_odwolanie",
+     "grupa": "Zamawiajacy[0]",
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ]
+    },
+    {
+     "id": "p23_odwolanie",
+     "grupa": "Zamawiajacy[0]",
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ]
+    },
+    {
+     "id": "p25_odwolanie",
+     "grupa": "Zamawiajacy[0]",
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ]
+    },
+    {
+     "id": "p31_odwolanie",
+     "grupa": "Zamawiajacy[0]",
+     "kolidujace_pola": [
+      "OdwolanieKIO.miejscowosc"
+     ]
+    }
+   ]
+  },
+  "odwolanie / ZamowieniePubliczne": {
+   "wszystkie": 60,
+   "spojne": 60,
+   "bez_obszaru": 0,
+   "kompletne": 60,
+   "odsetek_spojnych": 100.0,
+   "przyklady_niespojnych": []
+  },
+  "pelnomocnictwo / mocodawca[]": {
+   "wszystkie": 66,
+   "spojne": 45,
+   "bez_obszaru": 0,
+   "kompletne": 66,
+   "odsetek_spojnych": 68.18,
+   "przyklady_niespojnych": [
+    {
+     "id": "p03_pelnomocnictwo",
+     "grupa": "mocodawca[0]",
+     "kolidujace_pola": [
+      "pelnomocnicy[0].imie_nazwisko"
+     ]
+    },
+    {
+     "id": "p06_pelnomocnictwo",
+     "grupa": "mocodawca[0]",
+     "kolidujace_pola": [
+      "pelnomocnicy[0].imie_nazwisko"
+     ]
+    },
+    {
+     "id": "p09_pelnomocnictwo",
+     "grupa": "mocodawca[0]",
+     "kolidujace_pola": [
+      "pelnomocnicy[0].imie_nazwisko"
+     ]
+    },
+    {
+     "id": "p15_pelnomocnictwo",
+     "grupa": "mocodawca[0]",
+     "kolidujace_pola": [
+      "pelnomocnicy[0].imie_nazwisko"
+     ]
+    },
+    {
+     "id": "p18_pelnomocnictwo",
+     "grupa": "mocodawca[0]",
+     "kolidujace_pola": [
+      "pelnomocnicy[0].imie_nazwisko"
+     ]
+    }
+   ]
+  },
+  "pelnomocnictwo / mocodawca[].podpisujacy[]": {
+   "wszystkie": 95,
+   "spojne": 75,
+   "bez_obszaru": 0,
+   "kompletne": 95,
+   "odsetek_spojnych": 78.95,
+   "przyklady_niespojnych": [
+    {
+     "id": "p08_pelnomocnictwo",
+     "grupa": "mocodawca[0].podpisujacy[1]",
+     "kolidujace_pola": [
+      "mocodawca[0].podpisujacy[0].imie_nazwisko"
+     ]
+    },
+    {
+     "id": "p14_pelnomocnictwo",
+     "grupa": "mocodawca[0].podpisujacy[1]",
+     "kolidujace_pola": [
+      "mocodawca[0].podpisujacy[0].imie_nazwisko"
+     ]
+    },
+    {
+     "id": "p16_pelnomocnictwo",
+     "grupa": "mocodawca[0].podpisujacy[1]",
+     "kolidujace_pola": [
+      "mocodawca[0].podpisujacy[0].imie_nazwisko"
+     ]
+    },
+    {
+     "id": "p20_pelnomocnictwo",
+     "grupa": "mocodawca[0].podpisujacy[1]",
+     "kolidujace_pola": [
+      "mocodawca[0].podpisujacy[0].imie_nazwisko"
+     ]
+    },
+    {
+     "id": "p23_pelnomocnictwo",
+     "grupa": "mocodawca[0].podpisujacy[1]",
+     "kolidujace_pola": [
+      "mocodawca[0].podpisujacy[0].imie_nazwisko"
+     ]
+    }
+   ]
+  },
+  "pelnomocnictwo / pelnomocnicy[]": {
+   "wszystkie": 98,
+   "spojne": 70,
+   "bez_obszaru": 0,
+   "kompletne": 98,
+   "odsetek_spojnych": 71.43,
+   "przyklady_niespojnych": [
+    {
+     "id": "p01_pelnomocnictwo",
+     "grupa": "pelnomocnicy[1]",
+     "kolidujace_pola": [
+      "pelnomocnicy[0].imie_nazwisko"
+     ]
+    },
+    {
+     "id": "p02_pelnomocnictwo",
+     "grupa": "pelnomocnicy[1]",
+     "kolidujace_pola": [
+      "pelnomocnicy[0].imie_nazwisko"
+     ]
+    },
+    {
+     "id": "p04_pelnomocnictwo",
+     "grupa": "pelnomocnicy[1]",
+     "kolidujace_pola": [
+      "pelnomocnicy[0].imie_nazwisko"
+     ]
+    },
+    {
+     "id": "p08_pelnomocnictwo",
+     "grupa": "pelnomocnicy[1]",
+     "kolidujace_pola": [
+      "pelnomocnicy[0].imie_nazwisko"
+     ]
+    },
+    {
+     "id": "p12_pelnomocnictwo",
+     "grupa": "pelnomocnicy[0]",
+     "kolidujace_pola": [
+      "mocodawca[0].data.nip"
+     ]
+    }
+   ]
+  },
+  "przelew / przelew_bankowy": {
+   "wszystkie": 60,
+   "spojne": 60,
+   "bez_obszaru": 0,
+   "kompletne": 60,
+   "odsetek_spojnych": 100.0,
+   "przyklady_niespojnych": []
+  }
+ }
+}

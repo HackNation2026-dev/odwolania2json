@@ -1,0 +1,480 @@
+{
+ "format": "uzp-karta-dokumentu",
+ "wersja": 1,
+ "id": "p58_pelnomocnictwo",
+ "klasa": "pelnomocnictwo",
+ "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_58/pelnomocnictwo.pdf",
+ "referencja": "docs/02-materialy/organizator-uzp/dane/przyklad_58/pelnomocnictwo.json",
+ "metoda": "Heurystyka referencja → pdftotext -bbox-layout; każdy PDF niezależnie",
+ "pola": {
+  "mocodawca[0].data.imie_nazwisko": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  },
+  "mocodawca[0].data.krs": {
+   "wartosc": "9995522683",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      353.001,
+      133.813,
+      408.126,
+      143.359
+     ],
+     "tekst_w_dokumencie": "9995522683,",
+     "etykieta_pola": "KRS",
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 1.12,
+      "strona": 1,
+      "bbox": [
+       147.927,
+       149.563,
+       451.855,
+       159.109
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.nazwa": {
+   "wartosc": "Imperon Serwis sp. z o.o.",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      133.982,
+      186.882,
+      143.359
+     ],
+     "tekst_w_dokumencie": "Imperon Serwis sp. z o.o.,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 1.11,
+      "strona": 1,
+      "bbox": [
+       147.927,
+       149.563,
+       451.855,
+       159.109
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.nip": {
+   "wartosc": "9993124780",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      432.097,
+      133.813,
+      487.222,
+      143.359
+     ],
+     "tekst_w_dokumencie": "9993124780,",
+     "etykieta_pola": "NIP",
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 1.12,
+      "strona": 1,
+      "bbox": [
+       147.927,
+       149.563,
+       451.855,
+       159.109
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.typ": {
+   "wartosc": "osoba_prawna",
+   "dopasowanie": "wyliczana",
+   "wystapienia": []
+  },
+  "mocodawca[0].podpisujacy[0].imie_nazwisko": {
+   "wartosc": "Sebastian Baran",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      458.638,
+      136.299,
+      468.184
+     ],
+     "tekst_w_dokumencie": "Sebastian Baran",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "prezes",
+      "polozenie": "po",
+      "odleglosc_linii": 1.12,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       474.388,
+       117.325,
+       483.934
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].imie_nazwisko": {
+   "wartosc": "Grzegorz Wiśniewski",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      93.847,
+      165.313,
+      187.848,
+      174.859
+     ],
+     "tekst_w_dokumencie": "Grzegorz Wiśniewski",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "udziela",
+      "polozenie": "przed",
+      "odleglosc_linii": 1.12,
+      "strona": 1,
+      "bbox": [
+       421.54,
+       149.563,
+       526.913,
+       159.109
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      91.105,
+      541.638,
+      182.365,
+      551.184
+     ],
+     "tekst_w_dokumencie": "Grzegorz Wiśniewski",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Pełnomocnictwo",
+      "polozenie": "przed",
+      "odleglosc_linii": 3.1,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       498.307,
+       141.847,
+       507.684
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].pesel": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  },
+  "pelnomocnicy[1].imie_nazwisko": {
+   "wartosc": "Leszek Wieczorek",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      357.228,
+      165.313,
+      437.792,
+      174.859
+     ],
+     "tekst_w_dokumencie": "Leszek Wieczorek",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "udziela",
+      "polozenie": "przed",
+      "odleglosc_linii": 1.12,
+      "strona": 1,
+      "bbox": [
+       421.54,
+       149.563,
+       526.913,
+       159.109
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      91.105,
+      585.138,
+      168.927,
+      594.684
+     ],
+     "tekst_w_dokumencie": "Leszek Wieczorek",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Pełnomocnictwo",
+      "polozenie": "przed",
+      "odleglosc_linii": 6.2,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       498.307,
+       141.847,
+       507.684
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[1].pesel": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  }
+ },
+ "grupy": [
+  {
+   "id": "mocodawca[0]",
+   "typ": "mocodawca[]",
+   "pola": [
+    "mocodawca[0].data.imie_nazwisko",
+    "mocodawca[0].data.krs",
+    "mocodawca[0].data.nazwa",
+    "mocodawca[0].data.nip",
+    "mocodawca[0].data.typ"
+   ],
+   "etykieta_roli": {
+    "tekst": "Mocodawca",
+    "polozenie": "po",
+    "odleglosc_linii": 1.11,
+    "strona": 1,
+    "bbox": [
+     147.927,
+     149.563,
+     451.855,
+     159.109
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      133.813,
+      487.222,
+      159.109
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.65
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 3,
+   "pola_do_lokalizacji": 3
+  },
+  {
+   "id": "mocodawca[0].podpisujacy[0]",
+   "typ": "mocodawca[].podpisujacy[]",
+   "pola": [
+    "mocodawca[0].podpisujacy[0].imie_nazwisko"
+   ],
+   "etykieta_roli": {
+    "tekst": "prezes",
+    "polozenie": "po",
+    "odleglosc_linii": 1.12,
+    "strona": 1,
+    "bbox": [
+     68.362,
+     474.388,
+     117.325,
+     483.934
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      458.638,
+      136.299,
+      483.934
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.65
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  },
+  {
+   "id": "pelnomocnicy[0]",
+   "typ": "pelnomocnicy[]",
+   "pola": [
+    "pelnomocnicy[0].imie_nazwisko",
+    "pelnomocnicy[0].pesel"
+   ],
+   "etykieta_roli": {
+    "tekst": "udziela",
+    "polozenie": "przed",
+    "odleglosc_linii": 1.12,
+    "strona": 1,
+    "bbox": [
+     421.54,
+     149.563,
+     526.913,
+     159.109
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      93.847,
+      149.563,
+      526.913,
+      174.859
+     ],
+     "spojna": false,
+     "kolidujace_pola": [
+      "pelnomocnicy[1].imie_nazwisko"
+     ],
+     "wysokosc_linii": 2.65
+    }
+   ],
+   "spojna": false,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  },
+  {
+   "id": "pelnomocnicy[1]",
+   "typ": "pelnomocnicy[]",
+   "pola": [
+    "pelnomocnicy[1].imie_nazwisko",
+    "pelnomocnicy[1].pesel"
+   ],
+   "etykieta_roli": {
+    "tekst": "udziela",
+    "polozenie": "przed",
+    "odleglosc_linii": 1.12,
+    "strona": 1,
+    "bbox": [
+     421.54,
+     149.563,
+     526.913,
+     159.109
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      357.228,
+      149.563,
+      526.913,
+      174.859
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.65
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  }
+ ],
+ "uklad": [
+  {
+   "strona": 1,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  }
+ ],
+ "kody": [
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].data.nazwa",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wartosc_wyliczana",
+   "pole": "mocodawca[0].data.typ",
+   "dowod": "wyliczana; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].podpisujacy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "pelnomocnicy[0].imie_nazwisko",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "pelnomocnicy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "pelnomocnicy[1].imie_nazwisko",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "pelnomocnicy[1].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "etykieta_po_danych",
+   "pole": "mocodawca[0]",
+   "dowod": "Mocodawca"
+  },
+  {
+   "kod": "etykieta_po_danych",
+   "pole": "mocodawca[0].podpisujacy[0]",
+   "dowod": "prezes"
+  },
+  {
+   "kod": "etykieta_synonim",
+   "pole": "pelnomocnicy[0]",
+   "dowod": "udziela"
+  },
+  {
+   "kod": "etykieta_synonim",
+   "pole": "pelnomocnicy[1]",
+   "dowod": "udziela"
+  }
+ ],
+ "braki": []
+}

@@ -1,0 +1,459 @@
+{
+ "format": "uzp-karta-dokumentu",
+ "wersja": 1,
+ "id": "p04_pelnomocnictwo",
+ "klasa": "pelnomocnictwo",
+ "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_04/pelnomocnictwo.pdf",
+ "referencja": "docs/02-materialy/organizator-uzp/dane/przyklad_04/pelnomocnictwo.json",
+ "metoda": "Heurystyka referencja → pdftotext -bbox-layout; każdy PDF niezależnie",
+ "pola": {
+  "mocodawca[0].data.imie_nazwisko": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  },
+  "mocodawca[0].data.krs": {
+   "wartosc": "9992397370",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      97.074,
+      106.992,
+      158.234,
+      117.31
+     ],
+     "tekst_w_dokumencie": "9992397370",
+     "etykieta_pola": "KRS",
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      230.796,
+      229.214,
+      300.852,
+      240.47
+     ],
+     "tekst_w_dokumencie": "9992397370,",
+     "etykieta_pola": "KRS",
+     "etykieta_roli": {
+      "tekst": "reprezentowania",
+      "polozenie": "po",
+      "odleglosc_linii": 2.14,
+      "strona": 1,
+      "bbox": [
+       316.812,
+       259.214,
+       472.2,
+       270.47
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.nazwa": {
+   "wartosc": "Gildentia Wyposażenie sp. z o.o.",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      71.4,
+      72.78,
+      303.135,
+      86.85
+     ],
+     "tekst_w_dokumencie": "Gildentia Wyposażenie sp. z o.o.",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      71.4,
+      214.214,
+      516.264,
+      240.47
+     ],
+     "tekst_w_dokumencie": "Gildentia Wyposażenie sp. z o.o.",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "reprezentowania",
+      "polozenie": "po",
+      "odleglosc_linii": 3.21,
+      "strona": 1,
+      "bbox": [
+       316.812,
+       259.214,
+       472.2,
+       270.47
+      ]
+     },
+     "liczba_linii": 2
+    }
+   ]
+  },
+  "mocodawca[0].data.nip": {
+   "wartosc": "9995126748",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      189.408,
+      106.992,
+      250.568,
+      117.31
+     ],
+     "tekst_w_dokumencie": "9995126748",
+     "etykieta_pola": "NIP",
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      327.528,
+      229.214,
+      401.58,
+      240.47
+     ],
+     "tekst_w_dokumencie": "9995126748),",
+     "etykieta_pola": "NIP",
+     "etykieta_roli": {
+      "tekst": "reprezentowania",
+      "polozenie": "po",
+      "odleglosc_linii": 2.14,
+      "strona": 1,
+      "bbox": [
+       316.812,
+       259.214,
+       472.2,
+       270.47
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.typ": {
+   "wartosc": "osoba_prawna",
+   "dopasowanie": "wyliczana",
+   "wystapienia": []
+  },
+  "mocodawca[0].podpisujacy[0].imie_nazwisko": {
+   "wartosc": "Ewa Szulc",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      357.55,
+      538.214,
+      413.566,
+      549.47
+     ],
+     "tekst_w_dokumencie": "Ewa Szulc",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].imie_nazwisko": {
+   "wartosc": "Patrycja Furman",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      190.104,
+      244.214,
+      278.124,
+      255.47
+     ],
+     "tekst_w_dokumencie": "Patrycja Furman",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "pełnomocnikiem",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 1,
+      "bbox": [
+       71.4,
+       244.214,
+       158.088,
+       255.47
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].pesel": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  },
+  "pelnomocnicy[1].imie_nazwisko": {
+   "wartosc": "Sławomir Ostrowczyk",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      71.4,
+      244.214,
+      522.192,
+      270.47
+     ],
+     "tekst_w_dokumencie": "Sławomir Ostrowczyk",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "pełnomocnikiem",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 1,
+      "bbox": [
+       71.4,
+       244.214,
+       158.088,
+       255.47
+      ]
+     },
+     "liczba_linii": 2
+    }
+   ]
+  },
+  "pelnomocnicy[1].pesel": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  }
+ },
+ "grupy": [
+  {
+   "id": "mocodawca[0]",
+   "typ": "mocodawca[]",
+   "pola": [
+    "mocodawca[0].data.imie_nazwisko",
+    "mocodawca[0].data.krs",
+    "mocodawca[0].data.nazwa",
+    "mocodawca[0].data.nip",
+    "mocodawca[0].data.typ"
+   ],
+   "etykieta_roli": null,
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      71.4,
+      72.78,
+      303.135,
+      117.31
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 3.96
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 3,
+   "pola_do_lokalizacji": 3
+  },
+  {
+   "id": "mocodawca[0].podpisujacy[0]",
+   "typ": "mocodawca[].podpisujacy[]",
+   "pola": [
+    "mocodawca[0].podpisujacy[0].imie_nazwisko"
+   ],
+   "etykieta_roli": null,
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      357.55,
+      538.214,
+      413.566,
+      549.47
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 1.0
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  },
+  {
+   "id": "pelnomocnicy[0]",
+   "typ": "pelnomocnicy[]",
+   "pola": [
+    "pelnomocnicy[0].imie_nazwisko",
+    "pelnomocnicy[0].pesel"
+   ],
+   "etykieta_roli": {
+    "tekst": "pełnomocnikiem",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.0,
+    "strona": 1,
+    "bbox": [
+     71.4,
+     244.214,
+     158.088,
+     255.47
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      71.4,
+      244.214,
+      278.124,
+      255.47
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 1.0
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  },
+  {
+   "id": "pelnomocnicy[1]",
+   "typ": "pelnomocnicy[]",
+   "pola": [
+    "pelnomocnicy[1].imie_nazwisko",
+    "pelnomocnicy[1].pesel"
+   ],
+   "etykieta_roli": {
+    "tekst": "pełnomocnikiem",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.0,
+    "strona": 1,
+    "bbox": [
+     71.4,
+     244.214,
+     158.088,
+     255.47
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      71.4,
+      244.214,
+      522.192,
+      270.47
+     ],
+     "spojna": false,
+     "kolidujace_pola": [
+      "pelnomocnicy[0].imie_nazwisko"
+     ],
+     "wysokosc_linii": 2.33
+    }
+   ],
+   "spojna": false,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  }
+ ],
+ "uklad": [
+  {
+   "strona": 1,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  }
+ ],
+ "kody": [
+  {
+   "kod": "wiele_wystapien",
+   "pole": "mocodawca[0].data.krs",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "mocodawca[0].data.nazwa",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "wartosc_w_kilku_liniach",
+   "pole": "mocodawca[0].data.nazwa",
+   "dowod": "BBox obejmuje kilka linii Popplera"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].data.nazwa",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "mocodawca[0].data.nip",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "wartosc_wyliczana",
+   "pole": "mocodawca[0].data.typ",
+   "dowod": "wyliczana; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].podpisujacy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "pelnomocnicy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wartosc_w_kilku_liniach",
+   "pole": "pelnomocnicy[1].imie_nazwisko",
+   "dowod": "BBox obejmuje kilka linii Popplera"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "pelnomocnicy[1].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "brak_etykiety_roli",
+   "pole": "mocodawca[0]",
+   "dowod": "Nie wykryto lokalnej etykiety roli podmiotu (okno 8 linii)"
+  },
+  {
+   "kod": "brak_etykiety_roli",
+   "pole": "mocodawca[0].podpisujacy[0]",
+   "dowod": "Nie wykryto lokalnej etykiety roli podmiotu (okno 8 linii)"
+  }
+ ],
+ "braki": []
+}

@@ -1,0 +1,434 @@
+{
+  "type": "object",
+  "required": [
+    "format",
+    "wersja",
+    "id",
+    "klasa",
+    "pdf",
+    "referencja",
+    "metoda",
+    "pola",
+    "grupy",
+    "uklad",
+    "kody",
+    "braki"
+  ],
+  "properties": {
+    "format": {
+      "const": "uzp-karta-dokumentu"
+    },
+    "wersja": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^p[0-9]{2}_(odwolanie|pelnomocnictwo|przelew)$"
+    },
+    "klasa": {
+      "enum": [
+        "odwolanie",
+        "pelnomocnictwo",
+        "przelew"
+      ]
+    },
+    "pdf": {
+      "type": "string"
+    },
+    "referencja": {
+      "type": "string"
+    },
+    "metoda": {
+      "type": "string"
+    },
+    "pola": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "wartosc",
+          "dopasowanie",
+          "wystapienia"
+        ],
+        "properties": {
+          "wartosc": {},
+          "dopasowanie": {
+            "enum": [
+              "dokladne",
+              "inny_zapis",
+              "inna_forma_gramatyczna",
+              "wyliczana",
+              "nieznaleziona",
+              "null_w_referencji"
+            ]
+          },
+          "wystapienia": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "strona",
+                "bbox",
+                "tekst_w_dokumencie",
+                "etykieta_pola",
+                "etykieta_roli",
+                "liczba_linii"
+              ],
+              "properties": {
+                "strona": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "bbox": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 4,
+                  "maxItems": 4
+                },
+                "tekst_w_dokumencie": {
+                  "type": "string"
+                },
+                "etykieta_pola": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "etykieta_roli": {
+                  "type": "object",
+                  "required": [
+                    "tekst",
+                    "polozenie",
+                    "odleglosc_linii"
+                  ],
+                  "properties": {
+                    "tekst": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    },
+                    "polozenie": {
+                      "enum": [
+                        "przed",
+                        "po",
+                        "brak"
+                      ]
+                    },
+                    "odleglosc_linii": {
+                      "type": [
+                        "number",
+                        "null"
+                      ]
+                    },
+                    "strona": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "bbox": {
+                      "type": "array",
+                      "items": {
+                        "type": "number"
+                      },
+                      "minItems": 4,
+                      "maxItems": 4
+                    }
+                  }
+                },
+                "liczba_linii": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "grupy": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "typ",
+          "pola",
+          "etykieta_roli",
+          "obszary",
+          "spojna",
+          "pola_zlokalizowane",
+          "pola_do_lokalizacji"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "typ": {
+            "type": "string"
+          },
+          "pola": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "etykieta_roli": {
+            "anyOf": [
+              {
+                "type": "object",
+                "required": [
+                  "tekst",
+                  "polozenie",
+                  "odleglosc_linii"
+                ],
+                "properties": {
+                  "tekst": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "polozenie": {
+                    "enum": [
+                      "przed",
+                      "po",
+                      "brak"
+                    ]
+                  },
+                  "odleglosc_linii": {
+                    "type": [
+                      "number",
+                      "null"
+                    ]
+                  },
+                  "strona": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "bbox": {
+                    "type": "array",
+                    "items": {
+                      "type": "number"
+                    },
+                    "minItems": 4,
+                    "maxItems": 4
+                  }
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "obszary": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "strona",
+                "bbox",
+                "spojna",
+                "kolidujace_pola",
+                "wysokosc_linii"
+              ],
+              "properties": {
+                "strona": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "bbox": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  },
+                  "minItems": 4,
+                  "maxItems": 4
+                },
+                "spojna": {
+                  "type": "boolean"
+                },
+                "kolidujace_pola": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "wysokosc_linii": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "spojna": {
+            "type": "boolean"
+          },
+          "pola_zlokalizowane": {
+            "type": "integer"
+          },
+          "pola_do_lokalizacji": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "uklad": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "strona",
+          "przyblizenie",
+          "liczba_kolumn",
+          "linie_z_odstepami",
+          "etykieta_i_wartosc_w_roznych_blokach"
+        ],
+        "properties": {
+          "strona": {
+            "type": "integer"
+          },
+          "przyblizenie": {
+            "const": true
+          },
+          "liczba_kolumn": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "linie_z_odstepami": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "y",
+                "odstep_pt",
+                "rozne_bloki"
+              ],
+              "properties": {
+                "y": {
+                  "type": "number"
+                },
+                "odstep_pt": {
+                  "type": "number"
+                },
+                "rozne_bloki": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "etykieta_i_wartosc_w_roznych_blokach": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "kody": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kod",
+          "pole",
+          "dowod"
+        ],
+        "properties": {
+          "kod": {
+            "enum": [
+              "brak_etykiety_roli",
+              "etykieta_po_danych",
+              "etykieta_synonim",
+              "brak_etykiety_przy_wartosci",
+              "niewidoczna_tabela",
+              "uklad_wielokolumnowy",
+              "tabela",
+              "brak_informacji_wprost",
+              "wartosc_wyliczana",
+              "inny_zapis_wartosci",
+              "inna_forma_gramatyczna",
+              "wiele_wystapien",
+              "wartosc_w_kilku_liniach",
+              "dane_dalej_niz_3_strona",
+              "konsorcjum",
+              "wielu_zamawiajacych",
+              "wielu_mocodawcow",
+              "mocodawca_osoba_fizyczna",
+              "pesel_obecny",
+              "brak_pelnomocnika",
+              "brak_bzp_i_ted",
+              "powod_12",
+              "przelew_wpis",
+              "skan",
+              "skan_z_ocr",
+              "zla_warstwa_ocr",
+              "strona_mieszana",
+              "dokument_mieszany",
+              "obrot",
+              "obrot_flaga_pdf",
+              "przekrzywienie",
+              "niska_jakosc",
+              "pieczatka_podpis",
+              "odreczne",
+              "pusta_strona",
+              "uciety_tekst",
+              "anonimizacja",
+              "znak_wodny",
+              "nietypowy_rozmiar_strony",
+              "wiele_dokumentow",
+              "dokument_obcy",
+              "podobny_do_klasy",
+              "duplikat_pliku",
+              "jezyk_obcy",
+              "inne",
+              "ocr_niedostepny",
+              "ocr_blad",
+              "pdf_uszkodzony",
+              "pdf_zaszyfrowany",
+              "llm_niedostepny",
+              "llm_autoryzacja",
+              "llm_limit",
+              "llm_odpowiedz_niepoprawna",
+              "konfiguracja_niepoprawna",
+              "limit_czasu",
+              "limit_kontekstu",
+              "zapis_nieudany",
+              "walidacja_wyniku_nieudana",
+              "klasa_niejednoznaczna"
+            ]
+          },
+          "pole": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "dowod": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "braki": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "pole",
+          "hipoteza"
+        ],
+        "properties": {
+          "pole": {
+            "type": "string"
+          },
+          "hipoteza": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}
