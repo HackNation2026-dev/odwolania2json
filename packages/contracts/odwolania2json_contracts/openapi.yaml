@@ -288,8 +288,8 @@ components:
           type: ["string", "null"]
           description: "Imię i nazwisko pełnomocnika w mianowniku."
         pesel:
-          type: ["string", "null"]
-          description: "PESEL pełnomocnika, jeśli jest podany."
+          type: ["string", "integer", "null"]
+          description: "PESEL pełnomocnika, jeśli jest podany (wzorzec organizatora podaje liczbę, nasza ekstrakcja tekst)."
       required:
         - imie_nazwisko
         - pesel

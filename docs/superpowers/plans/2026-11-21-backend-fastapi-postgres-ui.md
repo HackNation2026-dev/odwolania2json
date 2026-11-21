@@ -10,7 +10,7 @@ status: plan implementacji
 
 **Goal:** Działający prototyp Odwołania2JSON: PDF → JSON zgodny z kontraktem organizatora, dostępny przez CLI i FastAPI, uruchamiany przez Docker, z opcjonalnym Postgresem i przeglądarkowym UI.
 
-**Architecture:** Kontraktem jest minimalny plik OpenAPI 3.1 (`packages/contracts/openapi.yaml`), z którego generowane są modele pydantic; backend FastAPI i serializacja korzystają z tych samych modeli. Silnik to potok: tekst z PDF (pypdfium2) → klasyfikacja regułowa → ekstrakcja regułowa z normalizatorami → model pydantic → JSON + dowód źródłowy. CLI i API używają tego samego silnika; Postgres jest opcjonalny (bez `DATABASE_URL` kod działa w trybie plikowym), a UI serwuje FastAPI bez etapu budowania.
+**Architecture:** Kontraktem jest minimalny plik OpenAPI 3.1 (`packages/contracts/odwolania2json_contracts/openapi.yaml`), z którego generowane są modele pydantic; backend FastAPI i serializacja korzystają z tych samych modeli. Silnik to potok: tekst z PDF (pypdfium2) → klasyfikacja regułowa → ekstrakcja regułowa z normalizatorami → model pydantic → JSON + dowód źródłowy. CLI i API używają tego samego silnika; Postgres jest opcjonalny (bez `DATABASE_URL` kod działa w trybie plikowym), a UI serwuje FastAPI bez etapu budowania.
 
 **Tech Stack:** Python 3.13, FastAPI, Uvicorn, pydantic v2, datamodel-code-generator, openapi-spec-validator, pypdfium2, SQLAlchemy 2.0 Core + pg8000, PostgreSQL 16, Jinja2, pytest, rapidfuzz, Docker (`python:3.13-slim`).
 
@@ -147,7 +147,7 @@ git commit -m "feat: szkielet pakietów odwolania2json i odwolania2json_contract
 `tests/contract/test_openapi.py`:
 ```python
 def test_spec_is_valid_openapi():
-    # openapi-spec-validator waliduje packages/contracts/openapi.yaml
+    # openapi-spec-validator waliduje packages/contracts/odwolania2json_contracts/openapi.yaml
 def test_spec_declares_three_document_schemas():
     # components.schemas zawiera Odwolanie, Pelnomocnictwo, Przelew
 def test_generated_models_match_committed_file():
@@ -179,7 +179,7 @@ Minimalny OpenAPI 3.1: `info`, `paths` (tymcczasowo tylko `/healthz` → do rozb
 
 - [ ] **Step 4: Napisz `scripts/generate_contracts.py`**
 
-Uruchamia `datamodel-code-generator` z `--input packages/contracts/openapi.yaml --input-file-type openapi --output packages/contracts/odwolania2json_contracts/models.py --class-name suffix pusty --use-standard-collections --target-python-version 3.13`, waliduje wynik `openapi-spec-validator` i kończy się kodem 0 albo 1.
+Uruchamia `datamodel-code-generator` z `--input packages/contracts/odwolania2json_contracts/openapi.yaml --input-file-type openapi --output packages/contracts/odwolania2json_contracts/models.py --class-name suffix pusty --use-standard-collections --target-python-version 3.13`, waliduje wynik `openapi-spec-validator` i kończy się kodem 0 albo 1.
 
 - [ ] **Step 5: Wygeneruj modele i napisz `powody.py`**
 
@@ -693,7 +693,7 @@ git commit -m "feat: opcjonalna warstwa Postgres z migracjami"
 
 **Files:**
 - Create: `apps/backend/odwolania2json/api/__init__.py`, `apps/backend/odwolania2json/api/app.py`, `apps/backend/odwolania2json/api/routes.py`, `apps/backend/odwolania2json/config.py`
-- Modify: `packages/contracts/openapi.yaml` (ścieżki API), `packages/contracts/odwolania2json_contracts/models.py` (ponowne wygenerowanie)
+- Modify: `packages/contracts/odwolania2json_contracts/openapi.yaml` (ścieżki API), `packages/contracts/odwolania2json_contracts/models.py` (ponowne wygenerowanie)
 - Test: `tests/integration/test_api.py`, `tests/contract/test_openapi.py` (rozszerzenie o ścieżki)
 
 **Interfaces:**

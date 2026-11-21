@@ -95,7 +95,7 @@ Trzy klasy, klucze i typy wzięte dosłownie z `oczekiwane-json/`; referencje or
 
 ### 5.1 OpenAPI jako źródło prawdy
 
-`packages/contracts/openapi.yaml` to **jedyny ręcznie pisany kontrakt**: minimalny dokument OpenAPI 3.1 opisujący zarówno API (ścieżki, parametry, odpowiedzi), jak i schematy trzech klas dokumentów w `components.schemas`. Z niego:
+`packages/contracts/odwolania2json_contracts/openapi.yaml` to **jedyny ręcznie pisany kontrakt**: minimalny dokument OpenAPI 3.1 opisujący zarówno API (ścieżki, parametry, odpowiedzi), jak i schematy trzech klas dokumentów w `components.schemas`. Z niego:
 
 1. generowane są modele pydantic (`scripts/generate_contracts.py` → `datamodel-code-generator`, wynik w repo, żeby jury nie musiało mieć generatora);
 2. budowany jest backend FastAPI — trasy używają wygenerowanych modeli jako typów żądań i odpowiedzi;
@@ -260,7 +260,7 @@ Jedno narzędzie sprawdza kontrakt w trzech miejscach, więc rozjazd specyfikacj
 
 | Narzędzie | Zadanie |
 |---|---|
-| `scripts/generate_contracts.py` | generuje modele pydantic z `packages/contracts/openapi.yaml` do pliku `models.py` |
+| `scripts/generate_contracts.py` | generuje modele pydantic z `packages/contracts/odwolania2json_contracts/openapi.yaml` do pliku `models.py` |
 | `scripts/validate_api.py --stage spec` | waliduje `openapi.yaml` (openapi-spec-validator) i porównuje wygenerowane modele z plikiem w repo — rozjazd oznacza, że ktoś zmienił spec without regenerowania |
 | `scripts/validate_api.py --stage app` | porównuje `app.openapi()` aplikacji FastAPI ze specyfikacją: ścieżki i metody, `operationId`, schematy składowe, odwołania do schematów w treściach |
 | `scripts/precommit.py` | uruchamia kontrolę dokumentacji, walidację API i testy; `--fast` pomija testy i etap `app` |

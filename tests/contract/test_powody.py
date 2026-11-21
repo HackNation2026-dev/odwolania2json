@@ -20,7 +20,7 @@ DICT_PATH = (
     / "oczekiwane-json"
     / "czynnosc_powod_id_dict.md"
 )
-SPEC_PATH = REPO_ROOT / "packages" / "contracts" / "openapi.yaml"
+SPEC_PATH = REPO_ROOT / "packages" / "contracts" / "odwolania2json_contracts" / "openapi.yaml"
 
 
 def _organizer_reasons() -> dict[int, str]:

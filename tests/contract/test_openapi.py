@@ -1,7 +1,7 @@
 """Test kontraktu OpenAPI i generowanych modeli pydantic.
 
-Kontraktem jest ``packages/contracts/openapi.yaml``; modele w
-``packages/contracts/odwolania2json_contracts/models.py`` są z niego generowane
+Kontraktem jest ``packages/contracts/odwolania2json_contracts/openapi.yaml``
+(jedyna kopia, wewnątrz pakietu); modele w ``models.py`` są z niego generowane
 skryptem ``scripts/generate_contracts.py``.
 """
 
@@ -22,13 +22,11 @@ from odwolania2json_contracts import models
 from odwolania2json_contracts.models import Odwolanie, Pelnomocnictwo, Przelew, PustyWynik
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
-SPEC_PATH = REPO_ROOT / "packages" / "contracts" / "openapi.yaml"
-PACKAGED_SPEC_PATH = REPO_ROOT / "packages" / "contracts" / "odwolania2json_contracts" / "openapi.yaml"
-MODELS_PATH = REPO_ROOT / "packages" / "contracts" / "odwolania2json_contracts" / "models.py"
+PACKAGE_DIR = REPO_ROOT / "packages" / "contracts" / "odwolania2json_contracts"
+SPEC_PATH = PACKAGE_DIR / "openapi.yaml"
+MODELS_PATH = PACKAGE_DIR / "models.py"
 GENERATE_SCRIPT = REPO_ROOT / "scripts" / "generate_contracts.py"
-PATTERN_PATH = (
-    REPO_ROOT / "docs" / "02-materialy" / "organizator-uzp" / "oczekiwane-json" / "odwolanie.json"
-)
+PATTERN_DIR = REPO_ROOT / "docs" / "02-materialy" / "organizator-uzp" / "oczekiwane-json"
 EXAMPLES_DIR = REPO_ROOT / "docs" / "02-materialy" / "organizator-uzp" / "dane"
 
 EXPECTED_MODEL_NAMES = {
@@ -88,20 +86,25 @@ def _strip_json_comments(text: str) -> str:
     return "".join(out)
 
 
-def _organizer_pattern() -> dict:
-    """Wzorzec organizatora: JSON z komentarzami i brakującym przecinkiem po kluczu ``nazwa``."""
-    text = _strip_json_comments(PATTERN_PATH.read_text(encoding="utf-8"))
+def _organizer_pattern(name: str) -> dict:
+    """Wzorzec organizatora: JSON z komentarzami i miejscami brakującym przecinkiem."""
+    text = _strip_json_comments((PATTERN_DIR / name).read_text(encoding="utf-8"))
     text = re.sub(r'("(?:[^"\\]|\\.)*")(\s*\n\s*")', r"\1,\2", text)
     return json.loads(text)
 
 
 def _key_shape(value):
-    """Zwraca strukturę kluczy dokumentu (kolejność i nazwy), bez wartości."""
+    """Kolejność kluczy dokumentu jako lista par (klucz, kształt wartości)."""
     if isinstance(value, dict):
-        return {key: _key_shape(item) for key, item in value.items()}
+        return [(key, _key_shape(item)) for key, item in value.items()]
     if isinstance(value, list):
         return [_key_shape(item) for item in value[:1]]
     return None
+
+
+def _key_order_matches(actual, expected) -> bool:
+    """Czy dokumenty mają identyczne klucze w tej samej kolejności."""
+    return _key_shape(actual) == _key_shape(expected)
 
 
 def _reference_examples() -> list[tuple[Path, type]]:
@@ -147,8 +150,9 @@ def test_spec_declares_three_document_schemas():
         assert name in schemas
 
 
-def test_spec_ships_inside_the_package():
-    assert PACKAGED_SPEC_PATH.read_bytes() == SPEC_PATH.read_bytes()
+def test_spec_has_single_copy_inside_the_package():
+    assert SPEC_PATH == PACKAGE_DIR / "openapi.yaml"
+    assert not (REPO_ROOT / "packages" / "contracts" / "openapi.yaml").exists()
 
 
 def test_generated_models_match_committed_file(tmp_path):
@@ -181,7 +185,7 @@ def test_package_exposes_result_union():
 
 
 def test_models_keep_organizer_key_order():
-    pattern = _organizer_pattern()
+    pattern = _organizer_pattern("odwolanie.json")
     document = Odwolanie.model_validate(
         {
             "OdwolanieKIO": {
@@ -222,12 +226,28 @@ def test_models_keep_organizer_key_order():
             },
         }
     )
-    assert _key_shape(document.model_dump(by_alias=True)) == _key_shape(pattern)
+    assert _key_order_matches(document.model_dump(by_alias=True), pattern)
+
+
+def test_key_order_comparison_is_order_sensitive():
+    """Porównanie musi uwzględniać kolejność kluczy, a nie tylko ich zbiór."""
+    pattern = _organizer_pattern("odwolanie.json")
+    reversed_pattern = dict(reversed(list(pattern.items())))
+    assert _key_order_matches(pattern, pattern)
+    assert not _key_order_matches(pattern, reversed_pattern)
 
 
 def test_empty_result_serializes_as_empty_object():
     assert PustyWynik().model_dump() == {}
     assert PustyWynik.model_validate({}).model_dump(by_alias=True) == {}
+
+
+def test_organizer_pattern_validates_against_models():
+    """Wzorce organizatora muszą przechodzić walidację modelami (pesel jako liczba)."""
+    for name, model in DOCUMENT_MODELS.items():
+        pattern = _organizer_pattern(name)
+        document = model.model_validate(pattern)
+        assert _key_order_matches(document.model_dump(by_alias=True), pattern), name
 
 
 def test_reference_examples_validate_against_models():
@@ -239,5 +259,5 @@ def test_reference_examples_validate_against_models():
         normalized = _normalize_organizer_variant(source)
         deviations.update(_organizer_deviations(source))
         document = model.model_validate(normalized)
-        assert _key_shape(document.model_dump(by_alias=True)) == _key_shape(source), path
+        assert _key_order_matches(document.model_dump(by_alias=True), source), path
     assert deviations == {("Odpowiedzi i wyjaśnienia do SWZ", "Odpowiedzi/wyjaśnienia do SWZ")}

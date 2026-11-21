@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-"""Generuje modele pydantic z ``packages/contracts/openapi.yaml``.
+"""Generuje modele pydantic ze specyfikacji OpenAPI pakietu kontraktów.
 
 Uruchomienie:
 
     python scripts/generate_contracts.py [--output PLIK] [--spec PLIK]
 
+Specyfikacją jest ``packages/contracts/odwolania2json_contracts/openapi.yaml``
+(jedyna kopia kontraktu, wewnątrz pakietu, żeby ``package-data`` wysyłał ją do koła).
 Skrypt waliduje specyfikację, uruchamia ``datamodel-code-generator`` i zapisuje
 wynik (domyślnie ``packages/contracts/odwolania2json_contracts/models.py``).
 Kod wyjścia: 0 — sukces, 1 — błąd.
@@ -21,9 +23,8 @@ import yaml
 from openapi_spec_validator import validate
 
 ROOT = Path(__file__).resolve().parents[1]
-SPEC_PATH = ROOT / "packages" / "contracts" / "openapi.yaml"
 PACKAGE_DIR = ROOT / "packages" / "contracts" / "odwolania2json_contracts"
-PACKAGED_SPEC_PATH = PACKAGE_DIR / "openapi.yaml"
+SPEC_PATH = PACKAGE_DIR / "openapi.yaml"
 MODELS_PATH = PACKAGE_DIR / "models.py"
 
 GENERATOR_FLAGS = (
@@ -44,9 +45,14 @@ GENERATOR_FLAGS = (
     "builtin",
 )
 
+# Raporty zawierają polskie znaki; bez tego konsola Windows (cp1252) zgłosiłaby błąd kodowania.
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+
 
 def _fail(message: str) -> int:
-    print(f"FAIL {message}", file=sys.stderr)
+    print(f"FAIL {message}")
     return 1
 
 
@@ -57,15 +63,6 @@ def validate_spec(spec_path: Path) -> int:
         validate(spec)
     except Exception as error:  # noqa: BLE001 - skrypt raportuje dowolny błąd walidacji
         return _fail(f"specyfikacja {spec_path} jest niepoprawna: {error}")
-    return 0
-
-
-def sync_packaged_spec(spec_path: Path) -> int:
-    """Kopiuje specyfikację do pakietu, aby trafiła do koła (package-data)."""
-    content = spec_path.read_bytes()
-    if PACKAGED_SPEC_PATH.is_file() and PACKAGED_SPEC_PATH.read_bytes() == content:
-        return 0
-    PACKAGED_SPEC_PATH.write_bytes(content)
     return 0
 
 
@@ -105,8 +102,6 @@ def main(argv: list[str] | None = None) -> int:
     if validate_spec(spec_path) != 0:
         return 1
     if generate(spec_path, output_path) != 0:
-        return 1
-    if spec_path == SPEC_PATH.resolve() and sync_packaged_spec(spec_path) != 0:
         return 1
     print(f"OK modele zapisane w {output_path}")
     return 0

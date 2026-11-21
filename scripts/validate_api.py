@@ -5,12 +5,15 @@ Uruchomienie:
 
     python scripts/validate_api.py [--stage spec|app|all]
 
+Skrypt nigdy nie zapisuje w repozytorium — wyłącznie czyta i porównuje.
+Raporty ``OK``/``FAIL`` trafiają na standardowe wyjście.
 Kody wyjścia: 0 — zgodność, 1 — niezgodność.
 """
 
 from __future__ import annotations
 
 import argparse
+import importlib.util
 import subprocess
 import sys
 import tempfile
@@ -20,13 +23,16 @@ import yaml
 from openapi_spec_validator import validate
 
 ROOT = Path(__file__).resolve().parents[1]
-SPEC_PATH = ROOT / "packages" / "contracts" / "openapi.yaml"
-PACKAGED_SPEC_PATH = (
-    ROOT / "packages" / "contracts" / "odwolania2json_contracts" / "openapi.yaml"
-)
+SPEC_PATH = ROOT / "packages" / "contracts" / "odwolania2json_contracts" / "openapi.yaml"
 MODELS_PATH = ROOT / "packages" / "contracts" / "odwolania2json_contracts" / "models.py"
 GENERATE_SCRIPT = ROOT / "scripts" / "generate_contracts.py"
+APP_MODULE = "odwolania2json.api.app"
 HTTP_METHODS = ("get", "post", "put", "patch", "delete", "head", "options")
+
+# Raporty zawierają polskie znaki; bez tego konsola Windows (cp1252) zgłosiłaby błąd kodowania.
+for _stream in (sys.stdout, sys.stderr):
+    if hasattr(_stream, "reconfigure"):
+        _stream.reconfigure(encoding="utf-8", errors="replace")
 
 
 def _ok(description: str) -> None:
@@ -70,8 +76,7 @@ def _schema_refs(spec: dict) -> set[str]:
 
 
 def check_spec() -> bool:
-    """Sprawdza specyfikację, modele i ich spójność; True — wszystko zgodne."""
-    ok = True
+    """Sprawdza specyfikację i zgodność modeli; True — wszystko zgodne."""
     try:
         spec = _load_spec()
         validate(spec)
@@ -88,37 +93,36 @@ def check_spec() -> bool:
             text=True,
         )
         if result.returncode != 0:
-            _fail("regeneracja modeli", result.stdout.strip() + result.stderr.strip())
+            details = (result.stdout + result.stderr).strip()
+            _fail("regeneracja modeli", details)
             return False
         if regenerated.read_bytes() != MODELS_PATH.read_bytes():
             _fail(
                 "modele zgodne ze specyfikacją",
                 "modele nie zgadzają się ze specyfikacją, uruchom scripts/generate_contracts.py",
             )
-            ok = False
-        else:
-            _ok(f"modele zgodne ze specyfikacją ({MODELS_PATH.relative_to(ROOT).as_posix()})")
-
-    if not PACKAGED_SPEC_PATH.is_file() or PACKAGED_SPEC_PATH.read_bytes() != SPEC_PATH.read_bytes():
-        _fail(
-            "kopia specyfikacji w pakiecie",
-            "kopia w odwolania2json_contracts/openapi.yaml różni się od packages/contracts/openapi.yaml",
-        )
-        ok = False
-    else:
-        _ok("kopia specyfikacji w pakiecie jest zgodna")
-    return ok
+            return False
+    _ok(f"modele zgodne ze specyfikacją ({MODELS_PATH.relative_to(ROOT).as_posix()})")
+    return True
 
 
 def check_app() -> bool:
     """Porównuje ``app.openapi()`` aplikacji FastAPI ze specyfikacją."""
     try:
-        from odwolania2json.api.app import app  # noqa: PLC0415 - import warunkowy
-    except ImportError:
+        exists = importlib.util.find_spec(APP_MODULE) is not None
+    except (ImportError, ModuleNotFoundError):
+        exists = False
+    except Exception as error:  # noqa: BLE001 - pakiet aplikacji istnieje, ale nie działa
+        _fail("import aplikacji", f"{type(error).__name__}: {error}")
+        return False
+    if not exists:
         print("pominięto: aplikacja niedostępna")
         return True
-    except Exception as error:  # noqa: BLE001 - błąd aplikacji to niezgodność, nie brak aplikacji
-        _fail("import aplikacji", str(error))
+
+    try:
+        from odwolania2json.api.app import app  # noqa: PLC0415 - import warunkowy
+    except Exception as error:  # noqa: BLE001 - aplikacja istnieje, ale nie działa
+        _fail("import aplikacji", f"{type(error).__name__}: {error}")
         return False
 
     spec = _load_spec()

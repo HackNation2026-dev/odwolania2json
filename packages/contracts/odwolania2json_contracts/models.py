@@ -170,7 +170,10 @@ class PelnomocnikPelnomocnictwa(BaseModel):
         str | None, Field(description='Imię i nazwisko pełnomocnika w mianowniku.')
     ]
     pesel: Annotated[
-        str | None, Field(description='PESEL pełnomocnika, jeśli jest podany.')
+        str | int | None,
+        Field(
+            description='PESEL pełnomocnika, jeśli jest podany (wzorzec organizatora podaje liczbę, nasza ekstrakcja tekst).'
+        ),
     ]
 
 
