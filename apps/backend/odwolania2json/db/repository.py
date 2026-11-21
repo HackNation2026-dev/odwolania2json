@@ -1,4 +1,7 @@
-"""Repozytorium dokumentów, przebiegów i ekstrakcji w PostgreSQL.
+"""Katalog dokumentów, przebiegów i ekstrakcji (odczyty panelu) w SQLite.
+
+Interfejs ``DataRepository`` z architektury §9 jest w ``data_repository.py``;
+tu żyje starszy, prostszy katalog ekstrakcji (``CatalogRepository``).
 
 Warstwa jest opcjonalna: bez ``DATABASE_URL`` nic nie powstaje i aplikacja
 działa dalej. Zapisy idą wyłącznie przez parametry nazwane (``text()`` z
@@ -9,21 +12,24 @@ from __future__ import annotations
 
 import json
 import re
-from typing import Any
+from collections.abc import Iterable
+from typing import Protocol, cast, runtime_checkable
 from uuid import UUID
 
-from sqlalchemy import create_engine, text
-from sqlalchemy.engine import Engine
+from pydantic import JsonValue, TypeAdapter
+from sqlalchemy import inspect, text
+from sqlalchemy.engine import Engine, RowMapping
+from sqlalchemy.sql.elements import TextClause
+
+from .engine import create_database_engine, normalize_url, write_transaction
 
 __all__ = [
+    "CatalogRepository",
     "DocumentRepository",
     "ReadOnlySqlError",
     "is_configured",
     "normalize_url",
 ]
-
-#: Schematy URL wymieniane na sterownik ``pg8000`` (czysty Python, bez kompilacji).
-_DRIVER_SCHEMES = ("postgresql://", "postgres://")
 
 #: Słowa, których nie wolno w zapytaniu wykonywanym w trybie tylko do odczytu.
 _FORBIDDEN_KEYWORDS = (
@@ -46,14 +52,6 @@ _FORBIDDEN_KEYWORDS = (
 
 class ReadOnlySqlError(RuntimeError):
     """Zapytanie SQL nie jest odczytem i zostało odrzucone."""
-
-
-def normalize_url(database_url: str) -> str:
-    """Zamienia schemat ``postgresql``/``postgres`` na sterownik ``pg8000``."""
-    for scheme in _DRIVER_SCHEMES:
-        if database_url.startswith(scheme):
-            return "postgresql+pg8000://" + database_url[len(scheme) :]
-    return database_url
 
 
 def is_configured(database_url: str | None) -> bool:
@@ -85,9 +83,7 @@ def _assert_read_only(sql: str) -> None:
         # Granica słowa: „do” w „documents” i „create” w „created_at”
         # to fragmenty nazw, a nie polecenia zmieniające dane.
         if re.search(rf"\b{keyword}\b", lowered):
-            raise ReadOnlySqlError(
-                f"Zapytanie zawiera niedozwolone słowo: {keyword.upper()}."
-            )
+            raise ReadOnlySqlError(f"Zapytanie zawiera niedozwolone słowo: {keyword.upper()}.")
 
 
 def _escape_like(value: str) -> str:
@@ -96,39 +92,117 @@ def _escape_like(value: str) -> str:
     Używana w zapytaniu z ``ESCAPE '\\'``, żeby nazwa pliku z ``_`` lub ``%``
     była traktowana dosłownie, a nie jako wzorzec.
     """
-    return (
-        value.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
-    )
+    return value.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
 
 
-def _json_value(value: Any) -> Any:
-    """Zamienia wartość na tekst JSON gotowy do rzutowania na kolumnę ``jsonb``."""
-    if value is None:
-        return None
+def _json_value(value: JsonValue) -> str:
+    """Waliduje granicę JSON przed zapisem do SQLite."""
+    adapter: TypeAdapter[JsonValue] = TypeAdapter(JsonValue)
     if isinstance(value, (str, bytes)):
-        text_value = value.decode("utf-8") if isinstance(value, bytes) else value
         try:
-            json.loads(text_value)
-        except (ValueError, TypeError):
-            return json.dumps(text_value, ensure_ascii=False)
-        return text_value
-    return json.dumps(value, ensure_ascii=False, sort_keys=True)
+            return adapter.dump_json(adapter.validate_json(value)).decode("utf-8")
+        except ValueError:
+            pass
+    validated = adapter.validate_python(value)
+    return json.dumps(validated, ensure_ascii=False, sort_keys=True)
 
 
-def _as_dicts(rows: Any) -> list[dict]:
+def _as_dicts(rows: Iterable[RowMapping]) -> list[dict[str, object]]:
     """Zamienia wiersze ``RowMapping`` na listę zwykłych słowników."""
-    return [dict(row) for row in rows]
+    result = [dict(row) for row in rows]
+    for row in result:
+        for key in ("payload", "evidence"):
+            value = row.get(key)
+            if isinstance(value, str):
+                row[key] = TypeAdapter(JsonValue).validate_json(value)
+        flag = row.get("has_text_layer")
+        if isinstance(flag, int):
+            # SQLite przechowuje bool jako 0/1; API zwraca prawdziwy bool.
+            row["has_text_layer"] = bool(flag)
+    return result
 
 
-class DocumentRepository:
-    """Dostęp do dokumentów, przebiegów i ekstrakcji zapisanych w PostgreSQL."""
+@runtime_checkable
+class CatalogRepository(Protocol):
+    """Granica katalogu ekstrakcji dla panelu i CLI."""
+
+    @property
+    def engine(self) -> Engine: ...
+
+    def dispose(self) -> None: ...
+
+    def upsert_document(
+        self,
+        document_id: str | UUID,
+        filename: str,
+        sha256: str,
+        size_bytes: int | None = None,
+        source_path: str | None = None,
+        page_count: int | None = None,
+        has_text_layer: bool | None = None,
+    ) -> None: ...
+
+    def upsert_run(
+        self,
+        run_id: str | UUID,
+        status: str,
+        documents_count: int = 0,
+        duration_ms: int | None = None,
+    ) -> None: ...
+
+    def upsert_extraction(
+        self,
+        extraction_id: str | UUID,
+        document_id: str | UUID,
+        run_id: str | UUID,
+        document_class: str,
+        schema_version: str,
+        payload: JsonValue,
+        evidence: JsonValue,
+    ) -> None: ...
+
+    def count_documents(self) -> int: ...
+
+    def count_extractions(self) -> int: ...
+
+    def count_runs(self) -> int: ...
+
+    def class_counts(self) -> list[dict[str, object]]: ...
+
+    def list_documents(
+        self,
+        limit: int = 50,
+        offset: int = 0,
+        name_filter: str | None = None,
+        document_class: str | None = None,
+    ) -> list[dict[str, object]]: ...
+
+    def get_document(self, document_id: str | UUID) -> dict[str, object] | None: ...
+
+    def list_extractions(self, limit: int = 50, offset: int = 0) -> list[dict[str, object]]: ...
+
+    def get_extraction(self, document_id: str | UUID) -> dict[str, object] | None: ...
+
+    def list_runs(self, limit: int = 50, offset: int = 0) -> list[dict[str, object]]: ...
+
+    def list_tables(self) -> list[str]: ...
+
+    def list_columns(self, table_name: str) -> list[dict[str, object]]: ...
+
+    def applied_migrations(self) -> list[dict[str, object]]: ...
+
+    def run_select(self, sql: str) -> list[dict[str, object]]: ...
+
+
+class DocumentRepository(CatalogRepository):
+    """Dostęp do dokumentów, przebiegów i ekstrakcji zapisanych w SQLite."""
 
     def __init__(self, database_url: str) -> None:
         """Tworzy repozytorium dla podanego adresu bazy."""
         if not is_configured(database_url):
             raise ValueError("Adres bazy jest pusty — repozytorium nie powstaje.")
         self.database_url = database_url
-        self._engine: Engine = create_engine(normalize_url(database_url), future=True)
+        self._engine: Engine = create_database_engine(database_url)
 
     @property
     def engine(self) -> Engine:
@@ -175,7 +249,7 @@ class DocumentRepository:
             "page_count": page_count,
             "has_text_layer": has_text_layer,
         }
-        with self._engine.begin() as connection:
+        with write_transaction(self._engine) as connection:
             connection.execute(statement, parameters)
 
     def upsert_run(
@@ -194,7 +268,7 @@ class DocumentRepository:
                 status = EXCLUDED.status,
                 documents_count = EXCLUDED.documents_count,
                 duration_ms = EXCLUDED.duration_ms,
-                finished_at = now()
+                finished_at = CURRENT_TIMESTAMP
             """
         )
         parameters = {
@@ -203,7 +277,7 @@ class DocumentRepository:
             "documents_count": documents_count,
             "duration_ms": duration_ms,
         }
-        with self._engine.begin() as connection:
+        with write_transaction(self._engine) as connection:
             connection.execute(statement, parameters)
 
     def upsert_extraction(
@@ -213,8 +287,8 @@ class DocumentRepository:
         run_id: str | UUID,
         document_class: str,
         schema_version: str,
-        payload: Any,
-        evidence: Any,
+        payload: JsonValue,
+        evidence: JsonValue,
     ) -> None:
         """Wstawia ekstrakcję albo aktualizuje istniejącą o tym samym identyfikatorze."""
         # „class” jest słowem zarezerwowanym w SQL, więc identyfikator jest cytowany.
@@ -223,7 +297,7 @@ class DocumentRepository:
             INSERT INTO extractions (id, document_id, run_id, "class", schema_version,
                                      payload, evidence)
             VALUES (:id, :document_id, :run_id, :document_class, :schema_version,
-                    CAST(:payload AS jsonb), CAST(:evidence AS jsonb))
+                    :payload, :evidence)
             ON CONFLICT (id) DO UPDATE SET
                 document_id = EXCLUDED.document_id,
                 run_id = EXCLUDED.run_id,
@@ -242,29 +316,29 @@ class DocumentRepository:
             "payload": _json_value(payload),
             "evidence": _json_value(evidence),
         }
-        with self._engine.begin() as connection:
+        with write_transaction(self._engine) as connection:
             connection.execute(statement, parameters)
 
     # -- odczyty ------------------------------------------------------------
 
-    def _scalar(self, statement: Any) -> Any:
+    def _scalar(self, statement: TextClause) -> object:
         """Wykonuje zapytanie zwracające pojedynczą wartość."""
         with self._engine.connect() as connection:
             return connection.execute(statement).scalar()
 
     def count_documents(self) -> int:
         """Liczba dokumentów w bazie."""
-        return int(self._scalar(text("SELECT count(*) FROM documents")) or 0)
+        return int(cast(int, self._scalar(text("SELECT count(*) FROM documents"))) or 0)
 
     def count_extractions(self) -> int:
         """Liczba ekstrakcji w bazie."""
-        return int(self._scalar(text("SELECT count(*) FROM extractions")) or 0)
+        return int(cast(int, self._scalar(text("SELECT count(*) FROM extractions"))) or 0)
 
     def count_runs(self) -> int:
         """Liczba przebiegów w bazie."""
-        return int(self._scalar(text("SELECT count(*) FROM runs")) or 0)
+        return int(cast(int, self._scalar(text("SELECT count(*) FROM runs"))) or 0)
 
-    def class_counts(self) -> list[dict]:
+    def class_counts(self) -> list[dict[str, object]]:
         """Rozkład ekstrakcji według klas dokumentów."""
         # „class” jest słowem zarezerwowanym w SQL, więc identyfikator jest cytowany.
         statement = text(
@@ -284,14 +358,14 @@ class DocumentRepository:
         offset: int = 0,
         name_filter: str | None = None,
         document_class: str | None = None,
-    ) -> list[dict]:
+    ) -> list[dict[str, object]]:
         """Lista dokumentów z opcjonalnym filtrem po nazwie i klasie."""
         # Warunki składane są ze stałych wariantów SQL — nie ma tu sklejania
         # danych wejściowych z tekstem zapytania.
         conditions: list[str] = []
-        parameters: dict[str, Any] = {"limit": limit, "offset": offset}
+        parameters: dict[str, object] = {"limit": limit, "offset": offset}
         if name_filter:
-            conditions.append("d.filename ILIKE :name_pattern ESCAPE :escape")
+            conditions.append("d.filename LIKE :name_pattern ESCAPE :escape")
             parameters["name_pattern"] = f"%{_escape_like(name_filter)}%"
             parameters["escape"] = "\\"
         if document_class:
@@ -308,14 +382,12 @@ class DocumentRepository:
             {where}
             ORDER BY d.created_at DESC, d.filename ASC
             LIMIT :limit OFFSET :offset
-            """
+            """  # noqa: S608 — warunki są stałe, dane przekazujemy parametrami.
         )
         with self._engine.connect() as connection:
-            return _as_dicts(
-                connection.execute(statement, parameters).mappings()
-            )
+            return _as_dicts(connection.execute(statement, parameters).mappings())
 
-    def get_document(self, document_id: str | UUID) -> dict | None:
+    def get_document(self, document_id: str | UUID) -> dict[str, object] | None:
         """Jeden dokument po identyfikatorze albo ``None``."""
         statement = text(
             """
@@ -327,9 +399,9 @@ class DocumentRepository:
         )
         with self._engine.connect() as connection:
             row = connection.execute(statement, {"id": str(document_id)}).mappings().first()
-        return dict(row) if row is not None else None
+        return _as_dicts([row])[0] if row is not None else None
 
-    def list_extractions(self, limit: int = 50, offset: int = 0) -> list[dict]:
+    def list_extractions(self, limit: int = 50, offset: int = 0) -> list[dict[str, object]]:
         """Lista ekstrakcji z podsumowaniem dokumentu."""
         statement = text(
             """
@@ -343,11 +415,9 @@ class DocumentRepository:
         )
         parameters = {"limit": limit, "offset": offset}
         with self._engine.connect() as connection:
-            return _as_dicts(
-                connection.execute(statement, parameters).mappings()
-            )
+            return _as_dicts(connection.execute(statement, parameters).mappings())
 
-    def get_extraction(self, document_id: str | UUID) -> dict | None:
+    def get_extraction(self, document_id: str | UUID) -> dict[str, object] | None:
         """Ekstrakcja dokumentu o podanym identyfikatorze albo ``None``."""
         statement = text(
             """
@@ -362,9 +432,9 @@ class DocumentRepository:
         parameters = {"document_id": str(document_id)}
         with self._engine.connect() as connection:
             row = connection.execute(statement, parameters).mappings().first()
-        return dict(row) if row is not None else None
+        return _as_dicts([row])[0] if row is not None else None
 
-    def list_runs(self, limit: int = 50, offset: int = 0) -> list[dict]:
+    def list_runs(self, limit: int = 50, offset: int = 0) -> list[dict[str, object]]:
         """Lista przebiegów przetwarzania."""
         statement = text(
             """
@@ -379,33 +449,25 @@ class DocumentRepository:
             return _as_dicts(connection.execute(statement, parameters).mappings())
 
     def list_tables(self) -> list[str]:
-        """Nazwy tabel widocznych w schemacie ``public``."""
-        statement = text(
-            """
-            SELECT table_name
-            FROM information_schema.tables
-            WHERE table_schema = 'public' AND table_type = 'BASE TABLE'
-            ORDER BY table_name ASC
-            """
-        )
-        with self._engine.connect() as connection:
-            return [row[0] for row in connection.execute(statement)]
+        """Nazwy tabel przez publiczne API inspekcji SQLAlchemy."""
+        return inspect(self._engine).get_table_names()
 
-    def list_columns(self, table_name: str) -> list[dict]:
-        """Kolumny wskazanej tabeli wraz z typami i dopuszczalnością ``NULL``."""
-        statement = text(
-            """
-            SELECT column_name, data_type, is_nullable, column_default
-            FROM information_schema.columns
-            WHERE table_schema = 'public' AND table_name = :table_name
-            ORDER BY ordinal_position ASC
-            """
-        )
-        parameters = {"table_name": table_name}
-        with self._engine.connect() as connection:
-            return _as_dicts(connection.execute(statement, parameters).mappings())
+    def list_columns(self, table_name: str) -> list[dict[str, object]]:
+        """Kolumny w formacie istniejącego interfejsu panelu."""
+        inspector = inspect(self._engine)
+        if not inspector.has_table(table_name):
+            return []
+        return [
+            {
+                "column_name": column["name"],
+                "data_type": str(column["type"]),
+                "is_nullable": "YES" if column["nullable"] else "NO",
+                "column_default": column["default"],
+            }
+            for column in inspector.get_columns(table_name)
+        ]
 
-    def applied_migrations(self) -> list[dict]:
+    def applied_migrations(self) -> list[dict[str, object]]:
         """Lista zastosowanych migracji wraz z czasem ich nałożenia."""
         statement = text(
             """
@@ -417,11 +479,14 @@ class DocumentRepository:
         with self._engine.connect() as connection:
             return _as_dicts(connection.execute(statement).mappings())
 
-    def run_select(self, sql: str) -> list[dict]:
+    def run_select(self, sql: str) -> list[dict[str, object]]:
         """Wykonuje zapytanie tylko do odczytu; mutacje są odrzucane."""
         _assert_read_only(sql)
         statement = text(sql)
         with self._engine.connect() as connection:
-            connection.execute(text("SET TRANSACTION READ ONLY"))
-            rows = connection.execute(statement).mappings().all()
+            connection.exec_driver_sql("PRAGMA query_only=ON")
+            try:
+                rows = connection.execute(statement).mappings().all()
+            finally:
+                connection.exec_driver_sql("PRAGMA query_only=OFF")
         return _as_dicts(rows)

@@ -253,31 +253,55 @@ git commit -m "feat: kontrakt OpenAPI, generowane modele pydantic i walidacja AP
 ```python
 def test_normalize_ted_from_pdf_format():
     assert normalize_ted("2026/S086-999073") == "999073-2026"
+
+
 def test_normalize_account_removes_spaces():
     assert normalize_account("PL54 7164 9675 2472 1141 8071 4012") == "54716496752472114180714012"
+
+
 def test_normalize_date_polish_words():
     assert normalize_date("27 czerwca 2026 roku") == "2026-06-27"
+
+
 def test_normalize_date_dotted():
     assert normalize_date("02.07.2026") == "2026-07-02"
+
+
 def test_normalize_pesel_keeps_eleven_digits():
     assert normalize_pesel("85071204278") == "85071204278"
+
+
 def test_normalize_pesel_keeps_value_without_valid_checksum():
     # etykieta rozstrzyga, suma kontrolna tylko porzadkuje kandydatow
     assert normalize_pesel("85071204279") == "85071204279"
+
+
 def test_normalize_nip_keeps_value_without_valid_checksum():
     # 9997518659 z materialow organizatora ma niesprawdzona sume -> ma wrocic, nie None
     assert normalize_nip("9997518659") == "9997518659"
+
+
 def test_normalize_regon_keeps_value_without_valid_checksum():
     assert normalize_regon("999184816") == "999184816"
+
+
 def test_normalize_account_keeps_value_without_valid_iban_sum():
     assert normalize_account("68438223049992295262834736") == "68438223049992295262834736"
+
+
 def test_checksum_valid_is_only_a_ranking_signal():
     # checksum_valid("nip", ...) rozroznia poprawne od blednych, ale nie odrzuca zlych
     assert checksum_valid("pesel", "85071204278") is True
+
+
 def test_normalize_nip_accepts_synthetic_prefix():
     assert normalize_nip("9999284065") == "9999284065"
+
+
 def test_normalize_amount_handles_spaces_and_cents():
     assert normalize_amount("1 000,50 zł") == 1000.5
+
+
 def test_find_value_uses_label_window():
     assert find_value("KRS: 9999405188\nNIP: 9999284065", ["KRS"]) == "9999405188"
 ```
@@ -381,10 +405,16 @@ git commit -m "feat: odczyt tekstu z PDF i interfejs OCR"
 ```python
 def test_classify_odwolanie():
     assert classify("Prezes Krajowej Izby Odwoławczej ... Odwołujący: ...") == "odwolanie"
+
+
 def test_classify_pelnomocnictwo_with_spaced_header():
     assert classify("P E Ł N O M O C N I C T W O ...") == "pelnomocnictwo"
+
+
 def test_classify_przelew():
     assert classify("POTWIERDZENIE WYKONANIA PRZELEWU ...") == "przelew"
+
+
 def test_classify_unknown_document():
     assert classify("Broszura JPK ... VAT ...") == "nieznany"
 ```

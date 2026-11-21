@@ -321,6 +321,8 @@ Zakres zasobów v1: `/health`, `/system`, `/batches` (utworzenie i stan), `/jobs
 | `brak / nie_dotyczy / nieczytelne / sprzeczne / nieprzetworzone` (powody braków) | `missing / not_applicable / unreadable / conflicting / unprocessed` |
 | `eksport_bledu=brak_pliku\|pusty_json` | `error_export=no_file\|empty_json` |
 
+Uzupełnienie §9–§10 (0.6.1): pierwszeństwo ma [ADR-004](../07-decyzje/ADR-004-sqlalchemy-sqlite-bez-postgres.md). Jedyną obecną bazą jest SQLite przez SQLAlchemy 2.x za DataRepository. Wariant PostgreSQL w powyższych zapisach i diagramie jest odłożony; powrót wymaga decyzji i drugiej implementacji repozytorium przez SQLAlchemy.
+
 ## 11. Pomiar jako wymaganie wejścia
 
 - Loader: wszystkie 60 spraw, bazowa migawka plus poprawki organizatora, mapowanie `potwierdzenie_przelewu.pdf` ↔ `przelew.json`, nazwa wyniku według wejścia. Referencje służą tylko pomiarowi, nigdy ekstrakcji. Oryginały pozostają nienaruszone.

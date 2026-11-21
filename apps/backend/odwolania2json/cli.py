@@ -8,6 +8,7 @@ psuje startu kontenera.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import sys
 
 from .config import Settings
@@ -43,10 +44,8 @@ def _use_utf8_output() -> None:
         reconfigure = getattr(stream, "reconfigure", None)
         if reconfigure is None:
             continue
-        try:
+        with contextlib.suppress(ValueError, OSError):
             reconfigure(encoding="utf-8", errors="replace")
-        except (ValueError, OSError):
-            pass
 
 
 def _run_migrate(arguments: argparse.Namespace) -> int:

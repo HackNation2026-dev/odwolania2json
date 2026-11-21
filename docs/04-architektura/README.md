@@ -6,6 +6,8 @@ status: dokumentacja przygotowawcza
 
 # Architektura UZP — propozycja
 
+Aktualizacja 0.6.1: [ADR-004](../07-decyzje/ADR-004-sqlalchemy-sqlite-bez-postgres.md) ma pierwszeństwo w sprawie bazy: SQLAlchemy 2.x + SQLite za DataRepository. PostgreSQL jest odłożony; wcześniejsze opisy zachowują znaczenie historyczne.
+
 ## Uzupełnienie 0.6.0 — obowiązujące ustalenia
 
 Pierwszeństwo mają [ADR-002](../07-decyzje/ADR-002-decyzje-po-recenzji.md) i [architektura wewnętrzna ELT](architektura-wewnetrzna.md). Jeden pakiet Python 3.13 instalowany przez pip; bez Rusta i Dockera u jury (Docker tylko deweloperski). GUI jest obowiązkowe z decyzji zespołu, React + TypeScript jako statyczne zasoby pakietu pip, bez serwera Node. CLI i GUI używają wspólnego silnika. To projekt, nie gotowa implementacja.

@@ -138,3 +138,5 @@ Gałąź `feat/python-fastapi-docker` (od v0.4.0) zawiera szkielet backendu, kon
 - **Panel do przeglądania bazy danych — mile widziany jako osobne narzędzie.** Nie zastępuje GUI: GUI (P0: PDF obok danych, dowody, pobranie JSON) jest czymś innym.
 - **Docker: tak**, ale równolegle utrzymujemy i testujemy instalację **przez pip** (wymóg na teście).
 - **Python 3.13+.**
+
+Aktualizacja 0.6.1: w sprawie bazy pierwszeństwo ma [ADR-004](ADR-004-sqlalchemy-sqlite-bez-postgres.md) — SQLAlchemy 2.x + SQLite za `DataRepository`; zapisy o PostgreSQL powyżej są odłożone i zachowane jako historia.
