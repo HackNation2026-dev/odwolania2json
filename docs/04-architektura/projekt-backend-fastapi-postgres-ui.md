@@ -150,9 +150,9 @@ Wyszukiwanie etykiet (`KRS:`, `NIP:`, `REGON:`, `Numer BZP`, `TED`, `Tytuł`, `K
 
 | Typ | Normalizator | Uwaga z danych |
 |---|---|---|
-| NIP, REGON, KRS | cyfry + kontrola sumy (NIP, REGON), tolerancja prefiksów `PL` | prefiks `999…` z danych syntetycznych ma poprawną sumę kontrolną |
-| PESEL | 11 cyfr + kontrola sumy | w referencjach `null` w 97/98 przypadków |
-| Numery rachunków | usunięcie spacji i prefiksu `PL`, potem 26 cyfr | w PDF występują grupowane spacjami (`PL54 7164 9675 …`) |
+| NIP, REGON, KRS | dokładna długość (10 / 9 lub 14 / 10 cyfr), tolerancja prefiksów `PL`; **suma kontrolna tylko porządkuje kandydatów, nie odrzuca** | syntetyczne dane organizatora nie przechodzą sum: 33/129 NIP i 30/123 REGON poprawne |
+| PESEL | 11 cyfr; suma kontrolna jako sygnał rankingowy | jedyny PESEL w referencjach (`85071204278`) jest poprawny |
+| Numery rachunków | usunięcie spacji i prefiksu `PL`, potem 26 cyfr | w PDF występują grupowane spacjami (`PL54 7164 9675 …`); 2/120 kont przechodzi mod-97 IBAN, więc nie odrzucamy |
 | Daty | `DD.MM.RRRR`, `R-MM-DD`, daty słowne („27 czerwca 2026 roku”), `dnia`, `r.` | nagłówek bywa w siedmiu różnych miejscach strony 1 |
 | Kwoty | `200,00 zł`, `1 000,50` → liczba | — |
 | Numery TED | `YYYY/S###-NNNNNN` → `NNNNNN-YYYY` | 47/60 spraw używa innego formatu niż referencja |

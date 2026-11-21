@@ -233,17 +233,20 @@ git commit -m "feat: kontrakt OpenAPI, generowane modele pydantic i walidacja AP
   - `fold(text: str) -> str` — usuwa diakrytyki, lowercase, scala spacje
   - `collapse_spaces(text: str) -> str`
   - `strip_quotes(text: str) -> str` — usuwa „ ” " ' '
-  - `normalize_nip(text: str) -> str | None` — 10 cyfr, suma kontrolna
-  - `normalize_regon(text: str) -> str | None` — 9 cyfr, suma kontrolna
+  - `normalize_nip(text: str) -> str | None` — dokładnie 10 cyfr; **nie odrzuca z powodu sumy kontrolnej**
+  - `normalize_regon(text: str) -> str | None` — 9 lub 14 cyfr; **nie odrzuca z powodu sumy kontrolnej**
   - `normalize_krs(text: str) -> str | None` — 10 cyfr, bez sumy kontrolnej
-  - `normalize_pesel(text: str) -> str | None` — 11 cyfr, suma kontrolna
+  - `normalize_pesel(text: str) -> str | None` — 11 cyfr
   - `normalize_account(text: str) -> str | None` — 26 cyfr po usunięciu spacji i prefiksu `PL`
   - `normalize_date(text: str) -> str | None` — ISO `YYYY-MM-DD`
   - `normalize_amount(text: str) -> float | None`
   - `normalize_ted(text: str) -> str | None` — `NNNNNN-YYYY`
   - `find_postepowanie_number(text: str) -> str | None`
   - `find_value(text: str, labels: Sequence[str], window: int = 120) -> str | None` — pierwsza etykieta, potem wartość w oknie znaków
+  - `checksum_valid(kind: str, value: str) -> bool` — `kind` ∈ {`nip`, `regon`, `pesel`, `iban`}; **sygnał rankingowy, nigdy filtr twardy**
   - `odwolania2json.domain.base.Ekstrakcja` — dataclass `model: pydantic.BaseModel`, `evidence: dict[str, tuple[int, int]]` (ścieżka pola → numer strony i pozycja znaku); wspólny typ zwracany przez ekstraktory klas
+
+**Zasada sum kontrolnych (zmiana po analizie materiałów):** syntetyczne dane organizatora **nie przechodzą** standardowych sum kontrolnych — spośród 129 unikalnych NIP poprawnych wg sumy jest 33 (25%), spośród 123 REGON 30 (24%), a 120 kont 2 (mod-97 IBAN). Twarde odrzucanie po sumie zniszczyłoby te pola. Dlatego: **etykieta w dokumencie rozstrzyga, a suma kontrolna tylko porządkuje kandydatów**. `normalize_nip("9997518659")` ma zwrócić tę wartość, a nie `None`.
 
 - [ ] **Step 1: Napisz testy jednostkowe**
 
@@ -256,8 +259,21 @@ def test_normalize_date_polish_words():
     assert normalize_date("27 czerwca 2026 roku") == "2026-06-27"
 def test_normalize_date_dotted():
     assert normalize_date("02.07.2026") == "2026-07-02"
-def test_normalize_pesel_rejects_invalid_checksum():
-    assert normalize_pesel("85071204279") is None
+def test_normalize_pesel_keeps_eleven_digits():
+    assert normalize_pesel("85071204278") == "85071204278"
+def test_normalize_pesel_keeps_value_without_valid_checksum():
+    # etykieta rozstrzyga, suma kontrolna tylko porzadkuje kandydatow
+    assert normalize_pesel("85071204279") == "85071204279"
+def test_normalize_nip_keeps_value_without_valid_checksum():
+    # 9997518659 z materialow organizatora ma niesprawdzona sume -> ma wrocic, nie None
+    assert normalize_nip("9997518659") == "9997518659"
+def test_normalize_regon_keeps_value_without_valid_checksum():
+    assert normalize_regon("999184816") == "999184816"
+def test_normalize_account_keeps_value_without_valid_iban_sum():
+    assert normalize_account("68438223049992295262834736") == "68438223049992295262834736"
+def test_checksum_valid_is_only_a_ranking_signal():
+    # checksum_valid("nip", ...) rozroznia poprawne od blednych, ale nie odrzuca zlych
+    assert checksum_valid("pesel", "85071204278") is True
 def test_normalize_nip_accepts_synthetic_prefix():
     assert normalize_nip("9999284065") == "9999284065"
 def test_normalize_amount_handles_spaces_and_cents():
@@ -274,7 +290,7 @@ Expected: FAIL — brak modułu `normalize`.
 
 - [ ] **Step 3: Zaimplementuj normalizatory**
 
-Sygnatury kontrolne: NIP — suma wag `[6,5,7,2,3,4,5,6,7]` modulo 11, reszta 10 znaczy błędne; REGON 9-cyfr — wagi `[8,9,2,3,4,5,6,7]` modulo 11, reszta 10 znaczy błędne; PESEL — wagi `[1,3,7,9,1,3,7,9,1,3]` modulo 10. Daty słowne: słownik miesięcy po polsku (styczeń…grudzień, także formy dopełniacza: „czerwca”, „marca”, „kwietnia”, „maja”, „czerwca”, „lipca”, „sierpnia”, „września”, „października”, „listopada”, „grudnia”). TED: dopasuj `YYYY/S###-NNNNNN` albo `NNNNNN-YYYY` i zwróć `NNNNNN-YYYY`. Kwota: usuń spacje i „zł”, zamień przecinek na kropkę, zwróć `float`.
+Sygnatury kontrolne: NIP — 10 cyfr, suma wag `[6,5,7,2,3,4,5,6,7]` modulo 11 (wynik ma tyle samo cyfr, co suma kontrolna wskazuje; suma `10` oznacza brak poprawnego NIP); REGON 9-cyfr — wagi `[8,9,2,3,4,5,6,7]` modulo 11; PESEL — wagi `[1,3,7,9,1,3,7,9,1,3]` modulo 10; IBAN — mod 97. **Te sumy są sygnałem rankingowym, nie filtrem**: `normalize_*` zwraca wartość, jeśli ma właściwą długość, a `checksum_valid(kind, value)` mówi, czy suma się zgadza. Daty słowne: słownik miesięcy po polsku (styczeń…grudzień, także formy dopełniacza: „czerwca", „marca", „kwietnia", „maja", „lipca", „sierpnia", „września", „października", „listopada", „grudnia"). TED: dopasuj `YYYY/S###-NNNNNN` albo `NNNNNN-YYYY` i zwróć `NNNNNN-YYYY`. Kwota: usuń spacje i „zł", zamień przecinek na kropkę, zwróć `float`.
 
 - [ ] **Step 4: Uruchom testy, mają przejść**
 
