@@ -198,7 +198,7 @@ Kody grupy `wykonanie` wymagają testów wstrzykiwania awarii: wyłączony i wad
 
 ## 7. Katalog roboczy i trwałość
 
-Projektowana implementacja v1 `FileDataRepository` przechowuje zadania, dokumenty, artefakty i wyniki w katalogu roboczym za interfejsem z §9. Identyfikatory techniczne są niezależne od nazw wejścia. Opcjonalny indeks SQLite z biblioteki standardowej nie wymaga serwera bazy. Układ:
+Projektowana implementacja v1 `SqliteDataRepository` (wersja demo) trzyma metadane, zadania i stany w SQLite (biblioteka standardowa, bez serwera bazy), a dokumenty, artefakty i wyniki w katalogu roboczym, za interfejsem z §9. Identyfikatory techniczne są niezależne od nazw wejścia. Układ katalogu:
 
 ```text
 work/<batch_id>/
@@ -348,7 +348,7 @@ flowchart TD
     OCR --> L[L: trwałe raw i manifest]
     O -->|nie| L
     L <--> REPO[DataRepository]
-    REPO --> FILE[FileDataRepository: dysk; opcjonalny indeks SQLite]
+    REPO --> FILE[SqliteDataRepository: SQLite + katalog roboczy, demo]
     REPO -.-> PG[PostgresDataRepository: skalowane wdrożenie]
     L --> R[T1: jedna klasa PDF; segmentacja tylko diagnozuje]
     R -->|foreign| J0[Oceniany JSON: pusty obiekt]
