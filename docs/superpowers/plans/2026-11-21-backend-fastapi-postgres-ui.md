@@ -131,7 +131,7 @@ git commit -m "feat: szkielet pakietów odwolania2json i odwolania2json_contract
 ### Task 2: Kontrakt OpenAPI i generowane modele pydantic
 
 **Files:**
-- Create: `packages/contracts/openapi.yaml`
+- Create: `packages/contracts/odwolania2json_contracts/openapi.yaml` (**jedyna** kopia kontraktu — wewnątrz pakietu, żeby `package-data` wysyłał ją do koła bez synchronizacji)
 - Create: `scripts/generate_contracts.py`, `scripts/validate_api.py`
 - Create: `packages/contracts/odwolania2json_contracts/models.py` (generowany, w repo)
 - Create: `packages/contracts/odwolania2json_contracts/powody.py`
@@ -156,6 +156,10 @@ def test_models_keep_organizer_key_order():
     # lista kluczy model_dump() == kolejność kluczy z oczekiwane-json/odwolanie.json
 def test_empty_result_serializes_as_empty_object():
     # PustyWynik().model_dump() == {}
+def test_key_order_comparison_is_order_sensitive():
+    # odwrócenie kolejności kluczy w kształcie musi dać niezgodność
+def test_organizer_pattern_validates_against_models():
+    # wzorzec organizatora (pesel jako liczba) przechodzi walidacje modelu
 ```
 `tests/contract/test_powody.py`:
 ```python
@@ -171,7 +175,7 @@ Expected: FAIL — brak `openapi.yaml` i `models.py`.
 
 - [ ] **Step 3: Napisz `openapi.yaml`**
 
-Minimalny OpenAPI 3.1: `info`, `paths` (tymcczasowo tylko `/healthz` → do rozbudowy w Task 11), `components.schemas` z trzema klasami i `PustyWynik`. Klucze w kolejności organizatora; `przez-pelnomocnika` jako `0|1`; `czynnosc_opis` jako `enum` z 12 opisami (diakrytyki jak w `main-7590db8`); `typ` jako enum `osoba_prawna|osoba_fizyczna`; `pesel` jako `string|null`; `kwota` jako `number`; daty jako `string` z formatem `date` lub `null`.
+Minimalny OpenAPI 3.1: `info`, `paths` (tymcczasowo tylko `/healthz` → do rozbudowy w Task 11), `components.schemas` z trzema klasami i `PustyWynik`. Klucze w kolejności organizatora; `przez-pelnomocnika` jako `0|1`; `czynnosc_opis` jako `enum` z 12 opisami (diakrytyki jak w `main-7590db8`); `typ` jako enum `osoba_prawna|osoba_fizyczna`; `pesel` jako `["string","integer","null"]` — wzorzec organizatora podaje liczbę, a 180 referencji używa tekstu albo `null`, więc kontrakt musi przyjąć oba; nasza ekstrakcja zawsze zapisuje tekst; `kwota` jako `number`; daty jako `string` z formatem `date` lub `null`.
 
 - [ ] **Step 4: Napisz `scripts/generate_contracts.py`**
 
@@ -198,11 +202,11 @@ Uruchamia `datamodel-code-generator` z `--input packages/contracts/openapi.yaml 
 
 - [ ] **Step 6: Napisz `scripts/validate_api.py`**
 
-Jeden skrypt walidujący kontrakt, używany później przez CI i hook pre-commit. CLI: `python scripts/validate_api.py [--stage spec|app|all]`, kod wyjścia 0 przy sukcesie, 1 przy niezgodności.
+Jeden skrypt walidujący kontrakt, używany później przez CI i hook pre-commit. CLI: `python scripts/validate_api.py [--stage spec|app|all]`, kod wyjścia 0 przy sukcesie, 1 przy niezgodności. **Skrypt nigdy nie zapisuje do repozytorium** — wyłącznie czyta i porównuje.
 
-- `--stage spec` (domyślnie): waliduje `openapi.yaml` przez `openapi-spec-validator`; regeneruje modele do katalogu tymczasowego przez `scripts/generate_contracts.py` i porównuje z plikiem `packages/contracts/odwolania2json_contracts/models.py` — rozjazd kończy się błędem „modele nie zgadzają się ze specyfikacją, uruchom scripts/generate_contracts.py".
-- `--stage app`: importuje aplikację FastAPI (`odwolania2json.api.app`) i porównuje jej `app.openapi()` ze specyfikacją (ścieżki i metody, `operationId`, schematy składowe, odwołania do schematów w treściach). Jeśli aplikacja jeszcze nie istnieje, skrypt wypisuje „pominięto: aplikacja niedostępna" i kończy się kodem 0 (etap `app` włącza się w Task 11).
-- Każdy krok wypisuje `OK <opis>` albo `FAIL <opis> <powód>`.
+- `--stage spec` (domyślnie): waliduje `packages/contracts/odwolania2json_contracts/openapi.yaml` przez `openapi-spec-validator`; regeneruje modele do katalogu tymczasowego przez `scripts/generate_contracts.py` i porównuje z plikiem `models.py` w repo — rozjazd kończy się błędem „modele nie zgadzają się ze specyfikacją, uruchom scripts/generate_contracts.py".
+- `--stage app`: sprawdza przez `importlib.util.find_spec`, czy moduł aplikacji istnieje — jeśli nie, wypisuje „pominięto: aplikacja niedostępna" i kończy etap bez błędu (etap `app` włącza się w Task 11); jeśli moduł istnieje, ale jego import się nie powiedzie, to **FAIL**, nie pominięcie. Następnie importuje aplikację (`odwolania2json.api.app`) i porównuje jej `app.openapi()` ze specyfikacją (ścieżki i metody, `operationId`, schematy składowe, odwołania do schematów w treściach).
+- Każdy krok wypisuje `OK <opis>` albo `FAIL <opis> <powód>` na standardowym wyjściu (stdout); błędy wyjątków również na stdout, żeby raport dał się wkleić do logu CI.
 
 - [ ] **Step 7: Uruchom testy, mają przejść**
 
@@ -551,7 +555,7 @@ git commit -m "feat: ekstrakcja odwolania i detektor zaskarzanej czynnosci"
 
 **Interfaces:**
 - Produces:
-  - `odwolania2json.domain.serialize.dump_json(model) -> str` — `model_dump(by_alias=True)`, kolejność kluczy z modelu, `ensure_ascii=False`, `indent=2`
+  - `odwolania2json.domain.serialize.dump_json(model) -> str` — `model_dump(by_alias=True)`, kolejność kluczy z modelu, `ensure_ascii=False`, `indent=2`; **jedyne dozwolone miejsce serializacji do JSON** (modele generowane mają pola z sufiksem `_1` przy kolizji nazwy, więc `model_dump()` bez aliasu daje `przez_pelnomocnika` zamiast `przez-pelnomocnika`)
   - `odwolania2json.domain.serialize.empty_json() -> str` — `"{}"`
   - `odwolania2json.pipeline.ProcessingResult` — dataclass `filename: str`, `sha256: str`, `document_class: str`, `payload: dict`, `evidence: dict`, `page_count: int`, `has_text_layer: bool`, `duration_ms: int`
   - `odwolania2json.pipeline.process_document(data: bytes, filename: str, ocr: OcrEngine | None = None) -> ProcessingResult`
@@ -567,6 +571,8 @@ def test_dump_json_keeps_alias_and_order():
     # dump_json(model) ma klucz "przez-pelnomocnika" i kolejność jak w wzorcu
 def test_dump_json_uses_null_not_missing_key():
     # brak wartosci -> "numer_ted": null w JSON-ie
+def test_dump_json_is_the_only_alias_aware_path():
+    # dump_json(model) zawiera klucze organizatora, a model_dump() bez aliasu zawiera "przez_pelnomocnika"
 def test_empty_json_is_empty_object():
     assert empty_json() == "{}"
 ```
