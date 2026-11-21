@@ -127,3 +127,14 @@ Użytkownik potwierdza: używany MiniMax jest hostowany w Europie. Punkt 8 jest 
 ## Uzupełnienie: trwałość danych (użytkownik, 2026-11-21)
 
 1. **Wersja demo (u jury, tylko pip): SQLite** (biblioteka standardowa Pythona) + katalog roboczy na dysku dla plików i artefaktów. **PostgreSQL przy skalowanym wdrożeniu**, za tym samym interfejsem repozytorium danych (`DataRepository`). Decyzja zamknięta.
+
+## Uzupełnienie: uzgodnienie z gałęzią `feat/python-fastapi-docker` (użytkownik, 2026-11-21)
+
+Gałąź `feat/python-fastapi-docker` (od v0.4.0) zawiera szkielet backendu, kontrakt OpenAPI, warstwę PostgreSQL, normalizatory i plany. Decyzje użytkownika rozstrzygające rozbieżności:
+
+- **Obowiązuje architektura v0.6.1** (`docs/04-architektura/architektura-wewnetrzna.md`), także dla kontraktu OpenAPI.
+- **SQLite zostaje** w wersji demo; PostgreSQL przy skalowanym wdrożeniu.
+- **PESEL to tekst** (nie liczba).
+- **Panel do przeglądania bazy danych — mile widziany jako osobne narzędzie.** Nie zastępuje GUI: GUI (P0: PDF obok danych, dowody, pobranie JSON) jest czymś innym.
+- **Docker: tak**, ale równolegle utrzymujemy i testujemy instalację **przez pip** (wymóg na teście).
+- **Python 3.13+.**
