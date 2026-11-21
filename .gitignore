@@ -14,3 +14,5 @@ dist/
 /output/
 *.part
 .DS_Store
+
+.ci/
