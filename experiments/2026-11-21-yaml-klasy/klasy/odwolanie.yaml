@@ -1,0 +1,62 @@
+# Eksperyment 2026-11-21: proponowany format YAML klasy dokumentu (v0).
+# Rozszerzenia v0 sprawdzane w eksperymencie: `klucz` (nazwa niebędąca identyfikatorem),
+# `pochodne` (pole wyliczane z innych pól nazwaną funkcją z rejestru), `slowniki`.
+klasa: odwolanie
+wersja: 1
+opis: Odwołanie do Krajowej Izby Odwoławczej.
+klasyfikacja:
+  sygnaly: ["odwołanie", "Krajowa Izba Odwoławcza", "zarzut", "Zamawiający", "Odwołujący"]
+  min_trafien: 3
+slowniki:
+  czynnosc_powod: ../../../docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/oczekiwane-json/czynnosc_powod_id_dict.md
+pola:
+  OdwolanieKIO:
+    typ: obiekt
+    pola:
+      data: {typ: data, nullable: true, opis: "Data z nagłówka pierwszej strony.", zakres: pierwsza_strona, metoda: regula}
+      czynnosc_dzien: {typ: data, nullable: true, opis: "Data czynności dla PIERWSZEGO zarzutu.", metoda: llm}
+      czynnosc_powod_id: {typ: liczba_calkowita, min: 1, max: 12, opis: "Kod powodu 1-12 WYŁĄCZNIE z pierwszego zarzutu.", metoda: llm}
+      czynnosc_opis: {typ: tekst, pochodne: {funkcja: ze_slownika, slownik: czynnosc_powod, z: czynnosc_powod_id}}
+      miejscowosc: {typ: tekst, nullable: true, opis: "Miejscowość z nagłówka pierwszej strony.", zakres: pierwsza_strona, metoda: regula}
+  Odwolujacy:
+    typ: lista
+    dopasowanie_listy: po_tresci
+    element:
+      typ: obiekt
+      pola:
+        krs: {typ: tekst, nullable: true, format: '^\d{10}$', normalizator: krs, metoda: regula, rola: odwolujacy}
+        nazwa: {typ: tekst, opis: "Pełna nazwa Odwołującego lub lidera konsorcjum.", dopasowanie: fuzzy80, metoda: llm}
+        nip: {typ: tekst, nullable: true, format: '^\d{10}$', normalizator: nip, metoda: regula, rola: odwolujacy}
+        regon: {typ: tekst, nullable: true, format: '^\d{9}(\d{5})?$', normalizator: regon, metoda: regula, rola: odwolujacy}
+        przez_pelnomocnika:
+          klucz: przez-pelnomocnika
+          typ: liczba_calkowita
+          pochodne: {funkcja: obecnosc, z: pelnomocnik.imie_nazwisko}
+        pelnomocnik:
+          typ: obiekt
+          pola:
+            imie_nazwisko: {typ: tekst, nullable: true, metoda: llm}
+            nazwa: {typ: tekst, nullable: true, opis: "Podmiot zatrudniający pełnomocnika.", dopasowanie: fuzzy80, metoda: llm}
+            mail: {typ: tekst, nullable: true, format: '^[^@\s]+@[^@\s]+$', metoda: regula}
+  Zamawiajacy:
+    typ: lista
+    dopasowanie_listy: po_tresci
+    element:
+      typ: obiekt
+      pola:
+        krs: {typ: tekst, nullable: true, format: '^\d{10}$', normalizator: krs, metoda: regula, rola: zamawiajacy}
+        nazwa: {typ: tekst, dopasowanie: fuzzy80, metoda: llm}
+        nip: {typ: tekst, nullable: true, format: '^\d{10}$', normalizator: nip, metoda: regula, rola: zamawiajacy}
+        regon: {typ: tekst, nullable: true, format: '^\d{9}(\d{5})?$', normalizator: regon, metoda: regula, rola: zamawiajacy}
+        prowadzacy_postepowanie:
+          typ: liczba_calkowita
+          nullable: true
+          metoda: llm
+          pochodne: {funkcja: null_gdy_lista_jednoelementowa}
+  ZamowieniePubliczne:
+    typ: obiekt
+    pola:
+      numer_bzp: {typ: tekst, nullable: true, format: '^\d{4}/BZP\d{8}(/\d{2})?$', normalizator: bzp, metoda: regula}
+      numer_postepowania: {typ: tekst, nullable: true, metoda: llm}
+      numer_ted: {typ: tekst, nullable: true, format: '^\d{6}-\d{4}$', normalizator: ted, metoda: regula}
+      tytul: {typ: tekst, nullable: true, dopasowanie: fuzzy80, metoda: llm}
