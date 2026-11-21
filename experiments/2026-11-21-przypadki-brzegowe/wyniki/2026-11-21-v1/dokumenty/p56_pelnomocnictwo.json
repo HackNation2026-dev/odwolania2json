@@ -1,0 +1,31 @@
+{
+ "id": "p56_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_56/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_56",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 85646,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p56_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1372,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Szczecin, 24 września 2026 r. PEŁNOMOCNICTWO Gorlan Pojazdy sp. z o.o., ul. Kolejowa 132, 70-903 Szczecin, KRS 9998339046, NIP 9994387323, REGON 999829190 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane poniżej, udziela pełnomocnictwa: adw. Iwona Zawadzka (nr wpisu na listę: PO-4278), adw. Kamil Olszewski (nr wpisu na listę: KR-7442). Pełnomocnictwo udzielone zostaje do reprezentowania "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

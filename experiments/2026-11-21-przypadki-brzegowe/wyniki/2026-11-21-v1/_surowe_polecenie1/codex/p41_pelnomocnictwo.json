@@ -1,0 +1,28 @@
+{
+ "id": "p41_pelnomocnictwo",
+ "model": "codex",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument zatytułowany „PEŁNOMOCNICTWO” upoważnia adwokata do reprezentowania wykonawców w postępowaniu odwoławczym przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Toruń, 6 sierpnia 2026 r.\nPEŁNOMOCNICTWO\nWykonawcy wspólnie ubiegający się o udzielenie zamówienia (Konsorcjum): 1) Torvex Budownictwo sp. z o.o., ul. Przemysłowa 8, 87-100 Toruń, KRS 9995540127, NIP 9992284611,",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "6 sierpnia 2026 r.\\nPEŁNOMOCNICTWO\\nWykonawcy wspólnie ubiegający się o udzielenie zamówienia (Konsorcjum): 1) Torvex Budownictwo sp. z o.o., ul. Przemysłowa 8, 87-100 Toruń, KRS 9995540127, NIP 9992284611,\",\"problemy\":[]}],\"problemy_dokumentu\":[]}\nhook: Stop\nhook: Stop Completed\ntokens used\n28 027\n"
+ },
+ "czas_s": 9.9
+}

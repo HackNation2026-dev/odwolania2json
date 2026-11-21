@@ -1,0 +1,44 @@
+{
+ "id": "p21_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_21/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_21",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 83011,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p21_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2034,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Kraków, dnia 4 kwietnia 2026 roku Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Corvella Rozwiązania S.A. ul. Gołębia 9, 30-682 Kraków KRS: 9991500432, NIP: 9990271196, REGON: 999066287 reprezentowana przez: adw. Marek Sikorski adres do korespondencji: Kancelaria Prawna i Partnerzy, ul. Jarzbowa 59, 80-781 Gdańsk tel. 000 000 000, biuro@kontakt.example Zamawiający: J"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p21_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 364,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "c) wnoszę o uwzględnienie odwołania w zakresie, w jakim zarzuty odwołania są zasadne; .............................. Marek Sikorski, adw. Do odwołania dołączono potwierdzenie wniesienia wadium w kwocie zgodnej z dokumentacją postępowania. Oświadczam, że odwołanie wnoszone jest w terminie przewidzianym przez przepisy ustawy, a przedmiot odwołania nie został wcześniej rozstrzygnięty przez Krajową Iz"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

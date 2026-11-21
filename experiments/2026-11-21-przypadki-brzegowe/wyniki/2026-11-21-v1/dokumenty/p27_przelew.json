@@ -1,0 +1,31 @@
+{
+ "id": "p27_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_27/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_27",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 80014,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p27_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 613,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "CREDIT MERIDIAN Potwierdzenie przelewu krajowego Dane nadawcy Nazwa: Ilyrion Sieci sp. j. Adres: ul. Cedrowa 90, 50-596 Wrocław Rachunek nadawcy: 97432190332550070532957559 Odbiorca Nazwa: Kadmos Systemy sp. k. Adres: ul. Liliowa 96, 85-234 Bydgoszcz Na rachunek: 14112745698863024356935073 Szczegóły operacji Kwota przelewu: 34,00 PLN Data wykonania: 28-10-2026 Nr ref.: CEN2611122913642 Tytuł przel"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

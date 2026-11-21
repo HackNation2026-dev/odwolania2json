@@ -1,0 +1,65 @@
+{
+ "id": "n_minister_sprawiedliwosci_pismo_rdssp_z_1",
+ "model": "codex",
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Pismo Rzecznika Dyscyplinarnego Sędziów Sądów Powszechnych do Ministra Sprawiedliwości dotyczące skuteczności podpisu elektronicznego, niezwiązane z odwołaniem do KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "RZECZNIK DYSCYPLINARNY\nSĘDZIÓW SĄDÓW POWSZECHNYCH\nWarszawa, 11 marca 2024 r.\ndot. DKO-I.565.84.2024\nDKO-I.565.85.2024\nDKO-I.565.86.2024\nRDSP.0212.4.2024\nPan Adam Bodnar\nMinister Sprawiedliwości",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Widoczny skan papierowej strony; obecności ukrytej warstwy OCR nie można ustalić z obrazu.",
+      "waga": "niska"
+     },
+     {
+      "kod": "przekrzywienie",
+      "opis": "Wiersze tekstu i dolna linia stopki lekko unoszą się w prawo.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "realizujących zadania publiczne (t.j. Dz.U. z 2023 r. poz. 57 ze zm.) oraz przepisy Kodeksu\npostępowania karnego i innych ustaw procesowych, uznać należy, że mimo wprowadzonej\nprzez tę pierwszą ustawę zasady",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Widoczny skan papierowej strony; obecności ukrytej warstwy OCR nie można ustalić z obrazu.",
+      "waga": "niska"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "W dolnej prawej części podpis odręczny nachodzi na pieczątkę z funkcją i nazwiskiem podpisującego.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Pismo urzędowe dotyczące postępowań dyscyplinarnych sędziów, spoza klas odwołanie do KIO, pełnomocnictwo i potwierdzenie przelewu.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "\n  ],\n  \"problemy_dokumentu\": [\n    {\n      \"kod\": \"dokument_obcy\",\n      \"opis\": \"Pismo urzędowe dotyczące postępowań dyscyplinarnych sędziów, spoza klas odwołanie do KIO, pełnomocnictwo i potwierdzenie przelewu.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n5996\n"
+ },
+ "czas_s": 21.3
+}

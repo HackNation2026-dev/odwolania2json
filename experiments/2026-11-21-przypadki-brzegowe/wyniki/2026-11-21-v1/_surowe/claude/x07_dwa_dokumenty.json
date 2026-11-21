@@ -1,0 +1,70 @@
+{
+ "id": "x07_dwa_dokumenty",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "niepewne",
+  "uzasadnienie_klasy": "Plik zawiera dwa różne dokumenty: na stronie 1 pełnomocnictwo dla r. pr. Aleksandry Marciniak i r. pr. Jolanty Zajkowski w postępowaniu ZS.791.2026, a na stronie 2 potwierdzenie przelewu opłaty skarbowej od tego pełnomocnictwa. Pasują do nich dwie różne klasy (pelnomocnictwo i przelew), więc pojedyncza etykieta nie opisuje pliku. Plik należy podzielić: strona 1 to pelnomocnictwo, strona 2 to przelew.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nŁódź, 1 kwietnia 2026\n$ 1. Mocodawca\nMocodawcą jest Belmoria Rozwiązania S.A., ul. Zaczarowana 78, 90-803 Łódź, KRS 9999405188, NIP 9999284065, REGON 999642785.\n$ 2. Pełnomocnik",
+    "problemy": [
+     {
+      "kod": "inne",
+      "opis": "Nagłówki paragrafów są wyrenderowane ze znakiem „$” zamiast „§” („$ 1. Mocodawca” itd.). OCR lub warstwa tekstu może zwrócić „$”.",
+      "waga": "niska"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "W miejscach na podpisy mocodawcy (Oliwia Kaczmarek, Prezes Zarządu) i pełnomocników są tylko wykropkowane linie, bez widocznych podpisów.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu\nAurelink Automatyka S.A.",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu są w ramkach ułożonych w dwie kolumny (płatnik i rachunek obciążany, adresat i rachunek odbiorcy, kwota i data). Przy odczycie liniowym etykiety mogą się pomieszać z wartościami.",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "Opłata skarbowa od pełnomocnictwa trafia do Aurelink Automatyka S.A., czyli prowadzącego postępowanie, a nie do urzędu. Data transakcji (2026-03-21) jest wcześniejsza niż data pełnomocnictwa (1 kwietnia 2026). To niespójności merytoryczne do sprawdzenia przy walidacji.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "wiele_dokumentow",
+    "opis": "W jednym pliku są dwa dokumenty: pełnomocnictwo (strona 1) i potwierdzenie przelewu opłaty skarbowej od tego pełnomocnictwa (strona 2). Trzeba je rozdzielić i sklasyfikować osobno.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2824314,
+  "tury": 4
+ },
+ "czas_s": 20.3
+}

@@ -1,0 +1,45 @@
+{
+ "id": "p02_przelew",
+ "model": "minimax",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument jest potwierdzeniem przelewu krajowego zawierającym dane płatnika, beneficjenta, kwotę, datę, numer referencyjny, tytuł i kanał transakcji.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\nKredyt Północny - wydrukowano 26 sierpnia 2026\nPłatnik\nHartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\n53678424593392529814420143\nBeneficjent\nEurosep Infrastruktura S.A.\nul. Huta 90, 20-829 Lublin",
+    "problemy": [
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Górna część strony ma dwie równoległe kolumny: dane płatnika po lewej i beneficjenta po prawej.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2797,
+   "output_tokens": 1763,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 128,
+   "output_tokens_details": {
+    "thinking_tokens": 1479
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 9.4
+}

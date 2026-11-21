@@ -1,0 +1,64 @@
+{
+ "id": "n_2025_s_188_641009",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Dokument jest ogłoszeniem o zamówieniu publicznym (notice postępowania), a nie odwołaniem do KIO, pełnomocnictwem ani potwierdzeniem przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "641009-2025 - Procedura konkurencyjna See the notice on TED website Polska – Usługi w zakresie sieci komputerowej – ŚWIADCZENIE USŁUGI TRANSMISJI DANYCH W POSTACI BEZPIECZNEJ I",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Główna klasyfikacja (cpv): 72700000 Usługi w zakresie sieci komputerowej Dodatkowa klasyfikacja (cpv): 72400000 Usługi internetowe 2.1.2. Miejsce realizacji Podpodział krajowy (NUTS): Rzeszowski (PL823) Kraj: Polska 2.1.4. Informacje ogólne Informacje dodatkowe: 1.",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "złożenie następujących oświadczeń i dokumentów: Opis lub informacja z Krajowego Rejestru Sądowego lub z Centralnej Ewidencji i Informacji o Działalności Gospodarczej – w celu potwierdzenia braku podstaw wykluczenia na podstawie art. 109 ust. 1 pkt 4 ustawy Pzp,",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Cały plik stanowi ogłoszenie o zamówieniu publicznym i dokumentację procedury przetargowej, czyli materiał spoza wskazanych klas odwołania, pełnomocnictwa i przelewu.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 1390,
+   "output_tokens": 1094,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 4096,
+   "output_tokens_details": {
+    "thinking_tokens": 571
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 6.6
+}

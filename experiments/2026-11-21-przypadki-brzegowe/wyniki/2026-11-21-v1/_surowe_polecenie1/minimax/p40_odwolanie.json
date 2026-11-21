@@ -1,0 +1,69 @@
+{
+ "id": "p40_odwolanie",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument jest odwołaniem od rozstrzygnięcia postępowania o udzielenie zamówienia publicznego, wniesionym do Prezesa Krajowej Izby Odwoławczej.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Poznań, dnia 19 października 2026 r.\n\nPrezes Krajowej Izby Odwoławczej\nul. Postepu 17A\n02-676 Warszawa\n\nOdwołujący:\nValtrix Systemy Informatyczne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "1) wyborze jako najkorzystniejszej oferty złożonej przez Medisoft Integracje S.A. z siedzibą w Warszawie, o którym Zamawiający poinformował wykonawców w dniu 9 października 2026 r.;\n2) zaniechaniu odrzucenia oferty Medisoft Integracje S.A. jako niezgodnej z warunkami zamówienia;",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "1) dokumentacji postępowania o udzielenie zamówienia, w tym protokołu postępowania wraz z załącznikami – na okoliczność przebiegu postępowania i treści czynności Zamawiającego;\n2) opinii prywatnej sporządzonej przez niezależnego eksperta z zakresu przedmiotu zamówienia – na okoliczność dostępności na rynku rozwiązań spełniających wymagania Zamawiającego;",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "W dolnej części strony znajduje się tabela chronologiczna zdarzeń postępowania; tekst w komórkach jest mniejszy i może być trudniejszy do poprawnego odczytu liniowego.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "tabela",
+    "opis": "Na stronie 3 dokument zawiera tabelę z chronologią zdarzeń postępowania.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 5262,
+   "output_tokens": 1196,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 197,
+   "output_tokens_details": {
+    "thinking_tokens": 595
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 7.1
+}

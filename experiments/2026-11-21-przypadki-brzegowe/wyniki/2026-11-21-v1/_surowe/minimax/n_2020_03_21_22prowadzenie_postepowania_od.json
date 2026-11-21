@@ -1,0 +1,15 @@
+{
+ "id": "n_2020_03_21_22prowadzenie_postepowania_od",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "blad",
+ "wynik": null,
+ "blad": "ValidationError: Additional properties are not allowed ('uzasadnij' was unexpected)\n\nFailed validating 'additionalProperties' in schema:\n    {'$schema': 'https://json-schema.org/draft/2020-12/schema',\n     'title': 'Wynik modelu: przegląd dokumentu',\n     'type': 'object',\n     'additionalProperties': False,\n     'required': ['klasa',\n                  'uzasadnienie_klasy',\n                  'strony',\n                  'problemy_dokumentu'],\n     'properties': {'klasa': {'type': 'string',\n                              'enum': ['odwolanie',\n                                       'pelnomocnictwo',\n                                       'przelew',\n                                       'inny',\n                                       'niepewne']},\n                    'uzasadnienie_klasy': {'type': 'string'},\n                    'strony': {'type': 'array',\n                               'items': {'type': 'obje",
+ "meta": {},
+ "czas_s": 24.5
+}

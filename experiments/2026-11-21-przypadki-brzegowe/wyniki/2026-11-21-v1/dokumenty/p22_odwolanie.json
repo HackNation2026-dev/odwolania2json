@@ -1,0 +1,44 @@
+{
+ "id": "p22_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_22/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_22",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 87742,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p22_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2251,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Zorina Systemy sp. z o.o. ul. Piwna 79, 30-756 Kraków KRS: 9994097527, NIP: 9992726100, REGON: 999205547 reprezentowana przez: r. pr. Dorota Sikorski, r. pr. Grzegorz Szulc adres do korespondencji: Kancelaria Adwokacka Spółka z ograniczoną odpowiedzialnością, ul. Kaszubska 2, 40-910 Katowice tel. 000 000 000, biuro@kontak"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p22_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 312,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "2.2) oświadczenie o niezaleganiu z podatkami i składkami; .............................. .............................. Dorota Sikorski, r. pr. Grzegorz Szulc, r. pr. Oświadczam, że odwołanie wnoszone jest w terminie przewidzianym przez przepisy ustawy, a przedmiot odwołania nie został wcześniej rozstrzygnięty przez Krajową Izbę Odwoławczą. Strona 2 z 2"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

@@ -1,0 +1,46 @@
+{
+ "id": "p40_przelew",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument jest bankowym potwierdzeniem wykonania przelewu, zawiera numer referencyjny, kwotę, datę operacji, status ZREALIZOWANO oraz dane zleceniodawcy i odbiorcy.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Polski Zachodni S.A. - wygenerowano 16.10.2026\n\nZleceniodawca Valtrix Systemy Informatyczne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań\nRachunek zleceniodawcy PL54 7164 9675 2472 1141 8071 4012",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane dokumentu są rozmieszczone w tabeli z polami i wartościami, co może utrudniać ich linearne odczytanie przez OCR.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2824,
+   "output_tokens": 941,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 128,
+   "output_tokens_details": {
+    "thinking_tokens": 657
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 20.7
+}

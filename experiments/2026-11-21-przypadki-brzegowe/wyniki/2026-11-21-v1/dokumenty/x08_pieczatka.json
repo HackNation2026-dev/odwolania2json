@@ -1,0 +1,229 @@
+{
+ "id": "x08_pieczatka",
+ "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x08_pieczatka.pdf",
+ "zrodlo": "syntetyczny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_01",
+ "metadane": {
+  "producent": null,
+  "kreator": null,
+  "rozmiar_bajtow": 235766,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/x08_pieczatka/p001.jpg",
+   "szerokosc_pt": 595.68,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 0,
+   "obrazy": 1,
+   "pokrycie_obrazami": 1.0,
+   "dpi_obrazow": 150.0,
+   "typ_auto": "skan",
+   "probka_tekstu": ""
+  }
+ ],
+ "wstrzykniete": [
+  {
+   "kod": "skan",
+   "strona": 1,
+   "opis": "obraz"
+  },
+  {
+   "kod": "pieczatka_podpis",
+   "strona": 1,
+   "opis": "czerwona pieczątka i podpis na treści"
+  }
+ ],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 16.0,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Potwierdzenie realizacji przelewu opłaty skarbowej od pełnomocnictwa w postępowaniu przed KIO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Strona ma wygląd skanu z widocznym szumem tła.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "pieczatka_podpis",
+        "opis": "Duża czerwona pieczątka „ZAPŁACONO” nachodzi na opis przelewu i pole numeru referencyjnego.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "tabela",
+        "opis": "Dane przelewu rozmieszczono w obramowanych polach w dwóch kolumnach.",
+        "waga": "niska"
+       },
+       {
+        "kod": "niska_jakosc",
+        "opis": "Drobne ciemne punkty szumu występują na całej stronie, także w obszarach tekstu.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.764
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "skan",
+     "pieczatka_podpis"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 14.5,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Dokument „POLECENIE PRZELEWU” – potwierdzenie realizacji przelewu z Ekobanku na kwotę 200,00 PLN, w opisie „opłata skarbowa od pełnomocnictwa” w postępowaniu przed KIO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu\nAurelink Automatyka S.A.",
+      "problemy": [
+       {
+        "kod": "pieczatka_podpis",
+        "opis": "Czerwona owalna pieczątka „ZAPŁACONO” nachodzi na pole Opis (fragment „przed KIO w przetargu ZS.791.2026 CEN2604016344389”) i pole Nr ref. (CEN2604016344389); niebieska linia podpisu przecina stopkę „...automatycznie przez system bankowości...”.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "skan",
+        "opis": "Strona wygląda na obraz ze szumem (rozsiane kropki na całym tle), prawdopodobnie bez warstwy tekstowej.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "niska_jakosc",
+        "opis": "Szum typu „sól i pieprz” na całej stronie, kropki również na tekście pól formularza.",
+        "waga": "niska"
+       },
+       {
+        "kod": "tabela",
+        "opis": "Dane przelewu w ramkach formularza ułożonych w dwie kolumny (Płatnik/Rachunek obciążany, Adresat/Rachunek odbiorcy, Kwota/Data).",
+        "waga": "niska"
+       },
+       {
+        "kod": "pusta_strona",
+        "opis": "Treść zajmuje tylko górną część strony (ok. 45%), reszta pusta.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Pieczątka „ZAPŁACONO” zasłania częściowo opis przelewu i numer referencyjny – utrudnia OCR kluczowych pól (sygnatura/nr ogłoszenia).",
+      "waga": "srednia"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.733
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "skan",
+     "pieczatka_podpis"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 4.9,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Dokument jest potwierdzeniem realizacji polecenia przelewu bankowego i wskazuje płatnika, odbiorcę, kwotę 200,00 PLN, datę transakcji oraz numer referencyjny.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu - Ekobank\nPłatnik\nBelmor... Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu\nAurelink Automatyka S.A.\nul. Rybacka 79, 50-580 Wrocław\nRachunek odbiorcy\nPL68438223049992295262834736\nKwota operacji\n200,00 PLN\nData transakcji\n2026-03-21\nOpis\nopłata skarbowa od pełnomocnictwa dla Aleksandra Marciniak i Jolanty Zajkowski w postępowaniu przed KIO w. sprawie",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Cała strona ma wygląd zeskanowanego wydruku: widoczny jest drobny szum i liczne ciemne punkty w tle.",
+        "waga": "niska"
+       },
+       {
+        "kod": "pieczatka_podpis",
+        "opis": "Czerwona pieczątka „ZAPŁACONO” nachodzi na opis transakcji i numer referencyjny; niebieski podpis/adnotacja przecina tekst u dołu strony.",
+        "waga": "srednia"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "skan",
+      "opis": "Jedyny dokument w pliku jest zeskanowanym potwierdzeniem przelewu, bez możliwego rozdzielenia treści cyfrowej od obrazu strony.",
+      "waga": "niska"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Pieczątka i podpis/adnotacja częściowo nakładają się na istotne pola dokumentu.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.725
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "skan",
+     "pieczatka_podpis"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

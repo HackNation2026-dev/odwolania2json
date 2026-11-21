@@ -1,0 +1,83 @@
+{
+ "id": "x11_mieszany_obrot",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Strona 1 ma tytuł „ODWOŁANIE”, jest adresowana do Prezesa Krajowej Izby Odwoławczej i wskazuje Odwołującego (Valtrix Systemy Informatyczne sp. z o.o.), Zamawiającego oraz wpis od odwołania. Na stronach 2–3 są zarzuty, żądania, wnioski dowodowe i uzasadnienie. Wszystkie strony mają ten sam nagłówek „Odwołanie – postępowanie nr ZP/PN/48/2026”.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Poznań, dnia 19 października 2026 r.\nPrezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nValtrix Systemy Informatyczne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań\nKRS: 9998213547, NIP: 9993380162, REGON: 999517204",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 90,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr ZP/PN/48/2026\n1) wyborze jako najkorzystniejszej oferty złożonej przez Medisoft Integracje S.A. z siedzibą w Warszawie, o którym Zamawiający poinformował wykonawców w dniu 9 października 2026 r.;\n2) zaniechaniu odrzucenia oferty Medisoft Integracje S.A. jako niezgodnej z warunkami zamówienia;",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona 2 jest obrazem skanu bez widocznej warstwy tekstu i ma drobny szum (kropki) na całej powierzchni.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "obrot",
+      "opis": "Strona ma orientację poziomą, a treść jest obrócona o 90° zgodnie z ruchem wskazówek zegara: nagłówek jest przy prawej krawędzi, a wiersze biegną z góry na dół.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Szum tła (rozproszone kropki) i drobny, lekko rozmyty druk po obrocie mogą obniżyć dokładność OCR.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr ZP/PN/48/2026\n1) dokumentacji postępowania o udzielenie zamówienia, w tym protokołu postępowania wraz z załącznikami – na okoliczność przebiegu postępowania i treści czynności Zamawiającego;\n2) opinii prywatnej",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "W środkowej części strony jest tabela przebiegu postępowania z kolumnami Data i Zdarzenie (9 wierszy, od 14.07.2026 do 13.10.2026). Przy odczycie liniowym kolumny mogą się wymieszać.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_mieszany",
+    "opis": "Strony 1 i 3 są cyfrowym tekstem, a strona 2 jest obróconym skanem.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "inne",
+    "opis": "Stopki stron mówią „Strona X z 11”, a plik ma tylko 3 strony. To niepełny fragment odwołania: brakuje dalszej części uzasadnienia, podpisu i załączników.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2994288,
+  "tury": 5
+ },
+ "czas_s": 21.7
+}

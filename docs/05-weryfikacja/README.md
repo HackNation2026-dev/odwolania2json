@@ -25,3 +25,9 @@ Kontrola dokumentacji: `python3 scripts/verify_docs.py`. Jej wynik nie potwierdz
 ## Uzupełnienie organizatora
 
 [Zasady F1](zasady-f1.md) zapisują próg 80%, pola długiego tekstu i dopasowanie list po treści. Dane referencyjne to JSON-y 60 spraw; ground_truth.yaml usunięto. Testy są syntetyczne. Brak skanów w przykładach nie rozstrzyga ukrytego testu. Testuj publiczny endpoint z innej sieci; nie zakładaj lokalnej instalacji modelu u jury.
+
+## Uzupełnienie 0.5.0 (2026-11-21)
+
+- [Eksperyment: czy YAML wystarcza do opisu klasy](eksperyment-yaml-klasy-2026-11-21.md) — 60/60 spraw, 4528/4528 mutantów zabitych, granice podejścia.
+- [Eksperyment: typy plików i przypadki brzegowe](eksperyment-przypadki-brzegowe-2026-11-21.md) — inwentarz 206 PDF-ów, syntetyczne skany, Codex/Claude/MiniMax, przeglądarka egui.
+- [Katalog przypadków brzegowych](katalog-przypadkow-brzegowych.md) — wiedza zespołu, mentor, konsultacje, dane; co trzeba wygenerować.

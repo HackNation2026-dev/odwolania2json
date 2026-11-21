@@ -1,0 +1,476 @@
+{
+ "format": "uzp-karta-dokumentu",
+ "wersja": 1,
+ "id": "p52_pelnomocnictwo",
+ "klasa": "pelnomocnictwo",
+ "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_52/pelnomocnictwo.pdf",
+ "referencja": "docs/02-materialy/organizator-uzp/dane/przyklad_52/pelnomocnictwo.json",
+ "metoda": "Heurystyka referencja → pdftotext -bbox-layout; każdy PDF niezależnie",
+ "pola": {
+  "mocodawca[0].data.imie_nazwisko": {
+   "wartosc": "Maciej Jaworski",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      180.558,
+      133.449,
+      270.092,
+      143.303
+     ],
+     "tekst_w_dokumencie": "Maciej Jaworski,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 3.38,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       180.699,
+       235.069,
+       190.553
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      150.654,
+      149.199,
+      235.324,
+      159.053
+     ],
+     "tekst_w_dokumencie": "Maciej Jaworski,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 2.25,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       180.699,
+       235.069,
+       190.553
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      474.024,
+      142.462,
+      483.878
+     ],
+     "tekst_w_dokumencie": "Maciej Jaworski",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "przed",
+      "odleglosc_linii": 3.25,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       428.524,
+       131.372,
+       438.378
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.krs": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  },
+  "mocodawca[0].data.nazwa": {
+   "wartosc": "BRONTEX-BUD Maciej Jaworski",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      149.199,
+      235.324,
+      159.053
+     ],
+     "tekst_w_dokumencie": "BRONTEX-BUD Maciej Jaworski,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 2.25,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       180.699,
+       235.069,
+       190.553
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.nip": {
+   "wartosc": "9993140838",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      422.386,
+      149.199,
+      483.7,
+      159.053
+     ],
+     "tekst_w_dokumencie": "9993140838,",
+     "etykieta_pola": "NIP",
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 2.25,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       180.699,
+       235.069,
+       190.553
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.typ": {
+   "wartosc": "osoba_fizyczna",
+   "dopasowanie": "wyliczana",
+   "wystapienia": []
+  },
+  "mocodawca[0].podpisujacy[0].imie_nazwisko": {
+   "wartosc": "Maciej Jaworski",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      180.558,
+      133.449,
+      270.092,
+      143.303
+     ],
+     "tekst_w_dokumencie": "Maciej Jaworski,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "podpisany",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 1,
+      "bbox": [
+       123.113,
+       133.449,
+       170.983,
+       143.303
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      150.654,
+      149.199,
+      235.324,
+      159.053
+     ],
+     "tekst_w_dokumencie": "Maciej Jaworski,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "podpisany",
+      "polozenie": "przed",
+      "odleglosc_linii": 1.12,
+      "strona": 1,
+      "bbox": [
+       123.113,
+       133.449,
+       170.983,
+       143.303
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      474.024,
+      142.462,
+      483.878
+     ],
+     "tekst_w_dokumencie": "Maciej Jaworski",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].imie_nazwisko": {
+   "wartosc": "Karolina Wiśniewska",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      344.42,
+      180.699,
+      441.49,
+      190.553
+     ],
+     "tekst_w_dokumencie": "Karolina Wiśniewska",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "udzielam",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 1,
+      "bbox": [
+       193.049,
+       180.699,
+       316.395,
+       190.553
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      92.864,
+      541.274,
+      189.733,
+      551.128
+     ],
+     "tekst_w_dokumencie": "Karolina Wiśniewska",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Pełnomocnictwo",
+      "polozenie": "przed",
+      "odleglosc_linii": 3.11,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       497.774,
+       151.788,
+       507.628
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].pesel": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  }
+ },
+ "grupy": [
+  {
+   "id": "mocodawca[0]",
+   "typ": "mocodawca[]",
+   "pola": [
+    "mocodawca[0].data.imie_nazwisko",
+    "mocodawca[0].data.krs",
+    "mocodawca[0].data.nazwa",
+    "mocodawca[0].data.nip",
+    "mocodawca[0].data.typ"
+   ],
+   "etykieta_roli": {
+    "tekst": "Mocodawca",
+    "polozenie": "po",
+    "odleglosc_linii": 2.25,
+    "strona": 1,
+    "bbox": [
+     68.362,
+     180.699,
+     235.069,
+     190.553
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      133.449,
+      483.7,
+      190.553
+     ],
+     "spojna": false,
+     "kolidujace_pola": [
+      "mocodawca[0].podpisujacy[0].imie_nazwisko",
+      "pelnomocnicy[0].imie_nazwisko"
+     ],
+     "wysokosc_linii": 5.8
+    }
+   ],
+   "spojna": false,
+   "pola_zlokalizowane": 3,
+   "pola_do_lokalizacji": 3
+  },
+  {
+   "id": "mocodawca[0].podpisujacy[0]",
+   "typ": "mocodawca[].podpisujacy[]",
+   "pola": [
+    "mocodawca[0].podpisujacy[0].imie_nazwisko"
+   ],
+   "etykieta_roli": {
+    "tekst": "podpisany",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.0,
+    "strona": 1,
+    "bbox": [
+     123.113,
+     133.449,
+     170.983,
+     143.303
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      123.113,
+      133.449,
+      270.092,
+      143.303
+     ],
+     "spojna": false,
+     "kolidujace_pola": [
+      "mocodawca[0].data.imie_nazwisko"
+     ],
+     "wysokosc_linii": 1.0
+    }
+   ],
+   "spojna": false,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  },
+  {
+   "id": "pelnomocnicy[0]",
+   "typ": "pelnomocnicy[]",
+   "pola": [
+    "pelnomocnicy[0].imie_nazwisko",
+    "pelnomocnicy[0].pesel"
+   ],
+   "etykieta_roli": {
+    "tekst": "udzielam",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.0,
+    "strona": 1,
+    "bbox": [
+     193.049,
+     180.699,
+     316.395,
+     190.553
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      193.049,
+      180.699,
+      441.49,
+      190.553
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 1.0
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  }
+ ],
+ "uklad": [
+  {
+   "strona": 1,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  }
+ ],
+ "kody": [
+  {
+   "kod": "wiele_wystapien",
+   "pole": "mocodawca[0].data.imie_nazwisko",
+   "dowod": "3 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].data.imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].data.nazwa",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wartosc_wyliczana",
+   "pole": "mocodawca[0].data.typ",
+   "dowod": "wyliczana; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "mocodawca_osoba_fizyczna",
+   "pole": "mocodawca[0].data.typ",
+   "dowod": "Wariant w referencji"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "mocodawca[0].podpisujacy[0].imie_nazwisko",
+   "dowod": "3 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].podpisujacy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "pelnomocnicy[0].imie_nazwisko",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "pelnomocnicy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "etykieta_po_danych",
+   "pole": "mocodawca[0]",
+   "dowod": "Mocodawca"
+  },
+  {
+   "kod": "etykieta_synonim",
+   "pole": "pelnomocnicy[0]",
+   "dowod": "udzielam"
+  }
+ ],
+ "braki": []
+}

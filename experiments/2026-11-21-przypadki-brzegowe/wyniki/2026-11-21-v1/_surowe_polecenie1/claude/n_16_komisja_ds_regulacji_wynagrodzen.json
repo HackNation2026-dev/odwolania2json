@@ -1,0 +1,38 @@
+{
+ "id": "n_16_komisja_ds_regulacji_wynagrodzen",
+ "model": "claude",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Pismo okólne Rektora Uniwersytetu Kazimierza Wielkiego o powołaniu Zespołu ds. Regulacji Wynagrodzeń. To wewnętrzny akt uczelni. Nie jest odwołaniem do KIO, pełnomocnictwem ani potwierdzeniem przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Pismo okólne Nr 16/2024/2025 Rektora Uniwersytetu Kazimierza Wielkiego z dnia 4 marca 2025 r. w sprawie powołania Zespołu ds. Regulacji Wynagrodzeń Pracowników Uniwersytetu Kazimierza Wielkiego Na podstawie art. 23 ust. 2 pkt 2)",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Pismo okólne rektora uczelni w sprawie składu zespołu ds. wynagrodzeń. Dokument nie należy do sprawy odwoławczej KIO. Słowo „Pełnomocnik” (Pełnomocnik Rektora ds. Finansowych) występuje tylko jako nazwa funkcji, nie jako pełnomocnictwo.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2568814,
+  "tury": 3
+ },
+ "czas_s": 12.6
+}

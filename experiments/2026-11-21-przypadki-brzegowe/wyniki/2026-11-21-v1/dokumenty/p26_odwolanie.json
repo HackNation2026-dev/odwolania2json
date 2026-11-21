@@ -1,0 +1,44 @@
+{
+ "id": "p26_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_26/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_26",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 81170,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p26_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1830,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Wrocław, dnia 18 czerwca 2026 roku Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Zamawiający: Orynte Konsulting sp. k. ul. Nowina 34, 90-254 Łódź KRS: 9992686270, NIP: 9996050065, REGON: 999532157 kontakt@kontakt.example Odwołujący: Uldaris Wyposażenie sp. j. ul. Zaczarowana 78, 50-474 Wrocław KRS: 9999035670, NIP: 9997688539, REGON: 999200202 reprezentowana przez: adw. Ryszard "
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p26_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 126,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Zgodnie z art. 527 ustawy odwołanie wnosi się w terminie 14 dni od dnia, w którym Wykonawca powziął lub dowiedział się o zaskarżonym rozstrzygnięciu."
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

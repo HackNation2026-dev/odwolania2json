@@ -1,0 +1,57 @@
+{
+ "id": "p23_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_23/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_23",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 97066,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p23_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1484,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Odwołujący: Wexford Systemy sp. z o.o. ul. Zaczarowana 21, 60-128 Poznań KRS: 9996325136, NIP: 9991432253, REGON: 999129757 reprezentowana przez: adw. Halina Walczak, r. pr. Bartosz Bartoszewicz adres do korespondencji: Kancelaria Adwokacka i Partnerzy, ul. Wierzbowa 69, 85-388 Bydgoszcz tel. 000 000 000, biuro@poczta.example Zamawiający: Galdaris Technologie sp. z o.o. ul. Uliczna 39, 60-110 Pozn"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p23_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1819,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "a).2. Brak takiego uzasadnienia uniemożliwia ocenę, czy cena zaoferowana przez Odwołującego mieści się w granicach rynkowych, co w rezultacie może doprowadzić do naruszenia dyscypliny finansów publicznych. Zarzut nr 2 naruszenia obowiązku sporządzenia dokumentacji postępowania w sposób przejrzysty: b).1. Dokumentacja postępowania nie zawiera pełnego uzasadnienia przyjętych wymagań, co utrudnia ust"
+  },
+  {
+   "nr": 3,
+   "obraz": "strony/p23_odwolanie/p003.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 355,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "b) odwołanie wraz z uzasadnieniem; c) pełnomocnictwo udzielone przedstawicielowi Odwołującego; d) wyciąg z rejestru przedmiotowego; .............................. .............................. Halina Walczak, adw. Bartosz Bartoszewicz, r. pr. Zgodnie z art. 527 ustawy odwołanie wnosi się w terminie 14 dni od dnia, w którym Wykonawca powziął lub dowiedział się o zaskarżonym rozstrzygnięciu. Strona"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

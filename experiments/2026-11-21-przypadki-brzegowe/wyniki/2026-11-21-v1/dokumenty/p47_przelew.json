@@ -1,0 +1,31 @@
+{
+ "id": "p47_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_47/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_47",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 65859,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p47_przelew/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 770,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Śląsko-Mazowiecki · wygenerowano 28.08.2026 Zleceniodawca RAVELO-BUD Sebastian Tomaszewski ul. Jagiellońska 91, 70-402 Szczecin Rachunek zleceniodawcy PL22147553851780849966673534 Odbiorca Miejskie Przedsiębiorstwo Komunikacyjne w Pogorzeli Wielkiej sp. z o.o. ul. Sienkiewicza 57, 22-403 Pogorzel Wielka Rachunek odbiorcy PL33237021642224014358154704 Kwota 100,"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

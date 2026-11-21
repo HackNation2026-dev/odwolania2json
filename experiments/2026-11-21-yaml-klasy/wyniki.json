@@ -1,0 +1,881 @@
+{
+ "klasy": {
+  "odwolanie": {
+   "spraw": 60,
+   "walidacja_ok": 60,
+   "bledy_walidacji": [],
+   "roundtrip_identyczny": 60,
+   "roznice_roundtrip": [],
+   "naruszenia_formatu": [],
+   "pochodne_zgodne": 183,
+   "pochodne_niezgodne": [],
+   "mutanty": 2609,
+   "mutanty_przezyly": [],
+   "schemat_llm": {
+    "type": "object",
+    "properties": {
+     "OdwolanieKIO": {
+      "type": "object",
+      "properties": {
+       "czynnosc_dzien": {
+        "type": [
+         "string",
+         "null"
+        ],
+        "description": "Data czynności dla PIERWSZEGO zarzutu."
+       },
+       "czynnosc_powod_id": {
+        "type": "integer",
+        "description": "Kod powodu 1-12 WYŁĄCZNIE z pierwszego zarzutu."
+       }
+      },
+      "required": [
+       "czynnosc_dzien",
+       "czynnosc_powod_id"
+      ],
+      "additionalProperties": false
+     },
+     "Odwolujacy": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "nazwa": {
+         "type": "string",
+         "description": "Pełna nazwa Odwołującego lub lidera konsorcjum."
+        },
+        "pelnomocnik": {
+         "type": "object",
+         "properties": {
+          "imie_nazwisko": {
+           "type": [
+            "string",
+            "null"
+           ]
+          },
+          "nazwa": {
+           "type": [
+            "string",
+            "null"
+           ],
+           "description": "Podmiot zatrudniający pełnomocnika."
+          }
+         },
+         "required": [
+          "imie_nazwisko",
+          "nazwa"
+         ],
+         "additionalProperties": false
+        }
+       },
+       "required": [
+        "nazwa",
+        "pelnomocnik"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "Zamawiajacy": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "nazwa": {
+         "type": "string"
+        },
+        "prowadzacy_postepowanie": {
+         "type": [
+          "integer",
+          "null"
+         ]
+        }
+       },
+       "required": [
+        "nazwa",
+        "prowadzacy_postepowanie"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "ZamowieniePubliczne": {
+      "type": "object",
+      "properties": {
+       "numer_postepowania": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "tytul": {
+        "type": [
+         "string",
+         "null"
+        ]
+       }
+      },
+      "required": [
+       "numer_postepowania",
+       "tytul"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "OdwolanieKIO",
+     "Odwolujacy",
+     "Zamawiajacy",
+     "ZamowieniePubliczne"
+    ],
+    "additionalProperties": false
+   },
+   "json_schema_pelny": {
+    "$defs": {
+     "odwolanie_OdwolanieKIO": {
+      "additionalProperties": false,
+      "properties": {
+       "data": {
+        "anyOf": [
+         {
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "description": "Data z nagłówka pierwszej strony.",
+        "title": "Data"
+       },
+       "czynnosc_dzien": {
+        "anyOf": [
+         {
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "description": "Data czynności dla PIERWSZEGO zarzutu.",
+        "title": "Czynnosc Dzien"
+       },
+       "czynnosc_powod_id": {
+        "description": "Kod powodu 1-12 WYŁĄCZNIE z pierwszego zarzutu.",
+        "maximum": 12,
+        "minimum": 1,
+        "title": "Czynnosc Powod Id",
+        "type": "integer"
+       },
+       "czynnosc_opis": {
+        "title": "Czynnosc Opis",
+        "type": "string"
+       },
+       "miejscowosc": {
+        "anyOf": [
+         {
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "description": "Miejscowość z nagłówka pierwszej strony.",
+        "title": "Miejscowosc"
+       }
+      },
+      "required": [
+       "data",
+       "czynnosc_dzien",
+       "czynnosc_powod_id",
+       "czynnosc_opis",
+       "miejscowosc"
+      ],
+      "title": "odwolanie_OdwolanieKIO",
+      "type": "object"
+     },
+     "odwolanie_Odwolujacy_el": {
+      "additionalProperties": false,
+      "properties": {
+       "krs": {
+        "anyOf": [
+         {
+          "pattern": "^\\d{10}$",
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Krs"
+       },
+       "nazwa": {
+        "description": "Pełna nazwa Odwołującego lub lidera konsorcjum.",
+        "title": "Nazwa",
+        "type": "string"
+       },
+       "nip": {
+        "anyOf": [
+         {
+          "pattern": "^\\d{10}$",
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Nip"
+       },
+       "regon": {
+        "anyOf": [
+         {
+          "pattern": "^\\d{9}(\\d{5})?$",
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Regon"
+       },
+       "przez-pelnomocnika": {
+        "title": "Przez-Pelnomocnika",
+        "type": "integer"
+       },
+       "pelnomocnik": {
+        "$ref": "#/$defs/odwolanie_Odwolujacy_el_pelnomocnik"
+       }
+      },
+      "required": [
+       "krs",
+       "nazwa",
+       "nip",
+       "regon",
+       "przez-pelnomocnika",
+       "pelnomocnik"
+      ],
+      "title": "odwolanie_Odwolujacy_el",
+      "type": "object"
+     },
+     "odwolanie_Odwolujacy_el_pelnomocnik": {
+      "additionalProperties": false,
+      "properties": {
+       "imie_nazwisko": {
+        "anyOf": [
+         {
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Imie Nazwisko"
+       },
+       "nazwa": {
+        "anyOf": [
+         {
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "description": "Podmiot zatrudniający pełnomocnika.",
+        "title": "Nazwa"
+       },
+       "mail": {
+        "anyOf": [
+         {
+          "pattern": "^[^@\\s]+@[^@\\s]+$",
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Mail"
+       }
+      },
+      "required": [
+       "imie_nazwisko",
+       "nazwa",
+       "mail"
+      ],
+      "title": "odwolanie_Odwolujacy_el_pelnomocnik",
+      "type": "object"
+     },
+     "odwolanie_Zamawiajacy_el": {
+      "additionalProperties": false,
+      "properties": {
+       "krs": {
+        "anyOf": [
+         {
+          "pattern": "^\\d{10}$",
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Krs"
+       },
+       "nazwa": {
+        "title": "Nazwa",
+        "type": "string"
+       },
+       "nip": {
+        "anyOf": [
+         {
+          "pattern": "^\\d{10}$",
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Nip"
+       },
+       "regon": {
+        "anyOf": [
+         {
+          "pattern": "^\\d{9}(\\d{5})?$",
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Regon"
+       },
+       "prowadzacy_postepowanie": {
+        "anyOf": [
+         {
+          "type": "integer"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Prowadzacy Postepowanie"
+       }
+      },
+      "required": [
+       "krs",
+       "nazwa",
+       "nip",
+       "regon",
+       "prowadzacy_postepowanie"
+      ],
+      "title": "odwolanie_Zamawiajacy_el",
+      "type": "object"
+     },
+     "odwolanie_ZamowieniePubliczne": {
+      "additionalProperties": false,
+      "properties": {
+       "numer_bzp": {
+        "anyOf": [
+         {
+          "pattern": "^\\d{4}/BZP\\d{8}(/\\d{2})?$",
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Numer Bzp"
+       },
+       "numer_postepowania": {
+        "anyOf": [
+         {
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Numer Postepowania"
+       },
+       "numer_ted": {
+        "anyOf": [
+         {
+          "pattern": "^\\d{6}-\\d{4}$",
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Numer Ted"
+       },
+       "tytul": {
+        "anyOf": [
+         {
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Tytul"
+       }
+      },
+      "required": [
+       "numer_bzp",
+       "numer_postepowania",
+       "numer_ted",
+       "tytul"
+      ],
+      "title": "odwolanie_ZamowieniePubliczne",
+      "type": "object"
+     }
+    },
+    "additionalProperties": false,
+    "properties": {
+     "OdwolanieKIO": {
+      "$ref": "#/$defs/odwolanie_OdwolanieKIO"
+     },
+     "Odwolujacy": {
+      "items": {
+       "$ref": "#/$defs/odwolanie_Odwolujacy_el"
+      },
+      "title": "Odwolujacy",
+      "type": "array"
+     },
+     "Zamawiajacy": {
+      "items": {
+       "$ref": "#/$defs/odwolanie_Zamawiajacy_el"
+      },
+      "title": "Zamawiajacy",
+      "type": "array"
+     },
+     "ZamowieniePubliczne": {
+      "$ref": "#/$defs/odwolanie_ZamowieniePubliczne"
+     }
+    },
+    "required": [
+     "OdwolanieKIO",
+     "Odwolujacy",
+     "Zamawiajacy",
+     "ZamowieniePubliczne"
+    ],
+    "title": "odwolanie",
+    "type": "object"
+   }
+  },
+  "pelnomocnictwo": {
+   "spraw": 60,
+   "walidacja_ok": 60,
+   "bledy_walidacji": [],
+   "roundtrip_identyczny": 60,
+   "roznice_roundtrip": [],
+   "naruszenia_formatu": [],
+   "pochodne_zgodne": 0,
+   "pochodne_niezgodne": [],
+   "mutanty": 1139,
+   "mutanty_przezyly": [],
+   "schemat_llm": {
+    "type": "object",
+    "properties": {
+     "mocodawca": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "data": {
+         "type": "object",
+         "properties": {
+          "imie_nazwisko": {
+           "type": [
+            "string",
+            "null"
+           ],
+           "description": "Gdy mocodawca jest osobą fizyczną; inaczej null."
+          },
+          "nazwa": {
+           "type": "string",
+           "description": "Pełna nazwa mocodawcy."
+          },
+          "typ": {
+           "type": "string",
+           "enum": [
+            "osoba_prawna",
+            "osoba_fizyczna"
+           ]
+          }
+         },
+         "required": [
+          "imie_nazwisko",
+          "nazwa",
+          "typ"
+         ],
+         "additionalProperties": false
+        },
+        "podpisujacy": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "imie_nazwisko": {
+            "type": "string",
+            "description": "Osoba podpisująca w imieniu mocodawcy."
+           }
+          },
+          "required": [
+           "imie_nazwisko"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "data",
+        "podpisujacy"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "pelnomocnicy": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "imie_nazwisko": {
+         "type": "string",
+         "description": "Imię i nazwisko pełnomocnika w mianowniku."
+        }
+       },
+       "required": [
+        "imie_nazwisko"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "required": [
+     "mocodawca",
+     "pelnomocnicy"
+    ],
+    "additionalProperties": false
+   },
+   "json_schema_pelny": {
+    "$defs": {
+     "pelnomocnictwo_mocodawca_el": {
+      "additionalProperties": false,
+      "properties": {
+       "data": {
+        "$ref": "#/$defs/pelnomocnictwo_mocodawca_el_data"
+       },
+       "podpisujacy": {
+        "items": {
+         "$ref": "#/$defs/pelnomocnictwo_mocodawca_el_podpisujacy_el"
+        },
+        "title": "Podpisujacy",
+        "type": "array"
+       }
+      },
+      "required": [
+       "data",
+       "podpisujacy"
+      ],
+      "title": "pelnomocnictwo_mocodawca_el",
+      "type": "object"
+     },
+     "pelnomocnictwo_mocodawca_el_data": {
+      "additionalProperties": false,
+      "properties": {
+       "imie_nazwisko": {
+        "anyOf": [
+         {
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "description": "Gdy mocodawca jest osobą fizyczną; inaczej null.",
+        "title": "Imie Nazwisko"
+       },
+       "krs": {
+        "anyOf": [
+         {
+          "pattern": "^\\d{10}$",
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Krs"
+       },
+       "nazwa": {
+        "description": "Pełna nazwa mocodawcy.",
+        "title": "Nazwa",
+        "type": "string"
+       },
+       "nip": {
+        "pattern": "^\\d{10}$",
+        "title": "Nip",
+        "type": "string"
+       },
+       "typ": {
+        "enum": [
+         "osoba_prawna",
+         "osoba_fizyczna"
+        ],
+        "title": "Typ",
+        "type": "string"
+       }
+      },
+      "required": [
+       "imie_nazwisko",
+       "krs",
+       "nazwa",
+       "nip",
+       "typ"
+      ],
+      "title": "pelnomocnictwo_mocodawca_el_data",
+      "type": "object"
+     },
+     "pelnomocnictwo_mocodawca_el_podpisujacy_el": {
+      "additionalProperties": false,
+      "properties": {
+       "imie_nazwisko": {
+        "description": "Osoba podpisująca w imieniu mocodawcy.",
+        "title": "Imie Nazwisko",
+        "type": "string"
+       }
+      },
+      "required": [
+       "imie_nazwisko"
+      ],
+      "title": "pelnomocnictwo_mocodawca_el_podpisujacy_el",
+      "type": "object"
+     },
+     "pelnomocnictwo_pelnomocnicy_el": {
+      "additionalProperties": false,
+      "properties": {
+       "imie_nazwisko": {
+        "description": "Imię i nazwisko pełnomocnika w mianowniku.",
+        "title": "Imie Nazwisko",
+        "type": "string"
+       },
+       "pesel": {
+        "anyOf": [
+         {
+          "pattern": "^\\d{11}$",
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "title": "Pesel"
+       }
+      },
+      "required": [
+       "imie_nazwisko",
+       "pesel"
+      ],
+      "title": "pelnomocnictwo_pelnomocnicy_el",
+      "type": "object"
+     }
+    },
+    "additionalProperties": false,
+    "properties": {
+     "mocodawca": {
+      "description": "Podmioty udzielające pełnomocnictwa; więcej niż jeden przy konsorcjum.",
+      "items": {
+       "$ref": "#/$defs/pelnomocnictwo_mocodawca_el"
+      },
+      "title": "Mocodawca",
+      "type": "array"
+     },
+     "pelnomocnicy": {
+      "items": {
+       "$ref": "#/$defs/pelnomocnictwo_pelnomocnicy_el"
+      },
+      "title": "Pelnomocnicy",
+      "type": "array"
+     }
+    },
+    "required": [
+     "mocodawca",
+     "pelnomocnicy"
+    ],
+    "title": "pelnomocnictwo",
+    "type": "object"
+   }
+  },
+  "przelew": {
+   "spraw": 60,
+   "walidacja_ok": 60,
+   "bledy_walidacji": [],
+   "roundtrip_identyczny": 60,
+   "roznice_roundtrip": [],
+   "naruszenia_formatu": [],
+   "pochodne_zgodne": 0,
+   "pochodne_niezgodne": [],
+   "mutanty": 780,
+   "mutanty_przezyly": [],
+   "schemat_llm": {
+    "type": "object",
+    "properties": {
+     "przelew_bankowy": {
+      "type": "object",
+      "properties": {
+       "numer_transakcji": {
+        "type": [
+         "string",
+         "null"
+        ],
+        "description": "Identyfikator transakcji nadany przez bank."
+       },
+       "tytul": {
+        "type": "string",
+        "description": "Tytuł przelewu, dosłownie."
+       }
+      },
+      "required": [
+       "numer_transakcji",
+       "tytul"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "przelew_bankowy"
+    ],
+    "additionalProperties": false
+   },
+   "json_schema_pelny": {
+    "$defs": {
+     "przelew_przelew_bankowy": {
+      "additionalProperties": false,
+      "properties": {
+       "data_operacji": {
+        "description": "Data operacji (ISO YYYY-MM-DD).",
+        "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+        "title": "Data Operacji",
+        "type": "string"
+       },
+       "kwota": {
+        "description": "Kwota przelewu w PLN.",
+        "title": "Kwota",
+        "type": "number"
+       },
+       "na_rachunek": {
+        "description": "Rachunek odbiorcy, 26 cyfr bez spacji.",
+        "pattern": "^\\d{26}$",
+        "title": "Na Rachunek",
+        "type": "string"
+       },
+       "numer_transakcji": {
+        "anyOf": [
+         {
+          "type": "string"
+         },
+         {
+          "type": "null"
+         }
+        ],
+        "description": "Identyfikator transakcji nadany przez bank.",
+        "title": "Numer Transakcji"
+       },
+       "tytul": {
+        "description": "Tytuł przelewu, dosłownie.",
+        "title": "Tytul",
+        "type": "string"
+       },
+       "z_rachunku": {
+        "description": "Rachunek nadawcy, 26 cyfr bez spacji.",
+        "pattern": "^\\d{26}$",
+        "title": "Z Rachunku",
+        "type": "string"
+       }
+      },
+      "required": [
+       "data_operacji",
+       "kwota",
+       "na_rachunek",
+       "numer_transakcji",
+       "tytul",
+       "z_rachunku"
+      ],
+      "title": "przelew_przelew_bankowy",
+      "type": "object"
+     }
+    },
+    "additionalProperties": false,
+    "properties": {
+     "przelew_bankowy": {
+      "$ref": "#/$defs/przelew_przelew_bankowy"
+     }
+    },
+    "required": [
+     "przelew_bankowy"
+    ],
+    "title": "przelew",
+    "type": "object"
+   }
+  }
+ },
+ "nowa_klasa": {
+  "probka_ok": true,
+  "enum_spoza_listy_odrzucony": true,
+  "zakres_odrzucony": true,
+  "schemat_llm": {
+   "type": "object",
+   "properties": {
+    "Zawiadomienie": {
+     "type": "object",
+     "properties": {
+      "tryb_doreczenia": {
+       "type": [
+        "string",
+        "null"
+       ],
+       "enum": [
+        "email",
+        "epuap",
+        "poczta",
+        null
+       ]
+      },
+      "liczba_wykonawcow": {
+       "type": "integer"
+      },
+      "wezwani_wykonawcy": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      }
+     },
+     "required": [
+      "tryb_doreczenia",
+      "liczba_wykonawcow",
+      "wezwani_wykonawcy"
+     ],
+     "additionalProperties": false
+    },
+    "Zamawiajacy": {
+     "type": "object",
+     "properties": {
+      "nazwa": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "nazwa"
+     ],
+     "additionalProperties": false
+    }
+   },
+   "required": [
+    "Zawiadomienie",
+    "Zamawiajacy"
+   ],
+   "additionalProperties": false
+  },
+  "zly_normalizator_wykryty": "zla.x: brak normalizatora 'nieistniejacy' w rejestrze"
+ }
+}

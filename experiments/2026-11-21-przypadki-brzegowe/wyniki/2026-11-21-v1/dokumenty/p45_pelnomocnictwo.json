@@ -1,0 +1,31 @@
+{
+ "id": "p45_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_45/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_45",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 45792,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p45_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1372,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Gdańsk, 30 października 2026 r. PEŁNOMOCNICTWO Baltorix Dostawy Medyczne sp. z o.o. sp.k., ul. Hallera 140, 80-416 Gdańsk, KRS 9996254380, NIP 9998701536, REGON 999352940 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane poniżej, udziela pełnomocnictwa: r. pr. Aleksander Kubiak (nr wpisu na listę: GD-1675), r. pr. Weronika Jabłońska (nr wpisu na listę: GD-2304). Pełnomocnictwo udzielone z"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

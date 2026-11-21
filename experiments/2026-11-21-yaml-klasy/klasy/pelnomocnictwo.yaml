@@ -1,0 +1,38 @@
+# Eksperyment 2026-11-21: proponowany format YAML klasy dokumentu (v0).
+klasa: pelnomocnictwo
+wersja: 1
+opis: Pełnomocnictwo do reprezentowania wykonawcy przed KIO.
+klasyfikacja:
+  sygnaly: ["pełnomocnictwo", "udzielam", "umocowuję", "pełnomocnik"]
+  min_trafien: 2
+pola:
+  mocodawca:
+    typ: lista
+    opis: "Podmioty udzielające pełnomocnictwa; więcej niż jeden przy konsorcjum."
+    dopasowanie_listy: po_tresci
+    element:
+      typ: obiekt
+      pola:
+        data:
+          typ: obiekt
+          pola:
+            imie_nazwisko: {typ: tekst, nullable: true, opis: "Gdy mocodawca jest osobą fizyczną; inaczej null.", metoda: llm}
+            krs: {typ: tekst, nullable: true, format: '^\d{10}$', normalizator: krs, metoda: regula}
+            nazwa: {typ: tekst, opis: "Pełna nazwa mocodawcy.", metoda: llm}
+            nip: {typ: tekst, format: '^\d{10}$', normalizator: nip, metoda: regula}
+            typ: {typ: enum, wartosci: [osoba_prawna, osoba_fizyczna], metoda: llm}
+        podpisujacy:
+          typ: lista
+          dopasowanie_listy: po_tresci
+          element:
+            typ: obiekt
+            pola:
+              imie_nazwisko: {typ: tekst, opis: "Osoba podpisująca w imieniu mocodawcy.", metoda: llm}
+  pelnomocnicy:
+    typ: lista
+    dopasowanie_listy: po_tresci
+    element:
+      typ: obiekt
+      pola:
+        imie_nazwisko: {typ: tekst, opis: "Imię i nazwisko pełnomocnika w mianowniku.", metoda: llm}
+        pesel: {typ: tekst, nullable: true, format: '^\d{11}$', normalizator: pesel, metoda: regula}

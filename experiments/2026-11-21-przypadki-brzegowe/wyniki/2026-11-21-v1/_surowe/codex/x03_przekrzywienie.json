@@ -1,0 +1,70 @@
+{
+ "id": "x03_przekrzywienie",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument zatytułowany „ODWOŁANIE”, skierowany do Prezesa KIO, zawiera dane stron, zarzuty dotyczące postępowania i wnioski odwołującego.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona ma wygląd skanu z ziarnistym tłem.",
+      "waga": "niska"
+     },
+     {
+      "kod": "przekrzywienie",
+      "opis": "Wiersze tekstu wznoszą się ku prawej stronie o kilka stopni.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie widoczny drobny czarny szum, także w otoczeniu liter.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w\nsposób merytoryczny; co narusza prawo Odwołującego do skutecznego wniesienia\nodwołania.\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona ma wygląd skanu z ziarnistym tłem.",
+      "waga": "niska"
+     },
+     {
+      "kod": "przekrzywienie",
+      "opis": "Wiersze tekstu wznoszą się ku prawej stronie o kilka stopni.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Drobny czarny szum pokrywa całą stronę i miejscami otacza litery.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "        \"waga\": \"srednia\"\n        },\n        {\n          \"kod\": \"niska_jakosc\",\n          \"opis\": \"Drobny czarny szum pokrywa całą stronę i miejscami otacza litery.\",\n          \"waga\": \"niska\"\n        }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": []\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n5969\n"
+ },
+ "czas_s": 19.7
+}

@@ -1,0 +1,57 @@
+{
+ "id": "p08_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_08/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_08",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 97902,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p08_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1292,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Rzeszów, dnia 5 czerwca 2026 roku Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Umbria Rozwiązania sp. j. ul. Wiśniowa 44, 35-545 Rzeszów KRS: 9997927279, NIP: 9990600725, REGON: 999424597 reprezentowana przez: adw. Bartosz Jastrzębski, adw. Oliwia Zajkowski adres do korespondencji: Kancelaria Radców Prawnych Spółka z ograniczoną odpowiedzialnością, ul. Kaszubska 65,"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p08_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1670,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Zamówienia wynikały istotne wątpliwości mogące mieć wpływ na treść ofert. 1.2. Zaniechanie to pozbawiło Wykonawców możliwości ustosunkowania się do dostrzeżonych nieprawidłowości, co narusza ich prawo do obrony swoich praw. Zarzut nr 2 naruszenia obowiązku sporządzenia dokumentacji postępowania w sposób przejrzysty: 2.1. Dokumentacja postępowania nie zawiera pełnego uzasadnienia przyjętych wymagań"
+  },
+  {
+   "nr": 3,
+   "obraz": "strony/p08_odwolanie/p003.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 755,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "1. wnoszę o oddalenie zarzutów odwołania; 2. wnoszę o uwzględnienie odwołania i przekazanie sprawy Zamawiającemu do ponownej oceny ofert; Załączniki: 1. dokument potwierdzający nadanie odwołania; 2. oświadczenie o niezaleganiu z podatkami i składkami; 3. pełnomocnictwo udzielone przedstawicielowi Odwołującego; .............................. .............................. Bartosz Jastrzębski, adw. "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

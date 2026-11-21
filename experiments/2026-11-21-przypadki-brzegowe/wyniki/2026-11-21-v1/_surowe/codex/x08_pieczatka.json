@@ -1,0 +1,50 @@
+{
+ "id": "x08_pieczatka",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Potwierdzenie realizacji przelewu opłaty skarbowej od pełnomocnictwa w postępowaniu przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona ma wygląd skanu z widocznym szumem tła.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Duża czerwona pieczątka „ZAPŁACONO” nachodzi na opis przelewu i pole numeru referencyjnego.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu rozmieszczono w obramowanych polach w dwóch kolumnach.",
+      "waga": "niska"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Drobne ciemne punkty szumu występują na całej stronie, także w obszarach tekstu.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "\": \"niska\"\n        },\n        {\n          \"kod\": \"niska_jakosc\",\n          \"opis\": \"Drobne ciemne punkty szumu występują na całej stronie, także w obszarach tekstu.\",\n          \"waga\": \"niska\"\n        }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": []\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n4478\n"
+ },
+ "czas_s": 16.0
+}

@@ -1,0 +1,587 @@
+{
+ "format": "uzp-karta-dokumentu",
+ "wersja": 1,
+ "id": "p47_pelnomocnictwo",
+ "klasa": "pelnomocnictwo",
+ "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_47/pelnomocnictwo.pdf",
+ "referencja": "docs/02-materialy/organizator-uzp/dane/przyklad_47/pelnomocnictwo.json",
+ "metoda": "Heurystyka referencja → pdftotext -bbox-layout; każdy PDF niezależnie",
+ "pola": {
+  "mocodawca[0].data.imie_nazwisko": {
+   "wartosc": "Sebastian Tomaszewski",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      172.906,
+      133.982,
+      288.661,
+      143.359
+     ],
+     "tekst_w_dokumencie": "Sebastian Tomaszewski,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 3.36,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       181.063,
+       234.646,
+       190.609
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      141.786,
+      149.732,
+      250.51,
+      159.109
+     ],
+     "tekst_w_dokumencie": "Sebastian Tomaszewski,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 2.24,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       181.063,
+       234.646,
+       190.609
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      474.388,
+      168.963,
+      483.934
+     ],
+     "tekst_w_dokumencie": "Sebastian Tomaszewski",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "przed",
+      "odleglosc_linii": 3.24,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       429.057,
+       125.512,
+       438.434
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.krs": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  },
+  "mocodawca[0].data.nazwa": {
+   "wartosc": "RAVELO-BUD Sebastian Tomaszewski",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      149.732,
+      250.51,
+      159.109
+     ],
+     "tekst_w_dokumencie": "RAVELO-BUD Sebastian Tomaszewski,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 2.24,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       181.063,
+       234.646,
+       190.609
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.nip": {
+   "wartosc": "9997975723",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      432.786,
+      149.563,
+      487.911,
+      159.109
+     ],
+     "tekst_w_dokumencie": "9997975723,",
+     "etykieta_pola": "NIP",
+     "etykieta_roli": {
+      "tekst": "Mocodawca",
+      "polozenie": "po",
+      "odleglosc_linii": 2.25,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       181.063,
+       234.646,
+       190.609
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.typ": {
+   "wartosc": "osoba_fizyczna",
+   "dopasowanie": "wyliczana",
+   "wystapienia": []
+  },
+  "mocodawca[0].podpisujacy[0].imie_nazwisko": {
+   "wartosc": "Sebastian Tomaszewski",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      172.906,
+      133.982,
+      288.661,
+      143.359
+     ],
+     "tekst_w_dokumencie": "Sebastian Tomaszewski,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "podpisany",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.01,
+      "strona": 1,
+      "bbox": [
+       119.875,
+       133.813,
+       163.039,
+       143.359
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      141.786,
+      149.732,
+      250.51,
+      159.109
+     ],
+     "tekst_w_dokumencie": "Sebastian Tomaszewski,",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "podpisany",
+      "polozenie": "przed",
+      "odleglosc_linii": 1.14,
+      "strona": 1,
+      "bbox": [
+       119.875,
+       133.813,
+       163.039,
+       143.359
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      474.388,
+      168.963,
+      483.934
+     ],
+     "tekst_w_dokumencie": "Sebastian Tomaszewski",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].imie_nazwisko": {
+   "wartosc": "Elżbieta Woźniak",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      349.533,
+      181.063,
+      429.314,
+      190.609
+     ],
+     "tekst_w_dokumencie": "Elżbieta Woźniak",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "udzielam",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 1,
+      "bbox": [
+       196.163,
+       181.063,
+       314.443,
+       190.609
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      91.105,
+      541.638,
+      166.026,
+      551.184
+     ],
+     "tekst_w_dokumencie": "Elżbieta Woźniak",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Pełnomocnictwo",
+      "polozenie": "przed",
+      "odleglosc_linii": 3.1,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       498.307,
+       141.847,
+       507.684
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].pesel": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  },
+  "pelnomocnicy[1].imie_nazwisko": {
+   "wartosc": "Iwona Kucharska",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      141.842,
+      196.813,
+      215.603,
+      206.359
+     ],
+     "tekst_w_dokumencie": "Iwona Kucharska",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "udzielam",
+      "polozenie": "przed",
+      "odleglosc_linii": 1.12,
+      "strona": 1,
+      "bbox": [
+       196.163,
+       181.063,
+       314.443,
+       190.609
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      91.105,
+      585.138,
+      164.867,
+      594.684
+     ],
+     "tekst_w_dokumencie": "Iwona Kucharska",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Pełnomocnictwo",
+      "polozenie": "przed",
+      "odleglosc_linii": 6.2,
+      "strona": 1,
+      "bbox": [
+       68.362,
+       498.307,
+       141.847,
+       507.684
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[1].pesel": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  }
+ },
+ "grupy": [
+  {
+   "id": "mocodawca[0]",
+   "typ": "mocodawca[]",
+   "pola": [
+    "mocodawca[0].data.imie_nazwisko",
+    "mocodawca[0].data.krs",
+    "mocodawca[0].data.nazwa",
+    "mocodawca[0].data.nip",
+    "mocodawca[0].data.typ"
+   ],
+   "etykieta_roli": {
+    "tekst": "Mocodawca",
+    "polozenie": "po",
+    "odleglosc_linii": 2.24,
+    "strona": 1,
+    "bbox": [
+     68.362,
+     181.063,
+     234.646,
+     190.609
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      68.362,
+      133.982,
+      487.911,
+      190.609
+     ],
+     "spojna": false,
+     "kolidujace_pola": [
+      "mocodawca[0].podpisujacy[0].imie_nazwisko",
+      "pelnomocnicy[0].imie_nazwisko"
+     ],
+     "wysokosc_linii": 5.93
+    }
+   ],
+   "spojna": false,
+   "pola_zlokalizowane": 3,
+   "pola_do_lokalizacji": 3
+  },
+  {
+   "id": "mocodawca[0].podpisujacy[0]",
+   "typ": "mocodawca[].podpisujacy[]",
+   "pola": [
+    "mocodawca[0].podpisujacy[0].imie_nazwisko"
+   ],
+   "etykieta_roli": {
+    "tekst": "podpisany",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.01,
+    "strona": 1,
+    "bbox": [
+     119.875,
+     133.813,
+     163.039,
+     143.359
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      119.875,
+      133.813,
+      288.661,
+      143.359
+     ],
+     "spojna": false,
+     "kolidujace_pola": [
+      "mocodawca[0].data.imie_nazwisko"
+     ],
+     "wysokosc_linii": 1.0
+    }
+   ],
+   "spojna": false,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  },
+  {
+   "id": "pelnomocnicy[0]",
+   "typ": "pelnomocnicy[]",
+   "pola": [
+    "pelnomocnicy[0].imie_nazwisko",
+    "pelnomocnicy[0].pesel"
+   ],
+   "etykieta_roli": {
+    "tekst": "udzielam",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.0,
+    "strona": 1,
+    "bbox": [
+     196.163,
+     181.063,
+     314.443,
+     190.609
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      196.163,
+      181.063,
+      429.314,
+      190.609
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 1.0
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  },
+  {
+   "id": "pelnomocnicy[1]",
+   "typ": "pelnomocnicy[]",
+   "pola": [
+    "pelnomocnicy[1].imie_nazwisko",
+    "pelnomocnicy[1].pesel"
+   ],
+   "etykieta_roli": {
+    "tekst": "udzielam",
+    "polozenie": "przed",
+    "odleglosc_linii": 1.12,
+    "strona": 1,
+    "bbox": [
+     196.163,
+     181.063,
+     314.443,
+     190.609
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      141.842,
+      181.063,
+      314.443,
+      206.359
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.65
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  }
+ ],
+ "uklad": [
+  {
+   "strona": 1,
+   "przyblizenie": true,
+   "liczba_kolumn": 1,
+   "linie_z_odstepami": [],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  }
+ ],
+ "kody": [
+  {
+   "kod": "wiele_wystapien",
+   "pole": "mocodawca[0].data.imie_nazwisko",
+   "dowod": "3 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].data.imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].data.nazwa",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wartosc_wyliczana",
+   "pole": "mocodawca[0].data.typ",
+   "dowod": "wyliczana; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "mocodawca_osoba_fizyczna",
+   "pole": "mocodawca[0].data.typ",
+   "dowod": "Wariant w referencji"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "mocodawca[0].podpisujacy[0].imie_nazwisko",
+   "dowod": "3 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].podpisujacy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "pelnomocnicy[0].imie_nazwisko",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "pelnomocnicy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "pelnomocnicy[1].imie_nazwisko",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "pelnomocnicy[1].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "etykieta_po_danych",
+   "pole": "mocodawca[0]",
+   "dowod": "Mocodawca"
+  },
+  {
+   "kod": "etykieta_synonim",
+   "pole": "pelnomocnicy[0]",
+   "dowod": "udzielam"
+  },
+  {
+   "kod": "etykieta_synonim",
+   "pole": "pelnomocnicy[1]",
+   "dowod": "udzielam"
+  }
+ ],
+ "braki": []
+}

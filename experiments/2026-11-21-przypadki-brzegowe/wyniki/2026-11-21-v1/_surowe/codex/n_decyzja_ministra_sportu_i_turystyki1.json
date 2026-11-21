@@ -1,0 +1,51 @@
+{
+ "id": "n_decyzja_ministra_sportu_i_turystyki1",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Decyzja Ministra Sportu i Turystyki zatwierdzająca statut Polskiego Związku Golfa.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Warszawa, 14 grudnia 2011 r.\nMINISTER\nSPORTU I TURYSTYKI\nJoanna Mucha\nDP-4071-32883/2011/WCz - 23885\nDECYZJA Nr 14/DP/2011\nNa podstawie art. 21 ust. 1 ustawy z dnia 25 czerwca 2010 r. o sporcie",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona ma wygląd skanu papierowego dokumentu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "odreczne",
+      "opis": "Dzień daty, końcówkę znaku pisma i numer decyzji wpisano ręcznie.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Podpis w dolnej prawej części strony nachodzi na nadruk imienia i nazwiska ministra.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Decyzja administracyjna dotycząca statutu związku sportowego, spoza trzech docelowych klas dokumentów sprawy KIO.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "  }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": [\n    {\n      \"kod\": \"dokument_obcy\",\n      \"opis\": \"Decyzja administracyjna dotycząca statutu związku sportowego, spoza trzech docelowych klas dokumentów sprawy KIO.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n4587\n"
+ },
+ "czas_s": 17.0
+}

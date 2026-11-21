@@ -1,0 +1,29 @@
+{
+ "id": "p40_pelnomocnictwo",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument udziela pełnomocnictwa do reprezentowania wykonawcy, w tym wniesienia odwołania i występowania przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Poznań, 15 października 2026 r.\nPEŁNOMOCNICTWO\nValtrix Systemy Informatyczne sp. z o.o., ul. Grunwaldzka 112, 60-307 Poznań, KRS 9998213547, NIP 9993380162, REGON 999517204 (dalej: „Mocodawca”),",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "_poczatku\":\"Poznań, 15 października 2026 r.\\nPEŁNOMOCNICTWO\\nValtrix Systemy Informatyczne sp. z o.o., ul. Grunwaldzka 112, 60-307 Poznań, KRS 9998213547, NIP 9993380162, REGON 999517204 (dalej: „Mocodawca”),\",\"problemy\":[]}],\"problemy_dokumentu\":[]}\nhook: Stop\nhook: Stop Completed\ntokens used\n4229\n"
+ },
+ "czas_s": 9.3
+}

@@ -1,0 +1,31 @@
+{
+ "id": "p10_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_10/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_10",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 81601,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p10_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 928,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Meridian Konsulting sp. j. ul. Huta 80, 80-587 Gdańsk KRS 9998577437 · NIP 9992049237 · REGON 999851916 Gdańsk, 11-10-2026 PEŁNOMOCNICTWO Ja, niżej podpisany(a), działając jako osoba upoważniona do reprezentacji Meridian Konsulting sp. j. (KRS 9998577437, NIP 9992049237), udzielam pełnomocnictwa adw. Patrycja Rutkiewicz (nr wpisu na listę: WA 36758), r. pr. Marek Łukaszewski (nr wpisu na listę: WA"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

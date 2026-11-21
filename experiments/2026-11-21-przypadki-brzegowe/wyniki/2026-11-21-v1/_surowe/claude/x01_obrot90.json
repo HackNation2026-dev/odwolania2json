@@ -1,0 +1,55 @@
+{
+ "id": "x01_obrot90",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument zatytułowany „PEŁNOMOCNICTWO”. Belmoria Rozwiązania S.A. ustanawia pełnomocnikami r. pr. Aleksandrę Marciniak i r. pr. Jolantę Zajkowski do wnoszenia środków ochrony prawnej, w tym do Krajowej Izby Odwoławczej, w postępowaniu ZS.791.2026.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 270,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nŁódź, 1 kwietnia 2026\n§ 1. Mocodawca\nMocodawcą jest Belmoria Rozwiązania S.A., ul. Zaczarowana 78, 90-803 Łódź, KRS 9999405188, NIP 9999284065, REGON 999642785.\n§ 2. Pełnomocnik\nMocodawca ustanawia pełnomocnikiem r. pr. Aleksandra Marciniak",
+    "problemy": [
+     {
+      "kod": "obrot",
+      "opis": "Cała treść strony jest obrócona o 90° przeciwnie do ruchu wskazówek zegara, czyli o 270° zgodnie z nim. Tytuł znajduje się przy lewej krawędzi, a tekst biegnie od dołu do góry. Strona ma orientację poziomą.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "skan",
+      "opis": "Strona wygląda jak obraz z rozproszonym szumem (kropkami) na całym tle. Nie widać warstwy tekstu cyfrowego.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej powierzchni strony jest drobny szum typu „pieprz”. Mały, szary tekst daty pod tytułem ma słaby kontrast.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "obrot",
+    "opis": "Jedyna strona dokumentu jest obrócona o 270° zgodnie z ruchem wskazówek zegara. Przed OCR trzeba ją obrócić o 90° zgodnie z ruchem wskazówek.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2668892,
+  "tury": 3
+ },
+ "czas_s": 16.2
+}

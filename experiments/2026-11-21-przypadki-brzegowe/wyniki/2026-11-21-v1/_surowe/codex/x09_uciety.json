@@ -1,0 +1,51 @@
+{
+ "id": "x09_uciety",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument zatytułowany „PEŁNOMOCNICTWO” upoważnia radców prawnych do reprezentowania wykonawcy przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Poznań, 15 październik\nPEŁNOMOCNICTWO\nValtrix Systemy Informatyczne sp. z o.o., ul. Grunwaldzka 112, 60-307 Poznań, KRS 9998213\n9993380162, REGON 999517204 (dalej: „Mocodawca”),",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona ma wygląd skanu z widocznym szumem tła.",
+      "waga": "niska"
+     },
+     {
+      "kod": "uciety_tekst",
+      "opis": "Prawa krawędź ucina datę, dane mocodawcy oraz końce licznych wierszy treści pełnomocnictwa.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie występują liczne drobne czarne plamki, również w obszarze tekstu.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "uciety_tekst",
+    "opis": "Jedyna strona dokumentu ma uciętą prawą część, co uniemożliwia pełny odczyt części danych i zdań.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "\": \"niska\"\n        }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": [\n    {\n      \"kod\": \"uciety_tekst\",\n      \"opis\": \"Jedyna strona dokumentu ma uciętą prawą część, co uniemożliwia pełny odczyt części danych i zdań.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n4440\n"
+ },
+ "czas_s": 17.5
+}

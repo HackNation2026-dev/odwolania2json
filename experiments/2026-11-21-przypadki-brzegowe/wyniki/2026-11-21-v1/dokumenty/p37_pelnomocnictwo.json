@@ -1,0 +1,31 @@
+{
+ "id": "p37_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_37/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_37",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 66356,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p37_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1080,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "PEŁNOMOCNICTWO Lublin, 8 marca 2026 § 1. Mocodawca Mocodawcą jest Belmoria Technologie sp. j., ul. Kaszubska 70, 20-480 Lublin, KRS 9994481774, NIP 9998805059, REGON 999647305. § 2. Pełnomocnik Mocodawca udzielam pełnomocnictwa adw. Halina Niedźwiecki (nr wpisu na listę: WA 45695). § 3. Postępowanie Pełnomocnictwo dotyczy postępowania „Dostawa licencji oprogramowania do monitorowania infrastruktur"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

@@ -1,0 +1,85 @@
+{
+ "id": "n_2020_03_21_22prowadzenie_postepowania_od",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Plik to prezentacja szkoleniowa (slajdy) „Postępowanie odwoławcze i sądowoadministracyjne – cz. 1” o decyzjach i postanowieniach w KPA. Nie jest odwołaniem do KIO, pełnomocnictwem ani potwierdzeniem przelewu, ale temat (postępowanie odwoławcze) może łudząco sugerować klasę odwolanie.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Postępowanie odwoławcze i sądowoadministracyjne – cz. 1",
+    "problemy": [
+     {
+      "kod": "inne",
+      "opis": "Slajd tytułowy prezentacji w orientacji poziomej; poza tytułem na szarym tle strona jest prawie pusta.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "DECYZJA / POSTANOWIENIE\nOrgan administracji publicznej załatwia sprawę przez wydanie decyzji, chyba że przepisy kodeksu stanowią inaczej.\nUWAGA! Przepisy prawa materialnego nie muszą wskazywać w sposób wyraźny i bezpośredni",
+    "problemy": [
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Układ slajdu: tytuł nad szarym polem z tekstem, ozdobne niebieskie paski przy lewej krawędzi.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "DECYZJA / POSTANOWIENIE\nW toku postępowania organ administracji publicznej wydaje postanowienia.\nPostanowienia dotyczą poszczególnych kwestii wynikających w toku postępowania, lecz nie rozstrzygają o istocie sprawy, chyba że",
+    "problemy": [
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Układ slajdu: tytuł nad szarym polem z tekstem, ozdobne niebieskie paski przy lewej krawędzi.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Cały plik (35 stron) to prezentacja szkoleniowa o postępowaniu administracyjnym (KPA), nie dokument sprawy odwoławczej do KIO.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Tytuł i nazwa pliku zawierają frazę „postępowanie odwoławcze”, co może skłaniać klasyfikator do klasy odwolanie.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "inne",
+    "opis": "Format slajdów (orientacja pozioma, szare tło pól tekstowych, ozdobne paski) zamiast dokumentu A4.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.288599,
+  "tury": 5
+ },
+ "czas_s": 18.7
+}

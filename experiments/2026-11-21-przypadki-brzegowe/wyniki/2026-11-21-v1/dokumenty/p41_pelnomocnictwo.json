@@ -1,0 +1,151 @@
+{
+ "id": "p41_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_41/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_41",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 66763,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p41_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1591,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Toruń, 6 sierpnia 2026 r. PEŁNOMOCNICTWO Wykonawcy wspólnie ubiegający się o udzielenie zamówienia (Konsorcjum): 1) Torvex Budownictwo sp. z o.o., ul. Przemysłowa 8, 87-100 Toruń, KRS 9995540127, NIP 9992284611, REGON 999473016; 2) Hydromel Instalacje sp.j., ul. Lipowa 15, 85-016 Bydgoszcz, KRS 9997108834, NIP 9994417025, REGON 999650438 (dalej łącznie: „Mocodawca”), reprezentowani przez osoby pod"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 10.3,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "pelnomocnictwo",
+    "uzasadnienie_klasy": "Dokument udziela adwokatowi Piotrowi Zalewskiemu pełnomocnictwa do reprezentowania wykonawców, w tym w postępowaniu odwoławczym przed KIO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Toruń, 6 sierpnia 2026 r.\nPEŁNOMOCNICTWO\nWykonawcy wspólnie ubiegający się o udzielenie zamówienia (Konsorcjum): 1) Torvex Budownictwo sp. z o.o., ul. Przemysłowa 8, 87-100 Toruń, KRS 9995540127, NIP 9992284611,",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 14.8,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "pelnomocnictwo",
+    "uzasadnienie_klasy": "Dokument ma tytuł „PEŁNOMOCNICTWO”. Konsorcjum wykonawców (Torvex Budownictwo sp. z o.o. i Hydromel Instalacje sp.j.) udziela w nim adw. Piotrowi Zalewskiemu umocowania m.in. do wniesienia odwołania do Prezesa KIO i do reprezentowania przed KIO w postępowaniu IR.271.14.2026.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Toruń, 6 sierpnia 2026 r.\nPEŁNOMOCNICTWO\nWykonawcy wspólnie ubiegający się o udzielenie zamówienia (Konsorcjum): 1) Torvex Budownictwo sp. z o.o., ul. Przemysłowa 8, 87-100 Toruń, KRS 9995540127, NIP 9992284611, REGON 999473016; 2) Hydromel",
+      "problemy": [
+       {
+        "kod": "inne",
+        "opis": "Na dole strony miejsca na podpisy mocodawców (Marek Domański, Agnieszka Kurek, Robert Kurek) i pełnomocnika są puste: same wykropkowane linie, bez podpisów odręcznych i bez śladów podpisu elektronicznego.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "inne",
+        "opis": "Niespójność w treści: dokument wskazuje jednego pełnomocnika (adw. Piotr Zalewski), a zdanie końcowe używa liczby mnogiej: „Pełnomocnicy są umocowani do działania samodzielnie”.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "inne",
+      "opis": "Pełnomocnictwo udzielają wspólnie dwaj wykonawcy (konsorcjum). Ekstrakcja musi zwrócić dwóch mocodawców i trzy osoby reprezentujące, a nie jedną stronę.",
+      "waga": "niska"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 3.2,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "pelnomocnictwo",
+    "uzasadnienie_klasy": "Dokument zawiera wyraźne oświadczenie o udzieleniu pełnomocnictwa wspólnicy konsorcjum do reprezentowania Mocodawcy w postępowaniu o udzielenie zamówienia, wraz z zakresem pełnomocnictwa i danymi pełnomocników.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Toruń, 6 sierpnia 2026 r.\n\nPEŁNOMOCNICTWO\n\nWykonawcy wspólnie ubiegający się o udzielenie zamówienia (Konsorcjum): 1) Torvex Budownictwo sp. z o.o., ul. Przemysłowa 8, 87-100 Toruń, KRS 9995540127, NIP 9992284611,",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

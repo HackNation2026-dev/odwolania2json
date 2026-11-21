@@ -1,0 +1,22 @@
+# Test rozszerzalności: wymyślona czwarta klasa dodana wyłącznie YAML-em.
+# Zawiera elementy, których nie ma w trzech klasach: lista tekstów, enum z null, liczba z zakresem.
+klasa: zawiadomienie_o_wniesieniu
+wersja: 1
+opis: Zawiadomienie zamawiającego o wniesieniu odwołania (klasa hipotetyczna).
+klasyfikacja:
+  sygnaly: ["zawiadomienie", "wniesieniu odwołania", "wykonawcy"]
+  min_trafien: 2
+pola:
+  Zawiadomienie:
+    typ: obiekt
+    pola:
+      data: {typ: data, nullable: true, metoda: regula}
+      sygnatura_kio: {typ: tekst, nullable: true, format: '^KIO \d{1,5}/\d{2}$', metoda: regula}
+      tryb_doreczenia: {typ: enum, nullable: true, wartosci: [email, epuap, poczta], metoda: llm}
+      liczba_wykonawcow: {typ: liczba_calkowita, min: 0, max: 999, metoda: llm}
+      wezwani_wykonawcy: {typ: lista, element: {typ: tekst}, metoda: llm}
+  Zamawiajacy:
+    typ: obiekt
+    pola:
+      nazwa: {typ: tekst, dopasowanie: fuzzy80, metoda: llm}
+      nip: {typ: tekst, nullable: true, format: '^\d{10}$', normalizator: nip, metoda: regula}

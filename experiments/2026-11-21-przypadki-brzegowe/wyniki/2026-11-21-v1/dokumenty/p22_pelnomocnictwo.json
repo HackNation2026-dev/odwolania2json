@@ -1,0 +1,31 @@
+{
+ "id": "p22_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_22/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_22",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 75236,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p22_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 990,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Zorina Systemy sp. z o.o. ul. Piwna 79, 30-756 Kraków KRS 9994097527 · NIP 9992726100 · REGON 999205547 Kraków, 18 stycznia 2026 PEŁNOMOCNICTWO Ja, niżej podpisany(a), działając jako osoba upoważniona do reprezentacji Zorina Systemy sp. z o.o. (KRS 9994097527, NIP 9992726100), ustanawiam pełnomocnikiem r. pr. Dorota Sikorski (nr wpisu na listę: WA 79494), r. pr. Grzegorz Szulc (nr wpisu na listę: "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

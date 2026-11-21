@@ -1,0 +1,62 @@
+{
+ "id": "s_negatywny_przyklad",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Plik to ogłoszenie o zamówieniu z TED (364525-2025, OJ S 107/2025, „Ogłoszenie o zamówieniu lub ogłoszenie o koncesji – tryb standardowy”), wydane przez Narodowy Instytut Kardiologii. Nie jest to odwołanie, pełnomocnictwo ani potwierdzenie przelewu. Jest powiązane z zamówieniami publicznymi, więc łatwo je pomylić z dokumentem sprawy.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "364525-2025 - Procedura konkurencyjna See the notice on TED website Polska – Serwery – Dostawa, wdrożenie, skonfigurowanie serwerowego środowiska teleinformatycznego wraz z serwisem i gwarancją OJ S 107/2025 05/06/2025 Ogłoszenie o zamówieniu",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Udział w organizacji przestępczej: Wykonawca zostanie wykluczony z postępowania na podstawie art. 108 ust. 1 pkt 1 Ustawy Prawo Zamówień Publicznych, którego skazano prawomocnie za przestępstwo wskazane w art. 258 Kodeksu karnego",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prawo Zamówień Publicznych, którego skazano prawomocnie za przestępstwo o charakterze terrorystycznym, o którym mowa w art. 115 § 20 Kodeksu karnego, lub mające na celu popełnienie tego przestępstwa lub odpowiedni czyn",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Cały plik (9 stron) to ogłoszenie o zamówieniu z TED. Nie należy do klas odwołanie, pełnomocnictwo ani przelew.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Ogłoszenie zawiera słownictwo zamówień publicznych (Pzp, art. 108, wykonawca, zamawiający, postępowanie). Klasyfikator może je błędnie uznać za odwołanie do KIO.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.28545580000000004,
+  "tury": 5
+ },
+ "czas_s": 16.1
+}

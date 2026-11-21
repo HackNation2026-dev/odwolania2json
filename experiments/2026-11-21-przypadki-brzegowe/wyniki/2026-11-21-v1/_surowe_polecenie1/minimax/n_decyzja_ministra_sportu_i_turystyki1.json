@@ -1,0 +1,56 @@
+{
+ "id": "n_decyzja_ministra_sportu_i_turystyki1",
+ "model": "minimax",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Jest to decyzja Ministra Sportu i Turystyki o zatwierdzeniu statutu Polskiego Związku Golfa, a nie odwołanie do KIO, pełnomocnictwo ani potwierdzenie przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "MINISTER\nSPORTU I TURYSTYKI\nJodłna Mucha\n\nWarszawa, 14 grudnia 2011 r.\n\nDP-4071-32883/2011/WCz-238/85\n\nDECYZJA Nr\n\nNa podstawie art. 21 ust. 1 ustawy z dnia 25 czerwca 2010 r. o sporcie (Dz. U. Nr 127,",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona jest zeskanowanym obrazem bez widocznej cyfrowej warstwy tekstu.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "odreczne",
+      "opis": "W górnej części strony odręcznie uzupełniono datę oraz numer decyzji.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Dokument jest urzędową decyzją administracyjną i nie należy do klas odwołanie, pełnomocnictwo ani przelew.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2797,
+   "output_tokens": 1528,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 128,
+   "output_tokens_details": {
+    "thinking_tokens": 1166
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 27.4
+}

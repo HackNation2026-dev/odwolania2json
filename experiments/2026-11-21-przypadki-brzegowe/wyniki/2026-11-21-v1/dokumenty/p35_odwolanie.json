@@ -1,0 +1,44 @@
+{
+ "id": "p35_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_35/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_35",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 85321,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p35_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2331,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Rubiconis Automatyka sp. k. ul. Jasionowa 44, 30-297 Kraków KRS: 9995695391, NIP: 9997232058, REGON: 999347550 reprezentowana przez: adw. Klaudia Szymanski, r. pr. Norbert Sadowski adres do korespondencji: Kancelaria Prawna i Partnerzy, ul. Iglasta 34, 30-833 Kraków tel. 000 000 000, biuro@kontakt.example Zamawiający: Ibe"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p35_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2146,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "d).1. Kryteria oceny ofert wskazane w dokumentacji postępowania nie są sformułowane w sposób jednoznaczny, a sposób ich zastosowania przez Zamawiającego nie został wyjaśniony, co uniemożliwia zweryfikowanie poprawności dokonanej oceny. d).2. Wobec powyższego Ocena ofert została dokonana w sposób, który nie zapewnia porównywalności ofert i nie gwarantuje wyboru najkorzystniejszej oferty zgodnie z p"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

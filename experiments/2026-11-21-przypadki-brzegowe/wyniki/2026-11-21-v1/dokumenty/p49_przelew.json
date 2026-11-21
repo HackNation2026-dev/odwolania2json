@@ -1,0 +1,31 @@
+{
+ "id": "p49_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_49/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_49",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 84758,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p49_przelew/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 723,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Handlowy Centrum S.A. · wygenerowano 02.07.2026 Zleceniodawca Altrona Farmacja sp.k. ul. Kolejowa 61, 87-178 Toruń Rachunek zleceniodawcy PL87 7679 9852 8637 3571 5675 1729 Odbiorca Samodzielny Publiczny Zakład Opieki Zdrowotnej w Kamionnej ul. Krótka 2, 26-804 Kamionna Rachunek odbiorcy PL29 9154 0002 3241 7143 7253 4330 Kwota 50,00 PLN Data operacji 01.07.20"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

@@ -1,0 +1,50 @@
+{
+ "id": "x12_strona_mieszana",
+ "model": "codex",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Potwierdzenie przelewu 50,00 zł dotyczy opłaty skarbowej od pełnomocnictwa, a nie wpisu od odwołania do KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "mieszana",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\nKredyt Północny · wydrukowano 26 sierpnia 2026\nPłatnik\nHartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\n53678424593392529814420143\nBeneficjent\nEurosept Infrastruktura S.A.",
+    "problemy": [
+     {
+      "kod": "strona_mieszana",
+      "opis": "Cyfrowo wyglądające potwierdzenie zawiera wklejony skan pieczątki „OPŁACONO” i niebieskiego śladu w dolnej części strony.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Dane płatnika i beneficjenta znajdują się w dwóch sąsiadujących kolumnach.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Przelew dotyczy opłaty skarbowej od pełnomocnictwa, poza zdefiniowaną klasą potwierdzeń wpisu od odwołania.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Układ potwierdzenia bankowego i wzmianka o KIO mogą sugerować klasę „przelew”, lecz tytuł wskazuje inny rodzaj opłaty.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "wołania.\",\n      \"waga\": \"wysoka\"\n    },\n    {\n      \"kod\": \"podobny_do_klasy\",\n      \"opis\": \"Układ potwierdzenia bankowego i wzmianka o KIO mogą sugerować klasę „przelew”, lecz tytuł wskazuje inny rodzaj opłaty.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n4567\n"
+ },
+ "czas_s": 16.9
+}

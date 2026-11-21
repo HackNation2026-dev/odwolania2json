@@ -1,0 +1,124 @@
+{
+ "id": "n_1648041143_1647951357decyzja_ministraspo",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Decyzja administracyjna Ministra Sportu i Turystyki nr 11/DP/2021 zatwierdzająca zmianę statutu Polskiego Związku Narciarskiego, z załącznikiem (uchwała nr 3 Walnego Zjazdu Delegatów PZN). To nie jest odwołanie do KIO, pełnomocnictwo ani przelew. Pouczenie wspomina o odwołaniu i skardze, a strona 2 wymienia pełnomocnika, co może mylić klasyfikator.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "MINISTER\nSPORTU i TURYSTYKI\nWarszawa, 21 grudnia 2021 r.\nDP.9552.2021\nPolska Związek Narciarski\nz siedzibą w Krakowie\nreprezentowany przez:\nr. pr. Adama M. Kozłowskiego\nKancelaria Radców Prawnych\nKozłowski, Pisarkiewicz-Firek sp.j.",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona jest skanem dokumentu papierowego z godłem w nagłówku.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "odreczne",
+      "opis": "Dzień daty („21”) i numer decyzji („11” w „Nr 11 /DP/2021”) są wpisane ręcznie.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "dokument_obcy",
+      "opis": "Decyzja administracyjna Ministra Sportu i Turystyki, a nie dokument sprawy KIO.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Na podstawie art. 107 § 4 Kpa Minister Sportu i Turystyki odstąpił od uzasadnienia decyzji, gdyż uwzględnia ona w całości żądanie strony.\nStrona przedstawiła dowód uiszczenia opłaty skarbowej w wysokości 10 zł.",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona jest skanem.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Niebieska pieczątka „Z upoważnienia MINISTRA SPORTU I TURYSTYKI” z odręcznym podpisem nachodzi na nazwisko „Piotr Gałązka”.",
+      "waga": "niska"
+     },
+     {
+      "kod": "podobny_do_klasy",
+      "opis": "Pouczenie wspomina o odwołaniu, a w rozdzielniku pojawia się „pełnomocnik”; słowa kluczowe mogą mylić klasyfikator.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   {
+    "nr": 3,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Załącznik Nr ....................................\ndo decyzji Nr ......11.........................\nMinistra Sportu i Turystyki z dnia ......21.12.2021 r.\nZmiany Statutu PZN\nZ upoważnienia\nMINISTRA SPORTU I TURYSTYKI",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona jest skanem; tekst uchwały ma szary, lekko rozmyty druk.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Niebieska pieczątka z podpisem w lewym górnym rogu leży obok nagłówka uchwały, a podpisy sekretarza i przewodniczącego na dole strony.",
+      "waga": "niska"
+     },
+     {
+      "kod": "odreczne",
+      "opis": "Numer decyzji, data 21.12.2021 r. w nagłówku oraz wyniki głosowania (34, 0, 2) są wpisane ręcznie.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Treść uchwały ma słabszy kontrast i jest drobnym, szarym drukiem.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "wiele_dokumentow",
+    "opis": "Plik zawiera decyzję Ministra (strony 1–2) i załącznik, czyli uchwałę nr 3 Walnego Zjazdu Delegatów PZN (strona 3 i dalej).",
+    "waga": "srednia"
+   },
+   {
+    "kod": "dokument_obcy",
+    "opis": "Cały plik to decyzja administracyjna niezwiązana z postępowaniem przed KIO.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "skan",
+    "opis": "Wszystkie obejrzane strony są skanami bez widocznej warstwy tekstu.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "inne",
+    "opis": "Strona 4 nie została przekazana do oceny; obejrzano tylko strony 1–3.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.3026348,
+  "tury": 5
+ },
+ "czas_s": 21.8
+}

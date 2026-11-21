@@ -1,0 +1,44 @@
+{
+ "id": "p14_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_14/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_14",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 91174,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p14_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1674,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Gdańsk, dnia 1 sierpnia 2026 roku Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Opalit Serwis sp. k. ul. Różana 61, 80-812 Gdańsk KRS: 9996902468, NIP: 9992251714, REGON: 999950475 reprezentowana przez: adw. Patrycja Bartoszewicz, adw. Aleksandra Gajewicz adres do korespondencji: Kancelaria Prawna i Partnerzy, ul. Błotna 75, 60-339 Poznań tel. 000 000 000, biuro@kont"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p14_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1497,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "b).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania. Zarzut nr 3 nieopisania parametrów technicznych przedmiotu dostawy: c).1. Zamawiający sporządził Opis Przedmiotu Zamówienia bez podania kompletu parametrów technicznych, które powinny być wymagane od Wykonawców, przez co nie jest możl"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

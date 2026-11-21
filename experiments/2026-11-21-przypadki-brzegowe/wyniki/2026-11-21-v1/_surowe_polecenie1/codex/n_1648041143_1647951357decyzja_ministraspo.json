@@ -1,0 +1,105 @@
+{
+ "id": "n_1648041143_1647951357decyzja_ministraspo",
+ "model": "codex",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Decyzja Ministra Sportu i Turystyki zatwierdzająca zmianę statutu Polskiego Związku Narciarskiego wraz z uchwałą w załączniku.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "MINISTER\nSPORTU i TURYSTYKI\nWarszawa, 21 grudnia 2021 r.\nDP.9552.2021\nPolska Związek Narciarski\nz siedzibą w Krakowie\nreprezentowany przez:\nr. pr. Adama M. Kozłowskiego\nKancelaria Radców Prawnych",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Widoczny skan papierowej strony; obecności ukrytej warstwy OCR nie można ustalić z obrazu.",
+      "waga": "niska"
+     },
+     {
+      "kod": "odreczne",
+      "opis": "Dzień w dacie i numer decyzji wpisano ręcznie.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Na podstawie art. 107 § 4 Kpa Minister Sportu i Turystyki odstąpił od uzasadnienia decyzji,\ngdyż uwzględnia ona w całości żądanie strony.\nStrona przedstawiła dowód uiszczenia opłaty skarbowej w wysokości 10 zł.",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Widoczny skan papierowej strony; obecności ukrytej warstwy OCR nie można ustalić z obrazu.",
+      "waga": "niska"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Podpis nachodzi na tekst niebieskiej pieczątki pod pouczeniem.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   {
+    "nr": 3,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Załącznik Nr [nieczytelne]\ndo decyzji Nr 11\nMinistra Sportu i Turystyki z dnia 21.12.2021r.\nZmiany Statutu PZN\nZ upoważnienia\nMINISTRA SPORTU I TURYSTYKI\nPiotr Gałązka\nDyrektor Departamentu Prawnego",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Widoczny skan papierowej strony; obecności ukrytej warstwy OCR nie można ustalić z obrazu.",
+      "waga": "niska"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Drobny tekst uchwały ma słaby kontrast i miejscami niewyraźne znaki.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "odreczne",
+      "opis": "Ręcznie wpisano dane załącznika, numer decyzji, datę oraz wyniki głosowania: 34, 0 i 2.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "W lewym górnym rogu podpis nachodzi na tekst pieczątki imiennej.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Decyzja administracyjna i uchwała dotyczą statutu związku sportowego, a nie odwołania do KIO, pełnomocnictwa ani potwierdzenia przelewu.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "wiele_dokumentow",
+    "opis": "Strony 1–2 zawierają decyzję ministra, a strona 3 odrębną uchwałę stanowiącą załącznik.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "inne",
+    "opis": "Udostępniono obrazy stron 1–3 z czterostronicowego pliku; strona 4 nie została oceniona.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "strona 3 odrębną uchwałę stanowiącą załącznik.\",\n      \"waga\": \"srednia\"\n    },\n    {\n      \"kod\": \"inne\",\n      \"opis\": \"Udostępniono obrazy stron 1–3 z czterostronicowego pliku; strona 4 nie została oceniona.\",\n      \"waga\": \"srednia\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n17 801\n"
+ },
+ "czas_s": 29.4
+}

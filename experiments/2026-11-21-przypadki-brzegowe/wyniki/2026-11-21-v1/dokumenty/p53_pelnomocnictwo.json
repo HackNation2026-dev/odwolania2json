@@ -1,0 +1,31 @@
+{
+ "id": "p53_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_53/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_53",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 45745,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p53_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1303,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Tarnów, 09.08.2026 PEŁNOMOCNICTWO Vellum Facility sp. z o.o. sp.k., ul. Szkolna 11, 33-728 Tarnów, KRS 9996858325, NIP 9999762610, REGON 999467718 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane poniżej, udziela pełnomocnictwa: r. pr. Celina Ostrowska (nr wpisu na listę: GD-5013), adw. Barbara Piotrowska (nr wpisu na listę: KR-5211). Pełnomocnictwo udzielone zostaje do reprezentowania M"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

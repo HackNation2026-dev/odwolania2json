@@ -1,0 +1,80 @@
+{
+ "id": "n_minister_sprawiedliwosci_pismo_rdssp_z_1",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "To pismo urzędowe Rzecznika Dyscyplinarnego Sędziów Sądów Powszechnych do Ministra Sprawiedliwości z 11 marca 2024 r. Dotyczy uznania za bezskuteczne wystąpień opatrzonych podpisem elektronicznym. Nie jest to odwołanie do KIO, pełnomocnictwo ani potwierdzenie przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "RZECZNIK DYSCYPLINARNY SĘDZIÓW SĄDÓW POWSZECHNYCH Warszawa, 11 marca 2024 r. dot. DKO-I.565.84.2024 DKO-I.565.85.2024 DKO-I.565.86.2024 RDSP.0212.4.2024 Pan Adam Bodnar Minister Sprawiedliwości W związku z wystąpieniami",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona jest skanem wydruku: widać lekki szum tła i drobną kropkę przy lewym marginesie.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Sygnatury RDSP.8011.x ułożone są w akapicie w 4 wyrównanych kolumnach, a nagłówek ma układ dwukolumnowy: godło z nazwą urzędu po lewej, data i adresat po prawej.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "realizujących zadania publiczne (t.j. Dz.U. z 2023 r. poz. 57 ze zm.) oraz przepisy Kodeksu postępowania karnego i innych ustaw procesowych, uznać należy, że mimo wprowadzonej przez tę pierwszą ustawę zasady",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona jest skanem wydruku. Druk jest słabszy niż na stronie 1: litera „e” często wygląda jak „c”, np. „clektronicznego”, „wniesienia”.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "W prawym dolnym rogu odręczny podpis nachodzi na pieczątkę „RZECZNIK DYSCYPLINARNY Sędziów Sądów Powszechnych SSA Piotr Schab”. Linia podpisu przecina też prawy fragment stopki.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "W całym tekście strony litery są lekko rozmyte, a druk słaby. To zwiększa ryzyko błędów OCR, zwłaszcza mylenia „e” i „c”.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "To pismo urzędowe w sprawie dyscyplinarnej sędziów, niezwiązane z postępowaniem przed KIO.",
+    "waga": "niska"
+   },
+   {
+    "kod": "skan",
+    "opis": "Obie strony są skanami i wymagają OCR.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2847492,
+  "tury": 4
+ },
+ "czas_s": 17.9
+}

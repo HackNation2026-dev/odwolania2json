@@ -1,0 +1,38 @@
+{
+ "id": "p01_odwolanie",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo zatytułowane „ODWOŁANIE”, skierowane do Prezesa KIO, zawiera dane stron, zarzuty dotyczące postępowania i żądania.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\n\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w\nsposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia\nodwołania.\n\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "nież rozpatrzenie odwołania w\\nsposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia\\nodwołania.\\n\\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:\",\n      \"problemy\": []\n    }\n  ],\n  \"problemy_dokumentu\": []\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n5734\n"
+ },
+ "czas_s": 17.0
+}

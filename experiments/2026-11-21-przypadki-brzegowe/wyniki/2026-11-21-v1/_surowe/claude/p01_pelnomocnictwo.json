@@ -1,0 +1,39 @@
+{
+ "id": "p01_pelnomocnictwo",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Tytuł „PEŁNOMOCNICTWO”, wskazany mocodawca (Belmoria Rozwiązania S.A.), pełnomocnicy (radcy prawni) i zakres umocowania obejmujący środki ochrony prawnej przed KIO w postępowaniu ZS.791.2026.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nŁódź, 1 kwietnia 2026\n§ 1. Mocodawca\nMocodawcą jest Belmoria Rozwiązania S.A., ul. Zaczarowana 78, 90-803 Łódź, KRS 9999405188, NIP 9999284065, REGON 999642785.\n§ 2. Pełnomocnik\nMocodawca ustanawiam pełnomocnikiem r. pr. Aleksandra Marciniak",
+    "problemy": [
+     {
+      "kod": "inne",
+      "opis": "Miejsca na podpisy mocodawcy (Oliwia Kaczmarek) i obu pełnomocników to same wykropkowane linie, bez widocznego podpisu odręcznego ani informacji o podpisie elektronicznym.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.25129440000000003,
+  "tury": 3
+ },
+ "czas_s": 15.6
+}

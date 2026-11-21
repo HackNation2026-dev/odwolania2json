@@ -1,0 +1,90 @@
+{
+ "id": "n_kio_kio_2617_21",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Postanowienie KIO z dnia 20 września 2021 r. (sygn. akt KIO 2617/21) odrzucające odwołanie wykonawcy TAMEX OBIEKTY SPORTOWE S.A. Jest to orzeczenie Izby, a nie odwołanie. W uzasadnieniu szczegółowo streszczono zarzuty i żądania odwołania, więc dokument łatwo pomylić z klasą odwolanie.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Sygn. akt: KIO 2617/21\nPOSTANOWIENIE\nz dnia 20 września 2021 r.\nKrajowa Izba Odwoławcza - w składzie:\nPrzewodniczący: Ewa Kisiel\npo rozpoznaniu na posiedzeniu niejawnym bez udziału stron w dniu 20 września 2021 r.",
+    "problemy": [
+     {
+      "kod": "podobny_do_klasy",
+      "opis": "Strona tytułowa postanowienia KIO z sentencją „odrzuca odwołanie”. Słowa „odwołanie” i „Odwołujący” oraz sygnatura mogą zmylić klasyfikator.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Nietypowy układ: tytuł wyśrodkowany, „Przewodniczący: Ewa Kisiel” wyrównany do prawej, „orzeka:” na środku, z dużymi odstępami między blokami.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Gmina Cieszyn z siedzibą w Cieszynie (dalej: „Zamawiający” lub „Gmina”) prowadzi na podstawie przepisów ustawy z dnia 19 września 2019 r. Prawo zamówień publicznych (Dz. U. z 2019 r. poz. 2019 ze zm.) - zwanej dalej:",
+    "problemy": [
+     {
+      "kod": "podobny_do_klasy",
+      "opis": "Uzasadnienie streszcza zarzuty odwołania (lista czynności i zaniechań zamawiającego, naruszone przepisy Pzp), przez co treść przypomina samo odwołanie.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "OPZ w sposób, który naruszają zasadę uczciwej konkurencji i zasadę równego traktowania wykonawców oraz zasadę udzielania zamówienia zapewniającego najlepszą jakość uzasadnioną charakterem zamówienia, nie jest",
+    "problemy": [
+     {
+      "kod": "podobny_do_klasy",
+      "opis": "Strona przytacza żądania odwołującego („Odwołujący wnosi o uwzględnienie odwołania oraz nakazanie Zamawiającemu…”) i uzasadnienie terminu wniesienia odwołania, czyli fragmenty typowe dla odwołania.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Plik zawiera postanowienie KIO, które nie należy do klas odwołanie, pełnomocnictwo ani przelew.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Orzeczenie KIO dotyczy odwołania i obszernie cytuje jego zarzuty i żądania, więc grozi błędną klasyfikacją jako odwolanie.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "inne",
+    "opis": "Oceniono tylko strony 1–3 z 10. Pozostałe strony nie zostały sprawdzone.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2949444,
+  "tury": 5
+ },
+ "czas_s": 19.3
+}

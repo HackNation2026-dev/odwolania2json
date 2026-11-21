@@ -1,0 +1,63 @@
+{
+ "id": "n_2025_s_112_383751",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Dokument jest ogłoszeniem o zamówieniu publicznym w serwisie TED, a nie odwołaniem do KIO, pełnomocnictwem ani potwierdzeniem przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "383751-2025 - Procedura konkurencyjna\nSee the notice on TED website\nPolska – Roboty budowlane w zakresie wzniesienia kompletnych obiektów budowlanych lub ich części oraz roboty w zakresie inżynierii lądowej i wodnej – Przebudowa Stacji Uzdatniania Wody \"Rumia\" wraz z przebudową ujęć wód i infrastruktury towarzyszącej",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Kierownik Budowy powinien wykazać się doświadczeniem przy realizacji co najmniej 1 roboty budowlanej polegającej na budowie lub przebudowie stacji uzdatniania wody z instalacjami, o wydajności co najmniej 250 m3/h, 11.1.4.2.2. osobę, która będzie pełnić funkcję Kierownika Robót Budowlanych posiadającą wykształcenie wyższe, co najmniej 2 letnie doświadczenie zawodowe na stanowisku kierownika robót budowlanych oraz uprawnienia do prowadzenia robót budowlanych w specjalności konstrukcyjno-budowlanej bez ograniczeń,",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Roboty budowlane w zakresie konstrukcji, 45230000 Roboty budowlane w zakresie budowy rurociągów, linii komunikacyjnych i elektroenergetycznych, autostrad, dróg, lotnisk i kolei; wyrównywanie terenu, 45311200 Roboty w zakresie instalacji elektrycznych, 45400000 Roboty wykończeniowe w zakresie obiektów budowlanych\n2.1.2. Miejsce realizacji",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Cały plik stanowi ogłoszenie o zamówieniu publicznym i dokumentację procedury przetargowej, poza klasami odwołanie, pełnomocnictwo i przelew.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 5459,
+   "output_tokens": 1069,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 390
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 7.9
+}

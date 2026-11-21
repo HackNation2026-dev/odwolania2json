@@ -1,0 +1,31 @@
+{
+ "id": "p15_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_15/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_15",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 61940,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p15_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 525,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POLECENIE PRZELEWU Dowód wykonania przelewu · Kredyt Północny Nadawca Z rachunku Belmoria Systemy sp. j. 09 5706 3749 5036 1862 8466 4881 ul. Gołębia 3, 60-235 Poznań Adresat przelewu Rachunek uznawany Fjordlight Rozwiązania sp. k. 56 9110 7692 8008 5324 6510 8080 ul. Nowina 18, 30-870 Kraków Kwota operacji Data realizacji PLN 200.00 28.12.2025 Tytuł opłata skarbowa od pełnomocnictwa dla Ryszard L"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

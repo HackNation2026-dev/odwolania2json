@@ -1,0 +1,31 @@
+{
+ "id": "p34_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_34/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_34",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 80237,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p34_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 675,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "NOVA BANK POLSKA Potwierdzenie realizacji polecenia przelewu Dane nadawcy Nazwa: Galdaris Technologie sp. k. Adres: ul. Gołębia 61, 85-153 Bydgoszcz Rachunek nadawcy: PL36396491875308085660842948 Odbiorca Nazwa: Wexoria Systemy sp. z o.o. Adres: ul. Grabowa 90, 35-344 Rzeszów Rachunek beneficjenta: PL38191587886680497037877080 Szczegóły operacji Kwota: 17,00 Data realizacji: 9 września 2026 Numer "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

@@ -1,0 +1,40 @@
+{
+ "id": "x12_strona_mieszana",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Potwierdzenie przelewu krajowego na 50,00 zł z tytułu opłaty skarbowej od pełnomocnictwa w postępowaniu przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "mieszana",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\nKredyt Północny · wydrukowano 26 sierpnia 2026\nPłatnik\nHartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\n53678424593392529814420143\nBeneficjent\nEuropost Infrastruktura S.A.",
+    "problemy": [
+     {
+      "kod": "strona_mieszana",
+      "opis": "Pod cyfrowo wyglądającym potwierdzeniem wklejono rastrowy obraz pieczątki „OPŁACONO” i niebieskiej adnotacji.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Dane płatnika i beneficjenta znajdują się w dwóch równoległych kolumnach.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "\"srednia\"\n        },\n        {\n          \"kod\": \"uklad_wielokolumnowy\",\n          \"opis\": \"Dane płatnika i beneficjenta znajdują się w dwóch równoległych kolumnach.\",\n          \"waga\": \"niska\"\n        }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": []\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n4392\n"
+ },
+ "czas_s": 13.7
+}

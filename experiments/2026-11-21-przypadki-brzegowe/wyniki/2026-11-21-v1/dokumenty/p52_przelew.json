@@ -1,0 +1,31 @@
+{
+ "id": "p52_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_52/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_52",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 55984,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p52_przelew/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 701,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Śląsko-Mazowiecki · wygenerowano 22.07.2026 Zleceniodawca BRONTEX-BUD Maciej Jaworski ul. Polna 124, 35-964 Rzeszów Rachunek zleceniodawcy PL07 1044 6255 1544 8206 2521 6547 Odbiorca Gmina Rudnik Wielki ul. Wojska Polskiego 27, 93-924 Rudnik Wielki Rachunek odbiorcy PL28 1369 0218 8320 8799 8443 6720 Kwota 100,00 PLN Data operacji 21 lipca 2026 Tytuł przelewu "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

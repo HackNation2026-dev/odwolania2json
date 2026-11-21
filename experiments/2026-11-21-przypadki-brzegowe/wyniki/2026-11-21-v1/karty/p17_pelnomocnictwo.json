@@ -1,0 +1,378 @@
+{
+ "format": "uzp-karta-dokumentu",
+ "wersja": 1,
+ "id": "p17_pelnomocnictwo",
+ "klasa": "pelnomocnictwo",
+ "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_17/pelnomocnictwo.pdf",
+ "referencja": "docs/02-materialy/organizator-uzp/dane/przyklad_17/pelnomocnictwo.json",
+ "metoda": "Heurystyka referencja → pdftotext -bbox-layout; każdy PDF niezależnie",
+ "pola": {
+  "mocodawca[0].data.imie_nazwisko": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  },
+  "mocodawca[0].data.krs": {
+   "wartosc": "9999008184",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      91.784,
+      106.36,
+      146.124,
+      115.86
+     ],
+     "tekst_w_dokumencie": "9999008184",
+     "etykieta_pola": "KRS",
+     "etykieta_roli": {
+      "tekst": "MOCODAWCA",
+      "polozenie": "przed",
+      "odleglosc_linii": 2.34,
+      "strona": 1,
+      "bbox": [
+       72.1,
+       73.58,
+       131.579,
+       83.08
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.nazwa": {
+   "wartosc": "Kavendis Infrastruktura sp. z o.o.",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      72.1,
+      84.51,
+      213.65,
+      94.01
+     ],
+     "tekst_w_dokumencie": "Kavendis Infrastruktura sp. z o.o.",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "MOCODAWCA",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.78,
+      "strona": 1,
+      "bbox": [
+       72.1,
+       73.58,
+       131.579,
+       83.08
+      ]
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      348.78,
+      395.08,
+      497.78,
+      405.08
+     ],
+     "tekst_w_dokumencie": "Kavendis Infrastruktura sp. z o.o.",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "udzielania",
+      "polozenie": "przed",
+      "odleglosc_linii": 7.69,
+      "strona": 1,
+      "bbox": [
+       93.46,
+       287.38,
+       139.35,
+       297.38
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.nip": {
+   "wartosc": "9999892540",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      88.877,
+      117.28,
+      143.217,
+      126.78
+     ],
+     "tekst_w_dokumencie": "9999892540",
+     "etykieta_pola": "NIP",
+     "etykieta_roli": {
+      "tekst": "MOCODAWCA",
+      "polozenie": "przed",
+      "odleglosc_linii": 3.12,
+      "strona": 1,
+      "bbox": [
+       72.1,
+       73.58,
+       131.579,
+       83.08
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "mocodawca[0].data.typ": {
+   "wartosc": "osoba_prawna",
+   "dopasowanie": "wyliczana",
+   "wystapienia": []
+  },
+  "mocodawca[0].podpisujacy[0].imie_nazwisko": {
+   "wartosc": "Halina Bartoszewicz",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      370.9,
+      406.58,
+      461.14,
+      416.58
+     ],
+     "tekst_w_dokumencie": "Halina Bartoszewicz",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Prezes",
+      "polozenie": "po",
+      "odleglosc_linii": 0.82,
+      "strona": 1,
+      "bbox": [
+       381.28,
+       418.08,
+       410.89,
+       428.08
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].imie_nazwisko": {
+   "wartosc": "Norbert Milewski",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      329.445,
+      84.51,
+      401.009,
+      94.01
+     ],
+     "tekst_w_dokumencie": "Norbert Milewski",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "PEŁNOMOCNIK",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.78,
+      "strona": 1,
+      "bbox": [
+       306.36,
+       73.58,
+       369.402,
+       83.08
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "pelnomocnicy[0].pesel": {
+   "wartosc": null,
+   "dopasowanie": "null_w_referencji",
+   "wystapienia": []
+  }
+ },
+ "grupy": [
+  {
+   "id": "mocodawca[0]",
+   "typ": "mocodawca[]",
+   "pola": [
+    "mocodawca[0].data.imie_nazwisko",
+    "mocodawca[0].data.krs",
+    "mocodawca[0].data.nazwa",
+    "mocodawca[0].data.nip",
+    "mocodawca[0].data.typ"
+   ],
+   "etykieta_roli": {
+    "tekst": "MOCODAWCA",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.78,
+    "strona": 1,
+    "bbox": [
+     72.1,
+     73.58,
+     131.579,
+     83.08
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      72.1,
+      73.58,
+      213.65,
+      126.78
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 5.32
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 3,
+   "pola_do_lokalizacji": 3
+  },
+  {
+   "id": "mocodawca[0].podpisujacy[0]",
+   "typ": "mocodawca[].podpisujacy[]",
+   "pola": [
+    "mocodawca[0].podpisujacy[0].imie_nazwisko"
+   ],
+   "etykieta_roli": {
+    "tekst": "Prezes",
+    "polozenie": "po",
+    "odleglosc_linii": 0.82,
+    "strona": 1,
+    "bbox": [
+     381.28,
+     418.08,
+     410.89,
+     428.08
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      370.9,
+      406.58,
+      461.14,
+      428.08
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.15
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  },
+  {
+   "id": "pelnomocnicy[0]",
+   "typ": "pelnomocnicy[]",
+   "pola": [
+    "pelnomocnicy[0].imie_nazwisko",
+    "pelnomocnicy[0].pesel"
+   ],
+   "etykieta_roli": {
+    "tekst": "PEŁNOMOCNIK",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.78,
+    "strona": 1,
+    "bbox": [
+     306.36,
+     73.58,
+     369.402,
+     83.08
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      306.36,
+      73.58,
+      401.009,
+      94.01
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 2.04
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 1,
+   "pola_do_lokalizacji": 1
+  }
+ ],
+ "uklad": [
+  {
+   "strona": 1,
+   "przyblizenie": true,
+   "liczba_kolumn": 2,
+   "linie_z_odstepami": [
+    {
+     "y": 75,
+     "odstep_pt": 174.78,
+     "rozne_bloki": true
+    },
+    {
+     "y": 84,
+     "odstep_pt": 92.71,
+     "rozne_bloki": true
+    },
+    {
+     "y": 96,
+     "odstep_pt": 112.43,
+     "rozne_bloki": true
+    }
+   ],
+   "etykieta_i_wartosc_w_roznych_blokach": []
+  }
+ ],
+ "kody": [
+  {
+   "kod": "wiele_wystapien",
+   "pole": "mocodawca[0].data.nazwa",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].data.nazwa",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wartosc_wyliczana",
+   "pole": "mocodawca[0].data.typ",
+   "dowod": "wyliczana; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "mocodawca[0].podpisujacy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "pelnomocnicy[0].imie_nazwisko",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "etykieta_po_danych",
+   "pole": "mocodawca[0].podpisujacy[0]",
+   "dowod": "Prezes"
+  },
+  {
+   "kod": "uklad_wielokolumnowy",
+   "pole": null,
+   "dowod": "Kandydat: strona 1, duże odstępy"
+  }
+ ],
+ "braki": []
+}

@@ -1,0 +1,38 @@
+{
+ "id": "p42_pelnomocnictwo",
+ "model": "claude",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Nagłówek „PEŁNOMOCNICTWO”; Nordelia Facility Services S.A. udziela pełnomocnictwa r. pr. Joannie Stępień i adw. Michałowi Borkowskiemu do reprezentowania wykonawcy, w tym do wniesienia odwołania do Prezesa KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Kraków, 30 czerwca 2026 r.\nPEŁNOMOCNICTWO\nNordelia Facility Services S.A., ul. Wielicka 250, 30-663 Kraków, KRS 9993307745, NIP 9995519382, REGON 999284670 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane poniżej, udziela pełnomocnictwa",
+    "problemy": [
+     {
+      "kod": "inne",
+      "opis": "Brak podpisów: linie podpisu (kropki) nad nazwiskami Dariusza Pietrzaka, r. pr. Joanny Stępień i adw. Michała Borkowskiego są puste. Na stronie nie widać też podpisu elektronicznego.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2460074,
+  "tury": 3
+ },
+ "czas_s": 10.3
+}

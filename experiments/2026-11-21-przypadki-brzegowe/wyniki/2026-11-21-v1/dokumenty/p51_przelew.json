@@ -1,0 +1,31 @@
+{
+ "id": "p51_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_51/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_51",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 65828,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p51_przelew/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 712,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Śląsko-Mazowiecki · wygenerowano 05.03.2026 Zleceniodawca BOMARK-BUD Olga Baran ul. Reymonta 148, 26-273 Radom Rachunek zleceniodawcy PL94 1712 3734 9228 8041 1168 1502 Odbiorca Zarząd Transportu Miejskiego w Modrzewie ul. Krótka 54, 95-952 Modrzewo Rachunek odbiorcy PL47 0725 6596 2333 0178 6185 0419 Kwota 34,00 PLN Data operacji 4 marca 2026 Tytuł przelewu o"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

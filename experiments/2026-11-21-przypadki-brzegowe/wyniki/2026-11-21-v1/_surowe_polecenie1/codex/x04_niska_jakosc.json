@@ -1,0 +1,44 @@
+{
+ "id": "x04_niska_jakosc",
+ "model": "codex",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Widoczny tytuł „Potwierdzenie przelewu krajowego” oraz pola płatnika, beneficjenta, kwoty i tytułu przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "slaba",
+    "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\n[nieczytelne]\nPłatnik\n[nieczytelne]\nBeneficjent\n[nieczytelne]\nKwota przelewu\n[nieczytelne]\nData operacji\n22 sierpnia 2026\nNumer referencyjny\n[nieczytelne]",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona ma wygląd zeskanowanego potwierdzenia przelewu; obecności warstwy tekstowej nie można ustalić z obrazu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Silne rozmycie, słaby kontrast i liczne drobne plamy na całej stronie. Dane stron przelewu i numery rachunków są w dużej części nieczytelne.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Dane płatnika i beneficjenta znajdują się w dwóch kolumnach w górnej części strony.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "tron przelewu i numery rachunków są w dużej części nieczytelne.\",\"waga\":\"wysoka\"},{\"kod\":\"uklad_wielokolumnowy\",\"opis\":\"Dane płatnika i beneficjenta znajdują się w dwóch kolumnach w górnej części strony.\",\"waga\":\"niska\"}]}],\"problemy_dokumentu\":[]}\nhook: Stop\nhook: Stop Completed\ntokens used\n28 347\n"
+ },
+ "czas_s": 16.2
+}

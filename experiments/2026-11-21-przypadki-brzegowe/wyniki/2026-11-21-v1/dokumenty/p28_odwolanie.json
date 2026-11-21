@@ -1,0 +1,44 @@
+{
+ "id": "p28_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_28/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_28",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 70706,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p28_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1799,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Zamawiający: Uldaris Usługi sp. z o.o. ul. Ambrożowa 25, 40-216 Katowice KRS: 9996208666, NIP: 9991994577, REGON: 999602656 kontakt@kontakt.example Odwołujący: Yldenia Sieci S.A. ul. Grabowa 44, 35-309 Rzeszów KRS: 9997060431, NIP: 9997550083, REGON: 999670741 reprezentowana przez: adw. Zbigniew Dobrowolski adres do korespondencji: K"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p28_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 432,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": ".............................. Zbigniew Dobrowolski, adw. Oświadczam, że odwołanie wnoszone jest w terminie przewidzianym przez przepisy ustawy, a przedmiot odwołania nie został wcześniej rozstrzygnięty przez Krajową Izbę Odwoławczą. Zgodnie z art. 527 ustawy odwołanie wnosi się w terminie 14 dni od dnia, w którym Wykonawca powziął lub dowiedział się o zaskarżonym rozstrzygnięciu. Do odwołania doł"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

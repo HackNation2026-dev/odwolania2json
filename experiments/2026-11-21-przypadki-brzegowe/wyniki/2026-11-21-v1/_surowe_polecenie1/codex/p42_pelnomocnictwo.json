@@ -1,0 +1,28 @@
+{
+ "id": "p42_pelnomocnictwo",
+ "model": "codex",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument zatytułowany „PEŁNOMOCNICTWO” upoważnia wskazanych pełnomocników do reprezentowania wykonawcy, w tym przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Kraków, 30 czerwca 2026 r.\nPEŁNOMOCNICTWO\nNordelia Facility Services S.A., ul. Wielicka 250, 30-663 Kraków, KRS 9993307745, NIP 9995519382, REGON 999284670 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "NOMOCNICTWO\\nNordelia Facility Services S.A., ul. Wielicka 250, 30-663 Kraków, KRS 9993307745, NIP 9995519382, REGON 999284670 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane\",\n      \"problemy\": []\n    }\n  ],\n  \"problemy_dokumentu\": []\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n28 065\n"
+ },
+ "czas_s": 11.0
+}

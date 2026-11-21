@@ -1,0 +1,44 @@
+{
+ "id": "p39_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_39/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_39",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 90195,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p39_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2332,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Wrocław, dnia 7 stycznia 2026 roku Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Zamawiający: Corvella Systemy sp. z o.o. ul. Grabowa 69, 90-506 Łódź KRS: 9998630653, NIP: 9999959400, REGON: 999596559 kontakt@sekretariat.example Odwołujący: Xenonix Technologie S.A. ul. Rybacka 33, 50-163 Wrocław KRS: 9994387983, NIP: 9995704079, REGON: 999094645 reprezentowana przez: adw. Aleksa"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p39_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1387,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "się w granicach rynkowych, co w rezultacie może doprowadzić do naruszenia dyscypliny finansów publicznych. Zarzut nr 4 naruszenia zasady równego traktowania wykonawców: 4.1. Opis Przedmiotu Zamówienia wskazuje rozwiązania o znaczeniu znamiennym dla przedmiotu zamówienia, które w sposób nieadekwatny ograniczają krąg potencjalnych wykonawców i mogą skutkować nieuzasadnionym preferowaniem podmiotów d"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

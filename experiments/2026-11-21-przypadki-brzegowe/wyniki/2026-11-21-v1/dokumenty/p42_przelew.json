@@ -1,0 +1,168 @@
+{
+ "id": "p42_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_42/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_42",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 84756,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p42_przelew/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 731,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Małopolski S.A. · wygenerowano 01.07.2026 Zleceniodawca Nordelia Facility Services S.A. ul. Wielicka 250, 30-663 Kraków Rachunek zleceniodawcy PL55 9947 7458 7693 6814 0572 7867 Odbiorca Małopolskie Centrum Logistyki Medycznej sp. z o.o. ul. Kamieńskiego 47, 30-644 Kraków Rachunek odbiorcy PL54 6405 8919 3407 4207 5896 3236 Kwota 34,00 PLN Data operacji 2026-0"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 11.6,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Potwierdzenie wykonanego przelewu na opłatę skarbową od pełnomocnictwa w postępowaniu przed KIO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Małopolski S.A. · wygenerowano 01.07.2026\nZleceniodawca\nNordelia Facility Services S.A.\nul. Wielicka 250, 30-663 Kraków\nRachunek zleceniodawcy\nPL55 9947 7458 7693 6814 0572 7867",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Dane przelewu ułożone w tabeli: etykiety po lewej, wartości po prawej; adresy i tytuł przelewu zajmują kilka wierszy.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 14.6,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Dokument ma tytuł „POTWIERDZENIE WYKONANIA PRZELEWU” (Bank Małopolski S.A.). Zawiera zleceniodawcę, rachunki, kwotę 34,00 PLN, status ZREALIZOWANO i tytuł „opłata skarbowa od pełnomocnictwa … w postępowaniu przed KIO”. To potwierdzenie przelewu związanego ze sprawą.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Małopolski S.A. · wygenerowano 01.07.2026\nZleceniodawca Nordelia Facility Services S.A.\nul. Wielicka 250, 30-663 Kraków\nRachunek zleceniodawcy PL55 9947 7458 7693 6814 0572 7867\nOdbiorca",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Wszystkie dane przelewu (zleceniodawca, rachunki, kwota, data, tytuł, numer referencyjny, status) są w dwukolumnowej tabeli etykieta–wartość. Tytuł przelewu w prawej kolumnie zawija się na dwa wiersze.",
+        "waga": "niska"
+       },
+       {
+        "kod": "inne",
+        "opis": "Odbiorcą opłaty skarbowej od pełnomocnictwa jest „Małopolskie Centrum Logistyki Medycznej sp. z o.o.”, a nie urząd miasta. Ta nazwa wygląda na zamawiającego (przetarg MCLM/ZP/07/2026). Warto to oznaczyć przy walidacji przelewu.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "pusta_strona",
+        "opis": "Treść zajmuje mniej więcej górną połowę strony, dolna połowa jest pusta. Strona nie jest pusta, więc to tylko informacja.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 9.4,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Dokument jest potwierdzeniem wykonania przelewu bankowego na kwotę 34,00 PLN, z podanymi zleceniodawcą, odbiorcą, rachunkami, datą operacji i statusem zrealizowania.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Małopolski S.A. - wygenerowano 01.07.2026\n\nZleceniodawca Nordelia Facility Services S.A.\nul. Wielicka 250, 30-663 Kraków\nRachunek zleceniodawcy PL55 9947 7458 7693 6814 0572 7867",
+      "problemy": [
+       {
+        "kod": "tabela",
+        "opis": "Dane dokumentu są zestawione w czytelnym, dwukolumnowym układzie tabelarycznym: nazwa pola po lewej, wartość po prawej.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "tabela",
+      "opis": "Cały formularz wykorzystuje dwukolumnowy układ tabelaryczny do prezentacji danych przelewu.",
+      "waga": "niska"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.995
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

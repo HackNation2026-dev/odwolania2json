@@ -1,0 +1,84 @@
+{
+ "id": "p42_odwolanie",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo skierowane do Prezesa Krajowej Izby Odwoławczej, z tytułem „ODWOŁANIE”, oznaczeniem Odwołującego i Zamawiających, wskazaniem wpisu od odwołania (15 000,00 zł), zarzutami, wnioskami i uzasadnieniem. Nagłówek kolejnych stron: „Odwołanie – postępowanie nr MCLM/ZP/07/2026”.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Kraków, 02.07.2026\nPrezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nNordelia Facility Services S.A.\nul. Wielicka 250, 30-663 Kraków\nKRS: 9993307745, NIP: 9995519382, REGON: 999284670",
+    "problemy": [
+     {
+      "kod": "inne",
+      "opis": "Dwóch zamawiających (Lider i Partner, wspólne postępowanie na podstawie art. 38 ust. 1 Pzp). Ekstrakcja musi zwrócić obu zamawiających, a nie tylko pierwszego.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Adresat (Prezes KIO) jest wyrównany do prawej, a data stoi w prawym górnym rogu. Przy czytaniu liniowym bloki mogą trafić w złej kolejności.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr MCLM/ZP/07/2026\n1) ustaleniu treści Specyfikacji Warunków Zamówienia, opublikowanej wraz z ogłoszeniem o zamówieniu w dniu 23 czerwca 2026 r., w zakresie warunków udziału w postępowaniu,",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr MCLM/ZP/07/2026\n6) pisma Zamawiającego z dnia 30 czerwca 2026 r. – na okoliczność stanowiska Zamawiającego co do interpretacji postanowień SWZ;\n7) wyciągu z Krajowego Rejestru Sądowego",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "W sekcji „I. Stan faktyczny” jest tabela z chronologią postępowania (kolumny Data i Zdarzenie, 6 wierszy).",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "W tekście występują dodatkowe NIP-y podmiotów trzecich (Impel-Serwis Południe, lider konsorcjum Clean Expert/Ochrona Max). Nie należy ich mylić z NIP-em Odwołującego ani Zamawiających.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "inne",
+    "opis": "W jednym postępowaniu działa dwóch zamawiających, w tym Lider prowadzący postępowanie, co może zmylić ekstrakcję pola zamawiającego. W dokumencie pojawia się też wiele identyfikatorów (KRS/NIP/REGON) różnych podmiotów.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "inne",
+    "opis": "Obejrzano tylko 3 z 11 stron. Pełnomocnictwo jest wymienione jako załącznik („pełnomocnictwa załączonego do niniejszego odwołania”), ale na tych stronach go nie widać. Nie można wykluczyć, że na dalszych stronach są załączniki, czyli kilka dokumentów w jednym pliku.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.3036658,
+  "tury": 5
+ },
+ "czas_s": 19.9
+}

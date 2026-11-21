@@ -1,0 +1,31 @@
+{
+ "id": "p28_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_28/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_28",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 78503,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p28_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 587,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Pierwszy Bank Gospodarczy Data wydruku: 08.04.2026 Potwierdzenie realizacji polecenia przelewu Płatnik Yldenia Sieci S.A. ul. Grabowa 44, 35-309 Rzeszów Rachunek nadawcy PL34 2148 1838 6561 2069 2152 4195 Adresat przelewu Uldaris Usługi sp. z o.o. ul. Ambrożowa 25, 40-216 Katowice Rachunek beneficjenta PL02 9855 2693 8978 6814 9636 5038 Kwota przelewu 17,00 Data transakcji 05.04.2026 Tytuł przelew"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

@@ -1,0 +1,44 @@
+{
+ "id": "p34_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_34/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_34",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 85416,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p34_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2128,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Galdaris Technologie sp. k. ul. Gołębia 61, 85-153 Bydgoszcz KRS: 9992842505, NIP: 9993885533, REGON: 999308916 reprezentowana przez: r. pr. Marek Jabłoński, adw. Norbert Rutkiewicz adres do korespondencji: Kancelaria Adwokacka i Partnerzy, ul. Iglasta 72, 85-244 Bydgoszcz tel. 000 000 000, biuro@biuro.example Zamawiający"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p34_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 608,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Załączniki: a) odwołanie wraz z uzasadnieniem; b) pełnomocnictwo udzielone przedstawicielowi Odwołującego; c) wyciąg z rejestru przedmiotowego; .............................. .............................. Marek Jabłoński, r. pr. Norbert Rutkiewicz, adw. Oświadczam, że odwołanie wnoszone jest w terminie przewidzianym przez przepisy ustawy, a przedmiot odwołania nie został wcześniej rozstrzygnięty "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

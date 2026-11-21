@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Manifest przebiegu",
+  "type": "object",
+  "required": ["format", "wersja", "przebieg", "utworzono", "opis", "taksonomia", "modele", "dokumenty"],
+  "properties": {
+    "format": {"const": "uzp-przypadki-brzegowe"},
+    "wersja": {"const": 1},
+    "przebieg": {"type": "string"},
+    "utworzono": {"type": "string", "description": "ISO 8601"},
+    "opis": {"type": "string"},
+    "taksonomia": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kod", "nazwa", "opis"],
+        "properties": {"kod": {"type": "string"}, "nazwa": {"type": "string"}, "opis": {"type": "string"}}
+      }
+    },
+    "modele": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "nazwa", "model"],
+        "properties": {
+          "id": {"type": "string"},
+          "nazwa": {"type": "string"},
+          "model": {"type": "string"},
+          "uwagi": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "dokumenty": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "plik_zrodlowy", "zrodlo", "klasa_oczekiwana", "sprawa", "liczba_stron", "plik_wynikow", "typ_auto", "przeslany_do_modeli"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9_-]+$"},
+          "plik_zrodlowy": {"type": "string"},
+          "zrodlo": {"enum": ["pozytywny", "negatywny", "szablon", "syntetyczny"]},
+          "klasa_oczekiwana": {"enum": ["odwolanie", "pelnomocnictwo", "przelew", "obcy", null]},
+          "sprawa": {"type": ["string", "null"]},
+          "liczba_stron": {"type": "integer"},
+          "plik_wynikow": {"type": "string"},
+          "typ_auto": {"enum": ["tekst", "skan", "mieszany", "pusty"]},
+          "przeslany_do_modeli": {"type": "boolean"}
+        }
+      }
+    }
+  }
+}

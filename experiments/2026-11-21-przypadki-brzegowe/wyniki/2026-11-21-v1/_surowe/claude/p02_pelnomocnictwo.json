@@ -1,0 +1,44 @@
+{
+ "id": "p02_pelnomocnictwo",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Plik ma nagłówek „PEŁNOMOCNICTWO”. Wskazuje mocodawcę (wykonawcę), pełnomocników (adwokatów) i zakres umocowania: reprezentowanie przed Krajową Izbą Odwoławczą.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO Mocodawca Hartica Serwis S.A. ul. Akacjowa 54, 80-122 Gdańsk Dane rejestrowe KRS 9999669444, NIP 9990678035, REGON 999114017 Pełnomocnicy adw. Bartosz Szymanski, nr wpisu WA 33513 adw. Cezary Wierzbicki",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane pełnomocnictwa są w dwukolumnowej tabeli: etykieta pól po lewej, wartość po prawej. Wiersze to Mocodawca, Dane rejestrowe, Pełnomocnicy, Zamawiający, Postępowanie, Zakres i Data.",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "Miejsce na podpis (wykropkowana linia nad „Aleksandra Nowakowicz, Prokurent”) jest puste. Na stronie nie widać podpisu.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2475144,
+  "tury": 3
+ },
+ "czas_s": 13.0
+}

@@ -1,0 +1,52 @@
+{
+ "id": "n_2025_s_112_383751",
+ "model": "codex",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Widoczne strony zawierają ogłoszenie o zamówieniu dotyczące przebudowy Stacji Uzdatniania Wody „Rumia”, opublikowane w TED.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "383751-2025 - Procedura konkurencyjna\nSee the notice on TED website\nPolska – Roboty budowlane w zakresie wznoszenia kompletnych obiektów budowlanych lub ich części oraz roboty w zakresie inżynierii lądowej i wodnej",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Kierownik Budowy powinien wykazać się doświadczeniem przy realizacji co najmniej 1 roboty\nbudowlanej polegającej na budowie lub przebudowie stacji uzdatniania wody z instalacjami, o\nwydajności co najmniej 250 m3/h,",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Roboty budowlane w zakresie konstrukcji, 45230000 Roboty budowlane w zakresie budowy\nrurociągów, linii komunikacyjnych i elektroenergetycznych, autostrad, dróg, lotnisk i kolei;\nwyrównywanie terenu, 45311200",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Ogłoszenie o zamówieniu publicznym z TED, spoza klas: odwołanie, pełnomocnictwo i potwierdzenie przelewu.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "     \"problemy\": []\n    }\n  ],\n  \"problemy_dokumentu\": [\n    {\n      \"kod\": \"dokument_obcy\",\n      \"opis\": \"Ogłoszenie o zamówieniu publicznym z TED, spoza klas: odwołanie, pełnomocnictwo i potwierdzenie przelewu.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n7033\n"
+ },
+ "czas_s": 18.1
+}

@@ -1,0 +1,69 @@
+{
+ "id": "n_2025_s_112_383751",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Dokument jest ogłoszeniem o zamówieniu publikowanym w TED, dotyczącym przetargu na roboty budowlane, a nie odwołaniem, pełnomocnictwem ani potwierdzeniem przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "383751-2025 - Procedura konkurencyjna See the notice on TED website\nPolska – Roboty budowlane w zakresie wzniesienia kompletnych obiektów budowlanych lub ich części oraz roboty w zakresie inżynierii lądowej i wodnej – Przebudowa Stacji Uzd",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Kierownik Budowy powinien wykazać się doświadczeniem przy realizacji co najmniej 1 roboty budowlanej polegającej na budowie lub przebudowie stacji uzdatniania wody z instalacjami, o wydajności co najmniej 250 m3/h, 11.1.4.2.2. osobę",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Roboty budowlane w zakresie konstrukcji, 45230000 Roboty budowlane w zakresie budowy rurociągów, linii komunikacyjnych i elektroenergetycznych, autostrad, dróg, lotnisk i kolei; wyrównywanie terenu, 45311200 Roboty w zakresie instalacji elektrycznych",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Cały plik stanowi ogłoszenie o zamówieniu i opis procedury przetargowej, a więc dokument spoza wskazanych klas: odwołania, pełnomocnictwa i przelewu.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Formalna, wielostronicowa dokumentacja postępowania związana ze sprawą może superficjalnie przypominać dokument sprawy odwoławczej, ale wyraźnie jest ogłoszeniem o zamówieniu.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 5487,
+   "output_tokens": 1946,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 1246
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 17.1
+}

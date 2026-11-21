@@ -1,0 +1,45 @@
+{
+ "id": "p01_przelew",
+ "model": "minimax",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument jest potwierdzeniem realizacji polecenia przelewu zawierającym dane płatnika, odbiorcy, rachunków, kwotę oraz datę transakcji.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwijania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu\nAurelink Automatyka S.A.",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane dokumentu są rozmieszczone w dwukolumnowych ramkach formularza, co może utrudniać odczyt w kolejności liniowej.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2797,
+   "output_tokens": 1007,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 128,
+   "output_tokens_details": {
+    "thinking_tokens": 696
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 15.9
+}

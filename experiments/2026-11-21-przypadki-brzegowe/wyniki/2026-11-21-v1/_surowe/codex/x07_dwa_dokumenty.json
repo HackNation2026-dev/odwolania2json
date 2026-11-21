@@ -1,0 +1,50 @@
+{
+ "id": "x07_dwa_dokumenty",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "niepewne",
+  "uzasadnienie_klasy": "Plik zawiera dwa odrębne dokumenty różnych klas: pełnomocnictwo na stronie 1 oraz potwierdzenie przelewu na stronie 2.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nŁódź, 1 kwietnia 2026\n§ 1. Mocodawca\nMocodawcą jest Belmoria Rozwiązania S.A., ul. Zaczarowana 78, 90-803 Łódź, KRS 9999405188, NIP 9999284065, REGON 999642785.\n§ 2. Pełnomocnik",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu rozmieszczono w obramowanych polach w dwóch kolumnach; odczyt liniowy wymaga zachowania powiązań etykiet i wartości.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "wiele_dokumentow",
+    "opis": "Strona 1 zawiera pełnomocnictwo, a strona 2 potwierdzenie przelewu opłaty skarbowej. Plik wymaga podziału przed przypisaniem jednej klasy.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "oblemy_dokumentu\": [\n    {\n      \"kod\": \"wiele_dokumentow\",\n      \"opis\": \"Strona 1 zawiera pełnomocnictwo, a strona 2 potwierdzenie przelewu opłaty skarbowej. Plik wymaga podziału przed przypisaniem jednej klasy.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n5791\n"
+ },
+ "czas_s": 16.6
+}

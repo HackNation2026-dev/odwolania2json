@@ -1,0 +1,31 @@
+{
+ "id": "p34_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_34/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_34",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 81330,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p34_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 906,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Galdaris Technologie sp. k. ul. Gołębia 61, 85-153 Bydgoszcz KRS 9992842505 · NIP 9993885533 · REGON 999308916 Bydgoszcz, 28.09.2026 PEŁNOMOCNICTWO Ja, niżej podpisany(a), działając jako osoba upoważniona do reprezentacji Galdaris Technologie sp. k. (KRS 9992842505, NIP 9993885533), udzielam pełnomocnictwa r. pr. Marek Jabłoński (nr wpisu na listę: WA 25167), adw. Norbert Rutkiewicz (nr wpisu na l"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

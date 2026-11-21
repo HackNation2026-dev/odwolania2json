@@ -1,0 +1,63 @@
+{
+ "id": "n_2025_ojs107_00364525_pl_ts",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Dokument jest ogłoszeniem o zamówieniu publicznym wraz z opisem postępowania i podstawami wykluczenia, a nie odwołaniem do KIO, pełnomocnictwem ani potwierdzeniem przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "364525-2025 - Procedura konkurencyjna\nPolska – Serwery – Dostawa, wdrożenie, skonfigurowanie serwerowego środowiska teleinformatycznego wraz z serwisem i gwarancją\nOJ S 107/2025 05/06/2025\nOgłoszenie o zamówieniu lub ogłoszenie o koncesji – tryb standardowy\nDostawy - Usługi",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Udział w organizacji przestępcej: Wykonawca zostanie wykluczony z postępowania na podstawie art. 108 ust. 1 pkt 1 Ustawy Prawo Zamówień Publicznych, którego skazano prawnomocnie za przestępstwo wskazane w art. 258 Kodeksu karnego lub odpowiedni czyn zabroniony określony w przepisach prawa obcego.",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prawo Zamówień Publicznych, którego skazano prawnomocnie za przestępstwo o charakterze terrorystycznym, o którym mowa w art. 115 § 20 Kodeksu karnego, lub mające na celu popełnienie tego przestępstwa lub odpowiedni czyn zabroniony określony w przepisach prawa obcego.",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Dokument stanowi ogłoszenie o zamówieniu publicznym i opis postępowania, czyli materiał spoza klas: odwołanie, pełnomocnictwo i przelew.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 1,
+   "output_tokens": 1084,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 5458,
+   "output_tokens_details": {
+    "thinking_tokens": 501
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 7.1
+}

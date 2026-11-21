@@ -1,0 +1,31 @@
+{
+ "id": "p50_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_50/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_50",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 84662,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p50_przelew/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 742,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Narodowy S.A. · wygenerowano 30.09.2026 Zleceniodawca Norvia Ciepłownictwo sp. z o.o. sp.k. ul. Kościuszki 91, 42-620 Częstochowa Rachunek zleceniodawcy PL75 4535 5852 5577 0570 5327 0723 Odbiorca Przedsiębiorstwo Energetyki Cieplnej w Olszance Dolnej sp. z o.o. ul. Armii Krajowej 51, 11-882 Olszanka Dolna Rachunek odbiorcy PL22 8525 2606 8135 3158 3391 0119 K"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

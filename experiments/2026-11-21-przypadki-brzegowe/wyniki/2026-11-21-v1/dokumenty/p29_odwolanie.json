@@ -1,0 +1,44 @@
+{
+ "id": "p29_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_29/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_29",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 85628,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p29_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2525,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Corvella Serwis sp. k. ul. Różana 7, 30-878 Kraków KRS: 9997854723, NIP: 9995776771, REGON: 999851129 reprezentowana przez: adw. Ewa Chalupowicz adres do korespondencji: Kancelaria Prawna i Partnerzy, ul. Miodowa 35, 35-994 Rzeszów tel. 000 000 000, biuro@sekretariat.example Zamawiający: Rubiconis Wyposażenie sp. z o.o. u"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p29_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 397,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Załączniki: 1. odwołanie wraz z uzasadnieniem; 2. dokument potwierdzający nadanie odwołania; 3. oświadczenie o niezaleganiu z podatkami i składkami; 4. pełnomocnictwo udzielone przedstawicielowi Odwołującego; .............................. Ewa Chalupowicz, adw. Oświadczam, że odwołanie wnoszone jest w terminie przewidzianym przez przepisy ustawy, a przedmiot odwołania nie został wcześniej rozstrzy"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

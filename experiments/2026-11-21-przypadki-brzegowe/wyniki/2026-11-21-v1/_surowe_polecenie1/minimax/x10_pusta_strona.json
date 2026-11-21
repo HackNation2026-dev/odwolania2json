@@ -1,0 +1,69 @@
+{
+ "id": "x10_pusta_strona",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument jest odwołaniem wnoszonym do Prezesa Krajowej Izby Odwoławczej, zawiera zaskarżone kryteria oceny ofert oraz wnioski o ich uwzględnienie.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\n\nOdwołujący:\n\nBelmoria Rozwiązania S.A.\nul. Zaccarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "pusta",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "",
+    "problemy": [
+     {
+      "kod": "pusta_strona",
+      "opis": "Cała strona jest pusta; brak jakiejkolwiek treści.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w\nsposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia\nodwołania.\n\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "pusta_strona",
+    "opis": "W pliku znajduje się całkowicie pusta strona nr 2 pomiędzy pierwszą częścią odwołania a jego kontynuacją.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 5460,
+   "output_tokens": 2240,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 1769
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 20.0
+}

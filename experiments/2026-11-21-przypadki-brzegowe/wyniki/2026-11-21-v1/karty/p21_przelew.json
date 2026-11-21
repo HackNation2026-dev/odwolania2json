@@ -1,0 +1,369 @@
+{
+ "format": "uzp-karta-dokumentu",
+ "wersja": 1,
+ "id": "p21_przelew",
+ "klasa": "przelew",
+ "pdf": "docs/02-materialy/organizator-uzp/dane/przyklad_21/potwierdzenie_przelewu.pdf",
+ "referencja": "docs/02-materialy/organizator-uzp/dane/przyklad_21/przelew.json",
+ "metoda": "Heurystyka referencja → pdftotext -bbox-layout; każdy PDF niezależnie",
+ "pola": {
+  "przelew_bankowy.data_operacji": {
+   "wartosc": "2026-03-21",
+   "dopasowanie": "inny_zapis",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      231.8,
+      244.312,
+      266.684,
+      252.285
+     ],
+     "tekst_w_dokumencie": "21.03.2026",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "przelew_bankowy.kwota": {
+   "wartosc": 200.0,
+   "dopasowanie": "inny_zapis",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      231.8,
+      223.912,
+      253.118,
+      231.885
+     ],
+     "tekst_w_dokumencie": "200,00",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "przelew_bankowy.na_rachunek": {
+   "wartosc": "45589965988377790956571871",
+   "dopasowanie": "inny_zapis",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      231.8,
+      203.512,
+      344.204,
+      211.485
+     ],
+     "tekst_w_dokumencie": "45 5899 6598 8377 7909 5657 1871",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": "Beneficjent",
+      "polozenie": "przed",
+      "odleglosc_linii": 2.31,
+      "strona": 1,
+      "bbox": [
+       34.3,
+       171.212,
+       71.87,
+       179.185
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "przelew_bankowy.numer_transakcji": {
+   "wartosc": "CEN2604046784640",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      280.233,
+      276.612,
+      345.334,
+      284.585
+     ],
+     "tekst_w_dokumencie": "CEN2604046784640",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    },
+    {
+     "strona": 1,
+     "bbox": [
+      231.8,
+      297.012,
+      296.901,
+      304.985
+     ],
+     "tekst_w_dokumencie": "CEN2604046784640",
+     "etykieta_pola": "Identyfikator",
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 1
+    }
+   ]
+  },
+  "przelew_bankowy.tytul": {
+   "wartosc": "opłata skarbowa od pełnomocnictwa dla Marek Sikorski w postępowaniu przed KIO w przetargu SWZ.429.2026 CEN2604046784640",
+   "dopasowanie": "dokladne",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      231.8,
+      264.712,
+      526.614,
+      284.585
+     ],
+     "tekst_w_dokumencie": "opłata skarbowa od pełnomocnictwa dla Marek Sikorski w postępowaniu przed KIO w przetargu SWZ.429.2026 CEN2604046784640",
+     "etykieta_pola": null,
+     "etykieta_roli": {
+      "tekst": null,
+      "polozenie": "brak",
+      "odleglosc_linii": null
+     },
+     "liczba_linii": 2
+    }
+   ]
+  },
+  "przelew_bankowy.z_rachunku": {
+   "wartosc": "56413158697642982905405577",
+   "dopasowanie": "inny_zapis",
+   "wystapienia": [
+    {
+     "strona": 1,
+     "bbox": [
+      231.8,
+      150.812,
+      344.204,
+      158.785
+     ],
+     "tekst_w_dokumencie": "56 4131 5869 7642 9829 0540 5577",
+     "etykieta_pola": "Rachunek nadawcy",
+     "etykieta_roli": {
+      "tekst": "Rachunek nadawcy",
+      "polozenie": "przed",
+      "odleglosc_linii": 0.0,
+      "strona": 1,
+      "bbox": [
+       69.549,
+       150.812,
+       98.993,
+       158.785
+      ]
+     },
+     "liczba_linii": 1
+    }
+   ]
+  }
+ },
+ "grupy": [
+  {
+   "id": "przelew_bankowy",
+   "typ": "przelew_bankowy",
+   "pola": [
+    "przelew_bankowy.data_operacji",
+    "przelew_bankowy.kwota",
+    "przelew_bankowy.na_rachunek",
+    "przelew_bankowy.numer_transakcji",
+    "przelew_bankowy.tytul",
+    "przelew_bankowy.z_rachunku"
+   ],
+   "etykieta_roli": {
+    "tekst": "Rachunek nadawcy",
+    "polozenie": "przed",
+    "odleglosc_linii": 0.0,
+    "strona": 1,
+    "bbox": [
+     69.549,
+     150.812,
+     98.993,
+     158.785
+    ]
+   },
+   "obszary": [
+    {
+     "strona": 1,
+     "bbox": [
+      69.549,
+      150.812,
+      526.614,
+      284.585
+     ],
+     "spojna": true,
+     "kolidujace_pola": [],
+     "wysokosc_linii": 16.78
+    }
+   ],
+   "spojna": true,
+   "pola_zlokalizowane": 6,
+   "pola_do_lokalizacji": 6
+  }
+ ],
+ "uklad": [
+  {
+   "strona": 1,
+   "przyblizenie": true,
+   "liczba_kolumn": 2,
+   "linie_z_odstepami": [
+    {
+     "y": 54,
+     "odstep_pt": 351.25,
+     "rozne_bloki": true
+    },
+    {
+     "y": 120,
+     "odstep_pt": 149.08,
+     "rozne_bloki": true
+    },
+    {
+     "y": 150,
+     "odstep_pt": 132.81,
+     "rozne_bloki": true
+    },
+    {
+     "y": 171,
+     "odstep_pt": 159.93,
+     "rozne_bloki": true
+    },
+    {
+     "y": 204,
+     "odstep_pt": 128.94,
+     "rozne_bloki": true
+    },
+    {
+     "y": 225,
+     "odstep_pt": 170.0,
+     "rozne_bloki": true
+    },
+    {
+     "y": 243,
+     "odstep_pt": 147.91,
+     "rozne_bloki": true
+    },
+    {
+     "y": 264,
+     "odstep_pt": 182.0,
+     "rozne_bloki": true
+    },
+    {
+     "y": 297,
+     "odstep_pt": 127.0,
+     "rozne_bloki": true
+    },
+    {
+     "y": 318,
+     "odstep_pt": 174.65,
+     "rozne_bloki": true
+    },
+    {
+     "y": 339,
+     "odstep_pt": 156.44,
+     "rozne_bloki": true
+    },
+    {
+     "y": 357,
+     "odstep_pt": 175.81,
+     "rozne_bloki": true
+    },
+    {
+     "y": 378,
+     "odstep_pt": 182.4,
+     "rozne_bloki": true
+    }
+   ],
+   "etykieta_i_wartosc_w_roznych_blokach": [
+    "przelew_bankowy.numer_transakcji",
+    "przelew_bankowy.z_rachunku"
+   ]
+  }
+ ],
+ "kody": [
+  {
+   "kod": "inny_zapis_wartosci",
+   "pole": "przelew_bankowy.data_operacji",
+   "dowod": "inny_zapis; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "przelew_bankowy.data_operacji",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "inny_zapis_wartosci",
+   "pole": "przelew_bankowy.kwota",
+   "dowod": "inny_zapis; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "przelew_bankowy.kwota",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "inny_zapis_wartosci",
+   "pole": "przelew_bankowy.na_rachunek",
+   "dowod": "inny_zapis; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "przelew_bankowy.na_rachunek",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wiele_wystapien",
+   "pole": "przelew_bankowy.numer_transakcji",
+   "dowod": "2 wystąpień"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "przelew_bankowy.numer_transakcji",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "wartosc_w_kilku_liniach",
+   "pole": "przelew_bankowy.tytul",
+   "dowod": "BBox obejmuje kilka linii Popplera"
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "pole": "przelew_bankowy.tytul",
+   "dowod": "Nie wykryto etykiety słownikowej w tej ani poprzedniej linii"
+  },
+  {
+   "kod": "inny_zapis_wartosci",
+   "pole": "przelew_bankowy.z_rachunku",
+   "dowod": "inny_zapis; wynik heurystyki, nie potwierdzenie braku w PDF"
+  },
+  {
+   "kod": "uklad_wielokolumnowy",
+   "pole": null,
+   "dowod": "Kandydat: strona 1, duże odstępy"
+  },
+  {
+   "kod": "niewidoczna_tabela",
+   "pole": null,
+   "dowod": "Kandydat: strona 1; etykieta i wartość w różnych blokach; brak analizy krawędzi"
+  }
+ ],
+ "braki": []
+}

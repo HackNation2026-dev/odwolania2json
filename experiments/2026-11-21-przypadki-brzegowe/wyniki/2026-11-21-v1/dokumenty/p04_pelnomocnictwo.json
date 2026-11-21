@@ -1,0 +1,31 @@
+{
+ "id": "p04_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_04/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_04",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 63661,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p04_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 998,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Gildentia Wyposażenie sp. z o.o. ul. Nowina 87, 40-960 Katowice KRS 9992397370 · NIP 9995126748 · REGON 999165641 Katowice, 24 sierpnia 2026 PEŁNOMOCNICTWO Ja, niżej podpisany(a), działając jako osoba upoważniona do reprezentacji Gildentia Wyposażenie sp. z o.o. (KRS 9992397370, NIP 9995126748), ustanawiam pełnomocnikiem adw. Patrycja Furman (nr wpisu na listę: WA 33451), r. pr. Sławomir Ostrowczy"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

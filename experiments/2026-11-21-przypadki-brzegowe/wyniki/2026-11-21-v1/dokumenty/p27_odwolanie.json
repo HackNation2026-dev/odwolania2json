@@ -1,0 +1,44 @@
+{
+ "id": "p27_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_27/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_27",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 73131,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p27_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 2113,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Wrocław, dnia 12 listopada 2026 roku Zamawiający: Kadmos Systemy sp. k. ul. Liliowa 96, 85-234 Bydgoszcz KRS: 9992446832, NIP: 9998081160, REGON: 999915958 kontakt@sekretariat.example Odwołujący: Ilyrion Sieci sp. j. ul. Cedrowa 90, 50-596 Wrocław KRS: 9995046546, NIP: 9997585897, REGON: 999917510 reprezentowana przez: adw. Aleksandra Jabłończyk, r. pr. Dorota Jurgielewicz adres do korespondencji:"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p27_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 576,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "3.1. Zamawiający nie wezwał Wykonawców do wyjaśnień dotyczących dokumentacji postępowania, mimo że z treści Opisu Przedmiotu Zamówienia wynikały istotne wątpliwości mogące mieć wpływ na treść ofert. 3.2. Zaniechanie to pozbawiło Wykonawców możliwości ustosunkowania się do dostrzeżonych nieprawidłowości, co narusza ich prawo do obrony swoich praw. Wnoszę o: 1.1) wnoszę o oddalenie zarzutów odwołani"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

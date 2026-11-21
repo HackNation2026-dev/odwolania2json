@@ -1,0 +1,46 @@
+{
+ "id": "p41_przelew",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument jest potwierdzeniem wykonania przelewu bankowego na rzecz Gminy Brzozowo Pomorskie, zawiera numer referencyjny, datę operacji, kwotę oraz status zrealizowania.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nKujawski Bank Spółdzielczy - wygenerowano 07.08.2026\nZleceniodawca Torvex Budownictwo sp. z o.o.\nul. Przemysłowa 8, 87-100 Toruń\nRachunek zleceniodawcy PL3130539337630883159845900\nOdbiorca Gmina Brzozowo Pomorskie\nul. Ratuszowa 1, 86-170 Brzozowo Pomorskie\nRachunek odbiorcy PL5140131439377019258444867\nKwota 17,00 PLN",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane dokumentu są ułożone w dwukolumnową tabelę z poziomymi liniami rozdzielającymi wiersze.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2755,
+   "output_tokens": 758,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 197,
+   "output_tokens_details": {
+    "thinking_tokens": 428
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 4.7
+}

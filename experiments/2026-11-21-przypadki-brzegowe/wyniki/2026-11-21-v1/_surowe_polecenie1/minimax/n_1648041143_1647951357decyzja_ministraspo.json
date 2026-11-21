@@ -1,0 +1,114 @@
+{
+ "id": "n_1648041143_1647951357decyzja_ministraspo",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Dokument to decyzja Ministra Sportu i Turystyki (DP.9552.2021) zatwierdzająca zmianę Statutu Polskiego Związku Narciarskiego wraz z załącznikiem (uchwała Walnego Zjazdu Delegatów PZN). Nie jest to odwołanie do KIO, pełnomocnictwo ani przelew, lecz pismo urzędowe.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "MINISTER SPORTU i TURYSTYKI DP.9552.2021 Warszawa, 21 grudnia 2021 r. Polska Związek Narciarski z siedzibą w Krakowie reprezentowany przez: r. pr. Adama M. Kozłowskiego Kancelaria Radców Prawnych Kozłowski, Pisarkiewicz-Firek sp.j. ul. Grodzka 60 31-044 Kraków",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Na podstawie art. 107 § 4 Kpa Minister Sportu i Turystyki odstąpił od uzasadnienia decyzji, gdyż uwzględnia ona w całości żądanie strony. Strona przedstawiła dowód uiszczenia opłaty skarbowej w wysokości 10 zł. Pouconie: 1. Od niniejszej decyzji Stronie nie służy odwołanie, jednakże, zgodnie z art. 127 § 3 Kpa,",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "mieszana",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Załącznik Nr do decyzji Nr Minister Sportu i Turystyki z dnia 21.12.2021 r. Zmiany Statutu PZN Uchwała Nr 3 Walnego Zjazdu Delegatów Polskiego Związku Narciarskiego z dnia 25 września 2021 r. Walny Zjazd Delegatów Polskiego Związku Narciarskiego, w obecności 41 Delegatów uprawnionych do głosowania, co stanowi 50 % ogólnej liczby Delegatów",
+    "problemy": [
+     {
+      "kod": "strona_mieszana",
+      "opis": "Nagłówek uchwały (Załącznik Nr, numer i data decyzji) oraz podpis z pieczęcią są warstwą cyfrową, natomiast zasadnicza treść uchwały wraz z treścią Statutu i podpisami jest obrazem skanu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "skan",
+      "opis": "Treść uchwały i Statutu (od „Walny Zjazd Delegatów…”) oraz podpisy Sekretarza i Przewodniczącego Zjazdu są zeskanowanym obrazem.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "odreczne",
+      "opis": "Odręcznie wpisano numer załącznika, numer decyzji („11”) oraz datę „21.12.2021”; uzupełniono też odręcznie pola „za uchwałę: 34”, „przeciw uchwale: 0”, „wstrzymały się: 2”.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Pieczęć i podpis Dyrektora Departamentu Prawnego nachodzą na nagłówek cyfrowego tekstu (strona 2/3); podpisy odręczne z pieczęcią na dole strony.",
+      "waga": "niska"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Obraz skanu treści uchwały jest nierówny, z szumem i słabym kontrastem w górnej części (tekst uchwały), co utrudnia OCR.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "tabela",
+      "opis": "W części dolnej strony rozmieszczone są pola formularza (dane z głosowań) o niestandardowym układzie.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_mieszany",
+    "opis": "Plik łączy cyfrowe strony decyzji (s. 1–2) z zawierającą skan uchwały stroną 3.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "wiele_dokumentow",
+    "opis": "W pliku są dwa odrębne dokumenty: decyzja Ministra Sportu i Turystyki oraz stanowiący załącznik projekt uchwały nr 3 Walnego Zjazdu Delegatów PZN ze zmianami Statutu PZN.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "dokument_obcy",
+    "opis": "Całość dotyczy zatwierdzenia zmian statutu PZN, nie jest ani odwołaniem do KIO, ani pełnomocnictwem, ani przelewem.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Zawiera podpis i pieczęć osoby reprezentującej Stronę oraz wzmianki o pełnomocniku (r. pr. Adam M. Kozłowski), co może sugerować dokument pełnomocnictwa, choć jest to jedynie adresat pisma.",
+    "waga": "niska"
+   },
+   {
+    "kod": "pieczatka_podpis",
+    "opis": "Pieczęć „Minister Sportu i Turystyki / Dyrektor Departamentu Prawnego” z podpisem zachodzi na treść na s. 2 (na końcu poucenia) oraz na nagłówek s. 3.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 5344,
+   "output_tokens": 1860,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 128,
+   "output_tokens_details": {
+    "thinking_tokens": 472
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 26.4
+}

@@ -1,0 +1,262 @@
+{
+ "id": "x06_mieszany",
+ "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x06_mieszany.pdf",
+ "zrodlo": "syntetyczny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_01",
+ "metadane": {
+  "producent": "pypdf",
+  "kreator": null,
+  "rozmiar_bajtow": 431612,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/x06_mieszany/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1326,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Belmoria Rozwiązania S.A. ul. Zaczarowana 78, 90-803 Łódź KRS: 9999405188, NIP: 9999284065, REGON: 999642785 reprezentowana przez: r. pr. Aleksandra Marciniak, r. pr. Jolanta Zajkowski adres do korespondencji: Kancelaria Adwokacka Spółka z ograniczoną odpowiedzialnością, ul. Jasionowa 19, 80-994 Gdańsk tel. 000 000 000, b"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/x06_mieszany/p002.jpg",
+   "szerokosc_pt": 595.68,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 0,
+   "obrazy": 1,
+   "pokrycie_obrazami": 1.0,
+   "dpi_obrazow": 150.0,
+   "typ_auto": "skan",
+   "probka_tekstu": ""
+  }
+ ],
+ "wstrzykniete": [
+  {
+   "kod": "dokument_mieszany",
+   "strona": null,
+   "opis": "strona 1 tekst, strona 2 skan"
+  },
+  {
+   "kod": "skan",
+   "strona": 2,
+   "opis": "strona 2 jako obraz"
+  }
+ ],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 17.6,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2
+   ],
+   "wynik": {
+    "klasa": "odwolanie",
+    "uzasadnienie_klasy": "Pismo skierowane do Prezesa KIO, zatytułowane „ODWOŁANIE”, wskazuje odwołującego, zamawiającego i zarzuty dotyczące postępowania.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w\nsposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia\nodwołania.\nZarzut nr 2 błędnej oceny ofert",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Strona wygląda na skan; obecności ukrytej warstwy OCR nie można ustalić z obrazu.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "niska_jakosc",
+        "opis": "Na całej stronie widoczny drobny szum i liczne ciemne punkty, również w otoczeniu liter.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_mieszany",
+      "opis": "Strona 1 wygląda na wygenerowaną cyfrowo, a strona 2 na zeskanowaną.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "dokument_mieszany",
+     "skan"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 16.1,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2
+   ],
+   "wynik": {
+    "klasa": "odwolanie",
+    "uzasadnienie_klasy": "Pismo do Prezesa KIO z tytułem „ODWOŁANIE”, wskazaniem Odwołującego i Zamawiającego, podstawą prawną z art. 513 i 515 Pzp, zarzutami, żądaniami i podpisami pełnomocników.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania.\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Strona 2 wygląda na obraz (skan) w przeciwieństwie do cyfrowej strony 1; cała powierzchnia pokryta drobnym szumem.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "niska_jakosc",
+        "opis": "Szum typu „pieprz i sól” (drobne kropki) na całej stronie, także między literami; tekst pozostaje czytelny.",
+        "waga": "niska"
+       },
+       {
+        "kod": "inne",
+        "opis": "Sekcja „Wnoszę o:” zawiera niespójne żądania (oddalenie zarzutów odwołania) i zmieszaną z nimi listę załączników z powtórzoną numeracją a)–d); brak odręcznych podpisów nad liniami kropkowanymi.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_mieszany",
+      "opis": "Strona 1 jest cyfrowym tekstem, a strona 2 skanem/obrazem z szumem, więc OCR trzeba wykonać per strona.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "dokument_mieszany",
+     "skan"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 6.9,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2
+   ],
+   "wynik": {
+    "klasa": "odwolanie",
+    "uzasadnienie_klasy": "Dokument jest odwołaniem wniesionym do Krajowej Izby Odwoławczej, zawiera zarzuty dotyczące postępowania o udzielenie zamówienia oraz wniosek o oddalenie odwołania.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\n\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaccarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "slaba",
+      "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania.\n\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Cała strona 2 jest obrazem skanu bez widocznej cyfrowej warstwy tekstu.",
+        "waga": "wysoka"
+       },
+       {
+        "kod": "niska_jakosc",
+        "opis": "Na stronie 2 występują liczne drobne punkty i plamy szumu w tle oraz nierówna jakość kontrastu, co może utrudniać OCR.",
+        "waga": "srednia"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_mieszany",
+      "opis": "Plik zawiera stronę 1 wygenerowaną cyfrowo oraz stronę 2 będącą skanem.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.995
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "dokument_mieszany",
+     "skan"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

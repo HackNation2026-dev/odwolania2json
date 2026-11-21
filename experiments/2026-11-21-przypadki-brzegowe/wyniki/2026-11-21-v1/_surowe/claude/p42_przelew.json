@@ -1,0 +1,49 @@
+{
+ "id": "p42_przelew",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument ma tytuł „POTWIERDZENIE WYKONANIA PRZELEWU” (Bank Małopolski S.A.). Zawiera zleceniodawcę, rachunki, kwotę 34,00 PLN, status ZREALIZOWANO i tytuł „opłata skarbowa od pełnomocnictwa … w postępowaniu przed KIO”. To potwierdzenie przelewu związanego ze sprawą.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Małopolski S.A. · wygenerowano 01.07.2026\nZleceniodawca Nordelia Facility Services S.A.\nul. Wielicka 250, 30-663 Kraków\nRachunek zleceniodawcy PL55 9947 7458 7693 6814 0572 7867\nOdbiorca",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Wszystkie dane przelewu (zleceniodawca, rachunki, kwota, data, tytuł, numer referencyjny, status) są w dwukolumnowej tabeli etykieta–wartość. Tytuł przelewu w prawej kolumnie zawija się na dwa wiersze.",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "Odbiorcą opłaty skarbowej od pełnomocnictwa jest „Małopolskie Centrum Logistyki Medycznej sp. z o.o.”, a nie urząd miasta. Ta nazwa wygląda na zamawiającego (przetarg MCLM/ZP/07/2026). Warto to oznaczyć przy walidacji przelewu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "pusta_strona",
+      "opis": "Treść zajmuje mniej więcej górną połowę strony, dolna połowa jest pusta. Strona nie jest pusta, więc to tylko informacja.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2534572,
+  "tury": 3
+ },
+ "czas_s": 14.6
+}

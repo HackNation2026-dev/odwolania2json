@@ -1,0 +1,53 @@
+{
+ "id": "p40_odwolanie",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo skierowane do Prezesa Krajowej Izby Odwoławczej, zatytułowane „ODWOŁANIE”, zawierające zarzuty, żądania i uzasadnienie.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Poznań, dnia 19 października 2026 r.\nPrezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nValtrix Systemy Informatyczne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr ZP/PN/48/2026\n1) wyborze jako najkorzystniejszej oferty złożonej przez Medisoft Integracje S.A. z siedzibą w Warszawie, o którym Zamawiający poinformował wykonawców w dniu 9 października 2026 r.;",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr ZP/PN/48/2026\n1) dokumentacji postępowania o udzielenie zamówienia, w tym protokołu postępowania wraz z załącznikami – na okoliczność przebiegu postępowania i treści czynności Zamawiającego;",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "W dolnej części strony tabela „Data / Zdarzenie” z chronologią postępowania; odczyt wymaga zachowania powiązań między kolumnami.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "\": \"tabela\",\n          \"opis\": \"W dolnej części strony tabela „Data / Zdarzenie” z chronologią postępowania; odczyt wymaga zachowania powiązań między kolumnami.\",\n          \"waga\": \"srednia\"\n        }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": []\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n30 782\n"
+ },
+ "czas_s": 17.1
+}

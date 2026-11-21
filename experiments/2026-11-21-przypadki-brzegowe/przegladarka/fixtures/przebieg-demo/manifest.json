@@ -1,0 +1,26 @@
+{
+  "format": "uzp-przypadki-brzegowe",
+  "wersja": 1,
+  "przebieg": "przebieg-demo",
+  "utworzono": "2026-11-21T18:00:00+01:00",
+  "opis": "Mały przebieg testowy dla przeglądarki (dane fikcyjne).",
+  "pole_z_przyszlosci": {"cokolwiek": true},
+  "taksonomia": [
+    {"kod": "obrot_strony", "nazwa": "Obrócona strona", "opis": "Strona obrócona o 90/180/270 stopni."},
+    {"kod": "slaba_jakosc_skanu", "nazwa": "Słaba jakość skanu", "opis": "Rozmyty, ciemny lub zaszumiony skan."},
+    {"kod": "brak_warstwy_tekstowej", "nazwa": "Brak warstwy tekstowej", "opis": "Skan bez OCR."},
+    {"kod": "pusta_strona", "nazwa": "Pusta strona", "opis": "Strona bez treści."},
+    {"kod": "wiele_dokumentow_w_pliku", "nazwa": "Wiele dokumentów w pliku", "opis": "Jeden PDF zawiera kilka dokumentów."},
+    {"kod": "pieczec_naklada_tekst", "nazwa": "Pieczęć na tekście", "opis": "Pieczęć lub podpis zasłania tekst."}
+  ],
+  "modele": [
+    {"id": "codex", "nazwa": "Codex", "model": "gpt-5-codex", "uwagi": null},
+    {"id": "claude", "nazwa": "Claude", "model": "claude-opus", "uwagi": "temperatura 0"},
+    {"id": "minimax", "nazwa": "MiniMax", "model": "minimax-m2"}
+  ],
+  "dokumenty": [
+    {"id": "odw-001", "plik_zrodlowy": "dane/pozytywne/odw-001.pdf", "zrodlo": "pozytywny", "klasa_oczekiwana": "odwolanie", "sprawa": "KIO 1234/26", "liczba_stron": 2, "plik_wynikow": "dokumenty/odw-001.json", "typ_auto": "tekst", "przeslany_do_modeli": true},
+    {"id": "syn-001", "plik_zrodlowy": "dane/syntetyczne/syn-001.pdf", "zrodlo": "syntetyczny", "klasa_oczekiwana": "przelew", "sprawa": null, "liczba_stron": 2, "plik_wynikow": "dokumenty/syn-001.json", "typ_auto": "mieszany", "przeslany_do_modeli": true},
+    {"id": "neg-001", "plik_zrodlowy": "dane/negatywne/neg-001.pdf", "zrodlo": "negatywny", "klasa_oczekiwana": "obcy", "sprawa": null, "liczba_stron": 1, "plik_wynikow": "dokumenty/neg-001.json", "typ_auto": "skan", "przeslany_do_modeli": false}
+  ]
+}

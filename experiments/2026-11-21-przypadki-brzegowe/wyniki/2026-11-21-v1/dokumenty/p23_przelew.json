@@ -1,0 +1,31 @@
+{
+ "id": "p23_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_23/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_23",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 61787,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p23_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 563,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Potwierdzenie operacji bankowej Bank Spółdzielczy Ziemi Kujawskiej · data wydruku 11.03.2026 Nadawca Dane odbiorcy Wexford Systemy sp. z o.o. Galdaris Technologie sp. z o.o. ul. Zaczarowana 21, 60-128 Poznań ul. Uliczna 39, 60-110 Poznań PL40 5075 6137 9331 3178 3259 8717 PL31 2636 9211 3897 8555 8758 8527 Kwota przelewu 50,00 PLN Data wykonania 10.03.2026 Nr ref. CEN2603275403103 Tytułem opłata s"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

@@ -1,0 +1,44 @@
+{
+ "id": "p05_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_05/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_05",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 87546,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p05_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1624,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Lublin, dnia 9 listopada 2026 roku Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Corvantis Wyposażenie sp. z o.o. ul. Orzechowa 31, 20-174 Lublin KRS: 9999511966, NIP: 9997553319, REGON: 999630380 reprezentowana przez: r. pr. Ignacy Sadowski adres do korespondencji: Kancelaria Prawna i Partnerzy, ul. Dębowa 99, 80-960 Gdańsk tel. 000 000 000, biuro@biuro.example Zama"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p05_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1488,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "możliwe złożenie ofert porównywalnych między sobą. 2).2. W szczególności dokumentacja postępowania nie wskazuje minimalnych wartości parametrów, których spełnienie stanowi ograniczenie udziału w postępowaniu, ani dopuszczalnych odstępstw od tych wartości, co prowadzi do swobodnego kształtowania przez Zamawiającego warunków udziału w postępowaniu. Zarzut nr 3 naruszenia zasady równego traktowania w"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

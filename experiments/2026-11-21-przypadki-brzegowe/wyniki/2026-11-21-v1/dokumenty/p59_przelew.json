@@ -1,0 +1,31 @@
+{
+ "id": "p59_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_59/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_59",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 84715,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p59_przelew/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 732,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Spółdzielczy Regionu · wygenerowano 05.06.2026 Zleceniodawca Montera Farmacja S.A. ul. Reymonta 94, 25-605 Kielce Rachunek zleceniodawcy PL80868172124330984510280157 Odbiorca Samodzielny Publiczny Zakład Opieki Zdrowotnej w Dębogórze ul. Przemysłowa 41, 22-217 Dębogóra Rachunek odbiorcy PL79178212353055434671550278 Kwota 34,00 PLN Data operacji 04.06.2026 Tytu"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

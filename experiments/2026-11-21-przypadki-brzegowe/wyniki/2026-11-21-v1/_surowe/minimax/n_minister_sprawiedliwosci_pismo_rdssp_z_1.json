@@ -1,0 +1,55 @@
+{
+ "id": "n_minister_sprawiedliwosci_pismo_rdssp_z_1",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Pismo Rzecznika Dyscyplinarnego Sędziów Sądów Powszechnych w sprawie podpisu elektronicznego; nie jest odwołaniem do KIO, pełnomocnictwem ani potwierdzeniem przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "RZECZNIK DYSCYPLINARNY\nSĘDZIÓW SĄDÓW POWSZECHNYCH\nWarszawa, 11 marca 2024 r.\ndot. DKO-I.565.84.2024\nDKO-I.565.85.2024\nDKO-I.565.86.2024\nRDSP.0212.4.2024\nPan Adam Bodnar\nMinister Sprawiedliwości",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "realizujących zadania publiczne (t.j. Dz.U. z 2023 r. poz. 57 ze zm.) oraz przepisy Kodeksu postępowania karnego i innych ustaw procesowych, uznaje nalicz, że mimo wprowadzonej przez tę pierwszą ustawę zasady równoważności skutków prawnych dokumentów elektronicznych z dokumentami tradycyjnymi",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Dokument jest urzędowym pismem Rzecznika Dyscyplinarnego Sędziów Sądów Powszechnych i nie należy do klas: odwołanie, pełnomocnictwo ani przelew.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 4022,
+   "output_tokens": 1035,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 197,
+   "output_tokens_details": {
+    "thinking_tokens": 519
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 6.1
+}

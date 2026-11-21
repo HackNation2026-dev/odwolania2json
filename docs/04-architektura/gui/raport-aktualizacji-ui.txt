@@ -1,0 +1,11 @@
+Zaktualizowano [projekt UI do 0.2.0](< /home/user/Muzyka/HackNation 2026 - Zadania dla Uczestników/odwolania2json/docs/04-architektura/gui/projekt-ui.md>) i dodano zestawienie zmian.
+
+- Uwzględniono wszystkie 11 uwag recenzji: ochronę danych, konfigurację, zapis korekt, eksport, kontrast, dostępność i brakujące ramki.
+- Dodano diagnozę dokumentów/stron/regionów, wiele obrysów, sześć stanów wyniku, pięć powodów braku oraz kody i dowody pól.
+- Zachowano 10 sekcji. Projekt obejmuje **14 stron aplikacji i 56 ramek**, macierz wariantów, widok EN i kryteria reflow 320 px.
+- MVP: **PDF → statusy → PDF/dane/JSON z dowodem → pobranie**. Bez logowania, dane syntetyczne, statyczny frontend w pakiecie Python instalowanym przez pip. OpenUI poza zakresem.
+- Otwarte pozostają m.in. biblioteka UI, kontrakt geometrii, eksport wielu dokumentów, zgodność `null` oraz model i hosting.
+
+`python3 scripts/verify_docs.py`: **OK — 440 materiałów, 45 dokumentów**.
+
+Nie zmieniano kodu. Reflow opisano jako kryterium odbioru; nie testowano działającego interfejsu.

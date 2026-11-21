@@ -1,0 +1,44 @@
+{
+ "id": "p01_przelew",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument nosi tytuł „POLECENIE PRZELEWU” i podtytuł „Potwierdzenie realizacji polecenia przelewu · Ekobank”. Zawiera płatnika, odbiorcę, numery rachunków, kwotę 200,00 PLN, datę transakcji i status „ZREALIZOWANO”. W tytule przelewu wpisano opłatę skarbową od pełnomocnictwa w postępowaniu przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu\nAurelink Automatyka S.A.",
+    "problemy": [
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Dane są w ramkach ułożonych w dwóch kolumnach: po lewej płatnik, adresat i kwota, po prawej rachunki i data. Przy czytaniu liniowym etykiety pól mieszają się z wartościami z sąsiedniej kolumny.",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "Odbiorcą przelewu jest Aurelink Automatyka S.A., a nie urząd. Opis wskazuje opłatę skarbową od pełnomocnictwa, więc rachunek odbiorcy (urząd czy inny podmiot) wymaga weryfikacji przy ekstrakcji.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.259453,
+  "tury": 3
+ },
+ "czas_s": 12.9
+}

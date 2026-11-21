@@ -1,0 +1,84 @@
+{
+ "id": "x11_mieszany_obrot",
+ "model": "codex",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument adresowany do Prezesa KIO, zatytułowany „ODWOŁANIE”, zawiera zarzuty, żądania i uzasadnienie dotyczące postępowania o zamówienie publiczne.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Poznań, dnia 19 października 2026 r.\nPrezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nValtrix Systemy Informatyczne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 270,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr ZP/PN/48/2026\n1) wyborze jako najkorzystniejszej oferty złożonej przez Medisoft Integracje S.A. z siedzibą w Warszawie, o którym Zamawiający poinformował wykonawców w dniu 9 października 2026",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona ma wygląd skanu z widocznym szumem tła; obecności ukrytej warstwy OCR nie można ustalić z obrazu.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "obrot",
+      "opis": "Treść obrócona o 270° zgodnie z ruchem wskazówek zegara; do czytania wymaga obrotu o 90° w prawo.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie widoczny drobny szum i punktowe zabrudzenia tła; tekst pozostaje czytelny.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr ZP/PN/48/2026\n1) dokumentacji postępowania o udzielenie zamówienia, w tym protokołu postępowania wraz z załącznikami – na okoliczność przebiegu postępowania i treści czynności Zamawiającego;",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "W dolnej połowie strony znajduje się dwukolumnowa tabela „Data / Zdarzenie”, zawierająca chronologię postępowania.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_mieszany",
+    "opis": "Strony 1 i 3 wyglądają na cyfrowo wygenerowane, a strona 2 na zeskanowaną.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "obrot",
+    "opis": "Orientacja stron jest niejednolita: strona 2 jest obrócona o 270°, strony 1 i 3 są ustawione prawidłowo.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "inne",
+    "opis": "Plik ma 3 strony, lecz stopki wskazują „Strona 1 z 11”, „Strona 2 z 11” i „Strona 3 z 11”. Ostatnia strona kończy się w środku zdania, co wskazuje na fragment większego dokumentu.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "  \"kod\": \"inne\",\n      \"opis\": \"Plik ma 3 strony, lecz stopki wskazują „Strona 1 z 11”, „Strona 2 z 11” i „Strona 3 z 11”. Ostatnia strona kończy się w środku zdania, co wskazuje na fragment większego dokumentu.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n31 395\n"
+ },
+ "czas_s": 27.4
+}

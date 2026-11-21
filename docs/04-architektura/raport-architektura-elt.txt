@@ -1,0 +1,17 @@
+Wykonano aktualizację do **0.6.0**.
+
+- Dodano [architekturę wewnętrzną ELT](docs/04-architektura/architektura-wewnetrzna.md): kontrakty, shim OCR, staging, cache, stany i minimalne v1. T2/T4/regiony zależą od poprawy F1; otwarte decyzje są jawnie oznaczone.
+- Uzupełniono README architektury, `pelna-aplikacja.md`, wymagania, ADR-002, pytania do mentora, CHANGELOG i VERSION.
+- Dodano **14 kodów wykonawczych**, łącznie **59 kodów** w [katalogu](docs/05-weryfikacja/katalog-kodow.md). Poprawiono schemat, heurystyki, testy i przeliczono 180 kart.
+
+Nowe liczby kart, kolejno odwołanie/pełnomocnictwo/przelew:
+
+| Kod | Razem | O/P/R |
+|---|---:|---|
+| `brak_etykiety_roli` | 18 | 0/15/3 |
+| `etykieta_po_danych` | 62 | 0/55/7 |
+| `etykieta_synonim` | 94 | 60/34/0 |
+
+Lokalizacja referencji: **1784/1784**; spójne grupy: **452/622**.
+
+Weryfikacja: **74 testy zaliczone**, `git diff --check` bez błędów, `verify_docs.py` **OK: 440 materiałów, 48 dokumentów**. GUI i oryginały organizatora pozostały nietknięte.

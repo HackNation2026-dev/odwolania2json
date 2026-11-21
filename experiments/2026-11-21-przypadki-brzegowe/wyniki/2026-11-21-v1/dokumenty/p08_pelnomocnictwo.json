@@ -1,0 +1,31 @@
+{
+ "id": "p08_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_08/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_08",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 82214,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p08_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 867,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "PEŁNOMOCNICTWO PROCESOWE Mocodawca Umbria Rozwiązania sp. j. ul. Wiśniowa 44, 35-545 Rzeszów Dane KRS 9997927279, NIP 9990600725, REGON rejestrowe 999424597 Pełnomocnicy adw. Bartosz Jastrzębski, nr wpisu WA 19381 adw. Oliwia Zajkowski, nr wpisu WA 42395 Zamawiający Corvella Sieci sp. k. Postępowanie Dostawa i wdrożenie oprogramowania do obsługi dokumentacji wraz z serwisem wsparcia technicznego n"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

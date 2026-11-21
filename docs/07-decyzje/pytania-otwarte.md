@@ -1,5 +1,5 @@
 ---
-wersja: 0.2.0
+wersja: 0.6.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
@@ -34,3 +34,34 @@ status: dokumentacja przygotowawcza
 | U-Q10 | Która dokładnie rewizja kontraktów będzie użyta przez ewaluator? | zgodność |
 
 Brak skanów w przykładach nie jest potwierdzeniem ich braku w teście. Brak limitu czasu nie oznacza, że awaria lub niedostępny endpoint jest akceptowany.
+
+## Odpowiedzi 2026-11-21 (przekazane przez użytkownika)
+
+Źródło: [odpowiedzi mentora](../01-zadanie/zrodla/odpowiedzi-mentora-2026-11-21.md). Kanał: rozmowa użytkownika z mentorem UZP, przekazana asystentowi.
+
+| ID | Stan | Odpowiedź |
+|---|---|---|
+| U-Q01, U-Q02 | częściowo | Liczone TP, TN, FP, FN (Discord 11:26). Miara podobieństwa 80%, normalizacja i agregacja nadal nieznane. |
+| U-Q03 | częściowo | Obcy dokument: `{}` pod nazwą pliku — potwierdzone. `null` a brak klucza: nie pytano. |
+| U-Q05 | zamknięte | Hosting w Europie; modele i inne komponenty mogą być po API, jeśli spełniają wymogi. |
+| U-Q06 | nieaktualne | Dostarczenie wyłącznie przez pip; Docker tylko deweloperski. |
+| U-Q07 | częściowo | Liczy się największy model, także w systemie wieloagentowym. Przelicznik na punkty nieznany. |
+| U-Q08 | zamknięte | Tak: pliki tekstowe, skany i dokumenty mieszane. |
+| U-Q10 | zamknięte | Obowiązuje najnowszy kod repozytorium organizatora. |
+| nowe | zamknięte (zespół) | PESEL, rachunki i numer transakcji: tekst albo `null`, zgodnie z referencjami. |
+
+Nadal otwarte: U-Q04 (kanał i budżet klucza), U-Q09 (konta jury), lokalny model instalowany przez pip (ani potwierdzony, ani wykluczony).
+
+## Uzupełnienie 0.6.0 — pytania do mentora przed OpenAPI
+
+Pytania poniżej są otwarte; nie stanowią potwierdzeń organizatora.
+
+| ID | Pytanie | Wpływ |
+|---|---|---|
+| U-Q11 | Czy skany i dokumenty mieszane w ukrytym teście pochodzą z tego samego generatora co przykłady tekstowe? | reprezentatywność rasteryzacji i fizycznych skanów |
+| U-Q12 | Jaki dokładnie wynik jest oczekiwany, gdy jeden PDF zawiera wiele odrębnych dokumentów? | segmentacja i kontrakt eksportu |
+| U-Q13 | Czy nieczytelne pole ma mieć `null`, także gdy pole jest wymagane i referencyjny schemat nie dopuszcza `null`? | polityka braków i walidacja YAML |
+| U-Q14 | Przy błędzie technicznym lub niedostępnym OCR: brak pliku wynikowego czy `{}` pod nazwą wejścia? Jak ewaluator liczy brak pliku? | przełącznik eksportu konkursowego; błąd pozostaje osobnym stanem |
+| U-Q15 | Czy model OCR liczy się do „największego modelu”; jak traktować klasyczny OCR i model wizyjno-językowy? | metadane i punktacja rozmiaru modelu |
+
+Do odpowiedzi polityki opisuje [architektura wewnętrzna](../04-architektura/architektura-wewnetrzna.md#10-decyzje-otwarte-przed-openapi) jako rekomendacje do decyzji użytkownika.

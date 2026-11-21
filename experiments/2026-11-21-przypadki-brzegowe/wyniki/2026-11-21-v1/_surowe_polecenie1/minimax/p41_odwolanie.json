@@ -1,0 +1,63 @@
+{
+ "id": "p41_odwolanie",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument jest odwołaniem do Krajowej Izby Odwoławczej w postępowaniu prowadzonym przez Gminę Brzozowo Pomorskie, zawierającym zarzuty wobec oferty Odwołującego, wnioski oraz uzasadnienie.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Krajowa Izba Odwoławcza\nul. Postępu 17A\n02-676 Warszawa\n\nZamawiający:\nGmina Brzozowo Pomorskie\nul. Ratuszowa 1, 86-170 Brzozowo Pomorskie\nNIP: 9995062817, REGON: 999871350\nprzetargi@brzozowo.example\n\nOdwołujący:",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr IR.271.14.2026\n\n2) wyborze jako najkorzystniejszej oferty wykonawcy BudMax Kujawy S.A. z siedzibą we Włocławku;\n3) zaniechaniu wezwania Odwołującego do złożenia dodatkowych wyjaśnień w zakresie ceny, pomimo że pierwsze wyjaśnienie z dnia 23 lipca 2026 r. zostały złożone w terminie;",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr IR.271.14.2026\n\nUZASADNIENIE\n\nI. Stan faktyczny\n\nGmina Brzozowo Pomorskie prowadzi postępowanie na budowę sali gimnastycznej. Postępowanie jest współfinansowane ze środków Rządowego Funduszu Polski Ład. Najważniejsze zarządzenia w postępowaniu:",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "W dolnej części strony znajdują się dwie tabele: chronologiczna tabela zdarzeń oraz tabela porównująca oferty wykonawców; dane w komórkach mogą być trudniejsze do odczytu liniowego.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 5331,
+   "output_tokens": 2061,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 128,
+   "output_tokens_details": {
+    "thinking_tokens": 1360
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 24.4
+}

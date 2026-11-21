@@ -1,0 +1,31 @@
+{
+ "id": "p55_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_55/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_55",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 45009,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p55_przelew/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 743,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Handlowy Centrum S.A. · wygenerowano 10.05.2026 Zleceniodawca Holdex Dystrybucja Medyczna sp. z o.o. ul. Kolejowa 23, 10-230 Olsztyn Rachunek zleceniodawcy PL02 8303 3566 8029 4951 6078 2084 Odbiorca Szpital Specjalistyczny im. Jana Pawła II w Brzozówce ul. Szkolna 59, 44-875 Brzozówka Rachunek odbiorcy PL89 0186 0369 8791 3839 5552 1169 Kwota 100,00 PLN Data "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

@@ -1,0 +1,31 @@
+{
+ "id": "p22_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_22/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_22",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 64117,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p22_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 551,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POLECENIE PRZELEWU Potwierdzenie operacji bankowej · Bank Śląsko-Mazowiecki Dane nadawcy Rachunek zleceniodawcy Zorina Systemy sp. z o.o. 56702530386174513642995059 ul. Piwna 79, 30-756 Kraków Beneficjent Rachunek odbiorcy Quantis Serwis sp. j. 63103194523130599171696203 ul. Liliowa 16, 40-774 Katowice Wartość Data wykonania 17.00 PLN 2026-01-08 Tytułem opłata skarbowa od pełnomocnictwa dla Dorota"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

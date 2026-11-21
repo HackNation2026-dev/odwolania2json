@@ -1,0 +1,57 @@
+{
+ "id": "p40_odwolanie",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo do Prezesa Krajowej Izby Odwoławczej z nagłówkiem „ODWOŁANIE”. Zawiera oznaczenie Odwołującego, Zamawiającego i wybranego wykonawcy, wpis od odwołania (15 000,00 zł), zarzuty naruszenia Pzp, wnioski i uzasadnienie. Nagłówek stron brzmi „Odwołanie – postępowanie nr ZP/PN/48/2026”.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Poznań, dnia 19 października 2026 r. Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Valtrix Systemy Informatyczne sp. z o.o. ul. Grunwaldzka 112, 60-307 Poznań KRS: 9998213547, NIP: 9993380162",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr ZP/PN/48/2026 1) wyborze jako najkorzystniejszej oferty złożonej przez Medisoft Integracje S.A. z siedzibą w Warszawie, o którym Zamawiający poinformował wykonawców w dniu 9 października 2026 r.;",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr ZP/PN/48/2026 1) dokumentacji postępowania o udzielenie zamówienia, w tym protokołu postępowania wraz z załącznikami – na okoliczność przebiegu postępowania i treści czynności Zamawiającego;",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "W części „I. Stan faktyczny” jest dwukolumnowa tabela chronologii postępowania (Data | Zdarzenie, 9 wierszy od 14.07.2026 do 13.10.2026). Część komórek ma tekst zawinięty na dwie linie.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.28349,
+  "tury": 5
+ },
+ "czas_s": 16.4
+}

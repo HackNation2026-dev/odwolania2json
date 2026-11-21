@@ -1,0 +1,49 @@
+Jesteś niezależnym, krytycznym recenzentem (architektura systemów ekstrakcji dokumentów, UX dla urzędu, ocena ryzyka w konkursie). Odpowiadasz po polsku. Tylko czytasz repozytorium w bieżącym katalogu (odwolania2json); niczego nie zmieniasz.
+
+## Kontekst
+
+Zadanie UZP „Odwołania2JSON”: PDF (tekst, skan, mieszany) → klasyfikacja (odwołanie KIO, pełnomocnictwo, przelew, obcy → `{}`) → JSON; ocena F1 (TP/TN/FP/FN). Zespół chce przed implementacją zatwierdzić architekturę, GUI i listę pomysłów. Następny krok po Twojej ocenie: plik OpenAPI i backend.
+
+Nowa informacja: zespół planuje **własny model ML do OCR**, ale nie może go dostarczyć teraz. Na teście tylko `pip install` (Python 3.13, i7 16 GB bez GPU), LLM tylko po API hostowanym w Europie, liczy się rozmiar największego modelu w systemie.
+
+## Do przeczytania
+
+- Decyzje: `docs/07-decyzje/ADR-002-decyzje-po-recenzji.md` (cały, z uzupełnieniami), `docs/07-decyzje/pytania-otwarte.md`, `docs/01-zadanie/zrodla/odpowiedzi-mentora-2026-11-21.md`, `docs/03-wymagania/README.md`, `docs/01-zadanie/punktacja.md`, README organizatora `docs/02-materialy/organizator-uzp/README.md`.
+- Architektura: `docs/07-decyzje/konsultacja-pipeline-2026-11-21/` (zlecenie i ocena Codex), `docs/04-architektura/README.md`, `docs/04-architektura/proponowany-stos.md`.
+- GUI: `docs/04-architektura/gui/projekt-ui.md` (sprawdź wersję w nagłówku), `docs/04-architektura/gui/recenzja-codex-2026-11-21.md`, `docs/04-architektura/gui/zmiany-ui-0.2.0.md` (jeśli istnieje), ewentualna ocena względem kryteriów w `docs/04-architektura/gui/ocena-ui-vs-kryteria.txt`.
+- Pomysły i ich wyniki:
+  - katalog przypadków brzegowych: `docs/05-weryfikacja/katalog-przypadkow-brzegowych.md`, `przypadki-brzegowe.json`, `katalog-kodow.md`;
+  - eksperyment YAML: `docs/05-weryfikacja/eksperyment-yaml-klasy-2026-11-21.md`;
+  - eksperyment przypadków brzegowych i modele (Codex, Claude, MiniMax): `docs/05-weryfikacja/eksperyment-przypadki-brzegowe-2026-11-21.md`, `experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/podsumowanie.md`;
+  - karty dokumentów i grupowanie: `docs/05-weryfikacja/karty-dokumentow-2026-11-21.md`, `experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/karty/podsumowanie.json`;
+  - konsultacja trudnych przypadków: `docs/07-decyzje/konsultacja-trudne-przypadki-2026-11-21/zestawienie.md`;
+  - zasady F1: `docs/05-weryfikacja/zasady-f1.md`.
+
+## Lista pomysłów do oceny
+
+1. Katalog nazwanych przypadków brzegowych (45 kodów).
+2. Karty dokumentów (gdzie leży każda wartość, etykiety, braki).
+3. Grupowanie w ramki nad podmiotem (wiele obrysów).
+4. Zestaw testowy v2 z oryginałów (A bez zmian referencji, B destrukcyjne z kart, C nowe układy i rzadkie treści) + fizyczne skany zespołu.
+5. Przypadki z praktyki zespołu: brak etykiet ról, etykieta po danych, synonimy, niewidoczna tabela, wklejony skan w PDF tekstowym, brak informacji wprost.
+6. Pipeline: odczyt przestrzenny → diagnoza → segmenty → router (funkcja dokumentu) → grupy/role → kandydaci z dowodami → scalanie i kontrola pokrycia → normalizacja/walidacja → JSON + dowody + raport braków.
+7. Brak „happy path”: wewnętrzna diagnoza dokumentu/strony/regionu z pewnością, kody odstępstw i odrzutów.
+8. Wykrywanie obrazów i warstwy OCR w PDF jako zestaw sygnałów z pewnością.
+9. Każdy dokument niezależnie; braki jawnie (raport poza ocenianym JSON).
+10. Model dokumentu (grupy, role, kotwice, scalanie) oprócz modelu JSON (YAML).
+11. Regex tylko dla stałych formatów z testami mutacyjnymi; LLM dla znaczenia.
+12. Przeglądarka egui do adnotacji przez człowieka.
+13. GUI aplikacji: React/TS, biblioteka komponentów, MVP bez logowania, bez OpenUI, frontend jako gotowe pliki w pakiecie pip.
+14. Wymienny komponent OCR (własny model ML później).
+
+## Odpowiedz
+
+1. **Tabela pomysłów**: pomysł | czy mamy wynik (jaki, plik, liczby) albo tylko plan | czy wykonalny w realiach konkursu (czas ~doba–dwie, mały zespół, tylko pip, CPU) | główne ryzyko | werdykt: zachować / zmienić / odłożyć / odrzucić.
+2. **Architektura**: czy jest spójna i kompletna jako podstawa do OpenAPI i backendu? Sprzeczności między dokumentami (ADR-002, pipeline, GUI, wymagania)? Czego brakuje, zanim napiszemy kontrakt API?
+3. **OCR bez modelu ML teraz**: jak architektura i API mają działać do czasu dostarczenia modelu (kontrakt komponentu OCR, tryb bez OCR, diagnoza, co z F1 na skanach), jak to wpływa na punktację i rozmiar modelu (czy model OCR liczy się do „największego modelu”), jakie warianty zastępcze są zgodne z ograniczeniami — bez wybierania za zespół biblioteki produkcyjnej.
+4. **GUI**: czy projekt jest gotowy do makiet i do implementacji MVP; największe braki względem kryteriów i decyzji.
+5. **Krytyczny przegląd całości**: 5–10 najpoważniejszych problemów lub nadmiarów (np. za dużo przygotowań kosztem działającego systemu), z priorytetem.
+6. **Wejście do OpenAPI i backendu**: lista zasobów/endpointów i obiektów, które muszą się znaleźć w kontrakcie (wsad, dokument, diagnoza, wynik, dowody, raport braków, stany, klasy/konfiguracja, wersje), oraz decyzje, które trzeba podjąć przed napisaniem pliku OpenAPI.
+7. Werdykt końcowy: czy architektura i GUI są „ok” jako podstawa następnego kroku (tak / tak z warunkami / nie), z warunkami.
+
+Fakty poprzyj ścieżką pliku (i liczbami, jeśli są). Oddziel fakty od rekomendacji. Bądź krytyczny: wskazuj, co jest tylko planem bez dowodu.

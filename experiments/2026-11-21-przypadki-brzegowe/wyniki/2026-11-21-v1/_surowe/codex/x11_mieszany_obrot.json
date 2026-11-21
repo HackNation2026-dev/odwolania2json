@@ -1,0 +1,80 @@
+{
+ "id": "x11_mieszany_obrot",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Pismo skierowane do Prezesa Krajowej Izby Odwoławczej, zatytułowane „ODWOŁANIE”, zawiera zarzuty, żądania i uzasadnienie.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Poznań, dnia 19 października 2026 r.\nPrezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nValtrix Systemy Informatyczne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "skan",
+    "obrot_stopnie": 270,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr ZP/PN/48/2026\n1) wyborze jako najkorzystniejszej oferty złożonej przez Medisoft Integracje S.A. z siedzibą w Warszawie, o którym Zamawiający poinformował wykonawców w dniu 9 października 2026",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona ma wygląd skanu z widocznym ziarnem i szumem tła.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "obrot",
+      "opis": "Treść obrócona o 270° zgodnie z ruchem wskazówek zegara; do odczytu wymaga obrócenia obrazu o 90° w prawo.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie widoczne drobne ciemne plamki i szum, także w pobliżu liter.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr ZP/PN/48/2026\n1) dokumentacji postępowania o udzielenie zamówienia, w tym protokołu postępowania wraz z załącznikami – na okoliczność przebiegu postępowania i treści czynności Zamawiającego;",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "W części „I. Stan faktyczny” znajduje się tabela z kolumnami „Data” i „Zdarzenie”; część opisów zajmuje kilka wierszy.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_mieszany",
+    "opis": "Strony 1 i 3 wyglądają na wygenerowane cyfrowo, a strona 2 na zeskanowaną.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "inne",
+    "opis": "Plik zawiera tylko 3 strony, natomiast stopki wskazują „Strona 1 z 11”, „Strona 2 z 11” i „Strona 3 z 11”. Treść ostatniej strony kończy się w połowie zdania, co wskazuje na niekompletny dokument.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": ",\n      \"opis\": \"Plik zawiera tylko 3 strony, natomiast stopki wskazują „Strona 1 z 11”, „Strona 2 z 11” i „Strona 3 z 11”. Treść ostatniej strony kończy się w połowie zdania, co wskazuje na niekompletny dokument.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n7442\n"
+ },
+ "czas_s": 25.2
+}

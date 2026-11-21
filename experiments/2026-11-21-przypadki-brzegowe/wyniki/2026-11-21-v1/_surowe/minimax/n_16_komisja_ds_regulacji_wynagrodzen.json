@@ -1,0 +1,46 @@
+{
+ "id": "n_16_komisja_ds_regulacji_wynagrodzen",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Pismo okólne Rektora Uniwersytetu Kazimierza Wielkiego dotyczące powołania zespołu ds. regulacji wynagrodzeń pracowników; nie jest odwołaniem, pełnomocnictwem ani potwierdzeniem przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Pismo okólne Nr 16/2024/2025\nRektora Uniwersytetu Kazimierza Wielkiego\nz dnia 4 marca 2025 r.\n\nw sprawie powołania Zespołu ds. Regulacji Wynagrodzeń Pracowników Uniwersytetu\nKazimierza Wielkiego",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Dokument jest urzędowym pismem okólnym rektora, nienależącym do rozpoznawanych klas odwołania, pełnomocnictwa ani przelewu.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2824,
+   "output_tokens": 636,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 128,
+   "output_tokens_details": {
+    "thinking_tokens": 357
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 11.5
+}

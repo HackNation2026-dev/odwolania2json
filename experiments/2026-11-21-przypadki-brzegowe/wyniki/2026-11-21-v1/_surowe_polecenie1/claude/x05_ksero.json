@@ -1,0 +1,64 @@
+{
+ "id": "x05_ksero",
+ "model": "claude",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Nagłówek „PEŁNOMOCNICTWO”. Mocodawca Hartica Serwis S.A. udziela pełnomocnictwa dwóm adwokatom do zastępowania Wykonawcy przed Krajową Izbą Odwoławczą. Pod treścią widnieje miejsce na podpis prokurenta.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO Mocodawca Hartica Serwis S.A. ul. Akacjowa 54, 80-122 Gdańsk Dane rejestrowe KRS 9999669444, NIP 9990678035, REGON 999114017 Pełnomocnicy adw. Bartosz Szymanski, nr wpisu WA 33513 adw. Cezary Wierzbicki",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona wygląda na kserokopię lub skan: szare tło i ciemne krawędzie przy brzegach arkusza.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie widać szum w postaci drobnych kropek, a kontrast między szarym tłem a tekstem jest obniżony. Tekst pozostaje czytelny.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "przekrzywienie",
+      "opis": "Treść jest lekko przekrzywiona, o około 1 stopień, co widać po ramce nagłówka i liniach tabeli.",
+      "waga": "niska"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane mają układ dwukolumnowej tabeli z etykietami pól po lewej i wartościami po prawej (Mocodawca, Pełnomocnicy, Zakres, Data itd.).",
+      "waga": "niska"
+     },
+     {
+      "kod": "inne",
+      "opis": "Nad nazwiskiem prokurenta Aleksandry Nowakowicz jest tylko wykropkowana linia. Brak widocznego podpisu.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "skan",
+    "opis": "Plik ma jedną stronę i jest nią zeskanowana kserokopia, więc tekst trzeba odczytać przez OCR.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2525902,
+  "tury": 3
+ },
+ "czas_s": 14.0
+}

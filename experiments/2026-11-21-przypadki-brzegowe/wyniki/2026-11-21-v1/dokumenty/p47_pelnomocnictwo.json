@@ -1,0 +1,31 @@
+{
+ "id": "p47_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_47/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_47",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 85837,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p47_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1418,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Szczecin, 27.08.2026 PEŁNOMOCNICTWO Ja, niżej podpisany Sebastian Tomaszewski, prowadzący działalność gospodarczą pod firmą RAVELO-BUD Sebastian Tomaszewski, ul. Jagiellońska 91, 70-402 Szczecin, NIP 9997975723, REGON 999544334, wpisany do Centralnej Ewidencji i Informacji o Działalności Gospodarczej (dalej: „Mocodawca”), niniejszym udzielam pełnomocnictwa: adw. Elżbieta Woźniak (nr wpisu na listę"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

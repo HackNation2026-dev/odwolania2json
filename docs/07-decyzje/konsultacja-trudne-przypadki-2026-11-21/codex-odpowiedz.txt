@@ -1,0 +1,200 @@
+**Największy zwrot da teraz zbiór par: oryginalny PDF + trudniejszy wariant z tą samą, sprawdzoną referencją.** Zacząłbym od skanów, dokumentów mieszanych i błędnej warstwy tekstowej. Ekstremalne uszkodzenia oraz wielodokumentowe paczki wymagają osobnych zasad oceny.
+
+Nie zmieniałem plików. Poniżej rozdzielam **fakty z repozytorium** i **rekomendacje**.
+
+Skróty ścieżek:
+
+- `D` = `docs/02-materialy/organizator-uzp/dane/`
+- `U` = `docs/02-materialy/organizator-uzp-aktualizacje/main-7590db8/dane/`
+- `E` = `experiments/2026-11-21-przypadki-brzegowe/`
+
+**1. Co prawdopodobnie najbardziej zagrozi F1**
+
+Potwierdzono obecność tekstu, skanów i dokumentów mieszanych; pozostała kolejność jest moją oceną ryzyka, **nie wiedzą o ukrytym zbiorze**. Źródło potwierdzenia: `docs/01-zadanie/zrodla/odpowiedzi-mentora-2026-11-21.md`.
+
+| Priorytet | Rodzaj | Przypadek | Prawdopodobieństwo × wpływ |
+|---|---|---|---|
+| 1 | Wizualny | Skan bez tekstu; strony tekstowe przeplatane skanami | Potwierdzone × bardzo duży: można stracić cały dokument |
+| 2 | Treściowy | Pomylenie ról, dat, numerów i pierwszego zarzutu | Wysokie × duży: poprawnie odczytany tekst nadal daje błędny JSON |
+| 3 | Wizualny | Skan z niepełną lub błędną warstwą OCR; poprawny obraz i niewidoczny błędny tekst | Średnie–wysokie × bardzo duży: obecność tekstu może zablokować właściwy odczyt |
+| 4 | Treściowy | Wyrok KIO, ogłoszenie BZP/TED i inne trudne negatywy | Wysokie × duży: fałszywa klasa generuje wiele FP |
+| 5 | Wizualny | Obrót 90/180/270°, `/Rotate`, niewielkie przekrzywienie, słaby kontrast | Wysokie × duży |
+| 6 | Treściowy | Konsorcjum, kilku zamawiających/mocodawców, osoba fizyczna, brak danych | Średnie–wysokie × duży |
+| 7 | Strukturalny | Dodatkowe/puste strony, załączniki, dane dalej niż na trzeciej stronie | Średnie–wysokie × duży |
+| 8 | Wizualny | Ksero kolejnej generacji, pieczątki, podpisy, anonimizacja | Średnie × średni–duży |
+| 9 | Strukturalny | Kilka samodzielnych dokumentów w jednym PDF | Niepotwierdzone × bardzo duży; dodatkowo niejasny kontrakt wyjścia |
+| 10 | Wizualny | Zdjęcie telefonem: perspektywa, cień, rozmycie ruchowe | Średnie–niskie × duży |
+| 11 | Strukturalny | Brakujące, powielone lub przestawione strony | Niskie–średnie × duży |
+| 12 | Wizualny | Faks; istotne dane dopisane ręcznie | Niskie–średnie × duży dla dotkniętych pól |
+
+Na pierwszą dobę nie przeznaczałbym podobnego czasu na wszystkie pozycje. Pierwsze osiem ma większą wartość niż rozbudowana symulacja pisma odręcznego.
+
+**Fakty: rozkład treści po nałożeniu poprawek `U` na `D`**
+
+Policzyłem referencje wszystkich 60 spraw i sprawdziłem tekst PDF-ów pod kątem konsorcjów oraz formatów.
+
+| Wariant | Pokrycie | Wniosek i ścieżki |
+|---|---:|---|
+| Konsorcjum odwołujących | 6/60 | Sprawy **41, 46, 48, 49, 50, 60**. Referencja zwraca lidera, więc lista długości 1 nie oznacza braku konsorcjum. `D/przyklad_41/odwolanie.pdf`, analogicznie wskazane sprawy; reguła: `docs/02-materialy/organizator-uzp/oczekiwane-json/odwolanie.json` |
+| Dwóch zamawiających | 3/60 | **42, 51, 59**; rozróżnienie prowadzącego 1/0. `D/przyklad_{42,51,59}/odwolanie.json` |
+| Dwóch mocodawców | 6/60 | **41, 46, 48, 49, 50, 60**. `D/przyklad_*/pelnomocnictwo.json` |
+| Mocodawca będący osobą fizyczną | 4/60 | **44, 47, 51, 52**. `D/przyklad_{44,47,51,52}/pelnomocnictwo.json` |
+| Odwołanie bez pełnomocnika | **0/60** | Wszędzie `przez-pelnomocnika=1`, dane pełnomocnika kompletne. `D/przyklad_*/odwolanie.json` + poprawki `U/przyklad_*/odwolanie.json` |
+| PESEL pełnomocnika | **1/60 dokumentów** | Tylko **43**; łącznie 1 wartość na 98 osób. `D/przyklad_43/pelnomocnictwo.json` |
+| Wielu pełnomocników | 38/60 | Dobrze reprezentowane: dwóch w 38 dokumentach, jeden w 22. `D/przyklad_*/pelnomocnictwo.json` |
+| Data i miejscowość odwołania nieobecne | 15/60 | Zawsze brakują razem; niezależne braki są luką. `D/przyklad_*/odwolanie.json` + `U` |
+| BZP/TED | Oba: 35; tylko TED: 12; tylko BZP: 13 | **Brak przypadku bez obu numerów**; numer postępowania jest zawsze. `D/przyklad_*/odwolanie.json` |
+| Powody odwołania | 1–11 obecne; **12 nieobecny** | Poszczególne obecne kody mają 4–9 przykładów. Referencje odwołań `D` + `U`; słownik: `docs/02-materialy/organizator-uzp/oczekiwane-json/odwolanie.json` |
+| Przelewy | **60/60 tytułów dotyczy opłaty skarbowej** | Wszystkie sześć pól zawsze wypełnione; brak pozytywnego przykładu brakującego numeru transakcji/rachunku. `D/przyklad_*/przelew.json` |
+| Kwoty i identyfikatory przelewów | Tylko 17, 34, 50, 100, 200; wszystkie numery transakcji `CEN…` | Brak kwot z niezerowymi groszami; rachunki referencyjne zawsze 26 cyfr. `D/przyklad_*/przelew.json` |
+
+Nie brakuje natomiast samych alternatywnych zapisów: miesiące słownie, TED w zapisie `2026/S…`, rachunki z `PL` i spacjami już występują. Przykłady: `D/przyklad_18/odwolanie.pdf`, `D/przyklad_07/potwierdzenie_przelewu.pdf`, `D/przyklad_40/potwierdzenie_przelewu.pdf`. Warto mierzyć ich obsługę przed tworzeniem kolejnych kopii.
+
+**2. Jak zbudować trudny zbiór z poprawnymi odpowiedziami**
+
+Najpierw zamroźcie loader: referencje bazowe + poprawki pięciu odwołań **19, 23, 25, 44, 55**, zgodnie z `U`. Mapowanie nazw PDF/JSON jest opisane w `docs/07-decyzje/ADR-002-decyzje-po-recenzji.md`.
+
+| Przekształcenie | Co zrobić z referencją |
+|---|---|
+| Rasteryzacja, kompresja, szarość, umiarkowany szum/rozmycie | Zachować, **jeśli wartości pozostają czytelne** |
+| Obrót, przekrzywienie z zachowaniem całej strony | Zachować |
+| Zastąpienie wybranych stron skanami | Zachować, jeśli zachowano wszystkie strony i treść |
+| Wstawienie pustej strony, zmiana metadanych/nazwy pliku | Zachować; przesunąć jedynie lokalizacje dowodów |
+| Dodanie błędnego niewidocznego OCR przy poprawnym obrazie | Zachować; to test odporności na błędną reprezentację |
+| Pieczątka/podpis | Zachować tylko po sprawdzeniu, że nie usuwa dostępności wartości |
+| Obcięcie, zaczernienie, usunięcie strony | Przejrzeć **wszystkie wystąpienia** dotkniętych pól i sporządzić nową referencję |
+| Zmiana zapisu tej samej daty/kwoty/rachunku | Zachować wartość kanoniczną; sprawdzić wszystkie powtórzenia |
+| Nowa treść, brak pełnomocnika, nowy mocodawca | Nowy PDF i nowa referencja, sprawdzane razem |
+| Połączenie kilku dokumentów | Osobny test diagnostyczny do czasu ustalenia reguły jednego wyniku |
+
+**Obcięcie strony nie oznacza automatycznie `null`.** Pole może występować ponownie w uzasadnieniu. Nie zmieniajcie też referencji na `null` dlatego, że wasz OCR czegoś nie odczytał.
+
+Dla wariantów destrukcyjnych rozróżniajcie poza ocenianym JSON-em: „nieobecne”, „zasłonięte”, „nieczytelne”, „sporne”. Przypadki bez jednoznacznej odpowiedzi trzymajcie poza głównym wynikiem F1.
+
+Proponuję:
+
+- Podział **30 spraw do rozwoju / 10 do walidacji / 20 zamrożonych do testu**. Wszystkie dokumenty i pochodne jednej sprawy pozostają razem.
+- Sześć podstawowych wariantów każdego dokumentu: skan dobry, skan średni, obrót, mieszany, błędny OCR, dodatkowa/pusta strona.
+- Osobne mutacje treści pokrywające rzeczywiste luki z tabeli.
+- Co najmniej trzy niezależne układy dokumentów: inne nagłówki, tabele, kolejność sekcji i łamanie stron. **Rasteryzacja LAPFormalDoc nie usuwa przeuczenia na jego układzie.**
+- Zamrożone parametry i ziarna testowe; przynajmniej jeden sposób degradacji niewykorzystywany przy strojeniu.
+- Losowe nazwy plików; referencje i identyfikatory źródłowe niedostępne dla ekstraktora.
+
+Jeśli zespół już analizował wszystkie sprawy, taki podział będzie kontrolą regresji i odporności, ale nie całkowicie niezależnym testem generalizacji.
+
+**3. Realistyczne generowanie i ocena `syntetyczne.py`**
+
+Poniższe narzędzia proponuję **wyłącznie do generatora testów**.
+
+| Narzędzie | Instalacja i licencja | Zastosowanie |
+|---|---|---|
+| Pillow | `pip install pillow`; MIT-CMU | Rozdzielczość, kompresja, rozmycie, składanie obrazów |
+| OpenCV headless | `pip install opencv-python-headless`; wrapper MIT, OpenCV Apache-2.0; dodatkowe licencje binariów | Perspektywa, deformacja, morfologia, nierównomierne oświetlenie |
+| Augraphy | `pip install augraphy`; MIT | Procesy druku, papieru, ksero, faksu |
+| ReportLab + pypdf | `pip install reportlab pypdf`; BSD / BSD-3-Clause | Składanie PDF, tekst niewidoczny, łączenie i wymiana stron |
+| pypdfium2 | `pip install pypdfium2`; Apache-2.0/BSD-3-Clause, PDFium i zależności mają własne licencje | Opcjonalny renderer generatora, gdy chcecie uniknąć systemowego Popplera |
+
+Źródła: [Pillow](https://pypi.org/project/Pillow/), [OpenCV i licencje składników](https://pypi.org/project/opencv-python-headless/), [Augraphy](https://github.com/sparkfish/augraphy), [ReportLab](https://pypi.org/project/reportlab/), [pypdf](https://pypi.org/project/pypdf/), [pypdfium2](https://pypi.org/project/pypdfium2/).
+
+Po instalacji takie generowanie może działać offline, na lokalnych zasobach. **Nie deklaruję sprawdzonej instalacji całego zestawu na Pythonie 3.13**: dokumentacja Augraphy wymienia testowane wersje 3.8–3.11. Dlatego podstawowy generator oparłbym na Pillow/OpenCV, a Augraphy potraktował jako opcję po krótkim sprawdzeniu zależności. [Dokumentacja instalacji Augraphy](https://augraphy.readthedocs.io/en/latest/doc/source/installation.html).
+
+| Proces | Zalecana symulacja |
+|---|---|
+| Druk→skan | Render 300 dpi → drobne ubytki/rozlanie tuszu → tekstura papieru i nierówny kontrast → skan 150/200/300 dpi → kompresja |
+| Ksero | Dwa–trzy kolejne przebiegi: progowanie, ubytki cienkich kresek, pogrubienie innych, pasy i przesunięcie kartki |
+| Faks | Próbkowanie anizotropowe, obraz jednobitowy, ubytki linii i nagłówek transmisji; opcjonalnie `Faxify` |
+| Telefon | Perspektywa czterech narożników, tło poza kartką, cień, balans bieli, rozmycie kierunkowe, JPEG; osobno wygięcie kartki |
+| Dokument mieszany | Naprzemienne strony tekstowe i skany; również istotny fragment jako obraz **na stronie zawierającej tekst** |
+| Błędny OCR | Obraz poprawny, tekst niewidoczny z błędami cyfr, polskich znaków, kolejności i brakującymi wierszami |
+
+OpenCV udostępnia transformacje perspektywiczne; Augraphy ma m.in. `Faxify`. ReportLab pozwala sterować trybem renderowania tekstu. [OpenCV](https://docs.opencv.org/4.x/da/d54/group__imgproc__transform.html), [Faxify](https://augraphy.readthedocs.io/en/latest/doc/source/augmentations/faxify.html), [ReportLab](https://docs.reportlab.com/reportlab/userguide/ch2_graphics/).
+
+**Fakty i ograniczenia obecnego generatora** — źródło: `E/narzedzia/syntetyczne.py`:
+
+- „Ksero” to zasadniczo jednolite szare tło, niezależny szum i obrót. Brakuje utraty/pogrubienia kresek, pasów oraz kolejnych generacji kopii.
+- Obrót przez `expand=False` może obcinać narożniki. Miesza test przekrzywienia z utratą treści.
+- `x04` łączy od razu 72 dpi, rozmycie i JPEG q25. Przydatny test skrajny, ale nie wyjaśni, który czynnik powoduje błąd.
+- `x11` zachowuje **tylko trzy pierwsze strony** długiego odwołania. To także usunięcie stron.
+- `x07` arbitralnie dostaje klasę pełnomocnictwa mimo dołączenia przelewu. Nie jest wiarygodnym testem klasyfikacji bez ustalonej polityki.
+- Pieczątka i „podpis” są geometryczne, bez naturalnych ubytków i zmienności nacisku.
+- `x12` dodaje obraz pieczątki. Nie sprawdza kluczowego przypadku: **wartość potrzebna do JSON istnieje wyłącznie we wklejonym obrazie**.
+- Generator używa `pdftoppm`, więc obecnie wymaga narzędzia spoza pip.
+- Powstaje 12 przypadków z trzech spraw; brak perspektywy telefonu, faksu i błędnej warstwy OCR.
+
+Najbardziej wartościowe uzupełnienie syntetyki: wydrukować kilka dokumentów i zeskanować/sfotografować je naprawdę. Treść jest znana, więc koszt adnotacji pozostaje mały.
+
+**4. Jak mierzyć i jaki rozmiar ma sens**
+
+Dotychczasowy eksperyment nie mierzył ekstrakcji biznesowego JSON: modele dostawały maksymalnie trzy strony, a ocena dotyczyła klasy, wykrycia problemów i podobieństwa początku transkrypcji. Dodatkowo trafność klasy liczona w `scal.py` obejmuje odpowiedzi ze statusem `ok`, więc awarie trzeba raportować osobno. Źródła: `E/narzedzia/modele.py`, `E/narzedzia/scal.py`, `E/format/wynik_modelu.schema.json`.
+
+Proponowane raporty:
+
+| Raport | Co pokazuje |
+|---|---|
+| Oryginały / skany / mieszane / błędny OCR / nowe układy / destrukcyjne / negatywy | Osobne wyniki, bez ukrywania słabej grupy w średniej |
+| Klasyfikacja | Macierz 4×4, precision/recall/F1 każdej klasy, odsetek negatywów dających dokładnie `{}` |
+| Ekstrakcja | TP/TN/FP/FN i F1 dla każdego pola oraz klasy |
+| Cały dokument | Odsetek dokumentów z całkowicie poprawnym JSON |
+| Pary oryginał–wariant | Spadek F1 i liczba nowych błędów po przekształceniu |
+| Przypadki rzadkie | Liczebność i wynik: PESEL, konsorcjum, wielu zamawiających itd. |
+| Uruchomienie | Błędy techniczne, niepoprawny JSON, czas p50/p95, koszt i ponowienia |
+
+W ewaluatorze:
+
+1. Waliduj strukturę i typy; brak klucza nie powinien znikać jako poprawny TN.
+2. Dopasowuj listy **jeden do jednego po treści**, zachowując związki mocodawca–podpisujący.
+3. Zliczaj: poprawna wartość → TP; błędna lub nadmiarowa → FP; brak wymaganej → FN; brak po obu stronach → TN.
+4. Według przyjętej reguły błędnej wartości **nie doliczaj ponownie FN**.
+5. Licz `F1 = 2TP/(2TP+FP+FN)`; TN pokazuj osobno. Dla zerowego mianownika raportuj jawnie `N/A`.
+6. Dla negatywu oceniaj dokładne `{}`; nie twórz sztucznych setek TN z pól niepasujących schematów.
+7. Obok wyniku końcowego pokazuj diagnostyczną ekstrakcję przy zadanej poprawnej klasie.
+
+Oficjalna normalizacja i podobieństwo 80% pozostają nieznane. Pokazujcie wynik ścisły oraz jawnie opisane przybliżenie konkursowe. Podstawa: `docs/05-weryfikacja/zasady-f1.md`.
+
+**Rozmiar:** 20 zamrożonych spraw × 3 klasy × (oryginał + 6 wariantów) = **420 PDF-ów**, lecz nadal tylko **20 niezależnych spraw**. To dobry test regresji, słabsza podstawa do deklaracji o ukrytym zbiorze.
+
+Przedziały ufności i porównania liczcie przez bootstrap **całych spraw**, razem ze wszystkimi wariantami. Przy zerze błędów w 60 niezależnych próbach jednostronna granica 95% dla częstości błędu nadal wynosi około 4,9%; przy 20 — około 13,9%. To ilustracja niepewności, nie przedział dla F1.
+
+**5. Kolejność prac na około 24 godziny**
+
+| Czas | Zadanie | Kryterium zakończenia |
+|---|---|---|
+| 0–2 h | Zamrożenie referencji, podział spraw, wersjonowanie parametrów; baseline rozwojowy | Każdy wynik wskazuje dokument, referencję i wersję konfiguracji |
+| 2–6 h | Skan dobry/średni, obroty, dokument i strona mieszana z istotnymi danymi w obrazie | Pary z zachowaną treścią i sprawdzoną referencją |
+| 6–9 h | Błędny/niepełny niewidoczny OCR; czysty tekst jako kontrola | Widać, czy warstwa tekstowa pogarsza wynik |
+| 9–12 h | Ręczna referencja skanu szablonu; prawdziwe skany/zdjęcia kilku znanych dokumentów | Kilka niezależnych przypadków z dowodami pól |
+| 12–16 h | Mutacje brakujących wariantów treści | Brak pełnomocnika, PESEL, brak transakcji, grosze, kod 12 |
+| 16–21 h | Poprawki systemu według największych strat F1 | Usuwane konkretne, powtarzalne błędy |
+| 21–24 h | Zamrożony test i raport regresji; sprawdzenie instalacji na docelowym środowisku | Wyniki per grupa/pole/klasa, bez strojenia na teście |
+
+Minimalny zestaw na początek: **12 spraw × 3 klasy × 2 warianty = 72 trudne PDF-y**, dobierane tak, aby obejmowały rzadkie treści. Dopiero później mnożyć nasilenia degradacji.
+
+**6. Co ręcznie opisać z materiałów organizatora**
+
+**Tak: przede wszystkim siedmiostronicowy skan szablonu.** Obejrzałem wszystkie strony. Dane częściowo zaczerniono, ale nazwa odwołującego pojawia się ponownie w treści — to dobry przykład, dlaczego zaczerniony nagłówek nie wystarcza do ustawienia `null`.
+
+Źródło: :codex-file-citation{path="/home/user/Muzyka/HackNation 2026 - Zadania dla Uczestników/odwolania2json/docs/02-materialy/organizator-uzp/szablon-aplikacja/input/case1/przyklad odwolanie.pdf" purpose="source"}
+
+Można od razu przygotować kandydatów do ręcznej referencji:
+
+- data: `2025-06-16`, miejscowość: `Warszawa`;
+- numer postępowania: `RZP.27.29.2025.KD`;
+- BZP: `2025/BZP00270698`;
+- odwołujący: BIOARCUS spółka z ograniczoną odpowiedzialnością — widoczny w akapicie mimo anonimizacji sekcji nagłówkowej;
+- nazwa zamawiającego i pełny tytuł zamówienia;
+- obecność pełnomocnika: tak; dane zasłonięte sprawdzać w całym dokumencie.
+
+Kod czynności wymaga uzgodnienia adnotatorów: tekst mówi ogólnie o SWZ, ale zarzut dotyczy OPZ. Do rozstrzygnięcia tego pola nie używałbym wyłącznie automatycznej etykiety modelu. Plik `docs/02-materialy/organizator-uzp/szablon-aplikacja/output/case1/przyklad odwolanie.json` ma **0 bajtów**, więc nie dostarcza odpowiedzi organizatora.
+
+Pozostałe priorytety:
+
+| Materiał | Referencja i wartość |
+|---|---|
+| Trzy prawdziwe skany negatywne | `{}` oraz ręczne etykiety orientacji i jakości; pliki wskazane w `E/wyniki/2026-11-21-v1/manifest.json` |
+| `D/negatywne/Broszura_JPK_FA(2).pdf` | `{}`; rzeczywisty dokument mieszany według inwentarza |
+| `D/negatywne/KIO_KIO 2617-21.pdf` i ogłoszenia BZP/TED | `{}`; kontrola rozróżnienia treści tematycznie podobnej |
+| Własne fizyczne kopie znanych pozytywów | Po kontroli czytelności zachowana referencja; szczególnie potrzebne pełnomocnictwa i przelewy |
+
+Negatywne ogłoszenie OJS występuje w **trzech identycznych bajtowo kopiach**: dwa pliki `2025-OJS107-00364525-pl-ts*.pdf` w `D/negatywne/` oraz `szablon-aplikacja/input/case1/negatywny przyklad.pdf`. Traktujcie je jako jedną rodzinę przy podziale i liczeniu niezależności.
+
+Ręczną referencję powinny niezależnie sprawdzić dwie osoby, zapisując stronę i fragment dowodu. Najcenniejszy będzie mały zbiór z rozstrzygniętymi odpowiedziami oraz kilka prawdziwych procesów druk–skan, uzupełniających szeroką syntetykę.

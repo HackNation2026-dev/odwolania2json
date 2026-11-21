@@ -1,0 +1,31 @@
+{
+ "id": "p36_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_36/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_36",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 64067,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p36_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 775,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "PEŁNOMOCNICTWO Rubiconis Technologie S.A. z siedzibą w Lublin (KRS 9995831483, NIP 9998174794, REGON 999481460) ustanawiam pełnomocnikiem adw. Dorota Siedlecki (nr wpisu na listę: WA 91192), r. pr. Ryszard Jabłończyk (nr wpisu na listę: WA 76603) do reprezentowania spółki we wszystkich czynnościach w postępowaniu „Dostawa licencji oprogramowania do monitorowania infrastruktury i alarmowej”, numer "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

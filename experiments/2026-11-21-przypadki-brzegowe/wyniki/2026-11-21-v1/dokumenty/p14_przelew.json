@@ -1,0 +1,31 @@
+{
+ "id": "p14_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_14/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_14",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 78729,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p14_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 619,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Bank Wielkopolski i Pomorza Data wygenerowania: 14.07.2026 Potwierdzenie przelewu krajowego Płatnik Opalit Serwis sp. k. ul. Różana 61, 80-812 Gdańsk Z rachunku PL65 1632 9461 5868 4543 6827 7984 Beneficjent Opalit Wyposażenie S.A. ul. Kaszubska 56, 60-621 Poznań Rachunek beneficjenta PL70 1279 3670 3217 9463 5614 8898 Kwota przelewu 17,00 PLN Data wykonania 12.07.2026 Tytułem opłata skarbowa od p"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

@@ -1,0 +1,45 @@
+{
+ "id": "p02_pelnomocnictwo",
+ "model": "minimax",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument zatytułowany „PEŁNOMOCNICTWO” wskazuje dwóch adwokatów jako pełnomocników Hartica Serwis S.A. do reprezentowania wykonawcy w postępowaniu odwoławczym przed Krajową Izbą Odwoławczą.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "PELNOMOCNICTWO\n\nMocodawca Hartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\nDane rejestrowe KRS 9999669444, NIP 9990678035, REGON 999114017\nPełnomocnicy adw. Bartosz Szymański, nr wpisu WA 33513\nadw. Cezary Wierzbicki, nr wpisu WA 16243\nZamawiający Europept Infrastruktura S.A.",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane dokumentu są ułożone w dwukolumnowej, rozdzielonej poziomymi liniami tabeli.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2728,
+   "output_tokens": 1205,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 197,
+   "output_tokens_details": {
+    "thinking_tokens": 892
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 6.9
+}

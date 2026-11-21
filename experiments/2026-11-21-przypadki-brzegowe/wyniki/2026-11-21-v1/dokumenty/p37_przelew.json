@@ -1,0 +1,31 @@
+{
+ "id": "p37_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_37/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_37",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 77460,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p37_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 539,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Dowód wykonania przelewu Bank Wielkopolski i Pomorza · data wygenerowania 24.02.2026 Nadawca Adresat przelewu Belmoria Technologie sp. j. Corvantis Serwis sp. k. ul. Kaszubska 70, 20-480 Lublin ul. Jasionowa 85, 35-821 Rzeszów PL84 5761 5242 6782 3050 2217 4406 PL85 6166 1973 6856 6736 3082 4436 Kwota 34,00 Data wykonania 21.02.2026 Numer transakcji CEN2603088416313 Tytuł opłata skarbowa od pełnom"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

@@ -1,0 +1,45 @@
+{
+ "id": "p02_przelew",
+ "model": "codex",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Potwierdzenie przelewu 50,00 zł dotyczy opłaty skarbowej od pełnomocnictwa, a nie wpisu od odwołania do KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\nKredyt Północny · wydrukowano 26 sierpnia 2026\nPłatnik\nHartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\n53678424593392529814420143\nBeneficjent\nEurosept Infrastruktura S.A.",
+    "problemy": [
+     {
+      "kod": "uklad_wielokolumnowy",
+      "opis": "Dane płatnika i beneficjenta umieszczono w dwóch równoległych kolumnach.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Dokument wygląda jak potwierdzenie wpisu od odwołania, ale tytuł przelewu wskazuje opłatę skarbową od pełnomocnictwa.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "dokument_obcy",
+    "opis": "Potwierdzenie opłaty skarbowej od pełnomocnictwa jest poza zakresem klasy „przelew” zdefiniowanej jako wpis od odwołania.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "tytuł przelewu wskazuje opłatę skarbową od pełnomocnictwa.\",\"waga\":\"wysoka\"},{\"kod\":\"dokument_obcy\",\"opis\":\"Potwierdzenie opłaty skarbowej od pełnomocnictwa jest poza zakresem klasy „przelew” zdefiniowanej jako wpis od odwołania.\",\"waga\":\"srednia\"}]}\nhook: Stop\nhook: Stop Completed\ntokens used\n4388\n"
+ },
+ "czas_s": 14.6
+}

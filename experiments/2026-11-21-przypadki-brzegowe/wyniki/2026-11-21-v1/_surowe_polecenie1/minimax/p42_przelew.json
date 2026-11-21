@@ -1,0 +1,45 @@
+{
+ "id": "p42_przelew",
+ "model": "minimax",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument jest potwierdzeniem wykonania przelewu bankowego i zawiera zleceniodawcę, odbiorcę, kwotę, datę operacji, status realizacji oraz numer referencyjny.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Małopolski S.A. - wygenerowano 01.07.2026\n\nZleceniodawca\nNordelia Facility Services S.A.\nul. Wielicka 250, 30-663 Kraków\n\nRachunek zleceniodawcy\nPL55 9947 7458 7693 6814 0572 7867",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane dokumentu są rozmieszczone w dwukolumnowej tabeli z etykietami i wartościami, co może utrudniać odczyt liniowy.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2926,
+   "output_tokens": 1330,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 1052
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 14.5
+}

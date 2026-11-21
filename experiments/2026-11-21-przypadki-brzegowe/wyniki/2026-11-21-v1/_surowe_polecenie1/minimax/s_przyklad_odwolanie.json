@@ -1,0 +1,69 @@
+{
+ "id": "s_przyklad_odwolanie",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument jest odwołaniem wykonawcy do Prezesa Krajowej Izby Odwoławczej od niezgodności postępowania o udzielenie zamówienia publicznego z przepisami ustawy Prawo zamówień publicznych.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "KANCELARIA PRAWNA [zaczerniony fragment]\nRADCA PRAWNY [zaczerniony fragment] [zaczerniony fragment]\nWarszawa, dnia 16 czerwca 2025 r.\n\nPrezes Krajowej Izby Odwoławczej\nul. Postępu 17a\n02-676 Warszawa",
+    "problemy": [
+     {
+      "kod": "anonimizacja",
+      "opis": "W nagłówku oraz w danych stron postępowania liczne dane osobowe, adresowe, rejestrowe i kontaktowe zostały zaczernione.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "podstawowym na podstawie art. 275 pkt 1 Ustawy Pzp, tj.: wobec treści dokumentów zamówienia – Specyfikacji Warunków Zamówienia (zwanej dalej: SWZ). Odwołanie jest wniesione w terminie, bowiem zgodnie z art. 515 ust. 2 pkt 2 Ustawy Pzp,",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Zaznaczam, że pomimo, iż Zamawiający jest związany przepisami Ustawy Pzp, to już na etapie przygotowywania dokumentacji postępowania i ogłoszenia przedmiotowego postępowania nie przestrzegał ich, przez co doprowadził do naruszenia wyżej wymienionego przepisu Ustawy Pzp,",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "anonimizacja",
+    "opis": "Dokument zawiera liczne zaczernienia danych osobowych, adresowych, rejestrowych, kontaktowych oraz bankowych.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 12498,
+   "output_tokens": 1885,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 197,
+   "output_tokens_details": {
+    "thinking_tokens": 1205
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 19.3
+}

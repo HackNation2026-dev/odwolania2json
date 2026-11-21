@@ -1,0 +1,67 @@
+{
+ "id": "s_negatywny_przyklad",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Plik to ogłoszenie o zamówieniu z TED (364525-2025, OJ S 107/2025), procedura konkurencyjna Narodowego Instytutu Kardiologii. To nie jest odwołanie, pełnomocnictwo ani potwierdzenie przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "364525-2025 - Procedura konkurencyjna See the notice on TED website Polska – Serwery – Dostawa, wdrożenie, skonfigurowanie serwerowego środowiska teleinformatycznego wraz z serwisem i gwarancją OJ S 107/2025 05/06/2025 Ogłoszenie o zamówieniu",
+    "problemy": [
+     {
+      "kod": "inne",
+      "opis": "Na górze strony obok tytułu jest angielski link „See the notice on TED website”. Treść dokumentu jest po polsku.",
+      "waga": "niska"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Udział w organizacji przestępczej: Wykonawca zostanie wykluczony z postępowania na podstawie art. 108 ust. 1 pkt 1 Ustawy Prawo Zamówień Publicznych, którego skazano prawomocnie za przestępstwo wskazane w art. 258 Kodeksu karnego",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Prawo Zamówień Publicznych, którego skazano prawomocnie za przestępstwo o charakterze terrorystycznym, o którym mowa w art. 115 § 20 Kodeksu karnego, lub mające na celu popełnienie tego przestępstwa lub odpowiedni czyn",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Plik jest ogłoszeniem o zamówieniu publicznym z TED. Nie należy do klas odwołanie, pełnomocnictwo ani przelew.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Ogłoszenie zawiera słownictwo podobne do odwołania: Pzp, wykluczenie wykonawcy, art. 108, zamawiający, wykonawca. Klasyfikator może je pomylić z odwołaniem.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2849288,
+  "tury": 5
+ },
+ "czas_s": 15.9
+}

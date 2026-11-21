@@ -1,0 +1,35 @@
+{
+ "id": "p41_przelew",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Potwierdzenie wykonanego przelewu 17,00 PLN tytułem opłaty skarbowej od pełnomocnictwa w postępowaniu przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nKujawski Bank Spółdzielczy · wygenerowano 07.08.2026\nZleceniodawca\nTorvex Budownictwo sp. z o.o.\nul. Przemysłowa 8, 87-100 Toruń\nRachunek zleceniodawcy",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu w tabeli: etykiety po lewej, wartości po prawej; tytuł przelewu zajmuje dwa wiersze.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "o sp. z o.o.\\nul. Przemysłowa 8, 87-100 Toruń\\nRachunek zleceniodawcy\",\"problemy\":[{\"kod\":\"tabela\",\"opis\":\"Dane przelewu w tabeli: etykiety po lewej, wartości po prawej; tytuł przelewu zajmuje dwa wiersze.\",\"waga\":\"niska\"}]}],\"problemy_dokumentu\":[]}\nhook: Stop\nhook: Stop Completed\ntokens used\n4262\n"
+ },
+ "czas_s": 11.7
+}

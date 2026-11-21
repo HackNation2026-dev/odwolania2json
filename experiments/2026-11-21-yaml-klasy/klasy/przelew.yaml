@@ -1,0 +1,17 @@
+# Eksperyment 2026-11-21: proponowany format YAML klasy dokumentu (v0).
+klasa: przelew
+wersja: 1
+opis: Potwierdzenie przelewu wpisu od odwołania.
+klasyfikacja:
+  sygnaly: ["potwierdzenie", "przelew", "rachunek", "kwota", "tytuł"]
+  min_trafien: 3
+pola:
+  przelew_bankowy:
+    typ: obiekt
+    pola:
+      data_operacji: {typ: data, opis: "Data operacji (ISO YYYY-MM-DD).", metoda: regula}
+      kwota: {typ: liczba, opis: "Kwota przelewu w PLN.", normalizator: kwota, metoda: regula}
+      na_rachunek: {typ: tekst, format: '^\d{26}$', normalizator: rachunek, opis: "Rachunek odbiorcy, 26 cyfr bez spacji.", metoda: regula}
+      numer_transakcji: {typ: tekst, nullable: true, opis: "Identyfikator transakcji nadany przez bank.", metoda: llm}
+      tytul: {typ: tekst, opis: "Tytuł przelewu, dosłownie.", dopasowanie: fuzzy80, metoda: llm}
+      z_rachunku: {typ: tekst, format: '^\d{26}$', normalizator: rachunek, opis: "Rachunek nadawcy, 26 cyfr bez spacji.", metoda: regula}

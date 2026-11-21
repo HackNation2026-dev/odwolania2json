@@ -1,0 +1,55 @@
+{
+ "id": "x09_uciety",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument ma tytuł „PEŁNOMOCNICTWO”. Valtrix Systemy Informatyczne sp. z o.o. udziela w nim radcom prawnym pełnomocnictwa do reprezentowania jej w postępowaniu odwoławczym przed KIO (ZP/PN/48/2026).",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Poznań, 15 październik\nPEŁNOMOCNICTWO\nValtrix Systemy Informatyczne sp. z o.o., ul. Grunwaldzka 112, 60-307 Poznań, KRS 9998213\n9993380162, REGON 999517204 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane",
+    "problemy": [
+     {
+      "kod": "uciety_tekst",
+      "opis": "Prawa krawędź strony ucina tekst w każdej linii: datę („Poznań, 15 październik…”), numer KRS, nazwisko drugiego pełnomocnika („r. pr. …”), nazwę zamówienia („systemu informa…”) i nazwę zamawiającego („sp. z…”). Część danych do ekstrakcji jest niekompletna.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "skan",
+      "opis": "Strona jest obrazem bez warstwy tekstowej. Wymaga OCR.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie widać drobny szum w postaci kropek i lekkie rozmycie znaków. Tekst pozostaje czytelny.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "uciety_tekst",
+    "opis": "Na jedynej stronie ucięty jest prawy margines. Brakuje pełnej daty, pełnego numeru KRS, pełnej nazwy zamówienia i zamawiającego oraz końcówek wierszy w treści.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.24984119999999999,
+  "tury": 3
+ },
+ "czas_s": 13.8
+}

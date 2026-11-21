@@ -1,0 +1,44 @@
+{
+ "id": "p37_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_37/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_37",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 91394,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p37_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1958,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Belmoria Technologie sp. j. ul. Kaszubska 70, 20-480 Lublin KRS: 9994481774, NIP: 9998805059, REGON: 999647305 reprezentowana przez: adw. Halina Niedźwiecki adres do korespondencji: Kancelaria Adwokacka Spółka z ograniczoną odpowiedzialnością, ul. Jasionowa 33, 90-771 Łódź tel. 000 000 000, biuro@sekretariat.example Zamaw"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p37_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 713,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "naruszenia dyscypliny finansów publicznych. Wnoszę o: 1.1) wnoszę o uwzględnienie odwołania i przekazanie sprawy Zamawiającemu do ponownej oceny ofert; 2.2) wnoszę o unieważnienie rozstrzygnięcia i przeprowadzenie postępowania z uwzględnieniem zarzutów podanych w niniejszym odwołaniu; 3.3) wnoszę o zasądzenie na rzecz Odwołującego kosztów postępowania odwoławczego; Załączniki: 1.1) dowód uiszczeni"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

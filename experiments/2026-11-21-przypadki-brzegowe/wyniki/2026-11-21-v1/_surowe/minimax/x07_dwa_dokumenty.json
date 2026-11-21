@@ -1,0 +1,61 @@
+{
+ "id": "x07_dwa_dokumenty",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument zawiera pełnomocnictwo udzielone przez Mocodawcę Aleksandrze Marciniak i Jolancie Zajkowski; druga strona jest potwierdzeniem opłaty skarbowej związanej z tym pełnomocnictwem.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nŁódź, 1 kwietnia 2026\n\n§ 1. Mocodawca\nMocodawca jest Bełmoria Rozwiązania S.A., ul. Zacz arowania 78, 90-803 Łódź, KRS 9999405188, NIP 9999284065, REGON\n9999642785.",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu - Ekobank\n\nPłatnik\nBełmoria Rozwiązania S.A.\nul. Zacz arowania 78, 90-803 Łódź\n\nRachunek obciążeni\nPL05470680287581539721455024",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane płatnika, odbiorcy, kwoty i opisu przelewu są rozmieszczone w układzie tabelarycznym.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "wiele_dokumentow",
+    "opis": "Plik łączy dwa odrębne dokumenty: pełnomocnictwo na stronie 1 oraz potwierdzenie przelewu na stronie 2.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 4220,
+   "output_tokens": 1333,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 877
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 18.1
+}

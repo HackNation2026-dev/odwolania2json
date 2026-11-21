@@ -1,0 +1,31 @@
+{
+ "id": "p43_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_43/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_43",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 44932,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p43_przelew/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 712,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Dolnośląski Spółdzielczy · wygenerowano 09.05.2026 Zleceniodawca Elmontex Energetyka sp. z o.o. ul. Legnicka 55, 54-203 Wrocław Rachunek zleceniodawcy PL32400062383683514611261282 Odbiorca Dolnośląskie Sieci Ciepłownicze S.A. ul. Na Grobli 30, 50-421 Wrocław Rachunek odbiorcy PL85971672382780335473372141 Kwota 17,00 PLN Data operacji 08.05.2026 Tytuł przelewu "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

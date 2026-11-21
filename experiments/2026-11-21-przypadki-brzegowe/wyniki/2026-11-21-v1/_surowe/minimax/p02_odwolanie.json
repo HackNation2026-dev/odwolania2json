@@ -1,0 +1,49 @@
+{
+ "id": "p02_odwolanie",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument jest odwołaniem do orzeczenia Krajowej Izby Odwoławczej, złożonym w imieniu wykonawcy przez pełnomocników, i wskazuje na naruszenia parametrów technicznych oraz wezwanie do wyjaśnień i przedstawienia dokumentów.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Przesz Krajowej Izby Odwoławczej\nul. Postepu 17A\n02-676 Warszawa\n\nZamawiający:\nEurosept Infrastruktura S.A.\nul. Huta 90, 20-829 Lublin\nKRS: 9993122884, NIP: 9996097888, REGON: 999725710\nkontakt@kontakt.example",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "1. dowód uiszczenia wadium;\n2. dokument potwierdzający nadanie odwołania;\n\n..............................                      ..............................\nBartosz Szymanski, adv.                              Cezary Wierzbicki, adv.\n\nZgodnie z art. 527 ustawy odwołanie wnosi się w terminie 14 dni od dnia, w którym Wykonawca powziął lub\ndowiedział się o zaskarżonym rozstrzygnięciu.",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 4022,
+   "output_tokens": 1004,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 197,
+   "output_tokens_details": {
+    "thinking_tokens": 552
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 4.8
+}

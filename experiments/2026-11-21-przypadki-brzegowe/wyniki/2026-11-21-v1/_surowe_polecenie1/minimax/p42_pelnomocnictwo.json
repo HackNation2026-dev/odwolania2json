@@ -1,0 +1,39 @@
+{
+ "id": "p42_pelnomocnictwo",
+ "model": "minimax",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument ma tytuł „PEŁNOMOCNICTWO” i określa osoby upoważnione do reprezentowania Mocodawcy w postępowaniu odwoławczym przed Krajową Izbą Odwoławczą.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Kraków, 30 czerwca 2026 r.\n\nPEŁNOMOCNICTWO\n\nNordelia Facility Services S.A., ul. Wielicka 250, 30-663 Kraków, KRS 9993307745, NIP 9995519382, REGON 999284670 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2797,
+   "output_tokens": 493,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 128,
+   "output_tokens_details": {
+    "thinking_tokens": 278
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 9.8
+}

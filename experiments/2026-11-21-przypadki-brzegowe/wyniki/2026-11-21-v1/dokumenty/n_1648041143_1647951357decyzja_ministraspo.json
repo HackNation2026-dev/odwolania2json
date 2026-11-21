@@ -1,0 +1,418 @@
+{
+ "id": "n_1648041143_1647951357decyzja_ministraspo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/1648041143_1647951357decyzja-ministrasportu-pzn.pdf",
+ "zrodlo": "negatywny",
+ "klasa_oczekiwana": "obcy",
+ "sprawa": null,
+ "metadane": {
+  "producent": "KONICA MINOLTA bizhub 223",
+  "kreator": "KMBT_223",
+  "rozmiar_bajtow": 1032007,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/n_1648041143_1647951357decyzja_ministraspo/p001.jpg",
+   "szerokosc_pt": 595.08,
+   "wysokosc_pt": 841.68,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 0,
+   "obrazy": 1,
+   "pokrycie_obrazami": 1.0,
+   "dpi_obrazow": 200.0,
+   "typ_auto": "skan",
+   "probka_tekstu": ""
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/n_1648041143_1647951357decyzja_ministraspo/p002.jpg",
+   "szerokosc_pt": 595.08,
+   "wysokosc_pt": 841.68,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 0,
+   "obrazy": 1,
+   "pokrycie_obrazami": 1.0,
+   "dpi_obrazow": 200.0,
+   "typ_auto": "skan",
+   "probka_tekstu": ""
+  },
+  {
+   "nr": 3,
+   "obraz": "strony/n_1648041143_1647951357decyzja_ministraspo/p003.jpg",
+   "szerokosc_pt": 595.08,
+   "wysokosc_pt": 841.68,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 0,
+   "obrazy": 1,
+   "pokrycie_obrazami": 1.0,
+   "dpi_obrazow": 200.0,
+   "typ_auto": "skan",
+   "probka_tekstu": ""
+  },
+  {
+   "nr": 4,
+   "obraz": "strony/n_1648041143_1647951357decyzja_ministraspo/p004.jpg",
+   "szerokosc_pt": 595.08,
+   "wysokosc_pt": 841.68,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 0,
+   "obrazy": 1,
+   "pokrycie_obrazami": 1.0,
+   "dpi_obrazow": 200.0,
+   "typ_auto": "skan",
+   "probka_tekstu": ""
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 30.0,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2,
+    3
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Decyzja Ministra Sportu i Turystyki zatwierdzająca zmianę statutu Polskiego Związku Narciarskiego wraz z uchwałą. Nie jest odwołaniem do KIO, pełnomocnictwem ani potwierdzeniem przelewu.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "MINISTER\nSPORTU i TURYSTYKI\nWarszawa, 21 grudnia 2021 r.\nDP.9552.2021\nPolska Związek Narciarski\nz siedzibą w Krakowie\nreprezentowany przez:\nr. pr. Adama M. Kozłowskiego\nKancelaria Radców Prawnych",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Widoczny skan papierowej strony.",
+        "waga": "niska"
+       },
+       {
+        "kod": "odreczne",
+        "opis": "Dzień daty oraz numer decyzji wpisano ręcznie.",
+        "waga": "srednia"
+       }
+      ]
+     },
+     {
+      "nr": 2,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Na podstawie art. 107 § 4 Kpa Minister Sportu i Turystyki odstąpił od uzasadnienia decyzji,\ngdyż uwzględnia ona w całości żądanie strony.\nStrona przedstawiła dowód uiszczenia opłaty skarbowej w wysokości 10 zł.",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Widoczny skan papierowej strony.",
+        "waga": "niska"
+       },
+       {
+        "kod": "pieczatka_podpis",
+        "opis": "Podpis w dolnej części strony nachodzi na tekst pieczątki imiennej.",
+        "waga": "niska"
+       }
+      ]
+     },
+     {
+      "nr": 3,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "Załącznik Nr ......................................\ndo decyzji Nr 11\nMinistra Sportu i Turystyki z dnia 21.12.2021 r.\nZmiany Statutu PZN\nZ upoważnienia\nMINISTRA SPORTU I TURYSTYKI\nPiotr Gałązka\nDyrektor Departamentu Prawnego",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Widoczny skan papierowej uchwały z pieczątkami i podpisami.",
+        "waga": "niska"
+       },
+       {
+        "kod": "odreczne",
+        "opis": "Ręcznie wpisano numer i datę decyzji u góry oraz wyniki głosowania: 34, 0 i 2.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "pieczatka_podpis",
+        "opis": "Podpis w lewym górnym obszarze nachodzi na tekst pieczątki imiennej.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Decyzja administracyjna dotycząca statutu związku sportowego oraz załączona uchwała są spoza trzech klas dokumentów sprawy KIO.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "wiele_dokumentow",
+      "opis": "Strony 1–2 zawierają decyzję ministra, a strona 3 odrębną uchwałę stanowiącą jej załącznik.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "inne",
+      "opis": "Udostępniono strony 1–3 z 4; nie można ocenić zawartości ani jakości strony 4.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": null
+     },
+     {
+      "nr": 2,
+      "podobienstwo": null
+     },
+     {
+      "nr": 3,
+      "podobienstwo": null
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 23.7,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2,
+    3
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Plik zawiera decyzję administracyjną Ministra Sportu i Turystyki z 21.12.2021 r., która zatwierdza zmianę statutu Polskiego Związku Narciarskiego, oraz załącznik: uchwałę nr 3 Walnego Zjazdu Delegatów PZN. Nie jest to odwołanie do KIO, pełnomocnictwo ani potwierdzenie przelewu. Decyzja wymienia pełnomocnika strony, wzmiankuje uiszczenie opłaty skarbowej i zawiera pouczenie o odwołaniu, ale nie należy do żadnej z tych klas.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "MINISTER SPORTU i TURYSTYKI Warszawa, 21 grudnia 2021 r. DP.9552.2021 Polska Związek Narciarski z siedzibą w Krakowie reprezentowany przez: r. pr. Adama M. Kozłowskiego Kancelaria Radców Prawnych Kozłowski, Pisarkiewicz-Firek sp.j.",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Strona jest skanem wydrukowanej decyzji z godłem w nagłówku.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "odreczne",
+        "opis": "Dzień daty („21” w „21 grudnia 2021 r.”) i numer decyzji („11” w „DECYZJA Nr 11 /DP/2021”) dopisano ręcznie.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "dokument_obcy",
+        "opis": "Decyzja administracyjna Ministra Sportu i Turystyki w sprawie statutu PZN.",
+        "waga": "niska"
+       }
+      ]
+     },
+     {
+      "nr": 2,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Na podstawie art. 107 § 4 Kpa Minister Sportu i Turystyki odstąpił od uzasadnienia decyzji, gdyż uwzględnia ona w całości żądanie strony. Strona przedstawiła dowód uiszczenia opłaty skarbowej w wysokości 10 zł.",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Strona jest skanem.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "pieczatka_podpis",
+        "opis": "Niebieska pieczęć „Z upoważnienia MINISTRA SPORTU I TURYSTYKI Piotr Gałązka Dyrektor Departamentu Prawnego” z odręcznym podpisem pod pouczeniem, po prawej stronie.",
+        "waga": "niska"
+       },
+       {
+        "kod": "podobny_do_klasy",
+        "opis": "Strona wzmiankuje opłatę skarbową 10 zł i zawiera pouczenie o odwołaniu i skardze, co może błędnie sugerować klasę przelew albo odwolanie.",
+        "waga": "niska"
+       }
+      ]
+     },
+     {
+      "nr": 3,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "Załącznik Nr ........ do decyzji Nr 11 Ministra Sportu i Turystyki z dnia 21.12.2021 r. Zmiany Statutu PZN Z upoważnienia MINISTRA SPORTU I TURYSTYKI Piotr Gałązka Dyrektor Departamentu Prawnego Uchwała Nr 3 Walnego Zjazdu Delegatów",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Strona jest skanem; drobny, lekko rozmyty druk uchwały.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "pieczatka_podpis",
+        "opis": "Niebieska pieczęć z podpisem w lewym górnym rogu, obok nagłówka uchwały; odręczne podpisy Sekretarza i Przewodniczącego Zjazdu na dole.",
+        "waga": "niska"
+       },
+       {
+        "kod": "odreczne",
+        "opis": "Ręcznie wpisano numer decyzji „11” i datę „21.12.2021 r.” w nagłówku załącznika oraz liczby głosów (34, 0, 2).",
+        "waga": "srednia"
+       },
+       {
+        "kod": "niska_jakosc",
+        "opis": "Tekst główny uchwały jest drobny, szarawy i lekko rozmyty, co obniża czytelność dla OCR.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "wiele_dokumentow",
+      "opis": "Jeden plik zawiera decyzję Ministra (strony 1–2) i dołączoną uchwałę nr 3 Walnego Zjazdu Delegatów PZN (strona 3 i dalej).",
+      "waga": "srednia"
+     },
+     {
+      "kod": "dokument_obcy",
+      "opis": "Cały plik to dokumentacja administracyjna dotycząca statutu związku sportowego, niezwiązana z odwołaniem do KIO.",
+      "waga": "niska"
+     },
+     {
+      "kod": "skan",
+      "opis": "Wszystkie obejrzane strony są skanami.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": null
+     },
+     {
+      "nr": 2,
+      "podobienstwo": null
+     },
+     {
+      "nr": 3,
+      "podobienstwo": null
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 13.6,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2,
+    3
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Dokument stanowi decyzję Ministra Sportu i Turystyki zatwierdzającą zmianę statutu Polskiego Związku Narciarskiego wraz z załączoną uchwałą. Nie jest to odwołanie do KIO, pełnomocnictwo ani potwierdzenie przelewu.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "MINISTER\nSPORTU i TURYSTYKI\n\nDP.9552.2021\n\nWarszawa, 21 grudnia 2021 r.\n\nPolska Związek Narciarski\nz siedzibą w Krakowie\nreprezentowany przez:\nr. pr. Adama M. Kozłowskiego",
+      "problemy": [
+       {
+        "kod": "odreczne",
+        "opis": "Odręcznie wpisano datę „21 grudnia 2021 r.” oraz część numeru decyzji.",
+        "waga": "srednia"
+       }
+      ]
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Na podstawie art. 107 § 4 Kpa Minister Sportu i Turystyki odstąpił od uzasadnienia decyzji, gdyż uwzględnia ona w całości żądanie strony.\nStrona przedstawiła dowód uiszczenia opłaty skarbowej w wysokości 10 zł.\n\nPouczenie:",
+      "problemy": [
+       {
+        "kod": "pieczatka_podpis",
+        "opis": "W dolnej części strony pieczątka, podpis i adnotacje nachodzą na nagłówek stanowiska oraz podpisy.",
+        "waga": "srednia"
+       }
+      ]
+     },
+     {
+      "nr": 3,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "Załącznik Nr ....................\ndo decyzji Nr M ....................\nMinister Sportu i Turystyki z dnia 21.12.2021 r.\nZ miany Statutu PZN\n\nUchwała Nr 3\nWalnego Zjazdu Delegatów\nPolskiego Związku Narciarskiego\nz dnia 25 września 2021 r.",
+      "problemy": [
+       {
+        "kod": "pieczatka_podpis",
+        "opis": "Niebieska pieczątka i podpis nachodzą na nagłówek w lewej górnej części strony; u dołu znajdują się dwa podpisy.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "odreczne",
+        "opis": "Odręcznie uzupełniono numer uchwały, numer decyzji, daty oraz wyniki głosowań: 34, 0 i 2.",
+        "waga": "srednia"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Cały plik zawiera decyzję administracyjną i załącznik do jej uchwały, a nie dokument należący do klas odwołanie, pełnomocnictwo lub przelew.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "wiele_dokumentow",
+      "opis": "W jednym pliku połączono decyzję Ministra z odrębną treścią załącznika, czyli uchwałą Walnego Zjazdu Delegatów PZN z 25 września 2021 r.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "dokument_mieszany",
+      "opis": "Strony 1–2 mają postać cyfrowo generowanego tekstu, natomiast strona 3 jest wyraźnie zeskanowaną stroną z odręcznymi wpisami i pieczątką.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "odreczne",
+      "opis": "W całym dokumencie występują istotne wpisy odręczne, m.in. data i numer decyzji na stronie 1, dane uchwały i wyniki głosowań na stronie 3.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": null
+     },
+     {
+      "nr": 2,
+      "podobienstwo": null
+     },
+     {
+      "nr": 3,
+      "podobienstwo": null
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

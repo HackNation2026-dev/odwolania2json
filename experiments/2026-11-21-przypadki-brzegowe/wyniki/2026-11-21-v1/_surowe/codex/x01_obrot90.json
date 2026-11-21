@@ -1,0 +1,40 @@
+{
+ "id": "x01_obrot90",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument zatytułowany „PEŁNOMOCNICTWO” ustanawia pełnomocników do reprezentowania wykonawcy, w tym przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 270,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nŁódź, 1 kwietnia 2026\n§ 1. Mocodawca\nMocodawcą jest Betonomia Rozwiązania S.A., ul. Zaczarowana 78, 90-803 Łódź, KRS 9999405188, NIP 9999284065, REGON 999642785.",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona ma postać skanu z widocznym drobnym szumem tła.",
+      "waga": "niska"
+     },
+     {
+      "kod": "obrot",
+      "opis": "Treść obrócona o 270° zgodnie z ruchem wskazówek zegara; do czytania wymaga obrócenia obrazu o 90° w prawo.",
+      "waga": "wysoka"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "\n        {\n          \"kod\": \"obrot\",\n          \"opis\": \"Treść obrócona o 270° zgodnie z ruchem wskazówek zegara; do czytania wymaga obrócenia obrazu o 90° w prawo.\",\n          \"waga\": \"wysoka\"\n        }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": []\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n4526\n"
+ },
+ "czas_s": 16.9
+}

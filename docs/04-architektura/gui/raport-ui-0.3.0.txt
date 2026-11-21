@@ -1,0 +1,6 @@
+Zaktualizowałem `projekt-ui.md` do **0.3.0** i dodałem `zmiany-ui-0.3.0.md`. Zmieniłem wyłącznie te dwa pliki.
+
+- Dodano warianty eksportu, gotowość OCR/modelu, kartę modeli, odbiór instalacji pip, pobieranie dowodów i 10 kroków pokazu jury.
+- **P0:** desktop 1440×900, PL, jasny motyw, S01–S03; **18 ramek P0** spośród 62. Pozostałe funkcje zachowano w E1–E3.
+- Otwarte: polityka eksportu, pytania U-Q12–U-Q15, biblioteki, dostawcy/model, limity i retencja. Nie rozstrzygałem ich za użytkownika.
+- `python3 scripts/verify_docs.py`: **OK**, kod 0; 440 materiałów, 50 dokumentów.

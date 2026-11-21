@@ -1,0 +1,14 @@
+{
+ "id": "n_2025_ojs107_00364525_pl_ts_1",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "blad",
+ "wynik": null,
+ "blad": "ValidationError: Additional properties are not allowed ('$defs', '$schema', 'additionalProperties', 'properties', 'required', 'title', 'type' were unexpected)\n\nFailed validating 'additionalProperties' in schema:\n    {'$schema': 'https://json-schema.org/draft/2020-12/schema',\n     'title': 'Wynik modelu: przegląd dokumentu',\n     'type': 'object',\n     'additionalProperties': False,\n     'required': ['klasa',\n                  'uzasadnienie_klasy',\n                  'strony',\n                  'problemy_dokumentu'],\n     'properties': {'klasa': {'type': 'string',\n                              'enum': ['odwolanie',\n                                       'pelnomocnictwo',\n                                       'przelew',\n                                       'inny',\n                                       'niepewne']},\n                    'uzasadnienie_klasy': {'type': 'string'},\n                    'strony",
+ "meta": {},
+ "czas_s": 6.0
+}

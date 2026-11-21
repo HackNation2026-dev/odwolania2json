@@ -1,0 +1,44 @@
+{
+ "id": "p13_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_13/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_13",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 88175,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p13_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1744,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Odwołujący: Deltawing Usługi sp. j. ul. Miodowa 63, 00-427 Warszawa KRS: 9990929624, NIP: 9994888947, REGON: 999788508 reprezentowana przez: adw. Ignacy Rutkiewicz, r. pr. Weronika Furman adres do korespondencji: Kancelaria Radców Prawnych Spółka z ograniczoną odpowiedzialnością, ul. Gołębia 26, 85-284 Bydgoszcz tel. 000 000 000, biuro@biuro.example Zamawiający: Wexoria Serwis sp. z o.o. ul. Błotn"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p13_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 767,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "utrudnia ustalenie rzeczywistego kryterium oceny ofert i weryfikację wyniku postępowania. b).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania. Wnoszę o: a) wnoszę o oddalenie zarzutów odwołania; b) wnoszę o uwzględnienie odwołania w zakresie, w jakim zarzuty odwołania są zasadne; Załącz"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

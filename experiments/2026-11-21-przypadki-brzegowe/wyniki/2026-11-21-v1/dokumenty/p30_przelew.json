@@ -1,0 +1,31 @@
+{
+ "id": "p30_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_30/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_30",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 61406,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p30_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 529,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Potwierdzenie realizacji polecenia przelewu Nova Bank Polska · wydrukowano 15 czerwca 2026 Nadawca Beneficjent Kadmos Rozwiązania sp. k. Veltra Infrastruktura sp. z o.o. ul. Różana 26, 90-548 Łódź ul. Ambrożowa 96, 00-624 Warszawa 40826585774033060612824095 19546370601574577093699823 Kwota przelewu 34.00 PLN Data transakcji 14 czerwca 2026 Numer transakcji CEN2606277078899 Tytułem opłata skarbowa "
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

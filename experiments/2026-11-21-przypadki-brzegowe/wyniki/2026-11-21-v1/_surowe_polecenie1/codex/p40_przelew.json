@@ -1,0 +1,45 @@
+{
+ "id": "p40_przelew",
+ "model": "codex",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Potwierdzenie przelewu 34,00 PLN dotyczy opłaty skarbowej od pełnomocnictwa, a nie wpisu od odwołania do KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Polski Zachodni S.A. · wygenerowano 16.10.2026\nZleceniodawca\nValtrix Systemy Informatyczne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań\nRachunek zleceniodawcy",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu w tabeli: etykiety po lewej, wartości po prawej; tytuł przelewu zajmuje trzy wiersze.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Przelew dotyczy opłaty skarbowej od pełnomocnictwa, poza zakresem klasy obejmującej wpis od odwołania.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Nagłówek „POTWIERDZENIE WYKONANIA PRZELEWU” i wzmianka o KIO mogą prowadzić do przypisania klasy przelew mimo innego celu płatności.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "akresem klasy obejmującej wpis od odwołania.\",\"waga\":\"srednia\"},{\"kod\":\"podobny_do_klasy\",\"opis\":\"Nagłówek „POTWIERDZENIE WYKONANIA PRZELEWU” i wzmianka o KIO mogą prowadzić do przypisania klasy przelew mimo innego celu płatności.\",\"waga\":\"wysoka\"}]}\nhook: Stop\nhook: Stop Completed\ntokens used\n4324\n"
+ },
+ "czas_s": 16.7
+}

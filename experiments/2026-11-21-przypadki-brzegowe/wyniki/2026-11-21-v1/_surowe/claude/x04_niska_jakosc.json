@@ -1,0 +1,55 @@
+{
+ "id": "x04_niska_jakosc",
+ "model": "claude",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Nagłówek „Potwierdzenie przelewu krajowego”. Są w nim płatnik, beneficjent, kwota 50,00 zł, data operacji i tytuł przelewu. Tytuł to opłata skarbowa od pełnomocnictwa w postępowaniu przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "slaba",
+    "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\nBank [nieczytelne] - wygenerowano 22 sierpnia 2026\nPłatnik\nBeneficjent\nHantica Seneis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\n[nieczytelny nr rachunku]\nEuropejsk Infrastruktura S.A.\nul. Huta 90, 20-829 Lublin\nKwota operacji 50,00 zł\nData operacji 22 sierpnia 2026",
+    "problemy": [
+     {
+      "kod": "niska_jakosc",
+      "opis": "Cała strona jest mocno rozmyta, ma niską rozdzielczość, artefakty kompresji i rozsiany szum w postaci kropek. Etykiety pól, numery rachunków, numer referencyjny i tytuł przelewu są ledwo czytelne.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "skan",
+      "opis": "Strona jest obrazem bez widocznej warstwy tekstu. Szum i rozmycie wskazują na skan albo zdegradowany raster.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "pusta_strona",
+      "opis": "Treść zajmuje tylko górną 1/3 strony. Reszta jest pusta i pokryta szumem.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "niska_jakosc",
+    "opis": "Jedyna strona dokumentu jest słabej jakości. Ekstrakcja kwoty, rachunków, numeru referencyjnego i tytułu przelewu może być zawodna.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2600818,
+  "tury": 3
+ },
+ "czas_s": 14.9
+}

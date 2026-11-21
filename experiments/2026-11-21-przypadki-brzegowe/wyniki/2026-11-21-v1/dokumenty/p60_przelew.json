@@ -1,0 +1,31 @@
+{
+ "id": "p60_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_60/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_60",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 44960,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p60_przelew/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 727,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Handlowy Centrum S.A. · wygenerowano 07.09.2026 Zleceniodawca Helvix Eko-Serwis sp.k. ul. Jagiellońska 48, 75-030 Koszalin Rachunek zleceniodawcy PL78398017670057985337584633 Odbiorca Zakład Gospodarki Komunalnej w Wrzosowie sp. z o.o. ul. Sienkiewicza 38, 93-036 Wrzosowo Rachunek odbiorcy PL77625847976189057973538222 Kwota 34,00 PLN Data operacji 2026-09-06 T"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

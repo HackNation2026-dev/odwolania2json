@@ -1,0 +1,45 @@
+{
+ "id": "p41_przelew",
+ "model": "codex",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Potwierdzenie przelewu 17,00 PLN dotyczy opłaty skarbowej od pełnomocnictwa, a nie wpisu od odwołania do KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nKujawski Bank Spółdzielczy · wygenerowano 07.08.2026\nZleceniodawca\nTorvex Budownictwo sp. z o.o.\nul. Przemysłowa 8, 87-100 Toruń\nRachunek zleceniodawcy",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu ułożone w tabeli: etykiety po lewej, wartości po prawej.",
+      "waga": "niska"
+     },
+     {
+      "kod": "podobny_do_klasy",
+      "opis": "Potwierdzenie przelewu dotyczy opłaty skarbowej od pełnomocnictwa, co może powodować pomylenie z potwierdzeniem wpisu od odwołania.",
+      "waga": "wysoka"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Przelew opłaty skarbowej od pełnomocnictwa jest poza zakresem klasy „przelew” zdefiniowanej jako potwierdzenie wpisu od odwołania.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "iem wpisu od odwołania.\",\"waga\":\"wysoka\"}]}],\"problemy_dokumentu\":[{\"kod\":\"dokument_obcy\",\"opis\":\"Przelew opłaty skarbowej od pełnomocnictwa jest poza zakresem klasy „przelew” zdefiniowanej jako potwierdzenie wpisu od odwołania.\",\"waga\":\"wysoka\"}]}\nhook: Stop\nhook: Stop Completed\ntokens used\n28 166\n"
+ },
+ "czas_s": 12.8
+}

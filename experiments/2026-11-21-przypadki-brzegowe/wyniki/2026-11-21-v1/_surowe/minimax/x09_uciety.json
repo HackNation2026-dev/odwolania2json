@@ -1,0 +1,72 @@
+{
+ "id": "x09_uciety",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument nosi tytuł „PEŁNOMOCNICTWO” i upoważnia osoby do reprezentowania Mocodawcy w postępowaniu odwoławczym przed Krajową Izbą Odwoławczą.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "Poznań, 15 październik\nPEŁNOMOCNICTWO\nValtrix Systemy Informatyczne sp. z o.o., ul. Grunwaldzka 112, 60-307 Poznań, KRS 999821\n999380162, REGON 999817204 (dalej: „Mocodawca”), reprezentowana przez osoby podpisane",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona jest obrazem skanu bez widocznej cyfrowej warstwy tekstu.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "uciety_tekst",
+      "opis": "Prawa krawędź strony jest ucięta, dlatego końcówki kolejnych wierszy tekstu są niewidoczne.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Cały obszar strony zawiera liczne czarne punkty, plamy i szum skanowania, które mogą utrudniać OCR.",
+      "waga": "srednia"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "skan",
+    "opis": "Dokument jest reprezentowany jako obraz zeskanowanej strony.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "uciety_tekst",
+    "opis": "Tekst przy prawej krawędzi jest systemowo ucięty w wielu wierszach.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "niska_jakosc",
+    "opis": "Skan zawiera rozproszony szum i liczne artefakty punktowe.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2742,
+   "output_tokens": 1482,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 1016
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 7.3
+}

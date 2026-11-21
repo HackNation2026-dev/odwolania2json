@@ -1,0 +1,299 @@
+{
+ "id": "x03_przekrzywienie",
+ "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x03_przekrzywienie.pdf",
+ "zrodlo": "syntetyczny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_01",
+ "metadane": {
+  "producent": null,
+  "kreator": null,
+  "rozmiar_bajtow": 657474,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/x03_przekrzywienie/p001.jpg",
+   "szerokosc_pt": 595.68,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 0,
+   "obrazy": 1,
+   "pokrycie_obrazami": 1.0,
+   "dpi_obrazow": 150.0,
+   "typ_auto": "skan",
+   "probka_tekstu": ""
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/x03_przekrzywienie/p002.jpg",
+   "szerokosc_pt": 595.68,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 0,
+   "obrazy": 1,
+   "pokrycie_obrazami": 1.0,
+   "dpi_obrazow": 150.0,
+   "typ_auto": "skan",
+   "probka_tekstu": ""
+  }
+ ],
+ "wstrzykniete": [
+  {
+   "kod": "skan",
+   "strona": null,
+   "opis": "obie strony jako obraz"
+  },
+  {
+   "kod": "przekrzywienie",
+   "strona": null,
+   "opis": "przekrzywienie 3°"
+  }
+ ],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 19.7,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2
+   ],
+   "wynik": {
+    "klasa": "odwolanie",
+    "uzasadnienie_klasy": "Dokument zatytułowany „ODWOŁANIE”, skierowany do Prezesa KIO, zawiera dane stron, zarzuty dotyczące postępowania i wnioski odwołującego.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Cała strona ma wygląd skanu z ziarnistym tłem.",
+        "waga": "niska"
+       },
+       {
+        "kod": "przekrzywienie",
+        "opis": "Wiersze tekstu wznoszą się ku prawej stronie o kilka stopni.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "niska_jakosc",
+        "opis": "Na całej stronie widoczny drobny czarny szum, także w otoczeniu liter.",
+        "waga": "niska"
+       }
+      ]
+     },
+     {
+      "nr": 2,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w\nsposób merytoryczny; co narusza prawo Odwołującego do skutecznego wniesienia\nodwołania.\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Cała strona ma wygląd skanu z ziarnistym tłem.",
+        "waga": "niska"
+       },
+       {
+        "kod": "przekrzywienie",
+        "opis": "Wiersze tekstu wznoszą się ku prawej stronie o kilka stopni.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "niska_jakosc",
+        "opis": "Drobny czarny szum pokrywa całą stronę i miejscami otacza litery.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 0.996
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "skan",
+     "przekrzywienie"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 16.3,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2
+   ],
+   "wynik": {
+    "klasa": "odwolanie",
+    "uzasadnienie_klasy": "Pismo do Prezesa Krajowej Izby Odwoławczej z tytułem „ODWOŁANIE”. Zawiera dane odwołującego i zamawiającego, podstawę z art. 513 i 515 Pzp, zarzuty nr 1–3, sekcję „Wnoszę o” oraz miejsca na podpisy pełnomocników.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Belmoria Rozwiązania S.A. ul. Zaczarowana 78, 90-803 Łódź KRS: 9999405188, NIP: 9999284065, REGON: 999642785 reprezentowana przez: r. pr.",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Strona jest obrazem rastrowym (szum tła, nierówne linie), bez widocznej warstwy tekstu.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "przekrzywienie",
+        "opis": "Cała treść strony jest obrócona o ok. 2–3° przeciwnie do ruchu wskazówek zegara. Linie tekstu i poziome separatory unoszą się ku prawej.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "niska_jakosc",
+        "opis": "Na całej stronie występuje drobny szum punktowy (efekt „pieprzu”) w tle.",
+        "waga": "niska"
+       }
+      ]
+     },
+     {
+      "nr": 2,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania. Zarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Strona jest obrazem rastrowym z szumem tła, bez widocznej warstwy tekstu.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "przekrzywienie",
+        "opis": "Treść strony jest obrócona o ok. 2–3° przeciwnie do ruchu wskazówek zegara. Linie tekstu unoszą się ku prawej.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "niska_jakosc",
+        "opis": "Na całej stronie występuje drobny szum punktowy w tle.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "przekrzywienie",
+      "opis": "Obie strony są lekko przekrzywione (ok. 2–3°). Przed OCR trzeba wyprostować obraz (deskew).",
+      "waga": "srednia"
+     },
+     {
+      "kod": "inne",
+      "opis": "Sekcja „Wnoszę o” na stronie 2 jest niespójna: zawiera wniosek o oddalenie zarzutów odwołania i miesza wnioski z listą załączników (punkty a)–d) powtarzają oznaczenia). Ekstrakcja żądań może przez to błędnie przypisać pozycje.",
+      "waga": "niska"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "skan",
+     "przekrzywienie"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 22.7,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2
+   ],
+   "wynik": {
+    "klasa": "odwolanie",
+    "uzasadnienie_klasy": "Dokument jest odwołaniem od rozstrzygnięcia postępowania o udzielenie zamówienia, wnoszonym do Prezesa Krajowej Izby Odwoławczej. Zawiera oznaczenie sprawy, opis postępowania, zarzuty oraz wniosek o oddalenie odwołania.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\n\nOdwołujący:\n\nBelmoria Rozwiązania S.A.\nul. Zacarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+      "problemy": [
+       {
+        "kod": "niska_jakosc",
+        "opis": "Na całej stronie widoczny jest liczny drobny szum punktowy; tekst jest jednak czytelny.",
+        "waga": "srednia"
+       }
+      ]
+     },
+     {
+      "nr": 2,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "srednia",
+      "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania.\n\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:\n\nb).1. Kryteria oceny ofert wskazane w dokumentacji postępowania nie są sformułowane w sposób jednoznaczny, a sposób ich zastosowania przez Zamawiającego nie został wyjaśniony, co uniemożliwia zweryfikowanie poprawności dokonanej oceny.",
+      "problemy": [
+       {
+        "kod": "niska_jakosc",
+        "opis": "Na całej stronie widoczny jest liczny drobny szum punktowy; tekst jest jednak czytelny.",
+        "waga": "srednia"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "niska_jakosc",
+      "opis": "Obie strony są pokryte drobnymi plamkami i szumem punktowym, co może utrudniać automatyczne rozpoznawanie tekstu, choć treść pozostaje czytelna.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.995
+     },
+     {
+      "nr": 2,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": [
+     "skan",
+     "przekrzywienie"
+    ]
+   }
+  }
+ }
+}

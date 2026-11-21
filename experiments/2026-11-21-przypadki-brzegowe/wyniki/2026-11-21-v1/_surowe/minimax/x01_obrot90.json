@@ -1,0 +1,72 @@
+{
+ "id": "x01_obrot90",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "pelnomocnictwo",
+  "uzasadnienie_klasy": "Dokument nosi tytuł „PEŁNOMOCNICTWO”, wskazuje mocodawcę i ustanawia pełnomocników do reprezentowania go.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 270,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "PEŁNOMOCNICTWO\nL.dz. 1 kwietnia 2026\nMocodawca jest członkiem Zarządzania Sp. z o.o. z siedzibą w Warszawie 78, 90-803 Łódź, KRS 0000050588, NIP 9999284065, REGON 999642785.\n§ 2. Pełnomocnikiem",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Cała strona wygląda na zeskanowaną reprodukcję dokumentu, a nie czystą stronę z cyfrową warstwą tekstu.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "obrot",
+      "opis": "Treść jest obrócona o 90° w lewo, czyli o 270° zgodnie z ruchem wskazówek zegara; do odczytu trzeba obrócić ją o 90° zgodnie z ruchem wskazówek zegara.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całym tle występują liczne drobne, losowe plamki i ziarnistość przypominające szum skanera, choć tekst pozostaje czytelny.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "skan",
+    "opis": "Jednostronicowy plik ma postać zeskanowanej reprodukcji dokumentu.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "obrot",
+    "opis": "Cała treść dokumentu jest obrócona o 90° w lewo (270° zgodnie z ruchem wskazówek zegara).",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "niska_jakosc",
+    "opis": "Cała strona zawiera rozproszony drobny szum i plamki, które mogą utrudniać automatyczne rozpoznawanie tekstu.",
+    "waga": "niska"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2952,
+   "output_tokens": 5704,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 5046
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 30.4
+}

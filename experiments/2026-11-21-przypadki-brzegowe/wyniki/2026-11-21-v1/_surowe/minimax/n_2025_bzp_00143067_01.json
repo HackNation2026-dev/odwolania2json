@@ -1,0 +1,64 @@
+{
+ "id": "n_2025_bzp_00143067_01",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Dokument jest ogłoszeniem o zamówieniu publicznym, a nie odwołaniem do KIO, pełnomocnictwem ani potwierdzeniem przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Ogłoszenie nr 2025/BZP 00143067 z dnia 2025-03-12\n\nOgłoszenie o zamówieniu\nUsługi\nUtrzymanie w ciągłym ruchu urządzeń, sieci wodociągowych, stacji uzdatniania wody, sieci kanalizacyjnych,",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Zamówienie udzielane jest w trybie podstawowym na podstawie: art. 275 pkt 1 ustawy\n\nSEKCJA III - UDOSTĘPNIANIE DOKUMENTÓW ZAMÓWIENIA I KOMUNIKACJA\n\n3.1.) Adres strony internetowej prowadzonego postępowania\nhttps://platformazakupowa.pl/transakcja/1058573",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "inne.\n\n4.3.5.) Nazwa kryterium: Czas reakcji na zdiagnozowanie przyczyny awarii\n4.3.6.) Waga: 20\n\nKryterium 3\n4.3.4.) Rodzaj kryterium:\ninne.\n4.3.5.) Nazwa kryterium: Cena za jedną roboczogodzinę naprawy\n4.3.6.) Waga: 20",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Cały plik stanowi ogłoszenie o zamówieniu publicznym, które nie należy do klas: odwołanie, pełnomocnictwo ani przelew.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 5289,
+   "output_tokens": 2028,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 197,
+   "output_tokens_details": {
+    "thinking_tokens": 1403
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 9.1
+}

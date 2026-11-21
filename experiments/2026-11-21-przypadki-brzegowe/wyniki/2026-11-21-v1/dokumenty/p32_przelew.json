@@ -1,0 +1,31 @@
+{
+ "id": "p32_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_32/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_32",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 76631,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p32_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 502,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Bank Wielkopolski i Pomorza Potwierdzenie transakcji Opis opłata skarbowa od pełnomocnictwa dla Cezary Marciniak w postępowaniu przed KIO w przetargu ZS.520.2026 CEN2608087095658 Wartość 100,00 zł Data transakcji 25 lipca 2026 Numer transakcji CEN2608087095658 Płatnik Centaur Usługi sp. z o.o., ul. Zaczarowana 8, 60-201 Poznań Z rachunku: 96 6798 6857 5223 7021 2076 7677 Adresat przelewu Elarion T"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

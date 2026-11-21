@@ -1,0 +1,200 @@
+{
+ "id": "n_decyzja_ministra_sportu_i_turystyki1",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/Decyzja-Ministra-Sportu-i-Turystyki1.pdf",
+ "zrodlo": "negatywny",
+ "klasa_oczekiwana": "obcy",
+ "sprawa": null,
+ "metadane": {
+  "producent": "",
+  "kreator": "",
+  "rozmiar_bajtow": 312640,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.3"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/n_decyzja_ministra_sportu_i_turystyki1/p001.jpg",
+   "szerokosc_pt": 596.0,
+   "wysokosc_pt": 842.0,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 0,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.998,
+   "dpi_obrazow": 200.0,
+   "typ_auto": "skan",
+   "probka_tekstu": ""
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 17.0,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Decyzja Ministra Sportu i Turystyki zatwierdzająca statut Polskiego Związku Golfa.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Warszawa, 14 grudnia 2011 r.\nMINISTER\nSPORTU I TURYSTYKI\nJoanna Mucha\nDP-4071-32883/2011/WCz - 23885\nDECYZJA Nr 14/DP/2011\nNa podstawie art. 21 ust. 1 ustawy z dnia 25 czerwca 2010 r. o sporcie",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Cała strona ma wygląd skanu papierowego dokumentu.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "odreczne",
+        "opis": "Dzień daty, końcówkę znaku pisma i numer decyzji wpisano ręcznie.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "pieczatka_podpis",
+        "opis": "Podpis w dolnej prawej części strony nachodzi na nadruk imienia i nazwiska ministra.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Decyzja administracyjna dotycząca statutu związku sportowego, spoza trzech docelowych klas dokumentów sprawy KIO.",
+      "waga": "wysoka"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": null
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 13.7,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Decyzja administracyjna Ministra Sportu i Turystyki z 2011 r. zatwierdzająca statut Polskiego Związku Golfa. To nie jest odwołanie do KIO, pełnomocnictwo ani przelew. W pouczeniu pada słowo „odwołanie”, ale w zdaniu, że od decyzji odwołanie nie przysługuje.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "skan",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "MINISTER SPORTU I TURYSTYKI Joanna Mucha Warszawa, 14 grudnia 2011 r. DP-4071-32883/2011/WCz -23855 DECYZJA Nr 14/DP/2011 Na podstawie art. 21 ust. 1 ustawy z dnia 25 czerwca 2010 r. o sporcie (Dz. U. Nr 127,",
+      "problemy": [
+       {
+        "kod": "skan",
+        "opis": "Cała strona jest skanem dokumentu papierowego. Widać na nim szare krawędzie i drobne zabrudzenia.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "odreczne",
+        "opis": "Dzień daty („14”), końcówka sygnatury („-23855”) i numer decyzji („14/DP/2011”) są dopisane ręcznie.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "pieczatka_podpis",
+        "opis": "Na dole strony są czerwona okrągła pieczęć ministra i odręczny podpis. Podpis nachodzi na nadrukowane imię i nazwisko „Joanna Mucha”.",
+        "waga": "niska"
+       },
+       {
+        "kod": "dokument_obcy",
+        "opis": "Decyzja administracyjna ministra nie należy do żadnej z klas: odwołanie, pełnomocnictwo, przelew.",
+        "waga": "niska"
+       },
+       {
+        "kod": "podobny_do_klasy",
+        "opis": "Urzędowe pismo z pouczeniem o środkach odwoławczych zawiera słowo „odwołanie”, więc może zostać pomylone z klasą odwołanie.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "dokument_obcy",
+      "opis": "Plik zawiera decyzję Ministra Sportu i Turystyki zatwierdzającą statut PZG. Nie jest to dokument sprawy odwoławczej do KIO.",
+      "waga": "niska"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": null
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 12.1,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "inny",
+    "uzasadnienie_klasy": "Jest to decyzja administracyjna Ministra Sportu i Turystyki o zatwierdzeniu statutu Polskiego Związku Golfa, a nie odwołanie do KIO, pełnomocnictwo ani potwierdzenie przelewu.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Warszawa, 14 grudnia 2011 r.\n\nMINISTER\nSPORTU I TURYSTYKI\nJadwiga Mucha\n\nDP-4071-32883/2011/WCz 23805\n\nDECYZJA Nr 14/108/2011",
+      "problemy": [
+       {
+        "kod": "odreczne",
+        "opis": "Odręcznie uzupełniono datę w nagłówku, numer decyzji oraz złożono podpis.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "odreczne",
+      "opis": "Dokument zawiera odręczne adnotacje: datę, numer decyzji i podpis.",
+      "waga": "niska"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": null
+     }
+    ],
+    "wykryte_wstrzykniete": [],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

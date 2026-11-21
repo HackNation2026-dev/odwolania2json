@@ -1,0 +1,59 @@
+{
+ "id": "p40_przelew",
+ "model": "claude",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Dokument to potwierdzenie wykonania przelewu, ale nie dotyczy wpisu od odwołania. Tytuł to „opłata skarbowa od pełnomocnictwa” na 34,00 PLN. Odbiorcą jest Regionalne Centrum Usług Medycznych sp. z o.o., czyli prawdopodobnie zamawiający, a nie rachunek UZP. Wpis od odwołania byłby wielokrotnie wyższy. Formą łudząco przypomina klasę „przelew”.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Polski Zachodni S.A. · wygenerowano 16.10.2026\nZleceniodawca Valtrix Systemy Informatyczne sp. z o.o. ul. Grunwaldzka 112, 60-307 Poznań\nRachunek zleceniodawcy PL54 7164 9675 2472 1141 8071 4012",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu są w dwukolumnowej tabeli (etykieta – wartość) z liniami poziomymi. Pole „Tytuł przelewu” zajmuje kilka wierszy.",
+      "waga": "niska"
+     },
+     {
+      "kod": "podobny_do_klasy",
+      "opis": "To potwierdzenie przelewu opłaty skarbowej od pełnomocnictwa (34,00 PLN), a nie wpisu od odwołania. Odbiorca nie jest rachunkiem UZP, a tytuł wspomina KIO i pełnomocnictwo.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "pusta_strona",
+      "opis": "Około dolnej połowy strony, poniżej stopki informacyjnej banku, jest pusta. Strona zawiera jednak treść.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Plik ma formę potwierdzenia przelewu, ale dotyczy opłaty skarbowej od pełnomocnictwa (34,00 PLN na rzecz Regionalnego Centrum Usług Medycznych), a nie wpisu od odwołania na rachunek UZP. Klasyfikator oparty na nagłówku przypisze mu klasę „przelew”.",
+    "waga": "wysoka"
+   },
+   {
+    "kod": "dokument_obcy",
+    "opis": "Dokument nie należy do klas: odwołanie, pełnomocnictwo, przelew (wpis).",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2645102,
+  "tury": 3
+ },
+ "czas_s": 20.2
+}

@@ -1,0 +1,31 @@
+{
+ "id": "p20_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_20/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_20",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 65603,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p20_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 691,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "BANK ZACHODNI HANDLOWY Potwierdzenie przelewu krajowego Zleceniodawca Nazwa: Quentavis Usługi sp. z o.o. Adres: ul. Topolowa 78, 00-809 Warszawa Z rachunku: PL83 8495 5712 2740 8956 6935 6241 Dane odbiorcy Nazwa: Talveris Automatyka sp. j. Adres: ul. Uliczna 94, 90-555 Łódź Na rachunek: PL81 2965 8350 8215 2582 4309 0935 Szczegóły operacji Kwota operacji: 17,00 zł Data operacji: 12-05-2026 Nr ref."
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

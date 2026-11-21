@@ -1,0 +1,229 @@
+{
+ "id": "x10_pusta_strona",
+ "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x10_pusta_strona.pdf",
+ "zrodlo": "syntetyczny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_01",
+ "metadane": {
+  "producent": "pypdf",
+  "kreator": null,
+  "rozmiar_bajtow": 93424,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/x10_pusta_strona/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1326,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Prezes Krajowej Izby Odwoławczej ul. Postępu 17A 02-676 Warszawa Odwołujący: Belmoria Rozwiązania S.A. ul. Zaczarowana 78, 90-803 Łódź KRS: 9999405188, NIP: 9999284065, REGON: 999642785 reprezentowana przez: r. pr. Aleksandra Marciniak, r. pr. Jolanta Zajkowski adres do korespondencji: Kancelaria Adwokacka Spółka z ograniczoną odpowiedzialnością, ul. Jasionowa 19, 80-994 Gdańsk tel. 000 000 000, b"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/x10_pusta_strona/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 0,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "pusta",
+   "probka_tekstu": ""
+  },
+  {
+   "nr": 3,
+   "obraz": "strony/x10_pusta_strona/p003.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1430,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania. Zarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria: b).1. Kryteria oceny ofert wskazane w dokumentacji postępowania nie są sformułowane w sposób jednoznaczny, a sposób ich zastosowania przez Zamawiającego nie został wyjaś"
+  }
+ ],
+ "wstrzykniete": [
+  {
+   "kod": "pusta_strona",
+   "strona": 2,
+   "opis": "wstawiona pusta strona"
+  }
+ ],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 18.8,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2,
+    3
+   ],
+   "wynik": {
+    "klasa": "odwolanie",
+    "uzasadnienie_klasy": "Pismo zatytułowane „ODWOŁANIE”, skierowane do Prezesa KIO, zawiera dane stron, zarzuty i wnioski dotyczące postępowania o udzielenie zamówienia.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "pusta",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "",
+      "problemy": [
+       {
+        "kod": "pusta_strona",
+        "opis": "Cała strona jest pusta.",
+        "waga": "niska"
+       }
+      ]
+     },
+     {
+      "nr": 3,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w\nsposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia\nodwołania.\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "pusta_strona",
+      "opis": "Między stronami oznaczonymi w stopkach „Strona 1 z 2” i „Strona 2 z 2” znajduje się pusta strona PDF (strona 2 pliku).",
+      "waga": "niska"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": null
+     },
+     {
+      "nr": 3,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "pusta_strona"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 15.9,
+   "blad": null,
+   "strony_przeslane": [
+    1,
+    2,
+    3
+   ],
+   "wynik": {
+    "klasa": "odwolanie",
+    "uzasadnienie_klasy": "Pismo do Prezesa KIO z tytułem „ODWOŁANIE”. Zawiera dane odwołującego i zamawiającego, zarzuty nr 1–3, wnioski oraz miejsca na podpisy pełnomocników.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Prezes Krajowej Izby Odwoławczej\nul. Postępu 17A\n02-676 Warszawa\nOdwołujący:\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nKRS: 9999405188, NIP: 9999284065, REGON: 999642785\nreprezentowana przez: r. pr. Aleksandra Marciniak",
+      "problemy": []
+     },
+     {
+      "nr": 2,
+      "typ": "pusta",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "",
+      "problemy": [
+       {
+        "kod": "pusta_strona",
+        "opis": "Strona 2 pliku jest całkowicie pusta. Jest wstawiona między stronę „1 z 2” a „2 z 2” dokumentu.",
+        "waga": "srednia"
+       }
+      ]
+     },
+     {
+      "nr": 3,
+      "typ": "tekst",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "a).2. Brak takiego uzasadnienia uniemożliwia również rozpatrzenie odwołania w sposób merytoryczny, co narusza prawo Odwołującego do skutecznego wniesienia odwołania.\nZarzut nr 2 błędnej oceny ofert ze względu na niejasne kryteria:",
+      "problemy": []
+     }
+    ],
+    "problemy_dokumentu": [
+     {
+      "kod": "pusta_strona",
+      "opis": "Plik ma 3 strony, a stopki wskazują 2 strony („Strona 1 z 2”, „Strona 2 z 2”). Strona 2 pliku jest pusta i rozdziela treść odwołania.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "inne",
+      "opis": "Treść odwołania jest niespójna. Na str. 1 zdanie „wnoszę o:” urywa się bez wniosków. W sekcji „Wnoszę o:” na str. 3 wnioski są sprzeczne: oddalenie zarzutów i uwzględnienie odwołania. Wnioski są też zmieszane z listą załączników o powtórzonym oznaczeniu a)–d).",
+      "waga": "niska"
+     }
+    ]
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 1.0
+     },
+     {
+      "nr": 2,
+      "podobienstwo": null
+     },
+     {
+      "nr": 3,
+      "podobienstwo": 1.0
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "pusta_strona"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "blad",
+   "czas_s": 9.3,
+   "blad": "ValidationError: Additional properties are not allowed ('uzasadnieniu_klasy' was unexpected)\n\nFailed validating 'additionalProperties' in schema:\n    {'$schema': 'https://json-schema.org/draft/2020-12/schema',\n     'title': 'Wynik modelu: przegląd dokumentu',\n     'type': 'object',\n     'additionalProperties': False,\n     'required': ['klasa',\n                  'uzasadnienie_klasy',\n                  'strony',\n                  'problemy_dokumentu'],\n     'properties': {'klasa': {'type': 'string',\n                              'enum': ['odwolanie',\n                                       'pelnomocnictwo',\n                                       'przelew',\n                                       'inny',\n                                       'niepewne']},\n                    'uzasadnienie_klasy': {'type': 'string'},\n                    'strony': {'type': 'array',\n                               'items': {'typ",
+   "strony_przeslane": [
+    1,
+    2,
+    3
+   ],
+   "wynik": null,
+   "ocena_auto": null
+  }
+ }
+}

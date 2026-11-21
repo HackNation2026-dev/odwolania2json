@@ -1,0 +1,31 @@
+{
+ "id": "p08_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_08/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_08",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 61932,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p08_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 531,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POLECENIE PRZELEWU Dowód wykonania przelewu · Bank Śląsko-Mazowiecki Zleceniodawca Z rachunku Umbria Rozwiązania sp. j. PL57936403120146943695277279 ul. Wiśniowa 44, 35-545 Rzeszów Dane odbiorcy Rachunek uznawany Corvella Sieci sp. k. PL41351879105578128609561192 ul. Miodowa 36, 30-284 Kraków Kwota Data transakcji 34,00 zł 26 maja 2026 Tytułem opłata skarbowa od pełnomocnictwa dla Bartosz Jastrzęb"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

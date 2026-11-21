@@ -1,0 +1,55 @@
+{
+ "id": "x08_pieczatka",
+ "model": "codex",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Potwierdzenie przelewu opłaty skarbowej od pełnomocnictwa (200,00 PLN), a nie wpisu od odwołania do KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona ma wygląd skanu z drobnym szumem na całej powierzchni.",
+      "waga": "niska"
+     },
+     {
+      "kod": "pieczatka_podpis",
+      "opis": "Czerwona pieczątka „ZAPŁACONO” nachodzi na opis przelewu i pole numeru referencyjnego.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu rozmieszczono w obramowanych polach w dwóch kolumnach.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Dokument dotyczy opłaty skarbowej od pełnomocnictwa, poza zakresem klasy przelew zdefiniowanej jako wpis od odwołania.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Układ potwierdzenia bankowego przypomina klasę przelew; o odmiennym przeznaczeniu płatności świadczy jej opis.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "oza zakresem klasy przelew zdefiniowanej jako wpis od odwołania.\",\"waga\":\"srednia\"},{\"kod\":\"podobny_do_klasy\",\"opis\":\"Układ potwierdzenia bankowego przypomina klasę przelew; o odmiennym przeznaczeniu płatności świadczy jej opis.\",\"waga\":\"wysoka\"}]}\nhook: Stop\nhook: Stop Completed\ntokens used\n28 289\n"
+ },
+ "czas_s": 16.1
+}

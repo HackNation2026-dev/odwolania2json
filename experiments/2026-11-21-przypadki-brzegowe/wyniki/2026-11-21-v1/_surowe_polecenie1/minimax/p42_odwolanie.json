@@ -1,0 +1,63 @@
+{
+ "id": "p42_odwolanie",
+ "model": "minimax",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument jest odwołaniem od wyników postępowania o udzielenie zamówienia, wniesionym do Krajowej Izby Odwoławczej przez Nordelia Facility Services S.A.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Kraków, 02.07.2026\n\nPrezes Krajowej Izby Odwoławczej\nul. Posępu 17A\n02-676 Warszawa\n\nOdwołujący:\nNordelia Facility Services S.A.\nul. Wielicka 250, 30-663 Kraków\nKRS: 9993307745, NIP: 9995519382, REGON: 999284670",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr MCLM/ZP/07/2026\n\n1) ustalenie treści Specyfikacji Warunków Zamówienia, opublikowanej wraz z ogłoszeniem o zamówieniu w dniu 23 czerwca 2026 r., w zakresie warunków",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr MCLM/ZP/07/2026\n\n6) pisma Zamawiającego z dnia 30 czerwca 2026 r. – na okoliczność stanowiska Zamawiającego co do interpretacji postanowień SWZ;\n\n7) wyciągu z Krajowego Rejestru",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "W części „Stan faktyczny” znajduje się dwukolumnowa tabela z chronologią postępowania, która może utrudniać linearną ekstrakcję tekstu.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 5262,
+   "output_tokens": 1327,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 197,
+   "output_tokens_details": {
+    "thinking_tokens": 818
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 6.8
+}

@@ -1,0 +1,53 @@
+{
+ "id": "n_2025_s_188_641009",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Ogłoszenie o zamówieniu publicznym na usługi transmisji danych, opublikowane w TED pod numerem 641009-2025.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "641009-2025 - Procedura konkurencyjna\nSee the notice on TED website\nPolska – Usługi w zakresie sieci komputerowej – ŚWIADCZENIE USŁUGI TRANSMISJI DANYCH\nW POSTACI BEZPIECZNEJ I DYSPOZYCYJNEJ SIECI DOSTĘPOWEJ WAN VPLS",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Główna klasyfikacja (cpv): 72700000 Usługi w zakresie sieci komputerowej\nDodatkowa klasyfikacja (cpv): 72400000 Usługi internetowe\n2.1.2. Miejsce realizacji\nPodpodział krajowy (NUTS): Rzeszowski (PL823)\nKraj: Polska",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "złożenia następujących oświadczeń i dokumentów: Odpis lub informacja z Krajowego Rejestru\nSądowego lub z Centralnej Ewidencji i Informacji o Działalności Gospodarczej – w celu\npotwierdzenia braku podstaw wykluczenia",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Ogłoszenie o zamówieniu publicznym; dokument spoza klas odwołanie, pełnomocnictwo i przelew.",
+    "waga": "wysoka"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "kluczenia\",\n      \"problemy\": []\n    }\n  ],\n  \"problemy_dokumentu\": [\n    {\n      \"kod\": \"dokument_obcy\",\n      \"opis\": \"Ogłoszenie o zamówieniu publicznym; dokument spoza klas odwołanie, pełnomocnictwo i przelew.\",\n      \"waga\": \"wysoka\"\n    }\n  ]\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n7056\n"
+ },
+ "czas_s": 16.8
+}

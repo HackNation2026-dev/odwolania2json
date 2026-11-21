@@ -1,0 +1,44 @@
+{
+ "id": "p31_odwolanie",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_31/odwolanie.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "odwolanie",
+ "sprawa": "przyklad_31",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 90885,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p31_odwolanie/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1473,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Kraków, dnia 9 kwietnia 2026 roku Odwołujący: Zorina Rozwiązania S.A. ul. Ambrożowa 22, 30-159 Kraków KRS: 9997648224, NIP: 9996669445, REGON: 999481164 reprezentowana przez: r. pr. Halina Ostrowczyk, r. pr. Grzegorz Dudek adres do korespondencji: Kancelaria Adwokacka i Partnerzy, ul. Grabowa 36, 30-607 Kraków tel. 000 000 000, biuro@poczta.example Zamawiający: Balttec Rozwiązania sp. z o.o. ul. O"
+  },
+  {
+   "nr": 2,
+   "obraz": "strony/p31_odwolanie/p002.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1015,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "ograniczenie udziału w postępowaniu, ani dopuszczalnych odstępstw od tych wartości, co prowadzi do swobodnego kształtowania przez Zamawiającego warunków udziału w postępowaniu. Zarzut nr 2 naruszenia obowiązku sporządzenia dokumentacji postępowania w sposób przejrzysty: b).1. Dokumentacja postępowania nie zawiera pełnego uzasadnienia przyjętych wymagań, co utrudnia ustalenie rzeczywistego kryteriu"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

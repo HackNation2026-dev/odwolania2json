@@ -1,0 +1,31 @@
+{
+ "id": "p29_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_29/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_29",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 66134,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p29_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1059,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "MOCODAWCA PEŁNOMOCNIK Corvella Serwis sp. k. adw. Ewa Chalupowicz ul. Różana 7, 30-878 Kraków nr wpisu WA 67243 KRS 9997854723 NIP 9995776771 Pełnomocnictwo Niniejszym ustanawiam pełnomocnikiem wyżej wskazanemu pełnomocnikowi do reprezentowania Mocodawcy w postępowaniu „Usługi ochrony fizycznej i monitoringu w systemie całodobowym”, numer postępowania: ZS.377.2026, prowadzonym przez Rubiconis Wypo"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

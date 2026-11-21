@@ -1,0 +1,67 @@
+{
+ "id": "n_2025_s_112_383751",
+ "model": "claude",
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "inny",
+  "uzasadnienie_klasy": "Ogłoszenie o zmianie ogłoszenia o zamówieniu z TED (383751-2025, OJ S 112/2025) dotyczące przebudowy SUW „Rumia” (PEWIK Gdynia). To nie jest odwołanie, pełnomocnictwo ani potwierdzenie przelewu.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "383751-2025 - Procedura konkurencyjna See the notice on TED website Polska – Roboty budowlane w zakresie wznoszenia kompletnych obiektów budowlanych lub ich części oraz roboty w zakresie inżynierii lądowej i wodnej – Przebudowa Stacji Uzdatniania Wody \"Rumia\"",
+    "problemy": [
+     {
+      "kod": "podobny_do_klasy",
+      "opis": "Nagłówek TED: ogłoszenie o zamówieniu / ogłoszenie o zmianie, zawiera nazwę zamawiającego i przedmiot zamówienia. Może zostać pomylone z dokumentem sprawy odwoławczej.",
+      "waga": "srednia"
+     }
+    ]
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Kierownik Budowy powinien wykazać się doświadczeniem przy realizacji co najmniej 1 roboty budowlanej polegającej na budowie lub przebudowie stacji uzdatniania wody z instalacjami, o wydajności co najmniej 250 m3/h, 11.1.4.2.2. osobę,",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Roboty budowlane w zakresie konstrukcji, 45230000 Roboty budowlane w zakresie budowy rurociągów, linii komunikacyjnych i elektroenergetycznych, autostrad, dróg, lotnisk i kolei; wyrównywanie terenu, 45311200 Roboty w zakresie",
+    "problemy": []
+   }
+  ],
+  "problemy_dokumentu": [
+   {
+    "kod": "dokument_obcy",
+    "opis": "Plik to ogłoszenie o zmianie z TED (OJ S 112/2025 13/06/2025), a nie odwołanie, pełnomocnictwo ani przelew.",
+    "waga": "srednia"
+   },
+   {
+    "kod": "podobny_do_klasy",
+    "opis": "Ogłoszenie o zamówieniu zawiera dane zamawiającego, identyfikator postępowania ZP/15/FENIKS/2025 i przepisy Pzp. Jego słownictwo jest bliskie odwołaniu, więc grozi błędna klasyfikacja lub ekstrakcja danych z niewłaściwego dokumentu.",
+    "waga": "srednia"
+   }
+  ]
+ },
+ "blad": null,
+ "meta": {
+  "model": [
+   "claude-opus-5-5"
+  ],
+  "koszt_usd": 0.2873488,
+  "tury": 5
+ },
+ "czas_s": 18.9
+}

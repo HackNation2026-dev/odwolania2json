@@ -1,0 +1,31 @@
+{
+ "id": "p16_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_16/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_16",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 67328,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p16_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1077,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Umbria Serwis S.A. ul. Wiśniowa 86, 00-338 Warszawa KRS 9995891101 · NIP 9994524790 · REGON 999556867 Warszawa, 22.08.2026 PEŁNOMOCNICTWO PROCESOWE Ja, niżej podpisany(a), działając jako osoba upoważniona do reprezentacji Umbria Serwis S.A. (KRS 9995891101, NIP 9994524790), udzielam pełnomocnictwa adw. Cezary Szymanski (nr wpisu na listę: WA 53841), adw. Patrycja Bąkiewicz (nr wpisu na listę: WA 7"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

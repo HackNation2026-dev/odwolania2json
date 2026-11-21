@@ -1,10 +1,17 @@
 ---
-wersja: 0.4.0
+wersja: 0.6.0
 aktualizacja: 2026-11-21
 status: dokumentacja przygotowawcza
 ---
 
 # Architektura UZP — propozycja
+
+## Uzupełnienie 0.6.0 — obowiązujące ustalenia
+
+Pierwszeństwo mają [ADR-002](../07-decyzje/ADR-002-decyzje-po-recenzji.md) i [architektura wewnętrzna ELT](architektura-wewnetrzna.md). Jeden pakiet Python 3.13 instalowany przez pip; bez Rusta i Dockera u jury (Docker tylko deweloperski). GUI jest obowiązkowe z decyzji zespołu, React + TypeScript jako statyczne zasoby pakietu pip, bez serwera Node. CLI i GUI używają wspólnego silnika. To projekt, nie gotowa implementacja.
+
+Poniższy opis zachowano jako historię propozycji; sprzeczne zapisy o opcjonalnym GUI, Rust i dostarczaniu przez Docker nie obowiązują.
+
 
 Stan: propozycja, nie opis gotowej aplikacji.
 

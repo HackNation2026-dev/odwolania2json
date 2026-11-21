@@ -1,0 +1,46 @@
+{
+ "id": "p01_przelew",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Dokument jest potwierdzeniem realizacji przelewu bankowego i zawiera płatnika, adresata, numery rachunków, kwotę oraz datę transakcji.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczopowa 78, 90-803 Łódź\nRachunek obliczany\nPL05470680287581539721455024\nAdresat przelewu\nAurelink Automatyka S.A.\nul. Rybacka 79, 50-580 Wrocław\nRachunek odbiorcy\nPL64838223049992295262834736\nKwota operacji\n200,00 PLN\nData transakcji\n2026-03-21",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu rozmieszczono w dwukolumnowym układzie ograniczonym ramkami, co może utrudniać odczyt w sposób liniowy.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 2952,
+   "output_tokens": 751,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "output_tokens_details": {
+    "thinking_tokens": 425
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 4.5
+}

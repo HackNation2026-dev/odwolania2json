@@ -1,0 +1,13 @@
+{
+  "id": "neg-001",
+  "plik_zrodlowy": "dane/negatywne/neg-001.pdf",
+  "zrodlo": "negatywny",
+  "klasa_oczekiwana": "obcy",
+  "sprawa": null,
+  "metadane": {"producent": "Canon iR-ADV", "kreator": null, "rozmiar_bajtow": 230112, "zaszyfrowany": false, "wersja_pdf": "1.4"},
+  "strony": [
+    {"nr": 1, "obraz": "strony/neg-001/p001.jpg", "szerokosc_pt": 595.3, "wysokosc_pt": 841.9, "obrot_pdf": 0, "znaki_tekstu": 0, "obrazy": 1, "pokrycie_obrazami": 1.0, "dpi_obrazow": 300, "typ_auto": "skan", "probka_tekstu": ""}
+  ],
+  "wstrzykniete": [],
+  "modele": {}
+}

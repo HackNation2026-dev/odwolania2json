@@ -1,0 +1,35 @@
+{
+ "id": "p01_przelew",
+ "model": "codex",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Potwierdzenie zrealizowanego przelewu na 200,00 PLN za opłatę skarbową od pełnomocnictwa w postępowaniu przed KIO.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "POLECENIE PRZELEWU\nPotwierdzenie realizacji polecenia przelewu · Ekobank\nPłatnik\nBelmoria Rozwiązania S.A.\nul. Zaczarowana 78, 90-803 Łódź\nRachunek obciążany\nPL05470680287581539721455024\nAdresat przelewu",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu rozmieszczone w obramowanych polach, częściowo w dwóch kolumnach; odczyt liniowy wymaga zachowania powiązań etykiet z wartościami.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "\n          \"opis\": \"Dane przelewu rozmieszczone w obramowanych polach, częściowo w dwóch kolumnach; odczyt liniowy wymaga zachowania powiązań etykiet z wartościami.\",\n          \"waga\": \"niska\"\n        }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": []\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n4339\n"
+ },
+ "czas_s": 13.9
+}

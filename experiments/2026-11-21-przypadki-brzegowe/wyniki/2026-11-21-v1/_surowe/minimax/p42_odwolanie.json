@@ -1,0 +1,64 @@
+{
+ "id": "p42_odwolanie",
+ "model": "minimax",
+ "wersja_polecenia": 2,
+ "strony_przeslane": [
+  1,
+  2,
+  3
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "odwolanie",
+  "uzasadnienie_klasy": "Dokument jest odwołaniem wnoszonym do Krajowej Izby Odwoławczej w postępowaniu o udzielenie zamówienia; wskazują na to nagłówek „ODWOŁANIE”, adresowanie do Prezesa KIO oraz treść uzasadnienia zarzutów.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Kraków, 02.07.2026\n\nPrezes Krajowej Izby Odwoławczej\nul. Posępu 17A\n02-676 Warszawa\n\nOdwołujący:\nNordelia Facility Services S.A.\nul. Wielicka 250, 30-663 Kraków\nKRS: 9993307745, NIP: 9995519382, REGON: 999284670",
+    "problemy": []
+   },
+   {
+    "nr": 2,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr MCLM/ZP/07/2026\n\n1) ustaleniu treści Specyfikacji Warunków Zamówienia, opublikowanej wraz z ogłoszeniem o zamówieniu w dniu 23 czerwca 2026 r., w zakresie warunków udziału w postępowaniu, kryteriów oceny ofert oraz wzoru umowy;\n2) modyfikacji treści SWZ dokonanej w dniu 29 czerwca 2026 r. w zakresie wymagań dotyczących certyfikacji;\n3) udzieleniu w dniu 30 czerwca 2026 r. odpowiedzi na pytania wykonawców nr 3, 8 i 11",
+    "problemy": []
+   },
+   {
+    "nr": 3,
+    "typ": "tekst",
+    "obrot_stopnie": 0,
+    "jakosc": "dobra",
+    "transkrypcja_poczatku": "Odwołanie – postępowanie nr MCLM/ZP/07/2026\n\n6) pisma Zamawiającego z dnia 30 czerwca 2026 r. – na okoliczność stanowiska Zamawiającego co do interpretacji postanowień SWZ;\n7) wyciągu z Krajowego Rejestru Sądowego oraz Centralnej Ewidencji i Informacji o Działalności Gospodarczej – na okoliczność statusu wykonawców;\n\nUZASADNIENIE\n\nI. Stan faktyczny",
+    "problemy": [
+     {
+      "kod": "tabela",
+      "opis": "W środkowej części strony znajduje się dwukolumnowa tabela chronologii postępowania, która może utrudniać linearne odczytanie danych.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "model": "MiniMax-M3.1-Flash",
+  "uzycie": {
+   "input_tokens": 5289,
+   "output_tokens": 1287,
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 197,
+   "output_tokens_details": {
+    "thinking_tokens": 509
+   }
+  },
+  "stop": "end_turn",
+  "effort": "medium"
+ },
+ "czas_s": 5.3
+}

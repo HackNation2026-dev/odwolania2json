@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Adnotacja człowieka (zapisuje przeglądarka egui)",
+  "type": "object",
+  "required": ["id", "wersja", "recenzent", "zmieniono", "status", "klasa", "notatka", "problemy_dokumentu", "strony", "ocena_modeli"],
+  "properties": {
+    "id": {"type": "string"},
+    "wersja": {"const": 1},
+    "recenzent": {"type": "string"},
+    "zmieniono": {"type": "string", "description": "ISO 8601, czas lokalny z przesunięciem"},
+    "status": {"enum": ["nieprzejrzany", "w_toku", "przejrzany", "do_dyskusji"]},
+    "klasa": {"enum": ["odwolanie", "pelnomocnictwo", "przelew", "obcy", "niepewne", null], "description": "Klasa według człowieka; null = nie oceniono"},
+    "notatka": {"type": "string"},
+    "problemy_dokumentu": {"$ref": "#/$defs/problemy"},
+    "strony": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["nr", "problemy", "notatka"],
+        "properties": {"nr": {"type": "integer"}, "problemy": {"$ref": "#/$defs/problemy"}, "notatka": {"type": "string"}}
+      }
+    },
+    "ocena_modeli": {
+      "description": "Klucz: id modelu. Jak trafnie model opisał problemy tego dokumentu.",
+      "type": "object",
+      "additionalProperties": {"enum": ["trafne", "czesciowo", "chybione", "brak_oceny"]}
+    }
+  },
+  "$defs": {
+    "problemy": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kod", "opis", "waga"],
+        "properties": {"kod": {"type": "string"}, "opis": {"type": "string"}, "waga": {"enum": ["niska", "srednia", "wysoka"]}}
+      }
+    }
+  }
+}

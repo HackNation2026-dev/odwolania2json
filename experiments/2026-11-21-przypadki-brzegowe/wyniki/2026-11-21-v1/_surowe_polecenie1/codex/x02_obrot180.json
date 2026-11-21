@@ -1,0 +1,49 @@
+{
+ "id": "x02_obrot180",
+ "model": "codex",
+ "strony_przeslane": [
+  1
+ ],
+ "status": "ok",
+ "wynik": {
+  "klasa": "przelew",
+  "uzasadnienie_klasy": "Potwierdzenie wykonanego przelewu na 34,00 PLN. Tytuł dotyczy opłaty skarbowej od pełnomocnictwa, a nie wpisu od odwołania.",
+  "strony": [
+   {
+    "nr": 1,
+    "typ": "skan",
+    "obrot_stopnie": 180,
+    "jakosc": "srednia",
+    "transkrypcja_poczatku": "POTWIERDZENIE WYKONANIA PRZELEWU\nBank Polski Zachodni S.A. · wygenerowano 16.10.2026\nZleceniodawca\nValrix Systemy Informatyczne sp. z o.o.\nul. Grunwaldzka 112, 60-307 Poznań\nRachunek zleceniodawcy",
+    "problemy": [
+     {
+      "kod": "skan",
+      "opis": "Strona ma wygląd skanu z widocznym szumem tła.",
+      "waga": "srednia"
+     },
+     {
+      "kod": "obrot",
+      "opis": "Cała treść strony jest obrócona o 180 stopni.",
+      "waga": "wysoka"
+     },
+     {
+      "kod": "niska_jakosc",
+      "opis": "Na całej stronie widoczne drobne czarne punkty; litery miejscami mają nierówne krawędzie.",
+      "waga": "niska"
+     },
+     {
+      "kod": "tabela",
+      "opis": "Dane przelewu są ułożone w wierszach z etykietami po lewej i wartościami po prawej.",
+      "waga": "niska"
+     }
+    ]
+   }
+  ],
+  "problemy_dokumentu": []
+ },
+ "blad": null,
+ "meta": {
+  "stderr_ogon": "a\": \"niska\"\n        },\n        {\n          \"kod\": \"tabela\",\n          \"opis\": \"Dane przelewu są ułożone w wierszach z etykietami po lewej i wartościami po prawej.\",\n          \"waga\": \"niska\"\n        }\n      ]\n    }\n  ],\n  \"problemy_dokumentu\": []\n}\nhook: Stop\nhook: Stop Completed\ntokens used\n14 764\n"
+ },
+ "czas_s": 18.7
+}

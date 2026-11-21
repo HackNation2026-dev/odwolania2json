@@ -1,0 +1,2522 @@
+{
+ "format": "uzp-przypadki-brzegowe",
+ "wersja": 1,
+ "przebieg": "2026-11-21-v1",
+ "utworzono": "2026-11-21T18:16:08+01:00",
+ "opis": "Przegląd typów plików i przypadków brzegowych UZP: metryki stron (poppler), syntetyczne skany, ocena przez modele.",
+ "taksonomia": [
+  {
+   "kod": "brak_etykiety_roli",
+   "nazwa": "Brak etykiety roli",
+   "opis": "Rola podmiotu (zamawiający, odwołujący, pełnomocnik, mocodawca) nie jest nazwana etykietą; wynika z treści zdania."
+  },
+  {
+   "kod": "etykieta_po_danych",
+   "nazwa": "Etykieta po danych",
+   "opis": "Etykieta roli stoi po danych podmiotu albo w środku bloku (np. adres, etykieta, dane osobowe)."
+  },
+  {
+   "kod": "etykieta_synonim",
+   "nazwa": "Synonim etykiety",
+   "opis": "Rola nazwana innym słowem niż klucz JSON (np. Wykonawca, Skarżący, Strona, „w imieniu”)."
+  },
+  {
+   "kod": "brak_etykiety_przy_wartosci",
+   "nazwa": "Wartość bez etykiety pola",
+   "opis": "Wartość stoi bez etykiety typu „NIP:”, „KRS:”, „Data:” w tej samej lub poprzedniej linii."
+  },
+  {
+   "kod": "niewidoczna_tabela",
+   "nazwa": "Niewidoczna tabela",
+   "opis": "Układ oparty na tabeli bez widocznych krawędzi (białe na białym); tekst jednego wiersza trafia do różnych bloków przy ekstrakcji."
+  },
+  {
+   "kod": "uklad_wielokolumnowy",
+   "nazwa": "Układ wielokolumnowy",
+   "opis": "Tekst w kilku kolumnach lub ramkach obok siebie."
+  },
+  {
+   "kod": "tabela",
+   "nazwa": "Tabela",
+   "opis": "Dane w tabeli z widocznymi krawędziami, trudne do odczytu liniowego."
+  },
+  {
+   "kod": "brak_informacji_wprost",
+   "nazwa": "Brak informacji wprost",
+   "opis": "Wartość referencji nie występuje dosłownie w dokumencie; trzeba ją wywnioskować z treści albo jej brakuje (wtedy null i jawne wskazanie braku)."
+  },
+  {
+   "kod": "wartosc_wyliczana",
+   "nazwa": "Wartość wyliczana",
+   "opis": "Wartość pochodzi z reguły lub słownika (np. czynnosc_opis, przez-pelnomocnika, prowadzacy_postepowanie, typ mocodawcy)."
+  },
+  {
+   "kod": "inny_zapis_wartosci",
+   "nazwa": "Inny zapis wartości",
+   "opis": "Wartość zapisana inaczej niż w referencji (rachunek z PL i spacjami, data słownie lub DD.MM.RRRR, BZP ze spacją, TED jako RRRR/S…, kwota z przecinkiem)."
+  },
+  {
+   "kod": "inna_forma_gramatyczna",
+   "nazwa": "Inna forma gramatyczna",
+   "opis": "Imię i nazwisko albo nazwa w innym przypadku niż w referencji (np. dopełniacz zamiast mianownika)."
+  },
+  {
+   "kod": "wiele_wystapien",
+   "nazwa": "Wiele wystąpień",
+   "opis": "Ta sama wartość występuje w dokumencie kilka razy (różne strony, role lub zapisy)."
+  },
+  {
+   "kod": "wartosc_w_kilku_liniach",
+   "nazwa": "Wartość w kilku liniach",
+   "opis": "Wartość (np. długi tytuł, nazwa firmy) jest rozbita na kilka linii lub bloków."
+  },
+  {
+   "kod": "dane_dalej_niz_3_strona",
+   "nazwa": "Dane dalej niż na 3. stronie",
+   "opis": "Co najmniej jedna wartość występuje wyłącznie po 3. stronie."
+  },
+  {
+   "kod": "konsorcjum",
+   "nazwa": "Konsorcjum",
+   "opis": "Odwołujący to konsorcjum; referencja zawiera lidera."
+  },
+  {
+   "kod": "wielu_zamawiajacych",
+   "nazwa": "Wielu zamawiających",
+   "opis": "Więcej niż jeden zamawiający; prowadzacy_postepowanie 1/0."
+  },
+  {
+   "kod": "wielu_mocodawcow",
+   "nazwa": "Wielu mocodawców",
+   "opis": "Pełnomocnictwo udzielone przez więcej niż jeden podmiot."
+  },
+  {
+   "kod": "mocodawca_osoba_fizyczna",
+   "nazwa": "Mocodawca: osoba fizyczna",
+   "opis": "Mocodawca jest osobą fizyczną (imie_nazwisko, typ osoba_fizyczna)."
+  },
+  {
+   "kod": "pesel_obecny",
+   "nazwa": "PESEL obecny",
+   "opis": "Pełnomocnik ma PESEL w dokumencie."
+  },
+  {
+   "kod": "brak_pelnomocnika",
+   "nazwa": "Brak pełnomocnika",
+   "opis": "Odwołujący działa bez pełnomocnika (przez-pelnomocnika 0)."
+  },
+  {
+   "kod": "brak_bzp_i_ted",
+   "nazwa": "Brak BZP i TED",
+   "opis": "Odwołanie bez numeru BZP i bez numeru TED."
+  },
+  {
+   "kod": "powod_12",
+   "nazwa": "Powód czynności 12",
+   "opis": "Zaskarżone projektowane postanowienia umowy (kod 12)."
+  },
+  {
+   "kod": "przelew_wpis",
+   "nazwa": "Przelew: wpis od odwołania",
+   "opis": "Potwierdzenie przelewu wpisu od odwołania (kwoty rzędu tysięcy zł), a nie opłaty skarbowej."
+  },
+  {
+   "kod": "skan",
+   "nazwa": "Skan",
+   "opis": "Strona jest obrazem (zdjęcie lub skan), bez cyfrowej warstwy tekstu."
+  },
+  {
+   "kod": "skan_z_ocr",
+   "nazwa": "Skan z warstwą OCR",
+   "opis": "Obraz strony z ukrytą warstwą tekstu z OCR."
+  },
+  {
+   "kod": "zla_warstwa_ocr",
+   "nazwa": "Błędna warstwa OCR",
+   "opis": "Warstwa tekstu niezgodna z obrazem (błędne cyfry, znaki, kolejność, braki); cichy błąd."
+  },
+  {
+   "kod": "strona_mieszana",
+   "nazwa": "Obraz z treścią na stronie tekstowej",
+   "opis": "Strona ma warstwę tekstu, ale część treści (także dane do JSON) jest wklejonym obrazem; wymaga OCR regionu."
+  },
+  {
+   "kod": "dokument_mieszany",
+   "nazwa": "Dokument mieszany",
+   "opis": "W jednym pliku strony tekstowe i zeskanowane."
+  },
+  {
+   "kod": "obrot",
+   "nazwa": "Obrót treści",
+   "opis": "Treść obrócona o 90/180/270° w obrazie."
+  },
+  {
+   "kod": "obrot_flaga_pdf",
+   "nazwa": "Obrót flagą PDF",
+   "opis": "Strona obrócona atrybutem /Rotate."
+  },
+  {
+   "kod": "przekrzywienie",
+   "nazwa": "Przekrzywienie",
+   "opis": "Skan lekko przekrzywiony (kilka stopni)."
+  },
+  {
+   "kod": "niska_jakosc",
+   "nazwa": "Niska jakość",
+   "opis": "Niska rozdzielczość, rozmycie, szum, kompresja, ksero, faks, słaby kontrast."
+  },
+  {
+   "kod": "pieczatka_podpis",
+   "nazwa": "Pieczątka lub podpis na treści",
+   "opis": "Pieczątka, podpis lub adnotacja nachodzi na tekst."
+  },
+  {
+   "kod": "odreczne",
+   "nazwa": "Pismo odręczne",
+   "opis": "Istotna treść napisana ręcznie."
+  },
+  {
+   "kod": "pusta_strona",
+   "nazwa": "Pusta strona",
+   "opis": "Strona bez treści lub prawie pusta."
+  },
+  {
+   "kod": "uciety_tekst",
+   "nazwa": "Ucięty tekst",
+   "opis": "Tekst ucięty przy krawędzi strony."
+  },
+  {
+   "kod": "anonimizacja",
+   "nazwa": "Anonimizacja",
+   "opis": "Zaczernienia lub usunięte dane."
+  },
+  {
+   "kod": "znak_wodny",
+   "nazwa": "Znak wodny",
+   "opis": "Znak wodny lub tło utrudniające odczyt."
+  },
+  {
+   "kod": "nietypowy_rozmiar_strony",
+   "nazwa": "Nietypowy rozmiar strony",
+   "opis": "Rozmiar strony daleki od A4 (np. piksele zapisane jako punkty)."
+  },
+  {
+   "kod": "wiele_dokumentow",
+   "nazwa": "Wiele dokumentów w pliku",
+   "opis": "Kilka różnych dokumentów w jednym pliku; wynik do ustalenia z mentorem."
+  },
+  {
+   "kod": "dokument_obcy",
+   "nazwa": "Dokument obcy",
+   "opis": "Dokument spoza klas: odwołanie, pełnomocnictwo, przelew."
+  },
+  {
+   "kod": "podobny_do_klasy",
+   "nazwa": "Trudny negatyw",
+   "opis": "Dokument obcy łudząco podobny do jednej z klas (np. wyrok KIO, ogłoszenie BZP/TED)."
+  },
+  {
+   "kod": "duplikat_pliku",
+   "nazwa": "Duplikat pliku",
+   "opis": "Plik identyczny bajtowo z innym (traktować jako jedną rodzinę przy podziale)."
+  },
+  {
+   "kod": "jezyk_obcy",
+   "nazwa": "Język obcy",
+   "opis": "Treść w języku innym niż polski."
+  },
+  {
+   "kod": "inne",
+   "nazwa": "Inne",
+   "opis": "Problem spoza listy, opisany w polu opis; kandydat na nowy kod."
+  }
+ ],
+ "modele": [
+  {
+   "id": "codex",
+   "nazwa": "Codex CLI",
+   "model": "gpt-6.1-sol",
+   "uwagi": "codex exec, tryb tylko do odczytu, --output-schema"
+  },
+  {
+   "id": "claude",
+   "nazwa": "Claude Code CLI",
+   "model": "domyślny model CLI (zapisany w wynikach surowych)",
+   "uwagi": "claude -p, --json-schema, narzędzie Read do obrazów"
+  },
+  {
+   "id": "minimax",
+   "nazwa": "MiniMax",
+   "model": "MiniMax-M3.1-Flash-Preview",
+   "uwagi": "API zgodne z Anthropic, https://api.minimax.io/anthropic (serwery poza UE; tylko eksperyment)"
+  }
+ ],
+ "dokumenty": [
+  {
+   "id": "p01_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_01/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_01",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p01_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "p01_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_01/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_01",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p01_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "p01_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_01/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_01",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p01_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "p02_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_02/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_02",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p02_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "p02_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_02/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_02",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p02_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "p02_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_02/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_02",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p02_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "p03_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_03/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_03",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p03_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p03_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_03/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_03",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p03_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p03_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_03/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_03",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p03_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p04_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_04/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_04",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p04_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p04_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_04/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_04",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p04_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p04_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_04/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_04",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p04_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p05_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_05/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_05",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p05_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p05_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_05/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_05",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p05_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p05_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_05/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_05",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p05_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p06_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_06/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_06",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p06_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p06_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_06/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_06",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p06_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p06_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_06/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_06",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p06_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p07_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_07/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_07",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p07_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p07_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_07/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_07",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p07_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p07_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_07/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_07",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p07_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p08_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_08/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_08",
+   "liczba_stron": 3,
+   "plik_wynikow": "dokumenty/p08_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p08_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_08/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_08",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p08_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p08_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_08/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_08",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p08_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p09_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_09/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_09",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p09_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p09_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_09/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_09",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p09_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p09_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_09/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_09",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p09_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p10_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_10/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_10",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p10_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p10_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_10/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_10",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p10_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p10_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_10/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_10",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p10_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p11_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_11/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_11",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p11_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p11_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_11/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_11",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p11_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p11_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_11/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_11",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p11_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p12_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_12/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_12",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p12_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p12_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_12/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_12",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p12_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p12_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_12/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_12",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p12_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p13_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_13/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_13",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p13_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p13_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_13/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_13",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p13_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p13_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_13/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_13",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p13_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p14_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_14/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_14",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p14_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p14_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_14/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_14",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p14_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p14_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_14/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_14",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p14_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p15_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_15/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_15",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p15_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p15_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_15/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_15",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p15_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p15_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_15/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_15",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p15_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p16_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_16/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_16",
+   "liczba_stron": 3,
+   "plik_wynikow": "dokumenty/p16_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p16_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_16/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_16",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p16_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p16_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_16/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_16",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p16_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p17_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_17/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_17",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p17_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p17_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_17/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_17",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p17_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p17_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_17/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_17",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p17_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p18_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_18/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_18",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p18_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p18_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_18/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_18",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p18_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p18_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_18/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_18",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p18_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p19_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_19/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_19",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p19_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p19_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_19/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_19",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p19_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p19_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_19/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_19",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p19_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p20_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_20/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_20",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p20_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p20_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_20/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_20",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p20_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p20_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_20/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_20",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p20_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p21_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_21/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_21",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p21_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p21_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_21/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_21",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p21_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p21_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_21/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_21",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p21_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p22_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_22/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_22",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p22_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p22_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_22/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_22",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p22_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p22_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_22/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_22",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p22_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p23_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_23/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_23",
+   "liczba_stron": 3,
+   "plik_wynikow": "dokumenty/p23_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p23_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_23/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_23",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p23_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p23_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_23/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_23",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p23_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p24_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_24/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_24",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p24_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p24_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_24/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_24",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p24_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p24_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_24/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_24",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p24_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p25_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_25/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_25",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p25_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p25_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_25/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_25",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p25_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p25_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_25/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_25",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p25_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p26_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_26/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_26",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p26_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p26_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_26/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_26",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p26_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p26_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_26/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_26",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p26_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p27_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_27/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_27",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p27_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p27_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_27/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_27",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p27_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p27_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_27/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_27",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p27_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p28_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_28/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_28",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p28_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p28_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_28/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_28",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p28_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p28_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_28/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_28",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p28_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p29_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_29/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_29",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p29_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p29_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_29/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_29",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p29_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p29_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_29/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_29",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p29_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p30_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_30/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_30",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p30_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p30_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_30/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_30",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p30_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p30_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_30/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_30",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p30_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p31_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_31/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_31",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p31_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p31_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_31/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_31",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p31_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p31_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_31/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_31",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p31_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p32_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_32/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_32",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p32_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p32_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_32/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_32",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p32_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p32_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_32/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_32",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p32_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p33_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_33/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_33",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p33_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p33_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_33/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_33",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p33_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p33_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_33/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_33",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p33_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p34_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_34/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_34",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p34_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p34_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_34/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_34",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p34_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p34_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_34/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_34",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p34_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p35_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_35/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_35",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p35_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p35_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_35/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_35",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p35_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p35_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_35/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_35",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p35_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p36_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_36/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_36",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p36_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p36_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_36/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_36",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p36_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p36_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_36/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_36",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p36_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p37_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_37/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_37",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p37_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p37_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_37/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_37",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p37_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p37_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_37/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_37",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p37_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p38_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_38/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_38",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p38_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p38_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_38/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_38",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p38_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p38_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_38/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_38",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p38_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p39_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_39/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_39",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p39_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p39_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_39/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_39",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p39_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p39_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_39/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_39",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p39_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p40_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_40/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_40",
+   "liczba_stron": 11,
+   "plik_wynikow": "dokumenty/p40_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "p40_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_40/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_40",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p40_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "p40_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_40/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_40",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p40_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "p41_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_41/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_41",
+   "liczba_stron": 11,
+   "plik_wynikow": "dokumenty/p41_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "p41_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_41/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_41",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p41_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "p41_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_41/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_41",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p41_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "p42_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_42/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_42",
+   "liczba_stron": 11,
+   "plik_wynikow": "dokumenty/p42_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "p42_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_42/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_42",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p42_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "p42_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_42/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_42",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p42_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "p43_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_43/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_43",
+   "liczba_stron": 11,
+   "plik_wynikow": "dokumenty/p43_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p43_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_43/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_43",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p43_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p43_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_43/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_43",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p43_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p44_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_44/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_44",
+   "liczba_stron": 11,
+   "plik_wynikow": "dokumenty/p44_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p44_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_44/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_44",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p44_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p44_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_44/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_44",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p44_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p45_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_45/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_45",
+   "liczba_stron": 11,
+   "plik_wynikow": "dokumenty/p45_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p45_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_45/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_45",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p45_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p45_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_45/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_45",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p45_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p46_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_46/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_46",
+   "liczba_stron": 11,
+   "plik_wynikow": "dokumenty/p46_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p46_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_46/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_46",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p46_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p46_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_46/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_46",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p46_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p47_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_47/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_47",
+   "liczba_stron": 11,
+   "plik_wynikow": "dokumenty/p47_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p47_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_47/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_47",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p47_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p47_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_47/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_47",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p47_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p48_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_48/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_48",
+   "liczba_stron": 11,
+   "plik_wynikow": "dokumenty/p48_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p48_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_48/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_48",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/p48_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p48_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_48/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_48",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p48_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p49_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_49/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_49",
+   "liczba_stron": 10,
+   "plik_wynikow": "dokumenty/p49_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p49_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_49/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_49",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p49_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p49_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_49/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_49",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p49_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p50_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_50/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_50",
+   "liczba_stron": 10,
+   "plik_wynikow": "dokumenty/p50_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p50_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_50/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_50",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p50_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p50_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_50/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_50",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p50_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p51_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_51/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_51",
+   "liczba_stron": 11,
+   "plik_wynikow": "dokumenty/p51_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p51_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_51/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_51",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p51_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p51_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_51/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_51",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p51_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p52_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_52/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_52",
+   "liczba_stron": 10,
+   "plik_wynikow": "dokumenty/p52_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p52_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_52/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_52",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p52_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p52_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_52/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_52",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p52_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p53_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_53/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_53",
+   "liczba_stron": 10,
+   "plik_wynikow": "dokumenty/p53_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p53_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_53/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_53",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p53_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p53_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_53/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_53",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p53_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p54_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_54/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_54",
+   "liczba_stron": 11,
+   "plik_wynikow": "dokumenty/p54_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p54_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_54/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_54",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p54_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p54_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_54/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_54",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p54_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p55_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_55/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_55",
+   "liczba_stron": 11,
+   "plik_wynikow": "dokumenty/p55_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p55_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_55/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_55",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p55_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p55_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_55/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_55",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p55_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p56_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_56/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_56",
+   "liczba_stron": 10,
+   "plik_wynikow": "dokumenty/p56_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p56_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_56/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_56",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p56_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p56_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_56/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_56",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p56_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p57_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_57/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_57",
+   "liczba_stron": 11,
+   "plik_wynikow": "dokumenty/p57_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p57_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_57/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_57",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p57_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p57_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_57/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_57",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p57_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p58_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_58/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_58",
+   "liczba_stron": 10,
+   "plik_wynikow": "dokumenty/p58_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p58_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_58/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_58",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p58_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p58_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_58/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_58",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p58_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p59_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_59/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_59",
+   "liczba_stron": 11,
+   "plik_wynikow": "dokumenty/p59_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p59_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_59/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_59",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p59_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p59_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_59/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_59",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p59_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p60_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_60/odwolanie.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_60",
+   "liczba_stron": 11,
+   "plik_wynikow": "dokumenty/p60_odwolanie.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p60_pelnomocnictwo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_60/pelnomocnictwo.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_60",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p60_pelnomocnictwo.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "p60_przelew",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_60/potwierdzenie_przelewu.pdf",
+   "zrodlo": "pozytywny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_60",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/p60_przelew.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": false
+  },
+  {
+   "id": "n_1648041143_1647951357decyzja_ministraspo",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/1648041143_1647951357decyzja-ministrasportu-pzn.pdf",
+   "zrodlo": "negatywny",
+   "klasa_oczekiwana": "obcy",
+   "sprawa": null,
+   "liczba_stron": 4,
+   "plik_wynikow": "dokumenty/n_1648041143_1647951357decyzja_ministraspo.json",
+   "typ_auto": "skan",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "n_16_komisja_ds_regulacji_wynagrodzen",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/16_komisja_ds._regulacji_wynagrodzeń.pdf",
+   "zrodlo": "negatywny",
+   "klasa_oczekiwana": "obcy",
+   "sprawa": null,
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/n_16_komisja_ds_regulacji_wynagrodzen.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "n_2020_03_21_22prowadzenie_postepowania_od",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/2020_03_21-22prowadzenie_postepowania_odwolawczego.pdf",
+   "zrodlo": "negatywny",
+   "klasa_oczekiwana": "obcy",
+   "sprawa": null,
+   "liczba_stron": 35,
+   "plik_wynikow": "dokumenty/n_2020_03_21_22prowadzenie_postepowania_od.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "n_2025_ojs107_00364525_pl_ts_1",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/2025-OJS107-00364525-pl-ts-1.pdf",
+   "zrodlo": "negatywny",
+   "klasa_oczekiwana": "obcy",
+   "sprawa": null,
+   "liczba_stron": 9,
+   "plik_wynikow": "dokumenty/n_2025_ojs107_00364525_pl_ts_1.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "n_2025_ojs107_00364525_pl_ts",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/2025-OJS107-00364525-pl-ts.pdf",
+   "zrodlo": "negatywny",
+   "klasa_oczekiwana": "obcy",
+   "sprawa": null,
+   "liczba_stron": 9,
+   "plik_wynikow": "dokumenty/n_2025_ojs107_00364525_pl_ts.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "n_2025_bzp_00143067_01",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/2025_BZP 00143067_01.pdf",
+   "zrodlo": "negatywny",
+   "klasa_oczekiwana": "obcy",
+   "sprawa": null,
+   "liczba_stron": 3,
+   "plik_wynikow": "dokumenty/n_2025_bzp_00143067_01.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "n_2025_s_112_383751",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/2025_S 112-383751.pdf",
+   "zrodlo": "negatywny",
+   "klasa_oczekiwana": "obcy",
+   "sprawa": null,
+   "liczba_stron": 10,
+   "plik_wynikow": "dokumenty/n_2025_s_112_383751.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "n_2025_s_188_641009",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/2025_S 188-641009.pdf",
+   "zrodlo": "negatywny",
+   "klasa_oczekiwana": "obcy",
+   "sprawa": null,
+   "liczba_stron": 9,
+   "plik_wynikow": "dokumenty/n_2025_s_188_641009.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "n_broszura_jpk_fa_2",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/Broszura_JPK_FA(2).pdf",
+   "zrodlo": "negatywny",
+   "klasa_oczekiwana": "obcy",
+   "sprawa": null,
+   "liczba_stron": 31,
+   "plik_wynikow": "dokumenty/n_broszura_jpk_fa_2.json",
+   "typ_auto": "mieszany",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "n_decyzja_ministra_sportu_i_turystyki1",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/Decyzja-Ministra-Sportu-i-Turystyki1.pdf",
+   "zrodlo": "negatywny",
+   "klasa_oczekiwana": "obcy",
+   "sprawa": null,
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/n_decyzja_ministra_sportu_i_turystyki1.json",
+   "typ_auto": "skan",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "n_kio_kio_2617_21",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/KIO_KIO 2617-21.pdf",
+   "zrodlo": "negatywny",
+   "klasa_oczekiwana": "obcy",
+   "sprawa": null,
+   "liczba_stron": 10,
+   "plik_wynikow": "dokumenty/n_kio_kio_2617_21.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "n_minister_sprawiedliwosci_pismo_rdssp_z_1",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/negatywne/Minister-Sprawiedliwosci-pismo-RDSSP-z-11.03.2024-r..pdf",
+   "zrodlo": "negatywny",
+   "klasa_oczekiwana": "obcy",
+   "sprawa": null,
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/n_minister_sprawiedliwosci_pismo_rdssp_z_1.json",
+   "typ_auto": "skan",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "s_negatywny_przyklad",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/szablon-aplikacja/input/case1/negatywny przyklad.pdf",
+   "zrodlo": "szablon",
+   "klasa_oczekiwana": "obcy",
+   "sprawa": null,
+   "liczba_stron": 9,
+   "plik_wynikow": "dokumenty/s_negatywny_przyklad.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "s_przyklad_odwolanie",
+   "plik_zrodlowy": "docs/02-materialy/organizator-uzp/szablon-aplikacja/input/case1/przyklad odwolanie.pdf",
+   "zrodlo": "szablon",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": null,
+   "liczba_stron": 7,
+   "plik_wynikow": "dokumenty/s_przyklad_odwolanie.json",
+   "typ_auto": "skan",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "x01_obrot90",
+   "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x01_obrot90.pdf",
+   "zrodlo": "syntetyczny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_01",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/x01_obrot90.json",
+   "typ_auto": "skan",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "x02_obrot180",
+   "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x02_obrot180.pdf",
+   "zrodlo": "syntetyczny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_40",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/x02_obrot180.json",
+   "typ_auto": "skan",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "x03_przekrzywienie",
+   "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x03_przekrzywienie.pdf",
+   "zrodlo": "syntetyczny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_01",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/x03_przekrzywienie.json",
+   "typ_auto": "skan",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "x04_niska_jakosc",
+   "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x04_niska_jakosc.pdf",
+   "zrodlo": "syntetyczny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_02",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/x04_niska_jakosc.json",
+   "typ_auto": "skan",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "x05_ksero",
+   "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x05_ksero.pdf",
+   "zrodlo": "syntetyczny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_02",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/x05_ksero.json",
+   "typ_auto": "skan",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "x06_mieszany",
+   "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x06_mieszany.pdf",
+   "zrodlo": "syntetyczny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_01",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/x06_mieszany.json",
+   "typ_auto": "mieszany",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "x07_dwa_dokumenty",
+   "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x07_dwa_dokumenty.pdf",
+   "zrodlo": "syntetyczny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_01",
+   "liczba_stron": 2,
+   "plik_wynikow": "dokumenty/x07_dwa_dokumenty.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "x08_pieczatka",
+   "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x08_pieczatka.pdf",
+   "zrodlo": "syntetyczny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_01",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/x08_pieczatka.json",
+   "typ_auto": "skan",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "x09_uciety",
+   "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x09_uciety.pdf",
+   "zrodlo": "syntetyczny",
+   "klasa_oczekiwana": "pelnomocnictwo",
+   "sprawa": "przyklad_40",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/x09_uciety.json",
+   "typ_auto": "skan",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "x10_pusta_strona",
+   "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x10_pusta_strona.pdf",
+   "zrodlo": "syntetyczny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_01",
+   "liczba_stron": 3,
+   "plik_wynikow": "dokumenty/x10_pusta_strona.json",
+   "typ_auto": "tekst",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "x11_mieszany_obrot",
+   "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x11_mieszany_obrot.pdf",
+   "zrodlo": "syntetyczny",
+   "klasa_oczekiwana": "odwolanie",
+   "sprawa": "przyklad_40",
+   "liczba_stron": 3,
+   "plik_wynikow": "dokumenty/x11_mieszany_obrot.json",
+   "typ_auto": "mieszany",
+   "przeslany_do_modeli": true
+  },
+  {
+   "id": "x12_strona_mieszana",
+   "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x12_strona_mieszana.pdf",
+   "zrodlo": "syntetyczny",
+   "klasa_oczekiwana": "przelew",
+   "sprawa": "przyklad_02",
+   "liczba_stron": 1,
+   "plik_wynikow": "dokumenty/x12_strona_mieszana.json",
+   "typ_auto": "mieszany",
+   "przeslany_do_modeli": true
+  }
+ ]
+}

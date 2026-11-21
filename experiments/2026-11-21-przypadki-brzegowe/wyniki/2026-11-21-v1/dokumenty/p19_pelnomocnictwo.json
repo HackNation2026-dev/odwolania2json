@@ -1,0 +1,31 @@
+{
+ "id": "p19_pelnomocnictwo",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_19/pelnomocnictwo.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "pelnomocnictwo",
+ "sprawa": "przyklad_19",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 76411,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p19_pelnomocnictwo/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 1132,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "PEŁNOMOCNICTWO Wrocław, 11-05-2026 § 1. Mocodawca Mocodawcą jest Corvantis Sieci sp. z o.o., ul. Orzechowa 79, 50-596 Wrocław, KRS 9997939273, NIP 9995584735, REGON 999992367. § 2. Pełnomocnik Mocodawca ustanawiam pełnomocnikiem adw. Aleksandra Wierzbicki (nr wpisu na listę: WA 85020). § 3. Postępowanie Pełnomocnictwo dotyczy postępowania „Zakup i dostawa systemów telematycznych do obsługi zgłosze"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

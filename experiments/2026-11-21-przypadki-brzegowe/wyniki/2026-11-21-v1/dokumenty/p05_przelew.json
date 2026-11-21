@@ -1,0 +1,31 @@
+{
+ "id": "p05_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_05/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_05",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 77858,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p05_przelew/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 755,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "Credit Meridian S.A. ul. Bankowa 65, 00-665 Warszawa Centrum Obsługi Klienta Warszawa, 26 października 2026 Corvantis Wyposażenie sp. z o.o. ul. Orzechowa 31, 20-174 Lublin Dotyczy: potwierdzenie przelewu krajowego Bank potwierdza, że w dniu 2026-10-26 z rachunku nr PL66 2111 8080 1009 8828 5708 1733, prowadzonego dla Corvantis Wyposażenie sp. z o.o., wykonano przelew krajowy w kwocie 17.00 PLN na"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}

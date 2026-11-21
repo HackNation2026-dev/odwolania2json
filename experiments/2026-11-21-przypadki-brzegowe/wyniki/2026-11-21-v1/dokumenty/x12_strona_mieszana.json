@@ -1,0 +1,179 @@
+{
+ "id": "x12_strona_mieszana",
+ "plik_zrodlowy": "experiments/2026-11-21-przypadki-brzegowe/wyniki/2026-11-21-v1/syntetyczne/x12_strona_mieszana.pdf",
+ "zrodlo": "syntetyczny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_02",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": null,
+  "rozmiar_bajtow": 145817,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.3"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/x12_strona_mieszana/p001.jpg",
+   "szerokosc_pt": 595.32,
+   "wysokosc_pt": 841.92,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 596,
+   "obrazy": 1,
+   "pokrycie_obrazami": 0.072,
+   "dpi_obrazow": 259.0,
+   "typ_auto": "mieszana",
+   "probka_tekstu": "Potwierdzenie przelewu krajowego Kredyt Północny · wydrukowano 26 sierpnia 2026 Płatnik Beneficjent Hartica Serwis S.A. Eurosept Infrastruktura S.A. ul. Akacjowa 54, 80-122 Gdańsk ul. Huta 90, 20-829 Lublin 53678424593392529814420143 91159952782597505141926044 Kwota operacji 50,00 zł Data operacji 23 sierpnia 2026 Numer referencyjny CEN2609035760798 Tytuł przelewu opłata skarbowa od pełnomocnictwa"
+  }
+ ],
+ "wstrzykniete": [
+  {
+   "kod": "strona_mieszana",
+   "strona": 1,
+   "opis": "tekst cyfrowy + wklejony obraz pieczątki i podpisu (nie zasłania tekstu)"
+  }
+ ],
+ "modele": {
+  "codex": {
+   "status": "ok",
+   "czas_s": 13.7,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Potwierdzenie przelewu krajowego na 50,00 zł z tytułu opłaty skarbowej od pełnomocnictwa w postępowaniu przed KIO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "mieszana",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\nKredyt Północny · wydrukowano 26 sierpnia 2026\nPłatnik\nHartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\n53678424593392529814420143\nBeneficjent\nEuropost Infrastruktura S.A.",
+      "problemy": [
+       {
+        "kod": "strona_mieszana",
+        "opis": "Pod cyfrowo wyglądającym potwierdzeniem wklejono rastrowy obraz pieczątki „OPŁACONO” i niebieskiej adnotacji.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "uklad_wielokolumnowy",
+        "opis": "Dane płatnika i beneficjenta znajdują się w dwóch równoległych kolumnach.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.757
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "strona_mieszana"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "claude": {
+   "status": "ok",
+   "czas_s": 15.9,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Strona ma nagłówek „Potwierdzenie przelewu krajowego” z banku Kredyt Północny. Są na niej płatnik, beneficjent, kwota 50,00 zł i tytuł: opłata skarbowa od pełnomocnictwa w postępowaniu przed KIO (przetarg ZP.431.2026).",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "mieszana",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\nKredyt Północny - wydrukowano 26 sierpnia 2026\nPłatnik\nHartica Serwis S.A.\nul. Akacjowa 54, 80-122 Gdańsk\n53678424593392529814420143\nBeneficjent\nEurosept Infrastruktura S.A.\nul. Huta 90, 20-829 Lublin",
+      "problemy": [
+       {
+        "kod": "strona_mieszana",
+        "opis": "Górna część strony to tekst cyfrowy z danymi przelewu. W prawej dolnej części wklejono obraz skanu z szarym, zaszumionym tłem, czerwoną owalną pieczątką „OPŁACONO” i niebieską kreską podpisu.",
+        "waga": "srednia"
+       },
+       {
+        "kod": "pieczatka_podpis",
+        "opis": "Na wklejonym obrazie w prawym dolnym rogu jest pieczątka „OPŁACONO”, a pod nią niebieski podpis lub kreska. Litera „Ł” w pieczątce wyświetla się jako brakujący glif (OP□ACONO). Pieczątka nie zasłania danych przelewu.",
+        "waga": "niska"
+       },
+       {
+        "kod": "uklad_wielokolumnowy",
+        "opis": "Dane płatnika i beneficjenta stoją w dwóch kolumnach obok siebie. Szczegóły operacji mają układ etykieta–wartość w dwóch kolumnach.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.747
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "strona_mieszana"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  },
+  "minimax": {
+   "status": "ok",
+   "czas_s": 5.5,
+   "blad": null,
+   "strony_przeslane": [
+    1
+   ],
+   "wynik": {
+    "klasa": "przelew",
+    "uzasadnienie_klasy": "Dokument jest potwierdzeniem przelewu krajowego i zawiera dane płatnika, beneficjenta oraz kwotę i tytuł operacji związanej ze sprawą przed KIO.",
+    "strony": [
+     {
+      "nr": 1,
+      "typ": "mieszana",
+      "obrot_stopnie": 0,
+      "jakosc": "dobra",
+      "transkrypcja_poczatku": "Potwierdzenie przelewu krajowego\nKredyt Północny - wydrukowano 26 sierpnia 2026\nPłatnik Beneficjent\nHartica Serwis S.A. Eurosept Infrastruktura S.A.\nul. Akacjowa 54, 80-122 Gdańsk ul. Huta 90, 20-829 Lublin\n5367842459339529814420143 91159952782597505141926044",
+      "problemy": [
+       {
+        "kod": "strona_mieszana",
+        "opis": "Tekst dokumentu jest wygenerowany cyfrowo, a w prawej dolnej części strony znajduje się wklejony obraz pieczątki i podpisu.",
+        "waga": "niska"
+       }
+      ]
+     }
+    ],
+    "problemy_dokumentu": []
+   },
+   "ocena_auto": {
+    "klasa_trafiona": true,
+    "podobienstwo_transkrypcji": [
+     {
+      "nr": 1,
+      "podobienstwo": 0.992
+     }
+    ],
+    "wykryte_wstrzykniete": [
+     "strona_mieszana"
+    ],
+    "pominiete_wstrzykniete": []
+   }
+  }
+ }
+}

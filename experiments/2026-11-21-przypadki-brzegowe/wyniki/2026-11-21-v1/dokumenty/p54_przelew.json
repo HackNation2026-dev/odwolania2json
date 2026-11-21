@@ -1,0 +1,31 @@
+{
+ "id": "p54_przelew",
+ "plik_zrodlowy": "docs/02-materialy/organizator-uzp/dane/przyklad_54/potwierdzenie_przelewu.pdf",
+ "zrodlo": "pozytywny",
+ "klasa_oczekiwana": "przelew",
+ "sprawa": "przyklad_54",
+ "metadane": {
+  "producent": "LAPFormalDoc document generator",
+  "kreator": "LAPFormalDoc document generator",
+  "rozmiar_bajtow": 55993,
+  "zaszyfrowany": false,
+  "wersja_pdf": "1.4"
+ },
+ "strony": [
+  {
+   "nr": 1,
+   "obraz": "strony/p54_przelew/p001.jpg",
+   "szerokosc_pt": 595.276,
+   "wysokosc_pt": 841.89,
+   "obrot_pdf": 0,
+   "znaki_tekstu": 746,
+   "obrazy": 0,
+   "pokrycie_obrazami": 0.0,
+   "dpi_obrazow": null,
+   "typ_auto": "tekst",
+   "probka_tekstu": "POTWIERDZENIE WYKONANIA PRZELEWU Bank Śląsko-Mazowiecki · wygenerowano 09.05.2026 Zleceniodawca Calvero Gospodarka Odpadami sp.k. ul. Armii Krajowej 68, 45-615 Opole Rachunek zleceniodawcy PL65 5076 2285 5710 9240 4991 4639 Odbiorca Zakład Gospodarki Komunalnej w Lasowicach Wielkich sp. z o.o. ul. Kościuszki 50, 13-139 Lasowice Wielkie Rachunek odbiorcy PL48 7126 3279 5243 0202 1905 7576 Kwota 100"
+  }
+ ],
+ "wstrzykniete": [],
+ "modele": {}
+}
