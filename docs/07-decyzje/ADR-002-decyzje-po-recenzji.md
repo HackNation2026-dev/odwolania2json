@@ -138,3 +138,10 @@ Gałąź `feat/python-fastapi-docker` (od v0.4.0) zawiera szkielet backendu, kon
 - **Panel do przeglądania bazy danych — mile widziany jako osobne narzędzie.** Nie zastępuje GUI: GUI (P0: PDF obok danych, dowody, pobranie JSON) jest czymś innym.
 - **Docker: tak**, ale równolegle utrzymujemy i testujemy instalację **przez pip** (wymóg na teście).
 - **Python 3.13+.**
+
+## Uzupełnienie 0.7.0: eksport, paleta i przepływy (użytkownik, 2026-11-21)
+
+- **Polityka eksportu: wariant A, ścisła walidacja.** Pobranie ocenianego JSON jest zablokowane, gdy `null` jest niedopuszczony przez schemat, przy błędzie technicznym, niejednoznaczności i wielu dokumentach. Zastępcze `{}` przy awarii nie jest stosowane: błąd techniczny to brak pliku wynikowego (`no_file`). Dowody i raport pozostają dostępne osobno. **Zastępuje domyślne `error_export=empty_json` z wpisu 0.6.1.** Architektura wewnętrzna §10 i `.env`/konfiguracja wymagają zsynchronizowania; do wykonania, nie zrobione w tym wpisie.
+- **Paleta UI: zatwierdzona przez użytkownika** (tło #F3F5F0, powierzchnia #FDFEFC, separator #D4DCD4, tekst #202620, tekst drugorzędny #60675E, kolor główny #314A40, zaznaczenie #EBEEEB, statusy według makiet). Paleta nie definiowała ramki kontrolki: przyjęto #647D70 (focus), kontrast 4,06 na tle. **Motyw ciemny wyprowadzono z tej palety jako propozycję niezatwierdzoną** (kontrasty policzone, podgląd w pliku FigCraft, ramka F65d).
+- **Przepływy użytkownika:** [user-flow.md](../04-architektura/gui/user-flow.md); ekrany i grafy w [figcraft/](../04-architektura/gui/figcraft/). Dokument wygenerował Codex na podstawie projektu UI i makiet; wymaga recenzji użytkownika.
+- **Otwarte, nierozstrzygnięte:** pole klucza API w GUI (projekt-ui §3.1.1 wyklucza je, architektura opisuje wpisywanie klucza tylko w CLI); próg automatycznej galerii (propozycja: od 7 dokumentów); nazwa produktu „Arkadiana” a „Odwołania2JSON” w UI. Pełna lista: sekcja „Luki i pytania otwarte” w user-flow.md.

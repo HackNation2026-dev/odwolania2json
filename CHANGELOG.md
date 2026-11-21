@@ -81,3 +81,10 @@
 - Rozdzielono wymagania, propozycję stosu, testy, prezentację i pytania.
 - Dodano rejestr źródeł, sumy kontrolne i kontrolę odnośników.
 - Nie zaimplementowano jeszcze aplikacji konkursowej.
+
+## 0.7.0 — 2026-11-21
+
+- Dodano przepływy użytkownika ([user-flow.md](docs/04-architektura/gui/user-flow.md)) oraz pliki FigCraft z ekranami (38 ramek) i ośmioma grafami przepływów.
+- Nowe ekrany: logowanie na później, brak klucza API i kontrola połączenia, pulpit (jasny i ciemny), panel dodawania i przeglądania dokumentów, galeria kafelków z filtrami, sortowaniem i pustym wynikiem.
+- ADR-002, uzupełnienie 0.7.0: wariant A eksportu (ścisła walidacja, bez zastępczego `{}`) zastępuje domyślne `empty_json` z 0.6.1; zatwierdzona paleta UI; ciemny motyw jako propozycja. Architektura §10 do synchronizacji.
+- Otwarte: pole klucza w GUI (sprzeczne z projekt-ui §3.1.1), próg galerii, nazwa produktu. Projekt UI (projekt-ui.md) bez zmian w tym wpisie. To dokumentacja projektowa, nie potwierdzenie implementacji.

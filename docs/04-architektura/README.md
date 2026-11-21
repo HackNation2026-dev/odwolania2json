@@ -45,3 +45,7 @@ Według Discorda 12:47 jury nie instaluje modelu na laptopie. Aplikacja/CLI dzia
 ## Proponowany stos
 
 [Proponowany stos](proponowany-stos.md) — status: PROPONOWANY, nie decyzja zespołu. Wersja 0.4.0.
+
+## Przepływy użytkownika
+
+[Przepływy użytkownika](gui/user-flow.md) (wersja 0.7.0, projekt): nawigacja, ścieżki wyjątkowe, eksport według wariantu A i luki. Ekrany i grafy: [pliki FigCraft](gui/figcraft/).
