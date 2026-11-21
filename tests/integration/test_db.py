@@ -1,13 +1,8 @@
-"""Testy warstwy dostępu do bazy PostgreSQL.
+"""Testy SQLite na izolowanych plikach; bez zewnętrznego serwera."""
 
-Testy wymagają działającej bazy — bez ``DATABASE_URL`` są pomijane.
-"""
-
-import os
 import uuid
 
 import pytest
-
 from odwolania2json.db import migrate as migrator
 from odwolania2json.db.repository import (
     DocumentRepository,
@@ -15,17 +10,22 @@ from odwolania2json.db.repository import (
     is_configured,
     normalize_url,
 )
-
-pytestmark = pytest.mark.skipif(
-    not os.getenv("DATABASE_URL"), reason="brak DATABASE_URL"
-)
+from sqlalchemy.exc import OperationalError
 
 EXPECTED_TABLES = {"documents", "runs", "extractions", "schema_migrations"}
 
-@pytest.fixture()
-def repository():
+
+@pytest.fixture(autouse=True)
+def database_url(tmp_path, monkeypatch):
+    url = f"sqlite:///{tmp_path / 'test.db'}"
+    monkeypatch.setenv("DATABASE_URL", url)
+    return url
+
+
+@pytest.fixture
+def repository(database_url):
     """Repozytorium na czystej bazie testowej."""
-    url = os.environ["DATABASE_URL"]
+    url = database_url
     migrator.migrate(url)
     repo = DocumentRepository(url)
     try:
@@ -34,18 +34,18 @@ def repository():
         repo.dispose()
 
 
-@pytest.fixture()
+@pytest.fixture
 def clean_database(repository):
     """Baza po migracji z pustymi tabelami danych."""
     repository.run_select("SELECT 1")  # sprawdza, że baza odpowiada
     with repository.engine.begin() as connection:
         for table in ("extractions", "runs", "documents"):
-            connection.exec_driver_sql(f"DELETE FROM {table}")
-    yield repository
+            connection.exec_driver_sql(f"DELETE FROM {table}")  # noqa: S608 — stała lista tabel testowych.
+    return repository
 
 
-def test_migrate_creates_expected_tables():
-    url = os.environ["DATABASE_URL"]
+def test_migrate_creates_expected_tables(database_url):
+    url = database_url
     migrator.migrate(url)
     repo = DocumentRepository(url)
     try:
@@ -55,15 +55,15 @@ def test_migrate_creates_expected_tables():
     assert EXPECTED_TABLES.issubset(tables)
 
 
-def test_migrate_is_idempotent():
-    url = os.environ["DATABASE_URL"]
+def test_migrate_is_idempotent(database_url):
+    url = database_url
     migrator.migrate(url)
     second = migrator.migrate(url)
     assert second == []
 
 
-def test_migrate_reports_applied_versions():
-    url = os.environ["DATABASE_URL"]
+def test_migrate_reports_applied_versions(database_url):
+    url = database_url
     migrator.migrate(url)
     versions = migrator.applied_versions(url)
     assert "0001_initial" in versions
@@ -155,12 +155,8 @@ def test_list_documents_filters_by_name_and_class(clean_database):
     first_id = uuid.uuid4()
     second_id = uuid.uuid4()
     clean_database.upsert_run(run_id=run_id, status="ok", documents_count=2)
-    clean_database.upsert_document(
-        document_id=first_id, filename="odwolanie.pdf", sha256="d" * 64
-    )
-    clean_database.upsert_document(
-        document_id=second_id, filename="przelew.pdf", sha256="e" * 64
-    )
+    clean_database.upsert_document(document_id=first_id, filename="odwolanie.pdf", sha256="d" * 64)
+    clean_database.upsert_document(document_id=second_id, filename="przelew.pdf", sha256="e" * 64)
     clean_database.upsert_extraction(
         extraction_id=uuid.uuid4(),
         document_id=first_id,
@@ -184,9 +180,7 @@ def test_list_extractions_and_runs_return_rows(clean_database):
         sha256="9" * 64,
         size_bytes=10,
     )
-    clean_database.upsert_run(
-        run_id=run_id, status="ok", documents_count=1, duration_ms=120
-    )
+    clean_database.upsert_run(run_id=run_id, status="ok", documents_count=1, duration_ms=120)
     clean_database.upsert_extraction(
         extraction_id=uuid.uuid4(),
         document_id=document_id,
@@ -220,9 +214,7 @@ def test_get_document_returns_none_for_unknown_id(clean_database):
 def test_upsert_extraction_accepts_payload_as_text(clean_database):
     run_id = uuid.uuid4()
     document_id = uuid.uuid4()
-    clean_database.upsert_document(
-        document_id=document_id, filename="obcy.pdf", sha256="8" * 64
-    )
+    clean_database.upsert_document(document_id=document_id, filename="obcy.pdf", sha256="8" * 64)
     clean_database.upsert_run(run_id=run_id, status="ok", documents_count=1)
     clean_database.upsert_extraction(
         extraction_id=uuid.uuid4(),
@@ -260,14 +252,12 @@ def test_run_select_allows_with_query(clean_database):
     assert rows == [{"y": 2}]
 
 
-def test_normalize_url_switches_driver():
-    assert normalize_url("postgresql://u:p@h:5432/d") == (
-        "postgresql+pg8000://u:p@h:5432/d"
-    )
+def test_normalize_url_accepts_sqlite():
+    assert normalize_url("sqlite:///test.db") == "sqlite:///test.db"
 
 
 def test_is_configured_tells_about_empty_url():
-    assert is_configured("postgresql://u:p@h/d") is True
+    assert is_configured("sqlite:///test.db") is True
     assert is_configured(None) is False
     assert is_configured("") is False
 
@@ -284,23 +274,18 @@ def test_run_select_allows_select_from_documents(clean_database):
 def test_run_select_allows_columns_with_forbidden_words_inside(clean_database):
     """C1: ``created_at``, ``document_id``, ``source_path`` itd. to nie mutacje."""
     rows = clean_database.run_select(
-        "SELECT id, created_at, source_path, size_bytes, sha256, "
-        "has_text_layer FROM documents"
+        "SELECT id, created_at, source_path, size_bytes, sha256, has_text_layer FROM documents"
     )
     assert rows == []
-    rows = clean_database.run_select(
-        "SELECT id, document_id, run_id, created_at FROM extractions"
-    )
+    rows = clean_database.run_select("SELECT id, document_id, run_id, created_at FROM extractions")
     assert rows == []
-    rows = clean_database.run_select(
-        "SELECT id, status, started_at, documents_count FROM runs"
-    )
+    rows = clean_database.run_select("SELECT id, status, started_at, documents_count FROM runs")
     assert rows == []
 
 
 def test_run_select_allows_count_aggregate(clean_database):
     """C1: ``count(*)`` zawiera ``count``, ale nie jest mutacją."""
-    rows = clean_database.run_select("SELECT count(*) FROM documents")
+    rows = clean_database.run_select("SELECT count(*) AS count FROM documents")
     assert rows == [{"count": 0}]
 
 
@@ -341,55 +326,54 @@ def test_repository_lists_extractions_with_reserved_class_column(clean_database)
 
 def test_applied_versions_does_not_create_table_on_raw_database(tmp_path):
     """I6: ``applied_versions`` jest czystym odczytem — nie tworzy tabeli."""
-    świeża_baza = _fresh_database_name(tmp_path)
-    _create_database(świeża_baza)
+    fresh_database = _fresh_database_name(tmp_path)
+
     try:
-        assert migrator.applied_versions(_database_url_for_name(świeża_baza)) == []
-        assert not _table_exists(_database_url_for_name(świeża_baza), "schema_migrations")
+        assert migrator.applied_versions(_database_url_for_name(fresh_database)) == []
+        assert not _table_exists(_database_url_for_name(fresh_database), "schema_migrations")
     finally:
-        _drop_database(świeża_baza)
+        pass
 
 
-def test_applied_versions_lists_applied_migrations():
-    """I6: po migracji funkcja zwraca zastosowane wersje."""
-    url = os.environ["DATABASE_URL"]
+def test_applied_versions_lists_applied_migrations(database_url):
+    """I6: po migracji funkcja zwraca applied wersje."""
+    url = database_url
     migrator.migrate(url)
     assert "0001_initial" in migrator.applied_versions(url)
 
 
 def test_migrate_applies_whole_file_in_one_transaction(tmp_path):
     """I5: plik migracji wykonuje się jako całość, w jednej transakcji."""
-    świeża_baza = _fresh_database_name(tmp_path)
-    _create_database(świeża_baza)
-    adres = _database_url_for_name(świeża_baza)
+    fresh_database = _fresh_database_name(tmp_path)
+
+    url = _database_url_for_name(fresh_database)
     try:
-        zastosowane = migrator.migrate(adres)
-        assert zastosowane == ["0001_initial"]
-        assert _table_exists(adres, "documents")
-        assert _table_exists(adres, "runs")
-        assert _table_exists(adres, "extractions")
+        applied = migrator.migrate(url)
+        assert applied == ["0001_initial", "0002_data_repository"]
+        assert _table_exists(url, "documents")
+        assert _table_exists(url, "runs")
+        assert _table_exists(url, "extractions")
     finally:
-        _drop_database(świeża_baza)
+        pass
 
 
 def test_migrate_rolls_back_whole_file_on_error(tmp_path):
     """I5: błąd w pliku migracji cofa cały plik, nie tylko jego część."""
-    świeża_baza = _fresh_database_name(tmp_path)
-    _create_database(świeża_baza)
-    adres = _database_url_for_name(świeża_baza)
-    katalog = tmp_path / "migrations"
-    katalog.mkdir()
+    fresh_database = _fresh_database_name(tmp_path)
+
+    url = _database_url_for_name(fresh_database)
+    directory = tmp_path / "migrations"
+    directory.mkdir()
     try:
-        (katalog / "0001_calkowita.sql").write_text(
-            "CREATE TABLE pilota (id int);\n"
-            "SELECT nie_istniejaca_funkcja();\n",
+        (directory / "0001_calkowita.sql").write_text(
+            "CREATE TABLE pilota (id int);\nSELECT nie_istniejaca_funkcja();\n",
             encoding="utf-8",
         )
-        with pytest.raises(Exception):
-            migrator.migrate_with_directory(adres, katalog)
-        assert not _table_exists(adres, "pilota")
+        with pytest.raises(OperationalError):
+            migrator.migrate_with_directory(url, directory)
+        assert not _table_exists(url, "pilota")
     finally:
-        _drop_database(świeża_baza)
+        pass
 
 
 def test_list_documents_escapes_wildcards_in_name_filter(clean_database):
@@ -404,8 +388,8 @@ def test_list_documents_escapes_wildcards_in_name_filter(clean_database):
     clean_database.upsert_document(
         document_id=second_id, filename="odwolanieb.pdf", sha256="2" * 64
     )
-    znalezione = clean_database.list_documents(name_filter="odwolanie_a")
-    assert [row["filename"] for row in znalezione] == ["odwolanie_a.pdf"]
+    found = clean_database.list_documents(name_filter="odwolanie_a")
+    assert [row["filename"] for row in found] == ["odwolanie_a.pdf"]
 
 
 def test_list_documents_escapes_percent_in_name_filter(clean_database):
@@ -414,71 +398,103 @@ def test_list_documents_escapes_percent_in_name_filter(clean_database):
     clean_database.upsert_document(
         document_id=document_id, filename="100%_wzorzec.pdf", sha256="3" * 64
     )
-    znalezione = clean_database.list_documents(name_filter="100%")
-    assert [row["filename"] for row in znalezione] == ["100%_wzorzec.pdf"]
+    found = clean_database.list_documents(name_filter="100%")
+    assert [row["filename"] for row in found] == ["100%_wzorzec.pdf"]
     assert clean_database.list_documents(name_filter="100x") == []
 
 
-# --- Pomocnicze: świeża baza na tej samej instancji ----------------------
-
-
 def _database_url_for_name(name: str) -> str:
-    """Buduje adres bazy o podanej nazwie na tej samej instancji Postgres."""
-    bazowy = os.environ["DATABASE_URL"]
-    część, _, reszta = bazowy.rpartition("/")
-    return f"{część}/{name}"
+    return f"sqlite:///{name}"
 
 
 def _fresh_database_name(tmp_path) -> str:
-    """Zwraca nazwę świeżej bazy testowej unikalną dla tego przebiegu."""
-    return f"o2j_test_{uuid.uuid4().hex[:12]}"
-
-
-def _create_database(name: str) -> None:
-    """Tworzy świeżą bazę na instancji testowej (poza transakcją)."""
-    from sqlalchemy import create_engine, text
-
-    from odwolania2json.db.repository import normalize_url
-
-    engine = create_engine(
-        normalize_url(os.environ["DATABASE_URL"]), future=True, isolation_level="AUTOCOMMIT"
-    )
-    with engine.connect() as connection:
-        connection.execute(text(f'CREATE DATABASE "{name}"'))
-    engine.dispose()
-
-
-def _drop_database(name: str) -> None:
-    """Usuwa świeżą bazę testową (poza transakcją)."""
-    from sqlalchemy import create_engine, text
-
-    from odwolania2json.db.repository import normalize_url
-
-    engine = create_engine(
-        normalize_url(os.environ["DATABASE_URL"]), future=True, isolation_level="AUTOCOMMIT"
-    )
-    with engine.connect() as connection:
-        connection.execute(text(f'DROP DATABASE IF EXISTS "{name}"'))
-    engine.dispose()
+    return str(tmp_path / "fresh.db")
 
 
 def _table_exists(database_url: str, table_name: str) -> bool:
-    """Czy wskazana tabela istnieje w bazie."""
-    from sqlalchemy import create_engine, text
+    from odwolania2json.db.engine import create_database_engine
+    from sqlalchemy import inspect
 
-    from odwolania2json.db.repository import normalize_url
-
-    engine = create_engine(normalize_url(database_url), future=True)
+    engine = create_database_engine(database_url)
     try:
-        with engine.connect() as connection:
-            return bool(
-                connection.execute(
-                    text(
-                        "SELECT count(*) FROM information_schema.tables "
-                        "WHERE table_schema = 'public' AND table_name = :name"
-                    ),
-                    {"name": table_name},
-                ).scalar()
-            )
+        return inspect(engine).has_table(table_name)
     finally:
         engine.dispose()
+
+
+def test_repository_implements_catalog_repository(clean_database):
+    from odwolania2json.db.repository import CatalogRepository
+
+    assert isinstance(clean_database, CatalogRepository)
+
+
+def test_list_documents_returns_real_bool_for_text_layer(clean_database):
+    clean_database.upsert_document(uuid.uuid4(), "a.pdf", "4" * 64, has_text_layer=True)
+    clean_database.upsert_document(uuid.uuid4(), "b.pdf", "5" * 64, has_text_layer=False)
+    clean_database.upsert_document(uuid.uuid4(), "c.pdf", "6" * 64)
+    by_name = {row["filename"]: row["has_text_layer"] for row in clean_database.list_documents()}
+    assert by_name == {"a.pdf": True, "b.pdf": False, "c.pdf": None}
+    assert all(value is None or type(value) is bool for value in by_name.values())
+
+
+def test_normalize_url_rejects_non_sqlite_drivers():
+    for url in ("postgresql://u:p@h/db", "postgresql+pg8000://h/db", "mysql://h/db"):
+        with pytest.raises(ValueError, match="SQLite"):
+            normalize_url(url)
+
+
+def test_engine_enforces_foreign_keys_and_wal_for_file_database(clean_database):
+    with clean_database.engine.connect() as connection:
+        assert connection.exec_driver_sql("PRAGMA foreign_keys").scalar() == 1
+        assert connection.exec_driver_sql("PRAGMA journal_mode").scalar() == "wal"
+
+
+def test_foreign_keys_reject_missing_document_and_run(clean_database):
+    from sqlalchemy.exc import IntegrityError
+
+    with pytest.raises(IntegrityError):
+        clean_database.upsert_extraction(
+            extraction_id=uuid.uuid4(),
+            document_id=uuid.uuid4(),
+            run_id=uuid.uuid4(),
+            document_class="obcy",
+            schema_version="1",
+            payload={},
+            evidence={},
+        )
+    assert clean_database.count_extractions() == 0
+
+
+def test_failed_read_does_not_leave_connection_query_only(clean_database):
+    from sqlalchemy.exc import OperationalError
+
+    with pytest.raises(OperationalError):
+        clean_database.run_select("SELECT missing_column FROM documents")
+    clean_database.upsert_document(uuid.uuid4(), "test.pdf", "a" * 64)
+    assert clean_database.count_documents() == 1
+
+
+def test_sql_migration_preserves_semicolons_and_rolls_back_version(tmp_path):
+    directory = tmp_path / "migrations"
+    directory.mkdir()
+    (directory / "0001_test.sql").write_text(
+        "CREATE TABLE example (value TEXT); INSERT INTO example VALUES ('a;b');"
+    )
+    url = f"sqlite:///{tmp_path / 'migration.db'}"
+    assert migrator.migrate_with_directory(url, directory) == ["0001_test"]
+    repo = DocumentRepository(url)
+    try:
+        assert repo.run_select("SELECT value FROM example") == [{"value": "a;b"}]
+    finally:
+        repo.dispose()
+
+
+def test_migrate_module_main_applies_and_skips(tmp_path, monkeypatch, capsys):
+    url = f"sqlite:///{tmp_path / 'main.db'}"
+    assert migrator.main(["--database-url", url]) == 0
+    assert capsys.readouterr().out.split() == ["0001_initial", "0002_data_repository"]
+    assert migrator.main(["--database-url", url]) == 0
+    assert capsys.readouterr().out == ""
+    monkeypatch.delenv("DATABASE_URL", raising=False)
+    assert migrator.main([]) == 0
+    assert "pominięto" in capsys.readouterr().out
