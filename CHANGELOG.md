@@ -81,3 +81,5 @@
 - Rozdzielono wymagania, propozycję stosu, testy, prezentację i pytania.
 - Dodano rejestr źródeł, sumy kontrolne i kontrolę odnośników.
 - Nie zaimplementowano jeszcze aplikacji konkursowej.
+
+- Dodano skill projektowy `.claude/skills/generate-api` (generowanie API z kontraktu OpenAPI zgodnie z architekturą 0.6.1 i ADR-002).
