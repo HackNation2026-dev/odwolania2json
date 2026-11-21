@@ -78,6 +78,20 @@ def test_document_error_does_not_stop_others(
     assert "broken.pdf" in capsys.readouterr().err
 
 
+def test_document_error_removes_stale_result_from_previous_run(tmp_path: Path) -> None:
+    input_dir = tmp_path / "in"
+    output_dir = tmp_path / "out"
+    _touch(input_dir / "bad" / "broken.pdf")
+    stale = output_dir / "bad" / "broken.json"
+    stale.parent.mkdir(parents=True)
+    stale.write_text('{"stary": true}\n', encoding="utf-8")
+
+    exit_code = run_process(input_dir, output_dir, _BrokenEngine("broken.pdf"))
+
+    assert exit_code == 1
+    assert not stale.exists()
+
+
 def test_exit_code_zero_when_all_ok(tmp_path: Path) -> None:
     input_dir = tmp_path / "in"
     _touch(input_dir / "x.pdf")

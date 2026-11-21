@@ -62,13 +62,16 @@ def run_process(input_dir: Path, output_dir: Path, engine: StubEngine) -> int:
         return EXIT_USAGE
     failures = 0
     for pdf in sorted(input_dir.rglob("*.pdf")):
-        target = output_dir / pdf.relative_to(input_dir).parent / result_name_for(pdf.name)
+        target: Path | None = None
         try:
+            target = output_dir / pdf.relative_to(input_dir).parent / result_name_for(pdf.name)
             payload, document_class = engine.process(pdf)
             if document_class in (None, "obcy"):
                 payload = {}
             write_json_atomic(target, payload)
         except Exception as error:
             failures += 1
+            if target is not None:
+                target.unlink(missing_ok=True)
             print(f"błąd: {pdf}: {error}", file=sys.stderr)
     return EXIT_DOCUMENT_ERRORS if failures else EXIT_OK
