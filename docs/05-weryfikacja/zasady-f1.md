@@ -22,3 +22,24 @@ Nie podano: algorytmu podobieństwa, normalizacji tekstu, reguł dla null/pustyc
 Standardowy wzór F1 to `2*TP / (2*TP + FP + FN)`. TN nie wchodzi do tego wzoru. Sam wzór nie odtwarza wszystkich decyzji oficjalnego ewaluatora. Własne pomiary oznaczaj jako przybliżenie według jawnie opisanej metody.
 
 Do czasu uzyskania ewaluatora prowadź osobno: klasyfikację, zgodność struktury, dopasowanie pól i przypadki sporne. Brak danych referencyjnych nie daje podstaw do deklaracji wysokiej jakości.
+
+## Uzupełnienie 0.5.0 (2026-11-21)
+
+Mentor potwierdził (przez użytkownika), że ewaluacja liczy wszystkie cztery kategorie: TP, TN, FP i FN, jak w komunikacie 11:26. Ewaluator zespołu raportuje pełną macierz pomyłek na pole i na klasę oraz F1 według wzoru powyżej. TN raportujemy osobno, bo standardowy F1 go nie używa, a sposób jego wpływu na ocenę organizatora nie jest znany. Źródło: [odpowiedzi mentora](../01-zadanie/zrodla/odpowiedzi-mentora-2026-11-21.md).
+
+## Wniosek dla strategii ekstrakcji (2026-11-21)
+
+Definicja z komunikatu 11:26 (potwierdzona ponownie przez użytkownika 2026-11-21) liczy błędną wartość wyłącznie jako FP. Przy F1 = 2·TP / (2·TP + FP + FN) dla pojedynczego pola:
+
+| Referencja | Zwracamy `null` | Zwracamy wartość poprawną | Zwracamy wartość błędną |
+|---|---|---|---|
+| ma wartość | FN | TP | FP |
+| `null` | TN (nie wpływa na F1) | — | FP |
+
+Wnioski (interpretacja zespołu, do weryfikacji na ewaluatorze):
+
+1. Gdy pole w dokumencie **istnieje**, zwrócenie najlepszego kandydata nigdy nie jest gorsze od `null`: błąd kosztuje tyle samo (FP zamiast FN), a trafienie daje TP.
+2. Gdy pola w dokumencie **nie ma**, każda zwrócona wartość to FP, a `null` to neutralny TN.
+3. Kluczowa decyzja to więc „czy pole występuje w dokumencie”, a nie „czy jestem pewien wartości”. Klasyfikator obecności pola jest ważniejszy niż próg pewności wartości.
+4. Próg 80% dotyczy tylko długich tekstów (nazwy firm i pozostałe pola wskazane 13:26). Dla identyfikatorów i dat zakładamy dokładną zgodność, więc normalizacja formatu decyduje o TP.
+5. Zasada „brak zmyślania” (UZP-04) pozostaje: wartość musi pochodzić z dokumentu. Wniosek 1 nie pozwala zgadywać wartości spoza tekstu.

@@ -50,3 +50,7 @@ Fable zalecił GUI „na końcu”, bo daje najwyżej 10 pkt. Organizator jednak
 ## Otwarte przed decyzją
 
 Wybór dostawcy i modelu w UE/EOG oraz ich licencji; format pustego wyniku (U-Q03); system operacyjny jury; obecność skanów w teście ukrytym.
+
+## Uzupełnienie 0.5.0 (2026-11-21)
+
+Status zmieniony przez [ADR-002](../07-decyzje/ADR-002-decyzje-po-recenzji.md): odczyt PDF (`pypdfium2`) i OCR (`rapidocr`) odrzucone przez użytkownika, klasyfikacja i wybór LLM otwarte, GUI: React/TS, prawdopodobnie Next.js. Tabela powyżej pozostaje jako historia propozycji.
