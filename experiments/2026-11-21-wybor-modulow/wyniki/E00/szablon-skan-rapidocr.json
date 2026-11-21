@@ -1,0 +1,287 @@
+{
+  "experiment": "E00",
+  "variant": "szablon-skan-rapidocr",
+  "description": "E00 to test dymny samej uprzęży. Wariant: skan z szablonu organizatora (7 stron) przez HTTP z OCR rapidocr (CPU), router regułowy, ekstraktor regułowy. Pokazuje czas i szczyt RSS OCR oraz jawny wynik (także technical_error z kodem, jeśli OCR zawiedzie).",
+  "dataset": "template",
+  "seed": 20261122,
+  "started_utc": "2026-11-21T23:51:04+00:00",
+  "finished_utc": "2026-11-21T23:51:28+00:00",
+  "spec": {
+    "experiment": "E00",
+    "variant": "szablon-skan-rapidocr",
+    "description": "E00 to test dymny samej uprzęży. Wariant: skan z szablonu organizatora (7 stron) przez HTTP z OCR rapidocr (CPU), router regułowy, ekstraktor regułowy. Pokazuje czas i szczyt RSS OCR oraz jawny wynik (także technical_error z kodem, jeśli OCR zawiedzie).",
+    "runner": "e2e",
+    "dataset": "template",
+    "seed": 20261122,
+    "timing": true,
+    "document_wait_s": 1800,
+    "server": {
+      "pdf_reader": "pdfium",
+      "ocr": "rapidocr",
+      "ocr_dpi": 150,
+      "ocr_policy": "if_needed",
+      "router": "rules",
+      "extractor": "rules",
+      "limits": {
+        "max_pages": 60,
+        "document_timeout_s": 1500
+      }
+    }
+  },
+  "harness_config": {
+    "name": "E00-szablon-skan-rapidocr",
+    "pdf_reader": "pdfium",
+    "ocr": "rapidocr",
+    "ocr_dpi": 150,
+    "ocr_policy": "if_needed",
+    "router": "rules",
+    "extractor": "rules",
+    "anchor": "words",
+    "llm_input": "text",
+    "work_dir": "/home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/work/runs/E00/szablon-skan-rapidocr/srv",
+    "seed": 20261122,
+    "llm": {
+      "protocol": "anthropic",
+      "base_url": "https://api.minimax.io/anthropic/v1/messages",
+      "model": "MiniMax-M3.1-Flash-Preview",
+      "temperature": 0.0,
+      "max_tokens": 8000,
+      "timeout_s": 120.0,
+      "retries": 2,
+      "effort": null
+    },
+    "limits": {
+      "max_upload_bytes": 31457280,
+      "max_pages": 60,
+      "document_timeout_s": 1500.0,
+      "max_workers": 1,
+      "max_batch_documents": 500
+    }
+  },
+  "versions": {
+    "python": "3.13.18",
+    "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+    "machine": "x86_64",
+    "fastapi": "0.165.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "pydantic": "2.14.4",
+    "pypdfium2": "5.15.2",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "pillow": "13.0.0",
+    "numpy": "2.5.5",
+    "git_commit": "dede135"
+  },
+  "timing_locked": true,
+  "lock_wait_s": 0.0,
+  "server_start_s": 0.35,
+  "limit_method": "systemd-run",
+  "system": {
+    "harness_version": "0.1",
+    "ocr": {
+      "ready": true,
+      "provider": {
+        "available": true,
+        "name": "rapidocr",
+        "version": "3.10.0",
+        "onnxruntime": "1.32.0",
+        "parameter_count": null,
+        "license": "Apache-2.0",
+        "location": "local",
+        "models": [
+          {
+            "name": "PP-OCRv6_det_small",
+            "role": "det",
+            "version": null,
+            "license": "Apache-2.0 (do potwierdzenia ADR-002)",
+            "location": "local (pip)",
+            "parameter_count": null,
+            "bytes": 9929594
+          },
+          {
+            "name": "PP-OCRv6_rec_small",
+            "role": "rec",
+            "version": null,
+            "license": "Apache-2.0 (do potwierdzenia ADR-002)",
+            "location": "local (pip)",
+            "parameter_count": null,
+            "bytes": 21234383
+          },
+          {
+            "name": "ch_ppocr_mobile_v2.0_cls_mobile",
+            "role": "cls",
+            "version": null,
+            "license": "Apache-2.0 (do potwierdzenia ADR-002)",
+            "location": "local (pip)",
+            "parameter_count": null,
+            "bytes": 585532
+          }
+        ]
+      }
+    },
+    "llm": {
+      "ready": false,
+      "provider": null
+    },
+    "pdf_reader": "pdfium",
+    "router": "rules",
+    "extractor": "rules",
+    "anchor": "words",
+    "config": {
+      "name": "E00-szablon-skan-rapidocr",
+      "pdf_reader": "pdfium",
+      "ocr": "rapidocr",
+      "ocr_dpi": 150,
+      "ocr_policy": "if_needed",
+      "router": "rules",
+      "extractor": "rules",
+      "anchor": "words",
+      "llm_input": "text",
+      "work_dir": "/home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/work/runs/E00/szablon-skan-rapidocr/srv",
+      "seed": 20261122,
+      "llm": {
+        "protocol": "anthropic",
+        "base_url": "https://api.minimax.io/anthropic/v1/messages",
+        "model": "MiniMax-M3.1-Flash-Preview",
+        "temperature": 0.0,
+        "max_tokens": 8000,
+        "timeout_s": 120.0,
+        "retries": 2,
+        "effort": null
+      },
+      "limits": {
+        "max_upload_bytes": 31457280,
+        "max_pages": 60,
+        "document_timeout_s": 1500.0,
+        "max_workers": 1,
+        "max_batch_documents": 500
+      }
+    },
+    "limits": {
+      "max_upload_bytes": 31457280,
+      "max_pages": 60,
+      "document_timeout_s": 1500.0,
+      "max_workers": 1,
+      "max_batch_documents": 500
+    },
+    "python": "3.13.18",
+    "paid_call_performed": false
+  },
+  "peak_rss_mb": 991.8,
+  "total_wall_s": 24.242,
+  "documents": [
+    {
+      "key": "szablon/negatywny przyklad.pdf",
+      "expected_class": "szablon",
+      "variant": null,
+      "variant_record": null,
+      "outcome": "foreign",
+      "class_id": null,
+      "codes": [
+        "foreign_document"
+      ],
+      "errors": [],
+      "timing": {
+        "upload_s": 0.0232,
+        "processing_s": 0.103,
+        "wall_s": 0.131,
+        "health_s": 0.0009
+      },
+      "peak_rss_mb_so_far": 73.1,
+      "result": {},
+      "evidence_count": 0,
+      "pipeline_metrics": {
+        "pdf_read_s": 0.07046699501370313,
+        "ocr_s": 0.0,
+        "ocr_pages": 0,
+        "pages": 9,
+        "ocr_errors": [],
+        "unprocessed_pages": [],
+        "total_s": 0.07257269100227859,
+        "route_s": 0.0024,
+        "wall_s": 0.0952,
+        "llm": null
+      },
+      "predicted_class": "obcy",
+      "decided": true
+    },
+    {
+      "key": "szablon/przyklad odwolanie.pdf",
+      "expected_class": "szablon",
+      "variant": null,
+      "variant_record": null,
+      "outcome": "partial",
+      "class_id": "appeal",
+      "codes": [
+        "evidence_unanchored"
+      ],
+      "errors": [],
+      "timing": {
+        "upload_s": 0.0112,
+        "processing_s": 23.5396,
+        "wall_s": 23.5622,
+        "health_s": 0.0005
+      },
+      "peak_rss_mb_so_far": 991.8,
+      "result": {
+        "OdwolanieKIO": {
+          "data": null,
+          "czynnosc_dzien": null,
+          "czynnosc_powod_id": null,
+          "czynnosc_opis": null,
+          "miejscowosc": null
+        },
+        "Odwolujacy": [],
+        "Zamawiajacy": [],
+        "ZamowieniePubliczne": {
+          "numer_bzp": "2025/BZP00270698",
+          "numer_postepowania": "RZP.27.29.2025.KD",
+          "numer_ted": null,
+          "tytul": null
+        }
+      },
+      "evidence_count": 1,
+      "pipeline_metrics": {
+        "pdf_read_s": 0.0037255409988574684,
+        "ocr_s": 23.376249267006642,
+        "ocr_pages": 7,
+        "pages": 7,
+        "ocr_errors": [],
+        "unprocessed_pages": [],
+        "total_s": 23.382258057994477,
+        "route_s": 0.0022,
+        "extract_s": 0.0021,
+        "wall_s": 23.4481,
+        "llm": null
+      },
+      "predicted_class": "odwolanie",
+      "decided": true
+    }
+  ],
+  "aggregates": {
+    "documents": 2,
+    "outcomes": {
+      "foreign": 1,
+      "partial": 1
+    },
+    "error_codes": {},
+    "classification_confusion": {
+      "szablon->obcy": 1,
+      "szablon->odwolanie": 1
+    },
+    "wall_s_total_per_doc": 23.693,
+    "wall_s_mean_per_doc": 11.8466,
+    "approx_f1": null,
+    "leaf_f1": {
+      "total": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "f1": 0.0
+      },
+      "per_class": {}
+    },
+    "note": "Ewaluator produkcyjny (approx_f1) nie zlicza tp dla pól, więc jego F1 pól to 0; do porównań używaj leaf_f1. Żadna z miar nie jest oficjalnym wynikiem."
+  }
+}

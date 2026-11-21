@@ -17,3 +17,5 @@ dist/
 
 .ci/
 .superpowers/
+/.venv-exp/
+/experiments/2026-11-21-wybor-modulow/harness/work/
