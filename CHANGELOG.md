@@ -11,6 +11,8 @@
 
 ## 0.6.1 — 2026-11-21
 
+- Trwałość zamknięta: SQLite w wersji demo, PostgreSQL przy skalowanym wdrożeniu (ADR-002, architektura §10).
+
 - MiniMax hostowany w Europie potwierdzony przez użytkownika; punkt 8 zamknięty (ADR-002, architektura §10).
 
 - Uzupełnienia po zleceniu C: domyślny `error_export=empty_json` (potwierdzona rekomendacja użytkownika), decyzje ADR-002 pkt 8 (MiniMax, ryzyko zgodności) i pkt 10 (stos GUI) w §10 architektury; nazwa projektu Arkadiana i decyzje o repozytorium w ADR-002.

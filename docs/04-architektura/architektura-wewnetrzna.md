@@ -260,9 +260,9 @@ Silnik zależy od **`DataRepository`**, nie od ścieżek dyskowych ani SQL. Wsp�
 | `commit_run(run_id, manifest, result, state)` | atomowe logiczne zatwierdzenie manifestu, wyniku i końcowego stanu; publikacja po sprawdzeniu wszystkich artefaktów |
 | `get_result(run_id)`, `list_runs(document_id)` | odczyt wyłącznie zatwierdzonych wyników i jawnej historii |
 
-V1: **katalog roboczy (`FileDataRepository`)**, opcjonalnie SQLite jako indeks metadanych, bez serwera bazy i bez zewnętrznej kolejki. Blokady i atomowy znacznik zatwierdzenia zapewniają kontrakt w jednym procesie wykonawcy; czytelnicy widzą stan zgodny z zatwierdzonym manifestem. Przy opcjonalnym SQLite manifest dyskowy jest źródłem zatwierdzenia, a indeks po restarcie jest uzgadniany z manifestami. Koszt: zajętość dysku, sprzątanie i ograniczenie współbieżności zapisu; zysk: uruchomienie u jury tylko przez pip i ponowne transformacje bez OCR.
+V1 (wersja demo, decyzja zamknięta w ADR-002): **`SqliteDataRepository` — SQLite (biblioteka standardowa Pythona) dla metadanych, zadań i stanów + katalog roboczy na dysku dla plików i artefaktów**, bez serwera bazy i bez zewnętrznej kolejki. Blokady i atomowy znacznik zatwierdzenia zapewniają kontrakt w jednym procesie wykonawcy; czytelnicy widzą stan zgodny z zatwierdzonym manifestem. Manifest dyskowy jest źródłem zatwierdzenia artefaktów, a indeks po restarcie jest uzgadniany z manifestami. Koszt: zajętość dysku, sprzątanie i ograniczenie współbieżności zapisu; zysk: uruchomienie u jury tylko przez pip i ponowne transformacje bez OCR.
 
-Opcja pełnej wersji serwerowej: **`PostgresDataRepository` — wybór PostgreSQL do potwierdzenia przez użytkownika**. Ten sam interfejs i testy kontraktowe; transakcje, rewizje i blokady zastępują mechanikę plikową. Duże artefakty mogą pozostać w magazynie plików za `storage_key`; zatwierdzenie referencji następuje po trwałym zapisie i sprawdzeniu skrótów. Zysk: wielu wykonawców i współdzielone metadane; koszt: serwer, migracje, sterownik i utrzymanie. PostgreSQL nie jest zależnością wariantu jury. To rozwinięcie decyzji ADR-002 przed OpenAPI, bez zmiany stosu w kodzie.
+Skalowane wdrożenie (decyzja zamknięta w ADR-002): **`PostgresDataRepository` — PostgreSQL**. Ten sam interfejs i testy kontraktowe; transakcje, rewizje i blokady zastępują mechanikę plikową. Duże artefakty mogą pozostać w magazynie plików za `storage_key`; zatwierdzenie referencji następuje po trwałym zapisie i sprawdzeniu skrótów. Zysk: wielu wykonawców i współdzielone metadane; koszt: serwer, migracje, sterownik i utrzymanie. PostgreSQL nie jest zależnością wariantu jury. To rozwinięcie decyzji ADR-002 przed OpenAPI, bez zmiany stosu w kodzie.
 
 ### 9.1. Konfiguracja i samosprawdzenie
 
@@ -293,7 +293,7 @@ Poniższe decyzje zespołu są **zamknięte** na podstawie ostatniego uzupełnie
 
 | Zakres | Stan / konsekwencja |
 |---|---|
-| PostgreSQL | **Do potwierdzenia przez użytkownika** jako opcja serwerowa za `DataRepository`; jury bez serwera bazy. |
+| Trwałość | **Zamknięte** (ADR-002): demo na SQLite + katalog roboczy na dysku; PostgreSQL przy skalowanym wdrożeniu, za tym samym `DataRepository`. |
 | Dostawca i model LLM | **Zamknięte** (ADR-002 pkt 8 i uzupełnienie): MiniMax hostowany w Europie, protokół zgodny z Anthropic; klient niezależny od dostawcy. |
 | Biblioteka UI | Decyzja użytkownika (ADR-002 pkt 10): React, TypeScript, Zod, Next.js (statyczny eksport w pip), gluestack-ui; PDF: `@react-pdf/renderer` (generowanie) i `react-web-pdf-editor` (podgląd; worker lokalnie, programowe ramki dowodów do sprawdzenia). |
 | Pytania do mentora | [Rejestr pytań](../07-decyzje/pytania-otwarte.md): miara 80%, normalizacja/agregacja i punktacja modeli, kanał/budżet klucza i konta jury, generator skanów, ocena wielu treści w PDF, nieczytelne pola, eksport awarii i udział OCR w rozmiarze modelu. Odpowiedzi nie cofają automatycznie zamkniętych decyzji zespołu. |
@@ -349,7 +349,7 @@ flowchart TD
     O -->|nie| L
     L <--> REPO[DataRepository]
     REPO --> FILE[FileDataRepository: dysk; opcjonalny indeks SQLite]
-    REPO -.-> PG[PostgresDataRepository: do potwierdzenia, tylko serwer]
+    REPO -.-> PG[PostgresDataRepository: skalowane wdrożenie]
     L --> R[T1: jedna klasa PDF; segmentacja tylko diagnozuje]
     R -->|foreign| J0[Oceniany JSON: pusty obiekt]
     R -->|classified| V{Rozszerzenia po pomiarze F1}
