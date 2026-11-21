@@ -82,4 +82,7 @@ def run_process(input_dir: Path, output_dir: Path, engine: StubEngine) -> int:
                         file=sys.stderr,
                     )
             print(f"błąd: {pdf}: {error}", file=sys.stderr)
-    return EXIT_DOCUMENT_ERRORS if failures else EXIT_OK
+    if failures:
+        print(f"błąd: nie przetworzono dokumentów: {failures}", file=sys.stderr)
+        return EXIT_DOCUMENT_ERRORS
+    return EXIT_OK

@@ -78,6 +78,29 @@ def test_document_error_does_not_stop_others(
     assert "broken.pdf" in capsys.readouterr().err
 
 
+def test_failure_summary_counts_failed_documents(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    input_dir = tmp_path / "in"
+    output_dir = tmp_path / "out"
+    _touch(input_dir / "bad" / "broken.pdf")
+    _touch(input_dir / "good" / "ok.pdf")
+
+    run_process(input_dir, output_dir, _BrokenEngine("broken.pdf"))
+
+    assert "nie przetworzono dokumentów: 1" in capsys.readouterr().err
+
+
+def test_result_json_uses_two_space_indent_and_trailing_newline(tmp_path: Path) -> None:
+    target = tmp_path / "x.json"
+    payload: dict[str, object] = {"klucz": "wartość", "lista": [1, 2]}
+
+    write_json_atomic(target, payload)
+
+    expected = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
+    assert target.read_text(encoding="utf-8") == expected
+
+
 def test_document_error_removes_stale_result_from_previous_run(tmp_path: Path) -> None:
     input_dir = tmp_path / "in"
     output_dir = tmp_path / "out"
