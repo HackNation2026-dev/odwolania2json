@@ -6,6 +6,8 @@ status: projekt zatwierdzony do implementacji
 
 # Projekt implementacji — backend Python/FastAPI, Postgres, UI
 
+Aktualizacja 0.6.1: w sprawie bazy pierwszeństwo ma [ADR-004](../07-decyzje/ADR-004-sqlalchemy-sqlite-bez-postgres.md): SQLAlchemy 2.x + SQLite za DataRepository. PostgreSQL jest odłożony. Poniższy plan zachowano jako historię, bez aktualnego zobowiązania do wdrożenia serwera PostgreSQL.
+
 Gałąź: `feat/python-fastapi-docker`. Zakres: pionowa wartość ekstrakcji (reguły) + FastAPI + Docker + opcjonalny Postgres + UI bez etapu budowania + kontrakt OpenAPI jako źródło prawdy.
 
 ## 1. Cel i dlaczego teraz

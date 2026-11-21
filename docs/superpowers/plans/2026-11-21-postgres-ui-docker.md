@@ -74,10 +74,12 @@ def test_settings_from_env_reads_database_url():
     settings = Settings.from_env({"DATABASE_URL": "postgresql://u:p@h:5432/d"})
     assert settings.database_url == "postgresql://u:p@h:5432/d"
 
+
 def test_settings_without_database_url_is_usable():
     settings = Settings.from_env({})
     assert settings.database_url is None
     assert settings.docs_enabled is False
+
 
 def test_normalize_url_switches_to_pg8000_driver():
     assert normalize_url("postgresql://u:p@h/db") == "postgresql+pg8000://u:p@h/db"
@@ -180,10 +182,12 @@ def test_pair_documents_finds_three_classes_per_case():
     assert len(pary) == 180
     assert {klasa for klasa, _, _ in pary} == {"odwolanie", "pelnomocnictwo", "przelew"}
 
+
 def test_import_missing_data_directory_reports_error(tmp_path, capsys):
     # brak katalogu danych -> komunikat na stdout i kod wyjscia 1, bez tracebacku
     assert main(["import-organizer", "--data", str(tmp_path / "nie-ma")]) == 1
     assert "nie istnieje" in capsys.readouterr().out
+
 
 def test_read_pdf_metadata_reads_pages_and_text_layer():
     liczba, ma_tekst = read_pdf_metadata(MAT_DIR / "przyklad_01" / "odwolanie.pdf")
@@ -206,11 +210,13 @@ Expected: FAIL — brak modułu `import_organizer`.
 # tests/integration/test_import_organizer.py
 pytestmark = pytest.mark.skipif(not os.getenv("DATABASE_URL"), reason="brak DATABASE_URL")
 
+
 def test_import_inserts_documents_extractions_and_runs():
     report = import_organizer(MAT_DIR, repo)
     assert report.documents == 180
     assert report.extractions == 180
     assert report.runs == 60
+
 
 def test_import_is_idempotent():
     import_organizer(MAT_DIR, repo)
@@ -219,10 +225,12 @@ def test_import_is_idempotent():
     assert repo.count_extractions() == 180
     assert repo.count_runs() == 60
 
+
 def test_import_reports_contract_mismatch_without_dropping_row():
     report = import_organizer(MAT_DIR, repo)
     assert len(report.contract_mismatches) == 5
     assert repo.count_extractions() == 180
+
 
 def test_import_records_payload_and_empty_evidence():
     import_organizer(MAT_DIR, repo)

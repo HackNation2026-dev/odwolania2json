@@ -11,6 +11,10 @@
 
 ## 0.6.1 — 2026-11-21
 
+- Etap 2: framework pre-commit zastąpił .githooks/ dla obu hooków; commit wymaga testów, pokrycia 90% i mutacji staged (--changed). Pełne mutacje AST wymagają 100% zabitych; dodano lokalny audit i rozszerzony zestaw reguł Ruff. Zakaz --no-verify opisano w AGENTS.md i ADR-003.
+- CI lokalne w poziomach z budżetem czasu: pre-commit `ci.py --profile commit` (~10 s: zmienione pliki, mutacje zmienionych linii), pre-push `--profile push` (~2 min: pełne testy, mutacje od merge-base z `main`), pełne mutacje ręcznie `--stage mutation`. Mutacje: równolegle, na kopii źródeł, tylko testy modułu, cache wyniku zielonego pod skrótem kodu i testów, jawny raport OK/FAIL/SKIP; błąd testów bazowych nie jest już maskowany.
+- ADR-004: SQLAlchemy 2.x + SQLite za DataRepository; usunięto pg8000, konfigurację i SQL specyficzny dla PostgreSQL. Migracje i testy działają bez serwera bazy; test importów oraz Ruff pilnują granicy sterownika. Historyczne plany PostgreSQL są odłożone.
+
 - Dodano lokalne CI/CD: runner etapów, hooki Git, kontrole mutacji, budowanie pakietów pip z SHA-256 i opcjonalnym lokalnym tagiem; konfigurację i konsekwencje opisuje ADR-003. Bez push i publikacji.
 
 - Trwałość zamknięta: SQLite w wersji demo, PostgreSQL przy skalowanym wdrożeniu (ADR-002, architektura §10).
