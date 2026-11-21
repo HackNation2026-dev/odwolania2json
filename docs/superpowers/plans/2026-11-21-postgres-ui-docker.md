@@ -1,10 +1,12 @@
 ---
-wersja: 0.1.0
+wersja: 0.2.0
 aktualizacja: 2026-11-21
-status: plan implementacji
+status: załącznik do planu głównego — szczegół zadań 10–13, nie jest planem zapisu
 ---
 
-# Postgres + przeglądarka bazy + Docker — plan implementacji
+# Postgres + przeglądarka bazy + Docker — załącznik do planu głównego
+
+> **Rozstrzygnięcie kontrolera (2026-11-21).** Ten dokument powstał w trakcie implementacji jako szczegółowy podplan fazy Postgres + przeglądarka bazy + Docker. **Planem zapisu pozostaje** [plan wdrożenia](2026-11-21-backend-fastapi-postgres-ui.md) — briefy zadań 10–13 są generowane z niego. Ten załącznik zawiera dodatkowe szczegóły implementacji (kroki, testy, kryteria akceptacji) i nie dubluje zadań: gdy jego opis różni się od planu głównego, obowiązuje plan główny. Powstał z projektu [wariant przebiegu](../specs/2026-11-21-postgres-ui-docker-design.md), którego rozstrzygnięcie (kolejność: najpierw silnik ekstrakcji) opisuje blok rozstrzygnięcia w nagłówku tamtego dokumentu.
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
