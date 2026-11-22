@@ -27,6 +27,7 @@ __all__ = [
     "normalize_pesel",
     "normalize_regon",
     "normalize_ted",
+    "rank_by_checksum",
     "strip_quotes",
 ]
 
@@ -48,9 +49,7 @@ def _fold_znak(znak: str) -> str:
     """
     if znak in _ZNAKI_BEZ_DIAKRYTYKOW:
         return _ZNAKI_BEZ_DIAKRYTYKOW[znak]
-    maly = znak.lower()
-    if len(maly) != 1:
-        maly = maly[0]
+    maly = znak.lower()  # „İ” daje dwa znaki: „i” i kropkę kombinującą, którą usuwa NFD niżej
     rozbior = unicodedata.normalize("NFD", maly)
     bez_diakrytykow = "".join(c for c in rozbior if not unicodedata.combining(c))
     return bez_diakrytykow[0] if bez_diakrytykow else maly
@@ -86,33 +85,66 @@ _WAGI_REGON_14 = (2, 4, 8, 5, 0, 9, 7, 3, 6, 1, 2, 4, 8)
 _WAGI_PESEL = (1, 3, 7, 9, 1, 3, 7, 9, 1, 3)
 
 
-def _blok_cyfr(text: str, dlugosc: int) -> str | None:
-    """Pierwszy ciąg dokładnie `dlugosc` cyfr, będący całym ciągiem cyfr w tekście."""
-    dopasowanie = re.search(rf"(?<!\d)\d{{{dlugosc}}}(?!\d)", text)
-    return dopasowanie.group(0) if dopasowanie else None
+# Separator grup cyfr w identyfikatorze: pojedyncza spacja, twarda spacja albo myślnik.
+_SEP = r"[ \u00a0\-]"
+
+
+def _wzorzec_grupowy(grupy: Sequence[int]) -> str:
+    """Wzorzec cyfr w grupach o podanych długościach, rozdzielonych jednym separatorem."""
+    return _SEP.join(rf"\d{{{rozmiar}}}" for rozmiar in grupy)
+
+
+def _blok_cyfr(text: str, dlugosc: int, uklady: Sequence[Sequence[int]] = ()) -> str | None:
+    """Pierwszy numer o `dlugosc` cyfrach: ciągły albo w jednym z dozwolonych układów grup.
+
+    Numer nie może sąsiadować z cyfrą (to fragment dłuższego ciągu). Z kilku kandydatów
+    wygrywa ten, który zaczyna się najwcześniej; przy remisie ciągły. Układy grup są
+    jawne (np. NIP 3-3-2-2), więc daty i inne liczby z myślnikami nie są brane za numery.
+    """
+    wzorce = [rf"(?<!\d)\d{{{dlugosc}}}(?!\d)"]
+    # Zapis grupowy nie może być końcówką ani początkiem dłuższego ciągu grup (`… 65 7`).
+    wzorce.extend(
+        rf"(?<!\d)(?<!\d{_SEP}){_wzorzec_grupowy(grupy)}(?!\d)(?!{_SEP}\d)" for grupy in uklady
+    )
+    najlepszy: re.Match[str] | None = None
+    for wzorzec in wzorce:
+        dopasowanie = re.search(wzorzec, text)
+        if dopasowanie and (najlepszy is None or dopasowanie.start() < najlepszy.start()):
+            najlepszy = dopasowanie
+    if najlepszy is None:
+        return None
+    return re.sub(r"\D", "", najlepszy.group(0))
+
+
+# Układy grup zapisu: NIP „999-928-40-65” i „999-92-84-065”, REGON „999 642 785”
+# i „999 642 785 00123”, KRS „9999 405 188” i „999 940 5188”.
+_UKLADY_NIP = ((3, 3, 2, 2), (3, 2, 2, 3))
+_UKLADY_REGON_9 = ((3, 3, 3),)
+_UKLADY_REGON_14 = ((3, 3, 3, 5),)
+_UKLADY_KRS = ((4, 3, 3), (3, 3, 4))
 
 
 def normalize_nip(text: str) -> str | None:
-    """NIP: dokładnie 10 cyfr.
+    """NIP: dokładnie 10 cyfr, także w zapisie z myślnikami lub spacjami (`999-928-40-65`).
 
     Suma kontrolna nie odrzuca wartości — etykieta w dokumencie rozstrzyga,
-    suma jedynie porządkuje kandydatów.
+    suma jedynie porządkuje kandydatów (:func:`rank_by_checksum`).
     """
-    return _blok_cyfr(text, 10)
+    return _blok_cyfr(text, 10, _UKLADY_NIP)
 
 
 def normalize_regon(text: str) -> str | None:
-    """REGON: 9 albo 14 cyfr, bez odrzucania po sumie kontrolnej."""
-    for dlugosc in (9, 14):
-        wartosc = _blok_cyfr(text, dlugosc)
+    """REGON: 9 albo 14 cyfr (też z grupami), bez odrzucania po sumie kontrolnej."""
+    for dlugosc, uklady in ((9, _UKLADY_REGON_9), (14, _UKLADY_REGON_14)):
+        wartosc = _blok_cyfr(text, dlugosc, uklady)
         if wartosc is not None:
             return wartosc
     return None
 
 
 def normalize_krs(text: str) -> str | None:
-    """KRS: 10 cyfr. Numer KRS nie ma sumy kontrolnej."""
-    return _blok_cyfr(text, 10)
+    """KRS: 10 cyfr, także w grupach (`9999 405 188`). Numer KRS nie ma sumy kontrolnej."""
+    return _blok_cyfr(text, 10, _UKLADY_KRS)
 
 
 def normalize_pesel(text: str) -> str | None:
@@ -155,12 +187,74 @@ _MIESIACE = {
     "grudnia": 12,
 }
 
+_MIESIAC = r"[a-z]+"
 # Daty słowne: „27 czerwca 2026 roku”.
-_DATA_SLOWNA = re.compile(r"(\d{1,2})\s+([a-z]+)\s+(\d{4})")
-# Daty liczbowe: „02.07.2026”, „18.03.2026 r.”.
-_DATA_LICZBOWA = re.compile(r"(\d{1,2})[.\-](\d{1,2})[.\-](\d{4})")
-# Daty w formacie ISO: „2026-03-21”.
-_DATA_ISO = re.compile(r"(\d{4})-(\d{1,2})-(\d{1,2})")
+_DATA_SLOWNA = re.compile(rf"(?<!\d)(\d{{1,2}})\s+({_MIESIAC})\s+(\d{{4}})(?!\d)")
+# Daty liczbowe z rokiem czterocyfrowym: „02.07.2026”, „18-03-2026 r.”, „01/04/2026”.
+_DATA_LICZBOWA = re.compile(r"(?<!\d)(\d{1,2})[.\-/](\d{1,2})[.\-/](\d{4})(?!\d)")
+# Daty liczbowe z rokiem dwucyfrowym: „01.04.26”.
+_DATA_LICZBOWA_KROTKA = re.compile(r"(?<!\d)(\d{1,2})[.\-/](\d{1,2})[.\-/](\d{2})(?!\d)")
+# Daty w formacie ISO i pochodnych: „2026-03-21”, „2026/04/01”, „2026.04.01”.
+_DATA_ISO = re.compile(r"(?<!\d)(\d{4})[.\-/](\d{1,2})[.\-/](\d{1,2})(?!\d)")
+# Miesiąc rzymski (wielkimi literami, bo „i” to spójnik): „1 IV 2026”, „01.IV.26”.
+_RZYMSKIE = {
+    "I": 1,
+    "II": 2,
+    "III": 3,
+    "IV": 4,
+    "V": 5,
+    "VI": 6,
+    "VII": 7,
+    "VIII": 8,
+    "IX": 9,
+    "X": 10,
+    "XI": 11,
+    "XII": 12,
+}
+_DATA_RZYMSKA = re.compile(
+    r"(?<!\d)(\d{1,2})[\s.\-/]+(XII|XI|X|IX|VIII|VII|VI|V|IV|III|II|I)\b[\s.\-/]+(\d{4}|\d{2})(?!\d)"
+)
+
+# Dzień słowny w dopełniaczu, już bez diakrytyków: „pierwszego”, „dwudziestego piątego”.
+_DNI_DO_19 = (
+    "pierwszego",
+    "drugiego",
+    "trzeciego",
+    "czwartego",
+    "piatego",
+    "szostego",
+    "siodmego",
+    "osmego",
+    "dziewiatego",
+    "dziesiatego",
+    "jedenastego",
+    "dwunastego",
+    "trzynastego",
+    "czternastego",
+    "pietnastego",
+    "szesnastego",
+    "siedemnastego",
+    "osiemnastego",
+    "dziewietnastego",
+)
+
+
+def _dni_slowne() -> dict[str, int]:
+    dni = {slowo: numer for numer, slowo in enumerate(_DNI_DO_19, start=1)}
+    dni["dwudziestego"] = 20
+    dni["trzydziestego"] = 30
+    for numer, slowo in enumerate(_DNI_DO_19[:9], start=1):
+        dni[f"dwudziestego {slowo}"] = 20 + numer
+    dni["trzydziestego pierwszego"] = 31
+    return dni
+
+
+_DNI_SLOWNE = _dni_slowne()
+_DATA_DZIEN_SLOWNY = re.compile(
+    "(?<![a-z])("
+    + "|".join(re.escape(fraza) for fraza in sorted(_DNI_SLOWNE, key=len, reverse=True))
+    + rf")\s+({_MIESIAC})\s+(\d{{4}})(?!\d)"
+)
 
 
 def _data_iso(rok: int, miesiac: int, dzien: int) -> str | None:
@@ -171,59 +265,131 @@ def _data_iso(rok: int, miesiac: int, dzien: int) -> str | None:
         return None
 
 
+def _rok_z_dwoch_cyfr(rok: str) -> int:
+    """Rok dwucyfrowy: 00–69 to 2000–2069, 70–99 to 1970–1999 (jak `strptime`)."""
+    liczba = int(rok)
+    return 2000 + liczba if liczba <= 69 else 1900 + liczba
+
+
+def _rok(rok: str) -> int:
+    return int(rok) if len(rok) == 4 else _rok_z_dwoch_cyfr(rok)
+
+
 def normalize_date(text: str) -> str | None:
-    """Data w formacie ISO `YYYY-MM-DD` (daty słowne, liczbowe i ISO)."""
+    """Data w formacie ISO `YYYY-MM-DD`.
+
+    Rozpoznaje daty słowne (`27 czerwca 2026`, `pierwszego kwietnia 2026`), liczbowe
+    (`02.07.2026`, `01.04.26`), z miesiącem rzymskim (`1 IV 2026`) i ISO (`2026/04/01`).
+    Pierwszy wzorzec, który daje istniejącą datę kalendarzową, rozstrzyga.
+    """
     if not text:
         return None
     zlozony = fold(text)
+    kandydaci: list[tuple[int, int | None, int]] = []
 
-    slowna = _DATA_SLOWNA.search(zlozony)
-    if slowna:
-        miesiac = _MIESIACE.get(slowna.group(2))
-        if miesiac is not None:
-            wynik = _data_iso(int(slowna.group(3)), miesiac, int(slowna.group(1)))
-            if wynik is not None:
-                return wynik
+    for dopasowanie in _DATA_SLOWNA.finditer(zlozony):
+        kandydaci.append(
+            (
+                int(dopasowanie.group(3)),
+                _MIESIACE.get(dopasowanie.group(2)),
+                int(dopasowanie.group(1)),
+            )
+        )
+    for dopasowanie in _DATA_DZIEN_SLOWNY.finditer(zlozony):
+        kandydaci.append(
+            (
+                int(dopasowanie.group(3)),
+                _MIESIACE.get(dopasowanie.group(2)),
+                _DNI_SLOWNE[dopasowanie.group(1)],
+            )
+        )
+    for dopasowanie in _DATA_RZYMSKA.finditer(text):
+        kandydaci.append(
+            (_rok(dopasowanie.group(3)), _RZYMSKIE[dopasowanie.group(2)], int(dopasowanie.group(1)))
+        )
+    for dopasowanie in _DATA_LICZBOWA.finditer(zlozony):
+        kandydaci.append(
+            (int(dopasowanie.group(3)), int(dopasowanie.group(2)), int(dopasowanie.group(1)))
+        )
+    for dopasowanie in _DATA_LICZBOWA_KROTKA.finditer(zlozony):
+        kandydaci.append(
+            (
+                _rok_z_dwoch_cyfr(dopasowanie.group(3)),
+                int(dopasowanie.group(2)),
+                int(dopasowanie.group(1)),
+            )
+        )
+    for dopasowanie in _DATA_ISO.finditer(zlozony):
+        kandydaci.append(
+            (int(dopasowanie.group(1)), int(dopasowanie.group(2)), int(dopasowanie.group(3)))
+        )
 
-    liczbowa = _DATA_LICZBOWA.search(zlozony)
-    if liczbowa:
-        wynik = _data_iso(int(liczbowa.group(3)), int(liczbowa.group(2)), int(liczbowa.group(1)))
+    for rok, miesiac, dzien in kandydaci:
+        if miesiac is None:
+            continue
+        wynik = _data_iso(rok, miesiac, dzien)
         if wynik is not None:
             return wynik
-
-    iso = _DATA_ISO.search(zlozony)
-    if iso:
-        wynik = _data_iso(int(iso.group(1)), int(iso.group(2)), int(iso.group(3)))
-        if wynik is not None:
-            return wynik
-
     return None
 
 
 # --- kwoty ---
 
-_KWOTA = re.compile(r"\d+(?:[.,]\d+)?")
-_WALUTA = re.compile(r"(?i)(?:zł|zl|pln)(?![a-ząćęłńóśźż])")
+_KWOTA = re.compile(r"\d+(?:[.,]\d+)*")
+_WALUTA = re.compile(r"(?i)(?:zł|zl|pln)")
+
+
+def _grupy_tysiecy(cyfry: str, separator: str) -> bool:
+    """Czy `cyfry` to 1–3 cyfry i grupy po dokładnie 3 cyfry rozdzielone `separator`."""
+    return re.fullmatch(rf"\d{{1,3}}(?:{re.escape(separator)}\d{{3}})+", cyfry) is not None
+
+
+def _liczba_z_separatorami(token: str) -> float | None:
+    """Wartość liczby z kropkami i przecinkami albo `None`, gdy zapis jest niejednoznaczny.
+
+    Gdy występują oba znaki, ostatni jest dziesiętny, a drugi musi rozdzielać tysiące
+    (`1.000,50`, `1,000.50`). Przy jednym znaku powtórzonym są to tysiące (`1.000.000`).
+    Pojedynczy znak z trzema cyframi po nim i 1–3 cyframi przed (`1.000`, `1,000`) to
+    tysiące; w pozostałych przypadkach to ułamek (`3,5`, `1000,5`, `0,500`).
+    """
+    separatory = re.findall(r"[.,]", token)
+    if not separatory:
+        return float(token)
+    dziesietny = separatory[-1]
+    drugi = "," if dziesietny == "." else "."
+    if drugi in separatory:
+        calosc, _, ulamek = token.rpartition(dziesietny)
+        if not _grupy_tysiecy(calosc, drugi):
+            return None
+        return float(calosc.replace(drugi, "") + "." + ulamek)
+    if len(separatory) > 1:
+        return float(token.replace(dziesietny, "")) if _grupy_tysiecy(token, dziesietny) else None
+    calosc, _, ulamek = token.partition(dziesietny)
+    if len(ulamek) == 3 and len(calosc) <= 3 and calosc[0] != "0":
+        return float(calosc + ulamek)
+    return float(calosc + "." + ulamek)
 
 
 def normalize_amount(text: str) -> float | None:
-    """Kwota jako liczba: spacje i waluta pomijane, przecinek dziesiętny dopuszczony."""
+    """Kwota jako liczba: spacje i waluta pomijane, przecinek dziesiętny dopuszczony.
+
+    Separator tysięcy (`1.000,50`, `1,000.50`) jest rozpoznawany; niejednoznaczny zapis
+    daje `None`, nigdy cichą wartość błędną.
+    """
     if not text:
         return None
     zwiezly = _WALUTA.sub("", re.sub(r"\s+", "", text))
     dopasowanie = _KWOTA.search(zwiezly)
     if dopasowanie is None:
         return None
-    try:
-        return float(dopasowanie.group(0).replace(",", "."))
-    except ValueError:
-        return None
+    return _liczba_z_separatorami(dopasowanie.group(0))
 
 
 # --- numery referencyjne ---
 
-# Numer TED w PDF: „2026/S086-999073”, „2026/S 187-999584” (spacja lub złamanie wiersza).
-_TED_Z_PDF = re.compile(r"(?<!\d)(\d{4})/S\s*(\d+)-(\d{6})(?!\d)")
+# Numer TED w PDF: „2026/S086-999073”, „2026/S 187-999584”, „2026 /S 224 - 999211”
+# (spacje lub złamania wiersza wokół „/S” i myślnika).
+_TED_Z_PDF = re.compile(r"(?<!\d)(\d{4})\s*/\s*S\s*(\d+)\s*-\s*(\d{6})(?!\d)")
 # Numer TED w referencji organizatora: „999073-2026”.
 _TED_Z_REFERENCJI = re.compile(r"(?<!\d)(\d{6})-(\d{4})(?!\d)")
 
@@ -258,8 +424,6 @@ _ROK_CZTEROCYFRONY = re.compile(r"(?:19|20)\d{2}")
 def _czy_numer_postepowania(kandydat: str) -> bool:
     """Czy kandydat wygląda na numer postępowania (ma cyfry i rok)?"""
     cyfry = re.sub(r"\D", "", kandydat)
-    if len(cyfry) < 3:
-        return False
     if _ROK_CZTEROCYFRONY.search(kandydat):
         return True
     ostatnia_czesc = re.split(r"[./-]", kandydat)[-1]
@@ -332,20 +496,21 @@ def _suma_nip(cyfry: str) -> bool:
     """Czy 10 cyfr ma poprawną sumę kontrolną NIP (suma 10 oznacza brak NIP-u)."""
     if len(cyfry) != 10:
         return False
-    suma = sum(int(c) * waga for c, waga in zip(cyfry[:9], _WAGI_NIP, strict=False)) % 11
-    return suma != 10 and suma == int(cyfry[9])
+    suma = sum(int(c) * waga for c, waga in zip(cyfry, _WAGI_NIP, strict=False)) % 11
+    # Suma 10 oznacza brak poprawnego NIP-u i nie równa się żadnej cyfrze.
+    return suma == int(cyfry[9])
 
 
 def _suma_regon(cyfry: str) -> bool:
     """Czy 9 albo 14 cyfr ma poprawną sumę kontrolną REGON."""
     if len(cyfry) == 9:
-        suma = sum(int(c) * waga for c, waga in zip(cyfry[:8], _WAGI_REGON, strict=False)) % 11
+        suma = sum(int(c) * waga for c, waga in zip(cyfry, _WAGI_REGON, strict=False)) % 11
         oczekiwana = 0 if suma == 10 else suma
         return oczekiwana == int(cyfry[8])
     if len(cyfry) == 14:
         if not _suma_regon(cyfry[:9]):
             return False
-        suma = sum(int(c) * waga for c, waga in zip(cyfry[:13], _WAGI_REGON_14, strict=False)) % 11
+        suma = sum(int(c) * waga for c, waga in zip(cyfry, _WAGI_REGON_14, strict=False)) % 11
         oczekiwana = 0 if suma == 10 else suma
         return oczekiwana == int(cyfry[13])
     return False
@@ -355,7 +520,7 @@ def _suma_pesel(cyfry: str) -> bool:
     """Czy 11 cyfr ma poprawną sumę kontrolną PESEL."""
     if len(cyfry) != 11:
         return False
-    suma = sum(int(c) * waga for c, waga in zip(cyfry[:10], _WAGI_PESEL, strict=False)) % 10
+    suma = sum(int(c) * waga for c, waga in zip(cyfry, _WAGI_PESEL, strict=False)) % 10
     return (10 - suma) % 10 == int(cyfry[10])
 
 
@@ -394,3 +559,13 @@ def checksum_valid(kind: str, value: str) -> bool:
     if kind == "iban":
         return _suma_iban(value)
     return False
+
+
+def rank_by_checksum(kind: str, candidates: Sequence[str]) -> list[str]:
+    """Porządkuje kandydatów: z poprawną sumą kontrolną na początku, bez odrzucania.
+
+    Kolejność wewnątrz obu grup zostaje (sortowanie stabilne). Suma jest tylko sygnałem
+    rankingowym: w referencjach organizatora poprawną sumę ma 64% NIP, 70% REGON i 34% IBAN,
+    więc filtr twardy odrzuciłby prawdziwe wartości (E19).
+    """
+    return sorted(candidates, key=lambda kandydat: not checksum_valid(kind, kandydat))
