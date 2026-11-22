@@ -26,7 +26,7 @@ Cel (plan 0.2, P0 pkt 3): skany o znanej referencji pól, żeby mierzyć F1 pól
 | `obrot90/180/270` | 3×12 | odwołania 12 spraw (co 4. sprawa): obraz obrócony fizycznie (stres E03) |
 | `skos3` | 12 | te same odwołania, przekrzywione o 3° (poza profilem organizatora, stres) |
 
-Profile i ich wyprowadzenie: [PROFIL.md](zestaw/PROFIL.md). Odwołania liczą 240 stron, pełnomocnictwa 50, przelewy 49 (339 stron na pełny przebieg `skan`).
+Wyprowadzenie profili: plik `zestaw/PROFIL.md` nie został utworzony — `zestaw/manifest.json` zawiera profil każdego wpisu (`profil`), a definicje profili opisują wiersze tabeli powyżej. Odwołania liczą 240 stron, pełnomocnictwa 50, przelewy 49 (339 stron na pełny przebieg `skan`).
 
 ## Test blokujący
 

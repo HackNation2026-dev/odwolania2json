@@ -45,7 +45,7 @@ Determinizm kodu (E16): 0 różnic bajtowych w 3 przebiegach i na nagranych odpo
 
 ## 4. Czas i pamięć
 
-**Nie ma jeszcze wiążących liczb.** Wszystkie czasy z grup A–D zebrano przy load average 20–57 na 8 rdzeniach i są niewiążące (OCR 17–35 s na stronę zamiast ok. 1–3 s). Pomiar w cichym oknie prowadzi worker T ([czas/](czas/)). Sekcja zostanie uzupełniona po jego zakończeniu; jeśli `czas/PODSUMOWANIE.md` nie istnieje, pomiar nie został ukończony.
+**Nie ma jeszcze wiążących liczb.** Wszystkie czasy z grup A–D zebrano przy load average 20–57 na 8 rdzeniach i są niewiążące (OCR 17–35 s na stronę zamiast ok. 1–3 s). Pomiar w cichym oknie prowadzi worker T (katalog `czas/` nie istnieje do odwołania). Sekcja zostanie uzupełniona po jego zakończeniu; jeśli `czas/PODSUMOWANIE.md` nie istnieje, pomiar nie został ukończony.
 
 ## 5. Czego nie zrobiono
 
