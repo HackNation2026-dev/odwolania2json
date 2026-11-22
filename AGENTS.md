@@ -3,7 +3,7 @@
 Pisz po polsku, krótko i jednoznacznie. Status implementacji ustal na podstawie kodu i testów.
 
 Przed implementacją przeczytaj [wymagania](docs/03-wymagania/README.md) i [pytania otwarte](docs/07-decyzje/pytania-otwarte.md).
-Zadanie bierz z [backlogu](docs/00-organizacja/backlog.md) (kolejność, znane długi, definicja ukończenia). Po instalacji hooków (`sh scripts/install_hooks.sh`) reguły egzekwuje `pre-commit`.
+Zadanie bierz z [zadań dla agentów](docs/00-organizacja/zadania-dla-agentow.md) (szczegółowe instrukcje, kolejność P0/P1/P2) i [backlogu](docs/00-organizacja/backlog.md) (znane długi, definicja ukończenia). Po instalacji hooków (`sh scripts/install_hooks.sh`) reguły egzekwuje `pre-commit`.
 Przy zmianie materiałów sprawdź [rejestr źródeł](docs/02-materialy/README.md) i [wersjonowanie](docs/00-organizacja/wersjonowanie.md). Zachowuj niezmienione oryginały; poprawki i interpretacje zapisuj poza katalogami organizatora.
 Przy zmianie stosu przeczytaj [architekturę](docs/04-architektura/README.md) i dodaj decyzję z konsekwencjami.
 Przed commitem uruchom `python3 scripts/verify_docs.py` oraz kontrole odpowiednie do zmienionego kodu.

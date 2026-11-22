@@ -6,6 +6,8 @@ status: lista prac do realizacji; stan faktyczny ustal w kodzie i testach
 
 # Backlog i znane długi
 
+**Aktualne zadania ze szczegółowymi instrukcjami: [zadania dla agentów](zadania-dla-agentow.md)** (stan po eksperymentach 2026-11-22; ta lista jest starsza i uzupełniająca).
+
 Kolejność wynika z [warunków wejścia do implementacji](../04-architektura/architektura-wewnetrzna.md) (§1) i [pomiaru jako wymagania](../04-architektura/architektura-wewnetrzna.md) (§11). Pozycja jest ukończona dopiero po dowodzie z kolumny „Dowód”. Zanim zaczniesz, sprawdź w kodzie, czy pozycja nie została już zrobiona.
 
 ## Definicja ukończenia (każde zadanie)
