@@ -129,15 +129,9 @@ Tylko to, co zostało do zrobienia. Wyniki i uzasadnienia: [raport eksperymentó
 
 **Kryteria akceptacji.** S5 F1 ≥ ok. 0,90 (referencja C 0,927); brak regresji na stronach tekstowych; opis w `odczyt/E04` zaktualizowany.
 
-### Z07. Normalizatory (luki E19) i testy mutacyjne
+### ~~Z07. Normalizatory (luki E19) i testy mutacyjne~~ (zrobione)
 
-**Cel.** Naprawić luki z E19 i dopisać testy zabijające przeżyłe mutanty w `domain/normalize.py` (83 z 216 przeżyło).
-
-**Przeczytaj.** `pola/E19/README.md` i `e19_normalizers.py`, `pola/E08/README.md` (mutacje wzorców: 117 z 152 zabitych), `apps/backend/odwolania2json/domain/normalize.py`, `tests/unit/test_normalize.py`, `docs/00-organizacja/lokalne-ci-cd.md` (jak uruchomić `ci.py --stage mutation`).
-
-**Kroki.** (1) Luki: NIP/REGON/KRS ze spacjami i myślnikami (`999-928-40-65`, `999 928 40 65`) → poprawny ciąg cyfr; kwota z separatorem tysięcy (`1.000,50`, `1,000.50`) → 1000.5 (dziś cicha wartość błędna 1.0); daty: rok dwucyfrowy, miesiąc rzymski, `2026/04/01`, miesiąc słowny po „pierwszego”; TED ze spacjami wokół `/S` i `-`. Każda luka najpierw jako test czerwony. (2) Suma kontrolna NIP/REGON/IBAN tylko jako sygnał rankingowy, **nie filtr** (poprawna tylko u 64% NIP, 70% REGON, 34% IBAN w referencjach). (3) `ci.py --stage mutation` dla `normalize.py`: dopisz testy aż do zera przeżytych (wagi PESEL, miesiące, wzorzec `_DATA_ISO`, kwantyfikatory kwot); lista przeżyłych w `.ci/mutation-report.txt`.
-
-**Kryteria akceptacji.** Test obiegowy 49 wariantów zapisu z E19 zielony w całości; `ci.py --stage mutation` bez przeżytych w `normalize.py`.
+Luki E19 naprawione w `domain/normalize.py` (NIP/REGON/KRS z grupami, kwoty z separatorem tysięcy, daty: rok dwucyfrowy, miesiąc rzymski, `RRRR/MM/DD`, dzień słowny; TED ze spacjami), `rank_by_checksum` jako sygnał rankingowy (nie filtr), test obiegowy 55 wariantów E19 zielony, mutacje `normalize.py`: 291/291 zabitych (przed: 83 z 216 przeżyło; część przeżytych była mutantami równoważnymi i usunięto kod nadmiarowy). Szczegóły w `CHANGELOG.md`.
 
 ### Z08. Przebieg kontrolny, fizyczne skany, czas
 
