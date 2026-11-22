@@ -124,3 +124,5 @@
 - Dodano `run.sh`, `start.bat`, katalogi `input/` i `output/` (`.gitkeep`, zawartość ignorowana), `scripts/verify_install.py` z lokalną atrapą LLM i testy dostarczenia; README opisuje instalację, klucz API, kody wyjścia i stan implementacji (`process` nadal na atrapie do czasu Z01).
 
 - Klient LLM (ponowienia, kody błędów, walidacja `base_url`) i serializer z szablonu klasy w `apps/backend`; szkic czytnika PDF i adaptera OCR w `experiments/.../produkt-szkic/`. `process` nadal na atrapie (Z01 do dokończenia).
+
+- Materiały TODO (`docs/08-todo/`): plan naprawczy, kontekst dla agentów i rzetelny opis stanu na koniec etapu 2026-11-22 (co sprawdzone osobiście, co z raportów, co w toku, czego nie mamy).
