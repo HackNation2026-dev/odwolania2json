@@ -11,6 +11,8 @@ __all__ = ["ERROR_CODES", "ProcessingError"]
 ERROR_CODES = frozenset(
     {
         "not_a_pdf",
+        "read_failed",
+        "file_too_large",
         "pdf_corrupted",
         "pdf_encrypted",
         "empty_document",

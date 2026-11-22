@@ -72,6 +72,10 @@ def write_sample_pdfs(directory: Path, count: int = 3) -> list[Path]:
     return paths
 
 
+# Poprawna odpowiedź modelu według schematu `process`: dokument obcy, bez pól.
+MOCK_ANSWER = '{"class": "foreign", "fields": []}'
+
+
 class MockLlm:
     """Lokalna atrapa API zgodnego z OpenAI (`/chat/completions`) na wolnym porcie."""
 
@@ -92,7 +96,7 @@ class MockLlm:
                             {
                                 "index": 0,
                                 "finish_reason": "stop",
-                                "message": {"role": "assistant", "content": "{}"},
+                                "message": {"role": "assistant", "content": MOCK_ANSWER},
                             }
                         ],
                         "usage": {"prompt_tokens": 1, "completion_tokens": 1, "total_tokens": 2},
