@@ -103,3 +103,5 @@
 
 - Z03, dostarczenie: `requirements.txt` w korzeniu zawiera tylko zależności uruchomieniowe z OCR (rapidocr + onnxruntime CPU, wagi ONNX w kole `rapidocr`) i pakiety lokalne bez `-e`; narzędzia deweloperskie przeniesiono do `requirements-dev.txt`, usunięto `apps/backend/requirements-ocr.txt`. `requires-python >= 3.13`.
 - Dodano `run.sh`, `start.bat`, katalogi `input/` i `output/` (`.gitkeep`, zawartość ignorowana), `scripts/verify_install.py` z lokalną atrapą LLM i testy dostarczenia; README opisuje instalację, klucz API, kody wyjścia i stan implementacji (`process` nadal na atrapie do czasu Z01).
+
+- Klient LLM (ponowienia, kody błędów, walidacja `base_url`) i serializer z szablonu klasy w `apps/backend`; szkic czytnika PDF i adaptera OCR w `experiments/.../produkt-szkic/`. `process` nadal na atrapie (Z01 do dokończenia).
