@@ -96,3 +96,5 @@
 - Dodano backlog (`docs/00-organizacja/backlog.md`) z kolejką prac, znanymi długami i definicją ukończenia oraz `CLAUDE.md` odsyłający do `AGENTS.md`.
 
 - Naprawa ewaluatora: wartość obecna i zgodna z referencją liczy się jako TP (wcześniej TN, więc F1 pól wynosiło 0). Wykryte w recenzji planu eksperymentów.
+
+- Eksperymenty wyboru modułów (E00-E20, uprząż HTTP, raport, ocena architektury Fable) oraz lista zadań dla agentów ze szczegółowymi instrukcjami (`docs/00-organizacja/zadania-dla-agentow.md`). Wniosek: produkt dziś zapisuje `{}` (F1 pól = 0); wyniki pochodzą z uprzęży w `experiments/`.

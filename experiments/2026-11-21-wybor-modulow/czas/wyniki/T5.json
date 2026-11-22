@@ -1,0 +1,90 @@
+{
+ "experiment": "T5",
+ "status": "CZĘŚCIOWE",
+ "documents": 180,
+ "pages_total": 427,
+ "method": "uproszczony model z czasu ściennego (obciążona maszyna) = GÓRNA granica OCR; CPU-sekundy (T1cpu) niewykonane, T4 (opóźnienie LLM) niewykonane: L jest parametrem hipotetycznym 20/40/80 s, nie wynikiem",
+ "inputs": {
+  "ocr_pages_per_min_loaded_w4_t2_dpi300": 25.74,
+  "backend_wall_s_per_doc_text": 0.034
+ },
+ "scenarios": {
+  "tekst_100": {
+   "frac_scan": 0,
+   "ocr_pages": 0,
+   "ocr_min_upper": 0.0,
+   "backend_min_wall_text": 0.1,
+   "llm_min_L20_K2": 30.0,
+   "total_min_L20_K2": 30.3,
+   "llm_min_L20_K4": 15.0,
+   "total_min_L20_K4": 15.3,
+   "llm_min_L40_K2": 60.0,
+   "total_min_L40_K2": 60.7,
+   "llm_min_L40_K4": 30.0,
+   "total_min_L40_K4": 30.7,
+   "llm_min_L80_K2": 120.0,
+   "total_min_L80_K2": 121.3,
+   "llm_min_L80_K4": 60.0,
+   "total_min_L80_K4": 61.3
+  },
+  "skany_10": {
+   "frac_scan": 0.1,
+   "ocr_pages": 43,
+   "ocr_min_upper": 1.7,
+   "backend_min_wall_text": 0.1,
+   "llm_min_L20_K2": 30.0,
+   "total_min_L20_K2": 30.3,
+   "llm_min_L20_K4": 15.0,
+   "total_min_L20_K4": 15.3,
+   "llm_min_L40_K2": 60.0,
+   "total_min_L40_K2": 60.7,
+   "llm_min_L40_K4": 30.0,
+   "total_min_L40_K4": 30.7,
+   "llm_min_L80_K2": 120.0,
+   "total_min_L80_K2": 121.3,
+   "llm_min_L80_K4": 60.0,
+   "total_min_L80_K4": 61.3
+  },
+  "skany_50": {
+   "frac_scan": 0.5,
+   "ocr_pages": 214,
+   "ocr_min_upper": 8.3,
+   "backend_min_wall_text": 0.1,
+   "llm_min_L20_K2": 30.0,
+   "total_min_L20_K2": 30.3,
+   "llm_min_L20_K4": 15.0,
+   "total_min_L20_K4": 15.3,
+   "llm_min_L40_K2": 60.0,
+   "total_min_L40_K2": 60.7,
+   "llm_min_L40_K4": 30.0,
+   "total_min_L40_K4": 30.7,
+   "llm_min_L80_K2": 120.0,
+   "total_min_L80_K2": 121.3,
+   "llm_min_L80_K4": 60.0,
+   "total_min_L80_K4": 61.3
+  },
+  "skany_100": {
+   "frac_scan": 1,
+   "ocr_pages": 427,
+   "ocr_min_upper": 16.6,
+   "backend_min_wall_text": 0.1,
+   "llm_min_L20_K2": 30.0,
+   "total_min_L20_K2": 30.3,
+   "llm_min_L20_K4": 15.0,
+   "total_min_L20_K4": 17.0,
+   "llm_min_L40_K2": 60.0,
+   "total_min_L40_K2": 60.7,
+   "llm_min_L40_K4": 30.0,
+   "total_min_L40_K4": 30.7,
+   "llm_min_L80_K2": 120.0,
+   "total_min_L80_K2": 121.3,
+   "llm_min_L80_K4": 60.0,
+   "total_min_L80_K4": 61.3
+  }
+ },
+ "gaps": [
+  "T4 niewykonane (llm_rate_limit)",
+  "T1cpu niewykonane (brak CPU-s OCR)",
+  "T3 scan niewykonane"
+ ]
+}

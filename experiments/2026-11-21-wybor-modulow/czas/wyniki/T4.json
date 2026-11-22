@@ -1,0 +1,160 @@
+{
+ "experiment": "T4",
+ "environment": {
+  "cpu_model": "Intel(R) Core(TM) Ultra 7 258V",
+  "logical_cores": 8,
+  "python": "3.13.18",
+  "kernel": "7.3.4-300.fc45.x86_64",
+  "versions": {
+   "rapidocr": "3.10.0",
+   "onnxruntime": "1.32.0",
+   "pypdfium2": "5.15.2",
+   "numpy": "2.5.5",
+   "pillow": "13.0.0",
+   "httpx": "0.28.1",
+   "fastapi": "0.165.0",
+   "uvicorn": "0.54.0"
+  },
+  "cpu_governor": "powersave",
+  "mem_mb": {
+   "MemTotal": 31553,
+   "MemAvailable": 10111,
+   "SwapTotal": 40959,
+   "SwapFree": 33038
+  },
+  "seed": 20261122,
+  "date": "2026-11-22 07:57:48 +0100",
+  "env_threads": {
+   "OMP_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "ORT_NUM_THREADS": null
+  }
+ },
+ "gate": {
+  "quiet": false,
+  "waited_s": 0.0,
+  "polls": 1,
+  "loadavg_before": [
+   11.9,
+   17.57,
+   21.8
+  ],
+  "gate": "strict",
+  "last_reason": "obce procesy .venv-exp: 2",
+  "foreign": [
+   "772777: t2_pdf.py --max-wait",
+   "774460: t2_pdf.py --max-wait"
+  ],
+  "label": "T4 start"
+ },
+ "monitor": {
+  "loadavg_start": [
+   11.9,
+   17.57,
+   21.8
+  ],
+  "loadavg_end": [
+   26.66,
+   14.87,
+   18.61
+  ],
+  "foreign_during": [
+   "772777: t2_pdf.py --max-wait",
+   "774460: t2_pdf.py --max-wait",
+   "799645: t3_http.py --max-wait",
+   "804701: /home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/server.py --port"
+  ],
+  "top_cpu_foreign_at_end": [
+   "804701  335 python",
+   "808699  300 ps",
+   "808693 50.0 MainThread",
+   "808685 36.6 MainThread",
+   "808597 33.7 MainThread"
+  ],
+  "clean": false
+ },
+ "started": "2026-11-22 07:52:11 +0100",
+ "timezone": "CET +0100",
+ "host": "api.minimax.io",
+ "net_before": {
+  "dns_ms": 240.0,
+  "tcp_ms": 37.0,
+  "tls_ms": 171.1
+ },
+ "net_after": {
+  "dns_ms": 1.9,
+  "tcp_ms": 42.2,
+  "tls_ms": 118.2
+ },
+ "model": "MiniMax-M3.1-Flash-Preview",
+ "settings": {
+  "temperature": 0.0,
+  "max_tokens": 8000,
+  "retries": 4,
+  "timeout_s": 150
+ },
+ "prompt": "p2",
+ "mode": "text",
+ "summary": {
+  "odwolanie_2str": {
+   "calls": 9,
+   "errors": 9,
+   "error_codes": [
+    "llm_rate_limit"
+   ],
+   "wall_s_incl_retries": {
+    "n": 0
+   },
+   "last_attempt_latency_s": {
+    "n": 0
+   },
+   "input_tokens_last_attempt": {
+    "n": 0
+   },
+   "output_tokens_last_attempt": {
+    "n": 0
+   },
+   "tokens_out_per_s_last": {
+    "n": 0
+   },
+   "calls_with_schema_retry": 0,
+   "calls_with_http_retry": 0,
+   "docs": [
+    "przyklad_01/odwolanie.pdf",
+    "przyklad_02/odwolanie.pdf",
+    "przyklad_03/odwolanie.pdf"
+   ]
+  },
+  "odwolanie_11str": {
+   "calls": 9,
+   "errors": 9,
+   "error_codes": [
+    "llm_rate_limit"
+   ],
+   "wall_s_incl_retries": {
+    "n": 0
+   },
+   "last_attempt_latency_s": {
+    "n": 0
+   },
+   "input_tokens_last_attempt": {
+    "n": 0
+   },
+   "output_tokens_last_attempt": {
+    "n": 0
+   },
+   "tokens_out_per_s_last": {
+    "n": 0
+   },
+   "calls_with_schema_retry": 0,
+   "calls_with_http_retry": 0,
+   "docs": [
+    "przyklad_41/odwolanie.pdf",
+    "przyklad_42/odwolanie.pdf",
+    "przyklad_43/odwolanie.pdf"
+   ]
+  }
+ },
+ "note": "inne grupy mogły równolegle korzystać z tego samego konta/limitu API; zob. monitor.foreign_during"
+}

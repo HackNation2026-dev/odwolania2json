@@ -1,0 +1,13 @@
+07:14:32 start t1_ocr
+07:29:24 end t1_ocr rc=143
+07:29:24 start t2_pdf
+07:30:28 start t1_ocr
+07:51:47 end t1_ocr rc=0
+07:51:47 start t2_pdf
+07:52:10 start t2_pdf
+07:56:32 end t2_pdf rc=0
+07:56:32 start t3_http
+08:08:24 start t3 text
+08:13:07 start t6
+08:18:13 start t1cpu
+08:18:22 end all

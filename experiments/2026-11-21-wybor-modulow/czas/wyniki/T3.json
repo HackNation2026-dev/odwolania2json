@@ -1,0 +1,698 @@
+{
+ "experiment": "T3",
+ "docs_per_set": {
+  "text": 60
+ },
+ "environment": {
+  "cpu_model": "Intel(R) Core(TM) Ultra 7 258V",
+  "logical_cores": 8,
+  "python": "3.13.18",
+  "kernel": "7.3.4-300.fc45.x86_64",
+  "versions": {
+   "rapidocr": "3.10.0",
+   "onnxruntime": "1.32.0",
+   "pypdfium2": "5.15.2",
+   "numpy": "2.5.5",
+   "pillow": "13.0.0",
+   "httpx": "0.28.1",
+   "fastapi": "0.165.0",
+   "uvicorn": "0.54.0"
+  },
+  "cpu_governor": "powersave",
+  "mem_mb": {
+   "MemTotal": 31553,
+   "MemAvailable": 8940,
+   "SwapTotal": 40959,
+   "SwapFree": 32405
+  },
+  "seed": 20261122,
+  "date": "2026-11-22 08:13:06 +0100",
+  "env_threads": {
+   "OMP_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "ORT_NUM_THREADS": null
+  }
+ },
+ "gates": [
+  {
+   "quiet": false,
+   "waited_s": 34.2,
+   "polls": 4,
+   "loadavg_before": [
+    85.21,
+    68.33,
+    46.69
+   ],
+   "gate": "strict",
+   "last_reason": "obce procesy .venv-exp: 1",
+   "foreign": [
+    "804701: /home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/server.py --port"
+   ],
+   "label": "T3 start"
+  },
+  {
+   "quiet": false,
+   "waited_s": 33.6,
+   "polls": 4,
+   "loadavg_before": [
+    80.0,
+    68.96,
+    47.7
+   ],
+   "gate": "fast",
+   "last_reason": "obce procesy .venv-exp: 1",
+   "foreign": [
+    "804701: /home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/server.py --port"
+   ],
+   "label": "text c2 rep0"
+  },
+  {
+   "quiet": false,
+   "waited_s": 32.1,
+   "polls": 4,
+   "loadavg_before": [
+    71.49,
+    68.17,
+    48.54
+   ],
+   "gate": "fast",
+   "last_reason": "obce procesy .venv-exp: 1",
+   "foreign": [
+    "804701: /home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/server.py --port"
+   ],
+   "label": "text c2 rep0"
+  },
+  {
+   "quiet": false,
+   "waited_s": 32.8,
+   "polls": 4,
+   "loadavg_before": [
+    72.07,
+    68.86,
+    49.71
+   ],
+   "gate": "fast",
+   "last_reason": "obce procesy .venv-exp: 1",
+   "foreign": [
+    "804701: /home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/server.py --port"
+   ],
+   "label": "text c2 rep0"
+  },
+  {
+   "quiet": true,
+   "waited_s": 2.2,
+   "polls": 0,
+   "loadavg_before": [
+    68.65,
+    68.31,
+    49.84
+   ],
+   "gate": "fast",
+   "label": "text c1 rep0",
+   "loaded_accepted": true,
+   "loadavg1_threshold": 4.0,
+   "busy_foreign_cpu": 0.998,
+   "idle_foreign_venv": [
+    "804701: /home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/server.py --port"
+   ]
+  },
+  {
+   "quiet": true,
+   "waited_s": 2.2,
+   "polls": 0,
+   "loadavg_before": [
+    64.33,
+    67.4,
+    49.74
+   ],
+   "gate": "fast",
+   "label": "text c4 rep0",
+   "loaded_accepted": true,
+   "loadavg1_threshold": 4.0,
+   "busy_foreign_cpu": 0.996,
+   "idle_foreign_venv": [
+    "804701: /home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/server.py --port"
+   ]
+  },
+  {
+   "quiet": true,
+   "waited_s": 2.9,
+   "polls": 0,
+   "loadavg_before": [
+    63.3,
+    67.06,
+    49.92
+   ],
+   "gate": "fast",
+   "label": "text c1 rep1",
+   "loaded_accepted": true,
+   "loadavg1_threshold": 4.0,
+   "busy_foreign_cpu": 0.998,
+   "idle_foreign_venv": [
+    "804701: /home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/server.py --port"
+   ]
+  },
+  {
+   "quiet": true,
+   "waited_s": 2.6,
+   "polls": 0,
+   "loadavg_before": [
+    56.18,
+    65.32,
+    49.62
+   ],
+   "gate": "fast",
+   "label": "text c2 rep1",
+   "loaded_accepted": true,
+   "loadavg1_threshold": 4.0,
+   "busy_foreign_cpu": 0.998,
+   "idle_foreign_venv": [
+    "804701: /home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/server.py --port"
+   ]
+  },
+  {
+   "quiet": true,
+   "waited_s": 2.8,
+   "polls": 0,
+   "loadavg_before": [
+    54.8,
+    64.7,
+    49.59
+   ],
+   "gate": "fast",
+   "label": "text c4 rep1",
+   "loaded_accepted": true,
+   "loadavg1_threshold": 4.0,
+   "busy_foreign_cpu": 0.998,
+   "idle_foreign_venv": [
+    "804701: /home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/server.py --port"
+   ]
+  },
+  {
+   "quiet": true,
+   "waited_s": 2.5,
+   "polls": 0,
+   "loadavg_before": [
+    54.32,
+    64.27,
+    49.61
+   ],
+   "gate": "fast",
+   "label": "text c2 rep2",
+   "loaded_accepted": true,
+   "loadavg1_threshold": 4.0,
+   "busy_foreign_cpu": 0.997,
+   "idle_foreign_venv": [
+    "804701: /home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/server.py --port"
+   ]
+  },
+  {
+   "quiet": true,
+   "waited_s": 3.2,
+   "polls": 0,
+   "loadavg_before": [
+    53.88,
+    63.69,
+    49.65
+   ],
+   "gate": "fast",
+   "label": "text c1 rep2",
+   "loaded_accepted": true,
+   "loadavg1_threshold": 4.0,
+   "busy_foreign_cpu": 0.998,
+   "idle_foreign_venv": [
+    "804701: /home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/server.py --port"
+   ]
+  },
+  {
+   "quiet": true,
+   "waited_s": 3.3,
+   "polls": 0,
+   "loadavg_before": [
+    53.94,
+    63.38,
+    49.71
+   ],
+   "gate": "fast",
+   "label": "text c4 rep2",
+   "loaded_accepted": true,
+   "loadavg1_threshold": 4.0,
+   "busy_foreign_cpu": 0.998,
+   "idle_foreign_venv": [
+    "804701: /home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/server.py --port"
+   ]
+  }
+ ],
+ "total_wait_s": 154.4,
+ "summary": {
+  "text_c1": {
+   "clean_units": 3,
+   "dirty_units": 0,
+   "cold": {
+    "wall_s": {
+     "n": 3,
+     "p50": 2.07,
+     "p95": 3.1356,
+     "mean": 2.4287,
+     "min": 1.962,
+     "max": 3.254
+    },
+    "docs_per_min": {
+     "n": 3,
+     "p50": 1739.32,
+     "p95": 1825.54,
+     "mean": 1560.2067,
+     "min": 1106.18,
+     "max": 1835.12
+    },
+    "server_cpu_s": {
+     "n": 3,
+     "p50": 0.92,
+     "p95": 1.253,
+     "mean": 1.0367,
+     "min": 0.9,
+     "max": 1.29
+    },
+    "cpu_utilization": {
+     "n": 3,
+     "p50": 0.054,
+     "p95": 0.0585,
+     "mean": 0.0543,
+     "min": 0.05,
+     "max": 0.059
+    },
+    "overhead_s_wall_minus_sum_doc_wall_over_c": {
+     "n": 3,
+     "p50": 0.148,
+     "p95": 0.1705,
+     "mean": 0.145,
+     "min": 0.114,
+     "max": 0.173
+    },
+    "stage_sums_mean": {
+     "pdf_read_s": 1.23,
+     "ocr_s": 0.0,
+     "route_s": 0.09,
+     "extract_s": 0.08,
+     "wall_s": 2.28,
+     "ocr_pages": 0.0,
+     "pages": 83.0
+    },
+    "outcomes": {
+     "complete": 42,
+     "partial": 8,
+     "ambiguous": 10
+    }
+   },
+   "warm": {
+    "wall_s": {
+     "n": 3,
+     "p50": 2.041,
+     "p95": 2.2795,
+     "mean": 1.938,
+     "min": 1.467,
+     "max": 2.306
+    },
+    "docs_per_min": {
+     "n": 3,
+     "p50": 1763.91,
+     "p95": 2385.441,
+     "mean": 1926.4833,
+     "min": 1561.04,
+     "max": 2454.5
+    },
+    "server_cpu_s": {
+     "n": 3,
+     "p50": 0.81,
+     "p95": 0.972,
+     "mean": 0.8333,
+     "min": 0.7,
+     "max": 0.99
+    },
+    "cpu_utilization": {
+     "n": 3,
+     "p50": 0.061,
+     "p95": 0.0682,
+     "mean": 0.056,
+     "min": 0.038,
+     "max": 0.069
+    },
+    "overhead_s_wall_minus_sum_doc_wall_over_c": {
+     "n": 3,
+     "p50": 0.309,
+     "p95": 0.3135,
+     "mean": 0.298,
+     "min": 0.271,
+     "max": 0.314
+    },
+    "stage_sums_mean": {
+     "pdf_read_s": 0.89,
+     "ocr_s": 0.0,
+     "route_s": 0.07,
+     "extract_s": 0.07,
+     "wall_s": 1.64,
+     "ocr_pages": 0.0,
+     "pages": 83.0
+    },
+    "outcomes": {
+     "complete": 42,
+     "partial": 8,
+     "ambiguous": 10
+    }
+   },
+   "cgroup_peak_mb": {
+    "n": 3,
+    "p50": 74.6,
+    "p95": 75.5,
+    "mean": 74.8667,
+    "min": 74.4,
+    "max": 75.6
+   },
+   "server_vmhwm_mb": {
+    "n": 3,
+    "p50": 73.2,
+    "p95": 73.56,
+    "mean": 73.2667,
+    "min": 73.0,
+    "max": 73.6
+   },
+   "max_threads": 7,
+   "server_start_s": {
+    "n": 3,
+    "p50": 1.231,
+    "p95": 1.5316,
+    "mean": 1.163,
+    "min": 0.693,
+    "max": 1.565
+   },
+   "warm_doc_wall_s_per_doc": {
+    "n": 180,
+    "p50": 0.0241,
+    "p95": 0.0547,
+    "mean": 0.0273,
+    "min": 0.0081,
+    "max": 0.0886
+   }
+  },
+  "text_c2": {
+   "clean_units": 2,
+   "dirty_units": 3,
+   "cold": {
+    "wall_s": {
+     "n": 2,
+     "p50": 2.988,
+     "p95": 3.0726,
+     "mean": 2.988,
+     "min": 2.894,
+     "max": 3.082
+    },
+    "docs_per_min": {
+     "n": 2,
+     "p50": 1205.975,
+     "p95": 1240.2425,
+     "mean": 1205.975,
+     "min": 1167.9,
+     "max": 1244.05
+    },
+    "server_cpu_s": {
+     "n": 2,
+     "p50": 0.975,
+     "p95": 1.0155,
+     "mean": 0.975,
+     "min": 0.93,
+     "max": 1.02
+    },
+    "cpu_utilization": {
+     "n": 2,
+     "p50": 0.0405,
+     "p95": 0.041,
+     "mean": 0.0405,
+     "min": 0.04,
+     "max": 0.041
+    },
+    "overhead_s_wall_minus_sum_doc_wall_over_c": {
+     "n": 2,
+     "p50": 0.3228,
+     "p95": 0.4346,
+     "mean": 0.3228,
+     "min": 0.1985,
+     "max": 0.447
+    },
+    "stage_sums_mean": {
+     "pdf_read_s": 2.09,
+     "ocr_s": 0.0,
+     "route_s": 0.18,
+     "extract_s": 0.11,
+     "wall_s": 5.33,
+     "ocr_pages": 0.0,
+     "pages": 83.0
+    },
+    "outcomes": {
+     "complete": 42,
+     "partial": 8,
+     "ambiguous": 10
+    }
+   },
+   "warm": {
+    "wall_s": {
+     "n": 2,
+     "p50": 2.2535,
+     "p95": 2.4825,
+     "mean": 2.2535,
+     "min": 1.999,
+     "max": 2.508
+    },
+    "docs_per_min": {
+     "n": 2,
+     "p50": 1618.14,
+     "p95": 1782.615,
+     "mean": 1618.14,
+     "min": 1435.39,
+     "max": 1800.89
+    },
+    "server_cpu_s": {
+     "n": 2,
+     "p50": 0.855,
+     "p95": 0.8685,
+     "mean": 0.855,
+     "min": 0.84,
+     "max": 0.87
+    },
+    "cpu_utilization": {
+     "n": 2,
+     "p50": 0.048,
+     "p95": 0.0525,
+     "mean": 0.048,
+     "min": 0.043,
+     "max": 0.053
+    },
+    "overhead_s_wall_minus_sum_doc_wall_over_c": {
+     "n": 2,
+     "p50": 0.2968,
+     "p95": 0.3168,
+     "mean": 0.2968,
+     "min": 0.2745,
+     "max": 0.319
+    },
+    "stage_sums_mean": {
+     "pdf_read_s": 1.7,
+     "ocr_s": 0.0,
+     "route_s": 0.17,
+     "extract_s": 0.09,
+     "wall_s": 3.91,
+     "ocr_pages": 0.0,
+     "pages": 83.0
+    },
+    "outcomes": {
+     "complete": 42,
+     "partial": 8,
+     "ambiguous": 10
+    }
+   },
+   "cgroup_peak_mb": {
+    "n": 2,
+    "p50": 75.05,
+    "p95": 75.275,
+    "mean": 75.05,
+    "min": 74.8,
+    "max": 75.3
+   },
+   "server_vmhwm_mb": {
+    "n": 2,
+    "p50": 74.6,
+    "p95": 75.23,
+    "mean": 74.6,
+    "min": 73.9,
+    "max": 75.3
+   },
+   "max_threads": 8,
+   "server_start_s": {
+    "n": 2,
+    "p50": 1.5735,
+    "p95": 1.745,
+    "mean": 1.5735,
+    "min": 1.383,
+    "max": 1.764
+   },
+   "warm_doc_wall_s_per_doc": {
+    "n": 120,
+    "p50": 0.0415,
+    "p95": 0.1803,
+    "mean": 0.0652,
+    "min": 0.0125,
+    "max": 0.2327
+   }
+  },
+  "text_c4": {
+   "clean_units": 3,
+   "dirty_units": 0,
+   "cold": {
+    "wall_s": {
+     "n": 3,
+     "p50": 2.122,
+     "p95": 2.9293,
+     "mean": 2.3023,
+     "min": 1.766,
+     "max": 3.019
+    },
+    "docs_per_min": {
+     "n": 3,
+     "p50": 1696.81,
+     "p95": 2004.223,
+     "mean": 1642.5333,
+     "min": 1192.41,
+     "max": 2038.38
+    },
+    "server_cpu_s": {
+     "n": 3,
+     "p50": 0.88,
+     "p95": 0.934,
+     "mean": 0.8867,
+     "min": 0.84,
+     "max": 0.94
+    },
+    "cpu_utilization": {
+     "n": 3,
+     "p50": 0.049,
+     "p95": 0.0607,
+     "mean": 0.05,
+     "min": 0.039,
+     "max": 0.062
+    },
+    "overhead_s_wall_minus_sum_doc_wall_over_c": {
+     "n": 3,
+     "p50": 0.1923,
+     "p95": 0.2496,
+     "mean": 0.1976,
+     "min": 0.1445,
+     "max": 0.256
+    },
+    "stage_sums_mean": {
+     "pdf_read_s": 2.53,
+     "ocr_s": 0.0,
+     "route_s": 0.19,
+     "extract_s": 0.12,
+     "wall_s": 8.42,
+     "ocr_pages": 0.0,
+     "pages": 83.0
+    },
+    "outcomes": {
+     "complete": 42,
+     "partial": 8,
+     "ambiguous": 10
+    }
+   },
+   "warm": {
+    "wall_s": {
+     "n": 3,
+     "p50": 1.826,
+     "p95": 2.9159,
+     "mean": 2.197,
+     "min": 1.728,
+     "max": 3.037
+    },
+    "docs_per_min": {
+     "n": 3,
+     "p50": 1971.4,
+     "p95": 2072.128,
+     "mean": 1746.6467,
+     "min": 1185.22,
+     "max": 2083.32
+    },
+    "server_cpu_s": {
+     "n": 3,
+     "p50": 0.86,
+     "p95": 1.094,
+     "mean": 0.93,
+     "min": 0.81,
+     "max": 1.12
+    },
+    "cpu_utilization": {
+     "n": 3,
+     "p50": 0.059,
+     "p95": 0.059,
+     "mean": 0.0547,
+     "min": 0.046,
+     "max": 0.059
+    },
+    "overhead_s_wall_minus_sum_doc_wall_over_c": {
+     "n": 3,
+     "p50": 0.2898,
+     "p95": 0.3352,
+     "mean": 0.2805,
+     "min": 0.2115,
+     "max": 0.3402
+    },
+    "stage_sums_mean": {
+     "pdf_read_s": 2.14,
+     "ocr_s": 0.0,
+     "route_s": 0.17,
+     "extract_s": 0.12,
+     "wall_s": 7.67,
+     "ocr_pages": 0.0,
+     "pages": 83.0
+    },
+    "outcomes": {
+     "complete": 42,
+     "partial": 8,
+     "ambiguous": 10
+    }
+   },
+   "cgroup_peak_mb": {
+    "n": 3,
+    "p50": 81.2,
+    "p95": 81.2,
+    "mean": 81.0333,
+    "min": 80.7,
+    "max": 81.2
+   },
+   "server_vmhwm_mb": {
+    "n": 3,
+    "p50": 79.3,
+    "p95": 79.57,
+    "mean": 79.3333,
+    "min": 79.1,
+    "max": 79.6
+   },
+   "max_threads": 10,
+   "server_start_s": {
+    "n": 3,
+    "p50": 1.542,
+    "p95": 1.6032,
+    "mean": 1.3363,
+    "min": 0.857,
+    "max": 1.61
+   },
+   "warm_doc_wall_s_per_doc": {
+    "n": 180,
+    "p50": 0.0922,
+    "p95": 0.3855,
+    "mean": 0.1278,
+    "min": 0.0152,
+    "max": 0.6147
+   }
+  }
+ },
+ "ocr_threads_note": "serwer tworzy RapidOCR() bez jawnej liczby wątków (domyślnie onnxruntime: -1, o liczbie decyduje ORT); zobacz max_threads"
+}
