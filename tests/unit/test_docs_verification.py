@@ -38,3 +38,17 @@ def test_docs_ignore_any_virtualenv_directory():
             [sys.executable, "scripts/verify_docs.py"], cwd=root, capture_output=True, text=True
         )
     assert result.returncode == 0, result.stdout + result.stderr
+
+
+def test_docs_ignore_vendored_third_party_directories():
+    """Katalogi `vendor` i `site-packages` to cudze pliki Markdown z własnymi linkami."""
+    root = Path(__file__).resolve().parents[2]
+    for name in ("vendor", "site-packages"):
+        with tempfile.TemporaryDirectory(dir=root, prefix=".ci-") as directory:
+            third_party = Path(directory) / name
+            third_party.mkdir()
+            (third_party / "broken.md").write_text("[broken](missing.md)\n")
+            result = subprocess.run(
+                [sys.executable, "scripts/verify_docs.py"], cwd=root, capture_output=True, text=True
+            )
+        assert result.returncode == 0, result.stdout + result.stderr
