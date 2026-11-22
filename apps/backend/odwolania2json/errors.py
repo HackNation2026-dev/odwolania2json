@@ -15,6 +15,7 @@ ERROR_CODES = frozenset(
         "pdf_encrypted",
         "empty_document",
         "page_limit",
+        "pixel_limit",
         "ocr_unavailable",
         "ocr_error",
         "llm_unavailable",
