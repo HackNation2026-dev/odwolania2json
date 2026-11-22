@@ -1,0 +1,10 @@
+node_modules/
+.next*/
+next-env.d.ts
+playwright-report/
+test-results/
+*.tsbuildinfo
+e2e/visual.spec.ts-snapshots/
+
+# Statyczny katalog Storybook
+storybook-static/

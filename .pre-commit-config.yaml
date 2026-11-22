@@ -2,7 +2,8 @@ minimum_pre_commit_version: '4.5.0'
 default_install_hook_types: [pre-commit, pre-push]
 # Materiały organizatora są niezmienne, także dla hooków naprawiających pliki.
 # Surowe wyniki eksperymentów (odpowiedzi modeli) też zachowujemy bez zmian.
-exclude: ^(docs/02-materialy/|experiments/)
+# Zasoby vendor GUI (worker PDF.js, font i PDF-y demo, wygenerowane) też zostają bez zmian i poza limitem rozmiaru.
+exclude: ^(docs/02-materialy/|experiments/|apps/web/public/(pdf|demo-pdf)/|apps/web/src/lib/api/contract\.generated\.json$)
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0

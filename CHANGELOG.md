@@ -1,5 +1,21 @@
 # Historia zmian
 
+## Nieopublikowane — 0.8.0
+
+- Dopisano do ADR-002 podział etapów (pip na etapie 1, GUI na prezentacji), punktację GUI i otwarte decyzje: biblioteka komponentów, podgląd PDF, model pól wg kontraktu.
+- Dodano [przepływ urzędnika](docs/04-architektura/gui/user-flow-urzednik.md): pełny przebieg operatora, widoczne etapy przetwarzania, naprawa błędów, korekty i wersjonowanie po MVP, eksport wariantu A oraz osobne dowody.
+- Udokumentowano obowiązkowy klucz MiniMax, brak logowania w zakresie i wyłącznie syntetyczne demo; dodano tablicę zgodności, mapę ramek/trasa/kod i pytania otwarte. Dokument rozróżnia plan, makiety i demonstracyjną implementację; VERSION pozostaje bez zmian.
+- Dodano aplikację GUI `apps/web` (Next 16, React 19.3, TypeScript, Tailwind 4, TanStack Query) działającą na mocku zgodnym z kontraktem: pulpit, klucz i kontrola, dodawanie, lista i galeria, przegląd dokumentu z prawdziwym podglądem PDF i obrysem dowodu, eksport wariantu A, klasy (`/klasy/[id]`), partie i eksport częściowy, ustawienia, dziennik, użytkownicy, dostępność, gotowość.
+- Dodano system design (23 atomy, 28 molekuł, 12 organizmów, 4 szablony, Storybook 10, test axe po historiach w obu motywach) i 36 makiet uzupełniających FigCraft (71 PNG w `apps/web/design`).
+- Dodano plan zadań GUI dla agentów: [zadania-gui.md](docs/00-organizacja/zadania-gui.md) (G01–G13). GUI działa wyłącznie na danych syntetycznych; silnik w `main` pozostaje atrapą.
+
+## 0.7.0 — 2026-11-21
+
+- Dodano przepływy użytkownika ([user-flow.md](docs/04-architektura/gui/user-flow.md)) oraz pliki FigCraft z ekranami (38 ramek) i ośmioma grafami przepływów.
+- Nowe ekrany: logowanie na później, brak klucza API i kontrola połączenia, pulpit (jasny i ciemny), panel dodawania i przeglądania dokumentów, galeria kafelków z filtrami, sortowaniem i pustym wynikiem.
+- ADR-002, uzupełnienie 0.7.0: wariant A eksportu (ścisła walidacja, bez zastępczego `{}`) zastępuje domyślne `empty_json` z 0.6.1; zatwierdzona paleta UI; ciemny motyw jako propozycja. Architektura §10 do synchronizacji.
+- Otwarte: pole klucza w GUI (sprzeczne z projekt-ui §3.1.1), próg galerii, nazwa produktu. Projekt UI (projekt-ui.md) bez zmian w tym wpisie. To dokumentacja projektowa, nie potwierdzenie implementacji.
+
 ## 0.6.0 — 2026-11-21
 
 - Dodano architekturę wewnętrzną ELT: kontrakty odczytu/OCR, diagnozy, routera, kandydatów, dowodów, braków i stanów; staging, wersje, cache i ścieżkę pionową E/L/T1/T3/T5. Rozszerzenia po pomiarze F1.

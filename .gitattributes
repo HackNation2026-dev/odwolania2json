@@ -16,3 +16,4 @@
 *.jpe binary
 run.sh text eol=lf
 start.bat text eol=crlf
+*.figcraft binary
