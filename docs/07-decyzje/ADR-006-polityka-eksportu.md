@@ -31,7 +31,7 @@ Dane z eksperymentów (F1 przybliżony ewaluatora zespołu, bootstrap po sprawac
 
 ### Raport `report.jsonl`
 
-Jeden wiersz JSON na plik wejściowy, zapisywany atomowo po każdym dokumencie: `input`, `output` (lub `null`), `status` (`ok`, `foreign`, `ambiguous`, `unclassified`, `partial`, `technical_error`), `document_class`, `pages`, `unprocessed`, `errors` (`code`, `message`, `page`), `flags`. Raport nie zawiera treści dokumentów, odpowiedzi modelu ani sekretów: opisy składa program, a nieoczekiwany wyjątek zostawia tylko nazwę swojej klasy.
+Jeden wiersz JSON na plik wejściowy, zapisywany atomowo po każdym dokumencie: `input`, `output` (lub `null`), `status` (`ok`, `foreign`, `ambiguous`, `unclassified`, `partial`, `technical_error`), `document_class`, `pages`, `unprocessed`, `errors` (`code`, `message`, `page`), `flags`, `llm` (dostawca, model, powód przełączenia, ostrzeżenia; [ADR-007](ADR-007-zapasowy-dostawca-llm.md)). Raport nie zawiera treści dokumentów, odpowiedzi modelu ani sekretów: opisy składa program, a nieoczekiwany wyjątek zostawia tylko nazwę swojej klasy.
 
 ### Kody wyjścia `process`
 
