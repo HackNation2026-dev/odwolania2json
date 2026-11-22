@@ -11,19 +11,29 @@ import argparse
 import contextlib
 import sys
 import time
-from collections.abc import Callable
+import uuid
+from collections.abc import Callable, Sequence
 from pathlib import Path
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Protocol
 
-from .config import Settings, build_llm_settings, resolve_api_key
+from .config import Settings, build_fallback_settings, build_llm_settings, resolve_api_key
 from .errors import ProcessingError
+from .extract.ports import JsonLlm
 
 if TYPE_CHECKING:
+    from .llm.chain import LlmChain
     from .llm.client import LlmClient
 
 __all__ = ["APP_NAME", "build_llm_client", "build_parser", "main"]
 
 APP_NAME = "Odwołania2JSON"
+
+
+class BatchLlm(JsonLlm, Protocol):
+    """Klient LLM wsadu: odpowiedzi JSON oraz próba połączenia przed wsadem."""
+
+    def self_check(self) -> Sequence[str] | None: ...
+
 
 # Próba połączenia przed wsadem: chwilowy brak sieci dostaje kilka podejść,
 # zły klucz albo wyczerpany limit (401/403/429) kończą od razu.
@@ -100,20 +110,48 @@ def _run_migrate(arguments: argparse.Namespace) -> int:
     return 0
 
 
-def build_llm_client(settings: Settings) -> LlmClient:
-    """Klient LLM z ustawień; brak klucza bez terminala to jawny błąd (bez czekania)."""
+def _fallback_client(settings: Settings, primary: LlmClient) -> LlmClient | None:
+    """Klient dostawcy zapasowego albo `None`; wadliwa konfiguracja zapasu to ostrzeżenie."""
     from .llm.client import LlmClient
+
+    try:
+        # Jeden identyfikator sesji na uruchomienie programu (znacznik `{session}`).
+        fallback = build_fallback_settings(settings, str(uuid.uuid4()))
+        if fallback is None:
+            return None
+        return LlmClient(fallback, budget=primary.budget)
+    except ProcessingError as error:
+        print(
+            f"ostrzeżenie: dostawca zapasowy LLM pominięty: {error.code}: {error.message}",
+            file=sys.stderr,
+        )
+        return None
+
+
+def build_llm_client(settings: Settings) -> LlmChain:
+    """Łańcuch dostawców LLM z ustawień; brak klucza bez terminala to jawny błąd."""
+    from .llm.chain import DEFAULT_COOLDOWN_S, LlmChain
+    from .llm.client import LlmBudget, LlmClient
 
     interactive = sys.stdin.isatty() and sys.stderr.isatty()
     api_key = resolve_api_key(settings, interactive=interactive)
-    return LlmClient(build_llm_settings(settings, api_key))
+    primary_settings = build_llm_settings(settings, api_key)
+    # Wspólny budżet: zapasowy dostawca nie podwaja limitu wywołań ani tokenów wsadu.
+    budget = LlmBudget(primary_settings.max_calls, settings.llm_max_total_tokens)
+    primary = LlmClient(primary_settings, budget=budget)
+    return LlmChain(
+        primary,
+        _fallback_client(settings, primary),
+        cooldown_s=settings.llm_provider_cooldown_s or DEFAULT_COOLDOWN_S,
+    )
 
 
-def _self_check(client: LlmClient, sleep: Callable[[float], None]) -> None:
-    """Jedno wywołanie próbne; tylko niedostępność sieci jest ponawiana."""
+def _self_check(client: BatchLlm, sleep: Callable[[float], None]) -> None:
+    """Jedno wywołanie próbne na dostawcę; tylko niedostępność sieci jest ponawiana."""
     for attempt in range(1, _SELF_CHECK_ATTEMPTS + 1):
         try:
-            client.self_check()
+            for warning in client.self_check() or ():
+                print(f"ostrzeżenie: {warning}", file=sys.stderr)
             return
         except ProcessingError as error:
             if error.code != "llm_unavailable" or attempt == _SELF_CHECK_ATTEMPTS:
@@ -139,7 +177,7 @@ def _run_process(arguments: argparse.Namespace, sleep: Callable[[float], None]) 
         print(f"brak plików PDF w katalogu wejściowym: {input_dir}")
         return EXIT_OK
     try:
-        client = build_llm_client(settings)
+        client: BatchLlm = build_llm_client(settings)
         _self_check(client, sleep)
     except ProcessingError as error:
         print(f"błąd: {error.code}: {error.message}", file=sys.stderr)
@@ -149,7 +187,21 @@ def _run_process(arguments: argparse.Namespace, sleep: Callable[[float], None]) 
         print("wsad nie został przetworzony", file=sys.stderr)
         return EXIT_USAGE
     error_export: ErrorExport = "no_file" if settings.error_export == "no_file" else "empty_json"
-    return run_process(input_dir, output_dir, Engine(client), error_export=error_export)
+    exit_code = run_process(input_dir, output_dir, Engine(client), error_export=error_export)
+    _print_usage(client)
+    return exit_code
+
+
+def _print_usage(client: object) -> None:
+    """Zużycie LLM w tym wsadzie (wywołania i tokeny łącznie dla obu dostawców)."""
+    from .llm.client import LlmBudget
+
+    budget = getattr(client, "budget", None)
+    if isinstance(budget, LlmBudget):
+        print(
+            f"LLM: wywołania={budget.calls} tokeny_wejścia={budget.input_tokens} "
+            f"tokeny_wyjścia={budget.output_tokens}"
+        )
 
 
 def main(argv: list[str] | None = None, *, sleep: Callable[[float], None] = time.sleep) -> int:

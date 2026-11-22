@@ -5,9 +5,12 @@ from __future__ import annotations
 from pathlib import Path
 
 import pytest
+from odwolania2json import __version__
 from odwolania2json.config import (
     DEFAULT_ALLOWED_HOSTS,
+    SESSION_PLACEHOLDER,
     Settings,
+    build_fallback_settings,
     build_llm_settings,
     resolve_api_key,
 )
@@ -79,6 +82,8 @@ def test_llm_options_are_read_from_environment() -> None:
         ("LLM_MAX_CALLS", "0", "LLM_MAX_CALLS musi być dodatnie"),
         ("LLM_TIMEOUT_S", "-1", "LLM_TIMEOUT_S musi być dodatnie"),
         ("LLM_MAX_OUTPUT_TOKENS", "1.5", "LLM_MAX_OUTPUT_TOKENS musi być liczbą"),
+        ("LLM_MAX_RETRIES", "-1", "LLM_MAX_RETRIES nie może być mniejsze niż 0"),
+        ("LLM_PROVIDER_COOLDOWN_S", "0", "LLM_PROVIDER_COOLDOWN_S musi być dodatnie"),
     ],
 )
 def test_bad_numeric_option_is_invalid_configuration(name: str, value: str, fragment: str) -> None:
@@ -214,3 +219,145 @@ def test_incomplete_configuration_is_explicit_error(changes: dict[str, str], fra
     assert caught.value.code == "invalid_configuration"
     assert fragment in caught.value.message
     assert KEY not in str(caught.value)
+
+
+# --- dostawca zapasowy ---
+
+FALLBACK_KEY = "KANAREK-klucz-zapasowy"
+SESSION = "11111111-2222-3333-4444-555555555555"
+FALLBACK = {
+    **BASE,
+    "LLM_ALLOWED_HOSTS": "api.minimax.io,zapas.example.eu",
+    "LLM_FALLBACK_BASE_URL": "https://zapas.example.eu/openai/v1",
+    "LLM_FALLBACK_MODEL": "model-zapasowy",
+    "LLM_FALLBACK_API_KEY": FALLBACK_KEY,
+}
+
+
+def test_fallback_is_absent_without_base_url() -> None:
+    settings = Settings.from_env({**BASE, "LLM_FALLBACK_MODEL": "m", "LLM_FALLBACK_API_KEY": "k"})
+
+    assert settings.llm_fallback_base_url is None
+    assert build_fallback_settings(settings, SESSION) is None
+
+
+def test_fallback_settings_are_built_from_environment() -> None:
+    settings = Settings.from_env(FALLBACK)
+
+    llm = build_fallback_settings(settings, SESSION)
+
+    assert llm is not None
+    assert (llm.protocol, llm.base_url, llm.model) == (
+        "openai",
+        "https://zapas.example.eu/openai/v1",
+        "model-zapasowy",
+    )
+    assert llm.api_key == FALLBACK_KEY
+    assert llm.allowed_hosts == ("api.minimax.io", "zapas.example.eu")
+    assert llm.user_agent == f"odwolania2json/{__version__}"
+    assert llm.extra_headers == ()
+    assert llm.allow_http_localhost is True
+
+
+def test_fallback_secrets_are_hidden_in_repr() -> None:
+    settings = Settings.from_env(
+        {**FALLBACK, "LLM_FALLBACK_HEADERS": '{"x-token": "tajny-naglowek"}'}
+    )
+
+    llm = build_fallback_settings(settings, SESSION)
+
+    for text in (repr(settings), repr(llm)):
+        assert FALLBACK_KEY not in text
+        assert "tajny-naglowek" not in text
+
+
+def test_fallback_headers_user_agent_protocol_and_session_placeholder() -> None:
+    settings = Settings.from_env(
+        {
+            **FALLBACK,
+            "LLM_FALLBACK_PROTOCOL": "anthropic",
+            "LLM_FALLBACK_USER_AGENT": "moj-klient/1.0",
+            "LLM_FALLBACK_HEADERS": '{"x-sesja": "{session}", "x-org": "stale"}',
+        }
+    )
+
+    llm = build_fallback_settings(settings, SESSION)
+
+    assert llm is not None
+    assert SESSION_PLACEHOLDER == "{session}"
+    assert llm.protocol == "anthropic"
+    assert llm.user_agent == "moj-klient/1.0"
+    assert llm.extra_headers == (("x-sesja", SESSION), ("x-org", "stale"))
+
+
+def test_fallback_key_is_read_from_file(tmp_path: Path) -> None:
+    key_file = tmp_path / "klucz-zapasowy"
+    key_file.write_text(f"{FALLBACK_KEY}\n", encoding="utf-8")
+    env = {**FALLBACK, "LLM_FALLBACK_API_KEY": "", "LLM_FALLBACK_KEY_FILE": str(key_file)}
+
+    llm = build_fallback_settings(Settings.from_env(env), SESSION)
+
+    assert llm is not None
+    assert llm.api_key == FALLBACK_KEY
+
+
+def test_fallback_shares_limits_with_primary() -> None:
+    env = {**FALLBACK, "LLM_MAX_CALLS": "5", "LLM_TIMEOUT_S": "20", "LLM_MAX_TOTAL_TOKENS": "900"}
+    settings = Settings.from_env(env)
+
+    llm = build_fallback_settings(settings, SESSION)
+
+    assert llm is not None
+    assert (llm.max_calls, llm.timeout_s) == (5, 20.0)
+    assert settings.llm_max_total_tokens == 900
+
+
+@pytest.mark.parametrize(
+    ("changes", "code", "fragment"),
+    [
+        ({"LLM_FALLBACK_MODEL": ""}, "invalid_configuration", "LLM_FALLBACK_MODEL"),
+        ({"LLM_FALLBACK_API_KEY": ""}, "llm_authorization", "LLM_FALLBACK_KEY_FILE"),
+        ({"LLM_FALLBACK_PROTOCOL": "grpc"}, "invalid_configuration", "LLM_FALLBACK_PROTOCOL"),
+        (
+            {"LLM_FALLBACK_API_KEY": "", "LLM_FALLBACK_KEY_FILE": "/nie/ma/takiego/pliku"},
+            "llm_authorization",
+            "LLM_FALLBACK_KEY_FILE (FileNotFoundError)",
+        ),
+    ],
+)
+def test_incomplete_fallback_configuration_is_explicit_error(
+    changes: dict[str, str], code: str, fragment: str
+) -> None:
+    settings = Settings.from_env({**FALLBACK, **changes})
+
+    with pytest.raises(ProcessingError) as caught:
+        build_fallback_settings(settings, SESSION)
+
+    assert caught.value.code == code
+    assert fragment in caught.value.message
+    assert FALLBACK_KEY not in str(caught.value)
+
+
+@pytest.mark.parametrize(
+    "raw", ["to nie JSON", '["lista"]', '{"x": 1}', '{"x": {"y": "z"}}', '"tekst"']
+)
+def test_fallback_headers_must_be_json_object_of_text(raw: str) -> None:
+    with pytest.raises(ProcessingError) as caught:
+        Settings.from_env({"LLM_FALLBACK_HEADERS": raw})
+
+    assert caught.value.code == "invalid_configuration"
+    assert "LLM_FALLBACK_HEADERS musi być obiektem JSON" in caught.value.message
+    assert "lista" not in caught.value.message
+
+
+def test_retry_count_and_cooldown_are_configurable() -> None:
+    env = {**FALLBACK, "LLM_MAX_RETRIES": "0", "LLM_PROVIDER_COOLDOWN_S": "86400"}
+    settings = Settings.from_env(env)
+
+    fallback = build_fallback_settings(settings, SESSION)
+
+    assert build_llm_settings(settings, KEY).max_retries == 0
+    assert fallback is not None
+    assert fallback.max_retries == 0
+    assert settings.llm_provider_cooldown_s == 86400.0
+    assert build_llm_settings(Settings.from_env(BASE), KEY).max_retries == 3

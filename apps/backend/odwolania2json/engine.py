@@ -25,7 +25,7 @@ from typing import Literal, Protocol
 
 from .errors import ProcessingError
 from .extract.pipeline import PageText, document_text, extract
-from .extract.ports import JsonLlm, PageOcr
+from .extract.ports import JsonLlm, LlmTrace, PageOcr, TracedLlm
 from .loader import DocumentClass, result_name_for
 from .pdf.reader import DEFAULT_MAX_PAGES, PdfDocument, diagnose_page
 
@@ -125,6 +125,12 @@ class Engine:
     def process(self, pdf: Path) -> tuple[dict[str, object], DocumentClass | None]:
         outcome = self.process_document(pdf)
         return outcome.payload, outcome.document_class
+
+    def take_llm_trace(self) -> LlmTrace | None:
+        """Dostawca LLM ostatniego dokumentu (także nieudanego); `None`, gdy nie wiadomo."""
+        if isinstance(self._llm, TracedLlm):
+            return self._llm.take_trace()
+        return None
 
     def process_document(self, pdf: Path) -> DocumentOutcome:
         """Przetwarza jeden PDF; błąd całego dokumentu to `ProcessingError`."""
@@ -253,6 +259,19 @@ def _status(outcome: DocumentOutcome) -> str:
     return "ok"
 
 
+def _llm_record(engine: DocumentEngine) -> dict[str, object] | None:
+    """Wpis `llm` raportu: dostawca, model i powód przełączenia; bez kluczy i nagłówków."""
+    trace = engine.take_llm_trace() if isinstance(engine, Engine) else None
+    if trace is None:
+        return None
+    return {
+        "provider": trace.provider,
+        "model": trace.model,
+        "switch_reason": trace.switch_reason,
+        "warnings": list(trace.warnings),
+    }
+
+
 def _issue_record(issue: Issue) -> dict[str, object]:
     return {"code": issue.code, "message": issue.message, "page": issue.page}
 
@@ -270,6 +289,7 @@ class _Batch:
         self._fatal: ProcessingError | None = None
         self._targets: set[Path] = set()
         self._records: list[dict[str, object]] = []
+        self._announced: set[str] = set()
         self.failures = 0
 
     def run(self, pdf: Path) -> None:
@@ -285,10 +305,29 @@ class _Batch:
             record.update(self._process(pdf, target))
         except Exception as error:
             record.update(self._fail(_as_processing_error(error), relative, target))
+        record["llm"] = _llm_record(self._engine)
+        self._announce_switch(record["llm"])
         if record["status"] in _FAILURE_STATUSES:
             self.failures += 1
         self._records.append(record)
         self._write_report()
+
+    def _announce_switch(self, llm: object) -> None:
+        """Raz na wsad mówi na stderr o przełączeniu dostawcy i o odrzuconym kluczu głównego."""
+        if not isinstance(llm, dict):
+            return
+        notes = [f"switch:{llm['switch_reason']}"] if llm["switch_reason"] else []
+        notes += [f"warning:{warning}" for warning in llm["warnings"]]
+        for note in notes:
+            if note not in self._announced:
+                self._announced.add(note)
+                kind, _, code = note.partition(":")
+                text = (
+                    f"uwaga: dostawca główny LLM zawiódł ({code}); pytam zapasowego"
+                    if kind == "switch"
+                    else f"uwaga: {code}: klucz dostawcy głównego LLM został odrzucony"
+                )
+                print(text, file=sys.stderr)
 
     def _process(self, pdf: Path, target: Path) -> dict[str, object]:
         if self._fatal is not None:
