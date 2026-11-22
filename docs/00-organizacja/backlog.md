@@ -33,6 +33,8 @@ Kolejność wynika z [warunków wejścia do implementacji](../04-architektura/ar
 | 10 | Testy mutacyjne regex i walidatora (obowiązek ADR-002 pkt 6) | zero przeżytych mutantów w zakresie | — |
 | 11 | GUI P0: wgranie i przegląd, dowód strona + cytat + bbox, pobranie JSON, karty modeli i gotowość OCR | działa na CLI/API, bez serwera Node | 5, 9 |
 
+Stan GUI (poz. 11): aplikacja `apps/web` istnieje na mocku zgodnym z kontraktem (nie jest połączona z silnikiem); pozostałe prace opisuje [zadania GUI](zadania-gui.md).
+
 Rozszerzenia T2, T4, analiza regionów włączamy tylko po poprawie F1 na zbiorze rozwojowym (architektura §3).
 
 ## Zadania z eksperymentów (2026-11-22)
