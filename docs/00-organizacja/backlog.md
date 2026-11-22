@@ -52,6 +52,8 @@ Rozszerzenia T2, T4, analiza regionów włączamy tylko po poprawie F1 na zbiorz
 | E-7 | Kotwiczenie cytatów: cytat z kontekstem, słowa OCR drobniejsze niż linia (dziś 86% jednoznacznych na PDF, 73% poprawnych bbox na OCR) | ≥ 95% jednoznacznych na rozwojowym |
 | E-8 | Dokończyć brakujące eksperymenty: pomiar czasu w cichej maszynie, wariant D na skanach (57 z 150), zbiór kontrolny (jeden przebieg), fizyczne skany ok. 10 spraw, drugi dostawca LLM | raport uzupełniony; licznik użyć zbioru kontrolnego |
 
+Stan E-1: `process` odczytuje skany przez RapidOCR i pomija ich niewidoczną warstwę PDF. Test integracyjny obejmuje również dokument mieszany. Pozostaje porównanie F1 z wariantem przekazującym obraz do LLM.
+
 ## Znane długi
 
 | Dług | Szczegóły | Jak naprawić |

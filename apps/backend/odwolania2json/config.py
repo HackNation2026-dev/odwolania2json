@@ -58,10 +58,10 @@ def _default_web_dir() -> Path:
     return Path(__file__).resolve().parents[2] / "web"
 
 
-def _flag(env: Mapping[str, str], name: str) -> bool:
-    """Czyta flagę ``0``/``1`` ze środowiska; brak wartości oznacza ``False``."""
-    raw = env.get(name, "").strip().lower()
-    return raw in {"1", "true", "yes", "tak", "on"}
+def _flag(env: Mapping[str, str], name: str, *, default: bool = False) -> bool:
+    """Czyta flagę ``0``/``1`` ze środowiska, z domyślną wartością dla braku zmiennej."""
+    raw = env.get(name)
+    return default if raw is None else raw.strip().lower() in {"1", "true", "yes", "tak", "on"}
 
 
 def _optional(env: Mapping[str, str], name: str) -> str | None:
@@ -113,7 +113,9 @@ class Settings:
     llm_fallback_headers: tuple[tuple[str, str], ...] = field(default=(), repr=False)
 
     @classmethod
-    def from_env(cls, env: Mapping[str, str] | None = None) -> Settings:
+    def from_env(
+        cls, env: Mapping[str, str] | None = None, *, default_ocr: bool = False
+    ) -> Settings:
         """Buduje ustawienia z podanego mapowania albo ze środowiska procesu."""
         environment: Mapping[str, str] = os.environ if env is None else env
         key_file = _optional(environment, "LLM_API_KEY_FILE")
@@ -126,7 +128,7 @@ class Settings:
             llm_base_url=_optional(environment, "LLM_BASE_URL"),
             llm_model=_optional(environment, "LLM_MODEL"),
             llm_api_key=_optional(environment, "LLM_API_KEY"),
-            ocr_enabled=_flag(environment, "OCR_ENABLED"),
+            ocr_enabled=_flag(environment, "OCR_ENABLED", default=default_ocr),
             docs_enabled=_flag(environment, "O2J_DOCS_ENABLED"),
             web_dir=Path(environment.get("O2J_WEB_DIR") or _default_web_dir()),
             llm_api_key_file=Path(key_file).expanduser() if key_file else None,

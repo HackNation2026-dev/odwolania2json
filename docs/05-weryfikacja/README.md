@@ -1,12 +1,16 @@
 ---
 wersja: 0.2.0
-aktualizacja: 2026-11-21
-status: dokumentacja przygotowawcza
+aktualizacja: 2026-11-22
+status: plan weryfikacji i sprawdzenie etapu 1
 ---
 
 # Plan weryfikacji UZP
 
-Stan: aplikacja nie istnieje; wyników F1 jeszcze nie zmierzono.
+Stan etapu 1 (2026-11-22). Czysta instalacja `pip install -r requirements.txt` na macOS arm64 z Pythonem 3.13 przeszła. Zainstalowany `process` zakończył wsad 196 PDF-ów organizatora kodem `0` z lokalną atrapą LLM. Powstało 196 plików JSON z zachowaniem nazw i podkatalogów oraz 196 wpisów w `report.jsonl`. Osobna próba potwierdziła zapis pola przelewu poza katalogiem repozytorium.
+
+Pierwszy przebieg sprawdzał dostarczenie, odczyt i zapis. Atrapa dla pełnego wsadu zwracała klasę obcą. W drugim przebiegu, z odpowiedziami LLM wypełnionymi z referencji, wszystkie 196 plików przeszło walidację schematów. Wyniki odtworzyły wartości referencyjne dla 180 dokumentów ocenianych, a 16 negatywnych dało `{}`. Cztery pliki ujemne są kopiami tych z katalogu `negatywne` i liczą się jako osobne ścieżki w próbie uruchomienia.
+
+Próbne rozwiązanie zależności pip zakończyło się powodzeniem dla Pythona 3.13 na Linux i Windows x86-64. Rzeczywiste uruchomienie wykonano na macOS arm64. Pomiar F1 aktualnego produktu z MiniMaxem pozostaje do wykonania. Instrukcja jest w [README](../../README.md#próba-pomiaru-minimax).
 
 1. Rozdziel dane według całych spraw, nie stron. Zachowaj grupowanie dokumentów.
 2. Oddziel dane do rozwoju od nieużywanego wcześniej zbioru kontrolnego.

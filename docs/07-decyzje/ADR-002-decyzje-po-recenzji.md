@@ -150,9 +150,9 @@ Aktualizacja 0.6.1: w sprawie bazy pierwszeństwo ma [ADR-004](ADR-004-sqlalchem
 
 ## Uzupełnienie 0.8.0: etapy oceny a dostarczenie GUI (użytkownik, 2026-11-22)
 
-- **Wyjaśnienie rozbieżności pip / GUI.** Wymóg „na teście tylko pip” dotyczy pierwszego etapu (CLI). GUI jest pokazywane na etapie prezentacji po pierwszym etapie. Według użytkownika stąd różnica między dostarczeniem przez pip a GUI. Sformułowanie użytkownika było przypuszczeniem („pewnie”), więc **nie zastępuje ono decyzji z 0.6.0**.
+- **Etap 1.** Użytkownik potwierdził, że warunkiem odbioru jest uruchomienie projektu przez pip i przetworzenie pełnego dostępnego zbioru przez CLI. GUI jest opcjonalne na pierwszym etapie.
 - **Decyzja 0.6.0 pozostaje w mocy jako rozwiązanie zapasowe:** Next.js tylko jako statyczny eksport w pakiecie pip, bez Node u jury. Na etapie 1 nic w GUI nie jest warunkiem uruchomienia CLI.
-- **Zakres prac:** pełne GUI pod cały silnik (wszystkie klasy kontraktu, etapy przetwarzania, diagnozy, klasy i pola, wersje), logowanie poza zakresem, klucz MiniMax wymagany.
+- **Zakres GUI na prezentację.** Wgranie PDF-u, uruchomienie analizy i podgląd PDF-u obok wynikowego JSON-u. Klucz MiniMax jest częścią konfiguracji uruchomienia silnika.
 - **Punktacja:** GUI to „inne ciekawe funkcje” (1–10 pkt) w części „elastyczność i rozbudowa” finału ([punktacja](../01-zadanie/punktacja.md)); F1 oceniane jest na wyniku silnika.
 - **Decyzje użytkownika (2026-11-22):**
   1. **Biblioteka komponentów: zostają własne** (atomy, molekuły, organizmy i szablony na Tailwindzie z tokenami, Storybook). Zmienia to pkt 10 z gluestack-ui; gluestack-ui nie jest używany.
