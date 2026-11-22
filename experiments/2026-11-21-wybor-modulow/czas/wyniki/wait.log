@@ -1,0 +1,1 @@
+{'quiet': False, 'waited_s': 61.3, 'polls': 5, 'loadavg_before': [31.54, 27.81, 18.49], 'gate': 'strict', 'last_reason': 'obce procesy .venv-exp: 1', 'foreign': ['623890: t2_pdf.py --max-wait'], 'label': 'oczekiwanie'}

@@ -1,0 +1,509 @@
+{
+ "experiment": "T2",
+ "documents": 198,
+ "environment": {
+  "cpu_model": "Intel(R) Core(TM) Ultra 7 258V",
+  "logical_cores": 8,
+  "python": "3.13.18",
+  "kernel": "7.3.4-300.fc45.x86_64",
+  "versions": {
+   "rapidocr": "3.10.0",
+   "onnxruntime": "1.32.0",
+   "pypdfium2": "5.15.2",
+   "numpy": "2.5.5",
+   "pillow": "13.0.0",
+   "httpx": "0.28.1",
+   "fastapi": "0.165.0",
+   "uvicorn": "0.54.0"
+  },
+  "cpu_governor": "powersave",
+  "mem_mb": {
+   "MemTotal": 31553,
+   "MemAvailable": 16637,
+   "SwapTotal": 40959,
+   "SwapFree": 33444
+  },
+  "seed": 20261122,
+  "date": "2026-11-22 07:56:32 +0100",
+  "env_threads": {
+   "OMP_NUM_THREADS": null,
+   "OPENBLAS_NUM_THREADS": null,
+   "MKL_NUM_THREADS": null,
+   "ORT_NUM_THREADS": null
+  }
+ },
+ "gates": [
+  {
+   "quiet": false,
+   "waited_s": 30.3,
+   "polls": 4,
+   "loadavg_before": [
+    7.47,
+    15.95,
+    21.13
+   ],
+   "gate": "strict",
+   "last_reason": "obce procesy .venv-exp: 1",
+   "foreign": [
+    "772777: t2_pdf.py --max-wait"
+   ],
+   "label": "T2 start"
+  },
+  {
+   "quiet": true,
+   "waited_s": 2.1,
+   "polls": 0,
+   "loadavg_before": [
+    6.87,
+    15.68,
+    21.01
+   ],
+   "gate": "fast",
+   "label": "render150 rep0",
+   "loaded_accepted": true,
+   "loadavg1_threshold": 4.0,
+   "busy_foreign_cpu": 0.085,
+   "idle_foreign_venv": [
+    "772777: t2_pdf.py --max-wait"
+   ]
+  },
+  {
+   "quiet": true,
+   "waited_s": 2.1,
+   "polls": 0,
+   "loadavg_before": [
+    5.65,
+    14.98,
+    20.7
+   ],
+   "gate": "fast",
+   "label": "text rep0",
+   "loaded_accepted": true,
+   "loadavg1_threshold": 4.0,
+   "busy_foreign_cpu": 0.1,
+   "idle_foreign_venv": []
+  },
+  {
+   "quiet": true,
+   "waited_s": 2.3,
+   "polls": 0,
+   "loadavg_before": [
+    6.29,
+    14.8,
+    20.58
+   ],
+   "gate": "fast",
+   "label": "render300 rep0",
+   "loaded_accepted": true,
+   "loadavg1_threshold": 4.0,
+   "busy_foreign_cpu": 0.975,
+   "idle_foreign_venv": []
+  },
+  {
+   "quiet": true,
+   "waited_s": 2.1,
+   "polls": 0,
+   "loadavg_before": [
+    4.76,
+    12.17,
+    19.14
+   ],
+   "gate": "fast",
+   "label": "text rep1",
+   "loaded_accepted": true,
+   "loadavg1_threshold": 4.0,
+   "busy_foreign_cpu": 0.726,
+   "idle_foreign_venv": []
+  },
+  {
+   "quiet": true,
+   "waited_s": 2.1,
+   "polls": 0,
+   "loadavg_before": [
+    7.04,
+    12.42,
+    19.14
+   ],
+   "gate": "fast",
+   "label": "render150 rep1",
+   "loaded_accepted": true,
+   "loadavg1_threshold": 4.0,
+   "busy_foreign_cpu": 0.063,
+   "idle_foreign_venv": []
+  },
+  {
+   "quiet": true,
+   "waited_s": 2.1,
+   "polls": 0,
+   "loadavg_before": [
+    5.31,
+    11.67,
+    18.76
+   ],
+   "gate": "fast",
+   "label": "render300 rep1",
+   "loaded_accepted": true,
+   "loadavg1_threshold": 4.0,
+   "busy_foreign_cpu": 0.106,
+   "idle_foreign_venv": []
+  }
+ ],
+ "total_wait_s": 43.1,
+ "summary": {
+  "text": {
+   "clean_units": 2,
+   "docs": 198,
+   "pages_total": 624,
+   "import_s": {
+    "n": 2,
+    "p50": 0.0312,
+    "p95": 0.038,
+    "mean": 0.0312,
+    "min": 0.0235,
+    "max": 0.0388
+   },
+   "rss_peak_mb": {
+    "n": 2,
+    "p50": 59.85,
+    "p95": 59.895,
+    "mean": 59.85,
+    "min": 59.8,
+    "max": 59.9
+   },
+   "cpu_s_per_pass_warm": {
+    "n": 2,
+    "p50": 3.5942,
+    "p95": 3.6101,
+    "mean": 3.5942,
+    "min": 3.5765,
+    "max": 3.6119
+   },
+   "cpu_s_per_pass_cold": {
+    "n": 2,
+    "p50": 3.5877,
+    "p95": 3.6423,
+    "mean": 3.5877,
+    "min": 3.5271,
+    "max": 3.6484
+   },
+   "cold": {
+    "per_doc_median_s": {
+     "n": 198,
+     "p50": 0.0049,
+     "p95": 0.0871,
+     "mean": 0.0192,
+     "min": 0.0002,
+     "max": 0.227
+    },
+    "all_samples_s": {
+     "n": 396,
+     "p50": 0.0048,
+     "p95": 0.0843,
+     "mean": 0.0192,
+     "min": 0.0002,
+     "max": 0.2386
+    },
+    "total_s_per_pass": {
+     "n": 2,
+     "p50": 3.8115,
+     "p95": 4.036,
+     "mean": 3.8115,
+     "min": 3.5621,
+     "max": 4.0609
+    },
+    "s_per_page_warm_mean": null
+   },
+   "warm": {
+    "per_doc_median_s": {
+     "n": 198,
+     "p50": 0.0046,
+     "p95": 0.0815,
+     "mean": 0.0196,
+     "min": 0.0002,
+     "max": 0.2717
+    },
+    "all_samples_s": {
+     "n": 396,
+     "p50": 0.0046,
+     "p95": 0.0826,
+     "mean": 0.0196,
+     "min": 0.0002,
+     "max": 0.3267
+    },
+    "total_s_per_pass": {
+     "n": 2,
+     "p50": 3.8748,
+     "p95": 4.0179,
+     "mean": 3.8748,
+     "min": 3.7157,
+     "max": 4.0338
+    },
+    "s_per_page_warm_mean": 0.00621
+   },
+   "most_expensive_warm": [
+    {
+     "doc": "dane/negatywne/KIO_KIO 2617-21.pdf",
+     "pages": 10,
+     "median_s": 0.2717
+    },
+    {
+     "doc": "dane/negatywne/Broszura_JPK_FA(2).pdf",
+     "pages": 31,
+     "median_s": 0.184
+    },
+    {
+     "doc": "dane/przyklad_24/prowadzenie_postepowania_odwolawczego.pdf",
+     "pages": 35,
+     "median_s": 0.1602
+    },
+    {
+     "doc": "dane/negatywne/2020_03_21-22prowadzenie_postepowania_odwolawczego.pdf",
+     "pages": 35,
+     "median_s": 0.1249
+    },
+    {
+     "doc": "dane/negatywne/2025_S 112-383751.pdf",
+     "pages": 10,
+     "median_s": 0.0851
+    }
+   ]
+  },
+  "render150": {
+   "clean_units": 2,
+   "docs": 198,
+   "pages_total": 624,
+   "import_s": {
+    "n": 2,
+    "p50": 0.0344,
+    "p95": 0.0385,
+    "mean": 0.0344,
+    "min": 0.0299,
+    "max": 0.0389
+   },
+   "rss_peak_mb": {
+    "n": 2,
+    "p50": 143.65,
+    "p95": 143.965,
+    "mean": 143.65,
+    "min": 143.3,
+    "max": 144.0
+   },
+   "cpu_s_per_pass_warm": {
+    "n": 2,
+    "p50": 5.8458,
+    "p95": 5.9291,
+    "mean": 5.8458,
+    "min": 5.7533,
+    "max": 5.9383
+   },
+   "cpu_s_per_pass_cold": {
+    "n": 2,
+    "p50": 8.3844,
+    "p95": 8.8361,
+    "mean": 8.3844,
+    "min": 7.8825,
+    "max": 8.8862
+   },
+   "cold": {
+    "per_doc_median_s": {
+     "n": 198,
+     "p50": 0.0152,
+     "p95": 0.1667,
+     "mean": 0.0426,
+     "min": 0.0063,
+     "max": 0.6651
+    },
+    "all_samples_s": {
+     "n": 396,
+     "p50": 0.0201,
+     "p95": 0.2192,
+     "mean": 0.0426,
+     "min": 0.006,
+     "max": 0.6681
+    },
+    "total_s_per_pass": {
+     "n": 2,
+     "p50": 8.4391,
+     "p95": 8.8858,
+     "mean": 8.4391,
+     "min": 7.9428,
+     "max": 8.9354
+    },
+    "s_per_page_warm_mean": null
+   },
+   "warm": {
+    "per_doc_median_s": {
+     "n": 198,
+     "p50": 0.0083,
+     "p95": 0.0865,
+     "mean": 0.0297,
+     "min": 0.0061,
+     "max": 0.6237
+    },
+    "all_samples_s": {
+     "n": 396,
+     "p50": 0.0084,
+     "p95": 0.0873,
+     "mean": 0.0297,
+     "min": 0.006,
+     "max": 0.6255
+    },
+    "total_s_per_pass": {
+     "n": 2,
+     "p50": 5.8868,
+     "p95": 5.9669,
+     "mean": 5.8868,
+     "min": 5.7977,
+     "max": 5.9758
+    },
+    "s_per_page_warm_mean": 0.00943
+   },
+   "most_expensive_warm": [
+    {
+     "doc": "szablon-aplikacja/input/case1/przyklad odwolanie.pdf",
+     "pages": 7,
+     "median_s": 0.6237
+    },
+    {
+     "doc": "dane/negatywne/2020_03_21-22prowadzenie_postepowania_odwolawczego.pdf",
+     "pages": 35,
+     "median_s": 0.423
+    },
+    {
+     "doc": "dane/przyklad_24/prowadzenie_postepowania_odwolawczego.pdf",
+     "pages": 35,
+     "median_s": 0.4211
+    },
+    {
+     "doc": "dane/negatywne/Broszura_JPK_FA(2).pdf",
+     "pages": 31,
+     "median_s": 0.2619
+    },
+    {
+     "doc": "dane/negatywne/KIO_KIO 2617-21.pdf",
+     "pages": 10,
+     "median_s": 0.1188
+    }
+   ]
+  },
+  "render300": {
+   "clean_units": 2,
+   "docs": 198,
+   "pages_total": 624,
+   "import_s": {
+    "n": 2,
+    "p50": 0.0298,
+    "p95": 0.0379,
+    "mean": 0.0298,
+    "min": 0.0207,
+    "max": 0.0388
+   },
+   "rss_peak_mb": {
+    "n": 2,
+    "p50": 352.35,
+    "p95": 352.485,
+    "mean": 352.35,
+    "min": 352.2,
+    "max": 352.5
+   },
+   "cpu_s_per_pass_warm": {
+    "n": 2,
+    "p50": 41.5974,
+    "p95": 41.8988,
+    "mean": 41.5974,
+    "min": 41.2626,
+    "max": 41.9323
+   },
+   "cpu_s_per_pass_cold": {
+    "n": 2,
+    "p50": 41.3531,
+    "p95": 41.5695,
+    "mean": 41.3531,
+    "min": 41.1127,
+    "max": 41.5936
+   },
+   "cold": {
+    "per_doc_median_s": {
+     "n": 198,
+     "p50": 0.0606,
+     "p95": 0.8071,
+     "mean": 0.2174,
+     "min": 0.0419,
+     "max": 3.1143
+    },
+    "all_samples_s": {
+     "n": 396,
+     "p50": 0.0595,
+     "p95": 0.8062,
+     "mean": 0.2174,
+     "min": 0.0292,
+     "max": 3.4111
+    },
+    "total_s_per_pass": {
+     "n": 2,
+     "p50": 43.0356,
+     "p95": 44.3225,
+     "mean": 43.0356,
+     "min": 41.6056,
+     "max": 44.4655
+    },
+    "s_per_page_warm_mean": null
+   },
+   "warm": {
+    "per_doc_median_s": {
+     "n": 198,
+     "p50": 0.0604,
+     "p95": 0.7281,
+     "mean": 0.2184,
+     "min": 0.0541,
+     "max": 2.8416
+    },
+    "all_samples_s": {
+     "n": 396,
+     "p50": 0.0605,
+     "p95": 0.8061,
+     "mean": 0.2184,
+     "min": 0.0538,
+     "max": 3.1727
+    },
+    "total_s_per_pass": {
+     "n": 2,
+     "p50": 43.2368,
+     "p95": 44.6354,
+     "mean": 43.2368,
+     "min": 41.6827,
+     "max": 44.7908
+    },
+    "s_per_page_warm_mean": 0.06929
+   },
+   "most_expensive_warm": [
+    {
+     "doc": "dane/negatywne/2020_03_21-22prowadzenie_postepowania_odwolawczego.pdf",
+     "pages": 35,
+     "median_s": 2.8416
+    },
+    {
+     "doc": "szablon-aplikacja/input/case1/przyklad odwolanie.pdf",
+     "pages": 7,
+     "median_s": 2.7673
+    },
+    {
+     "doc": "dane/przyklad_24/prowadzenie_postepowania_odwolawczego.pdf",
+     "pages": 35,
+     "median_s": 2.5453
+    },
+    {
+     "doc": "dane/negatywne/Broszura_JPK_FA(2).pdf",
+     "pages": 31,
+     "median_s": 2.0843
+    },
+    {
+     "doc": "dane/przyklad_46/odwolanie.pdf",
+     "pages": 11,
+     "median_s": 0.9524
+    }
+   ]
+  }
+ },
+ "units_file": "T2.units.json"
+}
