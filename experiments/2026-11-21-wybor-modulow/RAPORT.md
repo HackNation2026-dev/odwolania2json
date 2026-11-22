@@ -45,7 +45,18 @@ Determinizm kodu (E16): 0 różnic bajtowych w 3 przebiegach i na nagranych odpo
 
 ## 4. Czas i pamięć
 
-**Nie ma jeszcze wiążących liczb.** Wszystkie czasy z grup A–D zebrano przy load average 20–57 na 8 rdzeniach i są niewiążące (OCR 17–35 s na stronę zamiast ok. 1–3 s). Pomiar w cichym oknie prowadzi worker T ([czas/](czas/)). Sekcja zostanie uzupełniona po jego zakończeniu; jeśli `czas/PODSUMOWANIE.md` nie istnieje, pomiar nie został ukończony.
+Cisza na maszynie **nie nadeszła** (load avg 3–80, w tym cudze zadania), więc czasy ścienne to **górne granice, częściowe i z mniejszą liczbą powtórzeń**. Pamięć jest odporna na obciążenie i jest najpewniejszą częścią. Maszyna pomiarowa: 8 rdzeni, 30 GB RAM (nie laptop jury). Szczegóły: [czas/PODSUMOWANIE.md](czas/PODSUMOWANIE.md).
+
+| Pomiar | Wynik |
+|---|---|
+| OCR, 1 worker, 300 dpi | 8,5 s/stronę przy 1 wątku, 4,9 s przy 2, 2,9 s przy 4 wątkach (ok. 7 → 20 stron/min); nasycenie ok. 20–26 stron/min |
+| OCR, pamięć | ok. 0,64 GB (150 dpi), 0,75 GB (200), 0,87 GB (300) na proces; `max_side_len=4000`: 1,94 GB i wolniej, więc limit boku jest warunkiem mieszczenia się w budżecie |
+| Czytnik PDF (pypdfium2), 198 PDF-ów | tekst z geometrią p50 4,6 ms, p95 82 ms; render 300 dpi p50 60 ms, max 2,84 s (35 stron); RSS 60–352 MB; pomijalny wobec OCR i LLM |
+| Backend HTTP bez LLM, 60 dokumentów tekstowych | ok. 1600–2000 dok./min, szczyt pamięci 75–81 MB; współbieżność nic nie daje |
+| Szacunek OCR dla 180 dokumentów (427 stron) | 10% skanów ok. 1,7 min, 50% ok. 8,3 min, 100% ok. 16,6 min (górna granica) |
+| Zapas pamięci względem 16 GB (po odjęciu 4 GB) | ok. 11 GB przy 1 workerze OCR, ok. 8 GB przy 4 workerach z limitem 2000 px |
+
+**Niewykonane:** opóźnienie LLM (T4: MiniMax zwracał 429 dla 18 z 18 wywołań), backend HTTP dla skanów (T3, przerwany po 10 minutach przy load 50–80), CPU-sekundy dla 4 i 8 rdzeni, pomiar pamięci cgroup dla 11 stron i 4 dokumentów równolegle. **Wąskie gardło szacunkowo: LLM** (opóźnienie × liczba dokumentów / limit współbieżności), nie CPU, ale bez T4 to hipoteza.
 
 ## 5. Czego nie zrobiono
 
