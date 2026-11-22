@@ -13,7 +13,7 @@ from collections.abc import Callable, Sequence
 import httpx
 from odwolania2json.llm.client import LlmClient, LlmSettings
 
-__all__ = ["API_KEY", "FakeLlmServer", "answer", "field"]
+__all__ = ["API_KEY", "FakeLlmServer", "answer", "field", "fields_from_reference"]
 
 API_KEY = "KANAREK-sekretny-klucz-0123456789"
 
@@ -84,3 +84,20 @@ class FakeLlmServer:
         return LlmClient(
             settings, transport=httpx.MockTransport(self._handle), sleep=lambda _seconds: None
         )
+
+
+def fields_from_reference(reference: object, prefix: str = "") -> list[dict[str, object]]:
+    """Pola odpowiedzi modelu odtwarzające referencję (ścieżka JSON Pointer → wartość)."""
+    if isinstance(reference, dict):
+        return [
+            item
+            for key, value in reference.items()
+            for item in fields_from_reference(value, f"{prefix}/{key}")
+        ]
+    if isinstance(reference, list):
+        return [
+            item
+            for index, value in enumerate(reference)
+            for item in fields_from_reference(value, f"{prefix}/{index}")
+        ]
+    return [field(prefix, reference)]

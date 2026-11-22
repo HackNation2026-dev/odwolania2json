@@ -1,6 +1,6 @@
 ---
-wersja: 0.6.1
-aktualizacja: 2026-11-21
+wersja: 0.6.2
+aktualizacja: 2026-11-22
 status: projekt kontraktów wewnętrznych; propozycje wymagające decyzji oznaczono osobno
 ---
 
@@ -115,6 +115,8 @@ Wejście `OcrRequest`: `image: string` (plik), `page: integer`, `region: Bbox|nu
 Liczby przykładu są ilustracją kontraktu, nie zaakceptowanymi progami.
 
 ### 4.5. Kandydat pola i dowód
+
+> **Adnotacja 2026-11-22 ([ADR-006](../07-decyzje/ADR-006-polityka-eksportu.md), ma pierwszeństwo):** cytat, strona i kotwica bbox nie decydują o treści wyniku. Pole bez kotwicy zostaje w eksportowanym JSON z flagą w raporcie; nie dostaje `null` i nie blokuje eksportu (E17: zerowanie takich pól to −0,021 F1 na tekście i −0,073 na skanach). Poniższy opis kotwiczenia dotyczy dowodów poza ocenianym JSON (Z09).
 
 `FieldCandidate`: `id/field: string` (pole jako JSON Pointer do kluczy organizatora), `entity_id/group_id: string|null`, `raw_value: string|number|boolean|null`, `method: enum(regex, ai, rule)`, `presence: enum(present, missing, unknown)`, `confidence: number[0,1]|null`, `conflict: boolean`, `review_required: boolean`, `codes: string[]`, `evidence_ids: string[]`. To kandydat, nie gotowy wynik; typ kanoniczny ustala T5 według YAML. Identyfikatory list w modelu podmiotów mapujemy na indeksy dopiero przy eksporcie.
 
@@ -275,6 +277,8 @@ Self-check raportuje też wersje i parametry wszystkich modeli, w tym największ
 W trybie nieinteraktywnym (batch bez terminala, API) brak klucza daje jawny błąd `llm_autoryzacja` → `llm_authorization`, a wadliwa konfiguracja/model/region — `konfiguracja_niepoprawna` → `invalid_configuration`; brak oczekiwania na wpisanie klucza. Nie logujemy sekretów. Polecenie CLI **`selfcheck`** uruchamia te same kontrole, zwraca raport i niezerowy kod przy niepowodzeniu. API udostępnia **`GET /system`** ze stanem ostatniej kontroli, jej czasem, gotowością LLM/OCR, metadanymi modeli, licencją, regionem i kodami błędów; **`GET /health`** opisuje żywotność procesu. Odczyt stanu nie wykonuje płatnego wywołania LLM. Start przetwarzania sprawdza aktualność self-check i zmianę konfiguracji; nie wymaga restartu tylko po to, by przyjąć klucz.
 
 ## 10. Decyzje przed OpenAPI — zamknięte i otwarte
+
+> **Adnotacja 2026-11-22 ([ADR-006](../07-decyzje/ADR-006-polityka-eksportu.md), ma pierwszeństwo w zakresie eksportu):** plik wyniku powstaje dla każdego PDF-a; walidacja i brak kotwicy nie blokują eksportu (flagi w `report.jsonl`); `ambiguous` eksportuje najlepszą klasę; błąd techniczny to `{}`, wpis w raporcie i kod wyjścia 1; błąd konfiguracji lub self-check LLM to kod 2 bez przetwarzania wsadu. Wiersze tabeli „Braki i wymagane pola”, „Jednostka dokumentu” (`ambiguous` bez eksportu) i „Geometria” czytaj z tą poprawką.
 
 Poniższe decyzje zespołu są **zamknięte** na podstawie ostatniego uzupełnienia ADR-002. Nie zmieniają kontraktu organizatora ani nie udają odpowiedzi mentora.
 

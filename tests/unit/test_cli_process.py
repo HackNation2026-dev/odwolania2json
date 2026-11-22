@@ -1,4 +1,4 @@
-"""Testy polecenia `process`: wejście PDF-ów → wyniki JSON na atrapie silnika."""
+"""Testy polecenia `process`: pętla wsadu, polityka eksportu (ADR-006), self-check LLM."""
 
 from __future__ import annotations
 
@@ -7,8 +7,23 @@ import os
 from pathlib import Path
 
 import pytest
+from odwolania2json import cli
 from odwolania2json.cli import main
-from odwolania2json.engine import StubEngine, run_process, write_json_atomic
+from odwolania2json.config import Settings
+from odwolania2json.engine import (
+    REPORT_NAME,
+    Engine,
+    StubEngine,
+    find_pdfs,
+    run_process,
+    write_json_atomic,
+)
+from odwolania2json.llm.client import LlmClient
+from support.llm import API_KEY, FakeLlmServer, answer, field
+from support.pdfs import image_pdf, text_pdf
+
+TRANSFER = answer("bank_transfer", field("/przelew_bankowy/tytul", "WPIS"))
+PROBE = "OK"
 
 
 def _touch(path: Path) -> None:
@@ -16,16 +31,46 @@ def _touch(path: Path) -> None:
     path.write_bytes(b"%PDF-1.4\n")
 
 
+def _pdf(path: Path, text: str = "Tekst dokumentu") -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(text_pdf([text]))
+
+
+def _report(output_dir: Path) -> list[dict[str, object]]:
+    lines = (output_dir / REPORT_NAME).read_text(encoding="utf-8").splitlines()
+    return [json.loads(line) for line in lines]
+
+
+def _load(path: Path) -> object:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _all_text(*roots: Path) -> str:
+    return "".join(
+        path.read_text(encoding="utf-8", errors="replace")
+        for root in roots
+        for path in root.rglob("*")
+        if path.is_file() and path.suffix != ".pdf"
+    )
+
+
 class _BrokenEngine(StubEngine):
-    """Atrapa, która zawodzi dla jednego pliku, jak uszkodzony PDF."""
+    """Atrapa, która zawodzi dla jednego pliku nieoczekiwanym wyjątkiem z treścią."""
 
     def __init__(self, broken_name: str) -> None:
         self._broken_name = broken_name
 
     def process(self, pdf: Path) -> tuple[dict[str, object], None]:
         if pdf.name == self._broken_name:
-            raise ValueError("uszkodzony PDF")
+            raise ValueError("TRESC-DOKUMENTU 99010112345")
         return super().process(pdf)
+
+
+def _use_server(monkeypatch: pytest.MonkeyPatch, server: FakeLlmServer) -> None:
+    def build(settings: Settings) -> LlmClient:
+        return server.client()
+
+    monkeypatch.setattr(cli, "build_llm_client", build)
 
 
 def test_tree_is_recreated(tmp_path: Path) -> None:
@@ -49,7 +94,7 @@ def test_foreign_document_gets_empty_json_named_after_input(tmp_path: Path) -> N
 
     assert run_process(input_dir, output_dir, StubEngine()) == 0
 
-    assert json.loads((output_dir / "n.json").read_text(encoding="utf-8")) == {}
+    assert _load(output_dir / "n.json") == {}
 
 
 def test_result_name_follows_input_for_transfer(tmp_path: Path) -> None:
@@ -62,7 +107,23 @@ def test_result_name_follows_input_for_transfer(tmp_path: Path) -> None:
     assert (output_dir / "potwierdzenie_przelewu.json").is_file()
 
 
-def test_document_error_does_not_stop_others(
+def test_uppercase_pdf_extension_gets_a_result(tmp_path: Path) -> None:
+    input_dir = tmp_path / "in"
+    output_dir = tmp_path / "out"
+    _touch(input_dir / "SKAN.PDF")
+    _touch(input_dir / "sub" / "Mixed.Pdf")
+    (input_dir / "notatka.txt").write_text("to nie PDF", encoding="utf-8")
+    (input_dir / "katalog.pdf").mkdir()
+
+    assert [path.name for path in find_pdfs(input_dir)] == ["SKAN.PDF", "Mixed.Pdf"]
+    assert run_process(input_dir, output_dir, StubEngine()) == 0
+
+    assert (output_dir / "SKAN.json").is_file()
+    assert (output_dir / "sub" / "Mixed.json").is_file()
+    assert not (output_dir / "notatka.json").exists()
+
+
+def test_document_error_writes_empty_json_and_does_not_stop_others(
     tmp_path: Path, capsys: pytest.CaptureFixture[str]
 ) -> None:
     input_dir = tmp_path / "in"
@@ -74,13 +135,13 @@ def test_document_error_does_not_stop_others(
 
     assert exit_code == 1
     assert (output_dir / "good" / "ok.json").is_file()
-    assert not (output_dir / "bad" / "broken.json").exists()
-    assert "broken.pdf" in capsys.readouterr().err
+    assert _load(output_dir / "bad" / "broken.json") == {}
+    captured = capsys.readouterr().err
+    assert "bad/broken.pdf: internal_error" in captured
+    assert "dokumenty z błędami: 1" in captured
 
 
-def test_failure_summary_counts_failed_documents(
-    tmp_path: Path, capsys: pytest.CaptureFixture[str]
-) -> None:
+def test_report_lists_every_input_with_status_and_code(tmp_path: Path) -> None:
     input_dir = tmp_path / "in"
     output_dir = tmp_path / "out"
     _touch(input_dir / "bad" / "broken.pdf")
@@ -88,7 +149,178 @@ def test_failure_summary_counts_failed_documents(
 
     run_process(input_dir, output_dir, _BrokenEngine("broken.pdf"))
 
-    assert "nie przetworzono dokumentów: 1" in capsys.readouterr().err
+    assert _report(output_dir) == [
+        {
+            "input": "bad/broken.pdf",
+            "output": "bad/broken.json",
+            "status": "technical_error",
+            "document_class": None,
+            "pages": 0,
+            "unprocessed": [],
+            "errors": [
+                {
+                    "code": "internal_error",
+                    "message": "nieoczekiwany błąd (ValueError)",
+                    "page": None,
+                }
+            ],
+            "flags": [],
+        },
+        {
+            "input": "good/ok.pdf",
+            "output": "good/ok.json",
+            "status": "unclassified",
+            "document_class": None,
+            "pages": 0,
+            "unprocessed": [],
+            "errors": [],
+            "flags": [],
+        },
+    ]
+
+
+def test_unexpected_exception_text_never_reaches_report_or_stderr(
+    tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    input_dir = tmp_path / "in"
+    output_dir = tmp_path / "out"
+    _touch(input_dir / "broken.pdf")
+
+    run_process(input_dir, output_dir, _BrokenEngine("broken.pdf"))
+
+    captured = capsys.readouterr()
+    assert "99010112345" not in captured.err + captured.out + _all_text(output_dir)
+
+
+def test_error_overwrites_previous_result_with_empty_json_by_default(tmp_path: Path) -> None:
+    input_dir = tmp_path / "in"
+    output_dir = tmp_path / "out"
+    _touch(input_dir / "bad" / "broken.pdf")
+    stale = output_dir / "bad" / "broken.json"
+    stale.parent.mkdir(parents=True)
+    stale.write_text('{"stary": true}\n', encoding="utf-8")
+
+    assert run_process(input_dir, output_dir, _BrokenEngine("broken.pdf")) == 1
+
+    # Stary wynik nie może uchodzić za wynik nowego przebiegu: zastępuje go `{}`.
+    assert _load(stale) == {}
+
+
+def test_no_file_export_leaves_previous_result_untouched(tmp_path: Path) -> None:
+    input_dir = tmp_path / "in"
+    output_dir = tmp_path / "out"
+    _touch(input_dir / "bad" / "broken.pdf")
+    _touch(input_dir / "good.pdf")
+    stale = output_dir / "bad" / "broken.json"
+    stale.parent.mkdir(parents=True)
+    stale.write_text('{"stary": true}\n', encoding="utf-8")
+
+    exit_code = run_process(
+        input_dir, output_dir, _BrokenEngine("broken.pdf"), error_export="no_file"
+    )
+
+    assert exit_code == 1
+    # Przełącznik `no_file`: brak nowego pliku, ale poprzedniego nie usuwamy.
+    assert _load(stale) == {"stary": True}
+    assert (output_dir / "good.json").is_file()
+    record = _report(output_dir)[0]
+    assert (record["input"], record["output"], record["status"]) == (
+        "bad/broken.pdf",
+        None,
+        "technical_error",
+    )
+
+
+def test_failed_write_keeps_previous_result_and_reports_write_failed(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    input_dir = tmp_path / "in"
+    output_dir = tmp_path / "out"
+    _touch(input_dir / "x.pdf")
+    _touch(input_dir / "y.pdf")
+    stale = output_dir / "x.json"
+    stale.parent.mkdir(parents=True)
+    stale.write_text('{"stary": true}\n', encoding="utf-8")
+    real_replace = os.replace
+
+    def failing_replace(src: str | os.PathLike[str], dst: str | os.PathLike[str]) -> None:
+        if Path(dst).name == "x.json":
+            raise OSError("zapis przerwany")
+        real_replace(src, dst)
+
+    monkeypatch.setattr(os, "replace", failing_replace)
+
+    assert run_process(input_dir, output_dir, StubEngine()) == 1
+
+    assert _load(stale) == {"stary": True}
+    assert (output_dir / "y.json").is_file()
+    assert [path.name for path in output_dir.iterdir() if path.name.startswith(".")] == []
+    first = _report(output_dir)[0]
+    assert (first["status"], first["output"]) == ("technical_error", None)
+    assert first["errors"] == [
+        {"code": "write_failed", "message": "błąd zapisu (OSError)", "page": None}
+    ]
+    assert "x.pdf: write_failed" in capsys.readouterr().err
+
+
+def test_failed_empty_json_write_is_reported_next_to_the_primary_error(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    input_dir = tmp_path / "in"
+    output_dir = tmp_path / "out"
+    _touch(input_dir / "broken.pdf")
+    real_replace = os.replace
+
+    def failing_replace(src: str | os.PathLike[str], dst: str | os.PathLike[str]) -> None:
+        if Path(dst).name == "broken.json":
+            raise PermissionError("brak uprawnień")
+        real_replace(src, dst)
+
+    monkeypatch.setattr(os, "replace", failing_replace)
+
+    assert run_process(input_dir, output_dir, _BrokenEngine("broken.pdf")) == 1
+
+    record = _report(output_dir)[0]
+    assert record["output"] is None
+    assert [error["code"] for error in record["errors"]] == ["internal_error", "write_failed"]  # type: ignore[index, union-attr]
+    assert not (output_dir / "broken.json").exists()
+
+
+def test_unwritable_report_does_not_change_results(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    input_dir = tmp_path / "in"
+    output_dir = tmp_path / "out"
+    _touch(input_dir / "x.pdf")
+    real_replace = os.replace
+
+    def failing_replace(src: str | os.PathLike[str], dst: str | os.PathLike[str]) -> None:
+        if Path(dst).name == REPORT_NAME:
+            raise OSError("dysk pełny")
+        real_replace(src, dst)
+
+    monkeypatch.setattr(os, "replace", failing_replace)
+
+    assert run_process(input_dir, output_dir, StubEngine()) == 0
+
+    assert (output_dir / "x.json").is_file()
+    assert "nie zapisano raportu (OSError)" in capsys.readouterr().err
+
+
+def test_inputs_with_the_same_result_name_do_not_overwrite_each_other(tmp_path: Path) -> None:
+    input_dir = tmp_path / "in"
+    output_dir = tmp_path / "out"
+    _touch(input_dir / "a.PDF")
+    _touch(input_dir / "a.pdf")
+    if len(list(input_dir.iterdir())) < 2:
+        pytest.skip("system plików nie rozróżnia wielkości liter")
+
+    assert run_process(input_dir, output_dir, StubEngine()) == 1
+
+    records = _report(output_dir)
+    assert [record["status"] for record in records] == ["unclassified", "technical_error"]
+    assert records[1]["errors"][0]["code"] == "write_failed"  # type: ignore[index, call-overload]
+    assert (output_dir / "a.json").is_file()
 
 
 def test_result_json_uses_two_space_indent_and_trailing_newline(tmp_path: Path) -> None:
@@ -99,46 +331,6 @@ def test_result_json_uses_two_space_indent_and_trailing_newline(tmp_path: Path) 
 
     expected = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
     assert target.read_text(encoding="utf-8") == expected
-
-
-def test_document_error_removes_stale_result_from_previous_run(tmp_path: Path) -> None:
-    input_dir = tmp_path / "in"
-    output_dir = tmp_path / "out"
-    _touch(input_dir / "bad" / "broken.pdf")
-    stale = output_dir / "bad" / "broken.json"
-    stale.parent.mkdir(parents=True)
-    stale.write_text('{"stary": true}\n', encoding="utf-8")
-
-    exit_code = run_process(input_dir, output_dir, _BrokenEngine("broken.pdf"))
-
-    assert exit_code == 1
-    assert not stale.exists()
-
-
-def test_failing_cleanup_does_not_stop_other_documents(
-    tmp_path: Path,
-    monkeypatch: pytest.MonkeyPatch,
-    capsys: pytest.CaptureFixture[str],
-) -> None:
-    input_dir = tmp_path / "in"
-    output_dir = tmp_path / "out"
-    _touch(input_dir / "bad" / "broken.pdf")
-    _touch(input_dir / "good" / "ok.pdf")
-
-    real_unlink = Path.unlink
-
-    def locked_unlink(self: Path, missing_ok: bool = False) -> None:
-        if self.name == "broken.json":
-            raise OSError("plik zablokowany")
-        real_unlink(self, missing_ok=missing_ok)
-
-    monkeypatch.setattr(Path, "unlink", locked_unlink)
-
-    exit_code = run_process(input_dir, output_dir, _BrokenEngine("broken.pdf"))
-
-    assert exit_code == 1
-    assert (output_dir / "good" / "ok.json").is_file()
-    assert "plik zablokowany" in capsys.readouterr().err
 
 
 def test_cleanup_error_does_not_mask_primary_write_error(
@@ -163,39 +355,281 @@ def test_cleanup_error_does_not_mask_primary_write_error(
         write_json_atomic(target, {})
 
 
-def test_exit_code_zero_when_all_ok(tmp_path: Path) -> None:
-    input_dir = tmp_path / "in"
-    _touch(input_dir / "x.pdf")
-
-    assert main(["process", str(input_dir), str(tmp_path / "out")]) == 0
-
-
-def test_exit_code_two_on_missing_input_dir(tmp_path: Path) -> None:
+def test_missing_input_dir_is_usage_error(tmp_path: Path) -> None:
+    assert run_process(tmp_path / "brak", tmp_path / "out", StubEngine()) == 2
     assert main(["process", str(tmp_path / "brak"), str(tmp_path / "out")]) == 2
 
 
-def test_atomic_write_leaves_no_partial_file(
+def test_real_engine_batch_report_and_exit_codes(tmp_path: Path) -> None:
+    input_dir = tmp_path / "in"
+    output_dir = tmp_path / "out"
+    _pdf(input_dir / "a_przelew.pdf")
+    _pdf(input_dir / "b_obcy.pdf")
+    (input_dir / "c_skan.pdf").write_bytes(image_pdf())
+    (input_dir / "d_zepsuty.pdf").write_bytes(b"%PDF-1.4\nzepsuty")
+    _pdf(input_dir / "e_llm.pdf")
+    _pdf(input_dir / "f_niejasny.pdf")
+    server = FakeLlmServer(
+        [TRANSFER, answer("foreign"), "nie JSON", "{}", answer("ambiguous"), answer("ambiguous")]
+    )
+
+    exit_code = run_process(input_dir, output_dir, Engine(server.client()))
+
+    assert exit_code == 1
+    records = {str(record["input"]): record for record in _report(output_dir)}
+    assert [record["status"] for record in records.values()] == [
+        "ok",
+        "foreign",
+        "technical_error",
+        "technical_error",
+        "technical_error",
+        "ambiguous",
+    ]
+    codes = [
+        [error["code"] for error in record["errors"]]  # type: ignore[union-attr, index]
+        for record in records.values()
+    ]
+    assert codes == [[], [], ["ocr_unavailable"], ["pdf_corrupted"], ["llm_invalid_response"], []]
+    assert records["a_przelew.pdf"]["document_class"] == "przelew"
+    assert records["a_przelew.pdf"]["pages"] == 1
+    assert records["f_niejasny.pdf"]["flags"] == ["class_ambiguous"]
+    assert _load(output_dir / "a_przelew.json")["przelew_bankowy"]["tytul"] == "WPIS"  # type: ignore[index]
+    for name in ("b_obcy", "c_skan", "d_zepsuty", "e_llm", "f_niejasny"):
+        assert _load(output_dir / f"{name}.json") == {}
+
+
+def test_partial_document_is_exported_reported_and_fails_the_batch(tmp_path: Path) -> None:
+    from support.pdfs import Run, build_pdf
+
+    input_dir = tmp_path / "in"
+    output_dir = tmp_path / "out"
+    input_dir.mkdir()
+    (input_dir / "mieszany.pdf").write_bytes(
+        build_pdf([[Run("Widoczny", size=12)], [Run("UKRYTY", size=12, render_mode=3)]])
+    )
+    server = FakeLlmServer([TRANSFER])
+
+    assert run_process(input_dir, output_dir, Engine(server.client())) == 1
+
+    record = _report(output_dir)[0]
+    assert (record["status"], record["unprocessed"]) == ("partial", [2])
+    assert record["errors"][0]["code"] == "ocr_unavailable"  # type: ignore[index, call-overload]
+    assert _load(output_dir / "mieszany.json")["przelew_bankowy"]["tytul"] == "WPIS"  # type: ignore[index]
+
+
+def test_rejected_key_stops_llm_calls_but_every_input_gets_a_file(tmp_path: Path) -> None:
+    input_dir = tmp_path / "in"
+    output_dir = tmp_path / "out"
+    for name in ("a.pdf", "b.pdf", "c.pdf"):
+        _pdf(input_dir / name)
+    server = FakeLlmServer([401])
+
+    assert run_process(input_dir, output_dir, Engine(server.client())) == 1
+
+    assert len(server.requests) == 1
+    records = _report(output_dir)
+    assert [record["status"] for record in records] == ["technical_error"] * 3
+    assert {record["errors"][0]["code"] for record in records} == {"llm_authorization"}  # type: ignore[index, call-overload]
+    assert "pominięto po błędzie wsadu" in records[2]["errors"][0]["message"]  # type: ignore[index, call-overload]
+    assert all(_load(output_dir / f"{stem}.json") == {} for stem in "abc")
+
+
+def test_cli_process_runs_self_check_then_batch(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    input_dir = tmp_path / "in"
+    _pdf(input_dir / "x.pdf")
+    server = FakeLlmServer([PROBE, TRANSFER])
+    _use_server(monkeypatch, server)
+
+    assert main(["process", str(input_dir), str(tmp_path / "out")]) == 0
+
+    assert len(server.requests) == 2
+    assert server.requests[0]["max_tokens"] == 16
+    assert _load(tmp_path / "out" / "x.json")["przelew_bankowy"]["tytul"] == "WPIS"  # type: ignore[index]
+
+
+def test_cli_process_defaults_to_input_and_output_directories(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.delenv("INPUT_DIR", raising=False)
+    monkeypatch.delenv("OUTPUT_DIR", raising=False)
+    _pdf(tmp_path / "input" / "x.pdf")
+    _use_server(monkeypatch, FakeLlmServer([PROBE, answer("foreign")]))
+
+    assert main(["process"]) == 0
+
+    assert _load(tmp_path / "output" / "x.json") == {}
+
+
+def test_cli_process_reads_directories_from_environment(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    monkeypatch.setenv("INPUT_DIR", str(tmp_path / "wejscie"))
+    monkeypatch.setenv("OUTPUT_DIR", str(tmp_path / "wyjscie"))
+    _pdf(tmp_path / "wejscie" / "x.pdf")
+    _use_server(monkeypatch, FakeLlmServer([PROBE, answer("foreign")]))
+
+    assert main(["process"]) == 0
+
+    assert (tmp_path / "wyjscie" / "x.json").is_file()
+
+
+def test_cli_without_pdfs_needs_no_llm(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    (tmp_path / "in").mkdir()
+    server = FakeLlmServer([])
+    _use_server(monkeypatch, server)
+
+    assert main(["process", str(tmp_path / "in"), str(tmp_path / "out")]) == 0
+
+    assert server.requests == []
+    assert "brak plików PDF" in capsys.readouterr().out
+
+
+@pytest.mark.parametrize(
+    ("status", "code"),
+    [(401, "llm_authorization"), (403, "llm_authorization"), (429, "llm_rate_limit")],
+)
+def test_self_check_failure_exits_2_without_processing(
     tmp_path: Path,
     monkeypatch: pytest.MonkeyPatch,
     capsys: pytest.CaptureFixture[str],
+    status: int,
+    code: str,
+) -> None:
+    input_dir = tmp_path / "in"
+    _pdf(input_dir / "x.pdf")
+    server = FakeLlmServer([status])
+    _use_server(monkeypatch, server)
+
+    assert main(["process", str(input_dir), str(tmp_path / "out")]) == 2
+
+    captured = capsys.readouterr()
+    assert f"błąd: {code}" in captured.err
+    assert "wskazówka:" in captured.err
+    assert "wsad nie został przetworzony" in captured.err
+    assert len(server.requests) == 1
+    assert not (tmp_path / "out").exists()
+    assert API_KEY not in captured.err + captured.out
+
+
+def test_self_check_retries_network_failure_then_runs(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    input_dir = tmp_path / "in"
+    _pdf(input_dir / "x.pdf")
+    server = FakeLlmServer([503, PROBE, answer("foreign")])
+    _use_server(monkeypatch, server)
+    delays: list[float] = []
+
+    assert main(["process", str(input_dir), str(tmp_path / "out")], sleep=delays.append) == 0
+
+    assert delays == [2.0]
+    assert len(server.requests) == 3
+
+
+def test_self_check_gives_up_after_three_network_failures(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    input_dir = tmp_path / "in"
+    _pdf(input_dir / "x.pdf")
+    server = FakeLlmServer([500, 500, 500])
+    _use_server(monkeypatch, server)
+    delays: list[float] = []
+
+    assert main(["process", str(input_dir), str(tmp_path / "out")], sleep=delays.append) == 2
+
+    assert delays == [2.0, 4.0]
+    assert len(server.requests) == 3
+    assert "błąd: llm_unavailable" in capsys.readouterr().err
+
+
+def test_missing_key_without_terminal_is_explicit_error(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    input_dir = tmp_path / "in"
+    _pdf(input_dir / "x.pdf")
+    for name in ("LLM_API_KEY", "LLM_API_KEY_FILE"):
+        monkeypatch.delenv(name, raising=False)
+    monkeypatch.setenv("LLM_BASE_URL", "https://api.minimax.io/anthropic/v1/messages")
+    monkeypatch.setenv("LLM_MODEL", "model")
+
+    assert main(["process", str(input_dir), str(tmp_path / "out")]) == 2
+
+    captured = capsys.readouterr().err
+    assert "błąd: llm_authorization: brak klucza API LLM" in captured
+    assert not (tmp_path / "out").exists()
+
+
+def test_invalid_configuration_is_reported_before_any_call(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    input_dir = tmp_path / "in"
+    _pdf(input_dir / "x.pdf")
+    monkeypatch.setenv("LLM_API_KEY", API_KEY)
+    monkeypatch.setenv("LLM_BASE_URL", "https://obcy-host.example/v1")
+    monkeypatch.setenv("LLM_MODEL", "model")
+    monkeypatch.delenv("LLM_ALLOWED_HOSTS", raising=False)
+
+    assert main(["process", str(input_dir), str(tmp_path / "out")]) == 2
+
+    captured = capsys.readouterr()
+    assert "błąd: invalid_configuration" in captured.err
+    assert "LLM_ALLOWED_HOSTS" in captured.err
+    assert API_KEY not in captured.err + captured.out
+
+
+def test_build_llm_client_uses_environment_settings() -> None:
+    settings = Settings.from_env(
+        {
+            "LLM_API_KEY": API_KEY,
+            "LLM_BASE_URL": "https://api.minimax.io/anthropic/v1/messages",
+            "LLM_MODEL": "model-testowy",
+        }
+    )
+
+    client = cli.build_llm_client(settings)
+
+    assert (client.settings.protocol, client.settings.model) == ("anthropic", "model-testowy")
+    assert client.settings.api_key == API_KEY
+    assert API_KEY not in repr(client.settings)
+
+
+def test_no_file_export_from_environment_is_passed_to_batch(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    input_dir = tmp_path / "in"
+    (input_dir).mkdir()
+    (input_dir / "zly.pdf").write_bytes(b"%PDF-1.4\nzepsuty")
+    monkeypatch.setenv("ERROR_EXPORT", "no_file")
+    _use_server(monkeypatch, FakeLlmServer([PROBE]))
+
+    assert main(["process", str(input_dir), str(tmp_path / "out")]) == 1
+
+    assert not (tmp_path / "out" / "zly.json").exists()
+    assert _report(tmp_path / "out")[0]["output"] is None
+
+
+def test_api_key_canary_never_appears_in_any_artifact(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
 ) -> None:
     input_dir = tmp_path / "in"
     output_dir = tmp_path / "out"
-    _touch(input_dir / "x.pdf")
+    for name in ("a.pdf", "b.pdf", "c.pdf", "d.pdf"):
+        _pdf(input_dir / name)
+    # Serwer wkleja klucz do treści błędów; program nie może go nigdzie przepisać.
+    server = FakeLlmServer([PROBE, TRANSFER, 500, 500, 500, 500, 400, 403])
+    _use_server(monkeypatch, server)
 
-    real_replace = os.replace
-    calls = {"count": 0}
+    assert main(["process", str(input_dir), str(output_dir)]) == 1
 
-    def failing_replace(src: str | os.PathLike[str], dst: str | os.PathLike[str]) -> None:
-        calls["count"] += 1
-        if calls["count"] == 1:
-            raise OSError("zapis przerwany")
-        real_replace(src, dst)
-
-    monkeypatch.setattr(os, "replace", failing_replace)
-
-    assert run_process(input_dir, output_dir, StubEngine()) == 1
-
-    assert not (output_dir / "x.json").exists()
-    assert list(output_dir.rglob("*")) == []
-    assert "zapis przerwany" in capsys.readouterr().err
+    captured = capsys.readouterr()
+    artifacts = _all_text(output_dir)
+    assert "llm_unavailable" in artifacts
+    assert "llm_request_rejected" in artifacts
+    assert "llm_authorization" in artifacts
+    assert API_KEY not in captured.err + captured.out + artifacts
+    assert "KANAREK" not in captured.err + captured.out + artifacts
