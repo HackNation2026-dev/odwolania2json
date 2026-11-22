@@ -12,6 +12,7 @@ import pytest
 from odwolania2json.errors import ProcessingError
 from odwolania2json.llm.client import (
     Image,
+    LlmBudget,
     LlmClient,
     LlmSettings,
     estimate_tokens,
@@ -644,3 +645,123 @@ def test_processing_error_rejects_unknown_code_and_formats_message() -> None:
     assert str(error) == "ocr_error: opis"
     assert error.page == 3
     assert error.retry_after_s is None
+
+
+# --- brak środków, nagłówki dodatkowe, wspólny budżet ---
+
+
+def test_payment_required_has_own_code_and_is_not_retried() -> None:
+    script = _Script(_error_with_canary(402))
+
+    with pytest.raises(ProcessingError) as caught:
+        script.client().complete("s", "u")
+
+    assert caught.value.code == "llm_payment_required"
+    assert "402" in caught.value.message
+    assert CANARY not in str(caught.value)
+    assert len(script.requests) == 1
+    assert script.sleeps == []
+
+
+def test_extra_headers_and_user_agent_are_sent_but_cannot_replace_key_header() -> None:
+    script = _Script(_anthropic("ok"))
+    client = script.client(
+        protocol="openai",
+        base_url="https://api.minimax.io/v1",
+        user_agent="odwolania2json-test",
+        extra_headers=(("X-Org-Id", "tajna-wartosc"), ("Authorization", "Bearer podmieniony")),
+    )
+    script.steps = [httpx.Response(200, json={"choices": [{"message": {"content": "ok"}}]})]
+
+    client.complete("s", "u")
+
+    headers = script.requests[0].headers
+    assert headers["x-org-id"] == "tajna-wartosc"
+    assert headers["user-agent"] == "odwolania2json-test"
+    assert headers["authorization"] == f"Bearer {CANARY}"
+
+
+def test_extra_header_values_are_hidden_in_settings_repr() -> None:
+    settings = _settings(extra_headers=(("x-sesja", "tajna-wartosc"),))
+
+    assert "tajna-wartosc" not in repr(settings)
+
+
+@pytest.mark.parametrize(
+    "headers",
+    [
+        (("x-a", "wartosc\r\nx-wstrzykniety: 1"),),
+        (("x-a", "wartosc\nnowa"),),
+        (("", "x"),),
+        (("x a", "x"),),
+        (("x:a", "x"),),
+        (("nagłówek", "x"),),
+        (("x\n", "x"),),
+    ],
+)
+def test_malformed_extra_headers_are_invalid_configuration(
+    headers: tuple[tuple[str, str], ...],
+) -> None:
+    with pytest.raises(ProcessingError) as caught:
+        LlmClient(_settings(extra_headers=headers))
+
+    assert caught.value.code == "invalid_configuration"
+    assert "wstrzykniety" not in str(caught.value)
+
+
+def test_user_agent_with_line_break_is_invalid_configuration() -> None:
+    with pytest.raises(ProcessingError) as caught:
+        LlmClient(_settings(user_agent="agent\r\nx: 1"))
+
+    assert caught.value.message == "niepoprawna wartość nagłówka LLM: user-agent"
+
+
+def test_budget_is_shared_between_clients() -> None:
+    budget = LlmBudget(max_calls=3)
+    first, second = _Script(_anthropic("a")), _Script(_anthropic("b"))
+    primary = LlmClient(_settings(), transport=httpx.MockTransport(first.handle), budget=budget)
+    fallback = LlmClient(_settings(), transport=httpx.MockTransport(second.handle), budget=budget)
+
+    primary.complete("s", "u")
+    fallback.complete("s", "u")
+    primary.complete("s", "u")
+
+    assert (primary.calls, fallback.calls, budget.calls) == (2, 1, 3)
+    assert (budget.input_tokens, budget.output_tokens) == (33, 21)
+    assert primary.budget is budget
+    with pytest.raises(ProcessingError) as caught:
+        fallback.complete("s", "u")
+    assert caught.value.code == "llm_call_limit"
+    assert caught.value.message == "wyczerpano limit wywołań LLM na wsad (3)"
+    assert len(second.requests) == 1
+
+
+def test_client_without_shared_budget_uses_its_own_call_limit() -> None:
+    client = _Script(_anthropic("a")).client(max_calls=7)
+
+    assert (client.budget.max_calls, client.budget.max_total_tokens) == (7, None)
+
+
+def test_total_token_budget_stops_further_calls() -> None:
+    budget = LlmBudget(max_calls=10, max_total_tokens=18)
+    script = _Script(_anthropic("a"))
+    client = LlmClient(_settings(), transport=httpx.MockTransport(script.handle), budget=budget)
+
+    client.complete("s", "u")
+
+    with pytest.raises(ProcessingError) as caught:
+        client.complete("s", "u")
+    assert caught.value.code == "llm_call_limit"
+    assert caught.value.message == "wyczerpano limit tokenów LLM na wsad (18)"
+    assert len(script.requests) == 1
+
+
+def test_token_budget_allows_call_just_below_limit() -> None:
+    budget = LlmBudget(max_calls=10, max_total_tokens=19)
+    script = _Script(_anthropic("a"))
+    client = LlmClient(_settings(), transport=httpx.MockTransport(script.handle), budget=budget)
+
+    client.complete("s", "u")
+    client.complete("s", "u")
+
+    assert len(script.requests) == 2

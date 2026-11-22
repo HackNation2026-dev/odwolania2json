@@ -2,7 +2,7 @@
 
 Testy przechodzą przez prawdziwą ścieżkę klienta (nagłówki, parsowanie, ponowienia),
 ale bez sieci. Odpowiedzi podaje się jako kolejkę: słownik (obiekt JSON odpowiedzi
-modelu), tekst (surowa treść) albo liczba (status HTTP błędu).
+modelu), tekst (surowa treść), liczba (status HTTP błędu) albo `TIMEOUT`.
 """
 
 from __future__ import annotations
@@ -11,13 +11,29 @@ import json
 from collections.abc import Callable, Sequence
 
 import httpx
-from odwolania2json.llm.client import LlmClient, LlmSettings
+from odwolania2json.llm.client import LlmBudget, LlmClient, LlmSettings
 
-__all__ = ["API_KEY", "FakeLlmServer", "answer", "field", "fields_from_reference"]
+__all__ = [
+    "API_KEY",
+    "FALLBACK_KEY",
+    "TIMEOUT",
+    "FakeLlmServer",
+    "answer",
+    "field",
+    "fields_from_reference",
+]
 
 API_KEY = "KANAREK-sekretny-klucz-0123456789"
+FALLBACK_KEY = "KANAREK-zapasowy-klucz-9876543210"
 
-type Reply = dict[str, object] | str | int
+
+class _Timeout:
+    """Znacznik odpowiedzi: serwer nie odpowiada w czasie."""
+
+
+TIMEOUT = _Timeout()
+
+type Reply = dict[str, object] | str | int | _Timeout
 type Responder = Callable[[str], Reply]
 
 
@@ -32,7 +48,19 @@ def answer(label: str, *fields: dict[str, object]) -> dict[str, object]:
 class FakeLlmServer:
     """Kolejka odpowiedzi albo funkcja `tekst użytkownika → odpowiedź`."""
 
-    def __init__(self, replies: Sequence[Reply] | Responder) -> None:
+    def __init__(
+        self,
+        replies: Sequence[Reply] | Responder,
+        *,
+        protocol: str = "anthropic",
+        api_key: str = API_KEY,
+        host: str = "llm.example.test",
+        model: str = "atrapa",
+    ) -> None:
+        self.protocol = protocol
+        self.api_key = api_key
+        self.host = host
+        self.model = model
         self._queue: list[Reply] | None = None if callable(replies) else list(replies)
         self._responder: Responder | None = replies if callable(replies) else None
         self.requests: list[dict[str, object]] = []
@@ -44,7 +72,7 @@ class FakeLlmServer:
         for body in self.requests:
             messages = body["messages"]
             assert isinstance(messages, list)
-            content = messages[0]["content"]
+            content = messages[-1]["content"]
             texts.append("".join(part.get("text", "") for part in content))
         return texts
 
@@ -57,32 +85,47 @@ class FakeLlmServer:
         else:
             assert self._queue, "atrapa LLM: brak zaplanowanej odpowiedzi"
             reply = self._queue.pop(0)
+        if isinstance(reply, _Timeout):
+            raise httpx.ReadTimeout("atrapa: brak odpowiedzi", request=request)
         if isinstance(reply, int):
             # Treść błędu zawiera klucz: klient nie może jej nigdzie przepisać.
-            return httpx.Response(reply, json={"error": f"odrzucono klucz {API_KEY}"})
+            return httpx.Response(reply, json={"error": f"odrzucono klucz {self.api_key}"})
         text = reply if isinstance(reply, str) else json.dumps(reply, ensure_ascii=False)
+        if self.protocol == "openai":
+            return httpx.Response(
+                200,
+                json={
+                    "choices": [{"message": {"content": text}, "finish_reason": "stop"}],
+                    "usage": {"prompt_tokens": 10, "completion_tokens": 5},
+                    "model": self.model,
+                },
+            )
         return httpx.Response(
             200,
             json={
                 "content": [{"type": "text", "text": text}],
                 "usage": {"input_tokens": 10, "output_tokens": 5},
-                "model": "atrapa",
+                "model": self.model,
                 "stop_reason": "end_turn",
             },
         )
 
-    def client(self, **overrides: object) -> LlmClient:
+    def client(self, *, budget: LlmBudget | None = None, **overrides: object) -> LlmClient:
+        path = "/v1/chat/completions" if self.protocol == "openai" else "/v1/messages"
         options: dict[str, object] = {
-            "protocol": "anthropic",
-            "base_url": "https://llm.example.test/v1/messages",
-            "model": "atrapa",
-            "api_key": API_KEY,
-            "allowed_hosts": ("llm.example.test",),
+            "protocol": self.protocol,
+            "base_url": f"https://{self.host}{path}",
+            "model": self.model,
+            "api_key": self.api_key,
+            "allowed_hosts": (self.host,),
         }
         options.update(overrides)
         settings = LlmSettings(**options)  # type: ignore[arg-type]  # słownik opcji testowych
         return LlmClient(
-            settings, transport=httpx.MockTransport(self._handle), sleep=lambda _seconds: None
+            settings,
+            transport=httpx.MockTransport(self._handle),
+            sleep=lambda _seconds: None,
+            budget=budget,
         )
 
 
