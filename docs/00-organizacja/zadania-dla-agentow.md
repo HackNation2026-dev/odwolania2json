@@ -8,6 +8,8 @@ status: lista zadań do wykonania; stan faktyczny ustal w kodzie i testach
 
 Tylko to, co zostało do zrobienia. Wyniki i uzasadnienia: [raport eksperymentów](../../experiments/2026-11-21-wybor-modulow/RAPORT.md), [ocena architektury (Fable)](../../experiments/2026-11-21-wybor-modulow/recenzje/fable-ocena-architektury.md), [backlog](backlog.md). Kolejność zadań wynika z oceny: **produkt dziś zapisuje `{}` dla każdego PDF (F1 pól = 0)**, a wszystkie liczby pochodzą z uprzęży w `experiments/`.
 
+**Zadania GUI (`apps/web`) mają osobny plik: [zadania GUI](zadania-gui.md)** (G01–G13: połączenie z silnikiem, edycja i historia wersji, wersja angielska, bramka wizualna, CI, porządki). Zasady wspólne poniżej obowiązują także tam. Z14 (GUI minimum) jest wyprzedzone: GUI istnieje na mocku, więc Z14 dotyczy już tylko API HTTP, a podpięcie GUI to G01 i G02.
+
 ## Zasady wspólne (obowiązują w każdym zadaniu)
 
 1. Przeczytaj `AGENTS.md` i `CLAUDE.md`. Pisz po polsku (dokumentacja), nazwy w kodzie i testach po angielsku.

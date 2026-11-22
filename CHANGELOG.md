@@ -8,6 +8,7 @@
 - Dodano aplikację GUI `apps/web` (Next 16, React 19.3, TypeScript, Tailwind 4, TanStack Query) działającą na mocku zgodnym z kontraktem: pulpit, klucz i kontrola, dodawanie, lista i galeria, przegląd dokumentu z prawdziwym podglądem PDF i obrysem dowodu, eksport wariantu A, klasy (`/klasy/[id]`), partie i eksport częściowy, ustawienia, dziennik, użytkownicy, dostępność, gotowość.
 - Dodano system design (23 atomy, 28 molekuł, 12 organizmów, 4 szablony, Storybook 10, test axe po historiach w obu motywach) i 36 makiet uzupełniających FigCraft (71 PNG w `apps/web/design`).
 - Dodano plan zadań GUI dla agentów: [zadania-gui.md](docs/00-organizacja/zadania-gui.md) (G01–G13). GUI działa wyłącznie na danych syntetycznych; silnik w `main` pozostaje atrapą.
+- `zadania-dla-agentow.md` i `backlog.md` wskazują plan zadań GUI; Z14 (GUI minimum) oznaczono jako wyprzedzone przez `apps/web`.
 
 ## 0.7.0 — 2026-11-21
 
