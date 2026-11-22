@@ -23,3 +23,4 @@ Odpowiedź mentora zapisz jako źródło z datą, treścią i kanałem. Dopiero 
 ## Uzupełnienie 2026-11-22
 
 - [ADR-006: polityka eksportu wyniku i awarii w `process`](ADR-006-polityka-eksportu.md) — ma pierwszeństwo przed architekturą wewnętrzną §4.5 i §10 w zakresie eksportu.
+- [ADR-007: łańcuch dostawców LLM (główny i zapasowy)](ADR-007-zapasowy-dostawca-llm.md) — zgodność dostawcy zapasowego z wymogiem UE/EOG jest otwarta.

@@ -18,8 +18,9 @@ from odwolania2json.engine import (
     run_process,
     write_json_atomic,
 )
-from odwolania2json.llm.client import LlmClient
-from support.llm import API_KEY, FakeLlmServer, answer, field
+from odwolania2json.llm.chain import LlmChain
+from odwolania2json.llm.client import LlmBudget, LlmClient
+from support.llm import API_KEY, FALLBACK_KEY, TIMEOUT, FakeLlmServer, answer, field
 from support.pdfs import image_pdf, text_pdf
 
 TRANSFER = answer("bank_transfer", field("/przelew_bankowy/tytul", "WPIS"))
@@ -64,6 +65,19 @@ class _BrokenEngine(StubEngine):
         if pdf.name == self._broken_name:
             raise ValueError("TRESC-DOKUMENTU 99010112345")
         return super().process(pdf)
+
+
+FALLBACK_ENV = {
+    "LLM_API_KEY": API_KEY,
+    "LLM_BASE_URL": "https://api.minimax.io/anthropic/v1/messages",
+    "LLM_MODEL": "model-glowny",
+    "LLM_ALLOWED_HOSTS": "api.minimax.io,zapas.example.test",
+    "LLM_FALLBACK_BASE_URL": "https://zapas.example.test/v1",
+    "LLM_FALLBACK_MODEL": "model-zapasowy",
+    "LLM_FALLBACK_API_KEY": FALLBACK_KEY,
+    "LLM_MAX_CALLS": "9",
+    "LLM_MAX_TOTAL_TOKENS": "5000",
+}
 
 
 def _use_server(monkeypatch: pytest.MonkeyPatch, server: FakeLlmServer) -> None:
@@ -165,6 +179,7 @@ def test_report_lists_every_input_with_status_and_code(tmp_path: Path) -> None:
                 }
             ],
             "flags": [],
+            "llm": None,
         },
         {
             "input": "good/ok.pdf",
@@ -175,6 +190,7 @@ def test_report_lists_every_input_with_status_and_code(tmp_path: Path) -> None:
             "unprocessed": [],
             "errors": [],
             "flags": [],
+            "llm": None,
         },
     ]
 
@@ -449,6 +465,26 @@ def test_cli_process_runs_self_check_then_batch(
     assert _load(tmp_path / "out" / "x.json")["przelew_bankowy"]["tytul"] == "WPIS"  # type: ignore[index]
 
 
+def test_cli_prints_llm_usage_after_batch(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    _pdf(tmp_path / "in" / "x.pdf")
+    _use_server(monkeypatch, FakeLlmServer([PROBE, TRANSFER]))
+
+    main(["process", str(tmp_path / "in"), str(tmp_path / "out")])
+
+    assert "LLM: wywołania=2 tokeny_wejścia=20 tokeny_wyjścia=10" in capsys.readouterr().out
+
+
+def test_cooldown_from_environment_reaches_chain(monkeypatch: pytest.MonkeyPatch) -> None:
+    chain = cli.build_llm_client(
+        Settings.from_env({**FALLBACK_ENV, "LLM_PROVIDER_COOLDOWN_S": "7"})
+    )
+
+    assert chain.cooldown_s == 7.0
+    assert cli.build_llm_client(Settings.from_env(FALLBACK_ENV)).cooldown_s == 300.0
+
+
 def test_cli_process_defaults_to_input_and_output_directories(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:
@@ -591,11 +627,11 @@ def test_build_llm_client_uses_environment_settings() -> None:
         }
     )
 
-    client = cli.build_llm_client(settings)
+    chain = cli.build_llm_client(settings)
 
-    assert (client.settings.protocol, client.settings.model) == ("anthropic", "model-testowy")
-    assert client.settings.api_key == API_KEY
-    assert API_KEY not in repr(client.settings)
+    assert isinstance(chain, LlmChain)
+    assert chain.has_fallback is False
+    assert chain.budget.max_calls == 1000
 
 
 def test_no_file_export_from_environment_is_passed_to_batch(
@@ -633,3 +669,219 @@ def test_api_key_canary_never_appears_in_any_artifact(
     assert "llm_authorization" in artifacts
     assert API_KEY not in captured.err + captured.out + artifacts
     assert "KANAREK" not in captured.err + captured.out + artifacts
+
+
+# --- łańcuch dostawców: główny i zapasowy ---
+
+
+def _fallback_server(replies: list[object]) -> FakeLlmServer:
+    return FakeLlmServer(
+        replies,  # type: ignore[arg-type]
+        protocol="openai",
+        api_key=FALLBACK_KEY,
+        host="zapas.example.test",
+        model="model-zapasowy",
+    )
+
+
+def _use_chain(
+    monkeypatch: pytest.MonkeyPatch, primary: FakeLlmServer, fallback: FakeLlmServer | None
+) -> None:
+    def build(settings: Settings) -> LlmChain:
+        budget = LlmBudget(max_calls=50)
+        return LlmChain(
+            primary.client(budget=budget),
+            fallback.client(budget=budget) if fallback is not None else None,
+        )
+
+    monkeypatch.setattr(cli, "build_llm_client", build)
+
+
+def test_report_names_provider_and_model_that_answered(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    _pdf(tmp_path / "in" / "x.pdf")
+    _use_chain(monkeypatch, FakeLlmServer([PROBE, TRANSFER]), None)
+
+    assert main(["process", str(tmp_path / "in"), str(tmp_path / "out")]) == 0
+
+    assert _report(tmp_path / "out")[0]["llm"] == {
+        "provider": "primary",
+        "model": "atrapa",
+        "switch_reason": None,
+        "warnings": [],
+    }
+
+
+@pytest.mark.parametrize(
+    ("failure", "calls", "reason"),
+    [
+        (429, 4, "llm_rate_limit"),
+        (402, 1, "llm_payment_required"),
+        (500, 4, "llm_unavailable"),
+        (TIMEOUT, 4, "llm_unavailable"),
+    ],
+)
+def test_fallback_provider_answers_when_primary_fails_mid_batch(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    failure: object,
+    calls: int,
+    reason: str,
+) -> None:
+    for name in ("a.pdf", "b.pdf"):
+        _pdf(tmp_path / "in" / name)
+    primary = FakeLlmServer([PROBE, *([failure] * calls)])  # type: ignore[list-item]
+    fallback = _fallback_server([PROBE, TRANSFER, TRANSFER])
+    _use_chain(monkeypatch, primary, fallback)
+
+    assert main(["process", str(tmp_path / "in"), str(tmp_path / "out")]) == 0
+
+    records = _report(tmp_path / "out")
+    assert [record["status"] for record in records] == ["ok", "ok"]
+    assert [record["llm"] for record in records] == [
+        {
+            "provider": "fallback",
+            "model": "model-zapasowy",
+            "switch_reason": reason,
+            "warnings": [],
+        }
+    ] * 2
+    # Drugi dokument nie czeka na ponowienia głównego: ten odpoczywa albo jest wyłączony.
+    assert len(primary.requests) == 1 + calls
+    assert _load(tmp_path / "out" / "b.json")["przelew_bankowy"]["tytul"] == "WPIS"  # type: ignore[index]
+    captured = capsys.readouterr().err
+    assert captured.count(f"uwaga: dostawca główny LLM zawiódł ({reason}); pytam zapasowego") == 1
+
+
+def test_rejected_primary_key_is_visible_in_report_and_stderr(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    _pdf(tmp_path / "in" / "x.pdf")
+    primary = FakeLlmServer([PROBE, 401])
+    _use_chain(monkeypatch, primary, _fallback_server([PROBE, TRANSFER]))
+
+    assert main(["process", str(tmp_path / "in"), str(tmp_path / "out")]) == 0
+
+    record = _report(tmp_path / "out")[0]
+    assert record["status"] == "ok"
+    assert record["llm"] == {
+        "provider": "fallback",
+        "model": "model-zapasowy",
+        "switch_reason": "llm_authorization",
+        "warnings": ["llm_primary_unauthorized"],
+    }
+    assert "uwaga: llm_primary_unauthorized" in capsys.readouterr().err
+
+
+def test_both_providers_failing_is_technical_error_with_empty_json(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    _pdf(tmp_path / "in" / "x.pdf")
+    primary = FakeLlmServer([PROBE, 429, 429, 429, 429])
+    fallback = _fallback_server([PROBE, 500, 500, 500, 500])
+    _use_chain(monkeypatch, primary, fallback)
+
+    assert main(["process", str(tmp_path / "in"), str(tmp_path / "out")]) == 1
+
+    record = _report(tmp_path / "out")[0]
+    assert record["status"] == "technical_error"
+    assert record["errors"] == [
+        {
+            "code": "llm_unavailable",
+            "message": (
+                "obaj dostawcy LLM zawiedli (główny: llm_rate_limit, zapasowy: llm_unavailable)"
+            ),
+            "page": None,
+        }
+    ]
+    assert record["llm"] == {
+        "provider": None,
+        "model": None,
+        "switch_reason": "llm_rate_limit",
+        "warnings": [],
+    }
+    assert _load(tmp_path / "out" / "x.json") == {}
+
+
+def test_self_check_with_exhausted_primary_proceeds_on_fallback(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    _pdf(tmp_path / "in" / "x.pdf")
+    primary = FakeLlmServer([429])
+    _use_chain(monkeypatch, primary, _fallback_server([PROBE, TRANSFER]))
+
+    assert main(["process", str(tmp_path / "in"), str(tmp_path / "out")]) == 0
+
+    assert len(primary.requests) == 1
+    assert "ostrzeżenie: dostawca główny LLM nie działa (llm_rate_limit)" in capsys.readouterr().err
+    assert _report(tmp_path / "out")[0]["llm"]["provider"] == "fallback"  # type: ignore[index, call-overload]
+
+
+def test_self_check_with_both_providers_down_exits_2(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    _pdf(tmp_path / "in" / "x.pdf")
+    _use_chain(monkeypatch, FakeLlmServer([429]), _fallback_server([402]))
+
+    assert main(["process", str(tmp_path / "in"), str(tmp_path / "out")]) == 2
+
+    captured = capsys.readouterr().err
+    assert "błąd: llm_rate_limit" in captured
+    assert "dostawca zapasowy też zawiódł (llm_payment_required)" in captured
+    assert not (tmp_path / "out").exists()
+
+
+def test_both_api_key_canaries_never_appear_in_any_artifact(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    for name in ("a.pdf", "b.pdf", "c.pdf"):
+        _pdf(tmp_path / "in" / name)
+    # Oba serwery wklejają swój klucz do treści błędów.
+    primary = FakeLlmServer([PROBE, 401])
+    fallback = _fallback_server([PROBE, TRANSFER, 400, 500, 500, 500, 500])
+    _use_chain(monkeypatch, primary, fallback)
+
+    assert main(["process", str(tmp_path / "in"), str(tmp_path / "out")]) == 1
+
+    captured = capsys.readouterr()
+    artifacts = _all_text(tmp_path / "out")
+    assert "llm_primary_unauthorized" in artifacts
+    assert "llm_request_rejected" in artifacts
+    for secret in (API_KEY, FALLBACK_KEY, "KANAREK"):
+        assert secret not in captured.err + captured.out + artifacts
+
+
+def test_build_llm_client_creates_chain_with_shared_budget() -> None:
+    chain = cli.build_llm_client(Settings.from_env(FALLBACK_ENV))
+
+    assert isinstance(chain, LlmChain)
+    assert chain.has_fallback is True
+    assert (chain.budget.max_calls, chain.budget.max_total_tokens) == (9, 5000)
+
+
+def test_build_llm_client_without_fallback_configuration_has_no_fallback() -> None:
+    env = {name: value for name, value in FALLBACK_ENV.items() if "FALLBACK" not in name}
+
+    assert cli.build_llm_client(Settings.from_env(env)).has_fallback is False
+
+
+@pytest.mark.parametrize(
+    ("changes", "code"),
+    [
+        ({"LLM_FALLBACK_API_KEY": ""}, "llm_authorization"),
+        ({"LLM_FALLBACK_MODEL": ""}, "invalid_configuration"),
+        ({"LLM_FALLBACK_BASE_URL": "https://obcy.example/v1"}, "invalid_configuration"),
+        ({"LLM_FALLBACK_BASE_URL": "http://zapas.example.test/v1"}, "invalid_configuration"),
+    ],
+)
+def test_broken_fallback_configuration_is_a_warning_not_an_error(
+    capsys: pytest.CaptureFixture[str], changes: dict[str, str], code: str
+) -> None:
+    chain = cli.build_llm_client(Settings.from_env({**FALLBACK_ENV, **changes}))
+
+    assert chain.has_fallback is False
+    captured = capsys.readouterr().err
+    assert f"ostrzeżenie: dostawca zapasowy LLM pominięty: {code}" in captured
+    assert FALLBACK_KEY not in captured

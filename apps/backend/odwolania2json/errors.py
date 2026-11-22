@@ -23,6 +23,8 @@ ERROR_CODES = frozenset(
         "llm_unavailable",
         "llm_authorization",
         "llm_rate_limit",
+        "llm_payment_required",
+        "llm_primary_unauthorized",
         "llm_invalid_response",
         "llm_request_rejected",
         "llm_call_limit",

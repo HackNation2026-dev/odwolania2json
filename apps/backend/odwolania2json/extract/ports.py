@@ -16,7 +16,7 @@ if TYPE_CHECKING:
 
     from odwolania2json.llm.client import Image
 
-__all__ = ["JsonLlm", "OcrLine", "OcrWord", "PageOcr", "PixelBox"]
+__all__ = ["JsonLlm", "LlmTrace", "OcrLine", "OcrWord", "PageOcr", "PixelBox", "TracedLlm"]
 
 # Obrys w pikselach obrazu przekazanego do OCR: (x0, y0, x1, y1), początek w lewym
 # górnym rogu, x w prawo, y w dół. Na punkty strony przelicza go silnik (zna skalę renderu).
@@ -72,3 +72,25 @@ class JsonLlm(Protocol):
         images: list[Image] | None,
         validate: Callable[[dict[str, object]], T],
     ) -> T: ...
+
+
+@dataclass(frozen=True)
+class LlmTrace:
+    """Ślad wywołania LLM do raportu: kto odpowiedział i dlaczego nie dostawca główny.
+
+    `provider` to `primary`, `fallback` albo `None`, gdy nikt nie odpowiedział.
+    `switch_reason` to kod błędu dostawcy głównego, który spowodował przełączenie.
+    Ślad nie zawiera kluczy, nagłówków ani treści odpowiedzi.
+    """
+
+    provider: str | None
+    model: str | None
+    switch_reason: str | None
+    warnings: tuple[str, ...]
+
+
+@runtime_checkable
+class TracedLlm(Protocol):
+    """Klient, który potrafi powiedzieć, który dostawca obsłużył ostatnie wywołanie."""
+
+    def take_trace(self) -> LlmTrace | None: ...

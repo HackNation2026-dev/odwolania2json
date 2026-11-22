@@ -9,7 +9,8 @@ Zasady (Z04, atak E14):
   (z górnym limitem); 401/403 nie są ponawiane;
 - odpowiedź poza schematem dostaje jedno ponowienie z krótszym limitem wyjścia;
   naprawa JSON ogranicza się do zdjęcia znaczników ```;
-- limit wywołań na wsad oraz limity tokenów wejścia i wyjścia są twarde.
+- limit wywołań na wsad oraz limity tokenów wejścia i wyjścia są twarde; budżet
+  wsadu (`LlmBudget`) może być wspólny dla kilku klientów (dostawca główny i zapasowy).
 """
 
 from __future__ import annotations
@@ -34,6 +35,7 @@ __all__ = [
     "CHARS_PER_TOKEN",
     "IMAGE_TOKENS",
     "Image",
+    "LlmBudget",
     "LlmClient",
     "LlmReply",
     "LlmSettings",
@@ -85,6 +87,36 @@ class LlmSettings:
     temperature: float = 0.0
     retry_effort: str | None = None
     allow_http_localhost: bool = False
+    # Nagłówki dodatkowe z konfiguracji (mogą być sekretne, stąd brak w `repr`).
+    user_agent: str | None = None
+    extra_headers: tuple[tuple[str, str], ...] = field(default=(), repr=False)
+
+
+@dataclass
+class LlmBudget:
+    """Budżet jednego wsadu: liczniki wywołań i tokenów, wspólne dla klientów.
+
+    Dostawca zapasowy nie może podwoić kosztu wsadu, więc limit wywołań i tokenów
+    liczymy łącznie dla wszystkich klientów, które dostały ten sam budżet.
+    """
+
+    max_calls: int
+    max_total_tokens: int | None = None
+    calls: int = 0
+    input_tokens: int = 0
+    output_tokens: int = 0
+
+    def check(self) -> None:
+        """Zgłasza `llm_call_limit`, gdy kolejne wywołanie przekroczyłoby budżet."""
+        if self.calls >= self.max_calls:
+            raise ProcessingError(
+                "llm_call_limit", f"wyczerpano limit wywołań LLM na wsad ({self.max_calls})"
+            )
+        used = self.input_tokens + self.output_tokens
+        if self.max_total_tokens is not None and used >= self.max_total_tokens:
+            raise ProcessingError(
+                "llm_call_limit", f"wyczerpano limit tokenów LLM na wsad ({self.max_total_tokens})"
+            )
 
 
 @dataclass(frozen=True)
@@ -229,6 +261,7 @@ class LlmClient:
         *,
         transport: httpx.BaseTransport | None = None,
         sleep: Callable[[float], None] = time.sleep,
+        budget: LlmBudget | None = None,
     ) -> None:
         if settings.protocol not in ("anthropic", "openai"):
             raise ProcessingError("invalid_configuration", "nieznany protokół LLM")
@@ -237,6 +270,8 @@ class LlmClient:
         if not settings.model.strip():
             raise ProcessingError("invalid_configuration", "brak nazwy modelu LLM")
         self._url = self._endpoint(settings)
+        self._extra_headers = self._checked_headers(settings)
+        self._budget = budget if budget is not None else LlmBudget(settings.max_calls)
         self._settings = settings
         self._transport = transport
         self._sleep = sleep
@@ -259,17 +294,45 @@ class LlmClient:
             return url.rstrip("/") + "/chat/completions"
         return url
 
+    @property
+    def budget(self) -> LlmBudget:
+        return self._budget
+
+    @staticmethod
+    def _checked_headers(settings: LlmSettings) -> dict[str, str]:
+        """Nagłówki dodatkowe z konfiguracji; znak końca linii to próba wstrzyknięcia."""
+        pairs = list(settings.extra_headers)
+        if settings.user_agent is not None:
+            pairs.append(("user-agent", settings.user_agent))
+        headers: dict[str, str] = {}
+        for name, value in pairs:
+            token = name.lower()
+            if not token or not token.isascii() or any(char in token for char in " \t:\r\n"):
+                raise ProcessingError("invalid_configuration", "niepoprawna nazwa nagłówka LLM")
+            if "\r" in value or "\n" in value:
+                raise ProcessingError(
+                    "invalid_configuration", f"niepoprawna wartość nagłówka LLM: {token}"
+                )
+            headers[token] = value
+        return headers
+
     # --- budowa żądania ---
 
     def _headers(self) -> dict[str, str]:
         key = self._settings.api_key.strip()
+        # Nagłówki protokołu nadpisują dodatkowe: konfiguracja nie podmieni klucza.
         if self._settings.protocol == "anthropic":
             return {
+                **self._extra_headers,
                 "content-type": "application/json",
                 "anthropic-version": "2023-06-01",
                 "x-api-key": key,
             }
-        return {"content-type": "application/json", "authorization": f"Bearer {key}"}
+        return {
+            **self._extra_headers,
+            "content-type": "application/json",
+            "authorization": f"Bearer {key}",
+        }
 
     def _body(
         self,
@@ -363,6 +426,10 @@ class LlmClient:
             return ProcessingError(
                 "llm_authorization", f"LLM odrzucił klucz API (HTTP {status}); sprawdź klucz"
             )
+        if status == 402:
+            return ProcessingError(
+                "llm_payment_required", "LLM odmówił z powodu braku środków na koncie (HTTP 402)"
+            )
         if status == 429:
             hint = _retry_after_seconds(response.headers.get("retry-after"), datetime.now(UTC))
             return ProcessingError(
@@ -390,13 +457,10 @@ class LlmClient:
             transport=self._transport, timeout=settings.timeout_s, follow_redirects=False
         ) as http:
             while True:
-                if self.calls >= settings.max_calls:
-                    raise ProcessingError(
-                        "llm_call_limit",
-                        f"wyczerpano limit wywołań LLM na wsad ({settings.max_calls})",
-                    )
+                self._budget.check()
                 attempt += 1
                 self.calls += 1
+                self._budget.calls += 1
                 error: ProcessingError | None
                 try:
                     response = http.post(self._url, headers=self._headers(), json=body)
@@ -413,6 +477,8 @@ class LlmClient:
                         reply = self._parse(response, attempt)
                         self.input_tokens += reply.input_tokens or 0
                         self.output_tokens += reply.output_tokens or 0
+                        self._budget.input_tokens += reply.input_tokens or 0
+                        self._budget.output_tokens += reply.output_tokens or 0
                         return reply
                 retryable = error.code in ("llm_unavailable", "llm_rate_limit")
                 if not retryable or attempt > retries:
