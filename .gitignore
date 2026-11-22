@@ -19,3 +19,7 @@ dist/
 .superpowers/
 /.venv-exp/
 /experiments/2026-11-21-wybor-modulow/harness/work/
+/experiments/2026-11-21-wybor-modulow/odczyt/zestaw/
+/experiments/2026-11-21-wybor-modulow/odczyt/vendor/
+/experiments/2026-11-21-wybor-modulow/odczyt/cache/
+/experiments/2026-11-21-wybor-modulow/**/work/
