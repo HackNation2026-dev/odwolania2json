@@ -1,0 +1,1804 @@
+{
+ "versions": {
+  "python": "3.13.18",
+  "pydantic": "2.14.4",
+  "rapidfuzz": "3.14.6",
+  "pypdfium2": "5.15.2",
+  "httpx": "0.28.1",
+  "rapidocr": "3.10.0"
+ },
+ "llm_model": "MiniMax-M3.1-Flash-Preview",
+ "temperature": 0.0,
+ "set_sizes": {
+  "dev_pdf": 159,
+  "dev_headerless": 147,
+  "dev_ocr": 147,
+  "hard": 50
+ },
+ "variants": {
+  "dev_pdf": {
+   "llm_v1_tokens": {
+    "in": 135639,
+    "out": 22004,
+    "latency_s_sum": 413.7,
+    "calls": 159,
+    "failures": 0
+   },
+   "llm_v2_tokens": {
+    "in": 144542,
+    "out": 15102,
+    "latency_s_sum": 415.7,
+    "calls": 159,
+    "failures": 0
+   },
+   "hybrid_rules_first_llm_calls": 18,
+   "harness_rules": {
+    "positives": 147,
+    "positives_correct": 131,
+    "positives_rejected_or_wrong": 16,
+    "fields_lost_total": 135,
+    "negatives": 12,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 12,
+    "confusion": {
+     "appeal": {
+      "appeal": 47,
+      "ambiguous": 2
+     },
+     "power_of_attorney": {
+      "power_of_attorney": 45,
+      "ambiguous": 4
+     },
+     "bank_transfer": {
+      "bank_transfer": 39,
+      "ambiguous": 10
+     },
+     "foreign": {
+      "technical_error": 3,
+      "foreign": 8,
+      "ambiguous": 1
+     }
+    }
+   },
+   "rules_v2": {
+    "positives": 147,
+    "positives_correct": 141,
+    "positives_rejected_or_wrong": 6,
+    "fields_lost_total": 75,
+    "negatives": 12,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 12,
+    "confusion": {
+     "appeal": {
+      "appeal": 47,
+      "ambiguous": 2
+     },
+     "power_of_attorney": {
+      "power_of_attorney": 45,
+      "ambiguous": 4
+     },
+     "bank_transfer": {
+      "bank_transfer": 49
+     },
+     "foreign": {
+      "technical_error": 3,
+      "foreign": 8,
+      "ambiguous": 1
+     }
+    }
+   },
+   "llm_v1": {
+    "positives": 147,
+    "positives_correct": 147,
+    "positives_rejected_or_wrong": 0,
+    "fields_lost_total": 0,
+    "negatives": 12,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 12,
+    "confusion": {
+     "appeal": {
+      "appeal": 49
+     },
+     "power_of_attorney": {
+      "power_of_attorney": 49
+     },
+     "bank_transfer": {
+      "bank_transfer": 49
+     },
+     "foreign": {
+      "ambiguous": 3,
+      "foreign": 9
+     }
+    }
+   },
+   "llm_v2": {
+    "positives": 147,
+    "positives_correct": 147,
+    "positives_rejected_or_wrong": 0,
+    "fields_lost_total": 0,
+    "negatives": 12,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 12,
+    "confusion": {
+     "appeal": {
+      "appeal": 49
+     },
+     "power_of_attorney": {
+      "power_of_attorney": 49
+     },
+     "bank_transfer": {
+      "bank_transfer": 49
+     },
+     "foreign": {
+      "ambiguous": 3,
+      "foreign": 9
+     }
+    }
+   },
+   "hybrid_rules_first": {
+    "positives": 147,
+    "positives_correct": 147,
+    "positives_rejected_or_wrong": 0,
+    "fields_lost_total": 0,
+    "negatives": 12,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 12,
+    "confusion": {
+     "appeal": {
+      "appeal": 49
+     },
+     "power_of_attorney": {
+      "power_of_attorney": 49
+     },
+     "bank_transfer": {
+      "bank_transfer": 49
+     },
+     "foreign": {
+      "ambiguous": 3,
+      "foreign": 9
+     }
+    }
+   },
+   "hybrid_agree": {
+    "positives": 147,
+    "positives_correct": 141,
+    "positives_rejected_or_wrong": 6,
+    "fields_lost_total": 75,
+    "negatives": 12,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 12,
+    "confusion": {
+     "appeal": {
+      "appeal": 47,
+      "ambiguous": 2
+     },
+     "power_of_attorney": {
+      "power_of_attorney": 45,
+      "ambiguous": 4
+     },
+     "bank_transfer": {
+      "bank_transfer": 49
+     },
+     "foreign": {
+      "ambiguous": 4,
+      "foreign": 8
+     }
+    }
+   },
+   "errors": {
+    "harness_rules": [
+     [
+      "przyklad_04/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_06/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_11/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_11/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_12/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_17/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_17/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_19/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_23/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_23/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_26/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_29/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_32/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_37/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_49/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_59/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "negatywne/1648041143_1647951357decyzja-ministrasportu-pzn.pdf",
+      "foreign",
+      "technical_error"
+     ],
+     [
+      "negatywne/2025_S 112-383751.pdf",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "negatywne/Decyzja-Ministra-Sportu-i-Turystyki1.pdf",
+      "foreign",
+      "technical_error"
+     ],
+     [
+      "negatywne/Minister-Sprawiedliwosci-pismo-RDSSP-z-11.03.2024-r..pdf",
+      "foreign",
+      "technical_error"
+     ]
+    ],
+    "rules_v2": [
+     [
+      "przyklad_11/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_17/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_23/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_29/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_49/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_59/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "negatywne/1648041143_1647951357decyzja-ministrasportu-pzn.pdf",
+      "foreign",
+      "technical_error"
+     ],
+     [
+      "negatywne/2025_S 112-383751.pdf",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "negatywne/Decyzja-Ministra-Sportu-i-Turystyki1.pdf",
+      "foreign",
+      "technical_error"
+     ],
+     [
+      "negatywne/Minister-Sprawiedliwosci-pismo-RDSSP-z-11.03.2024-r..pdf",
+      "foreign",
+      "technical_error"
+     ]
+    ],
+    "llm_v1": [
+     [
+      "negatywne/1648041143_1647951357decyzja-ministrasportu-pzn.pdf",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "negatywne/Decyzja-Ministra-Sportu-i-Turystyki1.pdf",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "negatywne/Minister-Sprawiedliwosci-pismo-RDSSP-z-11.03.2024-r..pdf",
+      "foreign",
+      "ambiguous"
+     ]
+    ],
+    "llm_v2": [
+     [
+      "negatywne/1648041143_1647951357decyzja-ministrasportu-pzn.pdf",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "negatywne/Decyzja-Ministra-Sportu-i-Turystyki1.pdf",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "negatywne/Minister-Sprawiedliwosci-pismo-RDSSP-z-11.03.2024-r..pdf",
+      "foreign",
+      "ambiguous"
+     ]
+    ],
+    "hybrid_rules_first": [
+     [
+      "negatywne/1648041143_1647951357decyzja-ministrasportu-pzn.pdf",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "negatywne/Decyzja-Ministra-Sportu-i-Turystyki1.pdf",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "negatywne/Minister-Sprawiedliwosci-pismo-RDSSP-z-11.03.2024-r..pdf",
+      "foreign",
+      "ambiguous"
+     ]
+    ],
+    "hybrid_agree": [
+     [
+      "przyklad_11/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_17/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_23/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_29/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_49/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_59/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "negatywne/1648041143_1647951357decyzja-ministrasportu-pzn.pdf",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "negatywne/2025_S 112-383751.pdf",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "negatywne/Decyzja-Ministra-Sportu-i-Turystyki1.pdf",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "negatywne/Minister-Sprawiedliwosci-pismo-RDSSP-z-11.03.2024-r..pdf",
+      "foreign",
+      "ambiguous"
+     ]
+    ]
+   }
+  },
+  "dev_headerless": {
+   "llm_v2_tokens": {
+    "in": 121688,
+    "out": 15094,
+    "latency_s_sum": 470.8,
+    "calls": 147,
+    "failures": 0
+   },
+   "hybrid_rules_first_llm_calls": 68,
+   "harness_rules": {
+    "positives": 147,
+    "positives_correct": 35,
+    "positives_rejected_or_wrong": 112,
+    "fields_lost_total": 1155,
+    "negatives": 0,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 0,
+    "confusion": {
+     "appeal": {
+      "ambiguous": 28,
+      "appeal": 21
+     },
+     "power_of_attorney": {
+      "ambiguous": 45,
+      "power_of_attorney": 4
+     },
+     "bank_transfer": {
+      "bank_transfer": 10,
+      "ambiguous": 27,
+      "foreign": 12
+     }
+    }
+   },
+   "rules_v2": {
+    "positives": 147,
+    "positives_correct": 79,
+    "positives_rejected_or_wrong": 68,
+    "fields_lost_total": 557,
+    "negatives": 0,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 0,
+    "confusion": {
+     "appeal": {
+      "appeal": 45,
+      "ambiguous": 4
+     },
+     "power_of_attorney": {
+      "ambiguous": 45,
+      "power_of_attorney": 4
+     },
+     "bank_transfer": {
+      "bank_transfer": 30,
+      "ambiguous": 19
+     }
+    }
+   },
+   "llm_v2": {
+    "positives": 147,
+    "positives_correct": 147,
+    "positives_rejected_or_wrong": 0,
+    "fields_lost_total": 0,
+    "negatives": 0,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 0,
+    "confusion": {
+     "appeal": {
+      "appeal": 49
+     },
+     "power_of_attorney": {
+      "power_of_attorney": 49
+     },
+     "bank_transfer": {
+      "bank_transfer": 49
+     }
+    }
+   },
+   "hybrid_rules_first": {
+    "positives": 147,
+    "positives_correct": 147,
+    "positives_rejected_or_wrong": 0,
+    "fields_lost_total": 0,
+    "negatives": 0,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 0,
+    "confusion": {
+     "appeal": {
+      "appeal": 49
+     },
+     "power_of_attorney": {
+      "power_of_attorney": 49
+     },
+     "bank_transfer": {
+      "bank_transfer": 49
+     }
+    }
+   },
+   "hybrid_agree": {
+    "positives": 147,
+    "positives_correct": 79,
+    "positives_rejected_or_wrong": 68,
+    "fields_lost_total": 557,
+    "negatives": 0,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 0,
+    "confusion": {
+     "appeal": {
+      "appeal": 45,
+      "ambiguous": 4
+     },
+     "power_of_attorney": {
+      "ambiguous": 45,
+      "power_of_attorney": 4
+     },
+     "bank_transfer": {
+      "bank_transfer": 30,
+      "ambiguous": 19
+     }
+    }
+   },
+   "errors": {
+    "harness_rules": [
+     [
+      "przyklad_01/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_01/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_02/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_02/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_02/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_03/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_04/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_04/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_06/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_06/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_06/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_07/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_07/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "foreign"
+     ],
+     [
+      "przyklad_08/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_08/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_09/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_09/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_09/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_10/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_10/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_10/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "foreign"
+     ],
+     [
+      "przyklad_11/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_11/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_11/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_12/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ]
+    ],
+    "rules_v2": [
+     [
+      "przyklad_01/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_02/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_03/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_04/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_04/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_06/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_06/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_07/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_07/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_08/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_09/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_10/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_10/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_11/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_11/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_12/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_13/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_14/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_16/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_16/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_17/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_17/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_19/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_21/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_21/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ]
+    ],
+    "llm_v2": [],
+    "hybrid_rules_first": [],
+    "hybrid_agree": [
+     [
+      "przyklad_01/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_02/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_03/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_04/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_04/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_06/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_06/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_07/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_07/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_08/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_09/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_10/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_10/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_11/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_11/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_12/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_13/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_14/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_16/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_16/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_17/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_17/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_19/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_21/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_21/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ]
+    ]
+   }
+  },
+  "dev_ocr": {
+   "llm_v2_tokens": {
+    "in": 122986,
+    "out": 14997,
+    "latency_s_sum": 641.4,
+    "calls": 147,
+    "failures": 0
+   },
+   "hybrid_rules_first_llm_calls": 13,
+   "harness_rules": {
+    "positives": 147,
+    "positives_correct": 122,
+    "positives_rejected_or_wrong": 25,
+    "fields_lost_total": 306,
+    "negatives": 0,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 0,
+    "confusion": {
+     "appeal": {
+      "appeal": 39,
+      "ambiguous": 10
+     },
+     "power_of_attorney": {
+      "power_of_attorney": 44,
+      "ambiguous": 5
+     },
+     "bank_transfer": {
+      "bank_transfer": 39,
+      "ambiguous": 10
+     }
+    }
+   },
+   "rules_v2": {
+    "positives": 147,
+    "positives_correct": 134,
+    "positives_rejected_or_wrong": 13,
+    "fields_lost_total": 207,
+    "negatives": 0,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 0,
+    "confusion": {
+     "appeal": {
+      "appeal": 41,
+      "ambiguous": 8
+     },
+     "power_of_attorney": {
+      "power_of_attorney": 44,
+      "ambiguous": 5
+     },
+     "bank_transfer": {
+      "bank_transfer": 49
+     }
+    }
+   },
+   "llm_v2": {
+    "positives": 147,
+    "positives_correct": 147,
+    "positives_rejected_or_wrong": 0,
+    "fields_lost_total": 0,
+    "negatives": 0,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 0,
+    "confusion": {
+     "appeal": {
+      "appeal": 49
+     },
+     "power_of_attorney": {
+      "power_of_attorney": 49
+     },
+     "bank_transfer": {
+      "bank_transfer": 49
+     }
+    }
+   },
+   "hybrid_rules_first": {
+    "positives": 147,
+    "positives_correct": 147,
+    "positives_rejected_or_wrong": 0,
+    "fields_lost_total": 0,
+    "negatives": 0,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 0,
+    "confusion": {
+     "appeal": {
+      "appeal": 49
+     },
+     "power_of_attorney": {
+      "power_of_attorney": 49
+     },
+     "bank_transfer": {
+      "bank_transfer": 49
+     }
+    }
+   },
+   "hybrid_agree": {
+    "positives": 147,
+    "positives_correct": 134,
+    "positives_rejected_or_wrong": 13,
+    "fields_lost_total": 207,
+    "negatives": 0,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 0,
+    "confusion": {
+     "appeal": {
+      "appeal": 41,
+      "ambiguous": 8
+     },
+     "power_of_attorney": {
+      "power_of_attorney": 44,
+      "ambiguous": 5
+     },
+     "bank_transfer": {
+      "bank_transfer": 49
+     }
+    }
+   },
+   "errors": {
+    "harness_rules": [
+     [
+      "przyklad_03/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_04/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_06/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_11/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_11/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_12/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_12/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_17/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_17/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_17/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_19/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_23/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_23/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_26/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_26/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_28/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_29/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_31/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_32/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_36/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_37/potwierdzenie_przelewu.pdf",
+      "bank_transfer",
+      "ambiguous"
+     ],
+     [
+      "przyklad_49/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_51/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_52/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_59/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ]
+    ],
+    "rules_v2": [
+     [
+      "przyklad_03/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_11/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_12/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_17/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_23/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_26/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_28/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_29/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_31/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_49/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_51/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_52/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_59/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ]
+    ],
+    "llm_v2": [],
+    "hybrid_rules_first": [],
+    "hybrid_agree": [
+     [
+      "przyklad_03/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_11/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_12/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_17/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_23/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_26/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_28/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_29/pelnomocnictwo.pdf",
+      "power_of_attorney",
+      "ambiguous"
+     ],
+     [
+      "przyklad_31/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_49/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_51/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_52/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ],
+     [
+      "przyklad_59/odwolanie.pdf",
+      "appeal",
+      "ambiguous"
+     ]
+    ]
+   }
+  },
+  "hard": {
+   "llm_v1_tokens": {
+    "in": 14458,
+    "out": 9427,
+    "latency_s_sum": 182.4,
+    "calls": 50,
+    "failures": 0
+   },
+   "llm_v2_tokens": {
+    "in": 13133,
+    "out": 4862,
+    "latency_s_sum": 142.3,
+    "calls": 50,
+    "failures": 0
+   },
+   "hybrid_rules_first_llm_calls": 45,
+   "harness_rules": {
+    "positives": 0,
+    "positives_correct": 0,
+    "positives_rejected_or_wrong": 0,
+    "fields_lost_total": 0,
+    "negatives": 40,
+    "negatives_misclassified_as_class": 5,
+    "negatives_correct": 35,
+    "confusion": {
+     "foreign": {
+      "foreign": 30,
+      "bank_transfer": 5,
+      "ambiguous": 5
+     },
+     "boundary": {
+      "power_of_attorney": 5,
+      "bank_transfer": 5
+     }
+    }
+   },
+   "rules_v2": {
+    "positives": 0,
+    "positives_correct": 0,
+    "positives_rejected_or_wrong": 0,
+    "fields_lost_total": 0,
+    "negatives": 40,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 40,
+    "confusion": {
+     "foreign": {
+      "foreign": 25,
+      "ambiguous": 15
+     },
+     "boundary": {
+      "power_of_attorney": 5,
+      "ambiguous": 5
+     }
+    }
+   },
+   "llm_v1": {
+    "positives": 0,
+    "positives_correct": 0,
+    "positives_rejected_or_wrong": 0,
+    "fields_lost_total": 0,
+    "negatives": 40,
+    "negatives_misclassified_as_class": 23,
+    "negatives_correct": 17,
+    "confusion": {
+     "foreign": {
+      "appeal": 18,
+      "foreign": 17,
+      "bank_transfer": 5
+     },
+     "boundary": {
+      "power_of_attorney": 5,
+      "bank_transfer": 5
+     }
+    }
+   },
+   "llm_v2": {
+    "positives": 0,
+    "positives_correct": 0,
+    "positives_rejected_or_wrong": 0,
+    "fields_lost_total": 0,
+    "negatives": 40,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 40,
+    "confusion": {
+     "foreign": {
+      "foreign": 40
+     },
+     "boundary": {
+      "power_of_attorney": 5,
+      "foreign": 5
+     }
+    }
+   },
+   "hybrid_rules_first": {
+    "positives": 0,
+    "positives_correct": 0,
+    "positives_rejected_or_wrong": 0,
+    "fields_lost_total": 0,
+    "negatives": 40,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 40,
+    "confusion": {
+     "foreign": {
+      "foreign": 40
+     },
+     "boundary": {
+      "power_of_attorney": 5,
+      "foreign": 5
+     }
+    }
+   },
+   "hybrid_agree": {
+    "positives": 0,
+    "positives_correct": 0,
+    "positives_rejected_or_wrong": 0,
+    "fields_lost_total": 0,
+    "negatives": 40,
+    "negatives_misclassified_as_class": 0,
+    "negatives_correct": 40,
+    "confusion": {
+     "foreign": {
+      "foreign": 25,
+      "ambiguous": 15
+     },
+     "boundary": {
+      "power_of_attorney": 5,
+      "ambiguous": 5
+     }
+    }
+   },
+   "errors": {
+    "harness_rules": [
+     [
+      "hard/wyciag_bankowy/0",
+      "foreign",
+      "bank_transfer"
+     ],
+     [
+      "hard/wyciag_bankowy/1",
+      "foreign",
+      "bank_transfer"
+     ],
+     [
+      "hard/wyciag_bankowy/2",
+      "foreign",
+      "bank_transfer"
+     ],
+     [
+      "hard/wyciag_bankowy/3",
+      "foreign",
+      "bank_transfer"
+     ],
+     [
+      "hard/wyciag_bankowy/4",
+      "foreign",
+      "bank_transfer"
+     ],
+     [
+      "hard/faktura/0",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/faktura/1",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/faktura/2",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/faktura/3",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/faktura/4",
+      "foreign",
+      "ambiguous"
+     ]
+    ],
+    "rules_v2": [
+     [
+      "hard/wyciag_bankowy/0",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wyciag_bankowy/1",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wyciag_bankowy/2",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wyciag_bankowy/3",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wyciag_bankowy/4",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/faktura/0",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/faktura/1",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/faktura/2",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/faktura/3",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/faktura/4",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wezwanie_do_zaplaty/0",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wezwanie_do_zaplaty/1",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wezwanie_do_zaplaty/2",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wezwanie_do_zaplaty/3",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wezwanie_do_zaplaty/4",
+      "foreign",
+      "ambiguous"
+     ]
+    ],
+    "llm_v1": [
+     [
+      "hard/odpowiedz_na_odwolanie/0",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/odpowiedz_na_odwolanie/3",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/odpowiedz_na_odwolanie/4",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/przystapienie/0",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/przystapienie/1",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/przystapienie/2",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/przystapienie/3",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/przystapienie/4",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/skarga_na_wyrok/0",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/skarga_na_wyrok/1",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/skarga_na_wyrok/2",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/skarga_na_wyrok/4",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/wyciag_bankowy/0",
+      "foreign",
+      "bank_transfer"
+     ],
+     [
+      "hard/wyciag_bankowy/1",
+      "foreign",
+      "bank_transfer"
+     ],
+     [
+      "hard/wyciag_bankowy/2",
+      "foreign",
+      "bank_transfer"
+     ],
+     [
+      "hard/wyciag_bankowy/3",
+      "foreign",
+      "bank_transfer"
+     ],
+     [
+      "hard/wyciag_bankowy/4",
+      "foreign",
+      "bank_transfer"
+     ],
+     [
+      "hard/wezwanie_kio_wpis/0",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/wezwanie_kio_wpis/4",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/protokol_rozprawy/0",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/protokol_rozprawy/2",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/protokol_rozprawy/3",
+      "foreign",
+      "appeal"
+     ],
+     [
+      "hard/protokol_rozprawy/4",
+      "foreign",
+      "appeal"
+     ]
+    ],
+    "llm_v2": [],
+    "hybrid_rules_first": [],
+    "hybrid_agree": [
+     [
+      "hard/wyciag_bankowy/0",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wyciag_bankowy/1",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wyciag_bankowy/2",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wyciag_bankowy/3",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wyciag_bankowy/4",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/faktura/0",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/faktura/1",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/faktura/2",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/faktura/3",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/faktura/4",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wezwanie_do_zaplaty/0",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wezwanie_do_zaplaty/1",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wezwanie_do_zaplaty/2",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wezwanie_do_zaplaty/3",
+      "foreign",
+      "ambiguous"
+     ],
+     [
+      "hard/wezwanie_do_zaplaty/4",
+      "foreign",
+      "ambiguous"
+     ]
+    ]
+   }
+  }
+ },
+ "note_filenames": "router widzi wyłącznie tekst; nazwa pliku nie jest wejściem",
+ "wall_s": 2459.0,
+ "llm_stats": {
+  "calls": 602,
+  "cache_hits": 110,
+  "failures": 0,
+  "input_tokens": 454866,
+  "output_tokens": 66704,
+  "wall_s": 1984.8305898149702
+ }
+}

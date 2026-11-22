@@ -1,0 +1,1786 @@
+{
+ "versions": {
+  "python": "3.13.18",
+  "pydantic": "2.14.4",
+  "rapidfuzz": "3.14.6",
+  "pypdfium2": "5.15.2",
+  "httpx": "0.28.1",
+  "rapidocr": "3.10.0"
+ },
+ "ocr": "rapidocr==3.10.0 150 dpi + jak_skan(szum=4), zestaw własny grupy B",
+ "sources": {
+  "pdf": {
+   "strict": {
+    "overall": {
+     "tp": 848,
+     "tn": 127,
+     "fp": 1,
+     "fn": 3,
+     "f1": 0.9976,
+     "ci95": [
+      0.9953,
+      0.9994
+     ],
+     "cases": 49,
+     "documents": 147
+    },
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "OdwolanieKIO.data": {
+      "tp": 35,
+      "fp": 0,
+      "fn": 0,
+      "tn": 14,
+      "f1": 1.0
+     },
+     "Odwolujacy[].krs": {
+      "tp": 45,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1": 1.0
+     },
+     "Odwolujacy[].nip": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Odwolujacy[].regon": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 47,
+      "fp": 0,
+      "fn": 0,
+      "tn": 5,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 52,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 52,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 38,
+      "fp": 0,
+      "fn": 0,
+      "tn": 11,
+      "f1": 1.0
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 39,
+      "fp": 0,
+      "fn": 0,
+      "tn": 10,
+      "f1": 1.0
+     },
+     "mocodawca[].data.krs": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1": 1.0
+     },
+     "mocodawca[].data.nip": {
+      "tp": 53,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "tn": 79,
+      "f1": 1.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 48,
+      "fp": 1,
+      "fn": 0,
+      "tn": 0,
+      "f1": 0.99
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 46,
+      "fp": 0,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.968
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     }
+    }
+   },
+   "tolerant": {
+    "overall": {
+     "tp": 848,
+     "tn": 127,
+     "fp": 1,
+     "fn": 3,
+     "f1": 0.9976,
+     "ci95": [
+      0.9953,
+      0.9994
+     ],
+     "cases": 49,
+     "documents": 147
+    },
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "OdwolanieKIO.data": {
+      "tp": 35,
+      "fp": 0,
+      "fn": 0,
+      "tn": 14,
+      "f1": 1.0
+     },
+     "Odwolujacy[].krs": {
+      "tp": 45,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1": 1.0
+     },
+     "Odwolujacy[].nip": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Odwolujacy[].regon": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 47,
+      "fp": 0,
+      "fn": 0,
+      "tn": 5,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 52,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 52,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 38,
+      "fp": 0,
+      "fn": 0,
+      "tn": 11,
+      "f1": 1.0
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 39,
+      "fp": 0,
+      "fn": 0,
+      "tn": 10,
+      "f1": 1.0
+     },
+     "mocodawca[].data.krs": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1": 1.0
+     },
+     "mocodawca[].data.nip": {
+      "tp": 53,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "tn": 79,
+      "f1": 1.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 48,
+      "fp": 1,
+      "fn": 0,
+      "tn": 0,
+      "f1": 0.99
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 46,
+      "fp": 0,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.968
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     }
+    }
+   }
+  },
+  "ocr150": {
+   "strict": {
+    "overall": {
+     "tp": 766,
+     "tn": 127,
+     "fp": 12,
+     "fn": 74,
+     "f1": 0.9468,
+     "ci95": [
+      0.9323,
+      0.9609
+     ],
+     "cases": 49,
+     "documents": 147
+    },
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 41,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "f1": 0.911
+     },
+     "OdwolanieKIO.data": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 2,
+      "tn": 14,
+      "f1": 0.971
+     },
+     "Odwolujacy[].krs": {
+      "tp": 44,
+      "fp": 0,
+      "fn": 1,
+      "tn": 4,
+      "f1": 0.989
+     },
+     "Odwolujacy[].nip": {
+      "tp": 48,
+      "fp": 0,
+      "fn": 1,
+      "tn": 0,
+      "f1": 0.99
+     },
+     "Odwolujacy[].regon": {
+      "tp": 47,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "f1": 0.979
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 45,
+      "fp": 0,
+      "fn": 2,
+      "tn": 5,
+      "f1": 0.978
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "f1": 0.98
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "f1": 0.98
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 28,
+      "fp": 0,
+      "fn": 10,
+      "tn": 11,
+      "f1": 0.848
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 33,
+      "fp": 6,
+      "fn": 10,
+      "tn": 0,
+      "f1": 0.805
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 34,
+      "fp": 0,
+      "fn": 5,
+      "tn": 10,
+      "f1": 0.932
+     },
+     "mocodawca[].data.krs": {
+      "tp": 46,
+      "fp": 0,
+      "fn": 3,
+      "tn": 4,
+      "f1": 0.968
+     },
+     "mocodawca[].data.nip": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.971
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "tn": 79,
+      "f1": 1.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 47,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "f1": 0.979
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 39,
+      "fp": 2,
+      "fn": 8,
+      "tn": 0,
+      "f1": 0.886
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 42,
+      "fp": 1,
+      "fn": 6,
+      "tn": 0,
+      "f1": 0.923
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 39,
+      "fp": 3,
+      "fn": 7,
+      "tn": 0,
+      "f1": 0.886
+     }
+    }
+   },
+   "tolerant": {
+    "overall": {
+     "tp": 768,
+     "tn": 127,
+     "fp": 12,
+     "fn": 72,
+     "f1": 0.9481,
+     "ci95": [
+      0.9337,
+      0.9622
+     ],
+     "cases": 49,
+     "documents": 147
+    },
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 41,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "f1": 0.911
+     },
+     "OdwolanieKIO.data": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 2,
+      "tn": 14,
+      "f1": 0.971
+     },
+     "Odwolujacy[].krs": {
+      "tp": 44,
+      "fp": 0,
+      "fn": 1,
+      "tn": 4,
+      "f1": 0.989
+     },
+     "Odwolujacy[].nip": {
+      "tp": 48,
+      "fp": 0,
+      "fn": 1,
+      "tn": 0,
+      "f1": 0.99
+     },
+     "Odwolujacy[].regon": {
+      "tp": 47,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "f1": 0.979
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 45,
+      "fp": 0,
+      "fn": 2,
+      "tn": 5,
+      "f1": 0.978
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "f1": 0.98
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "f1": 0.98
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 30,
+      "fp": 0,
+      "fn": 8,
+      "tn": 11,
+      "f1": 0.882
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 33,
+      "fp": 6,
+      "fn": 10,
+      "tn": 0,
+      "f1": 0.805
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 34,
+      "fp": 0,
+      "fn": 5,
+      "tn": 10,
+      "f1": 0.932
+     },
+     "mocodawca[].data.krs": {
+      "tp": 46,
+      "fp": 0,
+      "fn": 3,
+      "tn": 4,
+      "f1": 0.968
+     },
+     "mocodawca[].data.nip": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.971
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "tn": 79,
+      "f1": 1.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 47,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "f1": 0.979
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 39,
+      "fp": 2,
+      "fn": 8,
+      "tn": 0,
+      "f1": 0.886
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 42,
+      "fp": 1,
+      "fn": 6,
+      "tn": 0,
+      "f1": 0.923
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 39,
+      "fp": 3,
+      "fn": 7,
+      "tn": 0,
+      "f1": 0.886
+     }
+    }
+   }
+  },
+  "pdf_noise_1pct": {
+   "strict": {
+    "overall": {
+     "tp": 802,
+     "tn": 127,
+     "fp": 10,
+     "fn": 40,
+     "f1": 0.9698,
+     "ci95": [
+      0.9613,
+      0.9774
+     ],
+     "cases": 49,
+     "documents": 147
+    },
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 46,
+      "fp": 0,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.968
+     },
+     "OdwolanieKIO.data": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 2,
+      "tn": 14,
+      "f1": 0.971
+     },
+     "Odwolujacy[].krs": {
+      "tp": 43,
+      "fp": 0,
+      "fn": 2,
+      "tn": 4,
+      "f1": 0.977
+     },
+     "Odwolujacy[].nip": {
+      "tp": 48,
+      "fp": 0,
+      "fn": 1,
+      "tn": 0,
+      "f1": 0.99
+     },
+     "Odwolujacy[].regon": {
+      "tp": 48,
+      "fp": 0,
+      "fn": 1,
+      "tn": 0,
+      "f1": 0.99
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 46,
+      "fp": 0,
+      "fn": 1,
+      "tn": 5,
+      "f1": 0.989
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 52,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 51,
+      "fp": 0,
+      "fn": 1,
+      "tn": 0,
+      "f1": 0.99
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 34,
+      "fp": 1,
+      "fn": 3,
+      "tn": 11,
+      "f1": 0.944
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 48,
+      "fp": 1,
+      "fn": 0,
+      "tn": 0,
+      "f1": 0.99
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 39,
+      "fp": 0,
+      "fn": 0,
+      "tn": 10,
+      "f1": 1.0
+     },
+     "mocodawca[].data.krs": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1": 1.0
+     },
+     "mocodawca[].data.nip": {
+      "tp": 51,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "f1": 0.981
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "tn": 79,
+      "f1": 1.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 46,
+      "fp": 0,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.968
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 44,
+      "fp": 4,
+      "fn": 1,
+      "tn": 0,
+      "f1": 0.946
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 41,
+      "fp": 0,
+      "fn": 8,
+      "tn": 0,
+      "f1": 0.911
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 42,
+      "fp": 4,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.923
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 40,
+      "fp": 0,
+      "fn": 9,
+      "tn": 0,
+      "f1": 0.899
+     }
+    }
+   },
+   "tolerant": {
+    "overall": {
+     "tp": 829,
+     "tn": 127,
+     "fp": 10,
+     "fn": 13,
+     "f1": 0.9863,
+     "ci95": [
+      0.9815,
+      0.9906
+     ],
+     "cases": 49,
+     "documents": 147
+    },
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 46,
+      "fp": 0,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.968
+     },
+     "OdwolanieKIO.data": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 2,
+      "tn": 14,
+      "f1": 0.971
+     },
+     "Odwolujacy[].krs": {
+      "tp": 45,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1": 1.0
+     },
+     "Odwolujacy[].nip": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Odwolujacy[].regon": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 47,
+      "fp": 0,
+      "fn": 0,
+      "tn": 5,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 52,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 52,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 36,
+      "fp": 1,
+      "fn": 1,
+      "tn": 11,
+      "f1": 0.973
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 48,
+      "fp": 1,
+      "fn": 0,
+      "tn": 0,
+      "f1": 0.99
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 39,
+      "fp": 0,
+      "fn": 0,
+      "tn": 10,
+      "f1": 1.0
+     },
+     "mocodawca[].data.krs": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1": 1.0
+     },
+     "mocodawca[].data.nip": {
+      "tp": 53,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "tn": 79,
+      "f1": 1.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 46,
+      "fp": 0,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.968
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 44,
+      "fp": 4,
+      "fn": 1,
+      "tn": 0,
+      "f1": 0.946
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 42,
+      "fp": 4,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.923
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     }
+    }
+   }
+  },
+  "pdf_noise_2pct": {
+   "strict": {
+    "overall": {
+     "tp": 765,
+     "tn": 127,
+     "fp": 17,
+     "fn": 70,
+     "f1": 0.9462,
+     "ci95": [
+      0.9338,
+      0.9572
+     ],
+     "cases": 49,
+     "documents": 147
+    },
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 44,
+      "fp": 0,
+      "fn": 5,
+      "tn": 0,
+      "f1": 0.946
+     },
+     "OdwolanieKIO.data": {
+      "tp": 29,
+      "fp": 0,
+      "fn": 6,
+      "tn": 14,
+      "f1": 0.906
+     },
+     "Odwolujacy[].krs": {
+      "tp": 43,
+      "fp": 0,
+      "fn": 2,
+      "tn": 4,
+      "f1": 0.977
+     },
+     "Odwolujacy[].nip": {
+      "tp": 43,
+      "fp": 0,
+      "fn": 6,
+      "tn": 0,
+      "f1": 0.935
+     },
+     "Odwolujacy[].regon": {
+      "tp": 47,
+      "fp": 0,
+      "fn": 2,
+      "tn": 0,
+      "f1": 0.979
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 46,
+      "fp": 0,
+      "fn": 1,
+      "tn": 5,
+      "f1": 0.989
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 51,
+      "fp": 0,
+      "fn": 1,
+      "tn": 0,
+      "f1": 0.99
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 51,
+      "fp": 0,
+      "fn": 1,
+      "tn": 0,
+      "f1": 0.99
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 33,
+      "fp": 1,
+      "fn": 4,
+      "tn": 11,
+      "f1": 0.93
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 45,
+      "fp": 4,
+      "fn": 0,
+      "tn": 0,
+      "f1": 0.957
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 3,
+      "tn": 10,
+      "f1": 0.96
+     },
+     "mocodawca[].data.krs": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1": 1.0
+     },
+     "mocodawca[].data.nip": {
+      "tp": 48,
+      "fp": 0,
+      "fn": 5,
+      "tn": 0,
+      "f1": 0.95
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 79,
+      "f1": 0.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 43,
+      "fp": 0,
+      "fn": 6,
+      "tn": 0,
+      "f1": 0.935
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 42,
+      "fp": 4,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.923
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 37,
+      "fp": 0,
+      "fn": 12,
+      "tn": 0,
+      "f1": 0.86
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 38,
+      "fp": 8,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.874
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 40,
+      "fp": 0,
+      "fn": 9,
+      "tn": 0,
+      "f1": 0.899
+     }
+    }
+   },
+   "tolerant": {
+    "overall": {
+     "tp": 808,
+     "tn": 127,
+     "fp": 17,
+     "fn": 27,
+     "f1": 0.9735,
+     "ci95": [
+      0.9666,
+      0.9801
+     ],
+     "cases": 49,
+     "documents": 147
+    },
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 44,
+      "fp": 0,
+      "fn": 5,
+      "tn": 0,
+      "f1": 0.946
+     },
+     "OdwolanieKIO.data": {
+      "tp": 29,
+      "fp": 0,
+      "fn": 6,
+      "tn": 14,
+      "f1": 0.906
+     },
+     "Odwolujacy[].krs": {
+      "tp": 45,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1": 1.0
+     },
+     "Odwolujacy[].nip": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Odwolujacy[].regon": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 47,
+      "fp": 0,
+      "fn": 0,
+      "tn": 5,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 52,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 52,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 36,
+      "fp": 1,
+      "fn": 1,
+      "tn": 11,
+      "f1": 0.973
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 45,
+      "fp": 4,
+      "fn": 0,
+      "tn": 0,
+      "f1": 0.957
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 3,
+      "tn": 10,
+      "f1": 0.96
+     },
+     "mocodawca[].data.krs": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1": 1.0
+     },
+     "mocodawca[].data.nip": {
+      "tp": 53,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "tn": 79,
+      "f1": 1.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 43,
+      "fp": 0,
+      "fn": 6,
+      "tn": 0,
+      "f1": 0.935
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 42,
+      "fp": 4,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.923
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 38,
+      "fp": 8,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.874
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     }
+    }
+   }
+  },
+  "pdf_noise_4pct": {
+   "strict": {
+    "overall": {
+     "tp": 703,
+     "tn": 127,
+     "fp": 23,
+     "fn": 126,
+     "f1": 0.9042,
+     "ci95": [
+      0.8874,
+      0.9197
+     ],
+     "cases": 49,
+     "documents": 147
+    },
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 39,
+      "fp": 0,
+      "fn": 10,
+      "tn": 0,
+      "f1": 0.886
+     },
+     "OdwolanieKIO.data": {
+      "tp": 28,
+      "fp": 0,
+      "fn": 7,
+      "tn": 14,
+      "f1": 0.889
+     },
+     "Odwolujacy[].krs": {
+      "tp": 42,
+      "fp": 0,
+      "fn": 3,
+      "tn": 4,
+      "f1": 0.966
+     },
+     "Odwolujacy[].nip": {
+      "tp": 38,
+      "fp": 0,
+      "fn": 11,
+      "tn": 0,
+      "f1": 0.874
+     },
+     "Odwolujacy[].regon": {
+      "tp": 46,
+      "fp": 0,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.968
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 43,
+      "fp": 0,
+      "fn": 4,
+      "tn": 5,
+      "f1": 0.956
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.97
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.97
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 26,
+      "fp": 1,
+      "fn": 11,
+      "tn": 11,
+      "f1": 0.812
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 45,
+      "fp": 4,
+      "fn": 0,
+      "tn": 0,
+      "f1": 0.957
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 32,
+      "fp": 0,
+      "fn": 7,
+      "tn": 10,
+      "f1": 0.901
+     },
+     "mocodawca[].data.krs": {
+      "tp": 48,
+      "fp": 0,
+      "fn": 1,
+      "tn": 4,
+      "f1": 0.99
+     },
+     "mocodawca[].data.nip": {
+      "tp": 44,
+      "fp": 0,
+      "fn": 9,
+      "tn": 0,
+      "f1": 0.907
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 1,
+      "tn": 79,
+      "f1": 0.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 39,
+      "fp": 1,
+      "fn": 9,
+      "tn": 0,
+      "f1": 0.886
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 40,
+      "fp": 5,
+      "fn": 4,
+      "tn": 0,
+      "f1": 0.899
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 30,
+      "fp": 0,
+      "fn": 19,
+      "tn": 0,
+      "f1": 0.759
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 34,
+      "fp": 12,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.819
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 31,
+      "fp": 0,
+      "fn": 18,
+      "tn": 0,
+      "f1": 0.775
+     }
+    }
+   },
+   "tolerant": {
+    "overall": {
+     "tp": 786,
+     "tn": 127,
+     "fp": 23,
+     "fn": 43,
+     "f1": 0.9597,
+     "ci95": [
+      0.9517,
+      0.9675
+     ],
+     "cases": 49,
+     "documents": 147
+    },
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 39,
+      "fp": 0,
+      "fn": 10,
+      "tn": 0,
+      "f1": 0.886
+     },
+     "OdwolanieKIO.data": {
+      "tp": 28,
+      "fp": 0,
+      "fn": 7,
+      "tn": 14,
+      "f1": 0.889
+     },
+     "Odwolujacy[].krs": {
+      "tp": 45,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1": 1.0
+     },
+     "Odwolujacy[].nip": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Odwolujacy[].regon": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 47,
+      "fp": 0,
+      "fn": 0,
+      "tn": 5,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 52,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 52,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 35,
+      "fp": 1,
+      "fn": 2,
+      "tn": 11,
+      "f1": 0.959
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 45,
+      "fp": 4,
+      "fn": 0,
+      "tn": 0,
+      "f1": 0.957
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 32,
+      "fp": 0,
+      "fn": 7,
+      "tn": 10,
+      "f1": 0.901
+     },
+     "mocodawca[].data.krs": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 4,
+      "f1": 1.0
+     },
+     "mocodawca[].data.nip": {
+      "tp": 53,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "tn": 79,
+      "f1": 1.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 39,
+      "fp": 1,
+      "fn": 9,
+      "tn": 0,
+      "f1": 0.886
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 40,
+      "fp": 5,
+      "fn": 4,
+      "tn": 0,
+      "f1": 0.899
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 48,
+      "fp": 0,
+      "fn": 1,
+      "tn": 0,
+      "f1": 0.99
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 34,
+      "fp": 12,
+      "fn": 3,
+      "tn": 0,
+      "f1": 0.819
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 49,
+      "fp": 0,
+      "fn": 0,
+      "tn": 0,
+      "f1": 1.0
+     }
+    }
+   }
+  }
+ },
+ "docs": 147,
+ "paired_delta_tolerant_minus_strict": {
+  "pdf": {
+   "delta": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "cases": 49
+  },
+  "ocr150": {
+   "delta": 0.0013,
+   "ci95": [
+    0.0,
+    0.0033
+   ],
+   "cases": 49
+  },
+  "pdf_noise_1pct": {
+   "delta": 0.0165,
+   "ci95": [
+    0.0104,
+    0.023
+   ],
+   "cases": 49
+  },
+  "pdf_noise_2pct": {
+   "delta": 0.0273,
+   "ci95": [
+    0.0197,
+    0.0357
+   ],
+   "cases": 49
+  },
+  "pdf_noise_4pct": {
+   "delta": 0.0555,
+   "ci95": [
+    0.0448,
+    0.0669
+   ],
+   "cases": 49
+  }
+ },
+ "regression_vs_pdf_tolerant": {
+  "pdf": 0.0,
+  "ocr150": -0.0495,
+  "pdf_noise_1pct": -0.0113,
+  "pdf_noise_2pct": -0.0241,
+  "pdf_noise_4pct": -0.0379
+ },
+ "mutation": {
+  "mutants_total": 152,
+  "invalid_regex": 0,
+  "killed_by_dev_pdf": 95,
+  "killed_by_dev_or_ocr": 97,
+  "killed_by_dev_or_probes": 117,
+  "survived_all": 33,
+  "by_pattern": {
+   "nip": {
+    "total": 25,
+    "killed_dev": 18,
+    "killed_dev_or_probes": 22
+   },
+   "regon": {
+    "total": 11,
+    "killed_dev": 5,
+    "killed_dev_or_probes": 8
+   },
+   "krs": {
+    "total": 8,
+    "killed_dev": 6,
+    "killed_dev_or_probes": 7
+   },
+   "pesel": {
+    "total": 8,
+    "killed_dev": 6,
+    "killed_dev_or_probes": 7
+   },
+   "account": {
+    "total": 15,
+    "killed_dev": 10,
+    "killed_dev_or_probes": 12
+   },
+   "amount": {
+    "total": 16,
+    "killed_dev": 1,
+    "killed_dev_or_probes": 6
+   },
+   "bzp": {
+    "total": 15,
+    "killed_dev": 13,
+    "killed_dev_or_probes": 15
+   },
+   "ted_new": {
+    "total": 11,
+    "killed_dev": 5,
+    "killed_dev_or_probes": 7
+   },
+   "ted_old": {
+    "total": 12,
+    "killed_dev": 8,
+    "killed_dev_or_probes": 8
+   },
+   "date_num": {
+    "total": 18,
+    "killed_dev": 14,
+    "killed_dev_or_probes": 14
+   },
+   "date_word": {
+    "total": 3,
+    "killed_dev": 3,
+    "killed_dev_or_probes": 3
+   },
+   "ref_label": {
+    "total": 8,
+    "killed_dev": 4,
+    "killed_dev_or_probes": 6
+   },
+   "label_amount": {
+    "total": 2,
+    "killed_dev": 2,
+    "killed_dev_or_probes": 2
+   }
+  },
+  "survivors": [
+   {
+    "pattern": "nip",
+    "operator": "drop '?' @20"
+   },
+   {
+    "pattern": "nip",
+    "operator": "digitclass @26"
+   },
+   {
+    "pattern": "nip",
+    "operator": "digitclass @104"
+   },
+   {
+    "pattern": "regon",
+    "operator": "drop '?' @12"
+   },
+   {
+    "pattern": "regon",
+    "operator": "digitclass @18"
+   },
+   {
+    "pattern": "regon",
+    "operator": "digitclass @52"
+   },
+   {
+    "pattern": "krs",
+    "operator": "digitclass @35"
+   },
+   {
+    "pattern": "pesel",
+    "operator": "digitclass @37"
+   },
+   {
+    "pattern": "account",
+    "operator": "drop '?' @22"
+   },
+   {
+    "pattern": "account",
+    "operator": "digitclass @5"
+   },
+   {
+    "pattern": "account",
+    "operator": "digitclass @70"
+   },
+   {
+    "pattern": "amount",
+    "operator": "quant 2->1"
+   },
+   {
+    "pattern": "amount",
+    "operator": "quant 2->3"
+   },
+   {
+    "pattern": "amount",
+    "operator": "quant 2->1"
+   },
+   {
+    "pattern": "amount",
+    "operator": "label PLN[0]"
+   },
+   {
+    "pattern": "amount",
+    "operator": "label PLN[2]"
+   },
+   {
+    "pattern": "amount",
+    "operator": "digitclass @29"
+   },
+   {
+    "pattern": "amount",
+    "operator": "digitclass @39"
+   },
+   {
+    "pattern": "amount",
+    "operator": "sep ,->. @22"
+   },
+   {
+    "pattern": "amount",
+    "operator": "sep ,->. @32"
+   },
+   {
+    "pattern": "ted_new",
+    "operator": "digitclass @5"
+   },
+   {
+    "pattern": "ted_new",
+    "operator": "digitclass @42"
+   },
+   {
+    "pattern": "ted_new",
+    "operator": "drop lookaround @0"
+   },
+   {
+    "pattern": "ted_new",
+    "operator": "drop lookaround @38"
+   },
+   {
+    "pattern": "ted_old",
+    "operator": "drop '?' @15"
+   },
+   {
+    "pattern": "ted_old",
+    "operator": "drop '?' @19"
+   },
+   {
+    "pattern": "ted_old",
+    "operator": "drop '?' @33"
+   },
+   {
+    "pattern": "ted_old",
+    "operator": "drop '?' @37"
+   },
+   {
+    "pattern": "date_num",
+    "operator": "digitclass @5"
+   },
+   {
+    "pattern": "date_num",
+    "operator": "digitclass @81"
+   },
+   {
+    "pattern": "date_num",
+    "operator": "drop lookaround @0"
+   },
+   {
+    "pattern": "date_num",
+    "operator": "drop lookaround @77"
+   },
+   {
+    "pattern": "ref_label",
+    "operator": "digitclass @178"
+   }
+  ],
+  "killed_by_dev_pdf_pct": 62.5,
+  "killed_by_dev_or_ocr_pct": 63.8,
+  "killed_by_dev_or_probes_pct": 77.0
+ },
+ "wall_s": 29.9
+}

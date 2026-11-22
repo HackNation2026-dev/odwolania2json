@@ -1,0 +1,637 @@
+{
+ "versions": {
+  "python": "3.13.18",
+  "pydantic": "2.14.4",
+  "rapidfuzz": "3.14.6",
+  "pypdfium2": "5.15.2",
+  "httpx": "0.28.1",
+  "rapidocr": "3.10.0"
+ },
+ "n_dev_docs": 147,
+ "A_real_documents": {
+  "counts": {
+   "date": {
+    "ref_in_normalized_set": 133,
+    "unparsed_date_strings": 66,
+    "date_strings_total": 1002
+   },
+   "krs": {
+    "match": 141
+   },
+   "name_case": {
+    "exact_substring": 154
+   },
+   "nip": {
+    "match": 154
+   },
+   "regon": {
+    "match": 101
+   },
+   "bzp": {
+    "match": 38
+   },
+   "ted": {
+    "match": 39
+   },
+   "amount": {
+    "ref_in_normalized_set": 49
+   },
+   "account": {
+    "match": 98
+   },
+   "pesel": {
+    "match": 1
+   }
+  },
+  "failures_sample": {}
+ },
+ "B_roundtrip": {
+  "summary": {
+   "account": {
+    "ok": 7,
+    "fail": 0
+   },
+   "amount": {
+    "ok": 10,
+    "fail": 2
+   },
+   "date": {
+    "ok": 10,
+    "fail": 4
+   },
+   "krs": {
+    "ok": 3,
+    "fail": 1
+   },
+   "nip": {
+    "ok": 5,
+    "fail": 3
+   },
+   "regon": {
+    "ok": 4,
+    "fail": 1
+   },
+   "ted": {
+    "ok": 4,
+    "fail": 1
+   }
+  },
+  "failures": [
+   {
+    "kind": "nip",
+    "raw": "999-928-40-65",
+    "expected": "9999284065",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "nip",
+    "raw": "999 928 40 65",
+    "expected": "9999284065",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "nip",
+    "raw": "NIP 999-92-84-065",
+    "expected": "9999284065",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "regon",
+    "raw": "999 642 785",
+    "expected": "999642785",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "krs",
+    "raw": "9999 405 188",
+    "expected": "9999405188",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "amount",
+    "raw": "1.000,50",
+    "expected": 1000.5,
+    "got": 1.0,
+    "ok": false,
+    "note": "separator tysięcy z kropką/przecinkiem"
+   },
+   {
+    "kind": "amount",
+    "raw": "1,000.50",
+    "expected": 1000.5,
+    "got": 1.0,
+    "ok": false,
+    "note": "separator tysięcy z kropką/przecinkiem"
+   },
+   {
+    "kind": "date",
+    "raw": "01.04.26",
+    "expected": "2026-04-01",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "1 IV 2026",
+    "expected": "2026-04-01",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "2026/04/01",
+    "expected": "2026-04-01",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "pierwszego kwietnia 2026",
+    "expected": "2026-04-01",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "ted",
+    "raw": "2026/S 224 - 999211",
+    "expected": "999211-2026",
+    "got": null,
+    "ok": false,
+    "note": ""
+   }
+  ],
+  "rows": [
+   {
+    "kind": "nip",
+    "raw": "9999284065",
+    "expected": "9999284065",
+    "got": "9999284065",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "nip",
+    "raw": "999-928-40-65",
+    "expected": "9999284065",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "nip",
+    "raw": "999 928 40 65",
+    "expected": "9999284065",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "nip",
+    "raw": "NIP: 9999284065",
+    "expected": "9999284065",
+    "got": "9999284065",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "nip",
+    "raw": "PL 9999284065",
+    "expected": "9999284065",
+    "got": "9999284065",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "nip",
+    "raw": "NIP 999-92-84-065",
+    "expected": "9999284065",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "nip",
+    "raw": "9999284065.",
+    "expected": "9999284065",
+    "got": "9999284065",
+    "ok": true,
+    "note": "11 cyfr nie jest NIP"
+   },
+   {
+    "kind": "nip",
+    "raw": "99992840650",
+    "expected": null,
+    "got": null,
+    "ok": true,
+    "note": "11 cyfr nie jest NIP"
+   },
+   {
+    "kind": "regon",
+    "raw": "999642785",
+    "expected": "999642785",
+    "got": "999642785",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "regon",
+    "raw": "999 642 785",
+    "expected": "999642785",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "regon",
+    "raw": "99964278500123",
+    "expected": "99964278500123",
+    "got": "99964278500123",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "regon",
+    "raw": "REGON: 999642785",
+    "expected": "999642785",
+    "got": "999642785",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "regon",
+    "raw": "9996427850012",
+    "expected": null,
+    "got": null,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "krs",
+    "raw": "0009405188",
+    "expected": "0009405188",
+    "got": "0009405188",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "krs",
+    "raw": "KRS 9999405188",
+    "expected": "9999405188",
+    "got": "9999405188",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "krs",
+    "raw": "9999 405 188",
+    "expected": "9999405188",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "krs",
+    "raw": "99994051881",
+    "expected": null,
+    "got": null,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "account",
+    "raw": "68438223049992295262834736",
+    "expected": "68438223049992295262834736",
+    "got": "68438223049992295262834736",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "account",
+    "raw": "PL68438223049992295262834736",
+    "expected": "68438223049992295262834736",
+    "got": "68438223049992295262834736",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "account",
+    "raw": "PL 68 4382 2304 9992 2952 6283 4736",
+    "expected": "68438223049992295262834736",
+    "got": "68438223049992295262834736",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "account",
+    "raw": "68 4382 2304 9992 2952 6283 4736",
+    "expected": "68438223049992295262834736",
+    "got": "68438223049992295262834736",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "account",
+    "raw": "PL68-4382-2304-9992-2952-6283-4736",
+    "expected": null,
+    "got": null,
+    "ok": true,
+    "note": "myślniki w rachunku"
+   },
+   {
+    "kind": "account",
+    "raw": "6843822304999229526283473",
+    "expected": null,
+    "got": null,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "account",
+    "raw": "684382230499922952628347361",
+    "expected": null,
+    "got": null,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "amount",
+    "raw": "10 000,00 zł",
+    "expected": 10000.0,
+    "got": 10000.0,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "amount",
+    "raw": "10000.00",
+    "expected": 10000.0,
+    "got": 10000.0,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "amount",
+    "raw": "10 000,00 PLN",
+    "expected": 10000.0,
+    "got": 10000.0,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "amount",
+    "raw": "200,00",
+    "expected": 200.0,
+    "got": 200.0,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "amount",
+    "raw": "10 000,00 zł",
+    "expected": 10000.0,
+    "got": 10000.0,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "amount",
+    "raw": "1.000,50",
+    "expected": 1000.5,
+    "got": 1.0,
+    "ok": false,
+    "note": "separator tysięcy z kropką/przecinkiem"
+   },
+   {
+    "kind": "amount",
+    "raw": "1 000,50",
+    "expected": 1000.5,
+    "got": 1000.5,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "amount",
+    "raw": "17 PLN",
+    "expected": 17.0,
+    "got": 17.0,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "amount",
+    "raw": "kwota: 34,00 PLN",
+    "expected": 34.0,
+    "got": 34.0,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "amount",
+    "raw": "−50,00",
+    "expected": 50.0,
+    "got": 50.0,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "amount",
+    "raw": "10 000,00 zł słownie: dziesięć tysięcy",
+    "expected": 10000.0,
+    "got": 10000.0,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "amount",
+    "raw": "1,000.50",
+    "expected": 1000.5,
+    "got": 1.0,
+    "ok": false,
+    "note": "separator tysięcy z kropką/przecinkiem"
+   },
+   {
+    "kind": "date",
+    "raw": "1 kwietnia 2026",
+    "expected": "2026-04-01",
+    "got": "2026-04-01",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "1 KWIETNIA 2026 r.",
+    "expected": "2026-04-01",
+    "got": "2026-04-01",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "01.04.2026",
+    "expected": "2026-04-01",
+    "got": "2026-04-01",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "01-04-2026",
+    "expected": "2026-04-01",
+    "got": "2026-04-01",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "2026-04-01",
+    "expected": "2026-04-01",
+    "got": "2026-04-01",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "1.4.2026",
+    "expected": "2026-04-01",
+    "got": "2026-04-01",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "31 lutego 2026",
+    "expected": null,
+    "got": null,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "01.04.26",
+    "expected": "2026-04-01",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "1 IV 2026",
+    "expected": "2026-04-01",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "29 lutego 2026",
+    "expected": null,
+    "got": null,
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "5 października 2026 roku",
+    "expected": "2026-10-05",
+    "got": "2026-10-05",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "1 kwietnia 2026 14:36",
+    "expected": "2026-04-01",
+    "got": "2026-04-01",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "2026/04/01",
+    "expected": "2026-04-01",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "date",
+    "raw": "pierwszego kwietnia 2026",
+    "expected": "2026-04-01",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "ted",
+    "raw": "2026/S224-999211",
+    "expected": "999211-2026",
+    "got": "999211-2026",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "ted",
+    "raw": "2026/S 224-999211",
+    "expected": "999211-2026",
+    "got": "999211-2026",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "ted",
+    "raw": "999211-2026",
+    "expected": "999211-2026",
+    "got": "999211-2026",
+    "ok": true,
+    "note": ""
+   },
+   {
+    "kind": "ted",
+    "raw": "2026/S 224 - 999211",
+    "expected": "999211-2026",
+    "got": null,
+    "ok": false,
+    "note": ""
+   },
+   {
+    "kind": "ted",
+    "raw": "TED: 999211-2026",
+    "expected": "999211-2026",
+    "got": "999211-2026",
+    "ok": true,
+    "note": ""
+   }
+  ]
+ },
+ "C_checksums_of_references": {
+  "nip": {
+   "valid": 98,
+   "invalid": 56
+  },
+  "regon": {
+   "valid": 71,
+   "invalid": 30
+  },
+  "iban": {
+   "invalid": 65,
+   "valid": 33
+  },
+  "pesel": {
+   "valid": 1
+  }
+ }
+}

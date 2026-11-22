@@ -1,0 +1,123 @@
+{
+ "n": 12,
+ "agree_with_reference_or_rejected_negative": 11,
+ "limit_method": "systemd-run",
+ "rows": [
+  {
+   "true_class": "odwolanie",
+   "random_name": "91d9f9b439fc.pdf",
+   "outcome": "partial",
+   "class_id": "appeal",
+   "codes": [],
+   "peak_rss_mb": 65.8,
+   "wall_s": 0.1876
+  },
+  {
+   "true_class": "odwolanie",
+   "random_name": "3cea8142c8ea.pdf",
+   "outcome": "partial",
+   "class_id": "appeal",
+   "codes": [],
+   "peak_rss_mb": 66.0,
+   "wall_s": 0.1737
+  },
+  {
+   "true_class": "odwolanie",
+   "random_name": "6276a05f1119.pdf",
+   "outcome": "partial",
+   "class_id": "appeal",
+   "codes": [],
+   "peak_rss_mb": 66.0,
+   "wall_s": 0.1953
+  },
+  {
+   "true_class": "pelnomocnictwo",
+   "random_name": "9dfbab13dfae.pdf",
+   "outcome": "partial",
+   "class_id": "power_of_attorney",
+   "codes": [],
+   "peak_rss_mb": 66.0,
+   "wall_s": 0.1317
+  },
+  {
+   "true_class": "pelnomocnictwo",
+   "random_name": "0ff90944fe0c.pdf",
+   "outcome": "partial",
+   "class_id": "power_of_attorney",
+   "codes": [],
+   "peak_rss_mb": 66.0,
+   "wall_s": 0.1305
+  },
+  {
+   "true_class": "pelnomocnictwo",
+   "random_name": "6301a0c5154e.pdf",
+   "outcome": "partial",
+   "class_id": "power_of_attorney",
+   "codes": [],
+   "peak_rss_mb": 66.0,
+   "wall_s": 0.161
+  },
+  {
+   "true_class": "przelew",
+   "random_name": "047acdde8d51.pdf",
+   "outcome": "partial",
+   "class_id": "bank_transfer",
+   "codes": [],
+   "peak_rss_mb": 66.0,
+   "wall_s": 0.1234
+  },
+  {
+   "true_class": "przelew",
+   "random_name": "6fce2bd8a1e6.pdf",
+   "outcome": "partial",
+   "class_id": "bank_transfer",
+   "codes": [],
+   "peak_rss_mb": 66.1,
+   "wall_s": 0.1226
+  },
+  {
+   "true_class": "przelew",
+   "random_name": "b7c17f7695f5.pdf",
+   "outcome": "ambiguous",
+   "class_id": null,
+   "codes": [
+    "class_ambiguous"
+   ],
+   "peak_rss_mb": 66.1,
+   "wall_s": 0.1206
+  },
+  {
+   "true_class": "obcy",
+   "random_name": "3a127e02ff05.pdf",
+   "outcome": "technical_error",
+   "class_id": null,
+   "codes": [
+    "ocr_unavailable"
+   ],
+   "peak_rss_mb": 154.1,
+   "wall_s": 0.3468
+  },
+  {
+   "true_class": "obcy",
+   "random_name": "5cbda1a6bcde.pdf",
+   "outcome": "foreign",
+   "class_id": null,
+   "codes": [
+    "foreign_document"
+   ],
+   "peak_rss_mb": 154.6,
+   "wall_s": 0.1219
+  },
+  {
+   "true_class": "obcy",
+   "random_name": "66084c96d8e2.pdf",
+   "outcome": "foreign",
+   "class_id": null,
+   "codes": [
+    "foreign_document"
+   ],
+   "peak_rss_mb": 154.6,
+   "wall_s": 0.8579
+  }
+ ]
+}
