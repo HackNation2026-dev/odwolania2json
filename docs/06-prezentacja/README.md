@@ -8,6 +8,11 @@ status: dokumentacja przygotowawcza
 
 Cel prezentacji: udowodnić jakość ekstrakcji, możliwość sprawdzenia źródła i rozszerzenie bez zmiany silnika.
 
+## Projekt prezentacji (v0.1)
+
+- Scenariusz slajdów z kontekstem i uzasadnieniami: [scenariusz-slajdow.md](scenariusz-slajdow.md)
+- Podgląd prezentacji (szata „Dowód", 8 slajdów): [podglad-prezentacji.html](podglad-prezentacji.html)
+
 ## Proponowane demo, około 3 minut
 
 1. Uruchom CLI na pełnej sprawie z trzema typami PDF.
