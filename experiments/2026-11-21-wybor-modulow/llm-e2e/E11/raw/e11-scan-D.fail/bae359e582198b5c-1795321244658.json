@@ -1,0 +1,1 @@
+{"error": "llm_rate_limit", "description": "HTTP 429", "llm_call": {"doc_sha256": "bae359e582198b5caf54c3531b22287b7861b659de9b706b10934bfcef22d731", "replay": false, "mode": "text_image", "prompt": "p2", "images": 1, "image_dpi": 100, "doc_pages": 1, "images_truncated": false, "attempts": [{"error": "llm_rate_limit"}], "schema_first_ok": null, "schema_final_ok": false}}

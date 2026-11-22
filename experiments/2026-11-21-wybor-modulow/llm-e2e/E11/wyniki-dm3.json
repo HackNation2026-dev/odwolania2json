@@ -1,0 +1,367 @@
+{
+ "text_DM3": {
+  "docs": 87,
+  "cases": 26,
+  "f1": 0.9335,
+  "ci95": [
+   0.8989,
+   0.9632
+  ],
+  "tp": 737,
+  "fp": 34,
+  "fn": 71,
+  "per_class_f1": {
+   "odwolanie": 0.9237,
+   "pelnomocnictwo": 0.9061,
+   "przelew": 0.9967,
+   "obcy": 0.0
+  },
+  "classification_acc": 0.9885,
+  "outcomes": {
+   "foreign": 12,
+   "partial": 31,
+   "complete": 43,
+   "technical_error": 1
+  },
+  "technical_errors": {
+   "llm_invalid_response": 1
+  },
+  "input_tokens_per_doc": 8358,
+  "output_tokens_per_doc": 614,
+  "doc_wall_median_s_UNDER_LOAD": 17.86,
+  "doc_wall_p95_s_UNDER_LOAD": 211.95,
+  "per_field_f1": {
+   "OdwolanieKIO.czynnosc_dzien": 0.9796,
+   "OdwolanieKIO.czynnosc_opis": 0.9796,
+   "OdwolanieKIO.czynnosc_powod_id": 0.9796,
+   "OdwolanieKIO.data": 0.9375,
+   "OdwolanieKIO.miejscowosc": 0.9375,
+   "Odwolujacy[].krs": 0.85,
+   "Odwolujacy[].nazwa": 0.9362,
+   "Odwolujacy[].nip": 0.9362,
+   "Odwolujacy[].pelnomocnik.imie_nazwisko": 0.8889,
+   "Odwolujacy[].pelnomocnik.mail": 0.9362,
+   "Odwolujacy[].pelnomocnik.nazwa": 0.913,
+   "Odwolujacy[].przez-pelnomocnika": 0.9362,
+   "Odwolujacy[].regon": 0.913,
+   "Zamawiajacy[].krs": 0.8649,
+   "Zamawiajacy[].nazwa": 0.9362,
+   "Zamawiajacy[].nip": 0.9362,
+   "Zamawiajacy[].prowadzacy_postepowanie": 0.0,
+   "Zamawiajacy[].regon": 0.913,
+   "ZamowieniePubliczne.numer_bzp": 0.8125,
+   "ZamowieniePubliczne.numer_postepowania": 0.9796,
+   "ZamowieniePubliczne.numer_ted": 0.8125,
+   "ZamowieniePubliczne.tytul": 0.9796,
+   "mocodawca[].data.imie_nazwisko": 1.0,
+   "mocodawca[].data.krs": 0.8,
+   "mocodawca[].data.nazwa": 0.9643,
+   "mocodawca[].data.nip": 0.9643,
+   "mocodawca[].data.typ": 0.9643,
+   "mocodawca[].podpisujacy[].imie_nazwisko": 0.88,
+   "pelnomocnicy[].imie_nazwisko": 0.8571,
+   "pelnomocnicy[].pesel": 0.0,
+   "przelew_bankowy.data_operacji": 1.0,
+   "przelew_bankowy.kwota": 1.0,
+   "przelew_bankowy.na_rachunek": 1.0,
+   "przelew_bankowy.numer_transakcji": 1.0,
+   "przelew_bankowy.tytul": 1.0,
+   "przelew_bankowy.z_rachunku": 0.9796
+  }
+ },
+ "text_DM3_vs_A": {
+  "delta": 0.0155,
+  "ci95": [
+   -0.0379,
+   0.0761
+  ],
+  "cases": 26,
+  "decision": "nierozstrzygnięte",
+  "docs": 87,
+  "reps_used": 1
+ },
+ "text_DM3_vs_Dbase": {
+  "delta": 0.0226,
+  "ci95": [
+   -0.0354,
+   0.0864
+  ],
+  "cases": 26,
+  "decision": "nierozstrzygnięte",
+  "docs": 87,
+  "reps_used": 1
+ },
+ "skan_DM3": {
+  "docs": 19,
+  "cases": 7,
+  "f1": 0.944,
+  "ci95": [
+   0.9111,
+   0.9686
+  ],
+  "tp": 194,
+  "fp": 19,
+  "fn": 4,
+  "per_class_f1": {
+   "odwolanie": 0.9407,
+   "pelnomocnictwo": 0.9143,
+   "przelew": 0.9859
+  },
+  "classification_acc": 1.0,
+  "outcomes": {
+   "partial": 13,
+   "complete": 6
+  },
+  "technical_errors": {},
+  "input_tokens_per_doc": 5785,
+  "output_tokens_per_doc": 709,
+  "doc_wall_median_s_UNDER_LOAD": 17.75,
+  "doc_wall_p95_s_UNDER_LOAD": 44.89,
+  "per_field_f1": {
+   "OdwolanieKIO.czynnosc_dzien": 1.0,
+   "OdwolanieKIO.czynnosc_opis": 1.0,
+   "OdwolanieKIO.czynnosc_powod_id": 1.0,
+   "OdwolanieKIO.data": 1.0,
+   "OdwolanieKIO.miejscowosc": 1.0,
+   "Odwolujacy[].krs": 0.6,
+   "Odwolujacy[].nazwa": 1.0,
+   "Odwolujacy[].nip": 1.0,
+   "Odwolujacy[].pelnomocnik.imie_nazwisko": 1.0,
+   "Odwolujacy[].pelnomocnik.mail": 1.0,
+   "Odwolujacy[].pelnomocnik.nazwa": 1.0,
+   "Odwolujacy[].przez-pelnomocnika": 1.0,
+   "Odwolujacy[].regon": 1.0,
+   "Zamawiajacy[].krs": 0.6,
+   "Zamawiajacy[].nazwa": 1.0,
+   "Zamawiajacy[].nip": 0.9231,
+   "Zamawiajacy[].prowadzacy_postepowanie": 0.0,
+   "Zamawiajacy[].regon": 0.9231,
+   "ZamowieniePubliczne.numer_bzp": 1.0,
+   "ZamowieniePubliczne.numer_postepowania": 0.9231,
+   "ZamowieniePubliczne.numer_ted": 0.9091,
+   "ZamowieniePubliczne.tytul": 0.8333,
+   "mocodawca[].data.imie_nazwisko": 0.0,
+   "mocodawca[].data.krs": 0.2857,
+   "mocodawca[].data.nazwa": 0.9091,
+   "mocodawca[].data.nip": 1.0,
+   "mocodawca[].data.typ": 1.0,
+   "mocodawca[].podpisujacy[].imie_nazwisko": 1.0,
+   "pelnomocnicy[].imie_nazwisko": 1.0,
+   "pelnomocnicy[].pesel": 0.0,
+   "przelew_bankowy.data_operacji": 1.0,
+   "przelew_bankowy.kwota": 1.0,
+   "przelew_bankowy.na_rachunek": 1.0,
+   "przelew_bankowy.numer_transakcji": 1.0,
+   "przelew_bankowy.tytul": 1.0,
+   "przelew_bankowy.z_rachunku": 0.9091
+  }
+ },
+ "skan_DM3_vs_B": {
+  "delta": 0.0603,
+  "ci95": [
+   0.0003,
+   0.1763
+  ],
+  "cases": 7,
+  "decision": "cand>base",
+  "docs": 19,
+  "reps_used": 1
+ },
+ "skan_DM3_vs_Dbase": {
+  "delta": -0.0228,
+  "ci95": [
+   -0.0459,
+   0.0066
+  ],
+  "cases": 5,
+  "decision": "nierozstrzygnięte",
+  "docs": 15,
+  "reps_used": 1
+ },
+ "mieszany_DM3": {
+  "docs": 7,
+  "cases": 7,
+  "f1": 0.9254,
+  "ci95": [
+   0.8293,
+   0.9822
+  ],
+  "tp": 124,
+  "fp": 8,
+  "fn": 12,
+  "per_class_f1": {
+   "odwolanie": 0.9254
+  },
+  "classification_acc": 1.0,
+  "outcomes": {
+   "complete": 5,
+   "partial": 2
+  },
+  "technical_errors": {},
+  "input_tokens_per_doc": 6657,
+  "output_tokens_per_doc": 1388,
+  "doc_wall_median_s_UNDER_LOAD": 25.33,
+  "doc_wall_p95_s_UNDER_LOAD": 45.75,
+  "per_field_f1": {
+   "OdwolanieKIO.czynnosc_dzien": 1.0,
+   "OdwolanieKIO.czynnosc_opis": 1.0,
+   "OdwolanieKIO.czynnosc_powod_id": 1.0,
+   "OdwolanieKIO.data": 0.9231,
+   "OdwolanieKIO.miejscowosc": 1.0,
+   "Odwolujacy[].krs": 0.7273,
+   "Odwolujacy[].nazwa": 0.9231,
+   "Odwolujacy[].nip": 0.9231,
+   "Odwolujacy[].pelnomocnik.imie_nazwisko": 0.9231,
+   "Odwolujacy[].pelnomocnik.mail": 0.9231,
+   "Odwolujacy[].pelnomocnik.nazwa": 0.9231,
+   "Odwolujacy[].przez-pelnomocnika": 0.9231,
+   "Odwolujacy[].regon": 0.9231,
+   "Zamawiajacy[].krs": 0.7273,
+   "Zamawiajacy[].nazwa": 0.9231,
+   "Zamawiajacy[].nip": 0.9231,
+   "Zamawiajacy[].prowadzacy_postepowanie": 0.0,
+   "Zamawiajacy[].regon": 0.9231,
+   "ZamowieniePubliczne.numer_bzp": 1.0,
+   "ZamowieniePubliczne.numer_postepowania": 1.0,
+   "ZamowieniePubliczne.numer_ted": 0.9091,
+   "ZamowieniePubliczne.tytul": 1.0
+  }
+ },
+ "mieszany_DM3_vs_B": {
+  "delta": -0.0417,
+  "ci95": [
+   -0.1348,
+   0.0169
+  ],
+  "cases": 7,
+  "decision": "nierozstrzygnięte",
+  "docs": 7,
+  "reps_used": 1
+ },
+ "mieszany_DM3_vs_Dbase": {
+  "delta": -0.0574,
+  "ci95": [
+   -0.1514,
+   -0.0041
+  ],
+  "cases": 6,
+  "decision": "base>cand",
+  "docs": 6,
+  "reps_used": 1
+ },
+ "s2_DM3": {
+  "docs": 6,
+  "cases": 6,
+  "f1": 0.9859,
+  "ci95": [
+   0.9565,
+   1.0
+  ],
+  "tp": 35,
+  "fp": 1,
+  "fn": 0,
+  "per_class_f1": {
+   "przelew": 0.9859
+  },
+  "classification_acc": 1.0,
+  "outcomes": {
+   "partial": 6
+  },
+  "technical_errors": {},
+  "input_tokens_per_doc": 4488,
+  "output_tokens_per_doc": 378,
+  "doc_wall_median_s_UNDER_LOAD": 15.5,
+  "doc_wall_p95_s_UNDER_LOAD": 19.38,
+  "per_field_f1": {
+   "przelew_bankowy.data_operacji": 1.0,
+   "przelew_bankowy.kwota": 1.0,
+   "przelew_bankowy.na_rachunek": 1.0,
+   "przelew_bankowy.numer_transakcji": 1.0,
+   "przelew_bankowy.tytul": 1.0,
+   "przelew_bankowy.z_rachunku": 0.9091
+  }
+ },
+ "s2_DM3_vs_B": {
+  "delta": -0.0141,
+  "ci95": [
+   -0.0435,
+   0.0
+  ],
+  "cases": 6,
+  "decision": "nierozstrzygnięte",
+  "docs": 6,
+  "reps_used": 1
+ },
+ "s2_DM3_vs_Dbase": {
+  "delta": -0.0169,
+  "ci95": [
+   -0.0526,
+   0.0
+  ],
+  "cases": 5,
+  "decision": "nierozstrzygnięte",
+  "docs": 5,
+  "reps_used": 1
+ },
+ "s5_DM3": {
+  "docs": 7,
+  "cases": 7,
+  "f1": 0.9412,
+  "ci95": [
+   0.8941,
+   0.988
+  ],
+  "tp": 40,
+  "fp": 4,
+  "fn": 1,
+  "per_class_f1": {
+   "pelnomocnictwo": 0.9412
+  },
+  "classification_acc": 1.0,
+  "outcomes": {
+   "partial": 6,
+   "complete": 1
+  },
+  "technical_errors": {},
+  "input_tokens_per_doc": 4388,
+  "output_tokens_per_doc": 449,
+  "doc_wall_median_s_UNDER_LOAD": 12.16,
+  "doc_wall_p95_s_UNDER_LOAD": 18.25,
+  "per_field_f1": {
+   "mocodawca[].data.imie_nazwisko": 0.0,
+   "mocodawca[].data.krs": 0.9231,
+   "mocodawca[].data.nazwa": 1.0,
+   "mocodawca[].data.nip": 1.0,
+   "mocodawca[].data.typ": 1.0,
+   "mocodawca[].podpisujacy[].imie_nazwisko": 1.0,
+   "pelnomocnicy[].imie_nazwisko": 0.7143,
+   "pelnomocnicy[].pesel": 0.0
+  }
+ },
+ "s5_DM3_vs_B": {
+  "delta": 0.11,
+  "ci95": [
+   0.0129,
+   0.2226
+  ],
+  "cases": 7,
+  "decision": "cand>base",
+  "docs": 7,
+  "reps_used": 1
+ },
+ "s5_DM3_vs_Dbase": {
+  "delta": -0.0422,
+  "ci95": [
+   -0.0745,
+   -0.013
+  ],
+  "cases": 6,
+  "decision": "base>cand",
+  "docs": 6,
+  "reps_used": 1
+ },
+ "pending_transient_rows": {
+  "DM3-text": 0,
+  "DM3-scan": 6
+ }
+}

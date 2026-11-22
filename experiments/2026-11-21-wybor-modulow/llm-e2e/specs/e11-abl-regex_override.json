@@ -1,0 +1,26 @@
+{
+ "name": "e11-abl-regex_override",
+ "experiment": "E11",
+ "docs": {
+  "set": "dev_sub",
+  "negatives": true
+ },
+ "reps": 1,
+ "concurrency": 2,
+ "server": {
+  "router": "llm1",
+  "extractor": "llm1",
+  "ocr": "none",
+  "llm": {
+   "retries": 4,
+   "timeout_s": 150
+  }
+ },
+ "env": {
+  "LLME2E_MODE": "text",
+  "LLME2E_PROMPT": "p2",
+  "LLME2E_REPLAY": "/home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/llm-e2e/E10/raw/e10-text-p2.jsonl",
+  "LLME2E_REPLAY_REP": "1",
+  "LLME2E_MERGE": "regex_override"
+ }
+}

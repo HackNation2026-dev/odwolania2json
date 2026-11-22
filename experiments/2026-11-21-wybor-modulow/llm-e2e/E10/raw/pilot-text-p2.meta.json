@@ -1,0 +1,115 @@
+{
+  "name": "pilot-text-p2",
+  "experiment": "E10",
+  "spec": {
+    "name": "pilot-text-p2",
+    "experiment": "E10",
+    "docs": {
+      "set": "cases:/tmp/claude-1000/-home-user-orca-workspaces-odwolania2json-numbfish/72095b03-ab55-4737-9983-3edcb7cb58e1/scratchpad/pilot_cases.json",
+      "negatives": false
+    },
+    "server": {
+      "router": "llm1",
+      "extractor": "llm1",
+      "ocr": "none",
+      "llm": {
+        "retries": 4,
+        "timeout_s": 150
+      }
+    },
+    "env": {
+      "LLME2E_MODE": "text",
+      "LLME2E_PROMPT": "p2"
+    },
+    "reps": 1,
+    "concurrency": 4
+  },
+  "versions": {
+    "python": "3.13.18",
+    "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+    "machine": "x86_64",
+    "fastapi": "0.165.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "pydantic": "2.14.4",
+    "pypdfium2": "5.15.2",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "pillow": "13.0.0",
+    "numpy": "2.5.5",
+    "git_commit": "edb03b3"
+  },
+  "seed": 20261122,
+  "documents": 6,
+  "reps": 1,
+  "concurrency": 4,
+  "started_utc": "2026-11-22T00:12:56Z",
+  "lock_wait_s": 0.0,
+  "server_start_s": 0.867,
+  "limit_method": "systemd-run",
+  "system": {
+    "harness_version": "0.1",
+    "ocr": {
+      "ready": false,
+      "provider": {
+        "available": false,
+        "name": "none",
+        "version": null,
+        "parameter_count": null,
+        "license": null,
+        "location": null,
+        "models": []
+      }
+    },
+    "llm": {
+      "ready": false,
+      "provider": null
+    },
+    "pdf_reader": "pdfium",
+    "router": "llm1",
+    "extractor": "llm1",
+    "anchor": "words",
+    "config": {
+      "name": "E10-pilot-text-p2",
+      "pdf_reader": "pdfium",
+      "ocr": "none",
+      "ocr_dpi": 200,
+      "ocr_policy": "if_needed",
+      "router": "llm1",
+      "extractor": "llm1",
+      "anchor": "words",
+      "llm_input": "text",
+      "work_dir": "/home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/work/runs/llm-e2e/pilot-text-p2/srv",
+      "seed": 20261122,
+      "llm": {
+        "protocol": "anthropic",
+        "base_url": "https://api.minimax.io/anthropic/v1/messages",
+        "model": "MiniMax-M3.1-Flash-Preview",
+        "temperature": 0.0,
+        "max_tokens": 8000,
+        "timeout_s": 150.0,
+        "retries": 4,
+        "effort": null
+      },
+      "limits": {
+        "max_upload_bytes": 31457280,
+        "max_pages": 60,
+        "document_timeout_s": 600.0,
+        "max_workers": 4,
+        "max_batch_documents": 500
+      }
+    },
+    "limits": {
+      "max_upload_bytes": 31457280,
+      "max_pages": 60,
+      "document_timeout_s": 600.0,
+      "max_workers": 4,
+      "max_batch_documents": 500
+    },
+    "python": "3.13.18",
+    "paid_call_performed": false
+  },
+  "peak_rss_mb": 75.5,
+  "total_wall_s": 89.28,
+  "finished_utc": "2026-11-22T00:14:25Z"
+}

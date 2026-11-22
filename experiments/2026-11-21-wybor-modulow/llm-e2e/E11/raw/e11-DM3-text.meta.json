@@ -1,0 +1,173 @@
+{
+  "name": "e11-DM3-text",
+  "experiment": "E11",
+  "spec": {
+    "name": "e11-DM3-text",
+    "experiment": "E11",
+    "docs": {
+      "set": "dev_sub",
+      "negatives": true
+    },
+    "reps": 1,
+    "concurrency": 4,
+    "server": {
+      "router": "llm1",
+      "extractor": "llm1",
+      "ocr": "rapidocr",
+      "llm": {
+        "retries": 4,
+        "timeout_s": 150,
+        "model": "MiniMax-M3"
+      },
+      "ocr_dpi": 200,
+      "ocr_policy": "if_needed"
+    },
+    "env": {
+      "LLME2E_MODE": "text_image",
+      "LLME2E_PROMPT": "p2"
+    }
+  },
+  "versions": {
+    "python": "3.13.18",
+    "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+    "machine": "x86_64",
+    "fastapi": "0.165.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "pydantic": "2.14.4",
+    "pypdfium2": "5.15.2",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "pillow": "13.0.0",
+    "numpy": "2.5.5",
+    "git_commit": "352ba9e"
+  },
+  "seed": 20261122,
+  "documents": 87,
+  "reps": 1,
+  "concurrency": 4,
+  "started_utc": "2026-11-22T05:22:23Z",
+  "lock_wait_s": 0.0,
+  "server_start_s": 1.501,
+  "limit_method": "systemd-run",
+  "system": {
+    "harness_version": "0.1",
+    "ocr": {
+      "ready": true,
+      "provider": {
+        "available": true,
+        "name": "rapidocr",
+        "version": "3.10.0",
+        "onnxruntime": "1.32.0",
+        "parameter_count": null,
+        "license": "Apache-2.0",
+        "location": "local",
+        "models": [
+          {
+            "name": "PP-OCRv6_det_small",
+            "role": "det",
+            "version": null,
+            "license": "Apache-2.0 (do potwierdzenia ADR-002)",
+            "location": "local (pip)",
+            "parameter_count": null,
+            "bytes": 9929594
+          },
+          {
+            "name": "PP-OCRv6_rec_small",
+            "role": "rec",
+            "version": null,
+            "license": "Apache-2.0 (do potwierdzenia ADR-002)",
+            "location": "local (pip)",
+            "parameter_count": null,
+            "bytes": 21234383
+          },
+          {
+            "name": "ch_ppocr_mobile_v2.0_cls_mobile",
+            "role": "cls",
+            "version": null,
+            "license": "Apache-2.0 (do potwierdzenia ADR-002)",
+            "location": "local (pip)",
+            "parameter_count": null,
+            "bytes": 585532
+          }
+        ]
+      }
+    },
+    "llm": {
+      "ready": false,
+      "provider": null
+    },
+    "pdf_reader": "pdfium",
+    "router": "llm1",
+    "extractor": "llm1",
+    "anchor": "words",
+    "config": {
+      "name": "E11-e11-DM3-text",
+      "pdf_reader": "pdfium",
+      "ocr": "rapidocr",
+      "ocr_dpi": 200,
+      "ocr_policy": "if_needed",
+      "router": "llm1",
+      "extractor": "llm1",
+      "anchor": "words",
+      "llm_input": "text",
+      "work_dir": "/home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/work/runs/llm-e2e/e11-DM3-text/srv",
+      "seed": 20261122,
+      "llm": {
+        "protocol": "anthropic",
+        "base_url": "https://api.minimax.io/anthropic/v1/messages",
+        "model": "MiniMax-M3",
+        "temperature": 0.0,
+        "max_tokens": 8000,
+        "timeout_s": 150.0,
+        "retries": 4,
+        "effort": null
+      },
+      "limits": {
+        "max_upload_bytes": 31457280,
+        "max_pages": 60,
+        "document_timeout_s": 600.0,
+        "max_workers": 4,
+        "max_batch_documents": 500
+      }
+    },
+    "limits": {
+      "max_upload_bytes": 31457280,
+      "max_pages": 60,
+      "document_timeout_s": 600.0,
+      "max_workers": 4,
+      "max_batch_documents": 500
+    },
+    "python": "3.13.18",
+    "paid_call_performed": false
+  },
+  "peak_rss_mb": 878.2,
+  "total_wall_s": 259.98,
+  "finished_utc": "2026-11-22T05:26:43Z",
+  "segments": [
+    {
+      "started_utc": "2026-11-22T04:25:40Z",
+      "finished_utc": "2026-11-22T05:13:34Z",
+      "total_wall_s": 2873.53,
+      "peak_rss_mb": 943.3
+    },
+    {
+      "started_utc": "2026-11-22T05:14:04Z",
+      "finished_utc": "2026-11-22T05:18:01Z",
+      "total_wall_s": 237.21,
+      "peak_rss_mb": 949.1
+    },
+    {
+      "started_utc": "2026-11-22T05:18:31Z",
+      "finished_utc": "2026-11-22T05:21:53Z",
+      "total_wall_s": 202.14,
+      "peak_rss_mb": 1012.0
+    },
+    {
+      "started_utc": "2026-11-22T05:22:23Z",
+      "finished_utc": "2026-11-22T05:26:43Z",
+      "total_wall_s": 259.98,
+      "peak_rss_mb": 878.2
+    }
+  ]
+}

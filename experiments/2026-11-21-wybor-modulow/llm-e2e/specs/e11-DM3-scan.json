@@ -1,0 +1,26 @@
+{
+ "name": "e11-DM3-scan",
+ "experiment": "E11",
+ "docs": {
+  "set": "zestaw:skan,mieszany,s2,s5",
+  "cases": "dev_sub"
+ },
+ "reps": 1,
+ "concurrency": 2,
+ "server": {
+  "router": "llm1",
+  "extractor": "llm1",
+  "ocr": "rapidocr",
+  "llm": {
+   "retries": 4,
+   "timeout_s": 150,
+   "model": "MiniMax-M3"
+  },
+  "ocr_dpi": 200,
+  "ocr_policy": "if_needed"
+ },
+ "env": {
+  "LLME2E_MODE": "text_image",
+  "LLME2E_PROMPT": "p2"
+ }
+}

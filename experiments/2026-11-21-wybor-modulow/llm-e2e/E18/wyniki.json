@@ -1,0 +1,271 @@
+{
+ "base": "MiniMax-M3.1-Flash-Preview (e10-text-p2)",
+ "models": {
+  "M3": {
+   "docs": 138,
+   "docs_planned_note": "patrz README",
+   "reps_used": 2,
+   "f1": 0.9612,
+   "ci95": [
+    0.9432,
+    0.9757
+   ],
+   "per_class": {
+    "odwolanie": 0.9646,
+    "pelnomocnictwo": 0.9412,
+    "przelew": 0.9759
+   },
+   "by_similarity": {
+    "ratio": 0.9612,
+    "token_sort_ratio": 0.9612,
+    "partial_ratio": 0.9612
+   },
+   "rep_f1": {
+    "1": 0.9485,
+    "2": 0.9718
+   },
+   "stability": {
+    "docs_with_reps": 63,
+    "identical_json_rate": 0.5079,
+    "mean_leaf_agreement": 0.8775
+   },
+   "paired_vs_base": {
+    "delta": 0.0352,
+    "ci95": [
+     0.0015,
+     0.0762
+    ],
+    "cases": 25,
+    "decision": "cand>base"
+   },
+   "base_same_docs": {
+    "f1": 0.9259
+   },
+   "tokens_in_per_doc": 1964,
+   "tokens_out_per_doc": 706,
+   "base_tokens_out_per_doc": 2566,
+   "latency_median_s_UNDER_LOAD": 4.19,
+   "base_latency_median_s_UNDER_LOAD": 13.75,
+   "schema_first_bad_rate": 0.0072,
+   "models_returned": {
+    "MiniMax-M3": 138
+   },
+   "technical_errors": {
+    "llm_invalid_response": 1
+   },
+   "rule_replaces_base": true
+  },
+  "M2.7": {
+   "docs": 150,
+   "docs_planned_note": "patrz README",
+   "reps_used": 2,
+   "f1": 0.9545,
+   "ci95": [
+    0.9343,
+    0.9719
+   ],
+   "per_class": {
+    "odwolanie": 0.9552,
+    "pelnomocnictwo": 0.9283,
+    "przelew": 0.9848
+   },
+   "by_similarity": {
+    "ratio": 0.9545,
+    "token_sort_ratio": 0.9545,
+    "partial_ratio": 0.9545
+   },
+   "rep_f1": {
+    "1": 0.9622,
+    "2": 0.9466
+   },
+   "stability": {
+    "docs_with_reps": 75,
+    "identical_json_rate": 0.6267,
+    "mean_leaf_agreement": 0.9058
+   },
+   "paired_vs_base": {
+    "delta": 0.0285,
+    "ci95": [
+     -0.0036,
+     0.0708
+    ],
+    "cases": 25,
+    "decision": "nierozstrzygnięte"
+   },
+   "base_same_docs": {
+    "f1": 0.9259
+   },
+   "tokens_in_per_doc": 1272,
+   "tokens_out_per_doc": 1119,
+   "base_tokens_out_per_doc": 2566,
+   "latency_median_s_UNDER_LOAD": 4.5,
+   "base_latency_median_s_UNDER_LOAD": 13.75,
+   "schema_first_bad_rate": 0.0,
+   "models_returned": {
+    "MiniMax-M2.7": 150
+   },
+   "technical_errors": {},
+   "rule_replaces_base": true
+  },
+  "M2.5": {
+   "docs": 150,
+   "docs_planned_note": "patrz README",
+   "reps_used": 2,
+   "f1": 0.9593,
+   "ci95": [
+    0.948,
+    0.9694
+   ],
+   "per_class": {
+    "odwolanie": 0.9624,
+    "pelnomocnictwo": 0.9412,
+    "przelew": 0.9726
+   },
+   "by_similarity": {
+    "ratio": 0.9593,
+    "token_sort_ratio": 0.9593,
+    "partial_ratio": 0.9593
+   },
+   "rep_f1": {
+    "1": 0.9564,
+    "2": 0.9622
+   },
+   "stability": {
+    "docs_with_reps": 75,
+    "identical_json_rate": 0.5333,
+    "mean_leaf_agreement": 0.9006
+   },
+   "paired_vs_base": {
+    "delta": 0.0334,
+    "ci95": [
+     0.0069,
+     0.0665
+    ],
+    "cases": 25,
+    "decision": "cand>base"
+   },
+   "base_same_docs": {
+    "f1": 0.9259
+   },
+   "tokens_in_per_doc": 1189,
+   "tokens_out_per_doc": 1107,
+   "base_tokens_out_per_doc": 2566,
+   "latency_median_s_UNDER_LOAD": 11.17,
+   "base_latency_median_s_UNDER_LOAD": 13.75,
+   "schema_first_bad_rate": 0.0,
+   "models_returned": {
+    "MiniMax-M2.5": 150
+   },
+   "technical_errors": {},
+   "rule_replaces_base": true
+  }
+ },
+ "effort": {
+  "effort-low": {
+   "docs": 108,
+   "docs_planned_note": "patrz README",
+   "reps_used": 3,
+   "f1": 0.9424,
+   "ci95": [
+    0.9312,
+    0.954
+   ],
+   "per_class": {
+    "odwolanie": 0.9502,
+    "pelnomocnictwo": 0.8988,
+    "przelew": 0.9763
+   },
+   "by_similarity": {
+    "ratio": 0.9424,
+    "token_sort_ratio": 0.9424,
+    "partial_ratio": 0.9424
+   },
+   "rep_f1": {
+    "1": 0.9482,
+    "2": 0.9361,
+    "3": 0.9429
+   },
+   "stability": {
+    "docs_with_reps": 36,
+    "identical_json_rate": 0.1944,
+    "mean_leaf_agreement": 0.7659
+   },
+   "paired_vs_base": {
+    "delta": 0.0357,
+    "ci95": [
+     -0.0044,
+     0.0951
+    ],
+    "cases": 12,
+    "decision": "nierozstrzygnięte"
+   },
+   "base_same_docs": {
+    "f1": 0.9067
+   },
+   "tokens_in_per_doc": 1195,
+   "tokens_out_per_doc": 915,
+   "base_tokens_out_per_doc": 2528,
+   "latency_median_s_UNDER_LOAD": 16.28,
+   "base_latency_median_s_UNDER_LOAD": 15.45,
+   "schema_first_bad_rate": 0.0,
+   "models_returned": {
+    "MiniMax-M3.1-Flash": 108
+   },
+   "technical_errors": {},
+   "rule_replaces_base": false
+  },
+  "effort-high": {
+   "docs": 108,
+   "docs_planned_note": "patrz README",
+   "reps_used": 3,
+   "f1": 0.9395,
+   "ci95": [
+    0.9103,
+    0.9628
+   ],
+   "per_class": {
+    "odwolanie": 0.9428,
+    "pelnomocnictwo": 0.9023,
+    "przelew": 0.9787
+   },
+   "by_similarity": {
+    "ratio": 0.9395,
+    "token_sort_ratio": 0.9395,
+    "partial_ratio": 0.9395
+   },
+   "rep_f1": {
+    "1": 0.9455,
+    "2": 0.9358,
+    "3": 0.9372
+   },
+   "stability": {
+    "docs_with_reps": 36,
+    "identical_json_rate": 0.3056,
+    "mean_leaf_agreement": 0.8252
+   },
+   "paired_vs_base": {
+    "delta": 0.0328,
+    "ci95": [
+     -0.0065,
+     0.0804
+    ],
+    "cases": 12,
+    "decision": "nierozstrzygnięte"
+   },
+   "base_same_docs": {
+    "f1": 0.9067
+   },
+   "tokens_in_per_doc": 1121,
+   "tokens_out_per_doc": 1535,
+   "base_tokens_out_per_doc": 2528,
+   "latency_median_s_UNDER_LOAD": 8.64,
+   "base_latency_median_s_UNDER_LOAD": 15.45,
+   "schema_first_bad_rate": 0.0,
+   "models_returned": {
+    "MiniMax-M3.1-Flash": 108
+   },
+   "technical_errors": {},
+   "rule_replaces_base": true
+  }
+ }
+}

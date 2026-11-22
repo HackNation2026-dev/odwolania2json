@@ -1,0 +1,117 @@
+{
+  "name": "e11-abl-replay-none",
+  "experiment": "E11",
+  "spec": {
+    "name": "e11-abl-replay-none",
+    "experiment": "E11",
+    "docs": {
+      "set": "dev_sub",
+      "negatives": true
+    },
+    "reps": 1,
+    "concurrency": 2,
+    "server": {
+      "router": "llm1",
+      "extractor": "llm1",
+      "ocr": "none",
+      "llm": {
+        "retries": 4,
+        "timeout_s": 150
+      }
+    },
+    "env": {
+      "LLME2E_MODE": "text",
+      "LLME2E_PROMPT": "p2",
+      "LLME2E_REPLAY": "/home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/llm-e2e/E10/raw/e10-text-p2.jsonl",
+      "LLME2E_REPLAY_REP": "1"
+    }
+  },
+  "versions": {
+    "python": "3.13.18",
+    "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+    "machine": "x86_64",
+    "fastapi": "0.165.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "pydantic": "2.14.4",
+    "pypdfium2": "5.15.2",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "pillow": "13.0.0",
+    "numpy": "2.5.5",
+    "git_commit": "677196a"
+  },
+  "seed": 20261122,
+  "documents": 87,
+  "reps": 1,
+  "concurrency": 2,
+  "started_utc": "2026-11-22T01:55:47Z",
+  "lock_wait_s": 0.0,
+  "server_start_s": 1.193,
+  "limit_method": "systemd-run",
+  "system": {
+    "harness_version": "0.1",
+    "ocr": {
+      "ready": false,
+      "provider": {
+        "available": false,
+        "name": "none",
+        "version": null,
+        "parameter_count": null,
+        "license": null,
+        "location": null,
+        "models": []
+      }
+    },
+    "llm": {
+      "ready": false,
+      "provider": null
+    },
+    "pdf_reader": "pdfium",
+    "router": "llm1",
+    "extractor": "llm1",
+    "anchor": "words",
+    "config": {
+      "name": "E11-e11-abl-replay-none",
+      "pdf_reader": "pdfium",
+      "ocr": "none",
+      "ocr_dpi": 200,
+      "ocr_policy": "if_needed",
+      "router": "llm1",
+      "extractor": "llm1",
+      "anchor": "words",
+      "llm_input": "text",
+      "work_dir": "/home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/work/runs/llm-e2e/e11-abl-replay-none/srv",
+      "seed": 20261122,
+      "llm": {
+        "protocol": "anthropic",
+        "base_url": "https://api.minimax.io/anthropic/v1/messages",
+        "model": "MiniMax-M3.1-Flash-Preview",
+        "temperature": 0.0,
+        "max_tokens": 8000,
+        "timeout_s": 150.0,
+        "retries": 4,
+        "effort": null
+      },
+      "limits": {
+        "max_upload_bytes": 31457280,
+        "max_pages": 60,
+        "document_timeout_s": 600.0,
+        "max_workers": 2,
+        "max_batch_documents": 500
+      }
+    },
+    "limits": {
+      "max_upload_bytes": 31457280,
+      "max_pages": 60,
+      "document_timeout_s": 600.0,
+      "max_workers": 2,
+      "max_batch_documents": 500
+    },
+    "python": "3.13.18",
+    "paid_call_performed": false
+  },
+  "peak_rss_mb": 210.3,
+  "total_wall_s": 19.41,
+  "finished_utc": "2026-11-22T01:56:06Z"
+}

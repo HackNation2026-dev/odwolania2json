@@ -1,0 +1,18 @@
+{
+ "cases": [
+  "przyklad_02",
+  "przyklad_17",
+  "przyklad_23",
+  "przyklad_28",
+  "przyklad_31",
+  "przyklad_33",
+  "przyklad_39",
+  "przyklad_41",
+  "przyklad_46",
+  "przyklad_48",
+  "przyklad_53",
+  "przyklad_58"
+ ],
+ "seed": 20261122,
+ "opis": "12 z 25 spraw podzbioru (7 krótkich + 5 z długim odwołaniem), do przesiewu promptów, effortu i modeli; ziarno 20261122"
+}
