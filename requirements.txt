@@ -1,3 +1,7 @@
+# Zależności uruchomieniowe produktu (Python 3.13+). Narzędzia deweloperskie: requirements-dev.txt.
+# Wersje przypięte (==) w apps/backend/requirements.txt: to jedyne źródło, z którego pakiet
+# `odwolania2json` czyta swoje zależności. OCR (rapidocr + onnxruntime CPU) jest tam od początku,
+# a wagi ONNX są częścią koła `rapidocr`, więc nic nie jest pobierane przy starcie.
 -r apps/backend/requirements.txt
--e ./packages/contracts
--e ./apps/backend
+./packages/contracts
+./apps/backend

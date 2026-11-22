@@ -13,7 +13,8 @@ Wymagane Python 3.13 i Git. Narzędzia i konsekwencje opisuje [ADR-003](../07-de
 ```sh
 python3.13 -m venv .venv
 . .venv/bin/activate
-python -m pip install -r requirements.txt -r requirements-dev.txt
+python -m pip install -r requirements-dev.txt  # deweloper: produkt edytowalny i narzędzia
+# użytkownik końcowy zamiast tego: python -m pip install -r requirements.txt
 sh scripts/install_hooks.sh
 ```
 
