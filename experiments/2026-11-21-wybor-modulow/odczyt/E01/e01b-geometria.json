@@ -1,0 +1,172 @@
+{
+  "experiment": "E01b",
+  "seed": 20261122,
+  "versions": {
+    "python": "3.13.18",
+    "cpu_count": 8,
+    "machine": "x86_64",
+    "pypdfium2": "5.15.2",
+    "pypdf": "7.1.1",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "numpy": "2.5.5",
+    "pillow": "13.0.0",
+    "opencv-python-headless": "5.1.0.95"
+  },
+  "rotate": {
+    "docs": [
+      "przyklad_59/pelnomocnictwo.pdf",
+      "przyklad_53/odwolanie.pdf",
+      "przyklad_24/odwolanie.pdf",
+      "przyklad_39/potwierdzenie_przelewu.pdf",
+      "przyklad_04/odwolanie.pdf",
+      "przyklad_07/odwolanie.pdf",
+      "przyklad_41/odwolanie.pdf",
+      "przyklad_02/pelnomocnictwo.pdf",
+      "przyklad_17/pelnomocnictwo.pdf",
+      "przyklad_46/odwolanie.pdf",
+      "przyklad_52/pelnomocnictwo.pdf",
+      "przyklad_52/odwolanie.pdf"
+    ],
+    "rotations": {
+      "0": {
+        "words_compared": 4370,
+        "words_unmatched_by_text": 0,
+        "iou_min": 1.0,
+        "iou_mean": 1.0,
+        "share_iou_ge_0.95": 1.0,
+        "page_dim_mismatch": 0,
+        "ink_roundtrip_tested": 1138,
+        "ink_roundtrip_ok": 1129,
+        "ink_roundtrip_rate": 0.9921
+      },
+      "90": {
+        "words_compared": 4370,
+        "words_unmatched_by_text": 0,
+        "iou_min": 0.998,
+        "iou_mean": 0.9998,
+        "share_iou_ge_0.95": 1.0,
+        "page_dim_mismatch": 0,
+        "ink_roundtrip_tested": 1138,
+        "ink_roundtrip_ok": 1127,
+        "ink_roundtrip_rate": 0.9903
+      },
+      "180": {
+        "words_compared": 4367,
+        "words_unmatched_by_text": 3,
+        "iou_min": 0.9772,
+        "iou_mean": 0.9994,
+        "share_iou_ge_0.95": 1.0,
+        "page_dim_mismatch": 0,
+        "ink_roundtrip_tested": 1138,
+        "ink_roundtrip_ok": 1131,
+        "ink_roundtrip_rate": 0.9938
+      },
+      "270": {
+        "words_compared": 4370,
+        "words_unmatched_by_text": 0,
+        "iou_min": 0.9785,
+        "iou_mean": 0.9995,
+        "share_iou_ge_0.95": 1.0,
+        "page_dim_mismatch": 0,
+        "ink_roundtrip_tested": 1138,
+        "ink_roundtrip_ok": 1124,
+        "ink_roundtrip_rate": 0.9877
+      }
+    }
+  },
+  "reading_order_accounts": {
+    "pdfium": {
+      "ramki-dwie-kolumny": {
+        "n": 14,
+        "ok": 14,
+        "wrong": 0,
+        "no_label": 0,
+        "not_found": 0
+      },
+      "jedna-kolumna": {
+        "n": 72,
+        "ok": 72,
+        "wrong": 0,
+        "no_label": 0,
+        "not_found": 0
+      },
+      "lista-kropkowana": {
+        "n": 12,
+        "ok": 12,
+        "wrong": 0,
+        "no_label": 0,
+        "not_found": 0
+      }
+    },
+    "pypdf": {
+      "ramki-dwie-kolumny": {
+        "n": 14,
+        "ok": 14,
+        "wrong": 0,
+        "no_label": 0,
+        "not_found": 0
+      },
+      "jedna-kolumna": {
+        "n": 72,
+        "ok": 72,
+        "wrong": 0,
+        "no_label": 0,
+        "not_found": 0
+      },
+      "lista-kropkowana": {
+        "n": 12,
+        "ok": 12,
+        "wrong": 0,
+        "no_label": 0,
+        "not_found": 0
+      }
+    },
+    "pdfminer": {
+      "ramki-dwie-kolumny": {
+        "n": 14,
+        "ok": 13,
+        "wrong": 1,
+        "no_label": 0,
+        "not_found": 0
+      },
+      "jedna-kolumna": {
+        "n": 72,
+        "ok": 67,
+        "wrong": 5,
+        "no_label": 0,
+        "not_found": 0
+      },
+      "lista-kropkowana": {
+        "n": 12,
+        "ok": 12,
+        "wrong": 0,
+        "no_label": 0,
+        "not_found": 0
+      }
+    },
+    "pymupdf": {
+      "ramki-dwie-kolumny": {
+        "n": 14,
+        "ok": 14,
+        "wrong": 0,
+        "no_label": 0,
+        "not_found": 0
+      },
+      "jedna-kolumna": {
+        "n": 72,
+        "ok": 72,
+        "wrong": 0,
+        "no_label": 0,
+        "not_found": 0
+      },
+      "lista-kropkowana": {
+        "n": 12,
+        "ok": 12,
+        "wrong": 0,
+        "no_label": 0,
+        "not_found": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,899 @@
+{
+  "experiment": "E01a",
+  "threads": "n/d (czytniki jednowątkowe)",
+  "results": {
+    "pdfium": {
+      "reader": "pdfium",
+      "license": "BSD-3/Apache-2.0 (pypdfium2)",
+      "documents": 147,
+      "reps": 5,
+      "cold_first_doc_s": 0.017,
+      "doc_time_s": {
+        "p50": 0.0049,
+        "p95": 0.0759,
+        "max": 0.1005,
+        "median_of_doc_medians": 0.004,
+        "total_per_pass": 1.893
+      },
+      "peak_rss_mb": 51.3,
+      "findability": {
+        "exact": 1454,
+        "fuzzy_only": 0,
+        "total": 1454,
+        "exact_rate": 1.0,
+        "exact_or_fuzzy_rate": 1.0
+      },
+      "findability_by_class": {
+        "odwolanie": {
+          "exact": 842,
+          "fuzzy_only": 0,
+          "total": 842,
+          "exact_rate": 1.0,
+          "exact_or_fuzzy_rate": 1.0
+        },
+        "pelnomocnictwo": {
+          "exact": 318,
+          "fuzzy_only": 0,
+          "total": 318,
+          "exact_rate": 1.0,
+          "exact_or_fuzzy_rate": 1.0
+        },
+        "przelew": {
+          "exact": 294,
+          "fuzzy_only": 0,
+          "total": 294,
+          "exact_rate": 1.0,
+          "exact_or_fuzzy_rate": 1.0
+        }
+      },
+      "findability_by_path": {
+        ".OdwolanieKIO.czynnosc_dzien": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".OdwolanieKIO.data": {
+          "exact": 35,
+          "fuzzy_only": 0,
+          "total": 35
+        },
+        ".OdwolanieKIO.miejscowosc": {
+          "exact": 35,
+          "fuzzy_only": 0,
+          "total": 35
+        },
+        ".Odwolujacy[].krs": {
+          "exact": 45,
+          "fuzzy_only": 0,
+          "total": 45
+        },
+        ".Odwolujacy[].nazwa": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].nip": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].pelnomocnik.imie_nazwisko": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].pelnomocnik.mail": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].pelnomocnik.nazwa": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].regon": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Zamawiajacy[].krs": {
+          "exact": 47,
+          "fuzzy_only": 0,
+          "total": 47
+        },
+        ".Zamawiajacy[].nazwa": {
+          "exact": 52,
+          "fuzzy_only": 0,
+          "total": 52
+        },
+        ".Zamawiajacy[].nip": {
+          "exact": 52,
+          "fuzzy_only": 0,
+          "total": 52
+        },
+        ".Zamawiajacy[].prowadzacy_postepowanie": {
+          "exact": 6,
+          "fuzzy_only": 0,
+          "total": 6
+        },
+        ".Zamawiajacy[].regon": {
+          "exact": 52,
+          "fuzzy_only": 0,
+          "total": 52
+        },
+        ".ZamowieniePubliczne.numer_bzp": {
+          "exact": 38,
+          "fuzzy_only": 0,
+          "total": 38
+        },
+        ".ZamowieniePubliczne.numer_postepowania": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".ZamowieniePubliczne.numer_ted": {
+          "exact": 39,
+          "fuzzy_only": 0,
+          "total": 39
+        },
+        ".ZamowieniePubliczne.tytul": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".mocodawca[].data.imie_nazwisko": {
+          "exact": 4,
+          "fuzzy_only": 0,
+          "total": 4
+        },
+        ".mocodawca[].data.krs": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".mocodawca[].data.nazwa": {
+          "exact": 53,
+          "fuzzy_only": 0,
+          "total": 53
+        },
+        ".mocodawca[].data.nip": {
+          "exact": 53,
+          "fuzzy_only": 0,
+          "total": 53
+        },
+        ".mocodawca[].podpisujacy[].imie_nazwisko": {
+          "exact": 78,
+          "fuzzy_only": 0,
+          "total": 78
+        },
+        ".pelnomocnicy[].imie_nazwisko": {
+          "exact": 80,
+          "fuzzy_only": 0,
+          "total": 80
+        },
+        ".pelnomocnicy[].pesel": {
+          "exact": 1,
+          "fuzzy_only": 0,
+          "total": 1
+        },
+        ".przelew_bankowy.data_operacji": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.kwota": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.na_rachunek": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.numer_transakcji": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.tytul": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.z_rachunku": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        }
+      },
+      "missed_examples": {},
+      "n_docs_with_miss": 0,
+      "versions": {
+        "python": "3.13.18",
+        "cpu_count": 8,
+        "machine": "x86_64",
+        "pypdfium2": "5.15.2",
+        "pypdf": "7.1.1",
+        "rapidocr": "3.10.0",
+        "onnxruntime": "1.32.0",
+        "numpy": "2.5.5",
+        "pillow": "13.0.0",
+        "opencv-python-headless": "5.1.0.95",
+        "pdfminer.six": "20260107",
+        "pymupdf": "2.1"
+      }
+    },
+    "pypdf": {
+      "reader": "pypdf",
+      "license": "BSD-3",
+      "documents": 147,
+      "reps": 5,
+      "cold_first_doc_s": 0.1436,
+      "doc_time_s": {
+        "p50": 0.0108,
+        "p95": 0.0582,
+        "max": 0.1316,
+        "median_of_doc_medians": 0.0106,
+        "total_per_pass": 2.495
+      },
+      "peak_rss_mb": 68.6,
+      "findability": {
+        "exact": 1454,
+        "fuzzy_only": 0,
+        "total": 1454,
+        "exact_rate": 1.0,
+        "exact_or_fuzzy_rate": 1.0
+      },
+      "findability_by_class": {
+        "odwolanie": {
+          "exact": 842,
+          "fuzzy_only": 0,
+          "total": 842,
+          "exact_rate": 1.0,
+          "exact_or_fuzzy_rate": 1.0
+        },
+        "pelnomocnictwo": {
+          "exact": 318,
+          "fuzzy_only": 0,
+          "total": 318,
+          "exact_rate": 1.0,
+          "exact_or_fuzzy_rate": 1.0
+        },
+        "przelew": {
+          "exact": 294,
+          "fuzzy_only": 0,
+          "total": 294,
+          "exact_rate": 1.0,
+          "exact_or_fuzzy_rate": 1.0
+        }
+      },
+      "findability_by_path": {
+        ".OdwolanieKIO.czynnosc_dzien": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".OdwolanieKIO.data": {
+          "exact": 35,
+          "fuzzy_only": 0,
+          "total": 35
+        },
+        ".OdwolanieKIO.miejscowosc": {
+          "exact": 35,
+          "fuzzy_only": 0,
+          "total": 35
+        },
+        ".Odwolujacy[].krs": {
+          "exact": 45,
+          "fuzzy_only": 0,
+          "total": 45
+        },
+        ".Odwolujacy[].nazwa": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].nip": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].pelnomocnik.imie_nazwisko": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].pelnomocnik.mail": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].pelnomocnik.nazwa": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].regon": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Zamawiajacy[].krs": {
+          "exact": 47,
+          "fuzzy_only": 0,
+          "total": 47
+        },
+        ".Zamawiajacy[].nazwa": {
+          "exact": 52,
+          "fuzzy_only": 0,
+          "total": 52
+        },
+        ".Zamawiajacy[].nip": {
+          "exact": 52,
+          "fuzzy_only": 0,
+          "total": 52
+        },
+        ".Zamawiajacy[].prowadzacy_postepowanie": {
+          "exact": 6,
+          "fuzzy_only": 0,
+          "total": 6
+        },
+        ".Zamawiajacy[].regon": {
+          "exact": 52,
+          "fuzzy_only": 0,
+          "total": 52
+        },
+        ".ZamowieniePubliczne.numer_bzp": {
+          "exact": 38,
+          "fuzzy_only": 0,
+          "total": 38
+        },
+        ".ZamowieniePubliczne.numer_postepowania": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".ZamowieniePubliczne.numer_ted": {
+          "exact": 39,
+          "fuzzy_only": 0,
+          "total": 39
+        },
+        ".ZamowieniePubliczne.tytul": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".mocodawca[].data.imie_nazwisko": {
+          "exact": 4,
+          "fuzzy_only": 0,
+          "total": 4
+        },
+        ".mocodawca[].data.krs": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".mocodawca[].data.nazwa": {
+          "exact": 53,
+          "fuzzy_only": 0,
+          "total": 53
+        },
+        ".mocodawca[].data.nip": {
+          "exact": 53,
+          "fuzzy_only": 0,
+          "total": 53
+        },
+        ".mocodawca[].podpisujacy[].imie_nazwisko": {
+          "exact": 78,
+          "fuzzy_only": 0,
+          "total": 78
+        },
+        ".pelnomocnicy[].imie_nazwisko": {
+          "exact": 80,
+          "fuzzy_only": 0,
+          "total": 80
+        },
+        ".pelnomocnicy[].pesel": {
+          "exact": 1,
+          "fuzzy_only": 0,
+          "total": 1
+        },
+        ".przelew_bankowy.data_operacji": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.kwota": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.na_rachunek": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.numer_transakcji": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.tytul": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.z_rachunku": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        }
+      },
+      "missed_examples": {},
+      "n_docs_with_miss": 0,
+      "versions": {
+        "python": "3.13.18",
+        "cpu_count": 8,
+        "machine": "x86_64",
+        "pypdfium2": "5.15.2",
+        "pypdf": "7.1.1",
+        "rapidocr": "3.10.0",
+        "onnxruntime": "1.32.0",
+        "numpy": "2.5.5",
+        "pillow": "13.0.0",
+        "opencv-python-headless": "5.1.0.95",
+        "pdfminer.six": "20260107",
+        "pymupdf": "2.1"
+      }
+    },
+    "pdfminer": {
+      "reader": "pdfminer",
+      "license": "MIT (pdfminer.six)",
+      "documents": 147,
+      "reps": 5,
+      "cold_first_doc_s": 0.2682,
+      "doc_time_s": {
+        "p50": 0.0213,
+        "p95": 0.2268,
+        "max": 0.3091,
+        "median_of_doc_medians": 0.0206,
+        "total_per_pass": 6.711
+      },
+      "peak_rss_mb": 65.4,
+      "findability": {
+        "exact": 1454,
+        "fuzzy_only": 0,
+        "total": 1454,
+        "exact_rate": 1.0,
+        "exact_or_fuzzy_rate": 1.0
+      },
+      "findability_by_class": {
+        "odwolanie": {
+          "exact": 842,
+          "fuzzy_only": 0,
+          "total": 842,
+          "exact_rate": 1.0,
+          "exact_or_fuzzy_rate": 1.0
+        },
+        "pelnomocnictwo": {
+          "exact": 318,
+          "fuzzy_only": 0,
+          "total": 318,
+          "exact_rate": 1.0,
+          "exact_or_fuzzy_rate": 1.0
+        },
+        "przelew": {
+          "exact": 294,
+          "fuzzy_only": 0,
+          "total": 294,
+          "exact_rate": 1.0,
+          "exact_or_fuzzy_rate": 1.0
+        }
+      },
+      "findability_by_path": {
+        ".OdwolanieKIO.czynnosc_dzien": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".OdwolanieKIO.data": {
+          "exact": 35,
+          "fuzzy_only": 0,
+          "total": 35
+        },
+        ".OdwolanieKIO.miejscowosc": {
+          "exact": 35,
+          "fuzzy_only": 0,
+          "total": 35
+        },
+        ".Odwolujacy[].krs": {
+          "exact": 45,
+          "fuzzy_only": 0,
+          "total": 45
+        },
+        ".Odwolujacy[].nazwa": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].nip": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].pelnomocnik.imie_nazwisko": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].pelnomocnik.mail": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].pelnomocnik.nazwa": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].regon": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Zamawiajacy[].krs": {
+          "exact": 47,
+          "fuzzy_only": 0,
+          "total": 47
+        },
+        ".Zamawiajacy[].nazwa": {
+          "exact": 52,
+          "fuzzy_only": 0,
+          "total": 52
+        },
+        ".Zamawiajacy[].nip": {
+          "exact": 52,
+          "fuzzy_only": 0,
+          "total": 52
+        },
+        ".Zamawiajacy[].prowadzacy_postepowanie": {
+          "exact": 6,
+          "fuzzy_only": 0,
+          "total": 6
+        },
+        ".Zamawiajacy[].regon": {
+          "exact": 52,
+          "fuzzy_only": 0,
+          "total": 52
+        },
+        ".ZamowieniePubliczne.numer_bzp": {
+          "exact": 38,
+          "fuzzy_only": 0,
+          "total": 38
+        },
+        ".ZamowieniePubliczne.numer_postepowania": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".ZamowieniePubliczne.numer_ted": {
+          "exact": 39,
+          "fuzzy_only": 0,
+          "total": 39
+        },
+        ".ZamowieniePubliczne.tytul": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".mocodawca[].data.imie_nazwisko": {
+          "exact": 4,
+          "fuzzy_only": 0,
+          "total": 4
+        },
+        ".mocodawca[].data.krs": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".mocodawca[].data.nazwa": {
+          "exact": 53,
+          "fuzzy_only": 0,
+          "total": 53
+        },
+        ".mocodawca[].data.nip": {
+          "exact": 53,
+          "fuzzy_only": 0,
+          "total": 53
+        },
+        ".mocodawca[].podpisujacy[].imie_nazwisko": {
+          "exact": 78,
+          "fuzzy_only": 0,
+          "total": 78
+        },
+        ".pelnomocnicy[].imie_nazwisko": {
+          "exact": 80,
+          "fuzzy_only": 0,
+          "total": 80
+        },
+        ".pelnomocnicy[].pesel": {
+          "exact": 1,
+          "fuzzy_only": 0,
+          "total": 1
+        },
+        ".przelew_bankowy.data_operacji": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.kwota": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.na_rachunek": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.numer_transakcji": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.tytul": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.z_rachunku": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        }
+      },
+      "missed_examples": {},
+      "n_docs_with_miss": 0,
+      "versions": {
+        "python": "3.13.18",
+        "cpu_count": 8,
+        "machine": "x86_64",
+        "pypdfium2": "5.15.2",
+        "pypdf": "7.1.1",
+        "rapidocr": "3.10.0",
+        "onnxruntime": "1.32.0",
+        "numpy": "2.5.5",
+        "pillow": "13.0.0",
+        "opencv-python-headless": "5.1.0.95",
+        "pdfminer.six": "20260107",
+        "pymupdf": "2.1"
+      }
+    },
+    "pymupdf": {
+      "reader": "pymupdf",
+      "license": "AGPL-3.0 lub komercyjna (PyMuPDF)",
+      "documents": 147,
+      "reps": 5,
+      "cold_first_doc_s": 0.6236,
+      "doc_time_s": {
+        "p50": 0.0016,
+        "p95": 0.0157,
+        "max": 0.0291,
+        "median_of_doc_medians": 0.0016,
+        "total_per_pass": 0.442
+      },
+      "peak_rss_mb": 182.7,
+      "findability": {
+        "exact": 1454,
+        "fuzzy_only": 0,
+        "total": 1454,
+        "exact_rate": 1.0,
+        "exact_or_fuzzy_rate": 1.0
+      },
+      "findability_by_class": {
+        "odwolanie": {
+          "exact": 842,
+          "fuzzy_only": 0,
+          "total": 842,
+          "exact_rate": 1.0,
+          "exact_or_fuzzy_rate": 1.0
+        },
+        "pelnomocnictwo": {
+          "exact": 318,
+          "fuzzy_only": 0,
+          "total": 318,
+          "exact_rate": 1.0,
+          "exact_or_fuzzy_rate": 1.0
+        },
+        "przelew": {
+          "exact": 294,
+          "fuzzy_only": 0,
+          "total": 294,
+          "exact_rate": 1.0,
+          "exact_or_fuzzy_rate": 1.0
+        }
+      },
+      "findability_by_path": {
+        ".OdwolanieKIO.czynnosc_dzien": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".OdwolanieKIO.data": {
+          "exact": 35,
+          "fuzzy_only": 0,
+          "total": 35
+        },
+        ".OdwolanieKIO.miejscowosc": {
+          "exact": 35,
+          "fuzzy_only": 0,
+          "total": 35
+        },
+        ".Odwolujacy[].krs": {
+          "exact": 45,
+          "fuzzy_only": 0,
+          "total": 45
+        },
+        ".Odwolujacy[].nazwa": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].nip": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].pelnomocnik.imie_nazwisko": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].pelnomocnik.mail": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].pelnomocnik.nazwa": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Odwolujacy[].regon": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".Zamawiajacy[].krs": {
+          "exact": 47,
+          "fuzzy_only": 0,
+          "total": 47
+        },
+        ".Zamawiajacy[].nazwa": {
+          "exact": 52,
+          "fuzzy_only": 0,
+          "total": 52
+        },
+        ".Zamawiajacy[].nip": {
+          "exact": 52,
+          "fuzzy_only": 0,
+          "total": 52
+        },
+        ".Zamawiajacy[].prowadzacy_postepowanie": {
+          "exact": 6,
+          "fuzzy_only": 0,
+          "total": 6
+        },
+        ".Zamawiajacy[].regon": {
+          "exact": 52,
+          "fuzzy_only": 0,
+          "total": 52
+        },
+        ".ZamowieniePubliczne.numer_bzp": {
+          "exact": 38,
+          "fuzzy_only": 0,
+          "total": 38
+        },
+        ".ZamowieniePubliczne.numer_postepowania": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".ZamowieniePubliczne.numer_ted": {
+          "exact": 39,
+          "fuzzy_only": 0,
+          "total": 39
+        },
+        ".ZamowieniePubliczne.tytul": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".mocodawca[].data.imie_nazwisko": {
+          "exact": 4,
+          "fuzzy_only": 0,
+          "total": 4
+        },
+        ".mocodawca[].data.krs": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".mocodawca[].data.nazwa": {
+          "exact": 53,
+          "fuzzy_only": 0,
+          "total": 53
+        },
+        ".mocodawca[].data.nip": {
+          "exact": 53,
+          "fuzzy_only": 0,
+          "total": 53
+        },
+        ".mocodawca[].podpisujacy[].imie_nazwisko": {
+          "exact": 78,
+          "fuzzy_only": 0,
+          "total": 78
+        },
+        ".pelnomocnicy[].imie_nazwisko": {
+          "exact": 80,
+          "fuzzy_only": 0,
+          "total": 80
+        },
+        ".pelnomocnicy[].pesel": {
+          "exact": 1,
+          "fuzzy_only": 0,
+          "total": 1
+        },
+        ".przelew_bankowy.data_operacji": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.kwota": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.na_rachunek": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.numer_transakcji": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.tytul": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        },
+        ".przelew_bankowy.z_rachunku": {
+          "exact": 49,
+          "fuzzy_only": 0,
+          "total": 49
+        }
+      },
+      "missed_examples": {},
+      "n_docs_with_miss": 0,
+      "versions": {
+        "python": "3.13.18",
+        "cpu_count": 8,
+        "machine": "x86_64",
+        "pypdfium2": "5.15.2",
+        "pypdf": "7.1.1",
+        "rapidocr": "3.10.0",
+        "onnxruntime": "1.32.0",
+        "numpy": "2.5.5",
+        "pillow": "13.0.0",
+        "opencv-python-headless": "5.1.0.95",
+        "pdfminer.six": "20260107",
+        "pymupdf": "2.1"
+      }
+    }
+  },
+  "timing_locked": true
+}

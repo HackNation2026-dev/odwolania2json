@@ -1,0 +1,812 @@
+[
+  {
+    "variant": "oryginal",
+    "key": "przyklad_02/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1173
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_02/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1188
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_02/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1216
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_03/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1271
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_03/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1372
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_03/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1458
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_04/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1459
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_04/pelnomocnictwo.pdf",
+    "outcome": "partial",
+    "codes": [
+      "evidence_unanchored"
+    ],
+    "wall_s": 0.1321
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_04/potwierdzenie_przelewu.pdf",
+    "outcome": "ambiguous",
+    "codes": [
+      "class_ambiguous"
+    ],
+    "wall_s": 0.137
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_12/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1591
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_12/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1461
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_12/potwierdzenie_przelewu.pdf",
+    "outcome": "ambiguous",
+    "codes": [
+      "class_ambiguous"
+    ],
+    "wall_s": 0.1435
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_18/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1399
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_18/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1412
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_18/potwierdzenie_przelewu.pdf",
+    "outcome": "partial",
+    "codes": [
+      "evidence_unanchored"
+    ],
+    "wall_s": 0.1403
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_29/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.128
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_29/pelnomocnictwo.pdf",
+    "outcome": "ambiguous",
+    "codes": [
+      "class_ambiguous"
+    ],
+    "wall_s": 0.1321
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_29/potwierdzenie_przelewu.pdf",
+    "outcome": "partial",
+    "codes": [
+      "evidence_unanchored"
+    ],
+    "wall_s": 0.1288
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_39/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1337
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_39/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1377
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_39/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1401
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_44/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.4475
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_44/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1437
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_44/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1531
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_48/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.3585
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_48/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1244
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_48/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1295
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_49/odwolanie.pdf",
+    "outcome": "ambiguous",
+    "codes": [
+      "class_ambiguous"
+    ],
+    "wall_s": 0.2477
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_49/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1286
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_49/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1249
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_52/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.2355
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_52/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1207
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_52/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1206
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_54/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.2256
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_54/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1244
+  },
+  {
+    "variant": "oryginal",
+    "key": "przyklad_54/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 0.1274
+  },
+  {
+    "variant": "mieszany",
+    "key": "przyklad_02/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 3.6571
+  },
+  {
+    "variant": "mieszany",
+    "key": "przyklad_03/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 4.8534
+  },
+  {
+    "variant": "mieszany",
+    "key": "przyklad_04/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 6.8517
+  },
+  {
+    "variant": "mieszany",
+    "key": "przyklad_12/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 5.5329
+  },
+  {
+    "variant": "mieszany",
+    "key": "przyklad_18/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 7.5025
+  },
+  {
+    "variant": "mieszany",
+    "key": "przyklad_29/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 5.3319
+  },
+  {
+    "variant": "mieszany",
+    "key": "przyklad_39/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 8.1115
+  },
+  {
+    "variant": "mieszany",
+    "key": "przyklad_44/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 70.0118
+  },
+  {
+    "variant": "mieszany",
+    "key": "przyklad_48/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 79.9179
+  },
+  {
+    "variant": "mieszany",
+    "key": "przyklad_49/odwolanie.pdf",
+    "outcome": "ambiguous",
+    "codes": [
+      "class_ambiguous"
+    ],
+    "wall_s": 74.2262
+  },
+  {
+    "variant": "mieszany",
+    "key": "przyklad_52/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 62.4379
+  },
+  {
+    "variant": "mieszany",
+    "key": "przyklad_54/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 76.0406
+  },
+  {
+    "variant": "s2",
+    "key": "przyklad_02/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 2.4955
+  },
+  {
+    "variant": "s2",
+    "key": "przyklad_03/potwierdzenie_przelewu.pdf",
+    "outcome": "partial",
+    "codes": [
+      "evidence_unanchored"
+    ],
+    "wall_s": 2.7412
+  },
+  {
+    "variant": "s2",
+    "key": "przyklad_04/potwierdzenie_przelewu.pdf",
+    "outcome": "ambiguous",
+    "codes": [
+      "class_ambiguous"
+    ],
+    "wall_s": 3.1244
+  },
+  {
+    "variant": "s2",
+    "key": "przyklad_12/potwierdzenie_przelewu.pdf",
+    "outcome": "ambiguous",
+    "codes": [
+      "class_ambiguous"
+    ],
+    "wall_s": 5.7299
+  },
+  {
+    "variant": "s2",
+    "key": "przyklad_18/potwierdzenie_przelewu.pdf",
+    "outcome": "partial",
+    "codes": [
+      "evidence_unanchored"
+    ],
+    "wall_s": 4.9378
+  },
+  {
+    "variant": "s2",
+    "key": "przyklad_29/potwierdzenie_przelewu.pdf",
+    "outcome": "partial",
+    "codes": [
+      "evidence_unanchored"
+    ],
+    "wall_s": 3.0462
+  },
+  {
+    "variant": "s2",
+    "key": "przyklad_39/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 2.9459
+  },
+  {
+    "variant": "s2",
+    "key": "przyklad_44/potwierdzenie_przelewu.pdf",
+    "outcome": "partial",
+    "codes": [
+      "evidence_unanchored"
+    ],
+    "wall_s": 4.4289
+  },
+  {
+    "variant": "s2",
+    "key": "przyklad_48/potwierdzenie_przelewu.pdf",
+    "outcome": "partial",
+    "codes": [
+      "evidence_unanchored"
+    ],
+    "wall_s": 5.6921
+  },
+  {
+    "variant": "s2",
+    "key": "przyklad_49/potwierdzenie_przelewu.pdf",
+    "outcome": "partial",
+    "codes": [
+      "evidence_unanchored"
+    ],
+    "wall_s": 3.1896
+  },
+  {
+    "variant": "s2",
+    "key": "przyklad_52/potwierdzenie_przelewu.pdf",
+    "outcome": "partial",
+    "codes": [
+      "evidence_unanchored"
+    ],
+    "wall_s": 5.7693
+  },
+  {
+    "variant": "s2",
+    "key": "przyklad_54/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 3.926
+  },
+  {
+    "variant": "s5",
+    "key": "przyklad_02/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 2.7136
+  },
+  {
+    "variant": "s5",
+    "key": "przyklad_03/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 3.2795
+  },
+  {
+    "variant": "s5",
+    "key": "przyklad_04/pelnomocnictwo.pdf",
+    "outcome": "partial",
+    "codes": [
+      "evidence_unanchored"
+    ],
+    "wall_s": 6.5622
+  },
+  {
+    "variant": "s5",
+    "key": "przyklad_12/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 4.414
+  },
+  {
+    "variant": "s5",
+    "key": "przyklad_18/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 2.9593
+  },
+  {
+    "variant": "s5",
+    "key": "przyklad_29/pelnomocnictwo.pdf",
+    "outcome": "ambiguous",
+    "codes": [
+      "class_ambiguous"
+    ],
+    "wall_s": 3.493
+  },
+  {
+    "variant": "s5",
+    "key": "przyklad_39/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 3.4562
+  },
+  {
+    "variant": "s5",
+    "key": "przyklad_44/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 3.5876
+  },
+  {
+    "variant": "s5",
+    "key": "przyklad_48/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 4.7712
+  },
+  {
+    "variant": "s5",
+    "key": "przyklad_49/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 3.9643
+  },
+  {
+    "variant": "s5",
+    "key": "przyklad_52/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 3.7642
+  },
+  {
+    "variant": "s5",
+    "key": "przyklad_54/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 3.5493
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_02/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 8.9667
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_02/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 2.9293
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_02/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 2.8089
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_03/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 7.8205
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_03/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 3.0741
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_03/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 2.9488
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_04/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 11.4858
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_04/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 6.3002
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_04/potwierdzenie_przelewu.pdf",
+    "outcome": "ambiguous",
+    "codes": [
+      "class_ambiguous"
+    ],
+    "wall_s": 6.8386
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_12/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 10.6905
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_12/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 2.9897
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_12/potwierdzenie_przelewu.pdf",
+    "outcome": "ambiguous",
+    "codes": [
+      "class_ambiguous"
+    ],
+    "wall_s": 3.2429
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_18/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 8.2035
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_18/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 3.1771
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_18/potwierdzenie_przelewu.pdf",
+    "outcome": "partial",
+    "codes": [
+      "evidence_unanchored"
+    ],
+    "wall_s": 3.5914
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_29/odwolanie.pdf",
+    "outcome": "ambiguous",
+    "codes": [
+      "class_ambiguous"
+    ],
+    "wall_s": 7.7539
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_29/pelnomocnictwo.pdf",
+    "outcome": "ambiguous",
+    "codes": [
+      "class_ambiguous"
+    ],
+    "wall_s": 3.8102
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_29/potwierdzenie_przelewu.pdf",
+    "outcome": "partial",
+    "codes": [
+      "evidence_unanchored"
+    ],
+    "wall_s": 3.5412
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_39/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 8.4344
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_39/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 3.4532
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_39/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 2.957
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_44/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 53.5597
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_44/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 4.63
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_44/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 3.5639
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_48/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 63.9025
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_48/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 10.8937
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_48/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 7.0654
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_49/odwolanie.pdf",
+    "outcome": "ambiguous",
+    "codes": [
+      "class_ambiguous"
+    ],
+    "wall_s": 73.2876
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_49/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 7.6374
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_49/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 4.4951
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_52/odwolanie.pdf",
+    "outcome": "ambiguous",
+    "codes": [
+      "class_ambiguous"
+    ],
+    "wall_s": 84.8881
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_52/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 3.7568
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_52/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 3.1309
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_54/odwolanie.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 86.2411
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_54/pelnomocnictwo.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 7.3326
+  },
+  {
+    "variant": "skan",
+    "key": "przyklad_54/potwierdzenie_przelewu.pdf",
+    "outcome": "complete",
+    "codes": [],
+    "wall_s": 2.9658
+  }
+]

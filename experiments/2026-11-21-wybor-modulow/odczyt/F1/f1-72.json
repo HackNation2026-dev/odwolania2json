@@ -1,0 +1,274 @@
+{
+  "experiment": "F1-skany",
+  "ocr_dpi_param": 72,
+  "cases": [
+    "przyklad_02",
+    "przyklad_03",
+    "przyklad_04",
+    "przyklad_12",
+    "przyklad_18",
+    "przyklad_29",
+    "przyklad_39",
+    "przyklad_44",
+    "przyklad_48",
+    "przyklad_49",
+    "przyklad_52",
+    "przyklad_54"
+  ],
+  "config": {
+    "pdf_reader": "pdfium",
+    "ocr": "rapidocr",
+    "ocr_dpi": 72,
+    "ocr_policy": "if_needed",
+    "router": "rules",
+    "extractor": "rules",
+    "work_dir": "/home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/odczyt/F1/work/dpi72/srv",
+    "seed": 20261122,
+    "name": "A-F1-dpi72",
+    "limits": {
+      "max_pages": 60,
+      "document_timeout_s": 1500
+    }
+  },
+  "wall_s": 1037.9,
+  "peak_rss_server_mb": 686.1,
+  "loadavg_end": [
+    40.81982421875,
+    38.69775390625,
+    38.1171875
+  ],
+  "variants": {
+    "oryginal": {
+      "documents": 36,
+      "f1_fields": {
+        "f1": 0.23605150214592274,
+        "low": 0.2079002079002079,
+        "high": 0.25862068965517243,
+        "confidence": 0.95,
+        "resamples": 2000,
+        "seed": 20261122
+      },
+      "totals": {
+        "tp": 55,
+        "tn": 53,
+        "fp": 3,
+        "fn": 353,
+        "f1": 0.23605150214592274
+      },
+      "per_class": {
+        "odwolanie": 0.17228464419475656,
+        "pelnomocnictwo": 0.34782608695652173,
+        "przelew": 0.2857142857142857,
+        "obcy": 0.0
+      },
+      "classification": {
+        "tp": 32,
+        "tn": 0,
+        "fp": 4,
+        "fn": 4,
+        "f1": 0.8888888888888888
+      },
+      "outcomes": {
+        "complete": 29,
+        "partial": 3,
+        "ambiguous": 4
+      },
+      "wall_s_mean_per_doc": 0.16
+    },
+    "mieszany": {
+      "documents": 12,
+      "f1_fields": {
+        "f1": 0.17293233082706766,
+        "low": 0.13533834586466165,
+        "high": 0.20588235294117646,
+        "confidence": 0.95,
+        "resamples": 2000,
+        "seed": 20261122
+      },
+      "totals": {
+        "tp": 23,
+        "tn": 21,
+        "fp": 2,
+        "fn": 218,
+        "f1": 0.17293233082706766
+      },
+      "per_class": {
+        "odwolanie": 0.17293233082706766,
+        "pelnomocnictwo": 0.0,
+        "przelew": 0.0,
+        "obcy": 0.0
+      },
+      "classification": {
+        "tp": 11,
+        "tn": 0,
+        "fp": 1,
+        "fn": 1,
+        "f1": 0.9166666666666666
+      },
+      "outcomes": {
+        "complete": 11,
+        "ambiguous": 1
+      },
+      "wall_s_mean_per_doc": 33.71,
+      "delta_vs_original": {
+        "delta": -0.06311917131885508,
+        "low": -0.08067016362639945,
+        "high": -0.045096670508595615,
+        "confidence": 0.95,
+        "resamples": 2000,
+        "seed": 20261122,
+        "cases": 12
+      }
+    },
+    "s2": {
+      "documents": 12,
+      "f1_fields": {
+        "f1": 0.26506024096385544,
+        "low": 0.2,
+        "high": 0.32558139534883723,
+        "confidence": 0.95,
+        "resamples": 2000,
+        "seed": 20261122
+      },
+      "totals": {
+        "tp": 11,
+        "tn": 0,
+        "fp": 0,
+        "fn": 61,
+        "f1": 0.26506024096385544
+      },
+      "per_class": {
+        "odwolanie": 0.0,
+        "pelnomocnictwo": 0.0,
+        "przelew": 0.26506024096385544,
+        "obcy": 0.0
+      },
+      "classification": {
+        "tp": 10,
+        "tn": 0,
+        "fp": 2,
+        "fn": 2,
+        "f1": 0.8333333333333334
+      },
+      "outcomes": {
+        "complete": 3,
+        "partial": 7,
+        "ambiguous": 2
+      },
+      "wall_s_mean_per_doc": 4.0,
+      "delta_vs_original": {
+        "delta": 0.0290087388179327,
+        "low": -0.03451327433628318,
+        "high": 0.09482758620689657,
+        "confidence": 0.95,
+        "resamples": 2000,
+        "seed": 20261122,
+        "cases": 12
+      }
+    },
+    "s5": {
+      "documents": 12,
+      "f1_fields": {
+        "f1": 0.0,
+        "low": 0.0,
+        "high": 0.0,
+        "confidence": 0.95,
+        "resamples": 2000,
+        "seed": 20261122
+      },
+      "totals": {
+        "tp": 0,
+        "tn": 33,
+        "fp": 20,
+        "fn": 75,
+        "f1": 0.0
+      },
+      "per_class": {
+        "odwolanie": 0.0,
+        "pelnomocnictwo": 0.0,
+        "przelew": 0.0,
+        "obcy": 0.0
+      },
+      "classification": {
+        "tp": 11,
+        "tn": 0,
+        "fp": 1,
+        "fn": 1,
+        "f1": 0.9166666666666666
+      },
+      "outcomes": {
+        "complete": 10,
+        "partial": 1,
+        "ambiguous": 1
+      },
+      "wall_s_mean_per_doc": 3.88,
+      "delta_vs_original": {
+        "delta": -0.23605150214592274,
+        "low": -0.25862068965517243,
+        "high": -0.2079002079002079,
+        "confidence": 0.95,
+        "resamples": 2000,
+        "seed": 20261122,
+        "cases": 12
+      }
+    },
+    "skan": {
+      "documents": 36,
+      "f1_fields": {
+        "f1": 0.15315315315315314,
+        "low": 0.10722610722610723,
+        "high": 0.1965065502183406,
+        "confidence": 0.95,
+        "resamples": 2000,
+        "seed": 20261122
+      },
+      "totals": {
+        "tp": 34,
+        "tn": 54,
+        "fp": 4,
+        "fn": 372,
+        "f1": 0.15315315315315314
+      },
+      "per_class": {
+        "odwolanie": 0.07905138339920949,
+        "pelnomocnictwo": 0.2727272727272727,
+        "przelew": 0.2222222222222222,
+        "obcy": 0.0
+      },
+      "classification": {
+        "tp": 30,
+        "tn": 0,
+        "fp": 6,
+        "fn": 6,
+        "f1": 0.8333333333333334
+      },
+      "outcomes": {
+        "complete": 28,
+        "ambiguous": 6,
+        "partial": 2
+      },
+      "wall_s_mean_per_doc": 14.79,
+      "delta_vs_original": {
+        "delta": -0.0828983489927696,
+        "low": -0.1291617520245022,
+        "high": -0.041892969729195956,
+        "confidence": 0.95,
+        "resamples": 2000,
+        "seed": 20261122,
+        "cases": 12
+      }
+    }
+  },
+  "versions": {
+    "python": "3.13.18",
+    "cpu_count": 8,
+    "machine": "x86_64",
+    "pypdfium2": "5.15.2",
+    "pypdf": "7.1.1",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "numpy": "2.5.5",
+    "pillow": "13.0.0",
+    "opencv-python-headless": "5.1.0.95"
+  }
+}

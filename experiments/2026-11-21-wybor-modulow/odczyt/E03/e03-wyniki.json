@@ -1,0 +1,6036 @@
+{
+  "experiment": "E03",
+  "dpi_a4": 150,
+  "pages_per_doc": 1,
+  "threads": 2,
+  "seed": 20261122,
+  "methods": [
+    "none",
+    "rot",
+    "deskew",
+    "rot+deskew",
+    "rot+deskew+otsu",
+    "otsu"
+  ],
+  "rows": [
+    {
+      "id": "obrot180/przyklad_01/odwolanie",
+      "set": "obrot180",
+      "case": "przyklad_01",
+      "methods": {
+        "none": {
+          "found": 11,
+          "of": 16,
+          "rate": 0.6875,
+          "ocr_s": 5.37,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 5.86,
+          "pre_s": 0.004
+        },
+        "deskew": {
+          "found": 12,
+          "of": 16,
+          "rate": 0.75,
+          "ocr_s": 6.9,
+          "pre_s": 0.114
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 7.54,
+          "pre_s": 0.162
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 6.36,
+          "pre_s": 0.244
+        },
+        "otsu": {
+          "found": 11,
+          "of": 16,
+          "rate": 0.6875,
+          "ocr_s": 5.7,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 9.18,
+      "skew_detect_s": 0.094
+    },
+    {
+      "id": "obrot180/przyklad_06/odwolanie",
+      "set": "obrot180",
+      "case": "przyklad_06",
+      "methods": {
+        "none": {
+          "found": 14,
+          "of": 17,
+          "rate": 0.8235,
+          "ocr_s": 13.1,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 19.98,
+          "pre_s": 0.001
+        },
+        "deskew": {
+          "found": 14,
+          "of": 17,
+          "rate": 0.8235,
+          "ocr_s": 23.17,
+          "pre_s": 0.277
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 18.1,
+          "pre_s": 0.245
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 15.79,
+          "pre_s": 0.401
+        },
+        "otsu": {
+          "found": 13,
+          "of": 17,
+          "rate": 0.7647,
+          "ocr_s": 18.11,
+          "pre_s": 0.007
+        }
+      },
+      "rot_detect_s": 10.97,
+      "skew_detect_s": 0.111
+    },
+    {
+      "id": "obrot180/przyklad_10/odwolanie",
+      "set": "obrot180",
+      "case": "przyklad_10",
+      "methods": {
+        "none": {
+          "found": 13,
+          "of": 18,
+          "rate": 0.7222,
+          "ocr_s": 19.2,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 14.53,
+          "pre_s": 0.001
+        },
+        "deskew": {
+          "found": 16,
+          "of": 18,
+          "rate": 0.8889,
+          "ocr_s": 20.42,
+          "pre_s": 0.381
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 21.78,
+          "pre_s": 0.483
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 18.21,
+          "pre_s": 0.493
+        },
+        "otsu": {
+          "found": 11,
+          "of": 18,
+          "rate": 0.6111,
+          "ocr_s": 17.5,
+          "pre_s": 0.01
+        }
+      },
+      "rot_detect_s": 35.66,
+      "skew_detect_s": 0.075
+    },
+    {
+      "id": "obrot180/przyklad_14/odwolanie",
+      "set": "obrot180",
+      "case": "przyklad_14",
+      "methods": {
+        "none": {
+          "found": 14,
+          "of": 18,
+          "rate": 0.7778,
+          "ocr_s": 15.95,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 10.18,
+          "pre_s": 0.003
+        },
+        "deskew": {
+          "found": 12,
+          "of": 18,
+          "rate": 0.6667,
+          "ocr_s": 18.55,
+          "pre_s": 0.38
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 16.37,
+          "pre_s": 0.496
+        },
+        "rot+deskew+otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 14.78,
+          "pre_s": 0.32
+        },
+        "otsu": {
+          "found": 12,
+          "of": 18,
+          "rate": 0.6667,
+          "ocr_s": 13.6,
+          "pre_s": 0.008
+        }
+      },
+      "rot_detect_s": 26.14,
+      "skew_detect_s": 0.081
+    },
+    {
+      "id": "obrot180/przyklad_19/odwolanie",
+      "set": "obrot180",
+      "case": "przyklad_19",
+      "methods": {
+        "none": {
+          "found": 11,
+          "of": 16,
+          "rate": 0.6875,
+          "ocr_s": 18.27,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 23.9,
+          "pre_s": 0.001
+        },
+        "deskew": {
+          "found": 11,
+          "of": 16,
+          "rate": 0.6875,
+          "ocr_s": 21.53,
+          "pre_s": 0.358
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 22.12,
+          "pre_s": 0.511
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 22.9,
+          "pre_s": 0.98
+        },
+        "otsu": {
+          "found": 10,
+          "of": 16,
+          "rate": 0.625,
+          "ocr_s": 18.61,
+          "pre_s": 0.031
+        }
+      },
+      "rot_detect_s": 30.07,
+      "skew_detect_s": 0.041
+    },
+    {
+      "id": "obrot180/przyklad_24/odwolanie",
+      "set": "obrot180",
+      "case": "przyklad_24",
+      "methods": {
+        "none": {
+          "found": 9,
+          "of": 16,
+          "rate": 0.5625,
+          "ocr_s": 12.09,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 10.69,
+          "pre_s": 0.001
+        },
+        "deskew": {
+          "found": 10,
+          "of": 16,
+          "rate": 0.625,
+          "ocr_s": 13.41,
+          "pre_s": 0.758
+        },
+        "rot+deskew": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 15.03,
+          "pre_s": 0.306
+        },
+        "rot+deskew+otsu": {
+          "found": 13,
+          "of": 16,
+          "rate": 0.8125,
+          "ocr_s": 11.61,
+          "pre_s": 0.442
+        },
+        "otsu": {
+          "found": 7,
+          "of": 16,
+          "rate": 0.4375,
+          "ocr_s": 11.82,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 27.3,
+      "skew_detect_s": 0.07
+    },
+    {
+      "id": "obrot180/przyklad_29/odwolanie",
+      "set": "obrot180",
+      "case": "przyklad_29",
+      "methods": {
+        "none": {
+          "found": 14,
+          "of": 18,
+          "rate": 0.7778,
+          "ocr_s": 18.19,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 13.82,
+          "pre_s": 0.008
+        },
+        "deskew": {
+          "found": 16,
+          "of": 18,
+          "rate": 0.8889,
+          "ocr_s": 16.22,
+          "pre_s": 0.334
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 23.29,
+          "pre_s": 0.524
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 20.28,
+          "pre_s": 0.422
+        },
+        "otsu": {
+          "found": 13,
+          "of": 18,
+          "rate": 0.7222,
+          "ocr_s": 17.49,
+          "pre_s": 0.011
+        }
+      },
+      "rot_detect_s": 27.81,
+      "skew_detect_s": 0.042
+    },
+    {
+      "id": "obrot180/przyklad_34/odwolanie",
+      "set": "obrot180",
+      "case": "przyklad_34",
+      "methods": {
+        "none": {
+          "found": 10,
+          "of": 16,
+          "rate": 0.625,
+          "ocr_s": 22.53,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 29.85,
+          "pre_s": 0.001
+        },
+        "deskew": {
+          "found": 10,
+          "of": 16,
+          "rate": 0.625,
+          "ocr_s": 27.63,
+          "pre_s": 0.55
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 26.22,
+          "pre_s": 0.357
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 29.31,
+          "pre_s": 0.292
+        },
+        "otsu": {
+          "found": 11,
+          "of": 16,
+          "rate": 0.6875,
+          "ocr_s": 23.76,
+          "pre_s": 0.035
+        }
+      },
+      "rot_detect_s": 36.9,
+      "skew_detect_s": 0.434
+    },
+    {
+      "id": "obrot180/przyklad_39/odwolanie",
+      "set": "obrot180",
+      "case": "przyklad_39",
+      "methods": {
+        "none": {
+          "found": 10,
+          "of": 17,
+          "rate": 0.5882,
+          "ocr_s": 20.09,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 27.51,
+          "pre_s": 0.007
+        },
+        "deskew": {
+          "found": 10,
+          "of": 17,
+          "rate": 0.5882,
+          "ocr_s": 26.64,
+          "pre_s": 0.273
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 16.44,
+          "pre_s": 0.378
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 24.35,
+          "pre_s": 0.252
+        },
+        "otsu": {
+          "found": 11,
+          "of": 17,
+          "rate": 0.6471,
+          "ocr_s": 24.09,
+          "pre_s": 0.006
+        }
+      },
+      "rot_detect_s": 32.86,
+      "skew_detect_s": 0.356
+    },
+    {
+      "id": "obrot180/przyklad_44/odwolanie",
+      "set": "obrot180",
+      "case": "przyklad_44",
+      "methods": {
+        "none": {
+          "found": 8,
+          "of": 16,
+          "rate": 0.5,
+          "ocr_s": 16.82,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 23.23,
+          "pre_s": 0.001
+        },
+        "deskew": {
+          "found": 11,
+          "of": 16,
+          "rate": 0.6875,
+          "ocr_s": 22.52,
+          "pre_s": 0.76
+        },
+        "rot+deskew": {
+          "found": 12,
+          "of": 16,
+          "rate": 0.75,
+          "ocr_s": 22.33,
+          "pre_s": 0.425
+        },
+        "rot+deskew+otsu": {
+          "found": 13,
+          "of": 16,
+          "rate": 0.8125,
+          "ocr_s": 22.36,
+          "pre_s": 0.432
+        },
+        "otsu": {
+          "found": 6,
+          "of": 16,
+          "rate": 0.375,
+          "ocr_s": 21.93,
+          "pre_s": 0.015
+        }
+      },
+      "rot_detect_s": 29.21,
+      "skew_detect_s": 0.156
+    },
+    {
+      "id": "obrot180/przyklad_49/odwolanie",
+      "set": "obrot180",
+      "case": "przyklad_49",
+      "methods": {
+        "none": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 28.07,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 29.09,
+          "pre_s": 0.018
+        },
+        "deskew": {
+          "found": 14,
+          "of": 17,
+          "rate": 0.8235,
+          "ocr_s": 22.9,
+          "pre_s": 0.658
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 25.71,
+          "pre_s": 0.496
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 25.57,
+          "pre_s": 0.51
+        },
+        "otsu": {
+          "found": 13,
+          "of": 17,
+          "rate": 0.7647,
+          "ocr_s": 20.46,
+          "pre_s": 0.033
+        }
+      },
+      "rot_detect_s": 42.48,
+      "skew_detect_s": 0.318
+    },
+    {
+      "id": "obrot180/przyklad_54/odwolanie",
+      "set": "obrot180",
+      "case": "przyklad_54",
+      "methods": {
+        "none": {
+          "found": 9,
+          "of": 18,
+          "rate": 0.5,
+          "ocr_s": 23.0,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 18.3,
+          "pre_s": 0.001
+        },
+        "deskew": {
+          "found": 8,
+          "of": 18,
+          "rate": 0.4444,
+          "ocr_s": 20.49,
+          "pre_s": 0.605
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 16.94,
+          "pre_s": 0.565
+        },
+        "rot+deskew+otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 25.33,
+          "pre_s": 0.526
+        },
+        "otsu": {
+          "found": 9,
+          "of": 18,
+          "rate": 0.5,
+          "ocr_s": 24.51,
+          "pre_s": 0.036
+        }
+      },
+      "rot_detect_s": 36.94,
+      "skew_detect_s": 0.211
+    },
+    {
+      "id": "obrot270/przyklad_01/odwolanie",
+      "set": "obrot270",
+      "case": "przyklad_01",
+      "methods": {
+        "none": {
+          "found": 13,
+          "of": 16,
+          "rate": 0.8125,
+          "ocr_s": 29.06,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 27.99,
+          "pre_s": 0.016
+        },
+        "deskew": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 21.99,
+          "pre_s": 0.655
+        },
+        "rot+deskew": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 19.58,
+          "pre_s": 0.557
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 18.53,
+          "pre_s": 0.405
+        },
+        "otsu": {
+          "found": 11,
+          "of": 16,
+          "rate": 0.6875,
+          "ocr_s": 13.18,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 30.72,
+      "skew_detect_s": 0.196
+    },
+    {
+      "id": "obrot270/przyklad_06/odwolanie",
+      "set": "obrot270",
+      "case": "przyklad_06",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 8.27,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 9.07,
+          "pre_s": 0.006
+        },
+        "deskew": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 8.32,
+          "pre_s": 0.168
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 11.5,
+          "pre_s": 0.224
+        },
+        "rot+deskew+otsu": {
+          "found": 12,
+          "of": 17,
+          "rate": 0.7059,
+          "ocr_s": 13.45,
+          "pre_s": 0.28
+        },
+        "otsu": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 10.72,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 18.65,
+      "skew_detect_s": 0.04
+    },
+    {
+      "id": "obrot270/przyklad_10/odwolanie",
+      "set": "obrot270",
+      "case": "przyklad_10",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 8.3,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 8.29,
+          "pre_s": 0.003
+        },
+        "deskew": {
+          "found": 15,
+          "of": 18,
+          "rate": 0.8333,
+          "ocr_s": 9.47,
+          "pre_s": 0.203
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 8.88,
+          "pre_s": 0.223
+        },
+        "rot+deskew+otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 10.73,
+          "pre_s": 0.117
+        },
+        "otsu": {
+          "found": 16,
+          "of": 18,
+          "rate": 0.8889,
+          "ocr_s": 10.96,
+          "pre_s": 0.017
+        }
+      },
+      "rot_detect_s": 16.92,
+      "skew_detect_s": 0.037
+    },
+    {
+      "id": "obrot270/przyklad_14/odwolanie",
+      "set": "obrot270",
+      "case": "przyklad_14",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 6.53,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 14,
+          "of": 18,
+          "rate": 0.7778,
+          "ocr_s": 8.63,
+          "pre_s": 0.005
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 6.61,
+          "pre_s": 0.236
+        },
+        "rot+deskew": {
+          "found": 15,
+          "of": 18,
+          "rate": 0.8333,
+          "ocr_s": 10.77,
+          "pre_s": 0.228
+        },
+        "rot+deskew+otsu": {
+          "found": 14,
+          "of": 18,
+          "rate": 0.7778,
+          "ocr_s": 8.72,
+          "pre_s": 0.112
+        },
+        "otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 9.22,
+          "pre_s": 0.013
+        }
+      },
+      "rot_detect_s": 13.71,
+      "skew_detect_s": 0.057
+    },
+    {
+      "id": "obrot270/przyklad_19/odwolanie",
+      "set": "obrot270",
+      "case": "przyklad_19",
+      "methods": {
+        "none": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 10.67,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 12.2,
+          "pre_s": 0.005
+        },
+        "deskew": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 12.69,
+          "pre_s": 0.324
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 10.23,
+          "pre_s": 0.322
+        },
+        "rot+deskew+otsu": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 11.98,
+          "pre_s": 0.128
+        },
+        "otsu": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 18.04,
+          "pre_s": 0.009
+        }
+      },
+      "rot_detect_s": 18.98,
+      "skew_detect_s": 0.039
+    },
+    {
+      "id": "obrot270/przyklad_24/odwolanie",
+      "set": "obrot270",
+      "case": "przyklad_24",
+      "methods": {
+        "none": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 12.82,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 13.27,
+          "pre_s": 0.002
+        },
+        "deskew": {
+          "found": 13,
+          "of": 16,
+          "rate": 0.8125,
+          "ocr_s": 8.91,
+          "pre_s": 0.133
+        },
+        "rot+deskew": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 9.95,
+          "pre_s": 0.108
+        },
+        "rot+deskew+otsu": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 17.45,
+          "pre_s": 0.148
+        },
+        "otsu": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 13.22,
+          "pre_s": 0.032
+        }
+      },
+      "rot_detect_s": 12.33,
+      "skew_detect_s": 0.131
+    },
+    {
+      "id": "obrot270/przyklad_29/odwolanie",
+      "set": "obrot270",
+      "case": "przyklad_29",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 18,
+          "rate": 0.8889,
+          "ocr_s": 15.87,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 10.78,
+          "pre_s": 0.007
+        },
+        "deskew": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 8.74,
+          "pre_s": 0.244
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 18.8,
+          "pre_s": 0.227
+        },
+        "rot+deskew+otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 16.9,
+          "pre_s": 0.381
+        },
+        "otsu": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 17.79,
+          "pre_s": 0.006
+        }
+      },
+      "rot_detect_s": 28.0,
+      "skew_detect_s": 0.109
+    },
+    {
+      "id": "obrot270/przyklad_34/odwolanie",
+      "set": "obrot270",
+      "case": "przyklad_34",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 7.24,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 12.6,
+          "pre_s": 0.003
+        },
+        "deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 15.87,
+          "pre_s": 0.285
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 14.49,
+          "pre_s": 0.286
+        },
+        "rot+deskew+otsu": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 13.03,
+          "pre_s": 0.246
+        },
+        "otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 12.07,
+          "pre_s": 0.01
+        }
+      },
+      "rot_detect_s": 19.77,
+      "skew_detect_s": 0.108
+    },
+    {
+      "id": "obrot270/przyklad_39/odwolanie",
+      "set": "obrot270",
+      "case": "przyklad_39",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 8.94,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 9.93,
+          "pre_s": 0.008
+        },
+        "deskew": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 12.04,
+          "pre_s": 0.328
+        },
+        "rot+deskew": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 13.77,
+          "pre_s": 0.274
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 11.27,
+          "pre_s": 0.284
+        },
+        "otsu": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 7.4,
+          "pre_s": 0.011
+        }
+      },
+      "rot_detect_s": 17.53,
+      "skew_detect_s": 0.068
+    },
+    {
+      "id": "obrot270/przyklad_44/odwolanie",
+      "set": "obrot270",
+      "case": "przyklad_44",
+      "methods": {
+        "none": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 8.69,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 9.42,
+          "pre_s": 0.012
+        },
+        "deskew": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 9.46,
+          "pre_s": 0.141
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 7.46,
+          "pre_s": 0.304
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 6.85,
+          "pre_s": 0.157
+        },
+        "otsu": {
+          "found": 13,
+          "of": 16,
+          "rate": 0.8125,
+          "ocr_s": 8.39,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 16.43,
+      "skew_detect_s": 0.102
+    },
+    {
+      "id": "obrot270/przyklad_49/odwolanie",
+      "set": "obrot270",
+      "case": "przyklad_49",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 8.66,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 10.14,
+          "pre_s": 0.003
+        },
+        "deskew": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 11.27,
+          "pre_s": 0.374
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 9.27,
+          "pre_s": 0.172
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 13.29,
+          "pre_s": 0.184
+        },
+        "otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 10.68,
+          "pre_s": 0.01
+        }
+      },
+      "rot_detect_s": 15.66,
+      "skew_detect_s": 0.044
+    },
+    {
+      "id": "obrot270/przyklad_54/odwolanie",
+      "set": "obrot270",
+      "case": "przyklad_54",
+      "methods": {
+        "none": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 11.38,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 9.9,
+          "pre_s": 0.002
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 11.62,
+          "pre_s": 0.207
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 11.66,
+          "pre_s": 0.302
+        },
+        "rot+deskew+otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 12.19,
+          "pre_s": 0.232
+        },
+        "otsu": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 9.12,
+          "pre_s": 0.012
+        }
+      },
+      "rot_detect_s": 20.77,
+      "skew_detect_s": 0.063
+    },
+    {
+      "id": "obrot90/przyklad_01/odwolanie",
+      "set": "obrot90",
+      "case": "przyklad_01",
+      "methods": {
+        "none": {
+          "found": 11,
+          "of": 16,
+          "rate": 0.6875,
+          "ocr_s": 7.53,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 6.91,
+          "pre_s": 0.005
+        },
+        "deskew": {
+          "found": 9,
+          "of": 16,
+          "rate": 0.5625,
+          "ocr_s": 6.94,
+          "pre_s": 0.103
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 6.31,
+          "pre_s": 0.156
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 7.42,
+          "pre_s": 0.129
+        },
+        "otsu": {
+          "found": 12,
+          "of": 16,
+          "rate": 0.75,
+          "ocr_s": 5.75,
+          "pre_s": 0.007
+        }
+      },
+      "rot_detect_s": 14.15,
+      "skew_detect_s": 0.029
+    },
+    {
+      "id": "obrot90/przyklad_06/odwolanie",
+      "set": "obrot90",
+      "case": "przyklad_06",
+      "methods": {
+        "none": {
+          "found": 12,
+          "of": 17,
+          "rate": 0.7059,
+          "ocr_s": 7.94,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 9.02,
+          "pre_s": 0.005
+        },
+        "deskew": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 7.09,
+          "pre_s": 0.201
+        },
+        "rot+deskew": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 8.73,
+          "pre_s": 0.218
+        },
+        "rot+deskew+otsu": {
+          "found": 12,
+          "of": 17,
+          "rate": 0.7059,
+          "ocr_s": 9.56,
+          "pre_s": 0.109
+        },
+        "otsu": {
+          "found": 13,
+          "of": 17,
+          "rate": 0.7647,
+          "ocr_s": 8.63,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 12.81,
+      "skew_detect_s": 0.037
+    },
+    {
+      "id": "obrot90/przyklad_10/odwolanie",
+      "set": "obrot90",
+      "case": "przyklad_10",
+      "methods": {
+        "none": {
+          "found": 10,
+          "of": 18,
+          "rate": 0.5556,
+          "ocr_s": 7.24,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 9.33,
+          "pre_s": 0.002
+        },
+        "deskew": {
+          "found": 11,
+          "of": 18,
+          "rate": 0.6111,
+          "ocr_s": 9.46,
+          "pre_s": 0.108
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 20.36,
+          "pre_s": 0.209
+        },
+        "rot+deskew+otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 18.03,
+          "pre_s": 0.582
+        },
+        "otsu": {
+          "found": 13,
+          "of": 18,
+          "rate": 0.7222,
+          "ocr_s": 11.98,
+          "pre_s": 0.011
+        }
+      },
+      "rot_detect_s": 12.77,
+      "skew_detect_s": 0.042
+    },
+    {
+      "id": "obrot90/przyklad_14/odwolanie",
+      "set": "obrot90",
+      "case": "przyklad_14",
+      "methods": {
+        "none": {
+          "found": 13,
+          "of": 18,
+          "rate": 0.7222,
+          "ocr_s": 4.73,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 12.82,
+          "pre_s": 0.009
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 11.89,
+          "pre_s": 0.106
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 11.35,
+          "pre_s": 0.17
+        },
+        "rot+deskew+otsu": {
+          "found": 14,
+          "of": 18,
+          "rate": 0.7778,
+          "ocr_s": 12.72,
+          "pre_s": 0.348
+        },
+        "otsu": {
+          "found": 13,
+          "of": 18,
+          "rate": 0.7222,
+          "ocr_s": 6.45,
+          "pre_s": 0.011
+        }
+      },
+      "rot_detect_s": 18.8,
+      "skew_detect_s": 0.06
+    },
+    {
+      "id": "obrot90/przyklad_19/odwolanie",
+      "set": "obrot90",
+      "case": "przyklad_19",
+      "methods": {
+        "none": {
+          "found": 7,
+          "of": 16,
+          "rate": 0.4375,
+          "ocr_s": 12.5,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 9.17,
+          "pre_s": 0.004
+        },
+        "deskew": {
+          "found": 11,
+          "of": 16,
+          "rate": 0.6875,
+          "ocr_s": 16.18,
+          "pre_s": 0.46
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 12.96,
+          "pre_s": 0.108
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 8.23,
+          "pre_s": 0.109
+        },
+        "otsu": {
+          "found": 11,
+          "of": 16,
+          "rate": 0.6875,
+          "ocr_s": 7.17,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 20.79,
+      "skew_detect_s": 0.045
+    },
+    {
+      "id": "obrot90/przyklad_24/odwolanie",
+      "set": "obrot90",
+      "case": "przyklad_24",
+      "methods": {
+        "none": {
+          "found": 4,
+          "of": 16,
+          "rate": 0.25,
+          "ocr_s": 4.76,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.64,
+          "pre_s": 0.002
+        },
+        "deskew": {
+          "found": 11,
+          "of": 16,
+          "rate": 0.6875,
+          "ocr_s": 4.86,
+          "pre_s": 0.113
+        },
+        "rot+deskew": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 5.12,
+          "pre_s": 0.108
+        },
+        "rot+deskew+otsu": {
+          "found": 13,
+          "of": 16,
+          "rate": 0.8125,
+          "ocr_s": 4.45,
+          "pre_s": 0.217
+        },
+        "otsu": {
+          "found": 9,
+          "of": 16,
+          "rate": 0.5625,
+          "ocr_s": 3.86,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 10.66,
+      "skew_detect_s": 0.03
+    },
+    {
+      "id": "obrot90/przyklad_29/odwolanie",
+      "set": "obrot90",
+      "case": "przyklad_29",
+      "methods": {
+        "none": {
+          "found": 12,
+          "of": 18,
+          "rate": 0.6667,
+          "ocr_s": 4.81,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 5.77,
+          "pre_s": 0.003
+        },
+        "deskew": {
+          "found": 10,
+          "of": 18,
+          "rate": 0.5556,
+          "ocr_s": 5.33,
+          "pre_s": 0.106
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 6.17,
+          "pre_s": 0.123
+        },
+        "rot+deskew+otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 17.59,
+          "pre_s": 0.227
+        },
+        "otsu": {
+          "found": 12,
+          "of": 18,
+          "rate": 0.6667,
+          "ocr_s": 4.95,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 15.77,
+      "skew_detect_s": 0.033
+    },
+    {
+      "id": "obrot90/przyklad_34/odwolanie",
+      "set": "obrot90",
+      "case": "przyklad_34",
+      "methods": {
+        "none": {
+          "found": 5,
+          "of": 16,
+          "rate": 0.3125,
+          "ocr_s": 12.77,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 5.83,
+          "pre_s": 0.004
+        },
+        "deskew": {
+          "found": 12,
+          "of": 16,
+          "rate": 0.75,
+          "ocr_s": 8.38,
+          "pre_s": 0.36
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 8.32,
+          "pre_s": 0.191
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 11.83,
+          "pre_s": 0.138
+        },
+        "otsu": {
+          "found": 8,
+          "of": 16,
+          "rate": 0.5,
+          "ocr_s": 21.04,
+          "pre_s": 0.024
+        }
+      },
+      "rot_detect_s": 14.1,
+      "skew_detect_s": 0.1
+    },
+    {
+      "id": "obrot90/przyklad_39/odwolanie",
+      "set": "obrot90",
+      "case": "przyklad_39",
+      "methods": {
+        "none": {
+          "found": 8,
+          "of": 17,
+          "rate": 0.4706,
+          "ocr_s": 13.97,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 28.81,
+          "pre_s": 0.02
+        },
+        "deskew": {
+          "found": 11,
+          "of": 17,
+          "rate": 0.6471,
+          "ocr_s": 17.89,
+          "pre_s": 0.334
+        },
+        "rot+deskew": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 16.41,
+          "pre_s": 0.252
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 18.89,
+          "pre_s": 0.235
+        },
+        "otsu": {
+          "found": 7,
+          "of": 17,
+          "rate": 0.4118,
+          "ocr_s": 19.82,
+          "pre_s": 0.013
+        }
+      },
+      "rot_detect_s": 20.54,
+      "skew_detect_s": 0.027
+    },
+    {
+      "id": "obrot90/przyklad_44/odwolanie",
+      "set": "obrot90",
+      "case": "przyklad_44",
+      "methods": {
+        "none": {
+          "found": 8,
+          "of": 16,
+          "rate": 0.5,
+          "ocr_s": 19.59,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 16.72,
+          "pre_s": 0.009
+        },
+        "deskew": {
+          "found": 8,
+          "of": 16,
+          "rate": 0.5,
+          "ocr_s": 9.94,
+          "pre_s": 0.154
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 16.9,
+          "pre_s": 0.252
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 18.93,
+          "pre_s": 0.274
+        },
+        "otsu": {
+          "found": 12,
+          "of": 16,
+          "rate": 0.75,
+          "ocr_s": 19.21,
+          "pre_s": 0.008
+        }
+      },
+      "rot_detect_s": 30.1,
+      "skew_detect_s": 0.077
+    },
+    {
+      "id": "obrot90/przyklad_49/odwolanie",
+      "set": "obrot90",
+      "case": "przyklad_49",
+      "methods": {
+        "none": {
+          "found": 7,
+          "of": 17,
+          "rate": 0.4118,
+          "ocr_s": 18.38,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 14.09,
+          "pre_s": 0.008
+        },
+        "deskew": {
+          "found": 12,
+          "of": 17,
+          "rate": 0.7059,
+          "ocr_s": 13.43,
+          "pre_s": 0.154
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 16.64,
+          "pre_s": 0.181
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 18.14,
+          "pre_s": 0.236
+        },
+        "otsu": {
+          "found": 13,
+          "of": 17,
+          "rate": 0.7647,
+          "ocr_s": 17.02,
+          "pre_s": 0.01
+        }
+      },
+      "rot_detect_s": 25.59,
+      "skew_detect_s": 0.153
+    },
+    {
+      "id": "obrot90/przyklad_54/odwolanie",
+      "set": "obrot90",
+      "case": "przyklad_54",
+      "methods": {
+        "none": {
+          "found": 7,
+          "of": 18,
+          "rate": 0.3889,
+          "ocr_s": 11.08,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 9.6,
+          "pre_s": 0.005
+        },
+        "deskew": {
+          "found": 9,
+          "of": 18,
+          "rate": 0.5,
+          "ocr_s": 8.12,
+          "pre_s": 0.18
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 9.33,
+          "pre_s": 0.297
+        },
+        "rot+deskew+otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 10.11,
+          "pre_s": 0.159
+        },
+        "otsu": {
+          "found": 8,
+          "of": 18,
+          "rate": 0.4444,
+          "ocr_s": 11.03,
+          "pre_s": 0.015
+        }
+      },
+      "rot_detect_s": 15.69,
+      "skew_detect_s": 0.067
+    },
+    {
+      "id": "skan/przyklad_01/odwolanie",
+      "set": "skan",
+      "case": "przyklad_01",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 8.56,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 7.18,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 7.67,
+          "pre_s": 0.179
+        },
+        "rot+deskew": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 8.23,
+          "pre_s": 0.156
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 6.89,
+          "pre_s": 0.159
+        },
+        "otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 7.15,
+          "pre_s": 0.009
+        }
+      },
+      "rot_detect_s": 13.11,
+      "skew_detect_s": 0.104
+    },
+    {
+      "id": "skan/przyklad_02/odwolanie",
+      "set": "skan",
+      "case": "przyklad_02",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 10.27,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 14.35,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 11.12,
+          "pre_s": 0.216
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 10.53,
+          "pre_s": 0.175
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 9.53,
+          "pre_s": 0.156
+        },
+        "otsu": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 10.51,
+          "pre_s": 0.007
+        }
+      },
+      "rot_detect_s": 17.19,
+      "skew_detect_s": 0.061
+    },
+    {
+      "id": "skan/przyklad_03/odwolanie",
+      "set": "skan",
+      "case": "przyklad_03",
+      "methods": {
+        "none": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 7.89,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 7.52,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 7.97,
+          "pre_s": 0.155
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 7.92,
+          "pre_s": 0.229
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 8.14,
+          "pre_s": 0.167
+        },
+        "otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 7.98,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 12.68,
+      "skew_detect_s": 0.048
+    },
+    {
+      "id": "skan/przyklad_04/odwolanie",
+      "set": "skan",
+      "case": "przyklad_04",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 8.23,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 7.19,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 8.3,
+          "pre_s": 0.18
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 8.65,
+          "pre_s": 0.161
+        },
+        "rot+deskew+otsu": {
+          "found": 13,
+          "of": 17,
+          "rate": 0.7647,
+          "ocr_s": 8.6,
+          "pre_s": 0.203
+        },
+        "otsu": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 8.42,
+          "pre_s": 0.008
+        }
+      },
+      "rot_detect_s": 12.93,
+      "skew_detect_s": 0.045
+    },
+    {
+      "id": "skan/przyklad_06/odwolanie",
+      "set": "skan",
+      "case": "przyklad_06",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 10.35,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 15.36,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 9.91,
+          "pre_s": 0.163
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 11.1,
+          "pre_s": 0.236
+        },
+        "rot+deskew+otsu": {
+          "found": 12,
+          "of": 17,
+          "rate": 0.7059,
+          "ocr_s": 12.64,
+          "pre_s": 0.267
+        },
+        "otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 11.31,
+          "pre_s": 0.007
+        }
+      },
+      "rot_detect_s": 16.82,
+      "skew_detect_s": 0.055
+    },
+    {
+      "id": "skan/przyklad_07/odwolanie",
+      "set": "skan",
+      "case": "przyklad_07",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 15.25,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 13.16,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 15.01,
+          "pre_s": 0.228
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 15.22,
+          "pre_s": 0.232
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 18.35,
+          "pre_s": 0.278
+        },
+        "otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 11.98,
+          "pre_s": 0.02
+        }
+      },
+      "rot_detect_s": 23.75,
+      "skew_detect_s": 0.095
+    },
+    {
+      "id": "skan/przyklad_08/odwolanie",
+      "set": "skan",
+      "case": "przyklad_08",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 7.44,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 8.37,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 6.65,
+          "pre_s": 0.152
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 9.72,
+          "pre_s": 0.223
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 18,
+          "rate": 0.8333,
+          "ocr_s": 8.59,
+          "pre_s": 0.279
+        },
+        "otsu": {
+          "found": 13,
+          "of": 18,
+          "rate": 0.7222,
+          "ocr_s": 9.55,
+          "pre_s": 0.014
+        }
+      },
+      "rot_detect_s": 12.95,
+      "skew_detect_s": 0.061
+    },
+    {
+      "id": "skan/przyklad_09/odwolanie",
+      "set": "skan",
+      "case": "przyklad_09",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 11.1,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 16.26,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.8,
+          "pre_s": 0.27
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.34,
+          "pre_s": 0.119
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 6.65,
+          "pre_s": 0.112
+        },
+        "otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.31,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 16.92,
+      "skew_detect_s": 0.064
+    },
+    {
+      "id": "skan/przyklad_10/odwolanie",
+      "set": "skan",
+      "case": "przyklad_10",
+      "methods": {
+        "none": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 5.85,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 5.3,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 8.57,
+          "pre_s": 0.101
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 5.88,
+          "pre_s": 0.132
+        },
+        "rot+deskew+otsu": {
+          "found": 14,
+          "of": 18,
+          "rate": 0.7778,
+          "ocr_s": 5.29,
+          "pre_s": 0.153
+        },
+        "otsu": {
+          "found": 16,
+          "of": 18,
+          "rate": 0.8889,
+          "ocr_s": 5.87,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 8.08,
+      "skew_detect_s": 0.017
+    },
+    {
+      "id": "skan/przyklad_11/odwolanie",
+      "set": "skan",
+      "case": "przyklad_11",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 6.0,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 4.91,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 4.94,
+          "pre_s": 0.1
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 10.13,
+          "pre_s": 0.097
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 7.56,
+          "pre_s": 0.18
+        },
+        "otsu": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 4.95,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 8.68,
+      "skew_detect_s": 0.018
+    },
+    {
+      "id": "skan/przyklad_12/odwolanie",
+      "set": "skan",
+      "case": "przyklad_12",
+      "methods": {
+        "none": {
+          "found": 15,
+          "of": 18,
+          "rate": 0.8333,
+          "ocr_s": 4.16,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 15,
+          "of": 18,
+          "rate": 0.8333,
+          "ocr_s": 4.47,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 14,
+          "of": 18,
+          "rate": 0.7778,
+          "ocr_s": 4.59,
+          "pre_s": 0.153
+        },
+        "rot+deskew": {
+          "found": 14,
+          "of": 18,
+          "rate": 0.7778,
+          "ocr_s": 4.77,
+          "pre_s": 0.099
+        },
+        "rot+deskew+otsu": {
+          "found": 13,
+          "of": 18,
+          "rate": 0.7222,
+          "ocr_s": 4.56,
+          "pre_s": 0.11
+        },
+        "otsu": {
+          "found": 15,
+          "of": 18,
+          "rate": 0.8333,
+          "ocr_s": 4.63,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 6.64,
+      "skew_detect_s": 0.015
+    },
+    {
+      "id": "skan/przyklad_13/odwolanie",
+      "set": "skan",
+      "case": "przyklad_13",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.56,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.43,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.44,
+          "pre_s": 0.107
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.45,
+          "pre_s": 0.102
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 3.99,
+          "pre_s": 0.105
+        },
+        "otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.17,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 6.79,
+      "skew_detect_s": 0.016
+    },
+    {
+      "id": "skan/przyklad_14/odwolanie",
+      "set": "skan",
+      "case": "przyklad_14",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 4.35,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 4.46,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.48,
+          "pre_s": 0.104
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.51,
+          "pre_s": 0.106
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 18,
+          "rate": 0.8333,
+          "ocr_s": 4.59,
+          "pre_s": 0.118
+        },
+        "otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.39,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 5.78,
+      "skew_detect_s": 0.019
+    },
+    {
+      "id": "skan/przyklad_16/odwolanie",
+      "set": "skan",
+      "case": "przyklad_16",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 4.2,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.42,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 3.8,
+          "pre_s": 0.102
+        },
+        "rot+deskew": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 4.03,
+          "pre_s": 0.101
+        },
+        "rot+deskew+otsu": {
+          "found": 14,
+          "of": 17,
+          "rate": 0.8235,
+          "ocr_s": 3.88,
+          "pre_s": 0.108
+        },
+        "otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 3.99,
+          "pre_s": 0.006
+        }
+      },
+      "rot_detect_s": 5.28,
+      "skew_detect_s": 0.019
+    },
+    {
+      "id": "skan/przyklad_17/odwolanie",
+      "set": "skan",
+      "case": "przyklad_17",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 7.67,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 7.05,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 10.7,
+          "pre_s": 0.101
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 10.63,
+          "pre_s": 0.181
+        },
+        "rot+deskew+otsu": {
+          "found": 14,
+          "of": 17,
+          "rate": 0.8235,
+          "ocr_s": 10.56,
+          "pre_s": 0.223
+        },
+        "otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 11.04,
+          "pre_s": 0.01
+        }
+      },
+      "rot_detect_s": 8.55,
+      "skew_detect_s": 0.061
+    },
+    {
+      "id": "skan/przyklad_18/odwolanie",
+      "set": "skan",
+      "case": "przyklad_18",
+      "methods": {
+        "none": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 9.07,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 8.7,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 8.68,
+          "pre_s": 0.22
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 8.52,
+          "pre_s": 0.187
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 7.83,
+          "pre_s": 0.146
+        },
+        "otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 8.77,
+          "pre_s": 0.007
+        }
+      },
+      "rot_detect_s": 14.92,
+      "skew_detect_s": 0.063
+    },
+    {
+      "id": "skan/przyklad_19/odwolanie",
+      "set": "skan",
+      "case": "przyklad_19",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 5.13,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 5.13,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 5.96,
+          "pre_s": 0.107
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 5.99,
+          "pre_s": 0.115
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 5.85,
+          "pre_s": 0.114
+        },
+        "otsu": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 5.03,
+          "pre_s": 0.012
+        }
+      },
+      "rot_detect_s": 15.44,
+      "skew_detect_s": 0.025
+    },
+    {
+      "id": "skan/przyklad_21/odwolanie",
+      "set": "skan",
+      "case": "przyklad_21",
+      "methods": {
+        "none": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 5.48,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.29,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.95,
+          "pre_s": 0.1
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 7.88,
+          "pre_s": 0.103
+        },
+        "rot+deskew+otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 6.83,
+          "pre_s": 0.105
+        },
+        "otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 6.69,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 8.88,
+      "skew_detect_s": 0.108
+    },
+    {
+      "id": "skan/przyklad_22/odwolanie",
+      "set": "skan",
+      "case": "przyklad_22",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 11.37,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 11.13,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 11.56,
+          "pre_s": 0.218
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 12.35,
+          "pre_s": 0.158
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 11.52,
+          "pre_s": 0.206
+        },
+        "otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 11.04,
+          "pre_s": 0.012
+        }
+      },
+      "rot_detect_s": 16.91,
+      "skew_detect_s": 0.088
+    },
+    {
+      "id": "skan/przyklad_23/odwolanie",
+      "set": "skan",
+      "case": "przyklad_23",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 4.74,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 4.28,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 6.41,
+          "pre_s": 0.161
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 4.28,
+          "pre_s": 0.101
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 4.39,
+          "pre_s": 0.107
+        },
+        "otsu": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 8.57,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 13.07,
+      "skew_detect_s": 0.056
+    },
+    {
+      "id": "skan/przyklad_24/odwolanie",
+      "set": "skan",
+      "case": "przyklad_24",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 8.48,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 7.43,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 7.38,
+          "pre_s": 0.198
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 7.19,
+          "pre_s": 0.176
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 8.0,
+          "pre_s": 0.123
+        },
+        "otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 7.7,
+          "pre_s": 0.014
+        }
+      },
+      "rot_detect_s": 7.88,
+      "skew_detect_s": 0.063
+    },
+    {
+      "id": "skan/przyklad_26/odwolanie",
+      "set": "skan",
+      "case": "przyklad_26",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 9.18,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 10.01,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 8.21,
+          "pre_s": 0.167
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 7.91,
+          "pre_s": 0.172
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 7.23,
+          "pre_s": 0.196
+        },
+        "otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 3.54,
+          "pre_s": 0.01
+        }
+      },
+      "rot_detect_s": 14.06,
+      "skew_detect_s": 0.071
+    },
+    {
+      "id": "skan/przyklad_27/odwolanie",
+      "set": "skan",
+      "case": "przyklad_27",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 6.63,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 4.49,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 8.27,
+          "pre_s": 0.127
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 5.13,
+          "pre_s": 0.102
+        },
+        "rot+deskew+otsu": {
+          "found": 14,
+          "of": 17,
+          "rate": 0.8235,
+          "ocr_s": 5.32,
+          "pre_s": 0.105
+        },
+        "otsu": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 6.83,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 7.53,
+      "skew_detect_s": 0.017
+    },
+    {
+      "id": "skan/przyklad_28/odwolanie",
+      "set": "skan",
+      "case": "przyklad_28",
+      "methods": {
+        "none": {
+          "found": 15,
+          "of": 15,
+          "rate": 1.0,
+          "ocr_s": 4.63,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 15,
+          "of": 15,
+          "rate": 1.0,
+          "ocr_s": 4.79,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 15,
+          "of": 15,
+          "rate": 1.0,
+          "ocr_s": 5.23,
+          "pre_s": 0.1
+        },
+        "rot+deskew": {
+          "found": 15,
+          "of": 15,
+          "rate": 1.0,
+          "ocr_s": 9.3,
+          "pre_s": 0.266
+        },
+        "rot+deskew+otsu": {
+          "found": 10,
+          "of": 15,
+          "rate": 0.6667,
+          "ocr_s": 9.6,
+          "pre_s": 0.218
+        },
+        "otsu": {
+          "found": 9,
+          "of": 15,
+          "rate": 0.6,
+          "ocr_s": 10.22,
+          "pre_s": 0.018
+        }
+      },
+      "rot_detect_s": 8.92,
+      "skew_detect_s": 0.017
+    },
+    {
+      "id": "skan/przyklad_29/odwolanie",
+      "set": "skan",
+      "case": "przyklad_29",
+      "methods": {
+        "none": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 10.05,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 11.18,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 11.65,
+          "pre_s": 0.259
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 11.56,
+          "pre_s": 0.173
+        },
+        "rot+deskew+otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 10.36,
+          "pre_s": 0.161
+        },
+        "otsu": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 8.72,
+          "pre_s": 0.007
+        }
+      },
+      "rot_detect_s": 19.21,
+      "skew_detect_s": 0.055
+    },
+    {
+      "id": "skan/przyklad_31/odwolanie",
+      "set": "skan",
+      "case": "przyklad_31",
+      "methods": {
+        "none": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.81,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.54,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 4.23,
+          "pre_s": 0.099
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 4.66,
+          "pre_s": 0.098
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 18,
+          "rate": 0.8889,
+          "ocr_s": 4.78,
+          "pre_s": 0.101
+        },
+        "otsu": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 4.69,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 9.8,
+      "skew_detect_s": 0.055
+    },
+    {
+      "id": "skan/przyklad_32/odwolanie",
+      "set": "skan",
+      "case": "przyklad_32",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.29,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.23,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.35,
+          "pre_s": 0.1
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.52,
+          "pre_s": 0.122
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 5.38,
+          "pre_s": 0.106
+        },
+        "otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.42,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 7.49,
+      "skew_detect_s": 0.017
+    },
+    {
+      "id": "skan/przyklad_33/odwolanie",
+      "set": "skan",
+      "case": "przyklad_33",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.82,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.89,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.99,
+          "pre_s": 0.1
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.9,
+          "pre_s": 0.103
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.84,
+          "pre_s": 0.103
+        },
+        "otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 4.78,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 7.12,
+      "skew_detect_s": 0.017
+    },
+    {
+      "id": "skan/przyklad_34/odwolanie",
+      "set": "skan",
+      "case": "przyklad_34",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.22,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 6.91,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 5.24,
+          "pre_s": 0.185
+        },
+        "rot+deskew": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 5.71,
+          "pre_s": 0.116
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 7.95,
+          "pre_s": 0.103
+        },
+        "otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 4.74,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 11.81,
+      "skew_detect_s": 0.063
+    },
+    {
+      "id": "skan/przyklad_36/odwolanie",
+      "set": "skan",
+      "case": "przyklad_36",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 8.8,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 8.87,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 9.3,
+          "pre_s": 0.155
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 9.1,
+          "pre_s": 0.196
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 9.15,
+          "pre_s": 0.19
+        },
+        "otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 9.53,
+          "pre_s": 0.008
+        }
+      },
+      "rot_detect_s": 12.87,
+      "skew_detect_s": 0.079
+    },
+    {
+      "id": "skan/przyklad_37/odwolanie",
+      "set": "skan",
+      "case": "przyklad_37",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 8.69,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 7.86,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 5.23,
+          "pre_s": 0.118
+        },
+        "rot+deskew": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 4.82,
+          "pre_s": 0.1
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 5.52,
+          "pre_s": 0.104
+        },
+        "otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.41,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 15.91,
+      "skew_detect_s": 0.049
+    },
+    {
+      "id": "skan/przyklad_38/odwolanie",
+      "set": "skan",
+      "case": "przyklad_38",
+      "methods": {
+        "none": {
+          "found": 14,
+          "of": 18,
+          "rate": 0.7778,
+          "ocr_s": 5.03,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 14,
+          "of": 18,
+          "rate": 0.7778,
+          "ocr_s": 4.83,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 16,
+          "of": 18,
+          "rate": 0.8889,
+          "ocr_s": 4.97,
+          "pre_s": 0.103
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 18,
+          "rate": 0.8889,
+          "ocr_s": 5.05,
+          "pre_s": 0.102
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 18,
+          "rate": 0.8889,
+          "ocr_s": 5.15,
+          "pre_s": 0.107
+        },
+        "otsu": {
+          "found": 16,
+          "of": 18,
+          "rate": 0.8889,
+          "ocr_s": 5.38,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 7.9,
+      "skew_detect_s": 0.016
+    },
+    {
+      "id": "skan/przyklad_39/odwolanie",
+      "set": "skan",
+      "case": "przyklad_39",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.31,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.09,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 5.57,
+          "pre_s": 0.112
+        },
+        "rot+deskew": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 5.47,
+          "pre_s": 0.103
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.46,
+          "pre_s": 0.106
+        },
+        "otsu": {
+          "found": 14,
+          "of": 17,
+          "rate": 0.8235,
+          "ocr_s": 4.79,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 7.86,
+      "skew_detect_s": 0.022
+    },
+    {
+      "id": "skan/przyklad_41/odwolanie",
+      "set": "skan",
+      "case": "przyklad_41",
+      "methods": {
+        "none": {
+          "found": 13,
+          "of": 14,
+          "rate": 0.9286,
+          "ocr_s": 4.62,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 13,
+          "of": 14,
+          "rate": 0.9286,
+          "ocr_s": 4.52,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 13,
+          "of": 14,
+          "rate": 0.9286,
+          "ocr_s": 4.57,
+          "pre_s": 0.102
+        },
+        "rot+deskew": {
+          "found": 13,
+          "of": 14,
+          "rate": 0.9286,
+          "ocr_s": 6.86,
+          "pre_s": 0.101
+        },
+        "rot+deskew+otsu": {
+          "found": 12,
+          "of": 14,
+          "rate": 0.8571,
+          "ocr_s": 5.02,
+          "pre_s": 0.198
+        },
+        "otsu": {
+          "found": 13,
+          "of": 14,
+          "rate": 0.9286,
+          "ocr_s": 4.58,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 5.79,
+      "skew_detect_s": 0.021
+    },
+    {
+      "id": "skan/przyklad_42/odwolanie",
+      "set": "skan",
+      "case": "przyklad_42",
+      "methods": {
+        "none": {
+          "found": 22,
+          "of": 22,
+          "rate": 1.0,
+          "ocr_s": 4.12,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 22,
+          "of": 22,
+          "rate": 1.0,
+          "ocr_s": 4.64,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 22,
+          "of": 22,
+          "rate": 1.0,
+          "ocr_s": 7.82,
+          "pre_s": 0.099
+        },
+        "rot+deskew": {
+          "found": 22,
+          "of": 22,
+          "rate": 1.0,
+          "ocr_s": 4.32,
+          "pre_s": 0.101
+        },
+        "rot+deskew+otsu": {
+          "found": 21,
+          "of": 22,
+          "rate": 0.9545,
+          "ocr_s": 4.27,
+          "pre_s": 0.103
+        },
+        "otsu": {
+          "found": 21,
+          "of": 22,
+          "rate": 0.9545,
+          "ocr_s": 4.64,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 6.49,
+      "skew_detect_s": 0.017
+    },
+    {
+      "id": "skan/przyklad_43/odwolanie",
+      "set": "skan",
+      "case": "przyklad_43",
+      "methods": {
+        "none": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 9.14,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 7.92,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 8.26,
+          "pre_s": 0.195
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 7.46,
+          "pre_s": 0.192
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 7.91,
+          "pre_s": 0.209
+        },
+        "otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 8.26,
+          "pre_s": 0.008
+        }
+      },
+      "rot_detect_s": 6.41,
+      "skew_detect_s": 0.016
+    },
+    {
+      "id": "skan/przyklad_44/odwolanie",
+      "set": "skan",
+      "case": "przyklad_44",
+      "methods": {
+        "none": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 7.72,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 8.04,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 7.74,
+          "pre_s": 0.139
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.19,
+          "pre_s": 0.156
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 4.6,
+          "pre_s": 0.11
+        },
+        "otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 4.31,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 13.21,
+      "skew_detect_s": 0.062
+    },
+    {
+      "id": "skan/przyklad_46/odwolanie",
+      "set": "skan",
+      "case": "przyklad_46",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.32,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.5,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 3.92,
+          "pre_s": 0.102
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.38,
+          "pre_s": 0.101
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 7.1,
+          "pre_s": 0.114
+        },
+        "otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.03,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 6.56,
+      "skew_detect_s": 0.022
+    },
+    {
+      "id": "skan/przyklad_47/odwolanie",
+      "set": "skan",
+      "case": "przyklad_47",
+      "methods": {
+        "none": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 4.77,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 4.91,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 7.3,
+          "pre_s": 0.146
+        },
+        "rot+deskew": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 4.47,
+          "pre_s": 0.201
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.82,
+          "pre_s": 0.106
+        },
+        "otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 4.41,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 6.81,
+      "skew_detect_s": 0.016
+    },
+    {
+      "id": "skan/przyklad_48/odwolanie",
+      "set": "skan",
+      "case": "przyklad_48",
+      "methods": {
+        "none": {
+          "found": 14,
+          "of": 15,
+          "rate": 0.9333,
+          "ocr_s": 4.74,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 14,
+          "of": 15,
+          "rate": 0.9333,
+          "ocr_s": 8.59,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 14,
+          "of": 15,
+          "rate": 0.9333,
+          "ocr_s": 8.95,
+          "pre_s": 0.2
+        },
+        "rot+deskew": {
+          "found": 14,
+          "of": 15,
+          "rate": 0.9333,
+          "ocr_s": 8.63,
+          "pre_s": 0.159
+        },
+        "rot+deskew+otsu": {
+          "found": 14,
+          "of": 15,
+          "rate": 0.9333,
+          "ocr_s": 9.12,
+          "pre_s": 0.231
+        },
+        "otsu": {
+          "found": 13,
+          "of": 15,
+          "rate": 0.8667,
+          "ocr_s": 8.48,
+          "pre_s": 0.008
+        }
+      },
+      "rot_detect_s": 6.79,
+      "skew_detect_s": 0.019
+    },
+    {
+      "id": "skan/przyklad_49/odwolanie",
+      "set": "skan",
+      "case": "przyklad_49",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 8.39,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 9.77,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 14,
+          "of": 17,
+          "rate": 0.8235,
+          "ocr_s": 7.28,
+          "pre_s": 0.142
+        },
+        "rot+deskew": {
+          "found": 14,
+          "of": 17,
+          "rate": 0.8235,
+          "ocr_s": 5.15,
+          "pre_s": 0.118
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.05,
+          "pre_s": 0.107
+        },
+        "otsu": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 4.98,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 15.58,
+      "skew_detect_s": 0.046
+    },
+    {
+      "id": "skan/przyklad_51/odwolanie",
+      "set": "skan",
+      "case": "przyklad_51",
+      "methods": {
+        "none": {
+          "found": 21,
+          "of": 21,
+          "rate": 1.0,
+          "ocr_s": 6.68,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 21,
+          "of": 21,
+          "rate": 1.0,
+          "ocr_s": 6.04,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 21,
+          "of": 21,
+          "rate": 1.0,
+          "ocr_s": 4.69,
+          "pre_s": 0.107
+        },
+        "rot+deskew": {
+          "found": 21,
+          "of": 21,
+          "rate": 1.0,
+          "ocr_s": 5.12,
+          "pre_s": 0.186
+        },
+        "rot+deskew+otsu": {
+          "found": 20,
+          "of": 21,
+          "rate": 0.9524,
+          "ocr_s": 5.43,
+          "pre_s": 0.229
+        },
+        "otsu": {
+          "found": 21,
+          "of": 21,
+          "rate": 1.0,
+          "ocr_s": 7.3,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 6.35,
+      "skew_detect_s": 0.02
+    },
+    {
+      "id": "skan/przyklad_52/odwolanie",
+      "set": "skan",
+      "case": "przyklad_52",
+      "methods": {
+        "none": {
+          "found": 13,
+          "of": 15,
+          "rate": 0.8667,
+          "ocr_s": 3.97,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 13,
+          "of": 15,
+          "rate": 0.8667,
+          "ocr_s": 4.78,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 13,
+          "of": 15,
+          "rate": 0.8667,
+          "ocr_s": 4.63,
+          "pre_s": 0.1
+        },
+        "rot+deskew": {
+          "found": 13,
+          "of": 15,
+          "rate": 0.8667,
+          "ocr_s": 4.55,
+          "pre_s": 0.102
+        },
+        "rot+deskew+otsu": {
+          "found": 12,
+          "of": 15,
+          "rate": 0.8,
+          "ocr_s": 8.26,
+          "pre_s": 0.106
+        },
+        "otsu": {
+          "found": 15,
+          "of": 15,
+          "rate": 1.0,
+          "ocr_s": 7.58,
+          "pre_s": 0.006
+        }
+      },
+      "rot_detect_s": 6.71,
+      "skew_detect_s": 0.017
+    },
+    {
+      "id": "skan/przyklad_53/odwolanie",
+      "set": "skan",
+      "case": "przyklad_53",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 9.07,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 9.37,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 9.97,
+          "pre_s": 0.176
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 9.27,
+          "pre_s": 0.176
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 10.2,
+          "pre_s": 0.188
+        },
+        "otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 10.07,
+          "pre_s": 0.033
+        }
+      },
+      "rot_detect_s": 14.91,
+      "skew_detect_s": 0.052
+    },
+    {
+      "id": "skan/przyklad_54/odwolanie",
+      "set": "skan",
+      "case": "przyklad_54",
+      "methods": {
+        "none": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 9.14,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 7.71,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.77,
+          "pre_s": 0.173
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 3.62,
+          "pre_s": 0.102
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 6.25,
+          "pre_s": 0.105
+        },
+        "otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.38,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 14.61,
+      "skew_detect_s": 0.068
+    },
+    {
+      "id": "skan/przyklad_56/odwolanie",
+      "set": "skan",
+      "case": "przyklad_56",
+      "methods": {
+        "none": {
+          "found": 15,
+          "of": 15,
+          "rate": 1.0,
+          "ocr_s": 5.06,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 15,
+          "of": 15,
+          "rate": 1.0,
+          "ocr_s": 5.15,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 15,
+          "of": 15,
+          "rate": 1.0,
+          "ocr_s": 7.38,
+          "pre_s": 0.14
+        },
+        "rot+deskew": {
+          "found": 15,
+          "of": 15,
+          "rate": 1.0,
+          "ocr_s": 6.87,
+          "pre_s": 0.115
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 15,
+          "rate": 1.0,
+          "ocr_s": 13.01,
+          "pre_s": 0.348
+        },
+        "otsu": {
+          "found": 15,
+          "of": 15,
+          "rate": 1.0,
+          "ocr_s": 12.11,
+          "pre_s": 0.009
+        }
+      },
+      "rot_detect_s": 10.06,
+      "skew_detect_s": 0.016
+    },
+    {
+      "id": "skan/przyklad_57/odwolanie",
+      "set": "skan",
+      "case": "przyklad_57",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 9.7,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 9.47,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 8.42,
+          "pre_s": 0.158
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 7.18,
+          "pre_s": 0.189
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 7.16,
+          "pre_s": 0.164
+        },
+        "otsu": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 7.56,
+          "pre_s": 0.006
+        }
+      },
+      "rot_detect_s": 14.67,
+      "skew_detect_s": 0.078
+    },
+    {
+      "id": "skan/przyklad_58/odwolanie",
+      "set": "skan",
+      "case": "przyklad_58",
+      "methods": {
+        "none": {
+          "found": 15,
+          "of": 15,
+          "rate": 1.0,
+          "ocr_s": 9.39,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 15,
+          "of": 15,
+          "rate": 1.0,
+          "ocr_s": 8.39,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 14,
+          "of": 15,
+          "rate": 0.9333,
+          "ocr_s": 4.08,
+          "pre_s": 0.15
+        },
+        "rot+deskew": {
+          "found": 14,
+          "of": 15,
+          "rate": 0.9333,
+          "ocr_s": 4.9,
+          "pre_s": 0.098
+        },
+        "rot+deskew+otsu": {
+          "found": 14,
+          "of": 15,
+          "rate": 0.9333,
+          "ocr_s": 4.95,
+          "pre_s": 0.103
+        },
+        "otsu": {
+          "found": 15,
+          "of": 15,
+          "rate": 1.0,
+          "ocr_s": 7.65,
+          "pre_s": 0.005
+        }
+      },
+      "rot_detect_s": 14.93,
+      "skew_detect_s": 0.06
+    },
+    {
+      "id": "skan/przyklad_59/odwolanie",
+      "set": "skan",
+      "case": "przyklad_59",
+      "methods": {
+        "none": {
+          "found": 23,
+          "of": 23,
+          "rate": 1.0,
+          "ocr_s": 5.93,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 23,
+          "of": 23,
+          "rate": 1.0,
+          "ocr_s": 4.42,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 23,
+          "of": 23,
+          "rate": 1.0,
+          "ocr_s": 4.36,
+          "pre_s": 0.097
+        },
+        "rot+deskew": {
+          "found": 23,
+          "of": 23,
+          "rate": 1.0,
+          "ocr_s": 5.63,
+          "pre_s": 0.096
+        },
+        "rot+deskew+otsu": {
+          "found": 23,
+          "of": 23,
+          "rate": 1.0,
+          "ocr_s": 3.87,
+          "pre_s": 0.101
+        },
+        "otsu": {
+          "found": 23,
+          "of": 23,
+          "rate": 1.0,
+          "ocr_s": 5.81,
+          "pre_s": 0.007
+        }
+      },
+      "rot_detect_s": 6.3,
+      "skew_detect_s": 0.014
+    },
+    {
+      "id": "skos3/przyklad_01/odwolanie",
+      "set": "skos3",
+      "case": "przyklad_01",
+      "methods": {
+        "none": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 4.34,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 6.23,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 6.57,
+          "pre_s": 0.163
+        },
+        "rot+deskew": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 8.05,
+          "pre_s": 0.157
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 7.61,
+          "pre_s": 0.218
+        },
+        "otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 7.91,
+          "pre_s": 0.011
+        }
+      },
+      "rot_detect_s": 5.76,
+      "skew_detect_s": 0.017
+    },
+    {
+      "id": "skos3/przyklad_06/odwolanie",
+      "set": "skos3",
+      "case": "przyklad_06",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 10.74,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 9.53,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 9.55,
+          "pre_s": 0.194
+        },
+        "rot+deskew": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 10.25,
+          "pre_s": 0.211
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 6.25,
+          "pre_s": 0.171
+        },
+        "otsu": {
+          "found": 15,
+          "of": 17,
+          "rate": 0.8824,
+          "ocr_s": 5.37,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 17.89,
+      "skew_detect_s": 0.097
+    },
+    {
+      "id": "skos3/przyklad_10/odwolanie",
+      "set": "skos3",
+      "case": "przyklad_10",
+      "methods": {
+        "none": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 5.73,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 5.44,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 5.87,
+          "pre_s": 0.098
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 5.73,
+          "pre_s": 0.101
+        },
+        "rot+deskew+otsu": {
+          "found": 14,
+          "of": 18,
+          "rate": 0.7778,
+          "ocr_s": 6.75,
+          "pre_s": 0.138
+        },
+        "otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 6.26,
+          "pre_s": 0.022
+        }
+      },
+      "rot_detect_s": 7.95,
+      "skew_detect_s": 0.016
+    },
+    {
+      "id": "skos3/przyklad_14/odwolanie",
+      "set": "skos3",
+      "case": "przyklad_14",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 4.46,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 3.99,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.79,
+          "pre_s": 0.104
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 7.32,
+          "pre_s": 0.097
+        },
+        "rot+deskew+otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.84,
+          "pre_s": 0.099
+        },
+        "otsu": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 4.57,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 6.71,
+      "skew_detect_s": 0.016
+    },
+    {
+      "id": "skos3/przyklad_19/odwolanie",
+      "set": "skos3",
+      "case": "przyklad_19",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 5.29,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 5.56,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 5.6,
+          "pre_s": 0.101
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 5.58,
+          "pre_s": 0.105
+        },
+        "rot+deskew+otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 5.85,
+          "pre_s": 0.1
+        },
+        "otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 5.34,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 7.61,
+      "skew_detect_s": 0.029
+    },
+    {
+      "id": "skos3/przyklad_24/odwolanie",
+      "set": "skos3",
+      "case": "przyklad_24",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 6.03,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 6.93,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 6.8,
+          "pre_s": 0.099
+        },
+        "rot+deskew": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 4.71,
+          "pre_s": 0.265
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 6.73,
+          "pre_s": 0.145
+        },
+        "otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 4.01,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 11.07,
+      "skew_detect_s": 0.017
+    },
+    {
+      "id": "skos3/przyklad_29/odwolanie",
+      "set": "skos3",
+      "case": "przyklad_29",
+      "methods": {
+        "none": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 8.93,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 6.16,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 6.01,
+          "pre_s": 0.136
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 5.63,
+          "pre_s": 0.097
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 18,
+          "rate": 0.9444,
+          "ocr_s": 5.88,
+          "pre_s": 0.099
+        },
+        "otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 5.51,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 8.95,
+      "skew_detect_s": 0.017
+    },
+    {
+      "id": "skos3/przyklad_34/odwolanie",
+      "set": "skos3",
+      "case": "przyklad_34",
+      "methods": {
+        "none": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 5.24,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 4.99,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 5.5,
+          "pre_s": 0.097
+        },
+        "rot+deskew": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 5.46,
+          "pre_s": 0.097
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 5.51,
+          "pre_s": 0.103
+        },
+        "otsu": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 5.06,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 10.39,
+      "skew_detect_s": 0.015
+    },
+    {
+      "id": "skos3/przyklad_39/odwolanie",
+      "set": "skos3",
+      "case": "przyklad_39",
+      "methods": {
+        "none": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.4,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 4.52,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.69,
+          "pre_s": 0.097
+        },
+        "rot+deskew": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.82,
+          "pre_s": 0.099
+        },
+        "rot+deskew+otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.34,
+          "pre_s": 0.101
+        },
+        "otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 5.17,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 7.56,
+      "skew_detect_s": 0.017
+    },
+    {
+      "id": "skos3/przyklad_44/odwolanie",
+      "set": "skos3",
+      "case": "przyklad_44",
+      "methods": {
+        "none": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 4.45,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 14,
+          "of": 16,
+          "rate": 0.875,
+          "ocr_s": 3.95,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.24,
+          "pre_s": 0.098
+        },
+        "rot+deskew": {
+          "found": 16,
+          "of": 16,
+          "rate": 1.0,
+          "ocr_s": 4.53,
+          "pre_s": 0.107
+        },
+        "rot+deskew+otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 3.83,
+          "pre_s": 0.161
+        },
+        "otsu": {
+          "found": 15,
+          "of": 16,
+          "rate": 0.9375,
+          "ocr_s": 4.6,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 6.07,
+      "skew_detect_s": 0.02
+    },
+    {
+      "id": "skos3/przyklad_49/odwolanie",
+      "set": "skos3",
+      "case": "przyklad_49",
+      "methods": {
+        "none": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 4.7,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 16,
+          "of": 17,
+          "rate": 0.9412,
+          "ocr_s": 4.7,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 14,
+          "of": 17,
+          "rate": 0.8235,
+          "ocr_s": 5.01,
+          "pre_s": 0.096
+        },
+        "rot+deskew": {
+          "found": 14,
+          "of": 17,
+          "rate": 0.8235,
+          "ocr_s": 4.82,
+          "pre_s": 0.099
+        },
+        "rot+deskew+otsu": {
+          "found": 14,
+          "of": 17,
+          "rate": 0.8235,
+          "ocr_s": 4.89,
+          "pre_s": 0.101
+        },
+        "otsu": {
+          "found": 17,
+          "of": 17,
+          "rate": 1.0,
+          "ocr_s": 4.67,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 6.22,
+      "skew_detect_s": 0.016
+    },
+    {
+      "id": "skos3/przyklad_54/odwolanie",
+      "set": "skos3",
+      "case": "przyklad_54",
+      "methods": {
+        "none": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.73,
+          "pre_s": 0.0
+        },
+        "rot": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.64,
+          "pre_s": 0.0
+        },
+        "deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.73,
+          "pre_s": 0.098
+        },
+        "rot+deskew": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.7,
+          "pre_s": 0.1
+        },
+        "rot+deskew+otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.85,
+          "pre_s": 0.102
+        },
+        "otsu": {
+          "found": 18,
+          "of": 18,
+          "rate": 1.0,
+          "ocr_s": 4.66,
+          "pre_s": 0.004
+        }
+      },
+      "rot_detect_s": 5.8,
+      "skew_detect_s": 0.015
+    }
+  ],
+  "rot_detect": {
+    "obrot180": [
+      [
+        180,
+        180
+      ],
+      [
+        180,
+        180
+      ],
+      [
+        180,
+        180
+      ],
+      [
+        180,
+        180
+      ],
+      [
+        180,
+        180
+      ],
+      [
+        180,
+        180
+      ],
+      [
+        180,
+        180
+      ],
+      [
+        180,
+        180
+      ],
+      [
+        180,
+        180
+      ],
+      [
+        180,
+        180
+      ],
+      [
+        180,
+        180
+      ],
+      [
+        180,
+        180
+      ]
+    ],
+    "obrot270": [
+      [
+        90,
+        270
+      ],
+      [
+        90,
+        270
+      ],
+      [
+        90,
+        270
+      ],
+      [
+        90,
+        270
+      ],
+      [
+        90,
+        270
+      ],
+      [
+        90,
+        270
+      ],
+      [
+        90,
+        270
+      ],
+      [
+        90,
+        270
+      ],
+      [
+        90,
+        270
+      ],
+      [
+        90,
+        270
+      ],
+      [
+        90,
+        270
+      ],
+      [
+        90,
+        270
+      ]
+    ],
+    "obrot90": [
+      [
+        270,
+        90
+      ],
+      [
+        270,
+        90
+      ],
+      [
+        270,
+        90
+      ],
+      [
+        270,
+        90
+      ],
+      [
+        270,
+        90
+      ],
+      [
+        270,
+        90
+      ],
+      [
+        270,
+        90
+      ],
+      [
+        270,
+        90
+      ],
+      [
+        270,
+        90
+      ],
+      [
+        270,
+        90
+      ],
+      [
+        270,
+        90
+      ],
+      [
+        270,
+        90
+      ]
+    ],
+    "skan": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "skos3": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  },
+  "skew_detect": {
+    "obrot180": [
+      -0.20000000000000007,
+      -0.5000000000000001,
+      -0.7000000000000001,
+      0.7000000000000001,
+      0.4,
+      -0.30000000000000016,
+      0.5,
+      0.19999999999999984,
+      -0.40000000000000013,
+      0.6000000000000001,
+      0.5,
+      -0.10000000000000009
+    ],
+    "obrot270": [
+      0.7000000000000001,
+      -0.10000000000000009,
+      -0.30000000000000016,
+      -0.6000000000000001,
+      -0.10000000000000009,
+      0.6000000000000001,
+      -0.20000000000000007,
+      0.19999999999999984,
+      0.30000000000000004,
+      -0.10000000000000009,
+      -0.5000000000000001,
+      0.7000000000000001
+    ],
+    "obrot90": [
+      -0.30000000000000004,
+      -0.10000000000000009,
+      -0.5000000000000001,
+      0.7000000000000001,
+      -0.5000000000000001,
+      0.7000000000000001,
+      -0.20000000000000007,
+      0.4,
+      -0.6000000000000001,
+      -0.30000000000000016,
+      -0.30000000000000016,
+      -0.10000000000000009
+    ],
+    "skan": [
+      0.19999999999999984,
+      -0.20000000000000007,
+      -0.10000000000000009,
+      0.7000000000000001,
+      -0.10000000000000009,
+      -0.10000000000000009,
+      -0.20000000000000007,
+      0.30000000000000004,
+      0.30000000000000004,
+      0.30000000000000004,
+      -0.10000000000000009,
+      0.19999999999999984,
+      0.4,
+      0.7000000000000001,
+      -0.30000000000000004,
+      -0.5000000000000001,
+      -0.40000000000000013,
+      0.19999999999999984,
+      -0.30000000000000016,
+      -0.10000000000000009,
+      0.2999999999999998,
+      0.2999999999999998,
+      0.30000000000000004,
+      0.19999999999999984,
+      0.7000000000000001,
+      -0.10000000000000009,
+      -0.40000000000000013,
+      -0.10000000000000009,
+      -0.10000000000000009,
+      0.19999999999999984,
+      -0.10000000000000009,
+      -0.10000000000000009,
+      -0.30000000000000016,
+      -0.10000000000000009,
+      0.19999999999999984,
+      -0.5000000000000001,
+      -0.7000000000000001,
+      0.7000000000000001,
+      -0.10000000000000009,
+      -0.10000000000000009,
+      -0.10000000000000009,
+      0.19999999999999984,
+      -0.10000000000000009,
+      -0.20000000000000007,
+      -0.10000000000000009,
+      -0.10000000000000009,
+      0.7000000000000001,
+      -0.10000000000000009,
+      -0.10000000000000009
+    ],
+    "skos3": [
+      -2.9999999999999996,
+      -2.9999999999999996,
+      -2.9999999999999996,
+      -2.9999999999999996,
+      -2.9999999999999996,
+      -2.9999999999999996,
+      -2.9999999999999996,
+      -2.9999999999999996,
+      -2.9999999999999996,
+      -2.9999999999999996,
+      -2.9999999999999996,
+      -2.9999999999999996
+    ]
+  },
+  "summary": {
+    "skan": {
+      "none": {
+        "mean_rate": [
+          0.9769,
+          0.9635,
+          0.9886
+        ],
+        "delta_vs_none": null,
+        "ocr_s_per_page": 7.028,
+        "pre_s_per_page": 0.0
+      },
+      "rot": {
+        "mean_rate": [
+          0.9769,
+          0.9635,
+          0.9886
+        ],
+        "delta_vs_none": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ocr_s_per_page": 7.21,
+        "pre_s_per_page": 0.0
+      },
+      "deskew": {
+        "mean_rate": [
+          0.9656,
+          0.9503,
+          0.9797
+        ],
+        "delta_vs_none": [
+          -0.0113,
+          -0.0242,
+          0.0007
+        ],
+        "ocr_s_per_page": 6.965,
+        "pre_s_per_page": 0.1462
+      },
+      "rot+deskew": {
+        "mean_rate": [
+          0.9656,
+          0.9503,
+          0.9797
+        ],
+        "delta_vs_none": [
+          -0.0113,
+          -0.0242,
+          0.0007
+        ],
+        "ocr_s_per_page": 6.919,
+        "pre_s_per_page": 0.1436
+      },
+      "rot+deskew+otsu": {
+        "mean_rate": [
+          0.9229,
+          0.8971,
+          0.9469
+        ],
+        "delta_vs_none": [
+          -0.054,
+          -0.0788,
+          -0.0314
+        ],
+        "ocr_s_per_page": 7.184,
+        "pre_s_per_page": 0.1539
+      },
+      "otsu": {
+        "mean_rate": [
+          0.944,
+          0.9194,
+          0.9648
+        ],
+        "delta_vs_none": [
+          -0.0329,
+          -0.058,
+          -0.0126
+        ],
+        "ocr_s_per_page": 6.903,
+        "pre_s_per_page": 0.0075
+      }
+    },
+    "obrot90": {
+      "none": {
+        "mean_rate": [
+          0.5091,
+          0.4233,
+          0.5967
+        ],
+        "delta_vs_none": null,
+        "ocr_s_per_page": 10.442,
+        "pre_s_per_page": 0.0
+      },
+      "rot": {
+        "mean_rate": [
+          0.9702,
+          0.9451,
+          0.9905
+        ],
+        "delta_vs_none": [
+          0.4611,
+          0.3705,
+          0.5558
+        ],
+        "ocr_s_per_page": 11.059,
+        "pre_s_per_page": 0.0063
+      },
+      "deskew": {
+        "mean_rate": [
+          0.6741,
+          0.5994,
+          0.7568
+        ],
+        "delta_vs_none": [
+          0.165,
+          0.0618,
+          0.2695
+        ],
+        "ocr_s_per_page": 9.959,
+        "pre_s_per_page": 0.1983
+      },
+      "rot+deskew": {
+        "mean_rate": [
+          0.97,
+          0.9394,
+          1.0
+        ],
+        "delta_vs_none": [
+          0.4609,
+          0.3697,
+          0.5451
+        ],
+        "ocr_s_per_page": 11.55,
+        "pre_s_per_page": 0.1888
+      },
+      "rot+deskew+otsu": {
+        "mean_rate": [
+          0.926,
+          0.8676,
+          0.9792
+        ],
+        "delta_vs_none": [
+          0.4169,
+          0.2894,
+          0.5263
+        ],
+        "ocr_s_per_page": 12.992,
+        "pre_s_per_page": 0.2302
+      },
+      "otsu": {
+        "mean_rate": [
+          0.6456,
+          0.5718,
+          0.7092
+        ],
+        "delta_vs_none": [
+          0.1365,
+          0.0662,
+          0.21
+        ],
+        "ocr_s_per_page": 11.409,
+        "pre_s_per_page": 0.0098
+      }
+    },
+    "obrot180": {
+      "none": {
+        "mean_rate": [
+          0.6779,
+          0.6117,
+          0.7443
+        ],
+        "delta_vs_none": null,
+        "ocr_s_per_page": 17.723,
+        "pre_s_per_page": 0.0
+      },
+      "rot": {
+        "mean_rate": [
+          0.9745,
+          0.9491,
+          0.9948
+        ],
+        "delta_vs_none": [
+          0.2967,
+          0.2306,
+          0.3675
+        ],
+        "ocr_s_per_page": 18.912,
+        "pre_s_per_page": 0.0039
+      },
+      "deskew": {
+        "mean_rate": [
+          0.7083,
+          0.6364,
+          0.7786
+        ],
+        "delta_vs_none": [
+          0.0304,
+          -0.0173,
+          0.081
+        ],
+        "ocr_s_per_page": 20.032,
+        "pre_s_per_page": 0.454
+      },
+      "rot+deskew": {
+        "mean_rate": [
+          0.9688,
+          0.9167,
+          1.0
+        ],
+        "delta_vs_none": [
+          0.2909,
+          0.2388,
+          0.3485
+        ],
+        "ocr_s_per_page": 19.323,
+        "pre_s_per_page": 0.4123
+      },
+      "rot+deskew+otsu": {
+        "mean_rate": [
+          0.9344,
+          0.893,
+          0.9659
+        ],
+        "delta_vs_none": [
+          0.2565,
+          0.1886,
+          0.3256
+        ],
+        "ocr_s_per_page": 19.738,
+        "pre_s_per_page": 0.4428
+      },
+      "otsu": {
+        "mean_rate": [
+          0.6241,
+          0.5506,
+          0.6869
+        ],
+        "delta_vs_none": [
+          -0.0538,
+          -0.0896,
+          -0.0145
+        ],
+        "ocr_s_per_page": 18.132,
+        "pre_s_per_page": 0.0168
+      }
+    },
+    "obrot270": {
+      "none": {
+        "mean_rate": [
+          0.9404,
+          0.9103,
+          0.9656
+        ],
+        "delta_vs_none": null,
+        "ocr_s_per_page": 11.369,
+        "pre_s_per_page": 0.0
+      },
+      "rot": {
+        "mean_rate": [
+          0.9615,
+          0.9233,
+          0.9902
+        ],
+        "delta_vs_none": [
+          0.0211,
+          -0.0211,
+          0.0587
+        ],
+        "ocr_s_per_page": 11.852,
+        "pre_s_per_page": 0.006
+      },
+      "deskew": {
+        "mean_rate": [
+          0.9251,
+          0.8895,
+          0.9564
+        ],
+        "delta_vs_none": [
+          -0.0153,
+          -0.0506,
+          0.015
+        ],
+        "ocr_s_per_page": 11.416,
+        "pre_s_per_page": 0.2748
+      },
+      "rot+deskew": {
+        "mean_rate": [
+          0.9555,
+          0.9173,
+          0.9896
+        ],
+        "delta_vs_none": [
+          0.015,
+          -0.0223,
+          0.0483
+        ],
+        "ocr_s_per_page": 12.197,
+        "pre_s_per_page": 0.2689
+      },
+      "rot+deskew+otsu": {
+        "mean_rate": [
+          0.9159,
+          0.8603,
+          0.9694
+        ],
+        "delta_vs_none": [
+          -0.0245,
+          -0.0901,
+          0.0423
+        ],
+        "ocr_s_per_page": 12.866,
+        "pre_s_per_page": 0.2228
+      },
+      "otsu": {
+        "mean_rate": [
+          0.8994,
+          0.8461,
+          0.9416
+        ],
+        "delta_vs_none": [
+          -0.0411,
+          -0.0717,
+          -0.011
+        ],
+        "ocr_s_per_page": 11.732,
+        "pre_s_per_page": 0.0113
+      }
+    },
+    "skos3": {
+      "none": {
+        "mean_rate": [
+          0.9644,
+          0.9375,
+          0.9896
+        ],
+        "delta_vs_none": null,
+        "ocr_s_per_page": 5.837,
+        "pre_s_per_page": 0.0
+      },
+      "rot": {
+        "mean_rate": [
+          0.9644,
+          0.9375,
+          0.9896
+        ],
+        "delta_vs_none": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "ocr_s_per_page": 5.553,
+        "pre_s_per_page": 0.0
+      },
+      "deskew": {
+        "mean_rate": [
+          0.9599,
+          0.9295,
+          0.9896
+        ],
+        "delta_vs_none": [
+          -0.0046,
+          -0.0438,
+          0.0319
+        ],
+        "ocr_s_per_page": 5.863,
+        "pre_s_per_page": 0.1151
+      },
+      "rot+deskew": {
+        "mean_rate": [
+          0.9599,
+          0.9295,
+          0.9896
+        ],
+        "delta_vs_none": [
+          -0.0046,
+          -0.0438,
+          0.0319
+        ],
+        "ocr_s_per_page": 6.05,
+        "pre_s_per_page": 0.1279
+      },
+      "rot+deskew+otsu": {
+        "mean_rate": [
+          0.9315,
+          0.8903,
+          0.9653
+        ],
+        "delta_vs_none": [
+          -0.0329,
+          -0.0815,
+          0.0105
+        ],
+        "ocr_s_per_page": 5.694,
+        "pre_s_per_page": 0.1282
+      },
+      "otsu": {
+        "mean_rate": [
+          0.9752,
+          0.9509,
+          0.9948
+        ],
+        "delta_vs_none": [
+          0.0107,
+          -0.0245,
+          0.042
+        ],
+        "ocr_s_per_page": 5.261,
+        "pre_s_per_page": 0.0061
+      }
+    }
+  },
+  "rot_detect_summary": {
+    "obrot180": {
+      "pages": 12,
+      "correct": 12,
+      "wrong": []
+    },
+    "obrot270": {
+      "pages": 12,
+      "correct": 0,
+      "wrong": [
+        [
+          90,
+          270
+        ],
+        [
+          90,
+          270
+        ],
+        [
+          90,
+          270
+        ],
+        [
+          90,
+          270
+        ],
+        [
+          90,
+          270
+        ],
+        [
+          90,
+          270
+        ],
+        [
+          90,
+          270
+        ],
+        [
+          90,
+          270
+        ],
+        [
+          90,
+          270
+        ],
+        [
+          90,
+          270
+        ]
+      ]
+    },
+    "obrot90": {
+      "pages": 12,
+      "correct": 0,
+      "wrong": [
+        [
+          270,
+          90
+        ],
+        [
+          270,
+          90
+        ],
+        [
+          270,
+          90
+        ],
+        [
+          270,
+          90
+        ],
+        [
+          270,
+          90
+        ],
+        [
+          270,
+          90
+        ],
+        [
+          270,
+          90
+        ],
+        [
+          270,
+          90
+        ],
+        [
+          270,
+          90
+        ],
+        [
+          270,
+          90
+        ]
+      ]
+    },
+    "skan": {
+      "pages": 49,
+      "correct": 49,
+      "wrong": []
+    },
+    "skos3": {
+      "pages": 12,
+      "correct": 12,
+      "wrong": []
+    }
+  },
+  "rot_detect_s_per_page": 14.728,
+  "skew_detect_s_per_page": 0.0629,
+  "skew_summary": {
+    "obrot180": {
+      "mean": 0.06,
+      "min": -0.7,
+      "max": 0.7
+    },
+    "obrot270": {
+      "mean": 0.05,
+      "min": -0.6,
+      "max": 0.7
+    },
+    "obrot90": {
+      "mean": -0.09,
+      "min": -0.6,
+      "max": 0.7
+    },
+    "skan": {
+      "mean": 0.02,
+      "min": -0.7,
+      "max": 0.7
+    },
+    "skos3": {
+      "mean": -3.0,
+      "min": -3.0,
+      "max": -3.0
+    }
+  },
+  "versions": {
+    "python": "3.13.18",
+    "cpu_count": 8,
+    "machine": "x86_64",
+    "pypdfium2": "5.15.2",
+    "pypdf": "7.1.1",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "numpy": "2.5.5",
+    "pillow": "13.0.0",
+    "opencv-python-headless": "5.1.0.95"
+  },
+  "peak_rss_mb": 815.6
+}
