@@ -37,6 +37,11 @@ mypy_path = ["apps/backend", "packages/contracts"]
 explicit_package_bases = true
 cache_dir = ".ci/mypy"
 
+[[tool.mypy.overrides]]
+# pypdfium2 i Pillow (wersja przypięta przez rapidocr) nie mają tu stubów typów;
+# granicę z nimi typujemy ręcznie w pdf/reader.py (rzutowania na int/float/str).
+module = ["pypdfium2", "pypdfium2.*", "PIL", "PIL.*"]
+ignore_missing_imports = true
+
 [tool.datamodel-codegen]
 builtin-format-line-length = 88
-
