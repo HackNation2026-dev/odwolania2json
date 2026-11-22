@@ -2,6 +2,7 @@
 
 ## Nieopublikowane — 0.8.0
 
+- Reguły czynności i pól słabych (Z05) w `domain/czynnosc.py` (powód, opis ze słownika, dzień, numer BZP z dowodem w tekście, imię pełnomocnika z dowodem, `refine_appeal`); replay 25 spraw: ΔF1 +0,018 [+0,013; +0,024]; mutacje 67/67.
 - Normalizatory (Z07): NIP/REGON/KRS z grupami cyfr, kwoty z separatorem tysięcy (niejednoznaczny zapis daje `None`), daty (rok dwucyfrowy, miesiąc rzymski, `RRRR/MM/DD`, dzień słowny), TED ze spacjami, `rank_by_checksum`; mutacje `normalize.py` 291/291 zabitych.
 - Dopisano do ADR-002 podział etapów (pip na etapie 1, GUI na prezentacji), punktację GUI i otwarte decyzje: biblioteka komponentów, podgląd PDF, model pól wg kontraktu.
 - Dodano [przepływ urzędnika](docs/04-architektura/gui/user-flow-urzednik.md): pełny przebieg operatora, widoczne etapy przetwarzania, naprawa błędów, korekty i wersjonowanie po MVP, eksport wariantu A oraz osobne dowody.

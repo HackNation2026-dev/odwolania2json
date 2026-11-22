@@ -101,19 +101,9 @@ Tylko to, co zostało do zrobienia. Wyniki i uzasadnienia: [raport eksperymentó
 
 ## Zadania P1 (zwiększają F1 po Z01–Z04)
 
-### Z05. Słabe pola: czynność, numer BZP, imię pełnomocnika
+### ~~Z05. Słabe pola: czynność, numer BZP, imię pełnomocnika~~ (zrobione, bez `extract_poa`)
 
-**Cel.** 123 z 137 FP tekstu pochodzi z czterech pól: `numer_bzp` (47 FP, F1 0,593), `czynnosc_opis` (27), `czynnosc_powod_id` (25), `pelnomocnik.imie_nazwisko` (24). Reguły E09 mają F1 0,993 (id 48/49, data 49/49), a ścieżka pionowa LLM ok. 0,83–0,84 dla tych pól.
-
-**Przeczytaj.** `pola/E09/README.md`, `pola/rules.py` (`first_act_text`, `classify_powod`, `extract_act`, `extract_poa`), `pola/e09_prompt_v2.py`, `pola/E20/README.md`, `llm-e2e/E10/wyniki.json` (rozbicie per pole), słownik 12 powodów: `packages/contracts/odwolania2json_contracts/powody.py` i `docs/02-materialy/organizator-uzp/` (`czynnosc_powod_id_dict.md`, wersja `main`).
-
-**Kroki.**
-1. Przenieś reguły `classify_powod` i `extract_act` do produktu (`domain/czynnosc.py`) z testami na wszystkich 147 dokumentach rozwojowych (oczekiwany wynik z referencji) i na 8 przypadkach luk (powód 12, brak pełnomocnika; dane syntetyczne E20 `pola/gaps.py`, oznacz je jako syntetyczne).
-2. Strategia: reguły są źródłem `czynnosc_powod_id`, `czynnosc_opis` (literalnie ze słownika) i `czynnosc_dzien`; LLM tylko jako kontrola przy braku wyniku reguł. Para id↔opis walidowana kodem.
-3. `numer_bzp`: wzorzec i normalizacja z E08/E19, odrzucenie wartości bez dowodu w tekście (`pola/E08`); `pelnomocnik.imie_nazwisko`: wartość tylko jeśli występuje w tekście dokładnie lub po normalizacji wielkości liter; w pozostałych przypadkach `null`.
-4. Ponownie zmierz F1 per pole na 25 sprawach (`llm-e2e/subset_dev.json`) przed i po zmianie; zapisz ΔF1 z przedziałem (bootstrap po sprawach).
-
-**Kryteria akceptacji.** Oczekiwany zysk ok. +0,01–0,02 F1 na tekście (hipoteza; podaj faktyczny z przedziałem); testy i mutacje dla nowych modułów w zakresie zielone.
+Reguły czynności i pola słabe w `domain/czynnosc.py` (`extract_act`, `find_bzp`, `validate_bzp`, `validate_representative_name`, `refine_appeal`), testy na 147 dokumentach rozwojowych i 8 + 8 lukach syntetycznych, mutacje 67/67. Replay 25 spraw: ΔF1 całości +0,018 [+0,013; +0,024], `numer_bzp` +0,364; opis i ograniczenia w `experiments/2026-11-21-wybor-modulow/produkt/E-czynnosc.md`. **Do zrobienia:** podłączenie `refine_appeal` do pipeline'u (Z01) i przeniesienie `extract_poa` (pola pełnomocnictwa) tylko jeśli pomiar pokaże zysk.
 
 ### Z06. Skany i strona zdominowana obrazem (S5)
 
