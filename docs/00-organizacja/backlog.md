@@ -33,6 +33,21 @@ Kolejność wynika z [warunków wejścia do implementacji](../04-architektura/ar
 
 Rozszerzenia T2, T4, analiza regionów włączamy tylko po poprawie F1 na zbiorze rozwojowym (architektura §3).
 
+## Zadania z eksperymentów (2026-11-22)
+
+Źródło: [raport wyboru modułów](../../experiments/2026-11-21-wybor-modulow/RAPORT.md). To hipotezy z uprzęży i zbioru rozwojowego, nie fakty o produkcie; każda wymaga testu i ADR.
+
+| Nr | Zadanie | Dowód ukończenia |
+|---|---|---|
+| E-1 | Nie ufać warstwie tekstu stron zdominowanych przez obraz (S5: poprawny skan z błędną niewidoczną warstwą daje F1 0,000 przy `complete`): obraz strony do LLM albo kontrola zgodności warstwy z OCR próbki | test S5 w produkcie, F1 S5 ≥ wariant z obrazem (E11) |
+| E-2 | Polityka braków: eksportować `partial` z flagą, nie zerować pola bez kotwicy, bbox nie decyduje o treści JSON (E17: −0,021 i −0,208 F1) | zmiana architektury §4.5/§10 i ADR |
+| E-3 | Parser PDF w procesie potomnym z limitem pamięci i czasu (samoodwołujący się XObject ubija serwer) | test bomby PDF kończy się `technical_error`, serwer żyje |
+| E-4 | Backend: walidacja Host/Origin, limit ciała żądania, jeden nagłówek klucza LLM i walidacja `base_url`, limit budżetu wywołań, trwały stan wsadu po `kill -9`, limit kolejki | testy z E12–E15 przeniesione do produktu |
+| E-5 | Normalizatory: NIP/REGON/KRS ze spacjami i myślnikami, kwota `1.000,50`, daty skrócone i rzymskie miesiące; sumy kontrolne tylko jako sygnał | testy E19, zero przeżytych mutantów |
+| E-6 | OCR konfigurowany w pikselach dłuższego boku; wykrywanie obrotu tak, deskew i binaryzacja nie | test konfiguracji, wynik E03 |
+| E-7 | Kotwiczenie cytatów: cytat z kontekstem, słowa OCR drobniejsze niż linia (dziś 86% jednoznacznych na PDF, 73% poprawnych bbox na OCR) | ≥ 95% jednoznacznych na rozwojowym |
+| E-8 | Dokończyć brakujące eksperymenty: pomiar czasu w cichej maszynie, wariant D na skanach (57 z 150), zbiór kontrolny (jeden przebieg), fizyczne skany ok. 10 spraw, drugi dostawca LLM | raport uzupełniony; licznik użyć zbioru kontrolnego |
+
 ## Znane długi
 
 | Dług | Szczegóły | Jak naprawić |
