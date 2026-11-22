@@ -26,7 +26,7 @@ Tylko to, co zostało do zrobienia. Wyniki i uzasadnienia: [raport eksperymentó
 
 ### Z01. Silnik produktu: przenieść ścieżkę z uprzęży do `process`
 
-**Stan (2026-11-22):** w `main` są klocki: klient LLM (`llm/client.py`, patrz Z04), serializer (`serialize.py`, patrz Z02) i błędy (`errors.py`). **Nie ma** czytnika PDF, adaptera OCR, promptu, pipeline’u ani podpięcia do `process`: `StubEngine` nadal zapisuje `{}`. Niedokończony szkic czytnika i adaptera OCR (bez testów, bez typów dla `pypdfium2`) jest w `experiments/2026-11-21-wybor-modulow/produkt-szkic/` (instrukcja przeniesienia w jego README). Zacznij od testów dla czytnika i OCR, potem prompt p2, pipeline i podpięcie.
+**Stan (2026-11-22, po M1):** ~~czytnik PDF, prompt p2, pipeline, `Engine`, podpięcie do `process`, konfiguracja LLM, test integracyjny na `przyklad_01`~~ zrobione (PR #28, #29, #31, #33). `process` robi prawdziwą ekstrakcję dla PDF-ów z warstwą tekstu. **Zostaje:** (a) podpięcie adaptera OCR (`ocr/rapid.py`) do `Engine` przez protokół `PageOcr` z `extract/ports.py` (dziś strona skanowa = `ocr_unavailable` w raporcie) i obraz strony dla LLM (Z06); (b) pomiar z prawdziwym LLM: nie wykonany, bo MiniMax zwracał HTTP 429; wznowienie opisuje [E-produkt](../../experiments/2026-11-21-wybor-modulow/produkt/E-produkt.md) (`scripts/eval_process.py`); (c) podpięcie reguł `refine_appeal` (Z05) do pipeline'u; (d) `python scripts/ci.py --stage all` przed wydaniem.
 
 **Cel.** Polecenie `python -m odwolania2json process input output` wykonuje prawdziwą ekstrakcję zamiast `StubEngine` (zapis `{}`). Zakres minimalny: pdfium, diagnoza strony, OCR gdy potrzebny, jedno wywołanie LLM na dokument, normalizatory, serializer z szablonu klasy. **Bez** `DataRepository`, HTTP, etapów L, T2, T4 i cache (ocena Fable: nie wpływają na wynik).
 
@@ -47,7 +47,7 @@ Tylko to, co zostało do zrobienia. Wyniki i uzasadnienia: [raport eksperymentó
 
 ### Z02. Zawsze plik wyniku, polityka awarii i serializer bez `prune`
 
-**Stan (2026-11-22):** serializer z szablonu klasy (jawne `null`, bez `prune`) jest w `main` z testami (`serialize.py`, `tests/unit/test_serialize.py`). **Zostaje:** ADR-006 z polityką eksportu, adnotacje w architekturze §4.5/§10, polityka awarii w `engine.run_process` (zawsze plik, raport, kod wyjścia), test round-trip na wszystkich 180 plikach referencyjnych (sprawdź, czy już jest w `test_serialize.py`).
+**Stan (2026-11-22, po M1):** ~~serializer, ADR-006, adnotacje w architekturze §4.5/§10, polityka awarii w `run_process` (zawsze plik, `report.jsonl`, kody wyjścia), test `.PDF`, round-trip 180 referencji~~ zrobione (PR #31; round-trip jest w `tests/unit/test_serialize.py`). **Zostaje:** odpowiedź mentora, jak ewaluator liczy brak pliku (przełącznik `ERROR_EXPORT` zostaje do tego czasu).
 
 **Cel.** Dla każdego pliku wejściowego powstaje JSON (README organizatora §2 pkt 4). Jedna polityka w trzech miejscach, które dziś się różnią: architektura §10 (`empty_json`), `engine.py` (brak pliku i usunięcie poprzedniego), uprząż (brak pliku przy awarii LLM i 409 przy `ambiguous`).
 
@@ -83,7 +83,7 @@ Tylko to, co zostało do zrobienia. Wyniki i uzasadnienia: [raport eksperymentó
 
 ### Z04. LLM: odporność, limity i decyzja o dostawcy
 
-**Stan (2026-11-22):** część kodowa klienta jest w `main` (`llm/client.py`, 646 linii testów: ponowienia z `Retry-After`, kody błędów, walidacja `base_url`, klucz w jednym nagłówku, kanarek). **Zostaje:** self-check przed wsadem podpięty do `process`, limity wywołań na wsad w silniku, test kanarka po artefaktach pełnego przebiegu oraz cała część „decyzja” (zgoda mentora na MiniMax albo drugi dostawca, klucz dla jury).
+**Stan (2026-11-22, po M1):** ~~klient z ponowieniami, self-check przed wsadem podpięty do `process`, limit wywołań i tokenów na wsad, test kanarka po artefaktach przebiegu, łańcuch dostawców z zapasowym (ADR-007)~~ zrobione (PR #31, #33). **Zostaje:** cała część „decyzja” (zgoda mentora na MiniMax albo drugi dostawca z UE, klucz dla jury); zgodność dostawcy zapasowego (GLM przez OpenCode) z wymogiem UE/EOG jest nieznana; pomiar F1 na dostawcy zapasowym nie został wykonany.
 
 **Cel.** Wywołanie LLM nie może zerować wyniku wsadu: ponowienia, limity, jawne kody; plus rozstrzygnięcie dostawcy zgodnie z wymogiem „firma i serwery w UE/EOG, open source”.
 

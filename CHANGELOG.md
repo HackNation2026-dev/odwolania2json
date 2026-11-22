@@ -2,6 +2,11 @@
 
 ## Nieopublikowane — 0.8.0
 
+- **`process` wykonuje prawdziwą ekstrakcję dokumentów tekstowych** (Z01, M1): czytnik PDF na pdfium z diagnozą strony (`pdf/reader.py`), prompt p2 bajtowo zgodny z E10 (`extract/prompt.py`), schemat odpowiedzi LLM (`extract/answer.py`), pipeline z normalizatorami i uzgadnianiem pary powodu (`extract/pipeline.py`), silnik `Engine` z opcjonalnym dostawcą OCR (`PageOcr`). Na zapisanych odpowiedziach E10 pipeline produktu daje F1 przybliżony 0,938 [0,910; 0,960]; pomiar z prawdziwym LLM nie został wykonany (MiniMax: HTTP 429), stan w [E-produkt](experiments/2026-11-21-wybor-modulow/produkt/E-produkt.md). Skany czekają na podpięcie OCR.
+- Polityka eksportu ([ADR-006](docs/07-decyzje/ADR-006-polityka-eksportu.md), Z02): plik wyniku dla każdego wejścia (także `.PDF`), błąd techniczny to `{}` + wpis w `report.jsonl` + kod wyjścia 1, poprzedni wynik nie jest usuwany, przełącznik `ERROR_EXPORT`; adnotacje w architekturze §4.5 i §10.
+- Konfiguracja i self-check LLM (Z04): `LLM_API_KEY_FILE`, `LLM_PROTOCOL`, `LLM_ALLOWED_HOSTS`, limity; próba połączenia przed wsadem (401/403/429 → kod 2 bez przetwarzania); `process` bez argumentów używa `input`/`output`.
+- Łańcuch dostawców LLM z zapasowym ([ADR-007](docs/07-decyzje/ADR-007-zapasowy-dostawca-llm.md)): `LLM_FALLBACK_*`, wspólny budżet wywołań i tokenów, ślad dostawcy w raporcie, ostrzeżenie `llm_primary_unauthorized`; zgodność dostawcy zapasowego z wymogiem UE/EOG jest nieznana.
+- `scripts/eval_process.py`: pomiar `process` na sprawach rozwojowych (wznawianie, budżet wywołań, F1 per klasa i pole z bootstrapem po sprawach).
 - Reguły czynności i pól słabych (Z05) w `domain/czynnosc.py` (powód, opis ze słownika, dzień, numer BZP z dowodem w tekście, imię pełnomocnika z dowodem, `refine_appeal`); replay 25 spraw: ΔF1 +0,018 [+0,013; +0,024]; mutacje 67/67.
 - Normalizatory (Z07): NIP/REGON/KRS z grupami cyfr, kwoty z separatorem tysięcy (niejednoznaczny zapis daje `None`), daty (rok dwucyfrowy, miesiąc rzymski, `RRRR/MM/DD`, dzień słowny), TED ze spacjami, `rank_by_checksum`; mutacje `normalize.py` 291/291 zabitych.
 - Dopisano do ADR-002 podział etapów (pip na etapie 1, GUI na prezentacji), punktację GUI i otwarte decyzje: biblioteka komponentów, podgląd PDF, model pól wg kontraktu.
