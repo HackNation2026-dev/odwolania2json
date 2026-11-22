@@ -124,7 +124,7 @@ Tylko to, co zostało do zrobienia. Wyniki i uzasadnienia: [raport eksperymentó
 **Kroki.**
 1. Diagnoza strony: gdy obraz pokrywa stronę (pokrycie > ok. 0,5) lub wykryto niewidoczny tekst (biały, 1 pt, poza MediaBox, tryb renderowania 3), strona jest „skanowa”: **pomiń warstwę PDF**, OCR strony, tekst z OCR.
 2. Dla stron skanowych wyślij do LLM obraz strony (≤ 2000 px dłuższego boku) razem z tekstem OCR; porównaj z wariantem „tylko obraz” (C) na S5 i skanach (`odczyt/zestaw`, `llm-e2e/specs`); wybierz wariant regułą z prerejestracji (dolna granica ΔF1 > 0).
-3. Wykrywanie obrotu 90/180 jako warunek OCR (E03: +0,46 i +0,30); skos > 3° i zdjęcia telefonem są niezmierzone: dodaj do listy otwartej, nie implementuj deskew (szkodzi, −0,011).
+3. ~~Wykrywanie obrotu 90/180 jako warunek OCR (E03: +0,46 i +0,30)~~ (zrobione w adapterze `ocr/rapid.py`, z testami; podłączenie do silnika to Z01). Skos > 3° i zdjęcia telefonem są niezmierzone: dodaj do listy otwartej, nie implementuj deskew (szkodzi, −0,011).
 4. Testy: dokument S5 z zestawu (`odczyt/ZESTAW.md`, `load_zestaw`) → wynik nie zawiera wartości z błędnej warstwy; strona tekstowa bez zmian (0 z 514 niepotrzebnie do OCR).
 
 **Kryteria akceptacji.** S5 F1 ≥ ok. 0,90 (referencja C 0,927); brak regresji na stronach tekstowych; opis w `odczyt/E04` zaktualizowany.
