@@ -9,8 +9,11 @@ from __future__ import annotations
 
 import json
 import shutil
+from contextlib import closing
+from io import BytesIO
 from pathlib import Path
 
+import pypdfium2 as pdfium
 import pytest
 from odwolania2json import cli
 from odwolania2json.cli import main
@@ -18,7 +21,9 @@ from odwolania2json.config import Settings
 from odwolania2json.engine import REPORT_NAME
 from odwolania2json.llm.client import LlmClient
 from odwolania2json.loader import MATERIALS_DIR
-from support.llm import FakeLlmServer, answer, fields_from_reference
+from PIL import Image, ImageDraw, ImageFont
+from support.llm import FakeLlmServer, answer, field, fields_from_reference
+from support.pdfs import Run, build_pdf
 
 CASE = MATERIALS_DIR / "dane" / "przyklad_01"
 FOREIGN = MATERIALS_DIR / "dane" / "negatywne" / "KIO_KIO 2617-21.pdf"
@@ -124,3 +129,74 @@ def test_process_report_has_classes_and_no_document_content(
     # Raport nie niesie treści dokumentów: nazwy stron, numery i nazwiska zostają w wyniku.
     for fragment in ("Belmoria", "9999405188", "Kaczmarek"):
         assert fragment not in report_text
+
+
+def _pdf_with_scanned_page(mixed: bool) -> bytes:
+    """Skan niesie wartość wyłącznie na obrazie, także przy błędnej ukrytej warstwie."""
+    pages = (
+        [[Run("Strona tekstowa")], [Run("FALSZYWY NUMER 9999", render_mode=3)]] if mixed else [[]]
+    )
+    with Image.new("RGB", (900, 600), "white") as raster, BytesIO() as jpeg:
+        ImageDraw.Draw(raster).text(
+            (60, 150), "NUMER 2026", fill="black", font=ImageFont.load_default(size=72)
+        )
+        raster.save(jpeg, format="JPEG")
+        jpeg.seek(0)
+        with (
+            closing(pdfium.PdfDocument(build_pdf(pages))) as document,
+            closing(document[len(pages) - 1]) as page,
+            BytesIO() as rendered,
+        ):
+            image = pdfium.PdfImage.new(document)
+            image.load_jpeg(jpeg, inline=True, autoclose=False)
+            image.set_matrix(pdfium.PdfMatrix().scale(*page.get_size()))
+            page.insert_obj(image)
+            page.gen_content()
+            document.save(rendered)
+            return rendered.getvalue()
+
+
+@pytest.mark.slow_ocr
+@pytest.mark.parametrize("mixed", [False, True], ids=["scan", "mixed-with-hidden-text"])
+def test_process_reads_scanned_pages_with_default_settings(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, mixed: bool
+) -> None:
+    input_dir = tmp_path / "input"
+    output_dir = tmp_path / "output"
+    input_dir.mkdir()
+    (input_dir / "dokument.pdf").write_bytes(_pdf_with_scanned_page(mixed))
+
+    def respond(text: str) -> dict[str, object] | str:
+        if not text.startswith("[[strona 1]]"):
+            return "OK"
+        assert "9999" not in text
+        if mixed:
+            assert "Strona tekstowa" in text.split("[[strona 2]]")[0]
+        if "2026" not in text.split(f"[[strona {2 if mixed else 1}]]")[-1]:
+            return answer("foreign")
+        return answer("bank_transfer", field("/przelew_bankowy/numer_transakcji", "2026"))
+
+    server = FakeLlmServer(respond)
+    monkeypatch.delenv("OCR_ENABLED", raising=False)
+    monkeypatch.setattr(cli, "build_llm_client", lambda settings: server.client())
+
+    assert main(["process", str(input_dir), str(output_dir)]) == 0
+    result = json.loads((output_dir / "dokument.json").read_text(encoding="utf-8"))
+    assert result["przelew_bankowy"]["numer_transakcji"] == "2026"
+    record = json.loads((output_dir / REPORT_NAME).read_text(encoding="utf-8"))
+    assert (record["status"], record["errors"], record["unprocessed"]) == ("ok", [], [])
+
+
+def test_process_can_disable_ocr(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    input_dir = tmp_path / "input"
+    output_dir = tmp_path / "output"
+    input_dir.mkdir()
+    (input_dir / "skan.pdf").write_bytes(_pdf_with_scanned_page(False))
+    server = FakeLlmServer(["OK"])
+    monkeypatch.setenv("OCR_ENABLED", "0")
+    monkeypatch.setattr(cli, "build_llm_client", lambda settings: server.client())
+
+    assert main(["process", str(input_dir), str(output_dir)]) == 1
+    record = json.loads((output_dir / REPORT_NAME).read_text(encoding="utf-8"))
+    assert record["status"] == "technical_error"
+    assert record["errors"][0]["code"] == "ocr_unavailable"

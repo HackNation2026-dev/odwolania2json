@@ -4,9 +4,9 @@ Konwerter PDF-ów spraw odwoławczych (odwołanie, pełnomocnictwo, przelew) do 
 
 ## Stan implementacji (sprawdzony w kodzie)
 
-> **Polecenie `process` wykonuje ekstrakcję dla dokumentów tekstowych** (PDF z warstwą tekstu): czytnik PDF, diagnoza stron, jedno wywołanie LLM na dokument (klasa i pola), normalizacja i zapis JSON według wzorców organizatora. Dla każdego pliku wejściowego powstaje plik wyniku, a przebieg zostawia raport `report.jsonl` ([ADR-006](docs/07-decyzje/ADR-006-polityka-eksportu.md)).
+> **Polecenie `process` obsługuje PDF-y tekstowe, skany i dokumenty mieszane.** Czytnik diagnozuje strony, a LLM dostaje odczytany tekst do rozpoznania klasy i pól. Wynik przechodzi normalizację i zapis JSON według wzorców organizatora. Wyniki i błędy wsadu opisuje `report.jsonl` ([ADR-006](docs/07-decyzje/ADR-006-polityka-eksportu.md)).
 >
-> **Skany czekają na OCR.** Strona bez wiarygodnej warstwy tekstu (skan, strona zdominowana obrazem, tekst niewidoczny) jest dziś oznaczana w raporcie kodem `ocr_unavailable`; wynik powstaje z pozostałych stron, a dokument złożony z samych skanów dostaje `{}` i błąd techniczny. Adapter OCR jest w repozytorium (`apps/backend/odwolania2json/ocr/`), a jego podpięcie do silnika to osobne zadanie.
+> **OCR działa domyślnie.** Dla strony bez wiarygodnej warstwy tekstu `process` używa wyniku RapidOCR. Ustaw `OCR_ENABLED=0`, aby wyłączyć OCR. Strony wymagające wyłączonego lub niedostępnego OCR dostają w raporcie kod `ocr_unavailable`.
 >
 > Liczby jakości (F1 przybliżony) dla produktu: [E-produkt](experiments/2026-11-21-wybor-modulow/produkt/E-produkt.md); pozostałe pochodzą z uprzęży pomiarowej w `experiments/`: [raport eksperymentów](experiments/2026-11-21-wybor-modulow/RAPORT.md).
 
@@ -33,6 +33,17 @@ set LLM_API_KEY=...      & set LLM_BASE_URL=https://adres-api/v1 & set LLM_MODEL
 ```
 
 Przed wsadem program wykonuje jedno krótkie wywołanie próbne (self-check). Odrzucony klucz (401/403), wyczerpany limit (429) albo zły adres kończą pracę kodem 2 z komunikatem, bez przetwarzania wsadu. Bez terminala brak klucza jest jawnym błędem; w terminalu program zapyta o klucz z ukryciem znaków.
+
+### Próba pomiaru MiniMax
+
+Podaj ścieżkę do pliku z aktywnym kluczem API poza repozytorium. Osobny katalog pomiaru rozdziela wyniki różnych wersji modelu.
+
+```sh
+python scripts/eval_process.py \
+  --protocol anthropic --base-url https://api.minimax.io/anthropic/v1/messages \
+  --model MiniMax-M3.1-Flash --key-file "$MINIMAX_KEY_FILE" \
+  --work .ci/eval-minimax-m31-flash --max-docs 10 --call-budget 200
+```
 
 ### Dostawca zapasowy (opcjonalny)
 
@@ -100,11 +111,11 @@ python3 scripts/verify_install.py --python python3.13
 
 Skrypt tworzy tymczasowe środowisko, instaluje `requirements.txt` z PyPI, sprawdza obecność wag OCR w kole i uruchamia `process` na trzech małych PDF-ach z lokalną atrapą LLM (`LLM_BASE_URL` wskazuje na `127.0.0.1`). Kody: 0 OK, 1 błąd, 3 SKIP (brak sieci do PyPI; jawnie, nie jako sukces). Test pytest: `O2J_VERIFY_INSTALL=1 python -m pytest tests/unit/test_delivery.py -m slow_install`.
 
-**Windows: do uruchomienia przez człowieka** (zespół nie ma maszyny z Windows do testów zdalnych). W PowerShellu w katalogu repozytorium:
+**Windows.** W PowerShellu w katalogu repozytorium uruchom:
 
 ```bat
-py -3.13 scripts\verify_install.py --python py
-start.bat
+py -3.13 scripts\verify_install.py
+.\start.bat
 ```
 
 Pierwsze polecenie sprawdza instalację; wynik `OK instalacja`, `OK wagi OCR`, `OK process` oznacza powodzenie. Zgłoś wynik w zadaniu Z03.

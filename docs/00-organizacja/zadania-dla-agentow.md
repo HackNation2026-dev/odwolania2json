@@ -26,7 +26,7 @@ Tylko to, co zostało do zrobienia. Wyniki i uzasadnienia: [raport eksperymentó
 
 ### Z01. Silnik produktu: przenieść ścieżkę z uprzęży do `process`
 
-**Stan (2026-11-22, po M1):** ~~czytnik PDF, prompt p2, pipeline, `Engine`, podpięcie do `process`, konfiguracja LLM, test integracyjny na `przyklad_01`~~ zrobione (PR #28, #29, #31, #33). `process` robi prawdziwą ekstrakcję dla PDF-ów z warstwą tekstu. **Zostaje:** (a) podpięcie adaptera OCR (`ocr/rapid.py`) do `Engine` przez protokół `PageOcr` z `extract/ports.py` (dziś strona skanowa = `ocr_unavailable` w raporcie) i obraz strony dla LLM (Z06); (b) pomiar z prawdziwym LLM: nie wykonany, bo MiniMax zwracał HTTP 429; wznowienie opisuje [E-produkt](../../experiments/2026-11-21-wybor-modulow/produkt/E-produkt.md) (`scripts/eval_process.py`); (c) podpięcie reguł `refine_appeal` (Z05) do pipeline'u; (d) `python scripts/ci.py --stage all` przed wydaniem.
+**Stan (2026-11-22):** ~~czytnik PDF, prompt p2, pipeline, `Engine`, podpięcie do `process`, konfiguracja LLM, test integracyjny na `przyklad_01`~~ zrobione (PR #28, #29, #31, #33). ~~Podpięcie RapidOCR do `process` przez `PageOcr`~~ zrobione, z testem skanu i PDF-u mieszanego z błędną niewidoczną warstwą. **Zostaje:** (a) porównanie wariantów z obrazem strony dla LLM (Z06); (b) pomiar z prawdziwym LLM, opisany w [E-produkt](../../experiments/2026-11-21-wybor-modulow/produkt/E-produkt.md) (`scripts/eval_process.py`); (c) podpięcie reguł `refine_appeal` (Z05) do pipeline'u; (d) `python scripts/ci.py --stage all` przed wydaniem.
 
 **Cel.** Polecenie `python -m odwolania2json process input output` wykonuje prawdziwą ekstrakcję zamiast `StubEngine` (zapis `{}`). Zakres minimalny: pdfium, diagnoza strony, OCR gdy potrzebny, jedno wywołanie LLM na dokument, normalizatory, serializer z szablonu klasy. **Bez** `DataRepository`, HTTP, etapów L, T2, T4 i cache (ocena Fable: nie wpływają na wynik).
 
@@ -109,12 +109,14 @@ Reguły czynności i pola słabe w `domain/czynnosc.py` (`extract_act`, `find_bz
 
 **Cel.** S5 (poprawny obraz + błędna niewidoczna warstwa tekstu) daje F1 0,000 przy `complete`; skan kosztuje −0,083 F1. Warstwa tekstu takiej strony nie może wejść do wyniku.
 
+**Stan (2026-11-22).** `process` używa tekstu z RapidOCR na stronach zakwalifikowanych jako skany. Test integracyjny z prawdziwym OCR i atrapą LLM obejmuje skan i PDF mieszany z błędną niewidoczną warstwą. Pomiar jakości oraz porównanie obrazu z tekstem OCR pozostają do wykonania.
+
 **Przeczytaj.** `odczyt/BLOKERY.md` pkt 6, `odczyt/E04/README.md`, `E03/README.md`, `llm-e2e/E11/README.md` (S5: A 0,625, B 0,724, C 0,927, D 0,876 n=11: D nie wygrywa z C), `atak/E13/README.md` (detektor ukrytego tekstu 5/5 i 49/49 S5, 5/159 fałszywych alarmów), `harness/reading.py` (`read_document` dokleja słowa OCR do błędnej warstwy).
 
 **Kroki.**
 1. Diagnoza strony: gdy obraz pokrywa stronę (pokrycie > ok. 0,5) lub wykryto niewidoczny tekst (biały, 1 pt, poza MediaBox, tryb renderowania 3), strona jest „skanowa”: **pomiń warstwę PDF**, OCR strony, tekst z OCR.
 2. Dla stron skanowych wyślij do LLM obraz strony (≤ 2000 px dłuższego boku) razem z tekstem OCR; porównaj z wariantem „tylko obraz” (C) na S5 i skanach (`odczyt/zestaw`, `llm-e2e/specs`); wybierz wariant regułą z prerejestracji (dolna granica ΔF1 > 0).
-3. ~~Wykrywanie obrotu 90/180 jako warunek OCR (E03: +0,46 i +0,30)~~ (zrobione w adapterze `ocr/rapid.py`, z testami; podłączenie do silnika to Z01). Skos > 3° i zdjęcia telefonem są niezmierzone: dodaj do listy otwartej, nie implementuj deskew (szkodzi, −0,011).
+3. ~~Wykrywanie obrotu 90/180 jako warunek OCR (E03: +0,46 i +0,30)~~ (zrobione w adapterze `ocr/rapid.py` używanym przez `process`). Skos > 3° i zdjęcia telefonem są niezmierzone: dodaj do listy otwartej, nie implementuj deskew (szkodzi, −0,011).
 4. Testy: dokument S5 z zestawu (`odczyt/ZESTAW.md`, `load_zestaw`) → wynik nie zawiera wartości z błędnej warstwy; strona tekstowa bez zmian (0 z 514 niepotrzebnie do OCR).
 
 **Kryteria akceptacji.** S5 F1 ≥ ok. 0,90 (referencja C 0,927); brak regresji na stronach tekstowych; opis w `odczyt/E04` zaktualizowany.

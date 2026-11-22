@@ -166,8 +166,10 @@ def _run_process(arguments: argparse.Namespace, sleep: Callable[[float], None]) 
     sprawdzamy połączenie raz przed wsadem i kończymy kodem 2 z komunikatem.
     """
     from .engine import EXIT_OK, EXIT_USAGE, Engine, ErrorExport, find_pdfs, run_process
+    from .ocr.page import PageOcrAdapter
+    from .ocr.rapid import RapidOcr
 
-    settings = Settings.from_env()
+    settings = Settings.from_env(default_ocr=True)
     input_dir = Path(arguments.input_dir) if arguments.input_dir else settings.input_dir
     output_dir = Path(arguments.output_dir) if arguments.output_dir else settings.output_dir
     if not input_dir.is_dir():
@@ -187,7 +189,8 @@ def _run_process(arguments: argparse.Namespace, sleep: Callable[[float], None]) 
         print("wsad nie został przetworzony", file=sys.stderr)
         return EXIT_USAGE
     error_export: ErrorExport = "no_file" if settings.error_export == "no_file" else "empty_json"
-    exit_code = run_process(input_dir, output_dir, Engine(client), error_export=error_export)
+    ocr = PageOcrAdapter(RapidOcr()) if settings.ocr_enabled else None
+    exit_code = run_process(input_dir, output_dir, Engine(client, ocr), error_export=error_export)
     _print_usage(client)
     return exit_code
 

@@ -25,8 +25,8 @@ for line in page.lines:
   `PIL.Image.rotate`), o który obrócono obraz.
 - Linia może nie mieć słów (silnik ich nie podał); wtedy `text` jest dostępny, a `words` puste.
 
-Dopasowanie do protokołu `PageOcr` z `extract/ports.py` (jeśli się różni) to zadanie czytnika:
-adapter celowo nie zna typów czytnika PDF.
+`process` przekazuje dostawcę do silnika przez `PageOcrAdapter`, który dopasowuje wynik do
+protokołu `PageOcr` z `extract/ports.py` i zachowuje współrzędne w pikselach.
 
 ## Ustalenia z eksperymentów
 
