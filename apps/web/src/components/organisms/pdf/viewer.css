@@ -1,0 +1,98 @@
+.pdf-viewer {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.pdf-viewer .rpe-root {
+  --rpe-bg: var(--pdf-canvas);
+  --rpe-white: var(--pdf-page);
+  --rpe-ink: var(--text);
+  --rpe-muted: var(--muted);
+  --rpe-border: var(--border);
+  --rpe-accent: var(--primary);
+}
+.pdf-viewer .rpe-body {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.pdf-viewer .pdf-thumbnails {
+  display: none;
+  overflow: auto;
+  background: var(--surface);
+}
+.pdf-viewer.pdf-show-thumbnails .pdf-thumbnails {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  max-height: 170px;
+  padding: 8px;
+}
+.pdf-viewer .pdf-thumbnails button {
+  display: flex;
+  flex-direction: column;
+}
+.pdf-viewer .rpe-page,
+.pdf-viewer canvas {
+  background: var(--pdf-page);
+}
+.pdf-evidence-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+}
+.pdf-evidence {
+  position: absolute;
+  pointer-events: auto;
+  border: 2px solid var(--evidence-border);
+  padding: 0;
+  cursor: pointer;
+}
+.pdf-evidence-number {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  min-width: 18px;
+  background: var(--evidence-border);
+  color: var(--pdf-page);
+  font-size: 11px;
+  line-height: 18px;
+}
+.pdf-viewer :focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+@media (max-width: 640px) {
+  .pdf-viewer.pdf-show-thumbnails .rpe-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.pdf-viewer .rpe-properties-panel {
+  display: none;
+}
+/* Cel dotykowy nie zmienia mierzonej geometrii obrysu dowodu. */
+.pdf-evidence::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: max(100%, 44px);
+  height: max(100%, 44px);
+}
+
+/* Miniatury trafiają portalem do własnego kontenera; natywny drawer edytora pozostaje pusty. */
+.pdf-viewer .rpe-pages-fab,
+.pdf-viewer .rpe-drawer {
+  display: none;
+}
+.pdf-viewer > .rpe-root {
+  flex: 1;
+}
+.pdf-thumbnail-host {
+  flex-shrink: 0;
+  overflow: auto;
+}

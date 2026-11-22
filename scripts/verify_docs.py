@@ -96,6 +96,8 @@ for p in root.rglob("*.md"):
         or ".superpowers" in rel.parts
         or any(part.startswith(".venv") for part in rel.parts)
         or "vendor" in rel.parts
+        or "node_modules" in rel.parts
+        or any(part.startswith(".next") for part in rel.parts)
         or "site-packages" in rel.parts
         or "zrodla" in rel.parts
         or any(s.startswith("organizator") for s in rel.parts)

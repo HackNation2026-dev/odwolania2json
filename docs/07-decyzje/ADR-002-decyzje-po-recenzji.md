@@ -140,3 +140,21 @@ Gałąź `feat/python-fastapi-docker` (od v0.4.0) zawiera szkielet backendu, kon
 - **Python 3.13+.**
 
 Aktualizacja 0.6.1: w sprawie bazy pierwszeństwo ma [ADR-004](ADR-004-sqlalchemy-sqlite-bez-postgres.md) — SQLAlchemy 2.x + SQLite za `DataRepository`; zapisy o PostgreSQL powyżej są odłożone i zachowane jako historia.
+
+## Uzupełnienie 0.7.0: eksport, paleta i przepływy (użytkownik, 2026-11-21)
+
+- **Polityka eksportu: wariant A, ścisła walidacja.** Pobranie ocenianego JSON jest zablokowane, gdy `null` jest niedopuszczony przez schemat, przy błędzie technicznym, niejednoznaczności i wielu dokumentach. Zastępcze `{}` przy awarii nie jest stosowane: błąd techniczny to brak pliku wynikowego (`no_file`). Dowody i raport pozostają dostępne osobno. **Zastępuje domyślne `error_export=empty_json` z wpisu 0.6.1.** Architektura wewnętrzna §10 i `.env`/konfiguracja wymagają zsynchronizowania; do wykonania, nie zrobione w tym wpisie.
+- **Paleta UI: zatwierdzona przez użytkownika** (tło #F3F5F0, powierzchnia #FDFEFC, separator #D4DCD4, tekst #202620, tekst drugorzędny #60675E, kolor główny #314A40, zaznaczenie #EBEEEB, statusy według makiet). Paleta nie definiowała ramki kontrolki: przyjęto #647D70 (focus), kontrast 4,06 na tle. **Motyw ciemny wyprowadzono z tej palety jako propozycję niezatwierdzoną** (kontrasty policzone, podgląd w pliku FigCraft, ramka F65d).
+- **Przepływy użytkownika:** [user-flow.md](../04-architektura/gui/user-flow.md); ekrany i grafy w [figcraft/](../04-architektura/gui/figcraft/). Dokument wygenerował Codex na podstawie projektu UI i makiet; wymaga recenzji użytkownika.
+- **Otwarte, nierozstrzygnięte:** pole klucza API w GUI (projekt-ui §3.1.1 wyklucza je, architektura opisuje wpisywanie klucza tylko w CLI); próg automatycznej galerii (propozycja: od 7 dokumentów); nazwa produktu „Arkadiana” a „Odwołania2JSON” w UI. Pełna lista: sekcja „Luki i pytania otwarte” w user-flow.md.
+
+## Uzupełnienie 0.8.0: etapy oceny a dostarczenie GUI (użytkownik, 2026-11-22)
+
+- **Wyjaśnienie rozbieżności pip / GUI.** Wymóg „na teście tylko pip” dotyczy pierwszego etapu (CLI). GUI jest pokazywane na etapie prezentacji po pierwszym etapie. Według użytkownika stąd różnica między dostarczeniem przez pip a GUI. Sformułowanie użytkownika było przypuszczeniem („pewnie”), więc **nie zastępuje ono decyzji z 0.6.0**.
+- **Decyzja 0.6.0 pozostaje w mocy jako rozwiązanie zapasowe:** Next.js tylko jako statyczny eksport w pakiecie pip, bez Node u jury. Na etapie 1 nic w GUI nie jest warunkiem uruchomienia CLI.
+- **Zakres prac:** pełne GUI pod cały silnik (wszystkie klasy kontraktu, etapy przetwarzania, diagnozy, klasy i pola, wersje), logowanie poza zakresem, klucz MiniMax wymagany.
+- **Punktacja:** GUI to „inne ciekawe funkcje” (1–10 pkt) w części „elastyczność i rozbudowa” finału ([punktacja](../01-zadanie/punktacja.md)); F1 oceniane jest na wyniku silnika.
+- **Decyzje użytkownika (2026-11-22):**
+  1. **Biblioteka komponentów: zostają własne** (atomy, molekuły, organizmy i szablony na Tailwindzie z tokenami, Storybook). Zmienia to pkt 10 z gluestack-ui; gluestack-ui nie jest używany.
+  2. **Podgląd PDF: `react-web-pdf-editor`**, zgodnie z pkt 10. Dotychczasowa syntetyczna atrapa strony jest zastępowana prawdziwym podglądem PDF z obrysem dowodu.
+- **Otwarte:** model pól w UI i mocku ma odpowiadać kontraktowi (zagnieżdżony JSON, klasy `Odwolanie`, `Pelnomocnictwo`, `Przelew`, pusty wynik); poprzedni mock miał pola wymyślone; dopasowanie wykonano (test źródła prawdy względem `models.py`/OpenAPI), brakujące ścieżki API opisano w [zadaniach GUI](../00-organizacja/zadania-gui.md) (G01).
