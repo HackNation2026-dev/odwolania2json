@@ -24,6 +24,8 @@ Tylko to, co zostało do zrobienia. Wyniki i uzasadnienia: [raport eksperymentó
 
 ### Z01. Silnik produktu: przenieść ścieżkę z uprzęży do `process`
 
+**Stan (2026-11-22):** w `main` są klocki: klient LLM (`llm/client.py`, patrz Z04), serializer (`serialize.py`, patrz Z02) i błędy (`errors.py`). **Nie ma** czytnika PDF, adaptera OCR, promptu, pipeline’u ani podpięcia do `process`: `StubEngine` nadal zapisuje `{}`. Niedokończony szkic czytnika i adaptera OCR (bez testów, bez typów dla `pypdfium2`) jest w `experiments/2026-11-21-wybor-modulow/produkt-szkic/` (instrukcja przeniesienia w jego README). Zacznij od testów dla czytnika i OCR, potem prompt p2, pipeline i podpięcie.
+
 **Cel.** Polecenie `python -m odwolania2json process input output` wykonuje prawdziwą ekstrakcję zamiast `StubEngine` (zapis `{}`). Zakres minimalny: pdfium, diagnoza strony, OCR gdy potrzebny, jedno wywołanie LLM na dokument, normalizatory, serializer z szablonu klasy. **Bez** `DataRepository`, HTTP, etapów L, T2, T4 i cache (ocena Fable: nie wpływają na wynik).
 
 **Przeczytaj.** `apps/backend/odwolania2json/engine.py` (`StubEngine`, `run_process`, `write_json_atomic`), `cli.py` (`process`), `loader.py`, `domain/normalize.py`, `packages/contracts/odwolania2json_contracts/models.py`; uprząż do przeniesienia (w `experiments/2026-11-21-wybor-modulow/`): `harness/reading.py` (czytnik pdfium, diagnoza, OCR), `harness/pipeline.py` (`process_document`), `harness/stages.py` (`RulesRouter`, `LlmRouter`, `WordAnchorResolver`, `LlmExtractor`), `harness/llm.py` (klient HTTP Anthropic i OpenAI, kody błędów), `harness/result_model.py`, `llm-e2e/lib/llm_e2e_plugins.py` (`prompt("p2")`, `Llm1Router`, walidacja odpowiedzi), `pola/rules.py` (reguły E09 i pola stałe). Dowody wyboru: `RAPORT.md` §1 i `llm-e2e/E10/README.md`, `E11/README.md`.
@@ -42,6 +44,8 @@ Tylko to, co zostało do zrobienia. Wyniki i uzasadnienia: [raport eksperymentó
 **Pułapki.** Nie kopiuj uprzęży 1:1 (jest poza bramkami jakości, `prune` usuwa elementy: patrz Z02). Nie wołaj LLM w testach jednostkowych. `OMP_NUM_THREADS`/`intra_op_num_threads` ustaw jawnie. `.PDF` (wielkie litery) musi być znajdowane (`loader`): dodaj test.
 
 ### Z02. Zawsze plik wyniku, polityka awarii i serializer bez `prune`
+
+**Stan (2026-11-22):** serializer z szablonu klasy (jawne `null`, bez `prune`) jest w `main` z testami (`serialize.py`, `tests/unit/test_serialize.py`). **Zostaje:** ADR-006 z polityką eksportu, adnotacje w architekturze §4.5/§10, polityka awarii w `engine.run_process` (zawsze plik, raport, kod wyjścia), test round-trip na wszystkich 180 plikach referencyjnych (sprawdź, czy już jest w `test_serialize.py`).
 
 **Cel.** Dla każdego pliku wejściowego powstaje JSON (README organizatora §2 pkt 4). Jedna polityka w trzech miejscach, które dziś się różnią: architektura §10 (`empty_json`), `engine.py` (brak pliku i usunięcie poprzedniego), uprząż (brak pliku przy awarii LLM i 409 przy `ambiguous`).
 
@@ -76,6 +80,8 @@ Tylko to, co zostało do zrobienia. Wyniki i uzasadnienia: [raport eksperymentó
 **Pułapki.** Wagi OCR pobierane przy pierwszym uruchomieniu = awaria u jury bez sieci. `systemd-run` i `flock` z uprzęży nie działają na Windows: w produkcie ich nie używaj. `rglob("*.pdf")` pomija `.PDF` na Linuksie.
 
 ### Z04. LLM: odporność, limity i decyzja o dostawcy
+
+**Stan (2026-11-22):** część kodowa klienta jest w `main` (`llm/client.py`, 646 linii testów: ponowienia z `Retry-After`, kody błędów, walidacja `base_url`, klucz w jednym nagłówku, kanarek). **Zostaje:** self-check przed wsadem podpięty do `process`, limity wywołań na wsad w silniku, test kanarka po artefaktach pełnego przebiegu oraz cała część „decyzja” (zgoda mentora na MiniMax albo drugi dostawca, klucz dla jury).
 
 **Cel.** Wywołanie LLM nie może zerować wyniku wsadu: ponowienia, limity, jawne kody; plus rozstrzygnięcie dostawcy zgodnie z wymogiem „firma i serwery w UE/EOG, open source”.
 
