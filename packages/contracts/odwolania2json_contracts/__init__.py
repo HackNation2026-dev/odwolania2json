@@ -8,7 +8,7 @@ from . import models
 from .models import Odwolanie, Pelnomocnictwo, Przelew, PustyWynik
 from .powody import APPEAL_REASONS
 
-__version__ = "0.6.1"
+__version__ = "0.7.0"
 
 Wynik = Odwolanie | Pelnomocnictwo | Przelew | PustyWynik
 

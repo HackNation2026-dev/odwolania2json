@@ -20,6 +20,7 @@
 
 ## 0.7.0 — 2026-11-21
 
+- Pakiety pip backendu i kontraktów mają wersję `0.7.0`. Polecenie `process` obsługuje dokumenty tekstowe, skany i mieszane PDF-y z domyślnie włączonym OCR.
 - Dodano przepływy użytkownika ([user-flow.md](docs/04-architektura/gui/user-flow.md)) oraz pliki FigCraft z ekranami (38 ramek) i ośmioma grafami przepływów.
 - Nowe ekrany: logowanie na później, brak klucza API i kontrola połączenia, pulpit (jasny i ciemny), panel dodawania i przeglądania dokumentów, galeria kafelków z filtrami, sortowaniem i pustym wynikiem.
 - ADR-002, uzupełnienie 0.7.0: wariant A eksportu (ścisła walidacja, bez zastępczego `{}`) zastępuje domyślne `empty_json` z 0.6.1; zatwierdzona paleta UI; ciemny motyw jako propozycja. Architektura §10 do synchronizacji.
