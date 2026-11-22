@@ -1,0 +1,458 @@
+{
+  "experiment": "E15",
+  "versions": {
+    "python": "3.13.18",
+    "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+    "cpu_count": 8,
+    "fastapi": "0.165.0",
+    "starlette": "1.10.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "pypdfium2": "5.15.2",
+    "pypdf": "7.1.1",
+    "pydantic": "2.14.4",
+    "python-multipart": "0.0.34",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "git_head": "edb03b3"
+  },
+  "vectors": [
+    {
+      "id": "I01",
+      "family": "izolacja-dokumentów",
+      "name": "ten sam dokument samotnie, w odwróconej kolejności, równolegle i obok dokumentów z innym NIP",
+      "expected": "wynik niezależny od sąsiadów i kolejności (brak uzupełniania pól sąsiadem)",
+      "actual": "różnice względem wyniku samotnego (liczba dokumentów z 6): kolejność odwrócona, w=1: 0; równolegle, w=4: 0; w jednym wsadzie z dokumentem o innym NIP, w=2: 0",
+      "gap": "nie",
+      "fix": "Utrzymać brak współdzielonego stanu między dokumentami; test w CI na tych trzech układach.",
+      "port_test": "test_document_result_independent_of_neighbours_and_order",
+      "data": {
+        "diffs": {
+          "kolejność odwrócona, w=1": [],
+          "równolegle, w=4": [],
+          "w jednym wsadzie z dokumentem o innym NIP, w=2": []
+        },
+        "solo": {
+          "przyklad_01__odwolanie.pdf": "e27ef978c226d71a",
+          "przyklad_02__pelnomocnictwo.pdf": "1579aad86f536c7e",
+          "przyklad_03__potwierdzenie_przelewu.pdf": "6b94d4ba2f2a22aa",
+          "przyklad_02__potwierdzenie_przelewu.pdf": "bd2f48491317b292",
+          "przyklad_02__odwolanie.pdf": "b857836b9f653f6f",
+          "przyklad_06__potwierdzenie_przelewu.pdf": null
+        }
+      }
+    },
+    {
+      "id": "Q01",
+      "family": "kolejka",
+      "name": "800 dokumentów w 8 wsadach naraz przy 1 wątku roboczym (zapchana kolejka)",
+      "expected": "limit długości kolejki (429/503) lub kontrolowana praca bez wzrostu pamięci; serwer reaguje",
+      "actual": "przyjęto wszystko w 0.8 s bez odmowy (kolejka bez limitu; w ostatnim wsadzie 100/100 w stanie queued po przyjęciu); opóźnienie /health ≤ 0.0526 s; ukończone 800/800; RSS drzewa 75.7 MiB",
+      "gap": "częściowo",
+      "fix": "Limit liczby oczekujących dokumentów (np. 429 `queue_full` z Retry-After) i limit łącznego rozmiaru oczekujących plików.",
+      "port_test": "test_queue_full_returns_429_and_health_stays_responsive",
+      "data": {
+        "accept_s": 0.79,
+        "health_latencies": [
+          0.0075,
+          0.0146,
+          0.0526,
+          0.0054,
+          0.0042,
+          0.0076,
+          0.0283,
+          0.0071
+        ],
+        "ok": 800,
+        "peak_rss_tree_mb": 75.7,
+        "cgroup_memory_peak_mb": 168.8,
+        "limit_method": "systemd-run",
+        "memory_max": "14G"
+      }
+    },
+    {
+      "id": "W01",
+      "family": "wsad-współbieżność",
+      "name": "wsad 60 dokumentów, max_workers 1/2/4: kompletność, czas, RSS, atomowość, zgodność wyników między poziomami współbieżności",
+      "expected": "komplet wyników, zero plików tymczasowych i uszkodzonych JSON, wyniki identyczne niezależnie od współbieżności",
+      "actual": "w=1: 1.32 s (45.39 dok/s), RSS drzewa 70.0 MiB, cgroup 58.1 MiB, wyniki {'complete': 42, 'partial': 8, 'ambiguous': 10}; w=2: 2.24 s (26.76 dok/s), RSS drzewa 69.8 MiB, cgroup 58.5 MiB, wyniki {'complete': 42, 'partial': 8, 'ambiguous': 10}; w=4: 1.55 s (38.7 dok/s), RSS drzewa 76.0 MiB, cgroup 65.7 MiB, wyniki {'complete': 42, 'partial': 8, 'ambiguous': 10}; identyczność wyniku (SHA po bajtach) z w=1: w=2 60/60, w=4 60/60",
+      "gap": "nie",
+      "fix": "Utrzymać zapis atomowy; w produkcie PDFium w procesach potomnych (współbieżność realna), bo tu LockedReader serializuje odczyt i `max_workers>1` przyspiesza tylko etapy poza PDFium.",
+      "port_test": "test_batch_60_docs_results_independent_of_concurrency",
+      "data": {
+        "rows": [
+          {
+            "workers": 1,
+            "docs": 60,
+            "wall_s": 1.32,
+            "upload_s": 0.05,
+            "docs_per_s": 45.39,
+            "outcomes": {
+              "complete": 42,
+              "partial": 8,
+              "ambiguous": 10
+            },
+            "complete_all": true,
+            "json_health": {
+              "json_files": 641,
+              "unparsable": [],
+              "tmp_or_part_files": []
+            },
+            "lock_wait_s": 0.0,
+            "peak_rss_tree_mb": 70.0,
+            "cgroup_memory_peak_mb": 58.1,
+            "limit_method": "systemd-run",
+            "memory_max": "14G"
+          },
+          {
+            "workers": 2,
+            "docs": 60,
+            "wall_s": 2.24,
+            "upload_s": 0.08,
+            "docs_per_s": 26.76,
+            "outcomes": {
+              "complete": 42,
+              "partial": 8,
+              "ambiguous": 10
+            },
+            "complete_all": true,
+            "json_health": {
+              "json_files": 641,
+              "unparsable": [],
+              "tmp_or_part_files": []
+            },
+            "lock_wait_s": 0.0,
+            "peak_rss_tree_mb": 69.8,
+            "cgroup_memory_peak_mb": 58.5,
+            "limit_method": "systemd-run",
+            "memory_max": "14G"
+          },
+          {
+            "workers": 4,
+            "docs": 60,
+            "wall_s": 1.55,
+            "upload_s": 0.05,
+            "docs_per_s": 38.7,
+            "outcomes": {
+              "complete": 42,
+              "partial": 8,
+              "ambiguous": 10
+            },
+            "complete_all": true,
+            "json_health": {
+              "json_files": 641,
+              "unparsable": [],
+              "tmp_or_part_files": []
+            },
+            "lock_wait_s": 0.0,
+            "peak_rss_tree_mb": 76.0,
+            "cgroup_memory_peak_mb": 65.7,
+            "limit_method": "systemd-run",
+            "memory_max": "14G"
+          }
+        ],
+        "identical_to_w1": {
+          "2": 60,
+          "4": 60
+        }
+      }
+    },
+    {
+      "id": "W02",
+      "family": "wsad-współbieżność",
+      "name": "4 uszkodzone pliki (śmieci, obcięty, pusty, zaszyfrowany) rozsiane w środku wsadu 16 dokumentów",
+      "expected": "uszkodzone → technical_error z kodem; reszta wsadu kończy się wynikiem",
+      "actual": "poprawne dokumenty przetworzone bez błędu technicznego 12/12 (wyniki: ['ambiguous', 'complete', 'partial']); uszkodzone jako technical_error 4/4: {'zly_smieci': ('technical_error', ['not_a_pdf']), 'zly_obciety': ('technical_error', ['pdf_corrupted']), 'zly_pusty': ('technical_error', ['not_a_pdf']), 'zly_zaszyfrowany': ('technical_error', ['pdf_encrypted'])}; kontrola po wsadzie={'health': 200, 'clean_doc': 'partial', 'alive': True}",
+      "gap": "nie",
+      "fix": "Utrzymać izolację błędów per dokument; w produkcie dodać test z uszkodzonym plikiem na początku, w środku i na końcu.",
+      "port_test": "test_corrupt_file_in_batch_does_not_stop_the_rest",
+      "data": {
+        "results": {
+          "przyklad_01__odwolanie.pdf": [
+            "complete",
+            []
+          ],
+          "przyklad_02__odwolanie.pdf": [
+            "complete",
+            []
+          ],
+          "przyklad_03__odwolanie.pdf": [
+            "complete",
+            []
+          ],
+          "przyklad_04__odwolanie.pdf": [
+            "complete",
+            []
+          ],
+          "zly_smieci": [
+            "technical_error",
+            [
+              "not_a_pdf"
+            ]
+          ],
+          "zly_obciety": [
+            "technical_error",
+            [
+              "pdf_corrupted"
+            ]
+          ],
+          "przyklad_01__pelnomocnictwo.pdf": [
+            "complete",
+            []
+          ],
+          "przyklad_02__pelnomocnictwo.pdf": [
+            "complete",
+            []
+          ],
+          "przyklad_03__pelnomocnictwo.pdf": [
+            "complete",
+            []
+          ],
+          "przyklad_04__pelnomocnictwo.pdf": [
+            "partial",
+            [
+              "evidence_unanchored"
+            ]
+          ],
+          "zly_pusty": [
+            "technical_error",
+            [
+              "not_a_pdf"
+            ]
+          ],
+          "zly_zaszyfrowany": [
+            "technical_error",
+            [
+              "pdf_encrypted"
+            ]
+          ],
+          "przyklad_01__potwierdzenie_przelewu.pdf": [
+            "partial",
+            [
+              "evidence_unanchored"
+            ]
+          ],
+          "przyklad_02__potwierdzenie_przelewu.pdf": [
+            "complete",
+            []
+          ],
+          "przyklad_03__potwierdzenie_przelewu.pdf": [
+            "complete",
+            []
+          ],
+          "przyklad_04__potwierdzenie_przelewu.pdf": [
+            "ambiguous",
+            [
+              "class_ambiguous"
+            ]
+          ]
+        },
+        "probe": {
+          "health": 200,
+          "clean_doc": "partial",
+          "alive": true
+        }
+      }
+    },
+    {
+      "id": "W03",
+      "family": "kill-9",
+      "name": "kill -9 serwera w trakcie wsadu 60 dokumentów (5 prób po 0,25–2,4 s), restart na tym samym katalogu roboczym",
+      "expected": "brak plików częściowych i uszkodzonych JSON; po restarcie jawny stan wsadu (technical_error / do wznowienia), kontynuacja reszty",
+      "actual": "uszkodzone JSON: 0; pliki .tmp/.part po ubiciu: 0; po restarcie wsad znany: nie (404 we wszystkich próbach); osierocone katalogi dokumentów bez state.json: [52, 37, 25, 0, 0] z 60; ukończone przed ubiciem: [7, 22, 33, 60, 60]; ponowne wgranie nieukończonych → [10, 9, 7, 0, 0]/[10, 10, 10, 0, 0] poprawnych",
+      "gap": "tak",
+      "fix": "Trwały stan wsadu/dokumentu (SQLite jak w ADR-004) zapisywany przed pracą; przy starcie dokumenty `running` → `technical_error` (kod `interrupted`) lub kolejka do wznowienia; sprzątanie `*.tmp`/`*.part`.",
+      "port_test": "test_kill9_mid_batch_then_restart_reports_explicit_state_and_resumes_rest",
+      "data": {
+        "trials": [
+          {
+            "trial": 1,
+            "kill_after_s": 0.25,
+            "done_at_kill": 7,
+            "docs_total": 60,
+            "dirs": 60,
+            "dirs_with_state_json": 8,
+            "orphans_without_state": 52,
+            "json_health": {
+              "json_files": 89,
+              "unparsable": [],
+              "tmp_or_part_files": []
+            },
+            "batch_known_after_restart_http": 404,
+            "document_known_after_restart_http": 404,
+            "retry_submitted": 10,
+            "retry_ok": 10,
+            "probe": {
+              "health": 200,
+              "clean_doc": "partial",
+              "alive": true
+            }
+          },
+          {
+            "trial": 2,
+            "kill_after_s": 0.6,
+            "done_at_kill": 22,
+            "docs_total": 60,
+            "dirs": 60,
+            "dirs_with_state_json": 23,
+            "orphans_without_state": 37,
+            "json_health": {
+              "json_files": 254,
+              "unparsable": [],
+              "tmp_or_part_files": []
+            },
+            "batch_known_after_restart_http": 404,
+            "document_known_after_restart_http": 404,
+            "retry_submitted": 10,
+            "retry_ok": 9,
+            "probe": {
+              "health": 200,
+              "clean_doc": "partial",
+              "alive": true
+            }
+          },
+          {
+            "trial": 3,
+            "kill_after_s": 1.0,
+            "done_at_kill": 33,
+            "docs_total": 60,
+            "dirs": 60,
+            "dirs_with_state_json": 35,
+            "orphans_without_state": 25,
+            "json_health": {
+              "json_files": 382,
+              "unparsable": [],
+              "tmp_or_part_files": []
+            },
+            "batch_known_after_restart_http": 404,
+            "document_known_after_restart_http": 404,
+            "retry_submitted": 10,
+            "retry_ok": 7,
+            "probe": {
+              "health": 200,
+              "clean_doc": "partial",
+              "alive": true
+            }
+          },
+          {
+            "trial": 4,
+            "kill_after_s": 1.6,
+            "done_at_kill": 60,
+            "docs_total": 60,
+            "dirs": 60,
+            "dirs_with_state_json": 60,
+            "orphans_without_state": 0,
+            "json_health": {
+              "json_files": 641,
+              "unparsable": [],
+              "tmp_or_part_files": []
+            },
+            "batch_known_after_restart_http": 404,
+            "document_known_after_restart_http": 404,
+            "retry_submitted": 0,
+            "retry_ok": 0,
+            "probe": {
+              "health": 200,
+              "clean_doc": "partial",
+              "alive": true
+            }
+          },
+          {
+            "trial": 5,
+            "kill_after_s": 2.4,
+            "done_at_kill": 60,
+            "docs_total": 60,
+            "dirs": 60,
+            "dirs_with_state_json": 60,
+            "orphans_without_state": 0,
+            "json_health": {
+              "json_files": 641,
+              "unparsable": [],
+              "tmp_or_part_files": []
+            },
+            "batch_known_after_restart_http": 404,
+            "document_known_after_restart_http": 404,
+            "retry_submitted": 0,
+            "retry_ok": 0,
+            "probe": {
+              "health": 200,
+              "clean_doc": "partial",
+              "alive": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "X01",
+      "family": "wyścigi",
+      "name": "8 wątków odpytuje wynik/dowody/raport/metryki w trakcie przetwarzania i zapisu artefaktów",
+      "expected": "wyłącznie 404/409 do końca przetwarzania, potem pełny JSON; nigdy częściowy plik",
+      "actual": "żądań: {'200': 1214, '409': 102, '404': 0, 'other': 0}; anomalie: brak",
+      "gap": "nie",
+      "fix": "Zapis atomowy (jest); test z równoległym odczytem w CI.",
+      "port_test": "test_concurrent_read_during_commit_never_sees_partial_json",
+      "data": {
+        "counts": {
+          "200": 1214,
+          "409": 102,
+          "404": 0,
+          "other": 0
+        },
+        "anomalies": []
+      }
+    },
+    {
+      "id": "X02",
+      "family": "wyścigi",
+      "name": "12 równoległych wgrań tych samych bajtów (na barierze), nazwy dup0–dup2",
+      "expected": "12 niezależnych dokumentów z unikalnymi ID i identycznym wynikiem; brak kolizji katalogów",
+      "actual": "unikalne ID: 12/12; wyniki: ['complete']; różnych skrótów wyniku: 1",
+      "gap": "nie",
+      "fix": "Przy dodaniu deduplikacji po SHA-256 zapewnić jednego właściciela próby (blokada/UNIQUE) i konflikt rewizji dla równoległych retry.",
+      "port_test": "test_concurrent_identical_uploads_yield_distinct_documents_and_equal_results",
+      "data": {
+        "digests": [
+          "e27ef978c226d71a"
+        ]
+      }
+    },
+    {
+      "id": "X03",
+      "family": "wyścigi",
+      "name": "20× retry tego samego zadania równolegle (oczekiwany jeden aktywny run_id, reszta konflikt)",
+      "expected": "jedna aktywna próba, reszta 409",
+      "actual": "POST /documents/{id}/retry → HTTP 404: uprząż nie implementuje retry/rewizji (jeden `run_id` r1) — wektor nie wykonany",
+      "gap": "nie dotyczy",
+      "fix": "W produkcie: retry jako zasób z `run_id`, warunek `If-Match`/UNIQUE(document_id, active), 409 dla drugiego żądania.",
+      "port_test": "test_20_parallel_retries_produce_single_active_run_and_conflicts",
+      "data": {}
+    },
+    {
+      "id": "X04",
+      "family": "wyścigi",
+      "name": "dwa procesy serwera na tym samym katalogu roboczym (po 18 dokumentów każdy)",
+      "expected": "brak kolizji i błędów 500; spójny stan (w produkcie: blokady SQLite bez `database is locked` jako 500)",
+      "actual": "dokumenty bez błędu technicznego 36/36 (18 + 18); JSON uszkodzone: brak; drugi proces widzi wsad pierwszego: HTTP 404 (stan tylko w pamięci procesu)",
+      "gap": "częściowo",
+      "fix": "Stan w SQLite współdzielonym przez procesy lub blokada wyłączności katalogu roboczego (flock) przy starcie.",
+      "port_test": "test_second_server_process_on_same_workdir_is_refused_or_state_is_shared",
+      "data": {
+        "json_health": {
+          "json_files": 390,
+          "unparsable": [],
+          "tmp_or_part_files": []
+        },
+        "cross_http": 404
+      }
+    }
+  ],
+  "probes": {
+    "races": {
+      "health": 200,
+      "clean_doc": "partial",
+      "alive": true
+    }
+  },
+  "note": "Wynik opisuje uprząż (stan procesu w pamięci, LockedReader), nie produkt. Dane: 60 dokumentów rozwojowych, ekstraktor regułowy."
+}

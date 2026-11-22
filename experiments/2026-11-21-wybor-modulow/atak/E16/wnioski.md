@@ -1,0 +1,3 @@
+## Wniosek decyzyjny wobec kryterium z planu
+
+Kryterium *„zero różnic poza polami LLM z jawną wariancją”* jest **spełnione dla kodu uprzęży** (0 różnic bajtowych w 3 przebiegach po 60 dokumentów i w 2 przebiegach z nagraną odpowiedzią LLM) i dla kolejności kluczy (50/50). Wariancja modelu jest osobnym, zmierzonym źródłem różnic (E13), więc testy regresji w produkcie powinny: (1) porównywać bajty wyniku na nagranych odpowiedziach LLM, (2) trzymać wersję promptu i modelu w `versions.json`, (3) rozstrzygnąć jawność `null` i pustych elementów list w kontrakcie v1. **Pewność:** wysoka dla kodu bez OCR; średnia dla potoku z OCR (nie badany). **Otwarte:** determinizm z rapidocr, wielowątkowy odczyt, obsługa `null` w kontrakcie.

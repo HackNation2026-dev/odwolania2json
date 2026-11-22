@@ -1,0 +1,1456 @@
+{
+  "experiment": "E12",
+  "versions": {
+    "python": "3.13.18",
+    "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+    "cpu_count": 8,
+    "fastapi": "0.165.0",
+    "starlette": "1.10.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "pypdfium2": "5.15.2",
+    "pypdf": "7.1.1",
+    "pydantic": "2.14.4",
+    "python-multipart": "0.0.34",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "git_head": "edb03b3"
+  },
+  "memory_limit": "14G (bomby: 6G, patrz uwagi)",
+  "note": "Wynik opisuje uprząż harness/server.py, nie produkt.",
+  "vectors": [
+    {
+      "id": "B01",
+      "family": "bomba-PDF",
+      "name": "strumień Flate 1 MB → ~1 GiB treści strony",
+      "expected": "technical_error w limicie, bez OOM",
+      "actual": "outcome=technical_error kody=['empty_document']; 4.41 s; serwer_zabity=False; zawieszenie=False; szczyt RSS drzewa 2093.3 MiB, cgroup peak 2097.9 MiB (limit 6G); kontrola po ataku: {'health': 200, 'clean_doc': 'partial', 'alive': True}",
+      "gap": "nie",
+      "fix": "Parsowanie/renderowanie w procesie potomnym z RLIMIT_AS/cgroup i twardym czasem (kill po timeout); limity: bajty po dekompresji, piksele strony i obrazu, liczba obiektów/stron odczytana przed renderem; pamięć drzewa procesów.",
+      "port_test": "test_pdf_bomb_b01_yields_technical_error_and_server_survives (z limitem RLIMIT_AS procesu potomnego)",
+      "data": {
+        "pdf_bytes": 1044090,
+        "build_s": 9.6,
+        "memory_max": "6G",
+        "wall_s": 4.41,
+        "outcome": "technical_error",
+        "codes": [
+          "empty_document"
+        ],
+        "hung_over_wait": false,
+        "server_died": false,
+        "returncode": null,
+        "peak_rss_tree_mb": 2093.3,
+        "cgroup_memory_peak_mb": 2097.9,
+        "limit_method": "systemd-run",
+        "probe_after": {
+          "health": 200,
+          "clean_doc": "partial",
+          "alive": true
+        },
+        "cgroup_peak_mb": 2097.9
+      }
+    },
+    {
+      "id": "B02",
+      "family": "bomba-PDF",
+      "name": "strumień Flate → 4 GiB treści strony",
+      "expected": "technical_error w limicie, bez OOM",
+      "actual": "outcome=technical_error kody=['empty_document']; 10.16 s; serwer_zabity=False; zawieszenie=False; szczyt RSS drzewa 5166.7 MiB, cgroup peak 5194.8 MiB (limit 6G); kontrola po ataku: {'health': 200, 'clean_doc': 'partial', 'alive': True}",
+      "gap": "częściowo",
+      "fix": "Parsowanie/renderowanie w procesie potomnym z RLIMIT_AS/cgroup i twardym czasem (kill po timeout); limity: bajty po dekompresji, piksele strony i obrazu, liczba obiektów/stron odczytana przed renderem; pamięć drzewa procesów.",
+      "port_test": "test_pdf_bomb_b02_yields_technical_error_and_server_survives (z limitem RLIMIT_AS procesu potomnego)",
+      "data": {
+        "pdf_bytes": 4174959,
+        "build_s": 38.9,
+        "memory_max": "6G",
+        "wall_s": 10.16,
+        "outcome": "technical_error",
+        "codes": [
+          "empty_document"
+        ],
+        "hung_over_wait": false,
+        "server_died": false,
+        "returncode": null,
+        "peak_rss_tree_mb": 5166.7,
+        "cgroup_memory_peak_mb": 5194.8,
+        "limit_method": "systemd-run",
+        "probe_after": {
+          "health": 200,
+          "clean_doc": "partial",
+          "alive": true
+        },
+        "cgroup_peak_mb": 5194.8
+      }
+    },
+    {
+      "id": "B03",
+      "family": "bomba-PDF",
+      "name": "strona 14400×14400 pt (200 dpi ⇒ 40 000² px) jako skan",
+      "expected": "odrzucenie przed renderem lub limit pikseli",
+      "actual": "outcome=technical_error kody=['pdf_corrupted']; 5.2 s; serwer_zabity=False; zawieszenie=False; szczyt RSS drzewa 4605.8 MiB, cgroup peak 4636.3 MiB (limit 6G); kontrola po ataku: {'health': 200, 'clean_doc': 'partial', 'alive': True}",
+      "gap": "częściowo",
+      "fix": "Parsowanie/renderowanie w procesie potomnym z RLIMIT_AS/cgroup i twardym czasem (kill po timeout); limity: bajty po dekompresji, piksele strony i obrazu, liczba obiektów/stron odczytana przed renderem; pamięć drzewa procesów.",
+      "port_test": "test_pdf_bomb_b03_yields_technical_error_and_server_survives (z limitem RLIMIT_AS procesu potomnego)",
+      "data": {
+        "pdf_bytes": 662,
+        "build_s": 0.0,
+        "memory_max": "6G",
+        "wall_s": 5.2,
+        "outcome": "technical_error",
+        "codes": [
+          "pdf_corrupted"
+        ],
+        "hung_over_wait": false,
+        "server_died": false,
+        "returncode": null,
+        "peak_rss_tree_mb": 4605.8,
+        "cgroup_memory_peak_mb": 4636.3,
+        "limit_method": "systemd-run",
+        "probe_after": {
+          "health": 200,
+          "clean_doc": "partial",
+          "alive": true
+        },
+        "cgroup_peak_mb": 4636.3
+      }
+    },
+    {
+      "id": "B04",
+      "family": "bomba-PDF",
+      "name": "obraz Flate deklarujący 60 000² (3,6 GB po dekompresji)",
+      "expected": "limit pikseli obrazu",
+      "actual": "outcome=technical_error kody=['ocr_unavailable']; 5.11 s; serwer_zabity=False; zawieszenie=False; szczyt RSS drzewa 182.1 MiB, cgroup peak 161.1 MiB (limit 6G); kontrola po ataku: {'health': 200, 'clean_doc': 'partial', 'alive': True}",
+      "gap": "nie",
+      "fix": "Parsowanie/renderowanie w procesie potomnym z RLIMIT_AS/cgroup i twardym czasem (kill po timeout); limity: bajty po dekompresji, piksele strony i obrazu, liczba obiektów/stron odczytana przed renderem; pamięć drzewa procesów.",
+      "port_test": "test_pdf_bomb_b04_yields_technical_error_and_server_survives (z limitem RLIMIT_AS procesu potomnego)",
+      "data": {
+        "pdf_bytes": 3499725,
+        "build_s": 31.5,
+        "memory_max": "6G",
+        "wall_s": 5.11,
+        "outcome": "technical_error",
+        "codes": [
+          "ocr_unavailable"
+        ],
+        "hung_over_wait": false,
+        "server_died": false,
+        "returncode": null,
+        "peak_rss_tree_mb": 182.1,
+        "cgroup_memory_peak_mb": 161.1,
+        "limit_method": "systemd-run",
+        "probe_after": {
+          "health": 200,
+          "clean_doc": "partial",
+          "alive": true
+        },
+        "cgroup_peak_mb": 161.1
+      }
+    },
+    {
+      "id": "B05",
+      "family": "bomba-PDF",
+      "name": "obraz JPEG (DCT) 30 000² (0,9 Gpx)",
+      "expected": "limit pikseli obrazu",
+      "actual": "outcome=technical_error kody=['ocr_unavailable']; 0.97 s; serwer_zabity=False; zawieszenie=False; szczyt RSS drzewa 117.8 MiB, cgroup peak 110.0 MiB (limit 6G); kontrola po ataku: {'health': 200, 'clean_doc': 'partial', 'alive': True}",
+      "gap": "nie",
+      "fix": "Parsowanie/renderowanie w procesie potomnym z RLIMIT_AS/cgroup i twardym czasem (kill po timeout); limity: bajty po dekompresji, piksele strony i obrazu, liczba obiektów/stron odczytana przed renderem; pamięć drzewa procesów.",
+      "port_test": "test_pdf_bomb_b05_yields_technical_error_and_server_survives (z limitem RLIMIT_AS procesu potomnego)",
+      "data": {
+        "pdf_bytes": 10547898,
+        "build_s": 5.9,
+        "memory_max": "6G",
+        "wall_s": 0.97,
+        "outcome": "technical_error",
+        "codes": [
+          "ocr_unavailable"
+        ],
+        "hung_over_wait": false,
+        "server_died": false,
+        "returncode": null,
+        "peak_rss_tree_mb": 117.8,
+        "cgroup_memory_peak_mb": 110.0,
+        "limit_method": "systemd-run",
+        "probe_after": {
+          "health": 200,
+          "clean_doc": "partial",
+          "alive": true
+        },
+        "cgroup_peak_mb": 110.0
+      }
+    },
+    {
+      "id": "B06",
+      "family": "bomba-PDF",
+      "name": "50 000 pustych stron",
+      "expected": "page_limit natychmiast",
+      "actual": "outcome=technical_error kody=['page_limit']; 0.28 s; serwer_zabity=False; zawieszenie=False; szczyt RSS drzewa 75.0 MiB, cgroup peak 58.6 MiB (limit 6G); kontrola po ataku: {'health': 200, 'clean_doc': 'partial', 'alive': True}",
+      "gap": "nie",
+      "fix": "Parsowanie/renderowanie w procesie potomnym z RLIMIT_AS/cgroup i twardym czasem (kill po timeout); limity: bajty po dekompresji, piksele strony i obrazu, liczba obiektów/stron odczytana przed renderem; pamięć drzewa procesów.",
+      "port_test": "test_pdf_bomb_b06_yields_technical_error_and_server_survives (z limitem RLIMIT_AS procesu potomnego)",
+      "data": {
+        "pdf_bytes": 5128053,
+        "build_s": 0.2,
+        "memory_max": "6G",
+        "wall_s": 0.28,
+        "outcome": "technical_error",
+        "codes": [
+          "page_limit"
+        ],
+        "hung_over_wait": false,
+        "server_died": false,
+        "returncode": null,
+        "peak_rss_tree_mb": 75.0,
+        "cgroup_memory_peak_mb": 58.6,
+        "limit_method": "systemd-run",
+        "probe_after": {
+          "health": 200,
+          "clean_doc": "partial",
+          "alive": true
+        },
+        "cgroup_peak_mb": 58.6
+      }
+    },
+    {
+      "id": "B07",
+      "family": "bomba-PDF",
+      "name": "cykliczne /Kids",
+      "expected": "pdf_corrupted bez zawieszenia",
+      "actual": "outcome=technical_error kody=['pdf_corrupted']; 0.03 s; serwer_zabity=False; zawieszenie=False; szczyt RSS drzewa 62.7 MiB, cgroup peak 39.9 MiB (limit 6G); kontrola po ataku: {'health': 200, 'clean_doc': 'partial', 'alive': True}",
+      "gap": "nie",
+      "fix": "Parsowanie/renderowanie w procesie potomnym z RLIMIT_AS/cgroup i twardym czasem (kill po timeout); limity: bajty po dekompresji, piksele strony i obrazu, liczba obiektów/stron odczytana przed renderem; pamięć drzewa procesów.",
+      "port_test": "test_pdf_bomb_b07_yields_technical_error_and_server_survives (z limitem RLIMIT_AS procesu potomnego)",
+      "data": {
+        "pdf_bytes": 350,
+        "build_s": 0.0,
+        "memory_max": "6G",
+        "wall_s": 0.03,
+        "outcome": "technical_error",
+        "codes": [
+          "pdf_corrupted"
+        ],
+        "hung_over_wait": false,
+        "server_died": false,
+        "returncode": null,
+        "peak_rss_tree_mb": 62.7,
+        "cgroup_memory_peak_mb": 39.9,
+        "limit_method": "systemd-run",
+        "probe_after": {
+          "health": 200,
+          "clean_doc": "partial",
+          "alive": true
+        },
+        "cgroup_peak_mb": 39.9
+      }
+    },
+    {
+      "id": "B08",
+      "family": "bomba-PDF",
+      "name": "samoodwołujący się XObject Form (/Fm Do)",
+      "expected": "brak zawieszenia, limit głębokości",
+      "actual": "outcome=None kody=None; 24.08 s; serwer_zabity=True; zawieszenie=False; szczyt RSS drzewa 6126.3 MiB, cgroup peak None MiB (limit 6G); kontrola po ataku: {'alive': False}",
+      "gap": "tak",
+      "fix": "Parsowanie/renderowanie w procesie potomnym z RLIMIT_AS/cgroup i twardym czasem (kill po timeout); limity: bajty po dekompresji, piksele strony i obrazu, liczba obiektów/stron odczytana przed renderem; pamięć drzewa procesów.",
+      "port_test": "test_pdf_bomb_b08_yields_technical_error_and_server_survives (z limitem RLIMIT_AS procesu potomnego)",
+      "data": {
+        "pdf_bytes": 639,
+        "build_s": 0.0,
+        "memory_max": "6G",
+        "wall_s": 24.08,
+        "outcome": null,
+        "codes": null,
+        "hung_over_wait": false,
+        "server_died": true,
+        "returncode": -9,
+        "peak_rss_tree_mb": 6126.3,
+        "cgroup_memory_peak_mb": null,
+        "limit_method": "systemd-run",
+        "probe_after": {
+          "alive": false
+        }
+      }
+    },
+    {
+      "id": "B09",
+      "family": "bomba-PDF",
+      "name": "obiekt zagnieżdżony na 200 000 poziomów",
+      "expected": "pdf_corrupted bez przepełnienia stosu",
+      "actual": "outcome=technical_error kody=['empty_document']; 0.04 s; serwer_zabity=False; zawieszenie=False; szczyt RSS drzewa 62.7 MiB, cgroup peak 43.0 MiB (limit 6G); kontrola po ataku: {'health': 200, 'clean_doc': 'partial', 'alive': True}",
+      "gap": "nie",
+      "fix": "Parsowanie/renderowanie w procesie potomnym z RLIMIT_AS/cgroup i twardym czasem (kill po timeout); limity: bajty po dekompresji, piksele strony i obrazu, liczba obiektów/stron odczytana przed renderem; pamięć drzewa procesów.",
+      "port_test": "test_pdf_bomb_b09_yields_technical_error_and_server_survives (z limitem RLIMIT_AS procesu potomnego)",
+      "data": {
+        "pdf_bytes": 400419,
+        "build_s": 0.0,
+        "memory_max": "6G",
+        "wall_s": 0.04,
+        "outcome": "technical_error",
+        "codes": [
+          "empty_document"
+        ],
+        "hung_over_wait": false,
+        "server_died": false,
+        "returncode": null,
+        "peak_rss_tree_mb": 62.7,
+        "cgroup_memory_peak_mb": 43.0,
+        "limit_method": "systemd-run",
+        "probe_after": {
+          "health": 200,
+          "clean_doc": "partial",
+          "alive": true
+        },
+        "cgroup_peak_mb": 43.0
+      }
+    },
+    {
+      "id": "B10",
+      "family": "bomba-PDF",
+      "name": "400 000 małych obiektów",
+      "expected": "limit czasu/pamięci, bez zawieszenia",
+      "actual": "outcome=technical_error kody=['empty_document']; 0.81 s; serwer_zabity=False; zawieszenie=False; szczyt RSS drzewa 110.2 MiB, cgroup peak 115.4 MiB (limit 6G); kontrola po ataku: {'health': 200, 'clean_doc': 'partial', 'alive': True}",
+      "gap": "nie",
+      "fix": "Parsowanie/renderowanie w procesie potomnym z RLIMIT_AS/cgroup i twardym czasem (kill po timeout); limity: bajty po dekompresji, piksele strony i obrazu, liczba obiektów/stron odczytana przed renderem; pamięć drzewa procesów.",
+      "port_test": "test_pdf_bomb_b10_yields_technical_error_and_server_survives (z limitem RLIMIT_AS procesu potomnego)",
+      "data": {
+        "pdf_bytes": 20289255,
+        "build_s": 0.4,
+        "memory_max": "6G",
+        "wall_s": 0.81,
+        "outcome": "technical_error",
+        "codes": [
+          "empty_document"
+        ],
+        "hung_over_wait": false,
+        "server_died": false,
+        "returncode": null,
+        "peak_rss_tree_mb": 110.2,
+        "cgroup_memory_peak_mb": 115.4,
+        "limit_method": "systemd-run",
+        "probe_after": {
+          "health": 200,
+          "clean_doc": "partial",
+          "alive": true
+        },
+        "cgroup_peak_mb": 115.4
+      }
+    },
+    {
+      "id": "B11",
+      "family": "bomba-PDF",
+      "name": "25 MB (po kompresji) operatorów graficznych",
+      "expected": "limit czasu, bez zawieszenia",
+      "actual": "outcome=technical_error kody=['empty_document']; 1.08 s; serwer_zabity=False; zawieszenie=False; szczyt RSS drzewa 99.2 MiB, cgroup peak 90.5 MiB (limit 6G); kontrola po ataku: {'health': 200, 'clean_doc': 'partial', 'alive': True}",
+      "gap": "nie",
+      "fix": "Parsowanie/renderowanie w procesie potomnym z RLIMIT_AS/cgroup i twardym czasem (kill po timeout); limity: bajty po dekompresji, piksele strony i obrazu, liczba obiektów/stron odczytana przed renderem; pamięć drzewa procesów.",
+      "port_test": "test_pdf_bomb_b11_yields_technical_error_and_server_survives (z limitem RLIMIT_AS procesu potomnego)",
+      "data": {
+        "pdf_bytes": 64202,
+        "build_s": 0.9,
+        "memory_max": "6G",
+        "wall_s": 1.08,
+        "outcome": "technical_error",
+        "codes": [
+          "empty_document"
+        ],
+        "hung_over_wait": false,
+        "server_died": false,
+        "returncode": null,
+        "peak_rss_tree_mb": 99.2,
+        "cgroup_memory_peak_mb": 90.5,
+        "limit_method": "systemd-run",
+        "probe_after": {
+          "health": 200,
+          "clean_doc": "partial",
+          "alive": true
+        },
+        "cgroup_peak_mb": 90.5
+      }
+    },
+    {
+      "id": "F01",
+      "family": "zasoby-upload",
+      "name": "1 GiB strumieniowo bez Content-Length (chunked), limit uprzęży 30 MiB",
+      "expected": "413 przed wczytaniem całości; RSS i dysk bez wzrostu proporcjonalnego do rozmiaru",
+      "actual": "HTTP 201; po 4.9 s; stan dokumentu=('technical_error', ['upload_too_large']); szczyt zajętego /tmp (tmpfs=RAM) ≈ 1054 MiB; RSS drzewa serwera 64.8 MiB",
+      "gap": "tak",
+      "fix": "Limit na poziomie ciała (reverse proxy/middleware ASGI: przerwać po przekroczeniu `max_upload_bytes`, nie czytać reszty); `Content-Length` > limit → 413 natychmiast; spool poza tmpfs.",
+      "port_test": "test_oversized_chunked_upload_aborted_with_413_without_reading_all",
+      "data": {
+        "http": 201,
+        "wall_s": 4.86,
+        "peak_tmp_mib": 1054,
+        "total_sent_mib": 1024,
+        "peak_rss_tree_mb": 64.8,
+        "cgroup_memory_peak_mb": 1098.6,
+        "limit_method": "systemd-run",
+        "memory_max": "14G"
+      }
+    },
+    {
+      "id": "F02",
+      "family": "zasoby-upload",
+      "name": "1001 małych części multipart (starlette: max_files=1000)",
+      "expected": "odmowa (400/413) bez przetwarzania części",
+      "actual": "HTTP 400 {\"detail\":\"Too many files. Maximum number of files is 1000.\"}",
+      "gap": "nie",
+      "fix": "Jawny limit liczby plików z kodem `upload_too_large` (jest `max_batch_documents`=500, ale middleware starlette odrzuca wcześniej z 400 bez kodu API).",
+      "port_test": "test_too_many_parts_returns_documented_error_code",
+      "data": {}
+    },
+    {
+      "id": "F03",
+      "family": "zasoby-upload",
+      "name": "pole formularza 100 MB (nie plik)",
+      "expected": "413/400 bez wczytania całości",
+      "actual": "HTTP 400 {\"detail\":\"Part exceeded maximum size of 1024KB.\"} po 1.1 s; RSS 69.2 MiB",
+      "gap": "nie",
+      "fix": "Odrzucać nieznane pola formularza; limit rozmiaru pola.",
+      "port_test": "test_unknown_large_form_field_rejected",
+      "data": {}
+    },
+    {
+      "id": "F04",
+      "family": "zasoby-upload",
+      "name": "50 wolnych połączeń (1 B/s, Content-Length 100 MB) przez 25 s",
+      "expected": "serwer obsługuje poprawne żądania; połączenia odcięte po limicie bezczynności",
+      "actual": "/health: max 0.0119 s, błędy 0; kontrola poprawnego dokumentu={'health': 200, 'clean_doc': 'partial', 'alive': True}; połączenia nie zostały odcięte przez serwer w 25 s",
+      "gap": "częściowo",
+      "fix": "uvicorn `--timeout-keep-alive` nie obejmuje ciała; dodać limit czasu odczytu ciała (reverse proxy) i limit równoległych połączeń na upload.",
+      "port_test": "test_slow_upload_connections_do_not_block_valid_requests",
+      "data": {
+        "health_latencies_s": [
+          0.0093,
+          0.0015,
+          0.0016,
+          0.0016,
+          0.0021,
+          0.0087,
+          0.0072,
+          0.0018,
+          0.0017,
+          0.0024,
+          0.005,
+          0.0016,
+          0.0014,
+          0.0024,
+          0.0019,
+          0.0072,
+          0.003,
+          0.0119,
+          0.0018,
+          0.0019,
+          0.0022,
+          0.0015,
+          0.0021,
+          0.0029,
+          0.0016
+        ],
+        "probe": {
+          "health": 200,
+          "clean_doc": "partial",
+          "alive": true
+        }
+      }
+    },
+    {
+      "id": "N01",
+      "family": "upload-nazwa",
+      "name": "traversal ../../x.json",
+      "expected": "brak zapisu poza obszarem pracy; nazwa odrzucona jawnie (architektura §7), nie naprawiona po cichu",
+      "actual": "HTTP 201; zapisana nazwa='x.json'; pliki na dysku=['input.pdf', 'runs']; poza obszarem pracy: 0; nazwa naprawiana po cichu (ścieżka zawsze input.pdf)",
+      "gap": "częściowo",
+      "fix": "Odrzucić nazwę z separatorem/NUL/kontrolnymi (422 `invalid_filename`) zamiast czyścić; ścieżkę dysku budować wyłącznie z ID (jak teraz).",
+      "port_test": "test_upload_filename_variants_never_write_outside_workdir (parametryzowany listą N01–N12)",
+      "data": {
+        "http": 201,
+        "stored_filename": "x.json",
+        "outcome": "partial",
+        "on_disk": [
+          "input.pdf",
+          "runs"
+        ],
+        "outside_new_files": []
+      }
+    },
+    {
+      "id": "N02",
+      "family": "upload-nazwa",
+      "name": "ścieżka bezwzględna /etc/cron.d/x",
+      "expected": "brak zapisu poza obszarem pracy; nazwa odrzucona jawnie (architektura §7), nie naprawiona po cichu",
+      "actual": "HTTP 201; zapisana nazwa='x.pdf'; pliki na dysku=['input.pdf', 'runs']; poza obszarem pracy: 0; nazwa naprawiana po cichu (ścieżka zawsze input.pdf)",
+      "gap": "częściowo",
+      "fix": "Odrzucić nazwę z separatorem/NUL/kontrolnymi (422 `invalid_filename`) zamiast czyścić; ścieżkę dysku budować wyłącznie z ID (jak teraz).",
+      "port_test": "test_upload_filename_variants_never_write_outside_workdir (parametryzowany listą N01–N12)",
+      "data": {
+        "http": 201,
+        "stored_filename": "x.pdf",
+        "outcome": "partial",
+        "on_disk": [
+          "input.pdf",
+          "runs"
+        ],
+        "outside_new_files": []
+      }
+    },
+    {
+      "id": "N03",
+      "family": "upload-nazwa",
+      "name": "separator Windows ..\\..\\x.pdf",
+      "expected": "brak zapisu poza obszarem pracy; nazwa odrzucona jawnie (architektura §7), nie naprawiona po cichu",
+      "actual": "HTTP 201; zapisana nazwa='evil.pdf'; pliki na dysku=['input.pdf', 'runs']; poza obszarem pracy: 0; nazwa naprawiana po cichu (ścieżka zawsze input.pdf)",
+      "gap": "częściowo",
+      "fix": "Odrzucić nazwę z separatorem/NUL/kontrolnymi (422 `invalid_filename`) zamiast czyścić; ścieżkę dysku budować wyłącznie z ID (jak teraz).",
+      "port_test": "test_upload_filename_variants_never_write_outside_workdir (parametryzowany listą N01–N12)",
+      "data": {
+        "http": 201,
+        "stored_filename": "evil.pdf",
+        "outcome": "partial",
+        "on_disk": [
+          "input.pdf",
+          "runs"
+        ],
+        "outside_new_files": []
+      }
+    },
+    {
+      "id": "N04",
+      "family": "upload-nazwa",
+      "name": "kodowanie %2e%2e%2f",
+      "expected": "brak zapisu poza obszarem pracy; nazwa odrzucona jawnie (architektura §7), nie naprawiona po cichu",
+      "actual": "HTTP 201; zapisana nazwa='_2e_2e_2f_2e_2e_2fevil.pdf'; pliki na dysku=['input.pdf', 'runs']; poza obszarem pracy: 0; nazwa naprawiana po cichu (ścieżka zawsze input.pdf)",
+      "gap": "częściowo",
+      "fix": "Odrzucić nazwę z separatorem/NUL/kontrolnymi (422 `invalid_filename`) zamiast czyścić; ścieżkę dysku budować wyłącznie z ID (jak teraz).",
+      "port_test": "test_upload_filename_variants_never_write_outside_workdir (parametryzowany listą N01–N12)",
+      "data": {
+        "http": 201,
+        "stored_filename": "_2e_2e_2f_2e_2e_2fevil.pdf",
+        "outcome": "partial",
+        "on_disk": [
+          "input.pdf",
+          "runs"
+        ],
+        "outside_new_files": []
+      }
+    },
+    {
+      "id": "N05",
+      "family": "upload-nazwa",
+      "name": "NUL w nazwie",
+      "expected": "brak zapisu poza obszarem pracy; nazwa odrzucona jawnie (architektura §7), nie naprawiona po cichu",
+      "actual": "HTTP 201; zapisana nazwa='ok_.pdf'; pliki na dysku=['input.pdf', 'runs']; poza obszarem pracy: 0; nazwa naprawiana po cichu (ścieżka zawsze input.pdf)",
+      "gap": "częściowo",
+      "fix": "Odrzucić nazwę z separatorem/NUL/kontrolnymi (422 `invalid_filename`) zamiast czyścić; ścieżkę dysku budować wyłącznie z ID (jak teraz).",
+      "port_test": "test_upload_filename_variants_never_write_outside_workdir (parametryzowany listą N01–N12)",
+      "data": {
+        "http": 201,
+        "stored_filename": "ok_.pdf",
+        "outcome": "partial",
+        "on_disk": [
+          "input.pdf",
+          "runs"
+        ],
+        "outside_new_files": []
+      }
+    },
+    {
+      "id": "N06",
+      "family": "upload-nazwa",
+      "name": "zarezerwowane CON/NUL",
+      "expected": "brak zapisu poza obszarem pracy; nazwa odrzucona jawnie (architektura §7), nie naprawiona po cichu",
+      "actual": "HTTP 201; zapisana nazwa='CON.pdf'; pliki na dysku=['input.pdf', 'runs']; poza obszarem pracy: 0",
+      "gap": "nie",
+      "fix": "Odrzucić nazwę z separatorem/NUL/kontrolnymi (422 `invalid_filename`) zamiast czyścić; ścieżkę dysku budować wyłącznie z ID (jak teraz).",
+      "port_test": "test_upload_filename_variants_never_write_outside_workdir (parametryzowany listą N01–N12)",
+      "data": {
+        "http": 201,
+        "stored_filename": "CON.pdf",
+        "outcome": "partial",
+        "on_disk": [
+          "input.pdf",
+          "runs"
+        ],
+        "outside_new_files": []
+      }
+    },
+    {
+      "id": "N07",
+      "family": "upload-nazwa",
+      "name": "300 znaków",
+      "expected": "brak zapisu poza obszarem pracy; nazwa odrzucona jawnie (architektura §7), nie naprawiona po cichu",
+      "actual": "HTTP 201; zapisana nazwa='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'; pliki na dysku=['input.pdf', 'runs']; poza obszarem pracy: 0; nazwa naprawiana po cichu (ścieżka zawsze input.pdf)",
+      "gap": "częściowo",
+      "fix": "Odrzucić nazwę z separatorem/NUL/kontrolnymi (422 `invalid_filename`) zamiast czyścić; ścieżkę dysku budować wyłącznie z ID (jak teraz).",
+      "port_test": "test_upload_filename_variants_never_write_outside_workdir (parametryzowany listą N01–N12)",
+      "data": {
+        "http": 201,
+        "stored_filename": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "outcome": "partial",
+        "on_disk": [
+          "input.pdf",
+          "runs"
+        ],
+        "outside_new_files": []
+      }
+    },
+    {
+      "id": "N08",
+      "family": "upload-nazwa",
+      "name": "Unicode NFD",
+      "expected": "brak zapisu poza obszarem pracy; nazwa odrzucona jawnie (architektura §7), nie naprawiona po cichu",
+      "actual": "HTTP 201; zapisana nazwa='za_z_o_ł_c.pdf'; pliki na dysku=['input.pdf', 'runs']; poza obszarem pracy: 0; nazwa naprawiana po cichu (ścieżka zawsze input.pdf)",
+      "gap": "częściowo",
+      "fix": "Odrzucić nazwę z separatorem/NUL/kontrolnymi (422 `invalid_filename`) zamiast czyścić; ścieżkę dysku budować wyłącznie z ID (jak teraz).",
+      "port_test": "test_upload_filename_variants_never_write_outside_workdir (parametryzowany listą N01–N12)",
+      "data": {
+        "http": 201,
+        "stored_filename": "za_z_o_ł_c.pdf",
+        "outcome": "partial",
+        "on_disk": [
+          "input.pdf",
+          "runs"
+        ],
+        "outside_new_files": []
+      }
+    },
+    {
+      "id": "N09",
+      "family": "upload-nazwa",
+      "name": "podfolder a/../../b",
+      "expected": "brak zapisu poza obszarem pracy; nazwa odrzucona jawnie (architektura §7), nie naprawiona po cichu",
+      "actual": "HTTP 201; zapisana nazwa='b.pdf'; pliki na dysku=['input.pdf', 'runs']; poza obszarem pracy: 0; nazwa naprawiana po cichu (ścieżka zawsze input.pdf)",
+      "gap": "częściowo",
+      "fix": "Odrzucić nazwę z separatorem/NUL/kontrolnymi (422 `invalid_filename`) zamiast czyścić; ścieżkę dysku budować wyłącznie z ID (jak teraz).",
+      "port_test": "test_upload_filename_variants_never_write_outside_workdir (parametryzowany listą N01–N12)",
+      "data": {
+        "http": 201,
+        "stored_filename": "b.pdf",
+        "outcome": "partial",
+        "on_disk": [
+          "input.pdf",
+          "runs"
+        ],
+        "outside_new_files": []
+      }
+    },
+    {
+      "id": "N10",
+      "family": "upload-nazwa",
+      "name": "pusta nazwa",
+      "expected": "brak zapisu poza obszarem pracy; nazwa odrzucona jawnie (architektura §7), nie naprawiona po cichu",
+      "actual": "HTTP 201; zapisana nazwa='plik.pdf'; pliki na dysku=['input.pdf', 'runs']; poza obszarem pracy: 0; nazwa naprawiana po cichu (ścieżka zawsze input.pdf)",
+      "gap": "częściowo",
+      "fix": "Odrzucić nazwę z separatorem/NUL/kontrolnymi (422 `invalid_filename`) zamiast czyścić; ścieżkę dysku budować wyłącznie z ID (jak teraz).",
+      "port_test": "test_upload_filename_variants_never_write_outside_workdir (parametryzowany listą N01–N12)",
+      "data": {
+        "http": 201,
+        "stored_filename": "plik.pdf",
+        "outcome": "partial",
+        "on_disk": [
+          "input.pdf",
+          "runs"
+        ],
+        "outside_new_files": []
+      }
+    },
+    {
+      "id": "N11",
+      "family": "upload-nazwa",
+      "name": "nazwa z CRLF i znacznikami HTML",
+      "expected": "brak zapisu poza obszarem pracy; nazwa odrzucona jawnie (architektura §7), nie naprawiona po cichu",
+      "actual": "HTTP 201; zapisana nazwa='_x'; pliki na dysku=['input.pdf', 'runs']; poza obszarem pracy: 0; nazwa naprawiana po cichu (ścieżka zawsze input.pdf)",
+      "gap": "częściowo",
+      "fix": "Odrzucić nazwę z separatorem/NUL/kontrolnymi (422 `invalid_filename`) zamiast czyścić; ścieżkę dysku budować wyłącznie z ID (jak teraz).",
+      "port_test": "test_upload_filename_variants_never_write_outside_workdir (parametryzowany listą N01–N12)",
+      "data": {
+        "http": 201,
+        "stored_filename": "_x",
+        "outcome": "partial",
+        "on_disk": [
+          "input.pdf",
+          "runs"
+        ],
+        "outside_new_files": []
+      }
+    },
+    {
+      "id": "N12",
+      "family": "upload-nazwa",
+      "name": "nazwa zaczynająca się od kropki (ukryty plik)",
+      "expected": "brak zapisu poza obszarem pracy; nazwa odrzucona jawnie (architektura §7), nie naprawiona po cichu",
+      "actual": "HTTP 201; zapisana nazwa='.htaccess'; pliki na dysku=['input.pdf', 'runs']; poza obszarem pracy: 0",
+      "gap": "nie",
+      "fix": "Odrzucić nazwę z separatorem/NUL/kontrolnymi (422 `invalid_filename`) zamiast czyścić; ścieżkę dysku budować wyłącznie z ID (jak teraz).",
+      "port_test": "test_upload_filename_variants_never_write_outside_workdir (parametryzowany listą N01–N12)",
+      "data": {
+        "http": 201,
+        "stored_filename": ".htaccess",
+        "outcome": "partial",
+        "on_disk": [
+          "input.pdf",
+          "runs"
+        ],
+        "outside_new_files": []
+      }
+    },
+    {
+      "id": "N13",
+      "family": "upload-nazwa",
+      "name": "duplikat/wielkość liter: A.pdf + a.pdf",
+      "expected": "dwa osobne dokumenty, brak nadpisania, mapowanie wejście→wynik zachowane",
+      "actual": "ids=['b6150353a3021-d001', 'b6150353a3021-d002'] unikalne=True; nazwy=['A.pdf', 'a.pdf']; wyniki=['partial', 'partial']",
+      "gap": "nie",
+      "fix": "Zachować oryginalną nazwę w metadanych (UTF-8) obok ID; porównywać wielkość liter przy raportowaniu duplikatów.",
+      "port_test": "test_same_basename_two_documents_get_distinct_ids_and_results",
+      "data": {}
+    },
+    {
+      "id": "N14",
+      "family": "upload-nazwa",
+      "name": "duplikat/wielkość liter: dup.pdf + dup.pdf",
+      "expected": "dwa osobne dokumenty, brak nadpisania, mapowanie wejście→wynik zachowane",
+      "actual": "ids=['b7e3225441f3e-d001', 'b7e3225441f3e-d002'] unikalne=True; nazwy=['dup.pdf', 'dup.pdf']; wyniki=['partial', 'partial']",
+      "gap": "nie",
+      "fix": "Zachować oryginalną nazwę w metadanych (UTF-8) obok ID; porównywać wielkość liter przy raportowaniu duplikatów.",
+      "port_test": "test_same_basename_two_documents_get_distinct_ids_and_results",
+      "data": {}
+    },
+    {
+      "id": "N15",
+      "family": "upload-nazwa",
+      "name": "duplikat/wielkość liter: sub1/same.pdf + sub2/same.pdf",
+      "expected": "dwa osobne dokumenty, brak nadpisania, mapowanie wejście→wynik zachowane",
+      "actual": "ids=['b4e9712585ff7-d001', 'b4e9712585ff7-d002'] unikalne=True; nazwy=['same.pdf', 'same.pdf']; wyniki=['partial', 'partial']",
+      "gap": "nie",
+      "fix": "Zachować oryginalną nazwę w metadanych (UTF-8) obok ID; porównywać wielkość liter przy raportowaniu duplikatów.",
+      "port_test": "test_same_basename_two_documents_get_distinct_ids_and_results",
+      "data": {}
+    },
+    {
+      "id": "N16",
+      "family": "upload-nazwa",
+      "name": "przerwany upload (zamknięcie połączenia w połowie ciała)",
+      "expected": "brak częściowego dokumentu przetwarzanego jako wynik",
+      "actual": "pliki input* po przerwaniu: []; /health=200",
+      "gap": "nie",
+      "fix": "Wsad zapisywać w katalogu tymczasowym i przenosić atomowo po pełnym przyjęciu; sprzątać `.part` przy starcie.",
+      "port_test": "test_aborted_upload_leaves_no_batch_or_part_files",
+      "data": {}
+    },
+    {
+      "id": "P01",
+      "family": "odczyt-ścieżek",
+      "name": "traversal w /documents/{id}/artifact/{name:path} (8 kodowań)",
+      "expected": "404, brak odczytu plików spoza katalogu przebiegu",
+      "actual": "statusy=[404, 404, 404, 404, 404, 404, 500, 'błąd:ReadError']; wycieki=0; nieobsłużony wyjątek (500/zerwane połączenie) dla 2 z 8 ładunków",
+      "gap": "częściowo",
+      "fix": "Trasa surowych artefaktów nie powinna istnieć w produkcie; jeśli tak, lista dozwolonych nazw zamiast ścieżki.",
+      "port_test": "test_artifact_route_rejects_traversal_encodings",
+      "data": {
+        "cases": [
+          {
+            "payload": "../../../../../../etc/passwd",
+            "http": 404,
+            "leak": false
+          },
+          {
+            "payload": "..%2f..%2f..%2fetc%2fpasswd",
+            "http": 404,
+            "leak": false
+          },
+          {
+            "payload": "%2e%2e/%2e%2e/x.json",
+            "http": 404,
+            "leak": false
+          },
+          {
+            "payload": "/etc/passwd",
+            "http": 404,
+            "leak": false
+          },
+          {
+            "payload": "raw/../../../../outside/tajne.json",
+            "http": 404,
+            "leak": false
+          },
+          {
+            "payload": "....//....//x.json",
+            "http": 404,
+            "leak": false
+          },
+          {
+            "payload": "raw/reading.json%00.png",
+            "http": 500,
+            "leak": false
+          },
+          {
+            "payload": "..\\..\\x.json",
+            "http": "błąd:ReadError",
+            "leak": false
+          }
+        ]
+      }
+    },
+    {
+      "id": "P02",
+      "family": "odczyt-ścieżek",
+      "name": "symlink w katalogu przebiegu: do pliku-kanarka poza workspace, do cudzego dokumentu, do katalogu",
+      "expected": "żaden nie jest odczytany",
+      "actual": "plik poza: HTTP 404 wyciek=False; cudzy dokument: HTTP 404 wyciek=False; katalog: HTTP 404 wyciek=False",
+      "gap": "nie",
+      "fix": "resolve() + sprawdzenie prefiksu (jest) oraz odmowa gdy któryś element ścieżki jest symlinkiem (lstat) lub open z O_NOFOLLOW.",
+      "port_test": "test_symlink_inside_run_dir_is_not_followed",
+      "data": {
+        "outside": 404,
+        "foreign_doc": 404,
+        "dir": 404
+      }
+    },
+    {
+      "id": "P03",
+      "family": "IDOR",
+      "name": "identyfikatory jako ścieżka i dostęp do cudzego wsadu",
+      "expected": "ID = nieprzewidywalny losowy token; brak traktowania ID jako ścieżki",
+      "actual": "ID-ścieżki → [404, 405, 200, 307, 404, 404]; wynik cudzego wsadu bez tożsamości: HTTP 200; batch_id=b270f7e06d716 (12 hex = 48 bit entropii), document_id=batch_id+'-d00N' (sekwencyjny sufiks)",
+      "gap": "częściowo",
+      "fix": "MVP bez logowania: ID ≥128 bit (secrets.token_urlsafe(16)); zapis w ADR, że brak izolacji użytkowników jest świadomy; przy dodaniu użytkowników sprawdzać właściciela wsadu.",
+      "port_test": "test_ids_have_128_bit_entropy_and_unknown_id_is_404",
+      "data": {}
+    },
+    {
+      "id": "P04",
+      "family": "odczyt-ścieżek",
+      "name": "ujawnienie ścieżek hosta w /system i w błędach",
+      "expected": "brak ścieżek hosta w odpowiedziach",
+      "actual": "ścieżka w odpowiedzi: {'/system': True, '404': False, '422': False}",
+      "gap": "tak",
+      "fix": "W /system podawać wersje i gotowość, bez `work_dir` i ścieżki pliku klucza.",
+      "port_test": "test_system_and_errors_do_not_expose_host_paths",
+      "data": {}
+    },
+    {
+      "id": "P05",
+      "family": "wiązanie/CSRF",
+      "name": "Host: evil.example, Origin obcy, formularz bez preflight",
+      "expected": "odrzucenie żądania z obcym Host/Origin; brak wsadu z formularza obcej strony",
+      "actual": "Host evil → HTTP 200; POST multipart z obcym Origin → HTTP 201 (wsad utworzony); OPTIONS → 405; ACAO=None",
+      "gap": "tak",
+      "fix": "Middleware: dopuszczać tylko Host ∈ {127.0.0.1:PORT, localhost:PORT}; odrzucać Origin spoza listy; wymagać nagłówka niestandardowego (np. X-Requested-With) lub tokenu sesji dla POST.",
+      "port_test": "test_post_with_foreign_origin_or_host_is_rejected",
+      "data": {}
+    },
+    {
+      "id": "P06",
+      "family": "XSS",
+      "name": "HTML/JS w nazwie pliku i treści PDF: czy wraca nieescapowane w JSON i jaki Content-Type",
+      "expected": "Content-Type: application/json + nosniff; nazwa oczyszczona; ucieczka w GUI",
+      "actual": "nazwa zapisana='_img src_x onerror_alert_1__.pdf'; treść z <script> w odpowiedzi surowa=True; content-type=application/json; nosniff=None",
+      "gap": "częściowo",
+      "fix": "Dodać `X-Content-Type-Options: nosniff` i `Content-Security-Policy: default-src 'none'` do odpowiedzi API; GUI renderuje tekst dokumentu wyłącznie jako tekst (textContent), nie innerHTML; test w GUI.",
+      "port_test": "test_api_responses_have_nosniff_and_json_content_type; GUI: test_document_text_rendered_as_text_not_html",
+      "data": {
+        "headers": {
+          "content-type": "application/json",
+          "x-content-type-options": null,
+          "content-security-policy": null,
+          "content-disposition": null
+        }
+      }
+    },
+    {
+      "id": "R01",
+      "family": "ReDoS",
+      "name": "wzorce normalizatorów produkcyjnych (apps) i regułowe uprzęży na ciągach do 50 000 znaków (10 rodzin wejść × 3 rozmiary)",
+      "expected": "czas ≤ ~1 s dla 50 000 znaków; brak wzrostu wykładniczego i kwadratowego rzutującego na limit czasu",
+      "actual": "najgorszy czas 0.15 s (date_like, n=50000, funkcja date); dokument HTTP z długimi liniami: outcome=complete w 0.74 s; kontrola={'health': 200, 'clean_doc': 'partial', 'alive': True}",
+      "gap": "nie",
+      "fix": "Ograniczyć długość kandydata przed regex (np. ≤200 znaków dla NIP/rachunku/kwoty), użyć regex z limitem czasu (`regex` z timeout) lub wzorców bez zagnieżdżonych kwantyfikatorów; test z wejściem 50 000 znaków.",
+      "port_test": "test_normalizers_linear_time_on_50k_char_inputs (limit 1 s)",
+      "data": {
+        "table": {
+          "digits": {
+            "1000": {
+              "nip": 0.0001,
+              "regon": 0.0001,
+              "krs": 0.0,
+              "pesel": 0.0,
+              "account": 0.0001,
+              "amount": 0.0,
+              "date": 0.0028,
+              "ted": 0.0,
+              "harness_regex": 0.0009
+            },
+            "10000": {
+              "nip": 0.0002,
+              "regon": 0.0003,
+              "krs": 0.0001,
+              "pesel": 0.0002,
+              "account": 0.0006,
+              "amount": 0.0009,
+              "date": 0.0108,
+              "ted": 0.0002,
+              "harness_regex": 0.0072
+            },
+            "50000": {
+              "nip": 0.0006,
+              "regon": 0.0075,
+              "krs": 0.0005,
+              "pesel": 0.0006,
+              "account": 0.004,
+              "amount": 0.0048,
+              "date": 0.0461,
+              "ted": 0.001,
+              "harness_regex": 0.0315
+            }
+          },
+          "digits_spaces": {
+            "1000": {
+              "nip": 0.0001,
+              "regon": 0.0001,
+              "krs": 0.0,
+              "pesel": 0.0001,
+              "account": 0.0001,
+              "amount": 0.0001,
+              "date": 0.0016,
+              "ted": 0.0,
+              "harness_regex": 0.0008
+            },
+            "10000": {
+              "nip": 0.0002,
+              "regon": 0.0004,
+              "krs": 0.0001,
+              "pesel": 0.0002,
+              "account": 0.0005,
+              "amount": 0.0027,
+              "date": 0.005,
+              "ted": 0.0003,
+              "harness_regex": 0.004
+            },
+            "50000": {
+              "nip": 0.0008,
+              "regon": 0.0093,
+              "krs": 0.0007,
+              "pesel": 0.0008,
+              "account": 0.0089,
+              "amount": 0.0139,
+              "date": 0.1125,
+              "ted": 0.0014,
+              "harness_regex": 0.0747
+            }
+          },
+          "spaced_letters": {
+            "1000": {
+              "nip": 0.0001,
+              "regon": 0.0017,
+              "krs": 0.0,
+              "pesel": 0.0001,
+              "account": 0.0001,
+              "amount": 0.0001,
+              "date": 0.0005,
+              "ted": 0.0,
+              "harness_regex": 0.0024
+            },
+            "10000": {
+              "nip": 0.0015,
+              "regon": 0.0004,
+              "krs": 0.0002,
+              "pesel": 0.0002,
+              "account": 0.0007,
+              "amount": 0.0005,
+              "date": 0.0047,
+              "ted": 0.0004,
+              "harness_regex": 0.004
+            },
+            "50000": {
+              "nip": 0.0009,
+              "regon": 0.0052,
+              "krs": 0.0008,
+              "pesel": 0.0008,
+              "account": 0.0057,
+              "amount": 0.0057,
+              "date": 0.0475,
+              "ted": 0.005,
+              "harness_regex": 0.0363
+            }
+          },
+          "nip_like": {
+            "1000": {
+              "nip": 0.0001,
+              "regon": 0.0001,
+              "krs": 0.0,
+              "pesel": 0.0001,
+              "account": 0.0012,
+              "amount": 0.0001,
+              "date": 0.0005,
+              "ted": 0.0,
+              "harness_regex": 0.0007
+            },
+            "10000": {
+              "nip": 0.0002,
+              "regon": 0.0004,
+              "krs": 0.0001,
+              "pesel": 0.0002,
+              "account": 0.0005,
+              "amount": 0.0032,
+              "date": 0.0088,
+              "ted": 0.0003,
+              "harness_regex": 0.0074
+            },
+            "50000": {
+              "nip": 0.0007,
+              "regon": 0.0014,
+              "krs": 0.0035,
+              "pesel": 0.0007,
+              "account": 0.002,
+              "amount": 0.0048,
+              "date": 0.0479,
+              "ted": 0.0041,
+              "harness_regex": 0.03
+            }
+          },
+          "account_like": {
+            "1000": {
+              "nip": 0.0001,
+              "regon": 0.0001,
+              "krs": 0.0,
+              "pesel": 0.0001,
+              "account": 0.0001,
+              "amount": 0.0001,
+              "date": 0.0006,
+              "ted": 0.0,
+              "harness_regex": 0.0007
+            },
+            "10000": {
+              "nip": 0.0002,
+              "regon": 0.0004,
+              "krs": 0.0001,
+              "pesel": 0.0002,
+              "account": 0.0044,
+              "amount": 0.0004,
+              "date": 0.0106,
+              "ted": 0.0031,
+              "harness_regex": 0.012
+            },
+            "50000": {
+              "nip": 0.0042,
+              "regon": 0.0015,
+              "krs": 0.0006,
+              "pesel": 0.0055,
+              "account": 0.002,
+              "amount": 0.0089,
+              "date": 0.0723,
+              "ted": 0.0041,
+              "harness_regex": 0.0399
+            }
+          },
+          "amount_like": {
+            "1000": {
+              "nip": 0.0002,
+              "regon": 0.0001,
+              "krs": 0.0,
+              "pesel": 0.0001,
+              "account": 0.0001,
+              "amount": 0.0001,
+              "date": 0.0041,
+              "ted": 0.0,
+              "harness_regex": 0.0011
+            },
+            "10000": {
+              "nip": 0.0002,
+              "regon": 0.0003,
+              "krs": 0.0001,
+              "pesel": 0.0001,
+              "account": 0.0004,
+              "amount": 0.0004,
+              "date": 0.0106,
+              "ted": 0.0002,
+              "harness_regex": 0.0044
+            },
+            "50000": {
+              "nip": 0.0177,
+              "regon": 0.0014,
+              "krs": 0.0006,
+              "pesel": 0.0121,
+              "account": 0.002,
+              "amount": 0.016,
+              "date": 0.1273,
+              "ted": 0.0012,
+              "harness_regex": 0.0866
+            }
+          },
+          "date_like": {
+            "1000": {
+              "nip": 0.0001,
+              "regon": 0.0001,
+              "krs": 0.0,
+              "pesel": 0.0,
+              "account": 0.0001,
+              "amount": 0.0,
+              "date": 0.0004,
+              "ted": 0.0,
+              "harness_regex": 0.0023
+            },
+            "10000": {
+              "nip": 0.0061,
+              "regon": 0.0004,
+              "krs": 0.0001,
+              "pesel": 0.003,
+              "account": 0.0004,
+              "amount": 0.0005,
+              "date": 0.0066,
+              "ted": 0.0062,
+              "harness_regex": 0.0131
+            },
+            "50000": {
+              "nip": 0.0007,
+              "regon": 0.0177,
+              "krs": 0.0007,
+              "pesel": 0.0008,
+              "account": 0.0411,
+              "amount": 0.0017,
+              "date": 0.1502,
+              "ted": 0.0177,
+              "harness_regex": 0.1126
+            }
+          },
+          "dots": {
+            "1000": {
+              "nip": 0.0001,
+              "regon": 0.0001,
+              "krs": 0.0,
+              "pesel": 0.0,
+              "account": 0.0001,
+              "amount": 0.0,
+              "date": 0.003,
+              "ted": 0.0,
+              "harness_regex": 0.0025
+            },
+            "10000": {
+              "nip": 0.0002,
+              "regon": 0.0004,
+              "krs": 0.0001,
+              "pesel": 0.0001,
+              "account": 0.0002,
+              "amount": 0.0003,
+              "date": 0.0105,
+              "ted": 0.0002,
+              "harness_regex": 0.008
+            },
+            "50000": {
+              "nip": 0.0008,
+              "regon": 0.0074,
+              "krs": 0.006,
+              "pesel": 0.0007,
+              "account": 0.0051,
+              "amount": 0.0013,
+              "date": 0.0831,
+              "ted": 0.0013,
+              "harness_regex": 0.0535
+            }
+          },
+          "ted_like": {
+            "1000": {
+              "nip": 0.0001,
+              "regon": 0.0001,
+              "krs": 0.0,
+              "pesel": 0.0,
+              "account": 0.0001,
+              "amount": 0.0,
+              "date": 0.0004,
+              "ted": 0.0,
+              "harness_regex": 0.0005
+            },
+            "10000": {
+              "nip": 0.0002,
+              "regon": 0.0089,
+              "krs": 0.0001,
+              "pesel": 0.0002,
+              "account": 0.0003,
+              "amount": 0.0003,
+              "date": 0.0071,
+              "ted": 0.0088,
+              "harness_regex": 0.0024
+            },
+            "50000": {
+              "nip": 0.0061,
+              "regon": 0.0013,
+              "krs": 0.0049,
+              "pesel": 0.0036,
+              "account": 0.0043,
+              "amount": 0.0133,
+              "date": 0.0764,
+              "ted": 0.0015,
+              "harness_regex": 0.0528
+            }
+          },
+          "zl_spaces": {
+            "1000": {
+              "nip": 0.0001,
+              "regon": 0.0001,
+              "krs": 0.0,
+              "pesel": 0.0001,
+              "account": 0.0001,
+              "amount": 0.0,
+              "date": 0.0004,
+              "ted": 0.0,
+              "harness_regex": 0.0006
+            },
+            "10000": {
+              "nip": 0.0003,
+              "regon": 0.0006,
+              "krs": 0.0002,
+              "pesel": 0.0003,
+              "account": 0.0001,
+              "amount": 0.0001,
+              "date": 0.0099,
+              "ted": 0.0004,
+              "harness_regex": 0.0022
+            },
+            "50000": {
+              "nip": 0.0012,
+              "regon": 0.0153,
+              "krs": 0.0048,
+              "pesel": 0.015,
+              "account": 0.0005,
+              "amount": 0.0002,
+              "date": 0.0943,
+              "ted": 0.0168,
+              "harness_regex": 0.0395
+            }
+          }
+        },
+        "worst": {
+          "s": 0.1502,
+          "kind": "date_like",
+          "n": 50000,
+          "fn": "date"
+        },
+        "http_s": 0.74
+      }
+    },
+    {
+      "id": "S01",
+      "family": "SSRF-z-PDF",
+      "name": "PDF z akcjami URI/GoToR/Launch/JS/XFA(XXE)/F+FFilter/EmbeddedFile + file:// — wariant: tekst",
+      "expected": "zero połączeń do nasłuchu, zero treści z file:// w wyniku, zero wykonania akcji",
+      "actual": "outcome=ambiguous kody=['class_ambiguous']; połączenia do nasłuchu 127.0.0.1: 0 []; treść kanarka z file:// w artefaktach: False",
+      "gap": "nie",
+      "fix": "Zachować pdfium bez V8/XFA i bez FORM ENV (stan obecny); w produkcie dodać test z nasłuchem i uruchamiać parser w procesie bez dostępu do sieci (np. `unshare -n`) — obrona w głąb.",
+      "port_test": "test_pdf_with_external_actions_makes_no_network_requests (nasłuch loopback)",
+      "data": {
+        "hits": []
+      }
+    },
+    {
+      "id": "S02",
+      "family": "SSRF-z-PDF",
+      "name": "PDF z akcjami URI/GoToR/Launch/JS/XFA(XXE)/F+FFilter/EmbeddedFile + file:// — wariant: skan (render)",
+      "expected": "zero połączeń do nasłuchu, zero treści z file:// w wyniku, zero wykonania akcji",
+      "actual": "outcome=technical_error kody=['ocr_unavailable']; połączenia do nasłuchu 127.0.0.1: 0 []; treść kanarka z file:// w artefaktach: False",
+      "gap": "nie",
+      "fix": "Zachować pdfium bez V8/XFA i bez FORM ENV (stan obecny); w produkcie dodać test z nasłuchem i uruchamiać parser w procesie bez dostępu do sieci (np. `unshare -n`) — obrona w głąb.",
+      "port_test": "test_pdf_with_external_actions_makes_no_network_requests (nasłuch loopback)",
+      "data": {
+        "hits": []
+      }
+    },
+    {
+      "id": "T01",
+      "family": "typ-pliku",
+      "name": "plik 0 bajtów",
+      "expected": "kod: not_a_pdf|empty_document",
+      "actual": "outcome=technical_error kody=['not_a_pdf']",
+      "gap": "nie",
+      "fix": "Walidować magię i strukturę niezależnie od rozszerzenia i MIME; kod błędu stabilny.",
+      "port_test": "test_input_type_matrix[T01]",
+      "data": {
+        "expected": "not_a_pdf|empty_document",
+        "got": "not_a_pdf",
+        "state_ok": true
+      }
+    },
+    {
+      "id": "T02",
+      "family": "typ-pliku",
+      "name": "sam nagłówek %PDF-1.7",
+      "expected": "kod: pdf_corrupted",
+      "actual": "outcome=technical_error kody=['pdf_corrupted']",
+      "gap": "nie",
+      "fix": "Walidować magię i strukturę niezależnie od rozszerzenia i MIME; kod błędu stabilny.",
+      "port_test": "test_input_type_matrix[T02]",
+      "data": {
+        "expected": "pdf_corrupted",
+        "got": "pdf_corrupted",
+        "state_ok": true
+      }
+    },
+    {
+      "id": "T03",
+      "family": "typ-pliku",
+      "name": "PNG z Content-Type application/pdf i nazwą .pdf",
+      "expected": "kod: not_a_pdf",
+      "actual": "outcome=technical_error kody=['not_a_pdf']",
+      "gap": "nie",
+      "fix": "Walidować magię i strukturę niezależnie od rozszerzenia i MIME; kod błędu stabilny.",
+      "port_test": "test_input_type_matrix[T03]",
+      "data": {
+        "expected": "not_a_pdf",
+        "got": "not_a_pdf",
+        "state_ok": true
+      }
+    },
+    {
+      "id": "T04",
+      "family": "typ-pliku",
+      "name": "nagłówek HTML + treść",
+      "expected": "kod: not_a_pdf",
+      "actual": "outcome=technical_error kody=['not_a_pdf']",
+      "gap": "nie",
+      "fix": "Walidować magię i strukturę niezależnie od rozszerzenia i MIME; kod błędu stabilny.",
+      "port_test": "test_input_type_matrix[T04]",
+      "data": {
+        "expected": "not_a_pdf",
+        "got": "not_a_pdf",
+        "state_ok": true
+      }
+    },
+    {
+      "id": "T05",
+      "family": "typ-pliku",
+      "name": "%PDF po 1 MB śmieci (poza oknem 1024 B)",
+      "expected": "kod: not_a_pdf",
+      "actual": "outcome=technical_error kody=['not_a_pdf']",
+      "gap": "nie",
+      "fix": "Walidować magię i strukturę niezależnie od rozszerzenia i MIME; kod błędu stabilny.",
+      "port_test": "test_input_type_matrix[T05]",
+      "data": {
+        "expected": "not_a_pdf",
+        "got": "not_a_pdf",
+        "state_ok": true
+      }
+    },
+    {
+      "id": "T06",
+      "family": "typ-pliku",
+      "name": "poliglot PDF + ZIP doklejony na końcu",
+      "expected": "kod: complete|partial",
+      "actual": "outcome=partial kody=['evidence_unanchored']",
+      "gap": "nie",
+      "fix": "Walidować magię i strukturę niezależnie od rozszerzenia i MIME; kod błędu stabilny.",
+      "port_test": "test_input_type_matrix[T06]",
+      "data": {
+        "expected": "complete|partial",
+        "got": "partial",
+        "state_ok": true
+      }
+    },
+    {
+      "id": "T07",
+      "family": "typ-pliku",
+      "name": "śmieci przed %PDF w oknie 1024 B",
+      "expected": "kod: complete|partial",
+      "actual": "outcome=partial kody=['evidence_unanchored']",
+      "gap": "nie",
+      "fix": "Walidować magię i strukturę niezależnie od rozszerzenia i MIME; kod błędu stabilny.",
+      "port_test": "test_input_type_matrix[T07]",
+      "data": {
+        "expected": "complete|partial",
+        "got": "partial",
+        "state_ok": true
+      }
+    },
+    {
+      "id": "T08",
+      "family": "typ-pliku",
+      "name": "obcięty PDF (połowa bajtów)",
+      "expected": "kod: pdf_corrupted",
+      "actual": "outcome=technical_error kody=['pdf_corrupted']",
+      "gap": "nie",
+      "fix": "Walidować magię i strukturę niezależnie od rozszerzenia i MIME; kod błędu stabilny.",
+      "port_test": "test_input_type_matrix[T08]",
+      "data": {
+        "expected": "pdf_corrupted",
+        "got": "pdf_corrupted",
+        "state_ok": true
+      }
+    },
+    {
+      "id": "T09",
+      "family": "typ-pliku",
+      "name": "PDF z 0 stron (Count 0)",
+      "expected": "kod: empty_document",
+      "actual": "outcome=technical_error kody=['pdf_corrupted']",
+      "gap": "nie",
+      "fix": "Walidować magię i strukturę niezależnie od rozszerzenia i MIME; kod błędu stabilny.",
+      "port_test": "test_input_type_matrix[T09]",
+      "data": {
+        "expected": "empty_document",
+        "got": "pdf_corrupted",
+        "state_ok": false
+      }
+    },
+    {
+      "id": "T10",
+      "family": "typ-pliku",
+      "name": "dobry PDF z rozszerzeniem .exe i MIME text/plain",
+      "expected": "kod: complete|partial",
+      "actual": "outcome=partial kody=['evidence_unanchored']",
+      "gap": "nie",
+      "fix": "Walidować magię i strukturę niezależnie od rozszerzenia i MIME; kod błędu stabilny.",
+      "port_test": "test_input_type_matrix[T10]",
+      "data": {
+        "expected": "complete|partial",
+        "got": "partial",
+        "state_ok": true
+      }
+    },
+    {
+      "id": "T11",
+      "family": "typ-pliku",
+      "name": "zaszyfrowany PDF (słownik /Encrypt, hasło użytkownika)",
+      "expected": "kod: pdf_encrypted",
+      "actual": "outcome=technical_error kody=['pdf_encrypted']",
+      "gap": "nie",
+      "fix": "Walidować magię i strukturę niezależnie od rozszerzenia i MIME; kod błędu stabilny.",
+      "port_test": "test_input_type_matrix[T11]",
+      "data": {
+        "expected": "pdf_encrypted",
+        "got": "pdf_encrypted",
+        "state_ok": true
+      }
+    }
+  ],
+  "probes": {
+    "names": {
+      "health": 200,
+      "clean_doc": "partial",
+      "alive": true
+    },
+    "types": {
+      "health": 200,
+      "clean_doc": "partial",
+      "alive": true
+    },
+    "paths": {
+      "health": 200,
+      "clean_doc": "partial",
+      "alive": true
+    },
+    "flood": {
+      "health": 200,
+      "clean_doc": "partial",
+      "alive": true
+    },
+    "flood_usage": {
+      "peak_rss_tree_mb": 69.3,
+      "cgroup_memory_peak_mb": 1098.6,
+      "limit_method": "systemd-run",
+      "memory_max": "14G"
+    },
+    "ssrf": {
+      "health": 200,
+      "clean_doc": "partial",
+      "alive": true
+    }
+  },
+  "generated": "2026-11-22 01:41:07"
+}

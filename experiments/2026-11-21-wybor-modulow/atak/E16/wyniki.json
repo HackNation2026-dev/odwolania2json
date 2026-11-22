@@ -1,0 +1,204 @@
+{
+  "experiment": "E16",
+  "versions": {
+    "python": "3.13.18",
+    "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+    "cpu_count": 8,
+    "fastapi": "0.165.0",
+    "starlette": "1.10.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "pypdfium2": "5.15.2",
+    "pypdf": "7.1.1",
+    "pydantic": "2.14.4",
+    "python-multipart": "0.0.34",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "git_head": "edb03b3"
+  },
+  "vectors": [
+    {
+      "id": "DT01",
+      "family": "determinizm",
+      "name": "ten sam wsad 60 dokumentów dwa razy (świeże serwery, w=1) i raz z w=4: bajty result/evidence/report/diagnosis/state",
+      "expected": "zero różnic (kod regułowy jest deterministyczny)",
+      "actual": "w=1 vs w=1: zero różnic; w=1 vs w=4: zero różnic; versions.json (bez work_dir) identyczne w 60/60; czasy 1.64/1.55/1.14 s",
+      "gap": "nie",
+      "fix": "Utrzymać test powtarzalności bajtowej w CI (dwa przebiegi na stałych danych).",
+      "port_test": "test_two_runs_same_batch_are_byte_identical_for_rules_pipeline",
+      "data": {
+        "a_vs_b": {
+          "docs": 60,
+          "differences_by_artifact": {},
+          "examples": {}
+        },
+        "a_vs_c": {
+          "docs": 60,
+          "differences_by_artifact": {},
+          "examples": {}
+        },
+        "runs": [
+          {
+            "wall_s": 1.64,
+            "done": true,
+            "peak_rss_tree_mb": 69.8,
+            "cgroup_memory_peak_mb": 57.4,
+            "limit_method": "systemd-run",
+            "memory_max": "14G"
+          },
+          {
+            "wall_s": 1.55,
+            "done": true,
+            "peak_rss_tree_mb": 69.9,
+            "cgroup_memory_peak_mb": 58.2,
+            "limit_method": "systemd-run",
+            "memory_max": "14G"
+          },
+          {
+            "wall_s": 1.14,
+            "done": true,
+            "peak_rss_tree_mb": 75.1,
+            "cgroup_memory_peak_mb": 63.7,
+            "limit_method": "systemd-run",
+            "memory_max": "14G"
+          }
+        ]
+      }
+    },
+    {
+      "id": "DT02",
+      "family": "determinizm",
+      "name": "kolejność kluczy wyniku względem referencji organizatora i obecność `null`",
+      "expected": "kolejność kluczy zgodna z szablonem, `null` jawne dla pustych pól",
+      "actual": "kolejność kluczy wyniku jest podciągiem kolejności referencji (puste elementy list usunięte): 50/50 dokumentów z wynikiem (reszta: ambiguous bez result.json); różnica liczby literałów null między wynikiem a referencją (suma bezwzględna): 166 (wynik po `prune` usuwa puste elementy list, więc null-e w listach się różnią)",
+      "gap": "nie",
+      "fix": "Serializować wynik z kolejnością klas szablonu (Pydantic z zachowaniem kolejności pól); test porównania kolejności z `example` OpenAPI.",
+      "port_test": "test_result_key_order_matches_template_and_nulls_explicit",
+      "data": {
+        "order_mismatch": []
+      }
+    },
+    {
+      "id": "DT03",
+      "family": "determinizm",
+      "name": "kod na stałych odpowiedziach LLM (atrapa deterministyczna z treści): 10 przelewów dwa razy",
+      "expected": "identyczne bajty artefaktów; różnice tylko z wariancji modelu (tu jej brak)",
+      "actual": "różnice: zero różnic; wywołań atrapy 7/7",
+      "gap": "nie",
+      "fix": "Zapisywać odpowiedź modelu (jest: ai-response.json) i testować kod na nagranych odpowiedziach osobno od wariancji modelu.",
+      "port_test": "test_replay_recorded_llm_responses_is_byte_identical",
+      "data": {
+        "compare": {
+          "docs": 10,
+          "differences_by_artifact": {},
+          "examples": {}
+        }
+      }
+    },
+    {
+      "id": "DT04",
+      "family": "regresja-miary",
+      "name": "ewaluator produkcyjny (compare_document, domyślnie: błędna wartość = FP, próg 80%) vs miara liści uprzęży na 60 dokumentach regułowych",
+      "expected": "wartości zbliżone; różnice wyjaśnione definicją",
+      "actual": "odwolanie: ewaluator F1=0.2049 (tp 46, tn 37, fp 1, fn 356), liście F1=0.2044; pelnomocnictwo: ewaluator F1=0.4416 (tp 34, tn 44, fp 0, fn 86), liście F1=0.4416; przelew: ewaluator F1=0.3226 (tp 15, tn 0, fp 0, fn 63), liście F1=0.3226",
+      "gap": "nie dotyczy",
+      "fix": "Do porównań wariantów używać ewaluatora produkcyjnego; miara liści zostaje tylko jako kontrola.",
+      "port_test": "(brak: dotyczy pomiaru, nie produktu)",
+      "data": {
+        "odwolanie": {
+          "evaluator": {
+            "tp": 46,
+            "tn": 37,
+            "fp": 1,
+            "fn": 356,
+            "f1": 0.2049
+          },
+          "leaf": {
+            "tp": 46,
+            "fp": 1,
+            "fn": 357,
+            "f1": 0.2044
+          }
+        },
+        "pelnomocnictwo": {
+          "evaluator": {
+            "tp": 34,
+            "tn": 44,
+            "fp": 0,
+            "fn": 86,
+            "f1": 0.4416
+          },
+          "leaf": {
+            "tp": 34,
+            "fp": 0,
+            "fn": 86,
+            "f1": 0.4416
+          }
+        },
+        "przelew": {
+          "evaluator": {
+            "tp": 15,
+            "tn": 0,
+            "fp": 0,
+            "fn": 63,
+            "f1": 0.3226
+          },
+          "leaf": {
+            "tp": 15,
+            "fp": 0,
+            "fn": 63,
+            "f1": 0.3226
+          }
+        }
+      }
+    }
+  ],
+  "note": "Wynik opisuje uprząż; miary F1 poniżej nie są oficjalnym wynikiem (ewaluator produkcyjny po PR #8/#9 vs miara liści uprzęży).",
+  "evaluator_vs_leaf": {
+    "odwolanie": {
+      "evaluator": {
+        "tp": 46,
+        "tn": 37,
+        "fp": 1,
+        "fn": 356,
+        "f1": 0.2049
+      },
+      "leaf": {
+        "tp": 46,
+        "fp": 1,
+        "fn": 357,
+        "f1": 0.2044
+      }
+    },
+    "pelnomocnictwo": {
+      "evaluator": {
+        "tp": 34,
+        "tn": 44,
+        "fp": 0,
+        "fn": 86,
+        "f1": 0.4416
+      },
+      "leaf": {
+        "tp": 34,
+        "fp": 0,
+        "fn": 86,
+        "f1": 0.4416
+      }
+    },
+    "przelew": {
+      "evaluator": {
+        "tp": 15,
+        "tn": 0,
+        "fp": 0,
+        "fn": 63,
+        "f1": 0.3226
+      },
+      "leaf": {
+        "tp": 15,
+        "fp": 0,
+        "fn": 63,
+        "f1": 0.3226
+      }
+    }
+  }
+}
