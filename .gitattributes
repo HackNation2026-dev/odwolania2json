@@ -14,3 +14,5 @@
 *.jpg binary
 *.jpeg binary
 *.jpe binary
+run.sh text eol=lf
+start.bat text eol=crlf

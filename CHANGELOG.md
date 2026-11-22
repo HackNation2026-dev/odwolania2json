@@ -98,3 +98,8 @@
 - Naprawa ewaluatora: wartość obecna i zgodna z referencją liczy się jako TP (wcześniej TN, więc F1 pól wynosiło 0). Wykryte w recenzji planu eksperymentów.
 
 - Eksperymenty wyboru modułów (E00-E20, uprząż HTTP, raport, ocena architektury Fable) oraz lista zadań dla agentów ze szczegółowymi instrukcjami (`docs/00-organizacja/zadania-dla-agentow.md`). Wniosek: produkt dziś zapisuje `{}` (F1 pól = 0); wyniki pochodzą z uprzęży w `experiments/`.
+
+## Niewydane
+
+- Z03, dostarczenie: `requirements.txt` w korzeniu zawiera tylko zależności uruchomieniowe z OCR (rapidocr + onnxruntime CPU, wagi ONNX w kole `rapidocr`) i pakiety lokalne bez `-e`; narzędzia deweloperskie przeniesiono do `requirements-dev.txt`, usunięto `apps/backend/requirements-ocr.txt`. `requires-python >= 3.13`.
+- Dodano `run.sh`, `start.bat`, katalogi `input/` i `output/` (`.gitkeep`, zawartość ignorowana), `scripts/verify_install.py` z lokalną atrapą LLM i testy dostarczenia; README opisuje instalację, klucz API, kody wyjścia i stan implementacji (`process` nadal na atrapie do czasu Z01).

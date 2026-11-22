@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "odwolania2json"
 description = "Odwołania2JSON — konwerter PDF-ów spraw odwoławczych do ścisłego JSON."
-requires-python = ">=3.11"
+requires-python = ">=3.13"
 dynamic = ["version", "dependencies"]
 
 [tool.setuptools.dynamic]

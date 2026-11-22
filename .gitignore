@@ -10,8 +10,10 @@ target/
 build/
 dist/
 .pytest_cache/
-/input/
-/output/
+/input/*
+/output/*
+!/input/.gitkeep
+!/output/.gitkeep
 *.part
 .DS_Store
 

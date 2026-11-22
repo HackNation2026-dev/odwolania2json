@@ -62,7 +62,9 @@ Tylko to, co zostało do zrobienia. Wyniki i uzasadnienia: [raport eksperymentó
 
 **Przeczytaj.** `requirements.txt` w korzeniu, `apps/backend/requirements*.txt`, `apps/backend/pyproject.toml`, `README.md` (mówi „aplikacja nie została zaimplementowana”, wersja 0.4.0), README organizatora §2, §5, FAQ 12a.
 
-**Kroki.**
+**Stan 2026-11-22 (Z03 wykonane poza punktami poniżej).** Zrobione: kroki 1–5 (zależności, `requires-python`, `run.sh`, `start.bat`, README, `input/`/`output/` z `.gitkeep`, `scripts/verify_install.py`). Pomiar: czysta instalacja 3.13 ok. 61 s, ok. 500 MB; wagi OCR w kole `rapidocr`. Zostaje: (a) uruchomienie `start.bat` i `verify_install.py` na Windows przez człowieka, (b) wynik dla skanu w `sh run.sh` po Z01 (dziś `process` to atrapa), (c) `process` bez argumentów używa `input`/`output` (zmiana w `cli.py`, część Z01), (d) po Z01 zaktualizować sekcję „Stan implementacji” w README.
+
+**Kroki (wykonane, zachowane jako opis).**
 1. `requirements.txt` w korzeniu: tylko zależności uruchomieniowe, przypięte (`==`), wraz z `rapidocr` i `onnxruntime` (CPU); bez `pytest`, `datamodel-code-generator`, `openapi-spec-validator` (do `requirements-dev.txt`); instalacja pakietów lokalnych bez `-e` jeśli to możliwe (`pip install .`/koła). Sprawdź licencje i dostępność kół dla Pythona 3.13 (Linux i Windows).
 2. `apps/backend/pyproject.toml`: `requires-python = ">=3.13"`; `package-data` dla wag OCR jeśli koło ich wymaga (wagi muszą być dostarczone przez pip, bez pobierania z sieci przy starcie: sprawdź ENV.md w uprzęży).
 3. Skrypty: `run.sh` i `start.bat` (tworzą `.venv`, `pip install -r requirements.txt`, tworzą `input/` i `output/`, uruchamiają `process input output`), `README.md` (po polsku: wymagania, instalacja, uruchomienie, klucz API przez zmienną środowiskową lub plik poza Git, rozwiązywanie problemów).
@@ -183,7 +185,7 @@ Wstępna ocena (niezweryfikowana, sieć nie działała): wymaga Javy i pobiera s
 
 ## Porządki techniczne (małe, można zrobić od ręki)
 
-- `README.md` w korzeniu: wersja 0.4.0 i zdanie „aplikacja nie została zaimplementowana” są nieaktualne (część Z03).
+- ~~`README.md` w korzeniu: wersja 0.4.0 i zdanie „aplikacja nie została zaimplementowana”~~ — poprawione w Z03; po Z01 zaktualizować sekcję stanu.
 - Podciągnąć lokalny `main` (`git -C <katalog głównego checkoutu> merge --ff-only origin/main`) po zakończeniu pracy równoległych agentów.
 - Sprawdzić, czy gałęzie `kacperpaczos/*` zmergowane do `main` można usunąć zdalnie (po potwierdzeniu użytkownika).
 - Katalog `czas/` w eksperymentach: dopisać wyniki T5 i T6 po zakończeniu pomiaru (patrz `czas/PODSUMOWANIE.md`).
