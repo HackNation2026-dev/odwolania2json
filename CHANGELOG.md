@@ -1,5 +1,10 @@
 # Historia zmian
 
+## Nieopublikowane — 0.8.0
+
+- Dodano [przepływ urzędnika](docs/04-architektura/gui/user-flow-urzednik.md): pełny przebieg operatora, widoczne etapy przetwarzania, naprawa błędów, korekty i wersjonowanie po MVP, eksport wariantu A oraz osobne dowody.
+- Udokumentowano obowiązkowy klucz MiniMax, brak logowania w zakresie i wyłącznie syntetyczne demo; dodano tablicę zgodności, mapę ramek/trasa/kod i pytania otwarte. Dokument rozróżnia plan, makiety i demonstracyjną implementację; VERSION pozostaje bez zmian.
+
 ## 0.6.0 — 2026-11-21
 
 - Dodano architekturę wewnętrzną ELT: kontrakty odczytu/OCR, diagnozy, routera, kandydatów, dowodów, braków i stanów; staging, wersje, cache i ścieżkę pionową E/L/T1/T3/T5. Rozszerzenia po pomiarze F1.

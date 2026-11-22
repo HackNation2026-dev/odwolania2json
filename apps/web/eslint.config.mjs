@@ -2,7 +2,7 @@ import next from "eslint-config-next";
 
 export default [
   ...next,
-  { ignores: [".next*/**", "node_modules/**", "playwright-report/**", "test-results/**"] },
+  { ignores: [".next*/**", "storybook-static/**", "node_modules/**", "playwright-report/**", "test-results/**"] },
   {
     rules: {
       // Jedyne miejsce wywołań sieciowych: src/lib/api. Reszta kodu nie używa fetch.

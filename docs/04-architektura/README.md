@@ -49,3 +49,5 @@ Według Discorda 12:47 jury nie instaluje modelu na laptopie. Aplikacja/CLI dzia
 ## Przepływy użytkownika
 
 [Przepływy użytkownika](gui/user-flow.md) (wersja 0.7.0, projekt): nawigacja, ścieżki wyjątkowe, eksport według wariantu A i luki. Ekrany i grafy: [pliki FigCraft](gui/figcraft/).
+
+[Przepływ urzędnika](gui/user-flow-urzednik.md) (wersja 0.8.0, projekt): praca operatora od klucza MiniMax i dodania PDF przez jawne etapy odczytu, klasyfikacji, ekstrakcji i walidacji do pobrania JSON i dowodów. Obejmuje naprawę błędów, korekty i wersje po MVP, zgodność z wymaganiami oraz inwentarz ramek i rzeczywiście istniejących tras; nie potwierdza działania silnika.

@@ -8,4 +8,12 @@ describe("StatusBadge", () => {
     render(<StatusBadge status={s} />);
     expect(screen.getByText(statusMeta[s].label)).toBeInTheDocument();
   });
+  it("keeps the reference glyph by default and supports optional SVG", () => {
+    const { container, rerender } = render(<StatusBadge status="full" />);
+    expect(screen.getByText(statusMeta.full.icon)).toHaveAttribute("aria-hidden", "true");
+    expect(container.querySelector("svg")).not.toBeInTheDocument();
+    rerender(<StatusBadge status="full" iconVariant="svg" />);
+    expect(container.querySelector("svg")).toHaveAttribute("aria-hidden", "true");
+    expect(screen.getByText(statusMeta.full.label)).toBeInTheDocument();
+  });
 });

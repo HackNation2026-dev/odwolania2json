@@ -50,7 +50,11 @@
     ".next-w1-review/types/**/*.ts",
     ".next-w1-review/dev/types/**/*.ts",
     ".next-shot/types/**/*.ts",
-    ".next-shot/dev/types/**/*.ts"
+    ".next-shot/dev/types/**/*.ts",
+    ".next-e2e-3198/types/**/*.ts",
+    ".next-e2e-3198/dev/types/**/*.ts",
+    ".next-e2e-3106/types/**/*.ts",
+    ".next-e2e-3106/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
