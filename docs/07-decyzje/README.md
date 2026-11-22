@@ -19,3 +19,7 @@ Odpowiedź mentora zapisz jako źródło z datą, treścią i kanałem. Dopiero 
 - [ADR-002: decyzje użytkownika po recenzji Codex](ADR-002-decyzje-po-recenzji.md) — ma pierwszeństwo przed ADR-001 tam, gdzie się różnią.
 - [Konsultacja: trudne przypadki testowe (Fable i Codex)](konsultacja-trudne-przypadki-2026-11-21/zestawienie.md)
 - [Recenzja projektu UI (Codex)](../04-architektura/gui/recenzja-codex-2026-11-21.md)
+
+## Uzupełnienie 2026-11-22
+
+- [ADR-006: polityka eksportu wyniku i awarii w `process`](ADR-006-polityka-eksportu.md) — ma pierwszeństwo przed architekturą wewnętrzną §4.5 i §10 w zakresie eksportu.
