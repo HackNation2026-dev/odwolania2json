@@ -1,0 +1,150 @@
+{
+ "versions": {
+  "python": "3.13.18",
+  "pydantic": "2.14.4",
+  "rapidfuzz": "3.14.6",
+  "pypdfium2": "5.15.2",
+  "httpx": "0.28.1",
+  "rapidocr": "3.10.0"
+ },
+ "llm_model": "MiniMax-M3.1-Flash (alias z odpowiedzi API)",
+ "llm_runs_per_doc": 1,
+ "llm_failures": {},
+ "llm_records": 179,
+ "docs_dev": 147,
+ "E20": {
+  "fp_on_null_reference_fields_dev": {
+   "rules": {
+    "ref_value_fields": 1654,
+    "ref_null_fields": 243,
+    "missed_value(fn)": 71,
+    "fp_on_null": 7,
+    "fp_by_field": {
+     "mocodawca[].podpisujacy[].imie_nazwisko": {
+      "fp": 7
+     }
+    }
+   },
+   "llm": {
+    "ref_value_fields": 1654,
+    "ref_null_fields": 240,
+    "missed_value(fn)": 17,
+    "fp_on_null": 2,
+    "fp_by_field": {
+     "pełnomocnicy[].imie_nazwisko": {
+      "fp": 2
+     }
+    }
+   },
+   "hybrid_verify": {
+    "ref_value_fields": 1654,
+    "ref_null_fields": 240,
+    "missed_value(fn)": 17,
+    "fp_on_null": 2,
+    "fp_by_field": {
+     "pełnomocnicy[].imie_nazwisko": {
+      "fp": 2
+     }
+    }
+   }
+  },
+  "gaps_small_samples": {
+   "g1_brak_pelnomocnika": {
+    "n_docs": 8,
+    "rules": {
+     "tp": 8,
+     "tn": 24,
+     "fp": 0,
+     "fn": 0,
+     "f1": 1.0
+    },
+    "llm": {
+     "tp": 4,
+     "tn": 24,
+     "fp": 4,
+     "fn": 0,
+     "f1": 0.6667
+    },
+    "hybrid_verify": {
+     "tp": 4,
+     "tn": 24,
+     "fp": 4,
+     "fn": 0,
+     "f1": 0.6667
+    }
+   },
+   "g2_powod_12": {
+    "n_docs": 8,
+    "rules": {
+     "tp": 24,
+     "tn": 0,
+     "fp": 0,
+     "fn": 0,
+     "f1": 1.0
+    },
+    "llm": {
+     "tp": 13,
+     "tn": 0,
+     "fp": 8,
+     "fn": 3,
+     "f1": 0.7027
+    },
+    "hybrid_verify": {
+     "tp": 13,
+     "tn": 0,
+     "fp": 8,
+     "fn": 3,
+     "f1": 0.7027
+    }
+   },
+   "g3_brak_bzp_ted": {
+    "n_docs": 8,
+    "rules": {
+     "tp": 0,
+     "tn": 16,
+     "fp": 0,
+     "fn": 0,
+     "f1": 0.0
+    },
+    "llm": {
+     "tp": 0,
+     "tn": 16,
+     "fp": 0,
+     "fn": 0,
+     "f1": 0.0
+    },
+    "hybrid_verify": {
+     "tp": 0,
+     "tn": 16,
+     "fp": 0,
+     "fn": 0,
+     "f1": 0.0
+    }
+   },
+   "g4_wpis_15000": {
+    "n_docs": 8,
+    "rules": {
+     "tp": 8,
+     "tn": 0,
+     "fp": 0,
+     "fn": 0,
+     "f1": 1.0
+    },
+    "llm": {
+     "tp": 8,
+     "tn": 0,
+     "fp": 0,
+     "fn": 0,
+     "f1": 1.0
+    },
+    "hybrid_verify": {
+     "tp": 8,
+     "tn": 0,
+     "fp": 0,
+     "fn": 0,
+     "f1": 1.0
+    }
+   }
+  }
+ }
+}

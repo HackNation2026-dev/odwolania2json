@@ -1,0 +1,296 @@
+{
+  "experiment": "E04a",
+  "pages_total": 1357,
+  "truth_counts": {
+    "text": 514,
+    "scan": 744,
+    "mixed_image_data": 49,
+    "scan_wrong_layer": 50
+  },
+  "v1": {
+    "scan_like_pages": 843,
+    "scan_like_sent_to_text_path(must_be_0)": 0,
+    "scan_like_missed_by_set": {},
+    "upper95_missed_rate_if_zero": 0.0036,
+    "text_pages": 514,
+    "text_pages_sent_to_ocr(cost)": 1,
+    "text_pages_wasted_by_set": {
+      "negatywy-organizatora": 1
+    },
+    "ocr_page_share_overall": 0.622,
+    "by_set": {
+      "oryginal-tekst": {
+        "pages": 339,
+        "ocr": 0,
+        "no_ocr": 339
+      },
+      "mieszany": {
+        "pages": 240,
+        "ocr": 191,
+        "no_ocr": 49
+      },
+      "obrot180": {
+        "pages": 50,
+        "ocr": 50,
+        "no_ocr": 0
+      },
+      "obrot270": {
+        "pages": 50,
+        "ocr": 50,
+        "no_ocr": 0
+      },
+      "obrot90": {
+        "pages": 50,
+        "ocr": 50,
+        "no_ocr": 0
+      },
+      "s2": {
+        "pages": 49,
+        "ocr": 49,
+        "no_ocr": 0
+      },
+      "s5": {
+        "pages": 50,
+        "ocr": 50,
+        "no_ocr": 0
+      },
+      "skan": {
+        "pages": 339,
+        "ocr": 339,
+        "no_ocr": 0
+      },
+      "skos3": {
+        "pages": 50,
+        "ocr": 50,
+        "no_ocr": 0
+      },
+      "negatywy-organizatora": {
+        "pages": 124,
+        "ocr": 8,
+        "no_ocr": 116
+      },
+      "szablon-organizatora": {
+        "pages": 7,
+        "ocr": 7,
+        "no_ocr": 0
+      },
+      "negatyw-szablonu": {
+        "pages": 9,
+        "ocr": 0,
+        "no_ocr": 9
+      }
+    }
+  },
+  "v2": {
+    "scan_like_pages": 843,
+    "scan_like_sent_to_text_path(must_be_0)": 0,
+    "scan_like_missed_by_set": {},
+    "upper95_missed_rate_if_zero": 0.0036,
+    "text_pages": 514,
+    "text_pages_sent_to_ocr(cost)": 1,
+    "text_pages_wasted_by_set": {
+      "negatywy-organizatora": 1
+    },
+    "ocr_page_share_overall": 0.622,
+    "by_set": {
+      "oryginal-tekst": {
+        "pages": 339,
+        "ocr": 0,
+        "no_ocr": 339
+      },
+      "mieszany": {
+        "pages": 240,
+        "ocr": 191,
+        "no_ocr": 49
+      },
+      "obrot180": {
+        "pages": 50,
+        "ocr": 50,
+        "no_ocr": 0
+      },
+      "obrot270": {
+        "pages": 50,
+        "ocr": 50,
+        "no_ocr": 0
+      },
+      "obrot90": {
+        "pages": 50,
+        "ocr": 50,
+        "no_ocr": 0
+      },
+      "s2": {
+        "pages": 49,
+        "ocr": 49,
+        "no_ocr": 0
+      },
+      "s5": {
+        "pages": 50,
+        "ocr": 50,
+        "no_ocr": 0
+      },
+      "skan": {
+        "pages": 339,
+        "ocr": 339,
+        "no_ocr": 0
+      },
+      "skos3": {
+        "pages": 50,
+        "ocr": 50,
+        "no_ocr": 0
+      },
+      "negatywy-organizatora": {
+        "pages": 124,
+        "ocr": 8,
+        "no_ocr": 116
+      },
+      "szablon-organizatora": {
+        "pages": 7,
+        "ocr": 7,
+        "no_ocr": 0
+      },
+      "negatyw-szablonu": {
+        "pages": 9,
+        "ocr": 0,
+        "no_ocr": 9
+      }
+    }
+  },
+  "mixed_doc_saving": {
+    "mieszany_pages": 240,
+    "mieszany_text_pages_skipped_by_v1": 49
+  },
+  "negatives_text_page_examples": [
+    {
+      "set": "negatywy-organizatora",
+      "doc": "1648041143_1647951357decyzja-ministrasportu-pzn.pdf",
+      "page": 1,
+      "truth": "scan",
+      "v1_requires_ocr": true,
+      "v1_text_source": "none",
+      "v1_codes": [
+        "scan"
+      ],
+      "v2_requires_ocr": true,
+      "invisible_share": 0.0,
+      "words": 0,
+      "image_cov": 1.0
+    },
+    {
+      "set": "negatywy-organizatora",
+      "doc": "1648041143_1647951357decyzja-ministrasportu-pzn.pdf",
+      "page": 2,
+      "truth": "scan",
+      "v1_requires_ocr": true,
+      "v1_text_source": "none",
+      "v1_codes": [
+        "scan"
+      ],
+      "v2_requires_ocr": true,
+      "invisible_share": 0.0,
+      "words": 0,
+      "image_cov": 1.0
+    },
+    {
+      "set": "negatywy-organizatora",
+      "doc": "1648041143_1647951357decyzja-ministrasportu-pzn.pdf",
+      "page": 3,
+      "truth": "scan",
+      "v1_requires_ocr": true,
+      "v1_text_source": "none",
+      "v1_codes": [
+        "scan"
+      ],
+      "v2_requires_ocr": true,
+      "invisible_share": 0.0,
+      "words": 0,
+      "image_cov": 1.0
+    },
+    {
+      "set": "negatywy-organizatora",
+      "doc": "1648041143_1647951357decyzja-ministrasportu-pzn.pdf",
+      "page": 4,
+      "truth": "scan",
+      "v1_requires_ocr": true,
+      "v1_text_source": "none",
+      "v1_codes": [
+        "scan"
+      ],
+      "v2_requires_ocr": true,
+      "invisible_share": 0.0,
+      "words": 0,
+      "image_cov": 1.0
+    },
+    {
+      "set": "negatywy-organizatora",
+      "doc": "Broszura_JPK_FA(2).pdf",
+      "page": 15,
+      "truth": "text",
+      "v1_requires_ocr": true,
+      "v1_text_source": "mixed",
+      "v1_codes": [
+        "mixed_page"
+      ],
+      "v2_requires_ocr": true,
+      "invisible_share": 0.0,
+      "words": 16,
+      "image_cov": 0.509
+    },
+    {
+      "set": "negatywy-organizatora",
+      "doc": "Decyzja-Ministra-Sportu-i-Turystyki1.pdf",
+      "page": 1,
+      "truth": "scan",
+      "v1_requires_ocr": true,
+      "v1_text_source": "none",
+      "v1_codes": [
+        "scan"
+      ],
+      "v2_requires_ocr": true,
+      "invisible_share": 0.0,
+      "words": 0,
+      "image_cov": 0.998
+    },
+    {
+      "set": "negatywy-organizatora",
+      "doc": "Minister-Sprawiedliwosci-pismo-RDSSP-z-11.03.2024-r..pdf",
+      "page": 1,
+      "truth": "scan",
+      "v1_requires_ocr": true,
+      "v1_text_source": "none",
+      "v1_codes": [
+        "scan"
+      ],
+      "v2_requires_ocr": true,
+      "invisible_share": 0.0,
+      "words": 0,
+      "image_cov": 1.0
+    },
+    {
+      "set": "negatywy-organizatora",
+      "doc": "Minister-Sprawiedliwosci-pismo-RDSSP-z-11.03.2024-r..pdf",
+      "page": 2,
+      "truth": "scan",
+      "v1_requires_ocr": true,
+      "v1_text_source": "none",
+      "v1_codes": [
+        "scan"
+      ],
+      "v2_requires_ocr": true,
+      "invisible_share": 0.0,
+      "words": 0,
+      "image_cov": 1.0
+    }
+  ],
+  "versions": {
+    "python": "3.13.18",
+    "cpu_count": 8,
+    "machine": "x86_64",
+    "pypdfium2": "5.15.2",
+    "pypdf": "7.1.1",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "numpy": "2.5.5",
+    "pillow": "13.0.0",
+    "opencv-python-headless": "5.1.0.95"
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "runs_per_doc": 8,
+  "docs": {
+    "przyklad_01/pelnomocnictwo.pdf": {
+      "outcomes": [
+        [
+          "partial",
+          [
+            "evidence_unanchored"
+          ]
+        ],
+        [
+          "partial",
+          [
+            "evidence_unanchored"
+          ]
+        ],
+        [
+          "partial",
+          [
+            "evidence_unanchored"
+          ]
+        ],
+        [
+          "technical_error",
+          [
+            "llm_unavailable"
+          ]
+        ],
+        [
+          "technical_error",
+          [
+            "llm_unavailable"
+          ]
+        ],
+        [
+          "partial",
+          [
+            "evidence_unanchored"
+          ]
+        ],
+        [
+          "partial",
+          [
+            "evidence_unanchored"
+          ]
+        ],
+        [
+          "technical_error",
+          [
+            "llm_invalid_response"
+          ]
+        ]
+      ],
+      "f1": [
+        0.9231,
+        0.8333,
+        0.9231,
+        0.8333,
+        0.8571
+      ],
+      "unstable_fields": {
+        "/mocodawca/0/data/imie_nazwisko": {
+          "distinct_values": 2,
+          "null_in_runs": 4,
+          "runs": 5
+        },
+        "/pelnomocnicy/1/imie_nazwisko": {
+          "distinct_values": 2,
+          "null_in_runs": 2,
+          "runs": 5
+        }
+      }
+    },
+    "przyklad_02/potwierdzenie_przelewu.pdf": {
+      "outcomes": [
+        [
+          "complete",
+          []
+        ],
+        [
+          "complete",
+          []
+        ],
+        [
+          "complete",
+          []
+        ],
+        [
+          "complete",
+          []
+        ],
+        [
+          "complete",
+          []
+        ],
+        [
+          "complete",
+          []
+        ],
+        [
+          "complete",
+          []
+        ],
+        [
+          "complete",
+          []
+        ]
+      ],
+      "f1": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "unstable_fields": {
+        "/przelew_bankowy/tytul": {
+          "distinct_values": 2,
+          "null_in_runs": 0,
+          "runs": 8
+        }
+      }
+    }
+  }
+}

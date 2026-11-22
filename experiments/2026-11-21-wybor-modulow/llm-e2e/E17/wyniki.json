@@ -1,0 +1,232 @@
+{
+ "tekst, wariant A (5 powtórzeń)": {
+  "unanchored_null": {
+   "policy": "unanchored_null",
+   "docs": 435,
+   "docs_changed": 100,
+   "default": {
+    "f1": 0.9378,
+    "ci95": [
+     0.91,
+     0.9593
+    ],
+    "tp": 3696,
+    "fp": 137,
+    "fn": 353
+   },
+   "variant": {
+    "f1": 0.9168,
+    "ci95": [
+     0.8873,
+     0.9395
+    ],
+    "tp": 3543,
+    "fp": 135,
+    "fn": 508
+   },
+   "paired": {
+    "delta": -0.021,
+    "ci95": [
+     -0.0293,
+     -0.0136
+    ],
+    "cases": 26,
+    "decision": "base>cand"
+   }
+  },
+  "no_export_partial": {
+   "policy": "no_export_partial",
+   "docs": 435,
+   "docs_changed": 101,
+   "default": {
+    "f1": 0.9378,
+    "ci95": [
+     0.91,
+     0.9593
+    ],
+    "tp": 3696,
+    "fp": 137,
+    "fn": 353
+   },
+   "variant": {
+    "f1": 0.7296,
+    "ci95": [
+     0.6699,
+     0.7813
+    ],
+    "tp": 2404,
+    "fp": 80,
+    "fn": 1702
+   },
+   "paired": {
+    "delta": -0.2082,
+    "ci95": [
+     -0.2677,
+     -0.1551
+    ],
+    "cases": 26,
+    "decision": "base>cand"
+   }
+  },
+  "rules_fallback": {
+   "policy": "rules_fallback",
+   "docs": 435,
+   "docs_changed": 9,
+   "default": {
+    "f1": 0.9378,
+    "ci95": [
+     0.91,
+     0.9593
+    ],
+    "tp": 3696,
+    "fp": 137,
+    "fn": 353
+   },
+   "variant": {
+    "f1": 0.94,
+    "ci95": [
+     0.9149,
+     0.9599
+    ],
+    "tp": 3712,
+    "fp": 139,
+    "fn": 335
+   },
+   "paired": {
+    "delta": 0.0022,
+    "ci95": [
+     0.0003,
+     0.0051
+    ],
+    "cases": 26,
+    "decision": "cand>base"
+   }
+  },
+  "outcome_counts": {
+   "technical_error": 24,
+   "foreign": 45,
+   "complete": 265,
+   "partial": 101
+  },
+  "docs_with_unanchored_field": 100
+ },
+ "skan+mieszany+S2+S5, wariant B (OCR+LLM)": {
+  "unanchored_null": {
+   "policy": "unanchored_null",
+   "docs": 144,
+   "docs_changed": 90,
+   "default": {
+    "f1": 0.8926,
+    "ci95": [
+     0.8538,
+     0.9236
+    ],
+    "tp": 1305,
+    "fp": 106,
+    "fn": 208
+   },
+   "variant": {
+    "f1": 0.8193,
+    "ci95": [
+     0.7776,
+     0.8528
+    ],
+    "tp": 1120,
+    "fp": 96,
+    "fn": 398
+   },
+   "paired": {
+    "delta": -0.0733,
+    "ci95": [
+     -0.0822,
+     -0.0641
+    ],
+    "cases": 25,
+    "decision": "base>cand"
+   }
+  },
+  "no_export_partial": {
+   "policy": "no_export_partial",
+   "docs": 144,
+   "docs_changed": 92,
+   "default": {
+    "f1": 0.8926,
+    "ci95": [
+     0.8538,
+     0.9236
+    ],
+    "tp": 1305,
+    "fp": 106,
+    "fn": 208
+   },
+   "variant": {
+    "f1": 0.4392,
+    "ci95": [
+     0.3388,
+     0.529
+    ],
+    "tp": 450,
+    "fp": 26,
+    "fn": 1123
+   },
+   "paired": {
+    "delta": -0.4534,
+    "ci95": [
+     -0.5448,
+     -0.3677
+    ],
+    "cases": 25,
+    "decision": "base>cand"
+   }
+  },
+  "rules_fallback": {
+   "policy": "rules_fallback",
+   "docs": 144,
+   "docs_changed": 5,
+   "default": {
+    "f1": 0.8926,
+    "ci95": [
+     0.8538,
+     0.9236
+    ],
+    "tp": 1305,
+    "fp": 106,
+    "fn": 208
+   },
+   "variant": {
+    "f1": 0.8949,
+    "ci95": [
+     0.8601,
+     0.9237
+    ],
+    "tp": 1311,
+    "fp": 110,
+    "fn": 198
+   },
+   "paired": {
+    "delta": 0.0023,
+    "ci95": [
+     0.0,
+     0.0064
+    ],
+    "cases": 25,
+    "decision": "nierozstrzygnięte"
+   }
+  },
+  "outcome_counts": {
+   "complete": 46,
+   "partial": 92,
+   "technical_error": 6
+  },
+  "docs_with_unanchored_field": 90
+ },
+ "ambiguous": {
+  "llm_router_ambiguous_docs_text_p2": 0,
+  "llm_router_docs": 435,
+  "rules_router_ambiguous_docs": 12,
+  "of_which_expected_foreign": 2,
+  "rules_top_class_correct_among_ambiguous_positives": 10,
+  "rules_ambiguous_positives": 10,
+  "uwaga": "klasa i pola z jednego wywołania LLM: gdy LLM zwraca ambiguous, nie ma pól do wyeksportowania; polityka 'najlepsza klasa' wymagałaby wymuszonego wyboru w prompcie (nie testowana osobno)"
+ }
+}

@@ -1,0 +1,23 @@
+{
+ "name": "e10-image-p2",
+ "experiment": "E10",
+ "docs": {
+  "set": "dev_sub",
+  "negatives": true
+ },
+ "reps": 3,
+ "concurrency": 4,
+ "server": {
+  "router": "llm1",
+  "extractor": "llm1",
+  "ocr": "none",
+  "llm": {
+   "retries": 4,
+   "timeout_s": 150
+  }
+ },
+ "env": {
+  "LLME2E_MODE": "image",
+  "LLME2E_PROMPT": "p2"
+ }
+}

@@ -1,0 +1,12 @@
+{
+  "experiment": "E00",
+  "variant": "szablon-skan-rapidocr",
+  "description": "E00 to test dymny samej uprzęży. Wariant: skan z szablonu organizatora (7 stron) przez HTTP z OCR rapidocr (CPU), router regułowy, ekstraktor regułowy. Pokazuje czas i szczyt RSS OCR oraz jawny wynik (także technical_error z kodem, jeśli OCR zawiedzie).",
+  "runner": "e2e",
+  "dataset": "template",
+  "seed": 20261122,
+  "timing": true,
+  "document_wait_s": 1800,
+  "server": {"pdf_reader": "pdfium", "ocr": "rapidocr", "ocr_dpi": 150, "ocr_policy": "if_needed", "router": "rules", "extractor": "rules",
+             "limits": {"max_pages": 60, "document_timeout_s": 1500}}
+}

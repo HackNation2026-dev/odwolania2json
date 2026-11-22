@@ -1,0 +1,26 @@
+{
+ "name": "e10-long-2pages",
+ "experiment": "E10",
+ "docs": {
+  "set": "dev_long",
+  "classes": [
+   "odwolanie"
+  ]
+ },
+ "reps": 3,
+ "concurrency": 4,
+ "server": {
+  "router": "llm1",
+  "extractor": "llm1",
+  "ocr": "none",
+  "llm": {
+   "retries": 4,
+   "timeout_s": 150
+  }
+ },
+ "env": {
+  "LLME2E_MODE": "text",
+  "LLME2E_PROMPT": "p2",
+  "LLME2E_TEXT_PAGES": "2"
+ }
+}

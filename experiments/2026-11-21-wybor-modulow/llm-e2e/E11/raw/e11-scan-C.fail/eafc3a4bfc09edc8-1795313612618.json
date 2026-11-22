@@ -1,0 +1,1 @@
+{"error": "llm_unavailable", "description": "HTTP 500", "llm_call": {"doc_sha256": "eafc3a4bfc09edc8d50afd937afb8fc4e42eccdf9e036a9158e503f1aed54831", "replay": false, "mode": "image", "prompt": "p2", "images": 1, "image_dpi": 100, "doc_pages": 1, "images_truncated": false, "attempts": [{"error": "llm_unavailable"}], "schema_first_ok": null, "schema_final_ok": false}}

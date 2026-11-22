@@ -1,0 +1,4 @@
+pdfium {'exact': 1454, 'fuzzy_only': 0, 'total': 1454, 'exact_rate': 1.0, 'exact_or_fuzzy_rate': 1.0} {'p50': 0.0049, 'p95': 0.0759, 'max': 0.1005, 'median_of_doc_medians': 0.004, 'total_per_pass': 1.893} 51.3
+pypdf {'exact': 1454, 'fuzzy_only': 0, 'total': 1454, 'exact_rate': 1.0, 'exact_or_fuzzy_rate': 1.0} {'p50': 0.0108, 'p95': 0.0582, 'max': 0.1316, 'median_of_doc_medians': 0.0106, 'total_per_pass': 2.495} 68.6
+pdfminer {'exact': 1454, 'fuzzy_only': 0, 'total': 1454, 'exact_rate': 1.0, 'exact_or_fuzzy_rate': 1.0} {'p50': 0.0213, 'p95': 0.2268, 'max': 0.3091, 'median_of_doc_medians': 0.0206, 'total_per_pass': 6.711} 65.4
+pymupdf {'exact': 1454, 'fuzzy_only': 0, 'total': 1454, 'exact_rate': 1.0, 'exact_or_fuzzy_rate': 1.0} {'p50': 0.0016, 'p95': 0.0157, 'max': 0.0291, 'median_of_doc_medians': 0.0016, 'total_per_pass': 0.442} 182.7

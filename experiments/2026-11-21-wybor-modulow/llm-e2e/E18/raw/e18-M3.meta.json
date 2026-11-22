@@ -1,0 +1,142 @@
+{
+  "name": "e18-M3",
+  "experiment": "E18",
+  "spec": {
+    "name": "e18-M3",
+    "experiment": "E18",
+    "docs": {
+      "set": "dev_sub",
+      "negatives": false
+    },
+    "reps": 2,
+    "concurrency": 4,
+    "server": {
+      "router": "llm1",
+      "extractor": "llm1",
+      "ocr": "none",
+      "llm": {
+        "retries": 4,
+        "timeout_s": 150,
+        "model": "MiniMax-M3"
+      }
+    },
+    "env": {
+      "LLME2E_MODE": "text",
+      "LLME2E_PROMPT": "p2"
+    }
+  },
+  "versions": {
+    "python": "3.13.18",
+    "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+    "machine": "x86_64",
+    "fastapi": "0.165.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "pydantic": "2.14.4",
+    "pypdfium2": "5.15.2",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "pillow": "13.0.0",
+    "numpy": "2.5.5",
+    "git_commit": "677196a"
+  },
+  "seed": 20261122,
+  "documents": 75,
+  "reps": 2,
+  "concurrency": 4,
+  "started_utc": "2026-11-22T02:22:43Z",
+  "lock_wait_s": 0.0,
+  "server_start_s": 1.008,
+  "limit_method": "systemd-run",
+  "system": {
+    "harness_version": "0.1",
+    "ocr": {
+      "ready": false,
+      "provider": {
+        "available": false,
+        "name": "none",
+        "version": null,
+        "parameter_count": null,
+        "license": null,
+        "location": null,
+        "models": []
+      }
+    },
+    "llm": {
+      "ready": false,
+      "provider": null
+    },
+    "pdf_reader": "pdfium",
+    "router": "llm1",
+    "extractor": "llm1",
+    "anchor": "words",
+    "config": {
+      "name": "E18-e18-M3",
+      "pdf_reader": "pdfium",
+      "ocr": "none",
+      "ocr_dpi": 200,
+      "ocr_policy": "if_needed",
+      "router": "llm1",
+      "extractor": "llm1",
+      "anchor": "words",
+      "llm_input": "text",
+      "work_dir": "/home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/work/runs/llm-e2e/e18-M3/srv",
+      "seed": 20261122,
+      "llm": {
+        "protocol": "anthropic",
+        "base_url": "https://api.minimax.io/anthropic/v1/messages",
+        "model": "MiniMax-M3",
+        "temperature": 0.0,
+        "max_tokens": 8000,
+        "timeout_s": 150.0,
+        "retries": 4,
+        "effort": null
+      },
+      "limits": {
+        "max_upload_bytes": 31457280,
+        "max_pages": 60,
+        "document_timeout_s": 600.0,
+        "max_workers": 4,
+        "max_batch_documents": 500
+      }
+    },
+    "limits": {
+      "max_upload_bytes": 31457280,
+      "max_pages": 60,
+      "document_timeout_s": 600.0,
+      "max_workers": 4,
+      "max_batch_documents": 500
+    },
+    "python": "3.13.18",
+    "paid_call_performed": false
+  },
+  "peak_rss_mb": 89.1,
+  "total_wall_s": 148.86,
+  "finished_utc": "2026-11-22T02:25:12Z",
+  "segments": [
+    {
+      "started_utc": "2026-11-22T02:03:03Z",
+      "finished_utc": "2026-11-22T02:15:15Z",
+      "total_wall_s": 732.0,
+      "peak_rss_mb": 113.6
+    },
+    {
+      "started_utc": "2026-11-22T02:15:45Z",
+      "finished_utc": "2026-11-22T02:19:06Z",
+      "total_wall_s": 201.27,
+      "peak_rss_mb": 92.0
+    },
+    {
+      "started_utc": "2026-11-22T02:19:36Z",
+      "finished_utc": "2026-11-22T02:22:13Z",
+      "total_wall_s": 156.52,
+      "peak_rss_mb": 87.2
+    },
+    {
+      "started_utc": "2026-11-22T02:22:43Z",
+      "finished_utc": "2026-11-22T02:25:12Z",
+      "total_wall_s": 148.86,
+      "peak_rss_mb": 89.1
+    }
+  ]
+}

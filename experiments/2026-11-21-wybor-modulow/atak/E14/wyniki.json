@@ -1,0 +1,859 @@
+{
+  "experiment": "E14",
+  "versions": {
+    "python": "3.13.18",
+    "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+    "cpu_count": 8,
+    "fastapi": "0.165.0",
+    "starlette": "1.10.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "pypdfium2": "5.15.2",
+    "pypdf": "7.1.1",
+    "pydantic": "2.14.4",
+    "python-multipart": "0.0.34",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "git_head": "edb03b3"
+  },
+  "vectors": [
+    {
+      "id": "A01",
+      "family": "awaria-LLM",
+      "name": "401 z kanarkiem w treści i nagłówku",
+      "expected": "outcome technical_error, kod llm_authorization, brak wyniku (GET /result 409), kanarek nieobecny w HTTP/logach/dysku, bez zmyślonych danych",
+      "actual": "outcome=technical_error kod=llm_authorization (zgodny=True); GET /result → 409; wywołań LLM=1; czas 0.2 s; kanarek w odpowiedziach HTTP/logu/dysku: -/-/-; opis błędu: ['HTTP 401']",
+      "gap": "nie",
+      "fix": "Mapować błąd dostawcy tylko na kod i status HTTP (jak teraz), nigdy nie kopiować treści odpowiedzi; Retry-After uwzględniać z górnym limitem (np. 30 s); test kanarka dla każdej klasy błędu.",
+      "port_test": "test_llm_failure_a01_maps_to_code_and_leaks_nothing",
+      "data": {
+        "wall_s": 0.19,
+        "llm_calls": 1,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_authorization"
+          ],
+          "stage": "llm"
+        },
+        "errors": [
+          {
+            "stage": "llm",
+            "code": "llm_authorization",
+            "description": "HTTP 401",
+            "retryable": false,
+            "attempt": 1,
+            "page": null
+          }
+        ],
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": []
+        },
+        "canary_sent_to_mock_as_auth": true
+      }
+    },
+    {
+      "id": "A02",
+      "family": "awaria-LLM",
+      "name": "403 z kanarkiem",
+      "expected": "outcome technical_error, kod llm_authorization, brak wyniku (GET /result 409), kanarek nieobecny w HTTP/logach/dysku, bez zmyślonych danych",
+      "actual": "outcome=technical_error kod=llm_authorization (zgodny=True); GET /result → 409; wywołań LLM=1; czas 0.2 s; kanarek w odpowiedziach HTTP/logu/dysku: -/-/-; opis błędu: ['HTTP 403']",
+      "gap": "nie",
+      "fix": "Mapować błąd dostawcy tylko na kod i status HTTP (jak teraz), nigdy nie kopiować treści odpowiedzi; Retry-After uwzględniać z górnym limitem (np. 30 s); test kanarka dla każdej klasy błędu.",
+      "port_test": "test_llm_failure_a02_maps_to_code_and_leaks_nothing",
+      "data": {
+        "wall_s": 0.15,
+        "llm_calls": 1,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_authorization"
+          ],
+          "stage": "llm"
+        },
+        "errors": [
+          {
+            "stage": "llm",
+            "code": "llm_authorization",
+            "description": "HTTP 403",
+            "retryable": false,
+            "attempt": 1,
+            "page": null
+          }
+        ],
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": []
+        },
+        "canary_sent_to_mock_as_auth": true
+      }
+    },
+    {
+      "id": "A03",
+      "family": "awaria-LLM",
+      "name": "429 z Retry-After: 3600 i kanarkiem",
+      "expected": "outcome technical_error, kod llm_rate_limit, brak wyniku (GET /result 409), kanarek nieobecny w HTTP/logach/dysku, bez zmyślonych danych",
+      "actual": "outcome=technical_error kod=llm_rate_limit (zgodny=True); GET /result → 409; wywołań LLM=3; czas 3.2 s; kanarek w odpowiedziach HTTP/logu/dysku: -/-/-; opis błędu: ['HTTP 429']",
+      "gap": "nie",
+      "fix": "Mapować błąd dostawcy tylko na kod i status HTTP (jak teraz), nigdy nie kopiować treści odpowiedzi; Retry-After uwzględniać z górnym limitem (np. 30 s); test kanarka dla każdej klasy błędu.",
+      "port_test": "test_llm_failure_a03_maps_to_code_and_leaks_nothing",
+      "data": {
+        "wall_s": 3.16,
+        "llm_calls": 3,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_rate_limit"
+          ],
+          "stage": "llm"
+        },
+        "errors": [
+          {
+            "stage": "llm",
+            "code": "llm_rate_limit",
+            "description": "HTTP 429",
+            "retryable": true,
+            "attempt": 1,
+            "page": null
+          }
+        ],
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": []
+        },
+        "canary_sent_to_mock_as_auth": true
+      }
+    },
+    {
+      "id": "A04",
+      "family": "awaria-LLM",
+      "name": "500 z kanarkiem w treści",
+      "expected": "outcome technical_error, kod llm_unavailable, brak wyniku (GET /result 409), kanarek nieobecny w HTTP/logach/dysku, bez zmyślonych danych",
+      "actual": "outcome=technical_error kod=llm_unavailable (zgodny=True); GET /result → 409; wywołań LLM=3; czas 3.3 s; kanarek w odpowiedziach HTTP/logu/dysku: -/-/-; opis błędu: ['HTTP 500']",
+      "gap": "nie",
+      "fix": "Mapować błąd dostawcy tylko na kod i status HTTP (jak teraz), nigdy nie kopiować treści odpowiedzi; Retry-After uwzględniać z górnym limitem (np. 30 s); test kanarka dla każdej klasy błędu.",
+      "port_test": "test_llm_failure_a04_maps_to_code_and_leaks_nothing",
+      "data": {
+        "wall_s": 3.3,
+        "llm_calls": 3,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_unavailable"
+          ],
+          "stage": "llm"
+        },
+        "errors": [
+          {
+            "stage": "llm",
+            "code": "llm_unavailable",
+            "description": "HTTP 500",
+            "retryable": true,
+            "attempt": 1,
+            "page": null
+          }
+        ],
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": []
+        },
+        "canary_sent_to_mock_as_auth": true
+      }
+    },
+    {
+      "id": "A05",
+      "family": "awaria-LLM",
+      "name": "400 z echem nagłówków autoryzacji w treści",
+      "expected": "outcome technical_error, kod llm_invalid_response, brak wyniku (GET /result 409), kanarek nieobecny w HTTP/logach/dysku, bez zmyślonych danych",
+      "actual": "outcome=technical_error kod=llm_invalid_response (zgodny=True); GET /result → 409; wywołań LLM=1; czas 0.1 s; kanarek w odpowiedziach HTTP/logu/dysku: -/-/-; opis błędu: ['HTTP 400']",
+      "gap": "nie",
+      "fix": "Mapować błąd dostawcy tylko na kod i status HTTP (jak teraz), nigdy nie kopiować treści odpowiedzi; Retry-After uwzględniać z górnym limitem (np. 30 s); test kanarka dla każdej klasy błędu.",
+      "port_test": "test_llm_failure_a05_maps_to_code_and_leaks_nothing",
+      "data": {
+        "wall_s": 0.12,
+        "llm_calls": 1,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_invalid_response"
+          ],
+          "stage": "llm"
+        },
+        "errors": [
+          {
+            "stage": "llm",
+            "code": "llm_invalid_response",
+            "description": "HTTP 400",
+            "retryable": false,
+            "attempt": 1,
+            "page": null
+          }
+        ],
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": []
+        },
+        "canary_sent_to_mock_as_auth": true
+      }
+    },
+    {
+      "id": "A06",
+      "family": "awaria-LLM",
+      "name": "timeout (serwer milczy 8 s, limit 2 s, 1 ponowienie)",
+      "expected": "outcome technical_error, kod llm_unavailable, brak wyniku (GET /result 409), kanarek nieobecny w HTTP/logach/dysku, bez zmyślonych danych",
+      "actual": "outcome=technical_error kod=llm_unavailable (zgodny=True); GET /result → 409; wywołań LLM=2; czas 5.3 s; kanarek w odpowiedziach HTTP/logu/dysku: -/-/-; opis błędu: ['przekroczono limit czasu połączenia z LLM']",
+      "gap": "nie",
+      "fix": "Mapować błąd dostawcy tylko na kod i status HTTP (jak teraz), nigdy nie kopiować treści odpowiedzi; Retry-After uwzględniać z górnym limitem (np. 30 s); test kanarka dla każdej klasy błędu.",
+      "port_test": "test_llm_failure_a06_maps_to_code_and_leaks_nothing",
+      "data": {
+        "wall_s": 5.27,
+        "llm_calls": 2,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_unavailable"
+          ],
+          "stage": "llm"
+        },
+        "errors": [
+          {
+            "stage": "llm",
+            "code": "llm_unavailable",
+            "description": "przekroczono limit czasu połączenia z LLM",
+            "retryable": true,
+            "attempt": 1,
+            "page": null
+          }
+        ],
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": []
+        },
+        "canary_sent_to_mock_as_auth": true
+      }
+    },
+    {
+      "id": "A07",
+      "family": "awaria-LLM",
+      "name": "urwany JSON (stop_reason max_tokens)",
+      "expected": "outcome technical_error, kod llm_invalid_response, brak wyniku (GET /result 409), kanarek nieobecny w HTTP/logach/dysku, bez zmyślonych danych",
+      "actual": "outcome=technical_error kod=llm_invalid_response (zgodny=True); GET /result → 409; wywołań LLM=1; czas 0.2 s; kanarek w odpowiedziach HTTP/logu/dysku: -/-/-; opis błędu: ['odpowiedź bez obiektu JSON']",
+      "gap": "nie",
+      "fix": "Mapować błąd dostawcy tylko na kod i status HTTP (jak teraz), nigdy nie kopiować treści odpowiedzi; Retry-After uwzględniać z górnym limitem (np. 30 s); test kanarka dla każdej klasy błędu.",
+      "port_test": "test_llm_failure_a07_maps_to_code_and_leaks_nothing",
+      "data": {
+        "wall_s": 0.2,
+        "llm_calls": 1,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_invalid_response"
+          ],
+          "stage": "llm"
+        },
+        "errors": [
+          {
+            "stage": "llm",
+            "code": "llm_invalid_response",
+            "description": "odpowiedź bez obiektu JSON",
+            "retryable": false,
+            "attempt": 1,
+            "page": null
+          }
+        ],
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": []
+        },
+        "canary_sent_to_mock_as_auth": true
+      }
+    },
+    {
+      "id": "A08",
+      "family": "awaria-LLM",
+      "name": "ciało nie-JSON (HTML z kanarkiem)",
+      "expected": "outcome technical_error, kod llm_invalid_response, brak wyniku (GET /result 409), kanarek nieobecny w HTTP/logach/dysku, bez zmyślonych danych",
+      "actual": "outcome=technical_error kod=llm_invalid_response (zgodny=True); GET /result → 409; wywołań LLM=1; czas 0.2 s; kanarek w odpowiedziach HTTP/logu/dysku: -/-/-; opis błędu: ['ciało odpowiedzi nie jest obiektem JSON']",
+      "gap": "nie",
+      "fix": "Mapować błąd dostawcy tylko na kod i status HTTP (jak teraz), nigdy nie kopiować treści odpowiedzi; Retry-After uwzględniać z górnym limitem (np. 30 s); test kanarka dla każdej klasy błędu.",
+      "port_test": "test_llm_failure_a08_maps_to_code_and_leaks_nothing",
+      "data": {
+        "wall_s": 0.16,
+        "llm_calls": 1,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_invalid_response"
+          ],
+          "stage": "llm"
+        },
+        "errors": [
+          {
+            "stage": "llm",
+            "code": "llm_invalid_response",
+            "description": "ciało odpowiedzi nie jest obiektem JSON",
+            "retryable": false,
+            "attempt": 1,
+            "page": null
+          }
+        ],
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": []
+        },
+        "canary_sent_to_mock_as_auth": true
+      }
+    },
+    {
+      "id": "A09",
+      "family": "awaria-LLM",
+      "name": "pusta odpowiedź modelu",
+      "expected": "outcome technical_error, kod llm_invalid_response, brak wyniku (GET /result 409), kanarek nieobecny w HTTP/logach/dysku, bez zmyślonych danych",
+      "actual": "outcome=technical_error kod=llm_invalid_response (zgodny=True); GET /result → 409; wywołań LLM=1; czas 0.1 s; kanarek w odpowiedziach HTTP/logu/dysku: -/-/-; opis błędu: ['pusta odpowiedź modelu']",
+      "gap": "nie",
+      "fix": "Mapować błąd dostawcy tylko na kod i status HTTP (jak teraz), nigdy nie kopiować treści odpowiedzi; Retry-After uwzględniać z górnym limitem (np. 30 s); test kanarka dla każdej klasy błędu.",
+      "port_test": "test_llm_failure_a09_maps_to_code_and_leaks_nothing",
+      "data": {
+        "wall_s": 0.14,
+        "llm_calls": 1,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_invalid_response"
+          ],
+          "stage": "llm"
+        },
+        "errors": [
+          {
+            "stage": "llm",
+            "code": "llm_invalid_response",
+            "description": "pusta odpowiedź modelu",
+            "retryable": false,
+            "attempt": 1,
+            "page": null
+          }
+        ],
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": []
+        },
+        "canary_sent_to_mock_as_auth": true
+      }
+    },
+    {
+      "id": "A10",
+      "family": "awaria-LLM",
+      "name": "odpowiedź bez pola content",
+      "expected": "outcome technical_error, kod llm_invalid_response, brak wyniku (GET /result 409), kanarek nieobecny w HTTP/logach/dysku, bez zmyślonych danych",
+      "actual": "outcome=technical_error kod=llm_invalid_response (zgodny=True); GET /result → 409; wywołań LLM=1; czas 0.2 s; kanarek w odpowiedziach HTTP/logu/dysku: -/-/-; opis błędu: ['brak pola content w odpowiedzi']",
+      "gap": "nie",
+      "fix": "Mapować błąd dostawcy tylko na kod i status HTTP (jak teraz), nigdy nie kopiować treści odpowiedzi; Retry-After uwzględniać z górnym limitem (np. 30 s); test kanarka dla każdej klasy błędu.",
+      "port_test": "test_llm_failure_a10_maps_to_code_and_leaks_nothing",
+      "data": {
+        "wall_s": 0.17,
+        "llm_calls": 1,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_invalid_response"
+          ],
+          "stage": "llm"
+        },
+        "errors": [
+          {
+            "stage": "llm",
+            "code": "llm_invalid_response",
+            "description": "brak pola content w odpowiedzi",
+            "retryable": false,
+            "attempt": 1,
+            "page": null
+          }
+        ],
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": []
+        },
+        "canary_sent_to_mock_as_auth": true
+      }
+    },
+    {
+      "id": "A11",
+      "family": "awaria-LLM",
+      "name": "JSON będący tablicą",
+      "expected": "outcome technical_error, kod llm_invalid_response, brak wyniku (GET /result 409), kanarek nieobecny w HTTP/logach/dysku, bez zmyślonych danych",
+      "actual": "outcome=technical_error kod=llm_invalid_response (zgodny=True); GET /result → 409; wywołań LLM=1; czas 0.2 s; kanarek w odpowiedziach HTTP/logu/dysku: -/-/-; opis błędu: ['brak listy fields w odpowiedzi LLM']",
+      "gap": "nie",
+      "fix": "Mapować błąd dostawcy tylko na kod i status HTTP (jak teraz), nigdy nie kopiować treści odpowiedzi; Retry-After uwzględniać z górnym limitem (np. 30 s); test kanarka dla każdej klasy błędu.",
+      "port_test": "test_llm_failure_a11_maps_to_code_and_leaks_nothing",
+      "data": {
+        "wall_s": 0.16,
+        "llm_calls": 1,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_invalid_response"
+          ],
+          "stage": "extract"
+        },
+        "errors": [
+          {
+            "stage": "extract",
+            "code": "llm_invalid_response",
+            "description": "brak listy fields w odpowiedzi LLM",
+            "retryable": false,
+            "attempt": 1,
+            "page": null
+          }
+        ],
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": []
+        },
+        "canary_sent_to_mock_as_auth": true
+      }
+    },
+    {
+      "id": "A12",
+      "family": "awaria-LLM",
+      "name": "pole fields nie jest listą",
+      "expected": "outcome technical_error, kod llm_invalid_response, brak wyniku (GET /result 409), kanarek nieobecny w HTTP/logach/dysku, bez zmyślonych danych",
+      "actual": "outcome=technical_error kod=llm_invalid_response (zgodny=True); GET /result → 409; wywołań LLM=1; czas 0.3 s; kanarek w odpowiedziach HTTP/logu/dysku: -/-/-; opis błędu: ['brak listy fields w odpowiedzi LLM']",
+      "gap": "nie",
+      "fix": "Mapować błąd dostawcy tylko na kod i status HTTP (jak teraz), nigdy nie kopiować treści odpowiedzi; Retry-After uwzględniać z górnym limitem (np. 30 s); test kanarka dla każdej klasy błędu.",
+      "port_test": "test_llm_failure_a12_maps_to_code_and_leaks_nothing",
+      "data": {
+        "wall_s": 0.3,
+        "llm_calls": 1,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_invalid_response"
+          ],
+          "stage": "extract"
+        },
+        "errors": [
+          {
+            "stage": "extract",
+            "code": "llm_invalid_response",
+            "description": "brak listy fields w odpowiedzi LLM",
+            "retryable": false,
+            "attempt": 1,
+            "page": null
+          }
+        ],
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": []
+        },
+        "canary_sent_to_mock_as_auth": true
+      }
+    },
+    {
+      "id": "A13",
+      "family": "awaria-LLM",
+      "name": "element fields[] bez value",
+      "expected": "outcome technical_error, kod llm_invalid_response, brak wyniku (GET /result 409), kanarek nieobecny w HTTP/logach/dysku, bez zmyślonych danych",
+      "actual": "outcome=technical_error kod=llm_invalid_response (zgodny=True); GET /result → 409; wywołań LLM=1; czas 0.1 s; kanarek w odpowiedziach HTTP/logu/dysku: -/-/-; opis błędu: ['pole fields[] poza schematem']",
+      "gap": "nie",
+      "fix": "Mapować błąd dostawcy tylko na kod i status HTTP (jak teraz), nigdy nie kopiować treści odpowiedzi; Retry-After uwzględniać z górnym limitem (np. 30 s); test kanarka dla każdej klasy błędu.",
+      "port_test": "test_llm_failure_a13_maps_to_code_and_leaks_nothing",
+      "data": {
+        "wall_s": 0.13,
+        "llm_calls": 1,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_invalid_response"
+          ],
+          "stage": "extract"
+        },
+        "errors": [
+          {
+            "stage": "extract",
+            "code": "llm_invalid_response",
+            "description": "pole fields[] poza schematem",
+            "retryable": false,
+            "attempt": 1,
+            "page": null
+          }
+        ],
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": []
+        },
+        "canary_sent_to_mock_as_auth": true
+      }
+    },
+    {
+      "id": "A14",
+      "family": "awaria-LLM",
+      "name": "przekierowanie 302 do innego hosta",
+      "expected": "outcome technical_error, kod llm_invalid_response, brak wyniku (GET /result 409), kanarek nieobecny w HTTP/logach/dysku, bez zmyślonych danych",
+      "actual": "outcome=technical_error kod=llm_invalid_response (zgodny=True); GET /result → 409; wywołań LLM=1; czas 0.3 s; kanarek w odpowiedziach HTTP/logu/dysku: -/-/-; opis błędu: ['ciało odpowiedzi nie jest obiektem JSON']",
+      "gap": "nie",
+      "fix": "Mapować błąd dostawcy tylko na kod i status HTTP (jak teraz), nigdy nie kopiować treści odpowiedzi; Retry-After uwzględniać z górnym limitem (np. 30 s); test kanarka dla każdej klasy błędu.",
+      "port_test": "test_llm_failure_a14_maps_to_code_and_leaks_nothing",
+      "data": {
+        "wall_s": 0.26,
+        "llm_calls": 1,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_invalid_response"
+          ],
+          "stage": "llm"
+        },
+        "errors": [
+          {
+            "stage": "llm",
+            "code": "llm_invalid_response",
+            "description": "ciało odpowiedzi nie jest obiektem JSON",
+            "retryable": false,
+            "attempt": 1,
+            "page": null
+          }
+        ],
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": []
+        },
+        "canary_sent_to_mock_as_auth": true
+      }
+    },
+    {
+      "id": "C01",
+      "family": "SSRF-konfiguracja",
+      "name": "URL/endpoint/model/ścieżka podane przez klienta HTTP (pola formularza, zapytanie, nagłówki)",
+      "expected": "parametry ignorowane lub odrzucone; zero połączeń do obcego hosta",
+      "actual": "HTTP 201; outcome=partial; połączenia do obcego hosta: 0; LLM użył skonfigurowanego endpointu: 1 żądań; pola nadmiarowe przyjęte bez błędu (brak jawnej odmowy)",
+      "gap": "częściowo",
+      "fix": "Odrzucać nieznane pola formularza kodem 422 `unknown_field`; endpoint/model/klucz wyłącznie z konfiguracji uruchomienia.",
+      "port_test": "test_client_supplied_endpoint_fields_are_rejected_or_ignored_and_no_outbound_call",
+      "data": {}
+    },
+    {
+      "id": "C02",
+      "family": "wyciek-klucza",
+      "name": "klucz LLM wysyłany do endpointu z konfiguracji bez walidacji hosta (obcy host bez TLS)",
+      "expected": "klucz wysyłany tylko do zaufanego hosta po TLS",
+      "actual": "atrapa pod http://127.0.0.1 otrzymała nagłówki autoryzacji z kanarkiem: Authorization=True, x-api-key=True (klucz wysyłany podwójnie, w obu nagłówkach, w jawnym HTTP)",
+      "gap": "tak",
+      "fix": "Allowlista hosta i wymuszenie https; jeden nagłówek zależnie od protokołu (Anthropic: x-api-key; OpenAI: Authorization), nie oba.",
+      "port_test": "test_api_key_only_sent_to_allowlisted_https_host_in_single_header",
+      "data": {}
+    },
+    {
+      "id": "C03",
+      "family": "wyciek-klucza",
+      "name": "odpowiedź 302 z endpointu LLM wskazująca na inny host",
+      "expected": "przekierowanie nie jest śledzone; klucz nie trafia do drugiego hosta",
+      "actual": "outcome=technical_error kod=llm_invalid_response; żądań do drugiego hosta: 0; klucz u drugiego hosta: False",
+      "gap": "nie",
+      "fix": "Utrzymać `follow_redirects=False` (domyślne w httpx) i dodać test regresji.",
+      "port_test": "test_llm_client_does_not_follow_redirects",
+      "data": {}
+    },
+    {
+      "id": "D01",
+      "family": "treść-dokumentu-w-logach",
+      "name": "błąd LLM `500`: czy treść dokumentu (PESEL-kanarek) trafia do logu serwera, odpowiedzi błędu 422 lub artefaktów",
+      "expected": "w logach i błędach brak treści dokumentu; artefakt `reading.json` i `ai-response.json` zawierają ją z konieczności (dane, nie diagnostyka)",
+      "actual": "log serwera: czysto; odpowiedzi HTTP bez tras artefaktów danych (stan, /report, /metrics, /system, błędy 404/422): czysto; 422 zawiera treść: False; na dysku w: ['input.pdf', 'reading.json']",
+      "gap": "nie",
+      "fix": "Rozróżnić artefakty danych (dozwolone, w katalogu roboczym) od logów/błędów (zakaz treści); test kanarka w CI na logach.",
+      "port_test": "test_document_content_never_appears_in_logs_or_error_bodies",
+      "data": {
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": [
+            {
+              "file": "b31bb4a1f6de5/documents/b31bb4a1f6de5-d001/input.pdf",
+              "needle_prefix": "PESEL-…"
+            },
+            {
+              "file": "b31bb4a1f6de5/documents/b31bb4a1f6de5-d001/runs/r1/raw/reading.json",
+              "needle_prefix": "PESEL-…"
+            }
+          ]
+        },
+        "http_422_status": 422
+      }
+    },
+    {
+      "id": "D02",
+      "family": "treść-dokumentu-w-logach",
+      "name": "błąd LLM `truncated`: czy treść dokumentu (PESEL-kanarek) trafia do logu serwera, odpowiedzi błędu 422 lub artefaktów",
+      "expected": "w logach i błędach brak treści dokumentu; artefakt `reading.json` i `ai-response.json` zawierają ją z konieczności (dane, nie diagnostyka)",
+      "actual": "log serwera: czysto; odpowiedzi HTTP bez tras artefaktów danych (stan, /report, /metrics, /system, błędy 404/422): czysto; 422 zawiera treść: False; na dysku w: ['input.pdf', 'reading.json']",
+      "gap": "nie",
+      "fix": "Rozróżnić artefakty danych (dozwolone, w katalogu roboczym) od logów/błędów (zakaz treści); test kanarka w CI na logach.",
+      "port_test": "test_document_content_never_appears_in_logs_or_error_bodies",
+      "data": {
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": [
+            {
+              "file": "b44c91d1fbc97/documents/b44c91d1fbc97-d001/input.pdf",
+              "needle_prefix": "PESEL-…"
+            },
+            {
+              "file": "b44c91d1fbc97/documents/b44c91d1fbc97-d001/runs/r1/raw/reading.json",
+              "needle_prefix": "PESEL-…"
+            }
+          ]
+        },
+        "http_422_status": 422
+      }
+    },
+    {
+      "id": "D03",
+      "family": "treść-dokumentu-w-logach",
+      "name": "błąd LLM `garbage`: czy treść dokumentu (PESEL-kanarek) trafia do logu serwera, odpowiedzi błędu 422 lub artefaktów",
+      "expected": "w logach i błędach brak treści dokumentu; artefakt `reading.json` i `ai-response.json` zawierają ją z konieczności (dane, nie diagnostyka)",
+      "actual": "log serwera: czysto; odpowiedzi HTTP bez tras artefaktów danych (stan, /report, /metrics, /system, błędy 404/422): czysto; 422 zawiera treść: False; na dysku w: ['input.pdf', 'reading.json']",
+      "gap": "nie",
+      "fix": "Rozróżnić artefakty danych (dozwolone, w katalogu roboczym) od logów/błędów (zakaz treści); test kanarka w CI na logach.",
+      "port_test": "test_document_content_never_appears_in_logs_or_error_bodies",
+      "data": {
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": [
+            {
+              "file": "b5c656a8ae487/documents/b5c656a8ae487-d001/input.pdf",
+              "needle_prefix": "PESEL-…"
+            },
+            {
+              "file": "b5c656a8ae487/documents/b5c656a8ae487-d001/runs/r1/raw/reading.json",
+              "needle_prefix": "PESEL-…"
+            }
+          ]
+        },
+        "http_422_status": 422
+      }
+    },
+    {
+      "id": "D04",
+      "family": "treść-dokumentu-w-logach",
+      "name": "błąd LLM `401`: czy treść dokumentu (PESEL-kanarek) trafia do logu serwera, odpowiedzi błędu 422 lub artefaktów",
+      "expected": "w logach i błędach brak treści dokumentu; artefakt `reading.json` i `ai-response.json` zawierają ją z konieczności (dane, nie diagnostyka)",
+      "actual": "log serwera: czysto; odpowiedzi HTTP bez tras artefaktów danych (stan, /report, /metrics, /system, błędy 404/422): czysto; 422 zawiera treść: False; na dysku w: ['input.pdf', 'reading.json']",
+      "gap": "nie",
+      "fix": "Rozróżnić artefakty danych (dozwolone, w katalogu roboczym) od logów/błędów (zakaz treści); test kanarka w CI na logach.",
+      "port_test": "test_document_content_never_appears_in_logs_or_error_bodies",
+      "data": {
+        "leak": {
+          "http": [],
+          "server_log": [],
+          "disk": [
+            {
+              "file": "b1ac2c838bd5c/documents/b1ac2c838bd5c-d001/input.pdf",
+              "needle_prefix": "PESEL-…"
+            },
+            {
+              "file": "b1ac2c838bd5c/documents/b1ac2c838bd5c-d001/runs/r1/raw/reading.json",
+              "needle_prefix": "PESEL-…"
+            }
+          ]
+        },
+        "http_422_status": 422
+      }
+    },
+    {
+      "id": "K01",
+      "family": "cache",
+      "name": "ten sam SHA-256, awaria API przy drugim wgraniu: czy wraca stary wynik (ADR-002 pkt 12)",
+      "expected": "technical_error bez podmiany starym wynikiem z cache",
+      "actual": "1. wgranie: partial (1 wywołanie LLM); to samo pod inną nazwą: przeliczone ponownie (+1 wywołanie ⇒ brak cache po SHA); 3. wgranie przy 500: outcome=technical_error, GET /result → 409; stary wynik podmieniony: False",
+      "gap": "nie",
+      "fix": "Przy dodaniu cache klucz = SHA-256 + wersja promptu + model + konfiguracja OCR; test z awarią API po trafieniu w cache; cache nigdy nie maskuje bieżącego błędu.",
+      "port_test": "test_provider_failure_after_cached_success_returns_technical_error_not_stale_result",
+      "data": {
+        "states": [
+          "partial",
+          "partial",
+          "technical_error",
+          "partial"
+        ],
+        "calls": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "id": "L01",
+      "family": "budżet-LLM",
+      "name": "429 z Retry-After: 3600",
+      "expected": "brak godzinnego wiszenia; ograniczona liczba prób; po limicie technical_error",
+      "actual": "czas 3.1 s; żądań do LLM=3 (retries=2 ⇒ max 3); outcome=technical_error kod=llm_rate_limit; nagłówek Retry-After ignorowany (stały backoff 1 s, 2 s)",
+      "gap": "nie",
+      "fix": "Opcjonalnie respektować Retry-After do górnego limitu (np. 30 s) i przerywać wsad po serii 429 (circuit breaker).",
+      "port_test": "test_retry_after_is_capped_and_attempts_are_bounded",
+      "data": {
+        "wall_s": 3.1,
+        "calls": 3
+      }
+    },
+    {
+      "id": "L02",
+      "family": "budżet-LLM",
+      "name": "wsad 20 dokumentów przy trwałym błędzie 500 dostawcy",
+      "expected": "twardy limit wywołań na wsad / wyłącznik po serii błędów; brak setek bezcelowych wywołań",
+      "actual": "czas 15.7 s; wywołań LLM=60 (= 20 × 3 prób; bez wyłącznika serii błędów); wszystkie dokumenty technical_error=20",
+      "gap": "tak",
+      "fix": "Licznik wywołań i tokenów na wsad (twardy limit z konfiguracji) oraz circuit breaker po K kolejnych błędach dostawcy ⇒ reszta wsadu `technical_error` bez wywołań.",
+      "port_test": "test_batch_stops_calling_llm_after_consecutive_provider_failures",
+      "data": {
+        "wall_s": 15.7,
+        "calls": 60,
+        "docs": 20
+      }
+    },
+    {
+      "id": "L03",
+      "family": "budżet-LLM",
+      "name": "dokument 60 stron gęstego tekstu (≈16 tys. znaków na stronę) (limit stron uprzęży 60): rozmiar jednego żądania do LLM",
+      "expected": "limit kontekstu/tokenów na dokument (kod `context_limit`) przed wysłaniem",
+      "actual": "outcome=complete kod=None; wywołań=1; rozmiar żądania do LLM=0.98 MB (≈244 166 tokenów szac.) bez sprawdzenia limitu kontekstu",
+      "gap": "tak",
+      "fix": "Przed wywołaniem szacować tokeny i odrzucać/dzielić powyżej limitu (kod `context_limit`, architektura §6); osobny limit tokenów na dokument i wsad.",
+      "port_test": "test_oversized_document_text_yields_context_limit_without_llm_call",
+      "data": {
+        "body_len": 976667
+      }
+    },
+    {
+      "id": "N01",
+      "family": "awaria-sieci/SSRF-konfiguracja",
+      "name": "brak sieci: połączenie odrzucone (zamknięty port)",
+      "expected": "technical_error llm_unavailable; serwer żyje; brak klucza w odpowiedziach",
+      "actual": "outcome=technical_error kod=llm_unavailable; czas 0.3 s; serwer żyje=True; wyciek kanarka=False",
+      "gap": "nie",
+      "fix": "Walidować `base_url` przy starcie: schemat https (http tylko dla loopback w trybie deweloperskim), allowlista hostów (api.minimax.io) i odrzucenie adresów link-local/prywatnych poza loopback; test z mock.",
+      "port_test": "test_llm_base_url_validation_n01",
+      "data": {
+        "wall_s": 0.28,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_unavailable"
+          ]
+        }
+      }
+    },
+    {
+      "id": "N02",
+      "family": "awaria-sieci/SSRF-konfiguracja",
+      "name": "błąd TLS: https do serwera HTTP",
+      "expected": "technical_error llm_unavailable; serwer żyje; brak klucza w odpowiedziach",
+      "actual": "outcome=technical_error kod=llm_unavailable; czas 0.2 s; serwer żyje=True; wyciek kanarka=False",
+      "gap": "nie",
+      "fix": "Walidować `base_url` przy starcie: schemat https (http tylko dla loopback w trybie deweloperskim), allowlista hostów (api.minimax.io) i odrzucenie adresów link-local/prywatnych poza loopback; test z mock.",
+      "port_test": "test_llm_base_url_validation_n02",
+      "data": {
+        "wall_s": 0.16,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_unavailable"
+          ]
+        }
+      }
+    },
+    {
+      "id": "N03",
+      "family": "awaria-sieci/SSRF-konfiguracja",
+      "name": "DNS: nieistniejąca domena (.invalid)",
+      "expected": "technical_error llm_unavailable; serwer żyje; brak klucza w odpowiedziach",
+      "actual": "outcome=technical_error kod=llm_unavailable; czas 0.2 s; serwer żyje=True; wyciek kanarka=False",
+      "gap": "nie",
+      "fix": "Walidować `base_url` przy starcie: schemat https (http tylko dla loopback w trybie deweloperskim), allowlista hostów (api.minimax.io) i odrzucenie adresów link-local/prywatnych poza loopback; test z mock.",
+      "port_test": "test_llm_base_url_validation_n03",
+      "data": {
+        "wall_s": 0.16,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_unavailable"
+          ]
+        }
+      }
+    },
+    {
+      "id": "N04",
+      "family": "awaria-sieci/SSRF-konfiguracja",
+      "name": "SSRF przez konfigurację: adres metadanych 169.254.169.254",
+      "expected": "technical_error llm_unavailable; serwer żyje; brak klucza w odpowiedziach",
+      "actual": "outcome=technical_error kod=llm_unavailable; czas 3.1 s; serwer żyje=True; wyciek kanarka=False",
+      "gap": "nie",
+      "fix": "Walidować `base_url` przy starcie: schemat https (http tylko dla loopback w trybie deweloperskim), allowlista hostów (api.minimax.io) i odrzucenie adresów link-local/prywatnych poza loopback; test z mock.",
+      "port_test": "test_llm_base_url_validation_n04",
+      "data": {
+        "wall_s": 3.13,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_unavailable"
+          ]
+        }
+      }
+    },
+    {
+      "id": "N05",
+      "family": "awaria-sieci/SSRF-konfiguracja",
+      "name": "schemat file://",
+      "expected": "technical_error llm_unavailable; serwer żyje; brak klucza w odpowiedziach",
+      "actual": "outcome=technical_error kod=llm_unavailable; czas 0.2 s; serwer żyje=True; wyciek kanarka=False",
+      "gap": "nie",
+      "fix": "Walidować `base_url` przy starcie: schemat https (http tylko dla loopback w trybie deweloperskim), allowlista hostów (api.minimax.io) i odrzucenie adresów link-local/prywatnych poza loopback; test z mock.",
+      "port_test": "test_llm_base_url_validation_n05",
+      "data": {
+        "wall_s": 0.15,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_unavailable"
+          ]
+        }
+      }
+    },
+    {
+      "id": "N06",
+      "family": "awaria-sieci/SSRF-konfiguracja",
+      "name": "schemat gopher://",
+      "expected": "technical_error llm_unavailable; serwer żyje; brak klucza w odpowiedziach",
+      "actual": "outcome=technical_error kod=llm_unavailable; czas 0.1 s; serwer żyje=True; wyciek kanarka=False",
+      "gap": "nie",
+      "fix": "Walidować `base_url` przy starcie: schemat https (http tylko dla loopback w trybie deweloperskim), allowlista hostów (api.minimax.io) i odrzucenie adresów link-local/prywatnych poza loopback; test z mock.",
+      "port_test": "test_llm_base_url_validation_n06",
+      "data": {
+        "wall_s": 0.12,
+        "state": {
+          "outcome": "technical_error",
+          "codes": [
+            "llm_unavailable"
+          ]
+        }
+      }
+    }
+  ],
+  "note": "Atrapa HTTP i klucz-kanarek; wynik opisuje uprząż, nie produkt. Zero prawdziwych wywołań LLM."
+}

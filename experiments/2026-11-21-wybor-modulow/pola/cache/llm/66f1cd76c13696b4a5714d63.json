@@ -1,0 +1,1 @@
+{"ok": true, "data": {"class": "appeal"}, "error": null, "raw": "{\"class\":\"appeal\"}", "input_tokens": 1273, "output_tokens": 45, "latency_s": 4.6112194580055075, "model": "MiniMax-M3.1-Flash", "stop_reason": "end_turn", "attempts": 1, "tag": "test"}

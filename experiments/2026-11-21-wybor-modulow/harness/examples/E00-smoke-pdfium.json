@@ -1,0 +1,12 @@
+{
+  "experiment": "E00",
+  "variant": "pdfium-rules-bez-ocr",
+  "description": "E00 to test dymny samej uprzęży, nie eksperyment z planu: kilka dokumentów zbioru rozwojowego przez HTTP z odczytem pypdfium2, routerem i ekstraktorem regułowym, bez OCR. Sprawdza, że przepływ health, upload, wynik działa end-to-end i że pomiar czasu oraz RSS się zapisuje.",
+  "runner": "e2e",
+  "dataset": "cases-dev",
+  "limit": 4,
+  "seed": 20261122,
+  "variant_kinds": [],
+  "timing": true,
+  "server": {"pdf_reader": "pdfium", "ocr": "none", "router": "rules", "extractor": "rules"}
+}

@@ -1,0 +1,622 @@
+{
+ "versions": {
+  "python": "3.13.18",
+  "pydantic": "2.14.4",
+  "rapidfuzz": "3.14.6",
+  "pypdfium2": "5.15.2",
+  "httpx": "0.28.1",
+  "rapidocr": "3.10.0"
+ },
+ "llm_model": "MiniMax-M3.1-Flash (alias z odpowiedzi API)",
+ "llm_runs_per_doc": 1,
+ "llm_failures": {},
+ "llm_records": 179,
+ "docs_dev": 147,
+ "E07": {
+  "rules": {
+   "overall": {
+    "tp": 949,
+    "tn": 187,
+    "fp": 7,
+    "fn": 19,
+    "f1": 0.9865,
+    "ci95": [
+     0.9791,
+     0.9931
+    ],
+    "cases": 49,
+    "documents": 147
+   },
+   "per_field": {
+    "Odwolujacy[].krs": {
+     "tp": 45,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "f1": 1.0
+    },
+    "Odwolujacy[].nazwa": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].nip": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].pelnomocnik.imie_nazwisko": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].pelnomocnik.mail": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].pelnomocnik.nazwa": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].przez-pelnomocnika": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].regon": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Zamawiajacy[].krs": {
+     "tp": 47,
+     "fp": 0,
+     "fn": 0,
+     "tn": 5,
+     "f1": 1.0
+    },
+    "Zamawiajacy[].nazwa": {
+     "tp": 52,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Zamawiajacy[].nip": {
+     "tp": 52,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Zamawiajacy[].prowadzacy_postepowanie": {
+     "tp": 6,
+     "fp": 0,
+     "fn": 0,
+     "tn": 46,
+     "f1": 1.0
+    },
+    "Zamawiajacy[].regon": {
+     "tp": 52,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "mocodawca[].data.imie_nazwisko": {
+     "tp": 4,
+     "fp": 0,
+     "fn": 0,
+     "tn": 49,
+     "f1": 1.0
+    },
+    "mocodawca[].data.krs": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "f1": 1.0
+    },
+    "mocodawca[].data.nazwa": {
+     "tp": 45,
+     "fp": 0,
+     "fn": 8,
+     "tn": 0,
+     "f1": 0.918
+    },
+    "mocodawca[].data.nip": {
+     "tp": 53,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "mocodawca[].data.typ": {
+     "tp": 53,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "mocodawca[].podpisujacy[].imie_nazwisko": {
+     "tp": 67,
+     "fp": 7,
+     "fn": 11,
+     "tn": 0,
+     "f1": 0.882
+    },
+    "pelnomocnicy[].imie_nazwisko": {
+     "tp": 80,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "pelnomocnicy[].pesel": {
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "tn": 79,
+     "f1": 1.0
+    }
+   }
+  },
+  "llm": {
+   "overall": {
+    "tp": 962,
+    "tn": 187,
+    "fp": 4,
+    "fn": 2,
+    "f1": 0.9969,
+    "ci95": [
+     0.9938,
+     0.9995
+    ],
+    "cases": 49,
+    "documents": 147
+   },
+   "per_field": {
+    "Odwolujacy[].krs": {
+     "tp": 45,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "f1": 1.0
+    },
+    "Odwolujacy[].nazwa": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].nip": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].pelnomocnik.imie_nazwisko": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].pelnomocnik.mail": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].pelnomocnik.nazwa": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].przez-pelnomocnika": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].regon": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Zamawiajacy[].krs": {
+     "tp": 47,
+     "fp": 0,
+     "fn": 0,
+     "tn": 5,
+     "f1": 1.0
+    },
+    "Zamawiajacy[].nazwa": {
+     "tp": 52,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Zamawiajacy[].nip": {
+     "tp": 52,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Zamawiajacy[].prowadzacy_postepowanie": {
+     "tp": 6,
+     "fp": 0,
+     "fn": 0,
+     "tn": 46,
+     "f1": 1.0
+    },
+    "Zamawiajacy[].regon": {
+     "tp": 52,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "mocodawca[].data.imie_nazwisko": {
+     "tp": 4,
+     "fp": 0,
+     "fn": 0,
+     "tn": 49,
+     "f1": 1.0
+    },
+    "mocodawca[].data.krs": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "f1": 1.0
+    },
+    "mocodawca[].data.nazwa": {
+     "tp": 52,
+     "fp": 1,
+     "fn": 0,
+     "tn": 0,
+     "f1": 0.99
+    },
+    "mocodawca[].data.nip": {
+     "tp": 53,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "mocodawca[].data.typ": {
+     "tp": 53,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "mocodawca[].podpisujacy[].imie_nazwisko": {
+     "tp": 78,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "pelnomocnicy[].imie_nazwisko": {
+     "tp": 75,
+     "fp": 3,
+     "fn": 2,
+     "tn": 0,
+     "f1": 0.968
+    },
+    "pelnomocnicy[].pesel": {
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "tn": 79,
+     "f1": 1.0
+    }
+   }
+  },
+  "hybrid_verify": {
+   "overall": {
+    "tp": 962,
+    "tn": 187,
+    "fp": 4,
+    "fn": 2,
+    "f1": 0.9969,
+    "ci95": [
+     0.9938,
+     0.9995
+    ],
+    "cases": 49,
+    "documents": 147
+   },
+   "per_field": {
+    "Odwolujacy[].krs": {
+     "tp": 45,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "f1": 1.0
+    },
+    "Odwolujacy[].nazwa": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].nip": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].pelnomocnik.imie_nazwisko": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].pelnomocnik.mail": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].pelnomocnik.nazwa": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].przez-pelnomocnika": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Odwolujacy[].regon": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Zamawiajacy[].krs": {
+     "tp": 47,
+     "fp": 0,
+     "fn": 0,
+     "tn": 5,
+     "f1": 1.0
+    },
+    "Zamawiajacy[].nazwa": {
+     "tp": 52,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Zamawiajacy[].nip": {
+     "tp": 52,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "Zamawiajacy[].prowadzacy_postepowanie": {
+     "tp": 6,
+     "fp": 0,
+     "fn": 0,
+     "tn": 46,
+     "f1": 1.0
+    },
+    "Zamawiajacy[].regon": {
+     "tp": 52,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "mocodawca[].data.imie_nazwisko": {
+     "tp": 4,
+     "fp": 0,
+     "fn": 0,
+     "tn": 49,
+     "f1": 1.0
+    },
+    "mocodawca[].data.krs": {
+     "tp": 49,
+     "fp": 0,
+     "fn": 0,
+     "tn": 4,
+     "f1": 1.0
+    },
+    "mocodawca[].data.nazwa": {
+     "tp": 52,
+     "fp": 1,
+     "fn": 0,
+     "tn": 0,
+     "f1": 0.99
+    },
+    "mocodawca[].data.nip": {
+     "tp": 53,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "mocodawca[].data.typ": {
+     "tp": 53,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "mocodawca[].podpisujacy[].imie_nazwisko": {
+     "tp": 78,
+     "fp": 0,
+     "fn": 0,
+     "tn": 0,
+     "f1": 1.0
+    },
+    "pelnomocnicy[].imie_nazwisko": {
+     "tp": 75,
+     "fp": 3,
+     "fn": 2,
+     "tn": 0,
+     "f1": 0.968
+    },
+    "pelnomocnicy[].pesel": {
+     "tp": 1,
+     "fp": 0,
+     "fn": 0,
+     "tn": 79,
+     "f1": 1.0
+    }
+   }
+  },
+  "paired_delta_vs_rules": {
+   "llm": {
+    "delta": 0.0104,
+    "ci95": [
+     0.0031,
+     0.0183
+    ],
+    "cases": 49
+   },
+   "hybrid_verify": {
+    "delta": 0.0104,
+    "ci95": [
+     0.0031,
+     0.0183
+    ],
+    "cases": 49
+   }
+  },
+  "by_class": {
+   "odwolanie": {
+    "rules": {
+     "tp": 597,
+     "tn": 55,
+     "fp": 0,
+     "fn": 0,
+     "f1": 1.0,
+     "ci95": [
+      1.0,
+      1.0
+     ],
+     "cases": 49,
+     "documents": 49
+    },
+    "llm": {
+     "tp": 597,
+     "tn": 55,
+     "fp": 0,
+     "fn": 0,
+     "f1": 1.0,
+     "ci95": [
+      1.0,
+      1.0
+     ],
+     "cases": 49,
+     "documents": 49
+    },
+    "hybrid_verify": {
+     "tp": 597,
+     "tn": 55,
+     "fp": 0,
+     "fn": 0,
+     "f1": 1.0,
+     "ci95": [
+      1.0,
+      1.0
+     ],
+     "cases": 49,
+     "documents": 49
+    }
+   },
+   "pelnomocnictwo": {
+    "rules": {
+     "tp": 352,
+     "tn": 132,
+     "fp": 7,
+     "fn": 19,
+     "f1": 0.9644,
+     "ci95": [
+      0.9468,
+      0.9807
+     ],
+     "cases": 49,
+     "documents": 49
+    },
+    "llm": {
+     "tp": 365,
+     "tn": 132,
+     "fp": 4,
+     "fn": 2,
+     "f1": 0.9918,
+     "ci95": [
+      0.9837,
+      0.9986
+     ],
+     "cases": 49,
+     "documents": 49
+    },
+    "hybrid_verify": {
+     "tp": 365,
+     "tn": 132,
+     "fp": 4,
+     "fn": 2,
+     "f1": 0.9918,
+     "ci95": [
+      0.9837,
+      0.9986
+     ],
+     "cases": 49,
+     "documents": 49
+    }
+   }
+  },
+  "wrong_role_identifier": {
+   "rules": {
+    "ids_emitted": 294
+   },
+   "llm": {
+    "ids_emitted": 294
+   },
+   "hybrid_verify": {
+    "ids_emitted": 294
+   }
+  }
+ }
+}

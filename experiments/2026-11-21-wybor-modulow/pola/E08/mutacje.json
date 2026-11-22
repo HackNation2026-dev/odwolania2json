@@ -1,0 +1,212 @@
+{
+ "mutants_total": 152,
+ "invalid_regex": 0,
+ "killed_by_dev_pdf": 95,
+ "killed_by_dev_or_ocr": 97,
+ "killed_by_dev_or_probes": 117,
+ "survived_all": 33,
+ "by_pattern": {
+  "nip": {
+   "total": 25,
+   "killed_dev": 18,
+   "killed_dev_or_probes": 22
+  },
+  "regon": {
+   "total": 11,
+   "killed_dev": 5,
+   "killed_dev_or_probes": 8
+  },
+  "krs": {
+   "total": 8,
+   "killed_dev": 6,
+   "killed_dev_or_probes": 7
+  },
+  "pesel": {
+   "total": 8,
+   "killed_dev": 6,
+   "killed_dev_or_probes": 7
+  },
+  "account": {
+   "total": 15,
+   "killed_dev": 10,
+   "killed_dev_or_probes": 12
+  },
+  "amount": {
+   "total": 16,
+   "killed_dev": 1,
+   "killed_dev_or_probes": 6
+  },
+  "bzp": {
+   "total": 15,
+   "killed_dev": 13,
+   "killed_dev_or_probes": 15
+  },
+  "ted_new": {
+   "total": 11,
+   "killed_dev": 5,
+   "killed_dev_or_probes": 7
+  },
+  "ted_old": {
+   "total": 12,
+   "killed_dev": 8,
+   "killed_dev_or_probes": 8
+  },
+  "date_num": {
+   "total": 18,
+   "killed_dev": 14,
+   "killed_dev_or_probes": 14
+  },
+  "date_word": {
+   "total": 3,
+   "killed_dev": 3,
+   "killed_dev_or_probes": 3
+  },
+  "ref_label": {
+   "total": 8,
+   "killed_dev": 4,
+   "killed_dev_or_probes": 6
+  },
+  "label_amount": {
+   "total": 2,
+   "killed_dev": 2,
+   "killed_dev_or_probes": 2
+  }
+ },
+ "survivors": [
+  {
+   "pattern": "nip",
+   "operator": "drop '?' @20"
+  },
+  {
+   "pattern": "nip",
+   "operator": "digitclass @26"
+  },
+  {
+   "pattern": "nip",
+   "operator": "digitclass @104"
+  },
+  {
+   "pattern": "regon",
+   "operator": "drop '?' @12"
+  },
+  {
+   "pattern": "regon",
+   "operator": "digitclass @18"
+  },
+  {
+   "pattern": "regon",
+   "operator": "digitclass @52"
+  },
+  {
+   "pattern": "krs",
+   "operator": "digitclass @35"
+  },
+  {
+   "pattern": "pesel",
+   "operator": "digitclass @37"
+  },
+  {
+   "pattern": "account",
+   "operator": "drop '?' @22"
+  },
+  {
+   "pattern": "account",
+   "operator": "digitclass @5"
+  },
+  {
+   "pattern": "account",
+   "operator": "digitclass @70"
+  },
+  {
+   "pattern": "amount",
+   "operator": "quant 2->1"
+  },
+  {
+   "pattern": "amount",
+   "operator": "quant 2->3"
+  },
+  {
+   "pattern": "amount",
+   "operator": "quant 2->1"
+  },
+  {
+   "pattern": "amount",
+   "operator": "label PLN[0]"
+  },
+  {
+   "pattern": "amount",
+   "operator": "label PLN[2]"
+  },
+  {
+   "pattern": "amount",
+   "operator": "digitclass @29"
+  },
+  {
+   "pattern": "amount",
+   "operator": "digitclass @39"
+  },
+  {
+   "pattern": "amount",
+   "operator": "sep ,->. @22"
+  },
+  {
+   "pattern": "amount",
+   "operator": "sep ,->. @32"
+  },
+  {
+   "pattern": "ted_new",
+   "operator": "digitclass @5"
+  },
+  {
+   "pattern": "ted_new",
+   "operator": "digitclass @42"
+  },
+  {
+   "pattern": "ted_new",
+   "operator": "drop lookaround @0"
+  },
+  {
+   "pattern": "ted_new",
+   "operator": "drop lookaround @38"
+  },
+  {
+   "pattern": "ted_old",
+   "operator": "drop '?' @15"
+  },
+  {
+   "pattern": "ted_old",
+   "operator": "drop '?' @19"
+  },
+  {
+   "pattern": "ted_old",
+   "operator": "drop '?' @33"
+  },
+  {
+   "pattern": "ted_old",
+   "operator": "drop '?' @37"
+  },
+  {
+   "pattern": "date_num",
+   "operator": "digitclass @5"
+  },
+  {
+   "pattern": "date_num",
+   "operator": "digitclass @81"
+  },
+  {
+   "pattern": "date_num",
+   "operator": "drop lookaround @0"
+  },
+  {
+   "pattern": "date_num",
+   "operator": "drop lookaround @77"
+  },
+  {
+   "pattern": "ref_label",
+   "operator": "digitclass @178"
+  }
+ ],
+ "killed_by_dev_pdf_pct": 62.5,
+ "killed_by_dev_or_ocr_pct": 63.8,
+ "killed_by_dev_or_probes_pct": 77.0
+}

@@ -1,0 +1,483 @@
+{
+  "experiment": "E00",
+  "variant": "pdfium-rules-bez-ocr",
+  "description": "E00 to test dymny samej uprzęży, nie eksperyment z planu: kilka dokumentów zbioru rozwojowego przez HTTP z odczytem pypdfium2, routerem i ekstraktorem regułowym, bez OCR. Sprawdza, że przepływ health, upload, wynik działa end-to-end i że pomiar czasu oraz RSS się zapisuje.",
+  "dataset": "cases-dev",
+  "seed": 20261122,
+  "started_utc": "2026-11-21T23:50:50+00:00",
+  "finished_utc": "2026-11-21T23:50:52+00:00",
+  "spec": {
+    "experiment": "E00",
+    "variant": "pdfium-rules-bez-ocr",
+    "description": "E00 to test dymny samej uprzęży, nie eksperyment z planu: kilka dokumentów zbioru rozwojowego przez HTTP z odczytem pypdfium2, routerem i ekstraktorem regułowym, bez OCR. Sprawdza, że przepływ health, upload, wynik działa end-to-end i że pomiar czasu oraz RSS się zapisuje.",
+    "runner": "e2e",
+    "dataset": "cases-dev",
+    "limit": 4,
+    "seed": 20261122,
+    "variant_kinds": [],
+    "timing": true,
+    "server": {
+      "pdf_reader": "pdfium",
+      "ocr": "none",
+      "router": "rules",
+      "extractor": "rules"
+    }
+  },
+  "harness_config": {
+    "name": "E00-pdfium-rules-bez-ocr",
+    "pdf_reader": "pdfium",
+    "ocr": "none",
+    "ocr_dpi": 200,
+    "ocr_policy": "if_needed",
+    "router": "rules",
+    "extractor": "rules",
+    "anchor": "words",
+    "llm_input": "text",
+    "work_dir": "/home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/work/runs/E00/pdfium-rules-bez-ocr/srv",
+    "seed": 20261122,
+    "llm": {
+      "protocol": "anthropic",
+      "base_url": "https://api.minimax.io/anthropic/v1/messages",
+      "model": "MiniMax-M3.1-Flash-Preview",
+      "temperature": 0.0,
+      "max_tokens": 8000,
+      "timeout_s": 120.0,
+      "retries": 2,
+      "effort": null
+    },
+    "limits": {
+      "max_upload_bytes": 31457280,
+      "max_pages": 60,
+      "document_timeout_s": 600.0,
+      "max_workers": 1,
+      "max_batch_documents": 500
+    }
+  },
+  "versions": {
+    "python": "3.13.18",
+    "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+    "machine": "x86_64",
+    "fastapi": "0.165.0",
+    "uvicorn": "0.54.0",
+    "httpx": "0.28.1",
+    "pydantic": "2.14.4",
+    "pypdfium2": "5.15.2",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "pillow": "13.0.0",
+    "numpy": "2.5.5",
+    "git_commit": "dede135"
+  },
+  "timing_locked": true,
+  "lock_wait_s": 0.0,
+  "server_start_s": 0.341,
+  "limit_method": "systemd-run",
+  "system": {
+    "harness_version": "0.1",
+    "ocr": {
+      "ready": false,
+      "provider": {
+        "available": false,
+        "name": "none",
+        "version": null,
+        "parameter_count": null,
+        "license": null,
+        "location": null,
+        "models": []
+      }
+    },
+    "llm": {
+      "ready": false,
+      "provider": null
+    },
+    "pdf_reader": "pdfium",
+    "router": "rules",
+    "extractor": "rules",
+    "anchor": "words",
+    "config": {
+      "name": "E00-pdfium-rules-bez-ocr",
+      "pdf_reader": "pdfium",
+      "ocr": "none",
+      "ocr_dpi": 200,
+      "ocr_policy": "if_needed",
+      "router": "rules",
+      "extractor": "rules",
+      "anchor": "words",
+      "llm_input": "text",
+      "work_dir": "/home/user/orca/workspaces/odwolania2json/numbfish/experiments/2026-11-21-wybor-modulow/harness/work/runs/E00/pdfium-rules-bez-ocr/srv",
+      "seed": 20261122,
+      "llm": {
+        "protocol": "anthropic",
+        "base_url": "https://api.minimax.io/anthropic/v1/messages",
+        "model": "MiniMax-M3.1-Flash-Preview",
+        "temperature": 0.0,
+        "max_tokens": 8000,
+        "timeout_s": 120.0,
+        "retries": 2,
+        "effort": null
+      },
+      "limits": {
+        "max_upload_bytes": 31457280,
+        "max_pages": 60,
+        "document_timeout_s": 600.0,
+        "max_workers": 1,
+        "max_batch_documents": 500
+      }
+    },
+    "limits": {
+      "max_upload_bytes": 31457280,
+      "max_pages": 60,
+      "document_timeout_s": 600.0,
+      "max_workers": 1,
+      "max_batch_documents": 500
+    },
+    "python": "3.13.18",
+    "paid_call_performed": false
+  },
+  "peak_rss_mb": 72.6,
+  "total_wall_s": 1.133,
+  "documents": [
+    {
+      "key": "przyklad_24/odwolanie.pdf",
+      "expected_class": "odwolanie",
+      "variant": null,
+      "variant_record": null,
+      "outcome": "complete",
+      "class_id": "appeal",
+      "codes": [],
+      "errors": [],
+      "timing": {
+        "upload_s": 0.0046,
+        "processing_s": 0.1032,
+        "wall_s": 0.1137,
+        "health_s": 0.0007
+      },
+      "peak_rss_mb_so_far": 65.3,
+      "result": {
+        "OdwolanieKIO": {
+          "data": null,
+          "czynnosc_dzien": null,
+          "czynnosc_powod_id": null,
+          "czynnosc_opis": null,
+          "miejscowosc": null
+        },
+        "Odwolujacy": [],
+        "Zamawiajacy": [],
+        "ZamowieniePubliczne": {
+          "numer_bzp": "2026/BZP00999033",
+          "numer_postepowania": "ZP.548.2026",
+          "numer_ted": "999819-2026",
+          "tytul": null
+        }
+      },
+      "evidence_count": 3,
+      "pipeline_metrics": {
+        "pdf_read_s": 0.007624703997862525,
+        "ocr_s": 0.0,
+        "ocr_pages": 0,
+        "pages": 2,
+        "ocr_errors": [],
+        "unprocessed_pages": [],
+        "total_s": 0.007981627000845037,
+        "route_s": 0.0007,
+        "extract_s": 0.0009,
+        "wall_s": 0.0224,
+        "llm": null
+      },
+      "predicted_class": "odwolanie",
+      "decided": true,
+      "leaf_counts": {
+        "tp": 2,
+        "fp": 1,
+        "fn": 17
+      }
+    },
+    {
+      "key": "przyklad_39/potwierdzenie_przelewu.pdf",
+      "expected_class": "przelew",
+      "variant": null,
+      "variant_record": null,
+      "outcome": "complete",
+      "class_id": "bank_transfer",
+      "codes": [],
+      "errors": [],
+      "timing": {
+        "upload_s": 0.0033,
+        "processing_s": 0.1032,
+        "wall_s": 0.1147,
+        "health_s": 0.0009
+      },
+      "peak_rss_mb_so_far": 65.6,
+      "result": {
+        "przelew_bankowy": {
+          "data_operacji": "2025-12-27",
+          "kwota": null,
+          "na_rachunek": null,
+          "numer_transakcji": null,
+          "tytul": null,
+          "z_rachunku": null
+        }
+      },
+      "evidence_count": 1,
+      "pipeline_metrics": {
+        "pdf_read_s": 0.002562059002229944,
+        "ocr_s": 0.0,
+        "ocr_pages": 0,
+        "pages": 1,
+        "ocr_errors": [],
+        "unprocessed_pages": [],
+        "total_s": 0.0027708699999493547,
+        "route_s": 0.0003,
+        "extract_s": 0.0009,
+        "wall_s": 0.014,
+        "llm": null
+      },
+      "predicted_class": "przelew",
+      "decided": true,
+      "leaf_counts": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 5
+      }
+    },
+    {
+      "key": "przyklad_53/odwolanie.pdf",
+      "expected_class": "odwolanie",
+      "variant": null,
+      "variant_record": null,
+      "outcome": "complete",
+      "class_id": "appeal",
+      "codes": [],
+      "errors": [],
+      "timing": {
+        "upload_s": 0.0043,
+        "processing_s": 0.2078,
+        "wall_s": 0.2172,
+        "health_s": 0.0012
+      },
+      "peak_rss_mb_so_far": 72.6,
+      "result": {
+        "OdwolanieKIO": {
+          "data": null,
+          "czynnosc_dzien": null,
+          "czynnosc_powod_id": null,
+          "czynnosc_opis": null,
+          "miejscowosc": null
+        },
+        "Odwolujacy": [],
+        "Zamawiajacy": [],
+        "ZamowieniePubliczne": {
+          "numer_bzp": "2025/BZP00998398",
+          "numer_postepowania": "ZP.26.2026",
+          "numer_ted": "998833-2025",
+          "tytul": null
+        }
+      },
+      "evidence_count": 3,
+      "pipeline_metrics": {
+        "pdf_read_s": 0.07710734799184138,
+        "ocr_s": 0.0,
+        "ocr_pages": 0,
+        "pages": 10,
+        "ocr_errors": [],
+        "unprocessed_pages": [],
+        "total_s": 0.07758991800074,
+        "route_s": 0.0019,
+        "extract_s": 0.001,
+        "wall_s": 0.1088,
+        "llm": null
+      },
+      "predicted_class": "odwolanie",
+      "decided": true,
+      "leaf_counts": {
+        "tp": 1,
+        "fp": 2,
+        "fn": 19
+      }
+    },
+    {
+      "key": "przyklad_59/pelnomocnictwo.pdf",
+      "expected_class": "pelnomocnictwo",
+      "variant": null,
+      "variant_record": null,
+      "outcome": "complete",
+      "class_id": "power_of_attorney",
+      "codes": [],
+      "errors": [],
+      "timing": {
+        "upload_s": 0.0048,
+        "processing_s": 0.1025,
+        "wall_s": 0.113,
+        "health_s": 0.0008
+      },
+      "peak_rss_mb_so_far": 72.6,
+      "result": {
+        "mocodawca": [
+          {
+            "data": {
+              "imie_nazwisko": null,
+              "krs": "9999877287",
+              "nazwa": null,
+              "nip": "9996715327",
+              "typ": null
+            },
+            "podpisujacy": []
+          }
+        ],
+        "pelnomocnicy": []
+      },
+      "evidence_count": 2,
+      "pipeline_metrics": {
+        "pdf_read_s": 0.0040934450007625856,
+        "ocr_s": 0.0,
+        "ocr_pages": 0,
+        "pages": 1,
+        "ocr_errors": [],
+        "unprocessed_pages": [],
+        "total_s": 0.004255952997482382,
+        "route_s": 0.0003,
+        "extract_s": 0.0002,
+        "wall_s": 0.0145,
+        "llm": null
+      },
+      "predicted_class": "pelnomocnictwo",
+      "decided": true,
+      "leaf_counts": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 5
+      }
+    }
+  ],
+  "aggregates": {
+    "documents": 4,
+    "outcomes": {
+      "complete": 4
+    },
+    "error_codes": {},
+    "classification_confusion": {
+      "odwolanie->odwolanie": 2,
+      "przelew->przelew": 1,
+      "pelnomocnictwo->pelnomocnictwo": 1
+    },
+    "wall_s_total_per_doc": 0.559,
+    "wall_s_mean_per_doc": 0.1396,
+    "approx_f1": {
+      "totals": {
+        "tp": 0,
+        "tn": 6,
+        "fp": 4,
+        "fn": 24,
+        "f1": 0.0
+      },
+      "per_class": {
+        "odwolanie": {
+          "tp": 0,
+          "tn": 5,
+          "fp": 3,
+          "fn": 16,
+          "f1": 0.0
+        },
+        "pelnomocnictwo": {
+          "tp": 0,
+          "tn": 0,
+          "fp": 1,
+          "fn": 3,
+          "f1": 0.0
+        },
+        "przelew": {
+          "tp": 0,
+          "tn": 1,
+          "fp": 0,
+          "fn": 5,
+          "f1": 0.0
+        },
+        "obcy": {
+          "tp": 0,
+          "tn": 0,
+          "fp": 0,
+          "fn": 0,
+          "f1": 0.0
+        }
+      },
+      "per_document": [
+        {
+          "case_id": "przyklad_24",
+          "input_name": "odwolanie.pdf",
+          "document_class": "odwolanie",
+          "tp": 0,
+          "tn": 4,
+          "fp": 1,
+          "fn": 7,
+          "f1": 0.0
+        },
+        {
+          "case_id": "przyklad_39",
+          "input_name": "potwierdzenie_przelewu.pdf",
+          "document_class": "przelew",
+          "tp": 0,
+          "tn": 1,
+          "fp": 0,
+          "fn": 5,
+          "f1": 0.0
+        },
+        {
+          "case_id": "przyklad_53",
+          "input_name": "odwolanie.pdf",
+          "document_class": "odwolanie",
+          "tp": 0,
+          "tn": 1,
+          "fp": 2,
+          "fn": 9,
+          "f1": 0.0
+        },
+        {
+          "case_id": "przyklad_59",
+          "input_name": "pelnomocnictwo.pdf",
+          "document_class": "pelnomocnictwo",
+          "tp": 0,
+          "tn": 0,
+          "fp": 1,
+          "fn": 3,
+          "f1": 0.0
+        }
+      ],
+      "classification": {
+        "tp": 4,
+        "tn": 0,
+        "fp": 0,
+        "fn": 0,
+        "f1": 1.0
+      }
+    },
+    "leaf_f1": {
+      "total": {
+        "tp": 6,
+        "fp": 3,
+        "fn": 46,
+        "f1": 0.1967
+      },
+      "per_class": {
+        "odwolanie": {
+          "tp": 3,
+          "fp": 3,
+          "fn": 36,
+          "f1": 0.1333
+        },
+        "przelew": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 5,
+          "f1": 0.2857
+        },
+        "pelnomocnictwo": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 5,
+          "f1": 0.4444
+        }
+      }
+    },
+    "note": "Ewaluator produkcyjny (approx_f1) nie zlicza tp dla pól, więc jego F1 pól to 0; do porównań używaj leaf_f1. Żadna z miar nie jest oficjalnym wynikiem."
+  }
+}

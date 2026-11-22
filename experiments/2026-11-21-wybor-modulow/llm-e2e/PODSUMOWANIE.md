@@ -1,0 +1,16 @@
+# Podsumowanie grupy C (E10, E11, E17, E18)
+
+Wszystkie liczby: F1 przybliżony (ewaluator produkcyjny po PR #8/#9, próg 80%), przedział 95% z bootstrapu po sprawach, **nie oficjalny F1**. Próbka: 25 z 49 spraw rozwojowych (przesiew 12). Czasy i RSS zebrane pod
+obciążeniem maszyny (load avg 20–35), **niewiążące**; do decyzji o czasie służy osobne ciche okno. Klucz API: tylko MiniMax; nie zapisany w wynikach (kontrola grepem: `WYCIEK.md`). Szczegóły i tabele w `E##/README.md`; pełne
+specyfikacje w `specs/`, surowe wiersze w `E##/raw/`. Sieć zawodziła seriami (w tym ok. 40 min 05:00–05:12); wiersze z błędem sieci ponawiane, nie zapisywane jako wyniki.
+
+| E | Wynik | Decyzja | Pewność | Co otwarte |
+|---|---|---|---|---|
+| E10 | tekst p2: 0.938 [0.910; 0.959] (5 powt., SD między powt. 0.0129); tekst+obraz 0.944, Δ +0.015 [-0.010; +0.042] (nierozstrzygnięte); sam obraz 0.890, Δ -0.039 [-0.076; -0.005] (base>cand); prompt p1 0.751, Δ -0.157 [-0.257; -0.038] (base>cand); p3 0.921, Δ +0.014 [-0.027; +0.066] (nierozstrzygnięte); effort low 0.942, Δ +0.036 [-0.004; +0.095] (nierozstrzygnięte); high 0.940, Δ +0.033 [-0.006; +0.080] (nierozstrzygnięte); poza schematem 1. próba 0.011; identyczny JSON w 39% dok. | wejście: tekst PDF, prompt p2, 1 wywołanie/dok.; obraz tylko jako dodatek tam, gdzie brak tekstu (E11) | średnia (25 spraw; p1/p3/effort tylko 12) | test faktu osadzonego na str. 3 (dane go nie zawierają); weryfikacja effortu; kontrola 9 stałych niepowodzeń odpowiedzi |
+| E11 | tekst: rules 0.242, A 0.918, C 0.903, D 0.911; skan: A 0.000 (n=75), B 0.902 (n=71), C 0.928 (n=75), D 0.961 (n=26), rules+OCR 0.210 (n=75); S5: A 0.625 (n=25), B 0.724 (n=25), C 0.927 (n=25), D 0.876 (n=11); S2: B 0.979 (n=24), D 0.992 (n=11) | patrz E11/README (sparowane ΔF1 per typ); warstwa tekstowa nie jest wiarygodna (S5) bez obrazu lub kontroli | średnia/niska na skanach (syntetyczne, 1 powt.) | fizyczne skany; D z pełnym zakresem; kontrolny jeden przebieg |
+| E17 | zerowanie pola bez kotwicy: ΔF1 -0.021 [-0.029; -0.014] (base>cand) (tekst); brak eksportu `partial`: -0.208 [-0.268; -0.155] (base>cand); wynik reguł przy awarii LLM: +0.002 [+0.000; +0.005] (cand>base); `ambiguous` LLM: 0 z 435 | nie zerować pól z braku kotwicy; eksportować `partial` z flagą; bbox nie decyduje o treści JSON | wysoka dla kierunku (duże ΔF1), niska dla wielkości (uprząż ≠ produkt) | `ambiguous`→wymuszona klasa; kotwiczenie docelowe |
+| E18 | M3: 0.961 Δ +0.035 [+0.002; +0.076] (cand>base) (tok. wyj. 706 vs 2566); M2.7: 0.955 Δ +0.029 [-0.004; +0.071] (nierozstrzygnięte); M2.5: 0.959 Δ +0.033 [+0.007; +0.067] (cand>base) | reguła z prerejestracji: patrz E18/README (M3 spełnia, jeśli tabela mówi TAK) | niska/średnia (jeden dostawca, 2 powt.) | inny dostawca (klucz poza zakresem), M3 w pełnym wariancie D, negatywy, licencja i lokalizacja (ADR-002) |
+
+D + MiniMax-M3: tekst 0.933 (n=87), skany 0.925–0.986 na 6–19 dok. (39 z 150, mała próbka); patrz E11/wyniki-dm3.json.
+
+Zbiór kontrolny: NIE wykonano (limit API, termin; `KONTROLNY.md`, licznik użyć 0). Wiersze błędów sieci/limitu (E10 539+81, E11 681+20, E18 379+12) nie weszły do liczb. Niepełne: D na skanach 57/150, DM3 skany 39/150, B_ocr_always 0/75, p1 43/108, image-p2 245/261. Inny dostawca: nie sprawdzono (zakres klucza).

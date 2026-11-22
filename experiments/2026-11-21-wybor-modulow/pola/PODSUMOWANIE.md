@@ -1,0 +1,14 @@
+# Podsumowanie grupy B (pola): E06, E07, E08, E09, E19, E20
+
+Wszystko na zbiorze rozwojowym (49 spraw, 147 dokumentów + 12 negatywów); zbioru kontrolnego nie użyto. F1 = „F1 przybliżony” ewaluatorem produkcyjnym (po PR #8/#9), 95% bootstrap po sprawach. LLM: MiniMax-M3.1-Flash po HTTP, jedno wywołanie na dokument i wariant, bez powtórzeń. Czasy i RSS zebrano pod obciążeniem maszyny: **nie do decyzji**. Reguły stroiłem na tym samym zbiorze (dane syntetyczne i szablonowe): wyniki regułowe to górna granica.
+
+| E | Wynik | Decyzja | Pewność | Otwarte |
+|---|---|---|---|---|
+| E06 | Pozytywy 147/147 dla hybrydy rules-first + LLM v2 (PDF, bez nagłówka, OCR), reguły same: 141/147, 79/147 (bez nagłówka), 134/147 (OCR). LLM z promptem ogólnym: **23/40 FP** na negatywach zbliżonych; prompt z opisem typów i hybryda 0/40 (zanieczyszczone: typy znane autorowi promptu). LLM wołany w 11% (PDF), 46% (bez nagłówka) | hybryda: reguły gdy pewne, inaczej LLM z opisem typów obcych | średnia (kierunek), niska (FP na nieznanych typach) | negatywy niezależne, powtórzenia LLM, router w jednym wywołaniu z ekstrakcją, E17 |
+| E07 | F1 podmiotów: LLM 0,997 [0,994; 0,9995] vs reguły 0,987 [0,979; 0,993]; ΔF1 +0,010 [+0,003; +0,018]; 0 błędnych ról na 294 identyfikatorach | LLM dla ról i podmiotów; regułowa kontrola cyfr w tekście; nazwisk nie normalizować | średnia | układy bez etykiet, konsorcja, OCR |
+| E08 | F1 pól stałych: PDF 0,998 [0,995; 0,999]; OCR 150 dpi 0,948 [0,934; 0,962] (−5 pp); szum 1–4%: 0,986–0,960. Tolerancja O/0 na realnym OCR +0,13 pp; mutacje 117/152 zabitych (77%) | regex = generator kandydatów i kontrola na PDF; na skanach pola stałe przez LLM + weryfikacja regułą | średnia | fizyczne skany, kolejność odczytu OCR (zamiana rachunków), testy do 100% mutantów |
+| E09 | Reguły F1 0,993 (id 48/49, data 49/49); LLM prompt ogólny 0,749; LLM prompt wskazujący źródło 0,972 (48/49); powód 12: 8/8 reguły i v2 (próba syntetyczna) | reguły główne, LLM v2 jako kontrola; opis kanoniczny z tabeli id | średnia | pierwszy zarzut w innych układach, brak klasy 12 w danych prawdziwych |
+| E19 | Normalizatory 100% na wartościach z danych; luki w teście obiegowym: NIP/REGON/KRS ze spacjami i myślnikami, kwoty z separatorem tysięcy (`1.000,50` → 1,0), daty skrócone, TED ze spacjami; poprawna suma kontrolna tylko u 64% NIP, 70% REGON, 34% IBAN | naprawić luki; sumy kontrolnej nie używać jako filtra twardego | wysoka (luki), niska (rozkład testowy) | zapisy w zbiorze testowym |
+| E20 | FP na polach `null`: reguły 7, LLM 2 (z 240–243). Luki (n = 8 każda): brak pełnomocnika reguły 0 FP, LLM 4/8 FP flagi; BZP/TED 0 FP; wpis 15 000 zł 8/8; powód 12 patrz E09 | decyzja obecności na dowodzie w tekście, flagi logiczne bez cytatu = `null` | niska (n = 8, edycje syntetyczne) | prawdziwe luki, E17 |
+
+Pliki: `E06 … E20/{README.md,wyniki.json}`, `rules.py`, `lib.py`, `llm_calls.py`, `BLOKERY.md`. Wyniki LLM w `cache/llm/` (surowe odpowiedzi, bez klucza).

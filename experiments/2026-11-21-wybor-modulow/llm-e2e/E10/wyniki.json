@@ -1,0 +1,2624 @@
+{
+ "base": "e10-text-p2",
+ "variants": {
+  "e10-text-p2": {
+   "summary": {
+    "docs": 435,
+    "cases": 26,
+    "tp": 3696,
+    "fp": 137,
+    "fn": 353,
+    "tn": 649,
+    "f1": 0.9378,
+    "ci95": [
+     0.9096,
+     0.9593
+    ],
+    "per_class": {
+     "odwolanie": {
+      "docs": 125,
+      "tp": 2113,
+      "fp": 125,
+      "fn": 208,
+      "f1": 0.927,
+      "ci": [
+       0.8795,
+       0.9625
+      ]
+     },
+     "pelnomocnictwo": {
+      "docs": 125,
+      "tp": 845,
+      "fp": 11,
+      "fn": 134,
+      "f1": 0.921,
+      "ci": [
+       0.8873,
+       0.9513
+      ]
+     },
+     "przelew": {
+      "docs": 125,
+      "tp": 738,
+      "fp": 1,
+      "fn": 11,
+      "f1": 0.9919,
+      "ci": [
+       0.9851,
+       0.9973
+      ]
+     },
+     "obcy": {
+      "docs": 60,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0,
+      "ci": null
+     }
+    },
+    "classification_acc": 0.9448,
+    "outcomes": {
+     "technical_error": 24,
+     "foreign": 45,
+     "complete": 265,
+     "partial": 101
+    },
+    "policy": "default",
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 102,
+      "fp": 0,
+      "fn": 23,
+      "f1": 0.8987
+     },
+     "OdwolanieKIO.czynnosc_opis": {
+      "tp": 89,
+      "fp": 27,
+      "fn": 9,
+      "f1": 0.8318
+     },
+     "OdwolanieKIO.czynnosc_powod_id": {
+      "tp": 91,
+      "fp": 25,
+      "fn": 9,
+      "f1": 0.8426
+     },
+     "OdwolanieKIO.data": {
+      "tp": 73,
+      "fp": 0,
+      "fn": 7,
+      "f1": 0.9542
+     },
+     "OdwolanieKIO.miejscowosc": {
+      "tp": 73,
+      "fp": 0,
+      "fn": 7,
+      "f1": 0.9542
+     },
+     "Odwolujacy[].krs": {
+      "tp": 105,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9545
+     },
+     "Odwolujacy[].nazwa": {
+      "tp": 115,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9583
+     },
+     "Odwolujacy[].nip": {
+      "tp": 115,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9583
+     },
+     "Odwolujacy[].pelnomocnik.imie_nazwisko": {
+      "tp": 91,
+      "fp": 24,
+      "fn": 10,
+      "f1": 0.8426
+     },
+     "Odwolujacy[].pelnomocnik.mail": {
+      "tp": 115,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9583
+     },
+     "Odwolujacy[].pelnomocnik.nazwa": {
+      "tp": 115,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9583
+     },
+     "Odwolujacy[].przez-pelnomocnika": {
+      "tp": 115,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9583
+     },
+     "Odwolujacy[].regon": {
+      "tp": 115,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9583
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 96,
+      "fp": 0,
+      "fn": 9,
+      "f1": 0.9552
+     },
+     "Zamawiajacy[].nazwa": {
+      "tp": 115,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9583
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 115,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9583
+     },
+     "Zamawiajacy[].prowadzacy_postepowanie": {
+      "tp": 0,
+      "fp": 1,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 115,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9583
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 40,
+      "fp": 47,
+      "fn": 8,
+      "f1": 0.5926
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 115,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9583
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 88,
+      "fp": 1,
+      "fn": 6,
+      "f1": 0.9617
+     },
+     "ZamowieniePubliczne.tytul": {
+      "tp": 115,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9583
+     },
+     "mocodawca[].data.imie_nazwisko": {
+      "tp": 10,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "mocodawca[].data.krs": {
+      "tp": 124,
+      "fp": 0,
+      "fn": 11,
+      "f1": 0.9575
+     },
+     "mocodawca[].data.nazwa": {
+      "tp": 130,
+      "fp": 4,
+      "fn": 11,
+      "f1": 0.9455
+     },
+     "mocodawca[].data.nip": {
+      "tp": 134,
+      "fp": 0,
+      "fn": 11,
+      "f1": 0.9606
+     },
+     "mocodawca[].data.typ": {
+      "tp": 134,
+      "fp": 0,
+      "fn": 11,
+      "f1": 0.9606
+     },
+     "mocodawca[].podpisujacy[].imie_nazwisko": {
+      "tp": 163,
+      "fp": 0,
+      "fn": 47,
+      "f1": 0.874
+     },
+     "pelnomocnicy[].imie_nazwisko": {
+      "tp": 150,
+      "fp": 7,
+      "fn": 43,
+      "f1": 0.8571
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 125,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 125,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 124,
+      "fp": 1,
+      "fn": 0,
+      "f1": 0.996
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 121,
+      "fp": 0,
+      "fn": 4,
+      "f1": 0.9837
+     },
+     "przelew_bankowy.tytul": {
+      "tp": 125,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 118,
+      "fp": 0,
+      "fn": 7,
+      "f1": 0.9712
+     }
+    },
+    "per_rep_f1": {
+     "1": 0.918,
+     "2": 0.9338,
+     "3": 0.9338,
+     "4": 0.9472,
+     "5": 0.9557
+    },
+    "rep_f1_sd": 0.0129,
+    "rep_f1_range": [
+     0.918,
+     0.9557
+    ],
+    "by_similarity": {
+     "ratio": 0.9378,
+     "token_sort_ratio": 0.9378,
+     "partial_ratio": 0.9378
+    },
+    "legacy_leaf_f1": 0.9147,
+    "stability": {
+     "docs_with_reps": 87,
+     "identical_json_rate": 0.3908,
+     "mean_leaf_agreement": 0.768
+    },
+    "llm": {
+     "docs": 435,
+     "llm_calls_ok": 411,
+     "docs_without_llm_record": 24,
+     "schema_first_bad": 5,
+     "schema_first_bad_rate": 0.0115,
+     "schema_final_bad": 0,
+     "input_tokens_total": 559196,
+     "output_tokens_total": 958347,
+     "input_tokens_per_doc": 1286,
+     "output_tokens_per_doc": 2203,
+     "latency_median_s": 13.1,
+     "latency_p95_s": 60.85,
+     "doc_wall_median_s": 13.22,
+     "doc_wall_p95_s": 76.02,
+     "models_returned": {
+      "MiniMax-M3.1-Flash": 411
+     },
+     "technical_errors": {
+      "ocr_unavailable": 15,
+      "llm_invalid_response": 9
+     },
+     "evidence_unanchored_docs": 100
+    }
+   },
+   "meta": {
+    "total_wall_s": 326.19,
+    "peak_rss_mb": 77.6,
+    "limit_method": "systemd-run",
+    "segments": [
+     {
+      "started_utc": "2026-11-22T00:26:09Z",
+      "finished_utc": "2026-11-22T01:23:46Z",
+      "total_wall_s": 3456.3,
+      "peak_rss_mb": 304.8
+     },
+     {
+      "started_utc": "2026-11-22T01:29:44Z",
+      "finished_utc": "2026-11-22T01:29:46Z",
+      "total_wall_s": 1.94,
+      "peak_rss_mb": 62.7
+     },
+     {
+      "started_utc": "2026-11-22T01:30:17Z",
+      "finished_utc": "2026-11-22T01:43:02Z",
+      "total_wall_s": 765.65,
+      "peak_rss_mb": 166.7
+     },
+     {
+      "started_utc": "2026-11-22T01:43:33Z",
+      "finished_utc": "2026-11-22T01:48:59Z",
+      "total_wall_s": 326.19,
+      "peak_rss_mb": 77.6
+     }
+    ],
+    "versions": {
+     "python": "3.13.18",
+     "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+     "machine": "x86_64",
+     "fastapi": "0.165.0",
+     "uvicorn": "0.54.0",
+     "httpx": "0.28.1",
+     "pydantic": "2.14.4",
+     "pypdfium2": "5.15.2",
+     "rapidocr": "3.10.0",
+     "onnxruntime": "1.32.0",
+     "pillow": "13.0.0",
+     "numpy": "2.5.5",
+     "git_commit": "16f4280"
+    }
+   }
+  },
+  "e10-textimg-p2": {
+   "summary": {
+    "docs": 261,
+    "cases": 26,
+    "tp": 2243,
+    "fp": 85,
+    "fn": 183,
+    "tn": 390,
+    "f1": 0.9436,
+    "ci95": [
+     0.9187,
+     0.9642
+    ],
+    "per_class": {
+     "odwolanie": {
+      "docs": 75,
+      "tp": 1274,
+      "fp": 75,
+      "fn": 118,
+      "f1": 0.9296,
+      "ci": [
+       0.891,
+       0.9609
+      ]
+     },
+     "pelnomocnictwo": {
+      "docs": 75,
+      "tp": 526,
+      "fp": 6,
+      "fn": 62,
+      "f1": 0.9393,
+      "ci": [
+       0.8986,
+       0.9755
+      ]
+     },
+     "przelew": {
+      "docs": 75,
+      "tp": 443,
+      "fp": 4,
+      "fn": 3,
+      "f1": 0.9922,
+      "ci": [
+       0.9865,
+       0.9978
+      ]
+     },
+     "obcy": {
+      "docs": 36,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0,
+      "ci": null
+     }
+    },
+    "classification_acc": 0.9847,
+    "outcomes": {
+     "foreign": 36,
+     "complete": 111,
+     "partial": 110,
+     "technical_error": 4
+    },
+    "policy": "default",
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 60,
+      "fp": 0,
+      "fn": 15,
+      "f1": 0.8889
+     },
+     "OdwolanieKIO.czynnosc_opis": {
+      "tp": 57,
+      "fp": 14,
+      "fn": 4,
+      "f1": 0.8636
+     },
+     "OdwolanieKIO.czynnosc_powod_id": {
+      "tp": 57,
+      "fp": 14,
+      "fn": 4,
+      "f1": 0.8636
+     },
+     "OdwolanieKIO.data": {
+      "tp": 44,
+      "fp": 0,
+      "fn": 4,
+      "f1": 0.9565
+     },
+     "OdwolanieKIO.miejscowosc": {
+      "tp": 44,
+      "fp": 0,
+      "fn": 4,
+      "f1": 0.9565
+     },
+     "Odwolujacy[].krs": {
+      "tp": 63,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.9545
+     },
+     "Odwolujacy[].nazwa": {
+      "tp": 69,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.9583
+     },
+     "Odwolujacy[].nip": {
+      "tp": 69,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.9583
+     },
+     "Odwolujacy[].pelnomocnik.imie_nazwisko": {
+      "tp": 51,
+      "fp": 18,
+      "fn": 6,
+      "f1": 0.8095
+     },
+     "Odwolujacy[].pelnomocnik.mail": {
+      "tp": 69,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.9583
+     },
+     "Odwolujacy[].pelnomocnik.nazwa": {
+      "tp": 69,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.9583
+     },
+     "Odwolujacy[].przez-pelnomocnika": {
+      "tp": 69,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.9583
+     },
+     "Odwolujacy[].regon": {
+      "tp": 69,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.9583
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 57,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.95
+     },
+     "Zamawiajacy[].nazwa": {
+      "tp": 69,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.9583
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 69,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.9583
+     },
+     "Zamawiajacy[].prowadzacy_postepowanie": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 69,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.9583
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 35,
+      "fp": 19,
+      "fn": 3,
+      "f1": 0.7609
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 70,
+      "fp": 0,
+      "fn": 5,
+      "f1": 0.9655
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 45,
+      "fp": 10,
+      "fn": 2,
+      "f1": 0.8824
+     },
+     "ZamowieniePubliczne.tytul": {
+      "tp": 70,
+      "fp": 0,
+      "fn": 5,
+      "f1": 0.9655
+     },
+     "mocodawca[].data.imie_nazwisko": {
+      "tp": 6,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "mocodawca[].data.krs": {
+      "tp": 75,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.9615
+     },
+     "mocodawca[].data.nazwa": {
+      "tp": 79,
+      "fp": 2,
+      "fn": 6,
+      "f1": 0.9518
+     },
+     "mocodawca[].data.nip": {
+      "tp": 81,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.9643
+     },
+     "mocodawca[].data.typ": {
+      "tp": 81,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.9643
+     },
+     "mocodawca[].podpisujacy[].imie_nazwisko": {
+      "tp": 105,
+      "fp": 0,
+      "fn": 21,
+      "f1": 0.9091
+     },
+     "pelnomocnicy[].imie_nazwisko": {
+      "tp": 99,
+      "fp": 4,
+      "fn": 17,
+      "f1": 0.9041
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 75,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 75,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 72,
+      "fp": 3,
+      "fn": 0,
+      "f1": 0.9796
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 74,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.9933
+     },
+     "przelew_bankowy.tytul": {
+      "tp": 75,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 72,
+      "fp": 1,
+      "fn": 2,
+      "f1": 0.9796
+     }
+    },
+    "per_rep_f1": {
+     "1": 0.9109,
+     "2": 0.9458,
+     "3": 0.9724
+    },
+    "rep_f1_sd": 0.0252,
+    "rep_f1_range": [
+     0.9109,
+     0.9724
+    ],
+    "by_similarity": {
+     "ratio": 0.9436,
+     "token_sort_ratio": 0.9436,
+     "partial_ratio": 0.9436
+    },
+    "legacy_leaf_f1": 0.9254,
+    "stability": {
+     "docs_with_reps": 87,
+     "identical_json_rate": 0.5402,
+     "mean_leaf_agreement": 0.8333
+    },
+    "llm": {
+     "docs": 261,
+     "llm_calls_ok": 257,
+     "docs_without_llm_record": 4,
+     "schema_first_bad": 11,
+     "schema_first_bad_rate": 0.0421,
+     "schema_final_bad": 0,
+     "input_tokens_total": 1009113,
+     "output_tokens_total": 593166,
+     "input_tokens_per_doc": 3866,
+     "output_tokens_per_doc": 2273,
+     "latency_median_s": 13.38,
+     "latency_p95_s": 62.07,
+     "doc_wall_median_s": 13.89,
+     "doc_wall_p95_s": 89.12,
+     "models_returned": {
+      "MiniMax-M3.1-Flash": 257
+     },
+     "technical_errors": {
+      "llm_invalid_response": 4
+     },
+     "evidence_unanchored_docs": 104
+    }
+   },
+   "meta": {
+    "total_wall_s": 153.85,
+    "peak_rss_mb": 144.4,
+    "limit_method": "systemd-run",
+    "segments": [
+     {
+      "started_utc": "2026-11-22T00:41:28Z",
+      "finished_utc": "2026-11-22T01:20:45Z",
+      "total_wall_s": 2356.28,
+      "peak_rss_mb": 320.8
+     },
+     {
+      "started_utc": "2026-11-22T01:21:15Z",
+      "finished_utc": "2026-11-22T01:29:57Z",
+      "total_wall_s": 521.9,
+      "peak_rss_mb": 152.6
+     },
+     {
+      "started_utc": "2026-11-22T01:30:28Z",
+      "finished_utc": "2026-11-22T01:33:02Z",
+      "total_wall_s": 153.85,
+      "peak_rss_mb": 144.4
+     }
+    ],
+    "versions": {
+     "python": "3.13.18",
+     "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+     "machine": "x86_64",
+     "fastapi": "0.165.0",
+     "uvicorn": "0.54.0",
+     "httpx": "0.28.1",
+     "pydantic": "2.14.4",
+     "pypdfium2": "5.15.2",
+     "rapidocr": "3.10.0",
+     "onnxruntime": "1.32.0",
+     "pillow": "13.0.0",
+     "numpy": "2.5.5",
+     "git_commit": "0a249e3"
+    }
+   },
+   "paired_vs_base": {
+    "delta": 0.0151,
+    "ci95": [
+     -0.0103,
+     0.0418
+    ],
+    "cases": 26,
+    "decision": "nierozstrzygnięte",
+    "reps_used": 3,
+    "docs": 87
+   }
+  },
+  "e10-image-p2": {
+   "summary": {
+    "docs": 245,
+    "cases": 26,
+    "tp": 1877,
+    "fp": 185,
+    "fn": 281,
+    "tn": 361,
+    "f1": 0.8896,
+    "ci95": [
+     0.8548,
+     0.9198
+    ],
+    "per_class": {
+     "odwolanie": {
+      "docs": 70,
+      "tp": 1051,
+      "fp": 105,
+      "fn": 214,
+      "f1": 0.8682,
+      "ci": [
+       0.8093,
+       0.9169
+      ]
+     },
+     "pelnomocnictwo": {
+      "docs": 69,
+      "tp": 461,
+      "fp": 33,
+      "fn": 59,
+      "f1": 0.9093,
+      "ci": [
+       0.8852,
+       0.9346
+      ]
+     },
+     "przelew": {
+      "docs": 70,
+      "tp": 365,
+      "fp": 47,
+      "fn": 8,
+      "f1": 0.9299,
+      "ci": [
+       0.9033,
+       0.9526
+      ]
+     },
+     "obcy": {
+      "docs": 36,
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0,
+      "ci": null
+     }
+    },
+    "classification_acc": 0.9592,
+    "outcomes": {
+     "foreign": 36,
+     "partial": 183,
+     "complete": 16,
+     "technical_error": 10
+    },
+    "policy": "default",
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 51,
+      "fp": 0,
+      "fn": 19,
+      "f1": 0.843
+     },
+     "OdwolanieKIO.czynnosc_opis": {
+      "tp": 50,
+      "fp": 10,
+      "fn": 10,
+      "f1": 0.8333
+     },
+     "OdwolanieKIO.czynnosc_powod_id": {
+      "tp": 50,
+      "fp": 10,
+      "fn": 10,
+      "f1": 0.8333
+     },
+     "OdwolanieKIO.data": {
+      "tp": 37,
+      "fp": 0,
+      "fn": 9,
+      "f1": 0.8916
+     },
+     "OdwolanieKIO.miejscowosc": {
+      "tp": 37,
+      "fp": 0,
+      "fn": 9,
+      "f1": 0.8916
+     },
+     "Odwolujacy[].krs": {
+      "tp": 53,
+      "fp": 1,
+      "fn": 10,
+      "f1": 0.906
+     },
+     "Odwolujacy[].nazwa": {
+      "tp": 60,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9231
+     },
+     "Odwolujacy[].nip": {
+      "tp": 59,
+      "fp": 1,
+      "fn": 10,
+      "f1": 0.9147
+     },
+     "Odwolujacy[].pelnomocnik.imie_nazwisko": {
+      "tp": 39,
+      "fp": 20,
+      "fn": 11,
+      "f1": 0.7156
+     },
+     "Odwolujacy[].pelnomocnik.mail": {
+      "tp": 56,
+      "fp": 3,
+      "fn": 11,
+      "f1": 0.8889
+     },
+     "Odwolujacy[].pelnomocnik.nazwa": {
+      "tp": 59,
+      "fp": 0,
+      "fn": 11,
+      "f1": 0.9147
+     },
+     "Odwolujacy[].przez-pelnomocnika": {
+      "tp": 60,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9231
+     },
+     "Odwolujacy[].regon": {
+      "tp": 59,
+      "fp": 1,
+      "fn": 10,
+      "f1": 0.9147
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 44,
+      "fp": 4,
+      "fn": 10,
+      "f1": 0.8627
+     },
+     "Zamawiajacy[].nazwa": {
+      "tp": 60,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9231
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 60,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9231
+     },
+     "Zamawiajacy[].prowadzacy_postepowanie": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 58,
+      "fp": 2,
+      "fn": 10,
+      "f1": 0.9062
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 11,
+      "fp": 34,
+      "fn": 8,
+      "f1": 0.3438
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 55,
+      "fp": 5,
+      "fn": 10,
+      "f1": 0.88
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 33,
+      "fp": 14,
+      "fn": 6,
+      "f1": 0.7674
+     },
+     "ZamowieniePubliczne.tytul": {
+      "tp": 60,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.9231
+     },
+     "mocodawca[].data.imie_nazwisko": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "mocodawca[].data.krs": {
+      "tp": 68,
+      "fp": 4,
+      "fn": 4,
+      "f1": 0.9444
+     },
+     "mocodawca[].data.nazwa": {
+      "tp": 65,
+      "fp": 12,
+      "fn": 4,
+      "f1": 0.8904
+     },
+     "mocodawca[].data.nip": {
+      "tp": 75,
+      "fp": 2,
+      "fn": 4,
+      "f1": 0.9615
+     },
+     "mocodawca[].data.typ": {
+      "tp": 77,
+      "fp": 0,
+      "fn": 4,
+      "f1": 0.9747
+     },
+     "mocodawca[].podpisujacy[].imie_nazwisko": {
+      "tp": 95,
+      "fp": 3,
+      "fn": 21,
+      "f1": 0.8879
+     },
+     "pelnomocnicy[].imie_nazwisko": {
+      "tp": 76,
+      "fp": 12,
+      "fn": 22,
+      "f1": 0.8172
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 70,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 70,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 56,
+      "fp": 14,
+      "fn": 0,
+      "f1": 0.8889
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 58,
+      "fp": 11,
+      "fn": 1,
+      "f1": 0.9062
+     },
+     "przelew_bankowy.tytul": {
+      "tp": 70,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 41,
+      "fp": 22,
+      "fn": 7,
+      "f1": 0.7387
+     }
+    },
+    "per_rep_f1": {
+     "1": 0.9031,
+     "2": 0.8965,
+     "3": 0.8654
+    },
+    "rep_f1_sd": 0.0164,
+    "rep_f1_range": [
+     0.8654,
+     0.9031
+    ],
+    "by_similarity": {
+     "ratio": 0.8896,
+     "token_sort_ratio": 0.8893,
+     "partial_ratio": 0.8896
+    },
+    "legacy_leaf_f1": 0.8254,
+    "stability": {
+     "docs_with_reps": 87,
+     "identical_json_rate": 0.3103,
+     "mean_leaf_agreement": 0.6118
+    },
+    "llm": {
+     "docs": 245,
+     "llm_calls_ok": 235,
+     "docs_without_llm_record": 10,
+     "schema_first_bad": 14,
+     "schema_first_bad_rate": 0.0571,
+     "schema_final_bad": 0,
+     "input_tokens_total": 446514,
+     "output_tokens_total": 684387,
+     "input_tokens_per_doc": 1823,
+     "output_tokens_per_doc": 2793,
+     "latency_median_s": 15.26,
+     "latency_p95_s": 57.05,
+     "doc_wall_median_s": 16.26,
+     "doc_wall_p95_s": 92.48,
+     "models_returned": {
+      "MiniMax-M3.1-Flash": 235
+     },
+     "technical_errors": {
+      "llm_invalid_response": 10
+     },
+     "evidence_unanchored_docs": 183
+    }
+   },
+   "meta": {
+    "total_wall_s": 103.2,
+    "peak_rss_mb": 107.9,
+    "limit_method": "systemd-run",
+    "segments": [
+     {
+      "started_utc": "2026-11-22T01:33:02Z",
+      "finished_utc": "2026-11-22T02:06:38Z",
+      "total_wall_s": 2015.55,
+      "peak_rss_mb": 387.1
+     },
+     {
+      "started_utc": "2026-11-22T02:07:08Z",
+      "finished_utc": "2026-11-22T02:15:32Z",
+      "total_wall_s": 503.83,
+      "peak_rss_mb": 132.9
+     },
+     {
+      "started_utc": "2026-11-22T02:16:02Z",
+      "finished_utc": "2026-11-22T02:19:59Z",
+      "total_wall_s": 237.65,
+      "peak_rss_mb": 118.5
+     },
+     {
+      "started_utc": "2026-11-22T02:20:30Z",
+      "finished_utc": "2026-11-22T02:22:13Z",
+      "total_wall_s": 103.2,
+      "peak_rss_mb": 107.9
+     }
+    ],
+    "versions": {
+     "python": "3.13.18",
+     "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+     "machine": "x86_64",
+     "fastapi": "0.165.0",
+     "uvicorn": "0.54.0",
+     "httpx": "0.28.1",
+     "pydantic": "2.14.4",
+     "pypdfium2": "5.15.2",
+     "rapidocr": "3.10.0",
+     "onnxruntime": "1.32.0",
+     "pillow": "13.0.0",
+     "numpy": "2.5.5",
+     "git_commit": "677196a"
+    }
+   },
+   "paired_vs_base": {
+    "delta": -0.039,
+    "ci95": [
+     -0.0759,
+     -0.0046
+    ],
+    "cases": 26,
+    "decision": "base>cand",
+    "reps_used": 3,
+    "docs": 87
+   }
+  },
+  "e10-text-p1": {
+   "summary": {
+    "docs": 43,
+    "cases": 12,
+    "tp": 279,
+    "fp": 46,
+    "fn": 139,
+    "tn": 73,
+    "f1": 0.751,
+    "ci95": [
+     0.662,
+     0.8469
+    ],
+    "per_class": {
+     "odwolanie": {
+      "docs": 11,
+      "tp": 79,
+      "fp": 22,
+      "fn": 116,
+      "f1": 0.5338,
+      "ci": [
+       0.2415,
+       0.7582
+      ]
+     },
+     "pelnomocnictwo": {
+      "docs": 16,
+      "tp": 104,
+      "fp": 24,
+      "fn": 23,
+      "f1": 0.8157,
+      "ci": [
+       0.7612,
+       0.8688
+      ]
+     },
+     "przelew": {
+      "docs": 16,
+      "tp": 96,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0,
+      "ci": [
+       1.0,
+       1.0
+      ]
+     }
+    },
+    "classification_acc": 0.8605,
+    "outcomes": {
+     "complete": 18,
+     "partial": 19,
+     "technical_error": 6
+    },
+    "policy": "default",
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.625
+     },
+     "OdwolanieKIO.czynnosc_opis": {
+      "tp": 0,
+      "fp": 5,
+      "fn": 6,
+      "f1": 0.0
+     },
+     "OdwolanieKIO.czynnosc_powod_id": {
+      "tp": 0,
+      "fp": 2,
+      "fn": 9,
+      "f1": 0.0
+     },
+     "OdwolanieKIO.data": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.7273
+     },
+     "OdwolanieKIO.miejscowosc": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.7273
+     },
+     "Odwolujacy[].krs": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.625
+     },
+     "Odwolujacy[].nazwa": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.625
+     },
+     "Odwolujacy[].nip": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.625
+     },
+     "Odwolujacy[].pelnomocnik.imie_nazwisko": {
+      "tp": 1,
+      "fp": 4,
+      "fn": 6,
+      "f1": 0.1667
+     },
+     "Odwolujacy[].pelnomocnik.mail": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.625
+     },
+     "Odwolujacy[].pelnomocnik.nazwa": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 6,
+      "f1": 0.5333
+     },
+     "Odwolujacy[].przez-pelnomocnika": {
+      "tp": 0,
+      "fp": 5,
+      "fn": 6,
+      "f1": 0.0
+     },
+     "Odwolujacy[].regon": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.625
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.7692
+     },
+     "Zamawiajacy[].nazwa": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.625
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.625
+     },
+     "Zamawiajacy[].prowadzacy_postepowanie": {
+      "tp": 0,
+      "fp": 5,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.625
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.6667
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.625
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 5,
+      "f1": 0.5455
+     },
+     "ZamowieniePubliczne.tytul": {
+      "tp": 5,
+      "fp": 0,
+      "fn": 6,
+      "f1": 0.625
+     },
+     "mocodawca[].data.imie_nazwisko": {
+      "tp": 0,
+      "fp": 2,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "mocodawca[].data.krs": {
+      "tp": 20,
+      "fp": 0,
+      "fn": 2,
+      "f1": 0.9524
+     },
+     "mocodawca[].data.nazwa": {
+      "tp": 15,
+      "fp": 5,
+      "fn": 2,
+      "f1": 0.8108
+     },
+     "mocodawca[].data.nip": {
+      "tp": 20,
+      "fp": 0,
+      "fn": 2,
+      "f1": 0.9524
+     },
+     "mocodawca[].data.typ": {
+      "tp": 0,
+      "fp": 15,
+      "fn": 7,
+      "f1": 0.0
+     },
+     "mocodawca[].podpisujacy[].imie_nazwisko": {
+      "tp": 24,
+      "fp": 1,
+      "fn": 8,
+      "f1": 0.8421
+     },
+     "pelnomocnicy[].imie_nazwisko": {
+      "tp": 25,
+      "fp": 1,
+      "fn": 2,
+      "f1": 0.9434
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.tytul": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 16,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     }
+    },
+    "per_rep_f1": {
+     "1": 0.7576,
+     "2": 0.7402
+    },
+    "rep_f1_sd": 0.0087,
+    "rep_f1_range": [
+     0.7402,
+     0.7576
+    ],
+    "by_similarity": {
+     "ratio": 0.751,
+     "token_sort_ratio": 0.751,
+     "partial_ratio": 0.751
+    },
+    "legacy_leaf_f1": 0.6982,
+    "stability": {
+     "docs_with_reps": 9,
+     "identical_json_rate": 0.5556,
+     "mean_leaf_agreement": 0.789
+    },
+    "llm": {
+     "docs": 43,
+     "llm_calls_ok": 37,
+     "docs_without_llm_record": 6,
+     "schema_first_bad": 3,
+     "schema_first_bad_rate": 0.0698,
+     "schema_final_bad": 0,
+     "input_tokens_total": 31753,
+     "output_tokens_total": 86969,
+     "input_tokens_per_doc": 738,
+     "output_tokens_per_doc": 2023,
+     "latency_median_s": 12.73,
+     "latency_p95_s": 45.23,
+     "doc_wall_median_s": 17.85,
+     "doc_wall_p95_s": 107.53,
+     "models_returned": {
+      "MiniMax-M3.1-Flash": 37
+     },
+     "technical_errors": {
+      "llm_invalid_response": 6
+     },
+     "evidence_unanchored_docs": 19
+    }
+   },
+   "meta": {
+    "total_wall_s": 691.99,
+    "peak_rss_mb": 105.7,
+    "limit_method": "systemd-run",
+    "segments": [
+     {
+      "started_utc": "2026-11-22T03:03:50Z",
+      "finished_utc": "2026-11-22T03:21:41Z",
+      "total_wall_s": 1071.13,
+      "peak_rss_mb": 118.1
+     },
+     {
+      "started_utc": "2026-11-22T03:22:12Z",
+      "finished_utc": "2026-11-22T03:29:51Z",
+      "total_wall_s": 459.25,
+      "peak_rss_mb": 107.9
+     },
+     {
+      "started_utc": "2026-11-22T03:30:21Z",
+      "finished_utc": "2026-11-22T03:39:50Z",
+      "total_wall_s": 568.66,
+      "peak_rss_mb": 113.5
+     },
+     {
+      "started_utc": "2026-11-22T03:40:20Z",
+      "finished_utc": "2026-11-22T03:51:52Z",
+      "total_wall_s": 691.99,
+      "peak_rss_mb": 105.7
+     }
+    ],
+    "versions": {
+     "python": "3.13.18",
+     "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+     "machine": "x86_64",
+     "fastapi": "0.165.0",
+     "uvicorn": "0.54.0",
+     "httpx": "0.28.1",
+     "pydantic": "2.14.4",
+     "pypdfium2": "5.15.2",
+     "rapidocr": "3.10.0",
+     "onnxruntime": "1.32.0",
+     "pillow": "13.0.0",
+     "numpy": "2.5.5",
+     "git_commit": "352ba9e"
+    }
+   },
+   "paired_vs_base": {
+    "delta": -0.1569,
+    "ci95": [
+     -0.2568,
+     -0.0377
+    ],
+    "cases": 12,
+    "decision": "base>cand",
+    "reps_used": 2,
+    "docs": 34
+   }
+  },
+  "e10-text-p3": {
+   "summary": {
+    "docs": 108,
+    "cases": 12,
+    "tp": 1040,
+    "fp": 55,
+    "fn": 123,
+    "tn": 207,
+    "f1": 0.9212,
+    "ci95": [
+     0.8815,
+     0.9514
+    ],
+    "per_class": {
+     "odwolanie": {
+      "docs": 36,
+      "tp": 577,
+      "fp": 50,
+      "fn": 66,
+      "f1": 0.9087,
+      "ci": [
+       0.8299,
+       0.9632
+      ]
+     },
+     "pelnomocnictwo": {
+      "docs": 36,
+      "tp": 257,
+      "fp": 0,
+      "fn": 52,
+      "f1": 0.9081,
+      "ci": [
+       0.8609,
+       0.955
+      ]
+     },
+     "przelew": {
+      "docs": 36,
+      "tp": 206,
+      "fp": 5,
+      "fn": 5,
+      "f1": 0.9763,
+      "ci": [
+       0.9438,
+       0.9953
+      ]
+     }
+    },
+    "classification_acc": 0.9722,
+    "outcomes": {
+     "complete": 71,
+     "partial": 34,
+     "technical_error": 3
+    },
+    "policy": "default",
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 25,
+      "fp": 0,
+      "fn": 11,
+      "f1": 0.8197
+     },
+     "OdwolanieKIO.czynnosc_opis": {
+      "tp": 23,
+      "fp": 10,
+      "fn": 3,
+      "f1": 0.7797
+     },
+     "OdwolanieKIO.czynnosc_powod_id": {
+      "tp": 23,
+      "fp": 10,
+      "fn": 3,
+      "f1": 0.7797
+     },
+     "OdwolanieKIO.data": {
+      "tp": 20,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.9756
+     },
+     "OdwolanieKIO.miejscowosc": {
+      "tp": 20,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.9756
+     },
+     "Odwolujacy[].krs": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.9565
+     },
+     "Odwolujacy[].nazwa": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.9565
+     },
+     "Odwolujacy[].nip": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.9565
+     },
+     "Odwolujacy[].pelnomocnik.imie_nazwisko": {
+      "tp": 17,
+      "fp": 16,
+      "fn": 3,
+      "f1": 0.6415
+     },
+     "Odwolujacy[].pelnomocnik.mail": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.9565
+     },
+     "Odwolujacy[].pelnomocnik.nazwa": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.9565
+     },
+     "Odwolujacy[].przez-pelnomocnika": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.9565
+     },
+     "Odwolujacy[].regon": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.9565
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 24,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.9412
+     },
+     "Zamawiajacy[].nazwa": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.9565
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.9565
+     },
+     "Zamawiajacy[].prowadzacy_postepowanie": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.9565
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 9,
+      "fp": 12,
+      "fn": 3,
+      "f1": 0.5455
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.9565
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 20,
+      "fp": 2,
+      "fn": 2,
+      "f1": 0.9091
+     },
+     "ZamowieniePubliczne.tytul": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.9565
+     },
+     "mocodawca[].data.imie_nazwisko": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "mocodawca[].data.krs": {
+      "tp": 40,
+      "fp": 0,
+      "fn": 5,
+      "f1": 0.9412
+     },
+     "mocodawca[].data.nazwa": {
+      "tp": 40,
+      "fp": 0,
+      "fn": 5,
+      "f1": 0.9412
+     },
+     "mocodawca[].data.nip": {
+      "tp": 40,
+      "fp": 0,
+      "fn": 5,
+      "f1": 0.9412
+     },
+     "mocodawca[].data.typ": {
+      "tp": 40,
+      "fp": 0,
+      "fn": 5,
+      "f1": 0.9412
+     },
+     "mocodawca[].podpisujacy[].imie_nazwisko": {
+      "tp": 50,
+      "fp": 0,
+      "fn": 16,
+      "f1": 0.8621
+     },
+     "pelnomocnicy[].imie_nazwisko": {
+      "tp": 47,
+      "fp": 0,
+      "fn": 16,
+      "f1": 0.8545
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 33,
+      "fp": 3,
+      "fn": 0,
+      "f1": 0.9565
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.9565
+     },
+     "przelew_bankowy.tytul": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 32,
+      "fp": 2,
+      "fn": 2,
+      "f1": 0.9412
+     }
+    },
+    "per_rep_f1": {
+     "1": 0.9386,
+     "2": 0.933,
+     "3": 0.8907
+    },
+    "rep_f1_sd": 0.0214,
+    "rep_f1_range": [
+     0.8907,
+     0.9386
+    ],
+    "by_similarity": {
+     "ratio": 0.9212,
+     "token_sort_ratio": 0.9212,
+     "partial_ratio": 0.9212
+    },
+    "legacy_leaf_f1": 0.8872,
+    "stability": {
+     "docs_with_reps": 36,
+     "identical_json_rate": 0.3056,
+     "mean_leaf_agreement": 0.7872
+    },
+    "llm": {
+     "docs": 108,
+     "llm_calls_ok": 105,
+     "docs_without_llm_record": 3,
+     "schema_first_bad": 2,
+     "schema_first_bad_rate": 0.0185,
+     "schema_final_bad": 0,
+     "input_tokens_total": 144808,
+     "output_tokens_total": 267241,
+     "input_tokens_per_doc": 1341,
+     "output_tokens_per_doc": 2474,
+     "latency_median_s": 15.81,
+     "latency_p95_s": 49.71,
+     "doc_wall_median_s": 16.61,
+     "doc_wall_p95_s": 65.07,
+     "models_returned": {
+      "MiniMax-M3.1-Flash": 105
+     },
+     "technical_errors": {
+      "llm_invalid_response": 3
+     },
+     "evidence_unanchored_docs": 31
+    }
+   },
+   "meta": {
+    "total_wall_s": 352.96,
+    "peak_rss_mb": 100.8,
+    "limit_method": "systemd-run",
+    "segments": [
+     {
+      "started_utc": "2026-11-22T02:35:32Z",
+      "finished_utc": "2026-11-22T02:57:27Z",
+      "total_wall_s": 1314.8,
+      "peak_rss_mb": 107.6
+     },
+     {
+      "started_utc": "2026-11-22T02:57:57Z",
+      "finished_utc": "2026-11-22T03:03:50Z",
+      "total_wall_s": 352.96,
+      "peak_rss_mb": 100.8
+     }
+    ],
+    "versions": {
+     "python": "3.13.18",
+     "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+     "machine": "x86_64",
+     "fastapi": "0.165.0",
+     "uvicorn": "0.54.0",
+     "httpx": "0.28.1",
+     "pydantic": "2.14.4",
+     "pypdfium2": "5.15.2",
+     "rapidocr": "3.10.0",
+     "onnxruntime": "1.32.0",
+     "pillow": "13.0.0",
+     "numpy": "2.5.5",
+     "git_commit": "352ba9e"
+    }
+   },
+   "paired_vs_base": {
+    "delta": 0.0144,
+    "ci95": [
+     -0.0273,
+     0.0661
+    ],
+    "cases": 12,
+    "decision": "nierozstrzygnięte",
+    "reps_used": 3,
+    "docs": 36
+   }
+  },
+  "e10-effort-low": {
+   "summary": {
+    "docs": 108,
+    "cases": 12,
+    "tp": 1088,
+    "fp": 66,
+    "fn": 67,
+    "tn": 205,
+    "f1": 0.9424,
+    "ci95": [
+     0.9312,
+     0.9539
+    ],
+    "per_class": {
+     "odwolanie": {
+      "docs": 36,
+      "tp": 629,
+      "fp": 57,
+      "fn": 9,
+      "f1": 0.9502,
+      "ci": [
+       0.9254,
+       0.9722
+      ]
+     },
+     "pelnomocnictwo": {
+      "docs": 36,
+      "tp": 253,
+      "fp": 6,
+      "fn": 51,
+      "f1": 0.8988,
+      "ci": [
+       0.859,
+       0.9378
+      ]
+     },
+     "przelew": {
+      "docs": 36,
+      "tp": 206,
+      "fp": 3,
+      "fn": 7,
+      "f1": 0.9763,
+      "ci": [
+       0.954,
+       0.993
+      ]
+     }
+    },
+    "classification_acc": 1.0,
+    "outcomes": {
+     "complete": 81,
+     "partial": 27
+    },
+    "policy": "default",
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 27,
+      "fp": 0,
+      "fn": 9,
+      "f1": 0.8571
+     },
+     "OdwolanieKIO.czynnosc_opis": {
+      "tp": 25,
+      "fp": 11,
+      "fn": 0,
+      "f1": 0.8197
+     },
+     "OdwolanieKIO.czynnosc_powod_id": {
+      "tp": 25,
+      "fp": 11,
+      "fn": 0,
+      "f1": 0.8197
+     },
+     "OdwolanieKIO.data": {
+      "tp": 21,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "OdwolanieKIO.miejscowosc": {
+      "tp": 21,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "Odwolujacy[].krs": {
+      "tp": 29,
+      "fp": 7,
+      "fn": 0,
+      "f1": 0.8923
+     },
+     "Odwolujacy[].nazwa": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "Odwolujacy[].nip": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "Odwolujacy[].pelnomocnik.imie_nazwisko": {
+      "tp": 28,
+      "fp": 8,
+      "fn": 0,
+      "f1": 0.875
+     },
+     "Odwolujacy[].pelnomocnik.mail": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "Odwolujacy[].pelnomocnik.nazwa": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "Odwolujacy[].przez-pelnomocnika": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "Odwolujacy[].regon": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 21,
+      "fp": 6,
+      "fn": 0,
+      "f1": 0.875
+     },
+     "Zamawiajacy[].nazwa": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "Zamawiajacy[].prowadzacy_postepowanie": {
+      "tp": 0,
+      "fp": 2,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 12,
+      "fp": 12,
+      "fn": 0,
+      "f1": 0.6667
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 24,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "ZamowieniePubliczne.tytul": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "mocodawca[].data.imie_nazwisko": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "mocodawca[].data.krs": {
+      "tp": 39,
+      "fp": 1,
+      "fn": 5,
+      "f1": 0.9286
+     },
+     "mocodawca[].data.nazwa": {
+      "tp": 40,
+      "fp": 0,
+      "fn": 5,
+      "f1": 0.9412
+     },
+     "mocodawca[].data.nip": {
+      "tp": 40,
+      "fp": 0,
+      "fn": 5,
+      "f1": 0.9412
+     },
+     "mocodawca[].data.typ": {
+      "tp": 40,
+      "fp": 0,
+      "fn": 5,
+      "f1": 0.9412
+     },
+     "mocodawca[].podpisujacy[].imie_nazwisko": {
+      "tp": 51,
+      "fp": 1,
+      "fn": 15,
+      "f1": 0.8644
+     },
+     "pelnomocnicy[].imie_nazwisko": {
+      "tp": 43,
+      "fp": 4,
+      "fn": 16,
+      "f1": 0.8113
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 34,
+      "fp": 0,
+      "fn": 2,
+      "f1": 0.9714
+     },
+     "przelew_bankowy.tytul": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 28,
+      "fp": 3,
+      "fn": 5,
+      "f1": 0.875
+     }
+    },
+    "per_rep_f1": {
+     "1": 0.9482,
+     "2": 0.9361,
+     "3": 0.9429
+    },
+    "rep_f1_sd": 0.005,
+    "rep_f1_range": [
+     0.9361,
+     0.9482
+    ],
+    "by_similarity": {
+     "ratio": 0.9424,
+     "token_sort_ratio": 0.9424,
+     "partial_ratio": 0.9424
+    },
+    "legacy_leaf_f1": 0.9047,
+    "stability": {
+     "docs_with_reps": 36,
+     "identical_json_rate": 0.1944,
+     "mean_leaf_agreement": 0.7659
+    },
+    "llm": {
+     "docs": 108,
+     "llm_calls_ok": 108,
+     "docs_without_llm_record": 0,
+     "schema_first_bad": 0,
+     "schema_first_bad_rate": 0.0,
+     "schema_final_bad": 0,
+     "input_tokens_total": 129066,
+     "output_tokens_total": 98853,
+     "input_tokens_per_doc": 1195,
+     "output_tokens_per_doc": 915,
+     "latency_median_s": 16.28,
+     "latency_p95_s": 40.35,
+     "doc_wall_median_s": 16.51,
+     "doc_wall_p95_s": 40.52,
+     "models_returned": {
+      "MiniMax-M3.1-Flash": 108
+     },
+     "technical_errors": {},
+     "evidence_unanchored_docs": 24
+    }
+   },
+   "meta": {
+    "total_wall_s": 532.42,
+    "peak_rss_mb": 112.7,
+    "limit_method": "systemd-run",
+    "segments": null,
+    "versions": {
+     "python": "3.13.18",
+     "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+     "machine": "x86_64",
+     "fastapi": "0.165.0",
+     "uvicorn": "0.54.0",
+     "httpx": "0.28.1",
+     "pydantic": "2.14.4",
+     "pypdfium2": "5.15.2",
+     "rapidocr": "3.10.0",
+     "onnxruntime": "1.32.0",
+     "pillow": "13.0.0",
+     "numpy": "2.5.5",
+     "git_commit": "352ba9e"
+    }
+   },
+   "paired_vs_base": {
+    "delta": 0.0357,
+    "ci95": [
+     -0.0044,
+     0.0951
+    ],
+    "cases": 12,
+    "decision": "nierozstrzygnięte",
+    "reps_used": 3,
+    "docs": 36
+   }
+  },
+  "e10-effort-high": {
+   "summary": {
+    "docs": 108,
+    "cases": 12,
+    "tp": 1079,
+    "fp": 55,
+    "fn": 84,
+    "tn": 207,
+    "f1": 0.9395,
+    "ci95": [
+     0.9105,
+     0.9632
+    ],
+    "per_class": {
+     "odwolanie": {
+      "docs": 36,
+      "tp": 618,
+      "fp": 49,
+      "fn": 26,
+      "f1": 0.9428,
+      "ci": [
+       0.9036,
+       0.9739
+      ]
+     },
+     "pelnomocnictwo": {
+      "docs": 36,
+      "tp": 254,
+      "fp": 3,
+      "fn": 52,
+      "f1": 0.9023,
+      "ci": [
+       0.8287,
+       0.9605
+      ]
+     },
+     "przelew": {
+      "docs": 36,
+      "tp": 207,
+      "fp": 3,
+      "fn": 6,
+      "f1": 0.9787,
+      "ci": [
+       0.9565,
+       0.993
+      ]
+     }
+    },
+    "classification_acc": 1.0,
+    "outcomes": {
+     "complete": 79,
+     "partial": 29
+    },
+    "policy": "default",
+    "per_field": {
+     "OdwolanieKIO.czynnosc_dzien": {
+      "tp": 26,
+      "fp": 0,
+      "fn": 10,
+      "f1": 0.8387
+     },
+     "OdwolanieKIO.czynnosc_opis": {
+      "tp": 24,
+      "fp": 12,
+      "fn": 0,
+      "f1": 0.8
+     },
+     "OdwolanieKIO.czynnosc_powod_id": {
+      "tp": 24,
+      "fp": 12,
+      "fn": 0,
+      "f1": 0.8
+     },
+     "OdwolanieKIO.data": {
+      "tp": 21,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "OdwolanieKIO.miejscowosc": {
+      "tp": 21,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "Odwolujacy[].krs": {
+      "tp": 35,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.9859
+     },
+     "Odwolujacy[].nazwa": {
+      "tp": 35,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.9859
+     },
+     "Odwolujacy[].nip": {
+      "tp": 35,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.9859
+     },
+     "Odwolujacy[].pelnomocnik.imie_nazwisko": {
+      "tp": 22,
+      "fp": 13,
+      "fn": 1,
+      "f1": 0.7586
+     },
+     "Odwolujacy[].pelnomocnik.mail": {
+      "tp": 35,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.9859
+     },
+     "Odwolujacy[].pelnomocnik.nazwa": {
+      "tp": 34,
+      "fp": 0,
+      "fn": 2,
+      "f1": 0.9714
+     },
+     "Odwolujacy[].przez-pelnomocnika": {
+      "tp": 35,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.9859
+     },
+     "Odwolujacy[].regon": {
+      "tp": 35,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.9859
+     },
+     "Zamawiajacy[].krs": {
+      "tp": 26,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.9811
+     },
+     "Zamawiajacy[].nazwa": {
+      "tp": 35,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.9859
+     },
+     "Zamawiajacy[].nip": {
+      "tp": 35,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.9859
+     },
+     "Zamawiajacy[].prowadzacy_postepowanie": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "Zamawiajacy[].regon": {
+      "tp": 35,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.9859
+     },
+     "ZamowieniePubliczne.numer_bzp": {
+      "tp": 12,
+      "fp": 11,
+      "fn": 1,
+      "f1": 0.6667
+     },
+     "ZamowieniePubliczne.numer_postepowania": {
+      "tp": 35,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.9859
+     },
+     "ZamowieniePubliczne.numer_ted": {
+      "tp": 23,
+      "fp": 1,
+      "fn": 0,
+      "f1": 0.9787
+     },
+     "ZamowieniePubliczne.tytul": {
+      "tp": 35,
+      "fp": 0,
+      "fn": 1,
+      "f1": 0.9859
+     },
+     "mocodawca[].data.imie_nazwisko": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "mocodawca[].data.krs": {
+      "tp": 40,
+      "fp": 0,
+      "fn": 5,
+      "f1": 0.9412
+     },
+     "mocodawca[].data.nazwa": {
+      "tp": 40,
+      "fp": 0,
+      "fn": 5,
+      "f1": 0.9412
+     },
+     "mocodawca[].data.nip": {
+      "tp": 40,
+      "fp": 0,
+      "fn": 5,
+      "f1": 0.9412
+     },
+     "mocodawca[].data.typ": {
+      "tp": 40,
+      "fp": 0,
+      "fn": 5,
+      "f1": 0.9412
+     },
+     "mocodawca[].podpisujacy[].imie_nazwisko": {
+      "tp": 51,
+      "fp": 0,
+      "fn": 15,
+      "f1": 0.8718
+     },
+     "pelnomocnicy[].imie_nazwisko": {
+      "tp": 43,
+      "fp": 3,
+      "fn": 17,
+      "f1": 0.8113
+     },
+     "pelnomocnicy[].pesel": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "f1": 0.0
+     },
+     "przelew_bankowy.data_operacji": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.kwota": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.na_rachunek": {
+      "tp": 34,
+      "fp": 2,
+      "fn": 0,
+      "f1": 0.9714
+     },
+     "przelew_bankowy.numer_transakcji": {
+      "tp": 33,
+      "fp": 0,
+      "fn": 3,
+      "f1": 0.9565
+     },
+     "przelew_bankowy.tytul": {
+      "tp": 36,
+      "fp": 0,
+      "fn": 0,
+      "f1": 1.0
+     },
+     "przelew_bankowy.z_rachunku": {
+      "tp": 32,
+      "fp": 1,
+      "fn": 3,
+      "f1": 0.9412
+     }
+    },
+    "per_rep_f1": {
+     "1": 0.9455,
+     "2": 0.9358,
+     "3": 0.9372
+    },
+    "rep_f1_sd": 0.0043,
+    "rep_f1_range": [
+     0.9358,
+     0.9455
+    ],
+    "by_similarity": {
+     "ratio": 0.9395,
+     "token_sort_ratio": 0.9395,
+     "partial_ratio": 0.9395
+    },
+    "legacy_leaf_f1": 0.9048,
+    "stability": {
+     "docs_with_reps": 36,
+     "identical_json_rate": 0.3056,
+     "mean_leaf_agreement": 0.8252
+    },
+    "llm": {
+     "docs": 108,
+     "llm_calls_ok": 108,
+     "docs_without_llm_record": 0,
+     "schema_first_bad": 0,
+     "schema_first_bad_rate": 0.0,
+     "schema_final_bad": 0,
+     "input_tokens_total": 121020,
+     "output_tokens_total": 165812,
+     "input_tokens_per_doc": 1121,
+     "output_tokens_per_doc": 1535,
+     "latency_median_s": 8.64,
+     "latency_p95_s": 91.91,
+     "doc_wall_median_s": 8.92,
+     "doc_wall_p95_s": 92.33,
+     "models_returned": {
+      "MiniMax-M3.1-Flash": 108
+     },
+     "technical_errors": {},
+     "evidence_unanchored_docs": 26
+    }
+   },
+   "meta": {
+    "total_wall_s": 115.22,
+    "peak_rss_mb": 98.3,
+    "limit_method": "systemd-run",
+    "segments": [
+     {
+      "started_utc": "2026-11-22T05:06:31Z",
+      "finished_utc": "2026-11-22T05:28:38Z",
+      "total_wall_s": 1327.49,
+      "peak_rss_mb": 112.5
+     },
+     {
+      "started_utc": "2026-11-22T05:29:08Z",
+      "finished_utc": "2026-11-22T05:31:04Z",
+      "total_wall_s": 115.22,
+      "peak_rss_mb": 98.3
+     }
+    ],
+    "versions": {
+     "python": "3.13.18",
+     "platform": "Linux-7.3.4-300.fc45.x86_64-x86_64-with-glibc2.44",
+     "machine": "x86_64",
+     "fastapi": "0.165.0",
+     "uvicorn": "0.54.0",
+     "httpx": "0.28.1",
+     "pydantic": "2.14.4",
+     "pypdfium2": "5.15.2",
+     "rapidocr": "3.10.0",
+     "onnxruntime": "1.32.0",
+     "pillow": "13.0.0",
+     "numpy": "2.5.5",
+     "git_commit": "352ba9e"
+    }
+   },
+   "paired_vs_base": {
+    "delta": 0.0328,
+    "ci95": [
+     -0.0065,
+     0.0804
+    ],
+    "cases": 12,
+    "decision": "nierozstrzygnięte",
+    "reps_used": 3,
+    "docs": 36
+   }
+  }
+ },
+ "long_document": {
+  "docs": 10,
+  "reps": 3,
+  "full": {
+   "f1": 0.962,
+   "ci95": [
+    0.9362,
+    0.9776
+   ]
+  },
+  "first_2_pages": {
+   "f1": 0.9731,
+   "ci95": [
+    0.9563,
+    0.9845
+   ]
+  },
+  "paired": {
+   "delta": 0.0111,
+   "ci95": [
+    -0.0158,
+    0.0467
+   ],
+   "cases": 10,
+   "decision": "nierozstrzygnięte"
+  },
+  "fields_lost_ge_0.2_f1": {},
+  "share_of_returned_fields_from_page_ge_3": 0.0257,
+  "returned_fields": 583
+ }
+}

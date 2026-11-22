@@ -1,0 +1,22 @@
+{
+ "name": "e11-rules-scan",
+ "experiment": "E11",
+ "docs": {
+  "set": "zestaw:skan,mieszany,s2,s5",
+  "cases": "dev_sub"
+ },
+ "reps": 1,
+ "concurrency": 2,
+ "server": {
+  "router": "rules",
+  "extractor": "rules",
+  "ocr": "rapidocr",
+  "llm": {
+   "retries": 4,
+   "timeout_s": 150
+  },
+  "ocr_dpi": 200,
+  "ocr_policy": "if_needed"
+ },
+ "env": {}
+}

@@ -1,0 +1,410 @@
+{
+  "experiment": "E05",
+  "seed": 20261122,
+  "ocr_dpi_a4": 150,
+  "quote_kinds": [
+    "exact",
+    "upper",
+    "nbsp",
+    "context"
+  ],
+  "A_pdf_layer": {
+    "documents": 147,
+    "cases": 1277,
+    "results": {
+      "pdf/exact/page": {
+        "n": 1277,
+        "anchored": 1098,
+        "ambiguous": 179,
+        "unanchored": 0,
+        "correct": 1098,
+        "wrong": 0,
+        "anchored_rate": 0.8598,
+        "ambiguous_rate": 0.1402,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 0,
+        "iou_mean": 1.0,
+        "iou_min": 1.0
+      },
+      "pdf/exact/nopage": {
+        "n": 1277,
+        "anchored": 1039,
+        "ambiguous": 238,
+        "unanchored": 0,
+        "correct": 1039,
+        "wrong": 0,
+        "anchored_rate": 0.8136,
+        "ambiguous_rate": 0.1864,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 0,
+        "iou_mean": 1.0,
+        "iou_min": 1.0
+      },
+      "pdf/upper/page": {
+        "n": 1277,
+        "anchored": 1098,
+        "ambiguous": 179,
+        "unanchored": 0,
+        "correct": 1098,
+        "wrong": 0,
+        "anchored_rate": 0.8598,
+        "ambiguous_rate": 0.1402,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 0,
+        "iou_mean": 1.0,
+        "iou_min": 1.0
+      },
+      "pdf/upper/nopage": {
+        "n": 1277,
+        "anchored": 1039,
+        "ambiguous": 238,
+        "unanchored": 0,
+        "correct": 1039,
+        "wrong": 0,
+        "anchored_rate": 0.8136,
+        "ambiguous_rate": 0.1864,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 0,
+        "iou_mean": 1.0,
+        "iou_min": 1.0
+      },
+      "pdf/nbsp/page": {
+        "n": 1277,
+        "anchored": 1098,
+        "ambiguous": 179,
+        "unanchored": 0,
+        "correct": 1098,
+        "wrong": 0,
+        "anchored_rate": 0.8598,
+        "ambiguous_rate": 0.1402,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 0,
+        "iou_mean": 1.0,
+        "iou_min": 1.0
+      },
+      "pdf/nbsp/nopage": {
+        "n": 1277,
+        "anchored": 1039,
+        "ambiguous": 238,
+        "unanchored": 0,
+        "correct": 1039,
+        "wrong": 0,
+        "anchored_rate": 0.8136,
+        "ambiguous_rate": 0.1864,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 0,
+        "iou_mean": 1.0,
+        "iou_min": 1.0
+      },
+      "pdf/context/page": {
+        "n": 1277,
+        "anchored": 1277,
+        "ambiguous": 0,
+        "unanchored": 0,
+        "correct": 403,
+        "wrong": 874,
+        "anchored_rate": 1.0,
+        "ambiguous_rate": 0.0,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 874,
+        "iou_mean": 0.3511,
+        "iou_min": 0.0149
+      },
+      "pdf/context/nopage": {
+        "n": 1277,
+        "anchored": 1277,
+        "ambiguous": 0,
+        "unanchored": 0,
+        "correct": 403,
+        "wrong": 874,
+        "anchored_rate": 1.0,
+        "ambiguous_rate": 0.0,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 874,
+        "iou_mean": 0.3511,
+        "iou_min": 0.0149
+      }
+    },
+    "independent_pdfium_search_check": {
+      "checked": 695,
+      "agree": 695,
+      "disagree": []
+    }
+  },
+  "B_ocr_scans": {
+    "documents": 36,
+    "cases_with_value_in_ocr_words": 311,
+    "results": {
+      "ocr/exact/page": {
+        "n": 311,
+        "anchored": 271,
+        "ambiguous": 40,
+        "unanchored": 0,
+        "correct": 227,
+        "wrong": 44,
+        "anchored_rate": 0.8714,
+        "ambiguous_rate": 0.1286,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 44,
+        "iou_mean": 0.5626,
+        "iou_min": 0.0
+      },
+      "ocr/exact/nopage": {
+        "n": 311,
+        "anchored": 254,
+        "ambiguous": 57,
+        "unanchored": 0,
+        "correct": 211,
+        "wrong": 43,
+        "anchored_rate": 0.8167,
+        "ambiguous_rate": 0.1833,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 43,
+        "iou_mean": 0.5613,
+        "iou_min": 0.0
+      },
+      "ocr/upper/page": {
+        "n": 311,
+        "anchored": 271,
+        "ambiguous": 40,
+        "unanchored": 0,
+        "correct": 227,
+        "wrong": 44,
+        "anchored_rate": 0.8714,
+        "ambiguous_rate": 0.1286,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 44,
+        "iou_mean": 0.5626,
+        "iou_min": 0.0
+      },
+      "ocr/upper/nopage": {
+        "n": 311,
+        "anchored": 254,
+        "ambiguous": 57,
+        "unanchored": 0,
+        "correct": 211,
+        "wrong": 43,
+        "anchored_rate": 0.8167,
+        "ambiguous_rate": 0.1833,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 43,
+        "iou_mean": 0.5613,
+        "iou_min": 0.0
+      },
+      "ocr/nbsp/page": {
+        "n": 311,
+        "anchored": 271,
+        "ambiguous": 40,
+        "unanchored": 0,
+        "correct": 227,
+        "wrong": 44,
+        "anchored_rate": 0.8714,
+        "ambiguous_rate": 0.1286,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 44,
+        "iou_mean": 0.5626,
+        "iou_min": 0.0
+      },
+      "ocr/nbsp/nopage": {
+        "n": 311,
+        "anchored": 254,
+        "ambiguous": 57,
+        "unanchored": 0,
+        "correct": 211,
+        "wrong": 43,
+        "anchored_rate": 0.8167,
+        "ambiguous_rate": 0.1833,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 43,
+        "iou_mean": 0.5613,
+        "iou_min": 0.0
+      },
+      "ocr/context/page": {
+        "n": 311,
+        "anchored": 311,
+        "ambiguous": 0,
+        "unanchored": 0,
+        "correct": 21,
+        "wrong": 290,
+        "anchored_rate": 1.0,
+        "ambiguous_rate": 0.0,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 290,
+        "iou_mean": 0.2035,
+        "iou_min": 0.0
+      },
+      "ocr/context/nopage": {
+        "n": 311,
+        "anchored": 310,
+        "ambiguous": 1,
+        "unanchored": 0,
+        "correct": 21,
+        "wrong": 289,
+        "anchored_rate": 0.9968,
+        "ambiguous_rate": 0.0032,
+        "unanchored_rate": 0.0,
+        "wrong_of_anchored": 289,
+        "iou_mean": 0.2041,
+        "iou_min": 0.0
+      }
+    }
+  },
+  "C_roundtrip_pdf": {
+    "tag": "pdf-warstwa tekstowa → render 200 dpi → OCR obrysu",
+    "tested": 124,
+    "ok_cer_le_0.2": 103,
+    "ok_rate": 0.8306,
+    "cer_mean": 0.1938,
+    "examples_bad": [
+      {
+        "quote": "2026/BZP00999042",
+        "ocr": "",
+        "cer": 1.0
+      },
+      {
+        "quote": "biuro@poczta.example",
+        "ocr": "",
+        "cer": 1.0
+      },
+      {
+        "quote": "17.06.2026",
+        "ocr": "",
+        "cer": 1.0
+      },
+      {
+        "quote": "„Usługa ochrony osób i mienia w obiektach Zamawiaj",
+        "ocr": "podstawowym bez negocjacji pn. Usługa ochrony osób i mienia ",
+        "cer": 1.31
+      },
+      {
+        "quote": "„Termomodernizacja budynków użyteczności publiczne",
+        "ocr": "podstawowym bez negocjacji pn. Termomodernizacja budynków uż",
+        "cer": 1.15
+      },
+      {
+        "quote": "2026/BZP00999242,",
+        "ocr": "",
+        "cer": 1.0
+      },
+      {
+        "quote": "„Usługa ochrony osób i mienia w obiektach Zamawiaj",
+        "ocr": "nieograniczonego pn. Ushuga ochrony osób i mienia w obiektac",
+        "cer": 1.35
+      },
+      {
+        "quote": "IR.271.14.2026,",
+        "ocr": "• n",
+        "cer": 1.0
+      }
+    ]
+  },
+  "C_roundtrip_ocr_scans": {
+    "tag": "OCR skanu → render 150 dpi → OCR obrysu",
+    "tested": 200,
+    "ok_cer_le_0.2": 189,
+    "ok_rate": 0.945,
+    "cer_mean": 0.1879,
+    "examples_bad": [
+      {
+        "quote": "Dostawa i wdrożenie oprogramowania do obsługi doku",
+        "ocr": "postępowania o udzielenie zamówienia w trybie przetargu ogra",
+        "cer": 0.92
+      },
+      {
+        "quote": "Dostawa licencji oprogramowania do monitorowania i",
+        "ocr": "postępowania o udzielenie zamówienia w trybie negocjacji z o",
+        "cer": 1.29
+      },
+      {
+        "quote": "Altrona Farmacja sp.k.,",
+        "ocr": "Wykonawcy wspólnie ubiegający się o udzielenie zamówienia (K",
+        "cer": 6.94
+      },
+      {
+        "quote": "Świadczenie usług sprzątania pomieszczeń biurowych",
+        "ocr": "postępowania o udzielenie zamówienia w trybie przetargu ogra",
+        "cer": 2.43
+      },
+      {
+        "quote": "Halina Różański",
+        "ocr": "pełnomocnictwa adw. Aleksandra Bartoszewicz (nr wpisu na lis",
+        "cer": 8.86
+      },
+      {
+        "quote": "Kancelaria Radców Prawnych Spółka z ograniczoną od",
+        "ocr": "adres do korespondencji: Kancelaria Radców Prawnych Spółka z",
+        "cer": 0.78
+      },
+      {
+        "quote": "Usługi ochrony fizycznej i monitoringu w systemie ",
+        "ocr": "postępowania o udzielenie zamówienia w trybie przetargu nieo",
+        "cer": 2.24
+      },
+      {
+        "quote": "Dostawa sprzętu do sterylizacji wraz z serwisem gw",
+        "ocr": "prowadzi postępowanie, którego przedmiotem jest zamówienie p",
+        "cer": 1.66
+      }
+    ]
+  },
+  "D_rotate": {
+    "docs": [
+      "przyklad_03/pelnomocnictwo.pdf",
+      "przyklad_08/odwolanie.pdf",
+      "przyklad_09/pelnomocnictwo.pdf",
+      "przyklad_10/pelnomocnictwo.pdf",
+      "przyklad_16/pelnomocnictwo.pdf",
+      "przyklad_17/potwierdzenie_przelewu.pdf",
+      "przyklad_18/potwierdzenie_przelewu.pdf",
+      "przyklad_39/odwolanie.pdf",
+      "przyklad_41/odwolanie.pdf",
+      "przyklad_52/odwolanie.pdf",
+      "przyklad_57/odwolanie.pdf",
+      "przyklad_58/potwierdzenie_przelewu.pdf"
+    ],
+    "per_rotation": {
+      "90": {
+        "quotes": 92,
+        "anchored": 87,
+        "bbox_ok": 87,
+        "anchored_rate": 0.9457,
+        "bbox_ok_rate": 0.9457,
+        "iou_min": 0.9981,
+        "iou_mean": 0.9998
+      },
+      "180": {
+        "quotes": 92,
+        "anchored": 92,
+        "bbox_ok": 92,
+        "anchored_rate": 1.0,
+        "bbox_ok_rate": 1.0,
+        "iou_min": 0.9978,
+        "iou_mean": 0.9997
+      },
+      "270": {
+        "quotes": 92,
+        "anchored": 92,
+        "bbox_ok": 92,
+        "anchored_rate": 1.0,
+        "bbox_ok_rate": 1.0,
+        "iou_min": 0.9992,
+        "iou_mean": 0.9999
+      }
+    },
+    "note": "obrót wymuszony przez set_rotation; prawda = narożniki obrysu z strony nieobróconej po transformacji CW"
+  },
+  "wall_s": 1830.0,
+  "peak_rss_mb": 2554.1,
+  "versions": {
+    "python": "3.13.18",
+    "cpu_count": 8,
+    "machine": "x86_64",
+    "pypdfium2": "5.15.2",
+    "pypdf": "7.1.1",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "numpy": "2.5.5",
+    "pillow": "13.0.0",
+    "opencv-python-headless": "5.1.0.95"
+  }
+}

@@ -1,0 +1,6 @@
+zestaw/data/
+__pycache__/
+.pytest_cache/
+vendor/
+cache/
+F1/work/

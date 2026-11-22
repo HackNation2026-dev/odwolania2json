@@ -1,0 +1,334 @@
+{
+  "experiment": "E02a",
+  "config": "dpi300_cap4000",
+  "dpi_a4_normalized": 300,
+  "max_side_len": 4000,
+  "intra_op_threads": 3,
+  "inter_op_threads": 1,
+  "seed": 20261122,
+  "cases": [
+    "przyklad_02",
+    "przyklad_03",
+    "przyklad_04",
+    "przyklad_12",
+    "przyklad_18",
+    "przyklad_29",
+    "przyklad_39",
+    "przyklad_44",
+    "przyklad_48",
+    "przyklad_49",
+    "przyklad_52",
+    "przyklad_54"
+  ],
+  "documents": 36,
+  "pages": 92,
+  "findability": {
+    "exact": 341,
+    "fuzzy_only": 5,
+    "total": 359,
+    "exact_rate": 0.9499,
+    "exact_or_fuzzy_rate": 0.9638
+  },
+  "by_profile": {
+    "P1-szablon": {
+      "exact": 142,
+      "fuzzy_only": 1,
+      "total": 149,
+      "exact_rate": 0.953,
+      "exact_or_fuzzy_rate": 0.9597
+    },
+    "P2-ksero-szare": {
+      "exact": 86,
+      "fuzzy_only": 1,
+      "total": 93,
+      "exact_rate": 0.9247,
+      "exact_or_fuzzy_rate": 0.9355
+    },
+    "P4-300-szare": {
+      "exact": 63,
+      "fuzzy_only": 1,
+      "total": 65,
+      "exact_rate": 0.9692,
+      "exact_or_fuzzy_rate": 0.9846
+    },
+    "P3-ksero-rgb": {
+      "exact": 50,
+      "fuzzy_only": 2,
+      "total": 52,
+      "exact_rate": 0.9615,
+      "exact_or_fuzzy_rate": 1.0
+    }
+  },
+  "by_class": {
+    "odwolanie": {
+      "exact": 194,
+      "fuzzy_only": 3,
+      "total": 206,
+      "exact_rate": 0.9417,
+      "exact_or_fuzzy_rate": 0.9563
+    },
+    "pelnomocnictwo": {
+      "exact": 78,
+      "fuzzy_only": 1,
+      "total": 81,
+      "exact_rate": 0.963,
+      "exact_or_fuzzy_rate": 0.9753
+    },
+    "przelew": {
+      "exact": 69,
+      "fuzzy_only": 1,
+      "total": 72,
+      "exact_rate": 0.9583,
+      "exact_or_fuzzy_rate": 0.9722
+    }
+  },
+  "by_path": {
+    ".OdwolanieKIO.czynnosc_dzien": {
+      "exact": 11,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".OdwolanieKIO.data": {
+      "exact": 10,
+      "fuzzy_only": 0,
+      "total": 11
+    },
+    ".OdwolanieKIO.miejscowosc": {
+      "exact": 11,
+      "fuzzy_only": 0,
+      "total": 11
+    },
+    ".Odwolujacy[].krs": {
+      "exact": 10,
+      "fuzzy_only": 0,
+      "total": 10
+    },
+    ".Odwolujacy[].nazwa": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".Odwolujacy[].nip": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".Odwolujacy[].pelnomocnik.imie_nazwisko": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".Odwolujacy[].pelnomocnik.mail": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".Odwolujacy[].pelnomocnik.nazwa": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".Odwolujacy[].regon": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".Zamawiajacy[].krs": {
+      "exact": 11,
+      "fuzzy_only": 0,
+      "total": 11
+    },
+    ".Zamawiajacy[].nazwa": {
+      "exact": 11,
+      "fuzzy_only": 1,
+      "total": 12
+    },
+    ".Zamawiajacy[].nip": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".Zamawiajacy[].regon": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".ZamowieniePubliczne.numer_bzp": {
+      "exact": 9,
+      "fuzzy_only": 0,
+      "total": 10
+    },
+    ".ZamowieniePubliczne.numer_postepowania": {
+      "exact": 10,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".ZamowieniePubliczne.numer_ted": {
+      "exact": 8,
+      "fuzzy_only": 0,
+      "total": 9
+    },
+    ".ZamowieniePubliczne.tytul": {
+      "exact": 7,
+      "fuzzy_only": 2,
+      "total": 12
+    },
+    ".mocodawca[].data.imie_nazwisko": {
+      "exact": 2,
+      "fuzzy_only": 0,
+      "total": 2
+    },
+    ".mocodawca[].data.krs": {
+      "exact": 11,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".mocodawca[].data.nazwa": {
+      "exact": 14,
+      "fuzzy_only": 0,
+      "total": 14
+    },
+    ".mocodawca[].data.nip": {
+      "exact": 14,
+      "fuzzy_only": 0,
+      "total": 14
+    },
+    ".mocodawca[].podpisujacy[].imie_nazwisko": {
+      "exact": 20,
+      "fuzzy_only": 0,
+      "total": 20
+    },
+    ".pelnomocnicy[].imie_nazwisko": {
+      "exact": 17,
+      "fuzzy_only": 1,
+      "total": 19
+    },
+    ".przelew_bankowy.data_operacji": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".przelew_bankowy.kwota": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".przelew_bankowy.na_rachunek": {
+      "exact": 11,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".przelew_bankowy.numer_transakcji": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".przelew_bankowy.tytul": {
+      "exact": 10,
+      "fuzzy_only": 1,
+      "total": 12
+    },
+    ".przelew_bankowy.z_rachunku": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    }
+  },
+  "sec_per_page_quality_run": {
+    "p50": 11.8245,
+    "p95": 20.5645,
+    "mean": 12.492,
+    "note": "bez flock, inne procesy równolegle: tylko orientacyjnie"
+  },
+  "cer_clean_raster": {
+    "n": 24,
+    "mean": 0.1201,
+    "median": 0.1177,
+    "weighted": 0.1316
+  },
+  "per_document_missed": [
+    {
+      "id": "skan/przyklad_02/odwolanie",
+      "profile": "P1-szablon",
+      "pages": 2,
+      "missed": [
+        ".ZamowieniePubliczne.tytul=Dostawa materiałów eksploatacyjnych do u"
+      ]
+    },
+    {
+      "id": "skan/przyklad_12/odwolanie",
+      "profile": "P1-szablon",
+      "pages": 2,
+      "missed": [
+        ".ZamowieniePubliczne.numer_bzp=2026/BZP00999997",
+        ".ZamowieniePubliczne.numer_postepowania=SWZ.755.2026",
+        ".ZamowieniePubliczne.numer_ted=999035-2026"
+      ]
+    },
+    {
+      "id": "skan/przyklad_18/odwolanie",
+      "profile": "P2-ksero-szare",
+      "pages": 2,
+      "missed": [
+        ".OdwolanieKIO.czynnosc_dzien=2026-08-11",
+        ".ZamowieniePubliczne.tytul=Świadczenie usług pocztowych i kurierski"
+      ]
+    },
+    {
+      "id": "skan/przyklad_29/odwolanie",
+      "profile": "P2-ksero-szare",
+      "pages": 2,
+      "missed": [
+        ".ZamowieniePubliczne.numer_postepowania=ZS.377.2026",
+        ".ZamowieniePubliczne.tytul=Usługi ochrony fizycznej i monitoringu w"
+      ]
+    },
+    {
+      "id": "skan/przyklad_39/pelnomocnictwo",
+      "profile": "P2-ksero-szare",
+      "pages": 1,
+      "missed": [
+        ".mocodawca[].data.krs=9994387983",
+        ".pelnomocnicy[].imie_nazwisko=Aleksandra Bartoszewicz"
+      ]
+    },
+    {
+      "id": "skan/przyklad_44/potwierdzenie_przelewu",
+      "profile": "P1-szablon",
+      "pages": 1,
+      "missed": [
+        ".przelew_bankowy.tytul=opłata skarbowa od pełnomocnictwa dla Na"
+      ]
+    },
+    {
+      "id": "skan/przyklad_49/odwolanie",
+      "profile": "P1-szablon",
+      "pages": 10,
+      "missed": [
+        ".OdwolanieKIO.data=2026-07-03"
+      ]
+    },
+    {
+      "id": "skan/przyklad_54/potwierdzenie_przelewu",
+      "profile": "P4-300-szare",
+      "pages": 1,
+      "missed": [
+        ".przelew_bankowy.na_rachunek=48712632795243020219057576"
+      ]
+    }
+  ],
+  "peak_rss_mb": 1972.9,
+  "wall_s": 1599.2,
+  "versions": {
+    "python": "3.13.18",
+    "cpu_count": 8,
+    "machine": "x86_64",
+    "pypdfium2": "5.15.2",
+    "pypdf": "7.1.1",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "numpy": "2.5.5",
+    "pillow": "13.0.0",
+    "opencv-python-headless": "5.1.0.95"
+  }
+}

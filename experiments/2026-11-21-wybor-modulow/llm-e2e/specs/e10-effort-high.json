@@ -1,0 +1,24 @@
+{
+ "name": "e10-effort-high",
+ "experiment": "E10",
+ "docs": {
+  "set": "dev_screen",
+  "negatives": false
+ },
+ "reps": 3,
+ "concurrency": 4,
+ "server": {
+  "router": "llm1",
+  "extractor": "llm1",
+  "ocr": "none",
+  "llm": {
+   "retries": 4,
+   "timeout_s": 150,
+   "effort": "high"
+  }
+ },
+ "env": {
+  "LLME2E_MODE": "text",
+  "LLME2E_PROMPT": "p2"
+ }
+}

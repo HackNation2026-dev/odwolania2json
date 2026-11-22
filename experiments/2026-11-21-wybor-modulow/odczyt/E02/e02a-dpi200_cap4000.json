@@ -1,0 +1,319 @@
+{
+  "experiment": "E02a",
+  "config": "dpi200_cap4000",
+  "dpi_a4_normalized": 200,
+  "max_side_len": 4000,
+  "intra_op_threads": 3,
+  "inter_op_threads": 1,
+  "seed": 20261122,
+  "cases": [
+    "przyklad_02",
+    "przyklad_03",
+    "przyklad_04",
+    "przyklad_12",
+    "przyklad_18",
+    "przyklad_29",
+    "przyklad_39",
+    "przyklad_44",
+    "przyklad_48",
+    "przyklad_49",
+    "przyklad_52",
+    "przyklad_54"
+  ],
+  "documents": 36,
+  "pages": 92,
+  "findability": {
+    "exact": 341,
+    "fuzzy_only": 6,
+    "total": 359,
+    "exact_rate": 0.9499,
+    "exact_or_fuzzy_rate": 0.9666
+  },
+  "by_profile": {
+    "P1-szablon": {
+      "exact": 141,
+      "fuzzy_only": 2,
+      "total": 149,
+      "exact_rate": 0.9463,
+      "exact_or_fuzzy_rate": 0.9597
+    },
+    "P2-ksero-szare": {
+      "exact": 86,
+      "fuzzy_only": 1,
+      "total": 93,
+      "exact_rate": 0.9247,
+      "exact_or_fuzzy_rate": 0.9355
+    },
+    "P4-300-szare": {
+      "exact": 64,
+      "fuzzy_only": 1,
+      "total": 65,
+      "exact_rate": 0.9846,
+      "exact_or_fuzzy_rate": 1.0
+    },
+    "P3-ksero-rgb": {
+      "exact": 50,
+      "fuzzy_only": 2,
+      "total": 52,
+      "exact_rate": 0.9615,
+      "exact_or_fuzzy_rate": 1.0
+    }
+  },
+  "by_class": {
+    "odwolanie": {
+      "exact": 190,
+      "fuzzy_only": 5,
+      "total": 206,
+      "exact_rate": 0.9223,
+      "exact_or_fuzzy_rate": 0.9466
+    },
+    "pelnomocnictwo": {
+      "exact": 80,
+      "fuzzy_only": 0,
+      "total": 81,
+      "exact_rate": 0.9877,
+      "exact_or_fuzzy_rate": 0.9877
+    },
+    "przelew": {
+      "exact": 71,
+      "fuzzy_only": 1,
+      "total": 72,
+      "exact_rate": 0.9861,
+      "exact_or_fuzzy_rate": 1.0
+    }
+  },
+  "by_path": {
+    ".OdwolanieKIO.czynnosc_dzien": {
+      "exact": 10,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".OdwolanieKIO.data": {
+      "exact": 11,
+      "fuzzy_only": 0,
+      "total": 11
+    },
+    ".OdwolanieKIO.miejscowosc": {
+      "exact": 11,
+      "fuzzy_only": 0,
+      "total": 11
+    },
+    ".Odwolujacy[].krs": {
+      "exact": 8,
+      "fuzzy_only": 0,
+      "total": 10
+    },
+    ".Odwolujacy[].nazwa": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".Odwolujacy[].nip": {
+      "exact": 11,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".Odwolujacy[].pelnomocnik.imie_nazwisko": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".Odwolujacy[].pelnomocnik.mail": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".Odwolujacy[].pelnomocnik.nazwa": {
+      "exact": 11,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".Odwolujacy[].regon": {
+      "exact": 10,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".Zamawiajacy[].krs": {
+      "exact": 10,
+      "fuzzy_only": 0,
+      "total": 11
+    },
+    ".Zamawiajacy[].nazwa": {
+      "exact": 11,
+      "fuzzy_only": 1,
+      "total": 12
+    },
+    ".Zamawiajacy[].nip": {
+      "exact": 11,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".Zamawiajacy[].regon": {
+      "exact": 11,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".ZamowieniePubliczne.numer_bzp": {
+      "exact": 9,
+      "fuzzy_only": 1,
+      "total": 10
+    },
+    ".ZamowieniePubliczne.numer_postepowania": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".ZamowieniePubliczne.numer_ted": {
+      "exact": 9,
+      "fuzzy_only": 0,
+      "total": 9
+    },
+    ".ZamowieniePubliczne.tytul": {
+      "exact": 9,
+      "fuzzy_only": 3,
+      "total": 12
+    },
+    ".mocodawca[].data.imie_nazwisko": {
+      "exact": 2,
+      "fuzzy_only": 0,
+      "total": 2
+    },
+    ".mocodawca[].data.krs": {
+      "exact": 11,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".mocodawca[].data.nazwa": {
+      "exact": 14,
+      "fuzzy_only": 0,
+      "total": 14
+    },
+    ".mocodawca[].data.nip": {
+      "exact": 14,
+      "fuzzy_only": 0,
+      "total": 14
+    },
+    ".mocodawca[].podpisujacy[].imie_nazwisko": {
+      "exact": 20,
+      "fuzzy_only": 0,
+      "total": 20
+    },
+    ".pelnomocnicy[].imie_nazwisko": {
+      "exact": 19,
+      "fuzzy_only": 0,
+      "total": 19
+    },
+    ".przelew_bankowy.data_operacji": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".przelew_bankowy.kwota": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".przelew_bankowy.na_rachunek": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".przelew_bankowy.numer_transakcji": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    },
+    ".przelew_bankowy.tytul": {
+      "exact": 11,
+      "fuzzy_only": 1,
+      "total": 12
+    },
+    ".przelew_bankowy.z_rachunku": {
+      "exact": 12,
+      "fuzzy_only": 0,
+      "total": 12
+    }
+  },
+  "sec_per_page_quality_run": {
+    "p50": 16.606,
+    "p95": 32.4156,
+    "mean": 17.522,
+    "note": "bez flock, inne procesy równolegle: tylko orientacyjnie"
+  },
+  "cer_clean_raster": {
+    "n": 24,
+    "mean": 0.1287,
+    "median": 0.1085,
+    "weighted": 0.1605
+  },
+  "per_document_missed": [
+    {
+      "id": "skan/przyklad_02/odwolanie",
+      "profile": "P1-szablon",
+      "pages": 2,
+      "missed": [
+        ".OdwolanieKIO.czynnosc_dzien=2026-08-22"
+      ]
+    },
+    {
+      "id": "skan/przyklad_12/odwolanie",
+      "profile": "P1-szablon",
+      "pages": 2,
+      "missed": [
+        ".Odwolujacy[].krs=9990299642",
+        ".Odwolujacy[].nip=9999988004",
+        ".Odwolujacy[].regon=999132498"
+      ]
+    },
+    {
+      "id": "skan/przyklad_18/odwolanie",
+      "profile": "P2-ksero-szare",
+      "pages": 2,
+      "missed": [
+        ".OdwolanieKIO.czynnosc_dzien=2026-08-11",
+        ".Odwolujacy[].pelnomocnik.nazwa=Kancelaria Radców Prawnych Spółka z ogra"
+      ]
+    },
+    {
+      "id": "skan/przyklad_39/pelnomocnictwo",
+      "profile": "P2-ksero-szare",
+      "pages": 1,
+      "missed": [
+        ".mocodawca[].data.krs=9994387983"
+      ]
+    },
+    {
+      "id": "skan/przyklad_44/odwolanie",
+      "profile": "P2-ksero-szare",
+      "pages": 11,
+      "missed": [
+        ".Zamawiajacy[].krs=9995721046",
+        ".Zamawiajacy[].nip=9991184529",
+        ".Zamawiajacy[].regon=999437085"
+      ]
+    },
+    {
+      "id": "skan/przyklad_49/odwolanie",
+      "profile": "P1-szablon",
+      "pages": 10,
+      "missed": [
+        ".Odwolujacy[].krs=9998920417",
+        ".Odwolujacy[].regon=999640601"
+      ]
+    }
+  ],
+  "peak_rss_mb": 1068.5,
+  "wall_s": 1809.2,
+  "versions": {
+    "python": "3.13.18",
+    "cpu_count": 8,
+    "machine": "x86_64",
+    "pypdfium2": "5.15.2",
+    "pypdf": "7.1.1",
+    "rapidocr": "3.10.0",
+    "onnxruntime": "1.32.0",
+    "numpy": "2.5.5",
+    "pillow": "13.0.0",
+    "opencv-python-headless": "5.1.0.95"
+  }
+}
