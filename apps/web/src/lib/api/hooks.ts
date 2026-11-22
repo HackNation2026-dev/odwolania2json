@@ -53,7 +53,7 @@ export function useChooseClass() {
 }
 export function useUpdateField() {
   const inv = useInvalidate();
-  return useMutation({ mutationFn: (v: { id: string; key: string; value: string | number | boolean | null }) => getApi().updateField(v.id, v.key, v.value), onSuccess: inv });
+  return useMutation({ mutationFn: (v: { id: string; key: string; value: import("./schemas").Field["value"] }) => getApi().updateField(v.id, v.key, v.value), onSuccess: inv });
 }
 export function useExportJson() {
   return useMutation({ mutationFn: (id: string) => getApi().exportJson(id) });
@@ -72,3 +72,11 @@ export const useSystemInfo = () => useQuery({ queryKey: ["system-info"], queryFn
 export const useUsers = () => useQuery({ queryKey: ["users"], queryFn: () => getApi().listUsers() });
 
 export const useEvents = () => useQuery({ queryKey: ["events"], queryFn: () => getApi().listEvents() });
+
+export const usePipeline = (id: string) => useQuery({ queryKey: ["pipeline", id], queryFn: () => getApi().getPipeline(id), refetchInterval: q => q.state.data?.stages.some(s => s.state === "w toku") ? 1000 : false });
+export const useDiagnosis = (id: string) => useQuery({ queryKey: ["diagnosis", id], queryFn: () => getApi().getDiagnosis(id) });
+export const useVersions = (id: string) => useQuery({ queryKey: ["versions", id], queryFn: () => getApi().getVersions(id) });
+export function useRestoreVersion() {
+  const inv = useInvalidate();
+  return useMutation({ mutationFn: (v: { id: string; version: number }) => getApi().restoreVersion(v.id, v.version), onSuccess: inv });
+}

@@ -88,14 +88,14 @@ function DocumentTable({ documents }: { documents: DocumentRecord[] }) {
                     ? `${d.fields.filter((f) => f.value !== null).length}/${d.fields.length}`
                     : "—"}
                   <p className="text-xs text-muted">
-                    {d.fields.filter((f) => f.value === null).length} do
+                    {d.fields.filter((f) => f.gap?.reviewRequired).length} do
                     sprawdzenia
                   </p>
                 </td>
                 <td className="break-all p-3 text-xs">
                   {d.status === "foreign"
                     ? `${d.fileName.replace(/\.pdf$/i, ".json")} ({})`
-                    : d.status === "full"
+                    : ["full", "partial"].includes(d.status)
                       ? d.fileName.replace(/\.pdf$/i, ".json")
                       : "brak zatwierdzonego wyniku"}
                 </td>

@@ -14,7 +14,11 @@
     "e2e": "playwright test",
     "check": "npm run typecheck && npm run lint && npm run test",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "pdf:assets": "node scripts/pdf/copy-assets.mjs",
+    "postinstall": "npm run pdf:assets",
+    "pdf:demo": "tsx scripts/pdf/generate-demo-pdfs.ts",
+    "pdf:verify": "tsx scripts/pdf/verify-geometry.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.108.2",
@@ -22,11 +26,13 @@
     "next": "^16.4.6",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
+    "react-web-pdf-editor": "0.1.6",
     "zod": "^4.6.7"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.14.0",
     "@playwright/test": "^1.65.1",
+    "@react-pdf/renderer": "4.9.0",
     "@storybook/addon-a11y": "^10.6.8",
     "@storybook/addon-docs": "^10.6.8",
     "@storybook/nextjs-vite": "^10.6.8",
@@ -47,6 +53,7 @@
     "postcss": "^8.5.33",
     "storybook": "^10.6.8",
     "tailwindcss": "^4.3.5",
+    "tsx": "4.23.15",
     "typescript": "^6.0.3",
     "vitest": "^5.1.1"
   }

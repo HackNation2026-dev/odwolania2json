@@ -42,7 +42,7 @@ export function DocumentTile({ document: d }: { document: DocumentRecord }) {
         <p className="text-xs text-muted">
           {d.className ?? "Klasa nieustalona"}
         </p>
-        <StatusBadge status={d.status} />
+        <StatusBadge status={d.status} /><p className="break-all text-xs text-muted">Plik wynikowy: {["full", "partial", "foreign"].includes(d.status) ? d.fileName.replace(/\.pdf$/i, ".json") : "brak wyniku"}</p>
         <p className="text-xs text-muted">
           {d.pages} str. ·{" "}
           {new Date(d.uploadedAt).toLocaleDateString("pl-PL", {

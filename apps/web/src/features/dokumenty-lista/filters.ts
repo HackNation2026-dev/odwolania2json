@@ -45,7 +45,7 @@ export function parseFilters(params: URLSearchParams): Filters {
     klasa: params.get("klasa") ?? "",
     sort: sorts.find((s) => s === sort) ?? "status",
     widok: widok === "galeria" || widok === "tabela" ? widok : undefined,
-    source: ["text", "ocr"].includes(params.get("source") ?? "")
+    source: ["pdf", "ocr"].includes(params.get("source") ?? "")
       ? params.get("source")!
       : "",
     codes: [...new Set(params.getAll("kod"))],
@@ -67,7 +67,8 @@ export function serializeFilters(filters: Filters): URLSearchParams {
 export const needsAttention = (d: DocumentRecord) =>
   ["partial", "error", "ambiguous", "multi"].includes(d.status);
 export const documentCodes = (d: DocumentRecord) => [
-  ...d.reasons,
+  ...d.codes,
+  ...d.fields.flatMap(f => f.gap?.codes ?? []),
   ...(d.errorCode ? [d.errorCode] : []),
 ];
 export function filterDocuments(

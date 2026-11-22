@@ -58,7 +58,7 @@ describe("document list with real mock", () => {
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "" } });
     fireEvent.change(
       screen.getByRole("combobox", { name: "Klasa dokumentu" }),
-      { target: { value: "decyzja" } },
+      { target: { value: "przelew" } },
     );
     expect(
       within(screen.getByTestId("document-gallery")).getAllByRole("link"),
@@ -69,7 +69,7 @@ describe("document list with real mock", () => {
     });
     expect(
       within(screen.getByTestId("document-gallery")).getAllByRole("link")[0],
-    ).toHaveTextContent("decyzja-0412.pdf");
+    ).toHaveTextContent("menu-restauracji.pdf");
     fireEvent.click(screen.getByRole("button", { name: /Lista/ }));
     expect(screen.getByRole("table")).toBeInTheDocument();
     expect(localStorage.getItem(VIEW_STORAGE_KEY)).toBe("tabela");

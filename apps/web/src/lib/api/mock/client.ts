@@ -1,32 +1,38 @@
 import { ApiError, type ApiClient } from "../client";
 import { documentSchema, type CheckStep, type DocumentQuery, type DocumentRecord, type ExportDecision, type KeyStatus } from "../schemas";
-import { classes, seedDocuments } from "./data";
+import { classes, seedDocuments, pipelineFor, diagnosisFor } from "./data";
+import { buildResult, validateResult, appealReasons } from "../contract";
+import type { ResultVersion, Versions } from "../processing";
 
 const statusOrder = ["error", "ambiguous", "multi", "partial", "running", "foreign", "full"];
 
 export function evaluateExport(doc: DocumentRecord, classesList = classes): ExportDecision {
   const baseName = doc.fileName.replace(/\.pdf$/i, "");
   const blockers: ExportDecision["blockers"] = [];
-  if (doc.status === "foreign") return { allowed: true, fileName: `${baseName}.json`, blockers };
+  if (doc.status === "foreign" && doc.classId === "obcy" && doc.state.outcome === "foreign") return { allowed: true, fileName: `${baseName}.json`, blockers };
   if (doc.status === "running") blockers.push({ code: "RUNNING", message: "Analiza trwa. Poczekaj na wynik." });
   if (doc.status === "error") blockers.push({ code: doc.errorCode ?? "TECHNICAL_ERROR", message: "Błąd techniczny. Brak wyniku ekstrakcji; użyj „Ponów”." });
   if (doc.status === "ambiguous") blockers.push({ code: "AMBIGUOUS", message: "Niejednoznaczna klasa. Wybierz klasę dokumentu." });
   if (doc.status === "multi") blockers.push({ code: "MULTI", message: "Wiele dokumentów w jednym PDF. Rozdziel plik." });
   if (doc.status === "partial" || doc.status === "full") {
     const cls = classesList.find((c) => c.id === doc.classId);
+    if (!cls || cls.id === "obcy") blockers.push({ code: "invalid_configuration", message: "Brak właściwej klasy kontraktu." });
     for (const def of cls?.fields ?? []) {
       const field = doc.fields.find((x) => x.key === def.key);
       if (def.required && !def.nullable && (field?.value ?? null) === null) {
         blockers.push({ code: "NULL_NOT_ALLOWED", message: `Pole „${def.label}” jest puste, a null jest niedozwolony.` });
       }
     }
+    if (cls) for (const issue of validateResult(cls.id, buildResult(doc))) blockers.push({ code: "result_validation_failed", message: issue });
   }
+  if (doc.status === "foreign") blockers.push({ code: "foreign_document", message: "Brak potwierdzenia dokumentu obcego." });
   return { allowed: blockers.length === 0, fileName: blockers.length === 0 ? `${baseName}.json` : null, blockers };
 }
 
 export function buildExportJson(doc: DocumentRecord): string {
-  if (doc.status === "foreign") return "{}";
-  return JSON.stringify(Object.fromEntries(doc.fields.map((x) => [x.key, x.value])), null, 2);
+  const decision = evaluateExport(doc);
+  if (!decision.allowed) throw new ApiError("EXPORT_BLOCKED", decision.blockers[0]?.message ?? "Eksport zablokowany.");
+  return JSON.stringify(buildResult(doc), null, 2);
 }
 
 export type MockOptions = { latencyMs?: number; failKey?: boolean };
@@ -34,6 +40,17 @@ export type MockOptions = { latencyMs?: number; failKey?: boolean };
 export function createMockClient(options: MockOptions = {}): ApiClient {
   const latency = options.latencyMs ?? 120;
   let docs = seedDocuments();
+  const histories = new Map<string, Versions>();
+  const snapshot = (d: DocumentRecord, version: number, kind: ResultVersion["kind"], restoredFrom: number | null = null): ResultVersion => ({ version, documentVersion: 1, kind, restoredFrom, createdAt: new Date().toISOString(), fields: structuredClone(d.fields), status: d.status, classId: d.classId, json: evaluateExport(d).allowed ? buildExportJson(d) : null });
+  for (const d of docs) {
+    const results = ["full", "partial", "foreign"].includes(d.status) ? [snapshot(d, 1, "silnik")] : [];
+    if (d.id === "doc-1") {
+      results[0]!.fields.find(f => f.key === "ZamowieniePubliczne.numer_ted")!.value = "999136-2026";
+      results[0]!.json = JSON.stringify(buildResult({ ...d, fields: results[0]!.fields }), null, 2);
+      results.push(snapshot(d, 2, "korekta"), snapshot(d, 3, "zatwierdzony"));
+    }
+    histories.set(d.id, { documents: [{ version: 1, fileName: d.fileName, sha256: "a".repeat(64), createdAt: d.uploadedAt }], results });
+  }
   let key: KeyStatus = { configured: false, persisted: false, lastCheck: "never" };
   let seq = 100;
   const wait = <T>(v: T) => new Promise<T>((r) => setTimeout(() => r(structuredClone(v)), latency));
@@ -48,6 +65,18 @@ export function createMockClient(options: MockOptions = {}): ApiClient {
   };
 
   return {
+    getPipeline: async id => wait(pipelineFor(find(id))),
+    getDiagnosis: async id => wait(diagnosisFor(find(id))),
+    getVersions: async id => { const d = find(id); return wait(histories.get(id) ?? { documents: [{ version: 1, fileName: d.fileName, sha256: "a".repeat(64), createdAt: d.uploadedAt }], results: [snapshot(d, 1, "silnik")] }); },
+    async restoreVersion(id, version) {
+      const d = find(id);
+      const history = histories.get(id);
+      const old = history?.results.find(v => v.version === version);
+      if (!history || !old || old.json === null) throw new ApiError("NOT_FOUND", "Nie znaleziono zapisanej wersji wyniku.");
+      const restored = { ...d, fields: structuredClone(old.fields), reasons: old.status === "partial" ? [...new Set(old.fields.flatMap(f => f.gap ? [f.gap.reason] : []))] : [], status: old.status, classId: old.classId, className: classes.find(c => c.id === old.classId)?.name ?? null, resultVersion: history.results.at(-1)!.version + 1 };
+      history.results.push(snapshot(restored, restored.resultVersion, "przywrócenie", version));
+      return wait(replace(restored));
+    },
     ...createMockInfoMethods(wait),
     ...createMockEventMethods(wait),
     getKeyStatus: () => wait(key),
@@ -91,7 +120,7 @@ export function createMockClient(options: MockOptions = {}): ApiClient {
         const id = `doc-${++seq}`;
         return documentSchema.parse({
           id, fileName: file.name, pages: 2, sizeKb: file.sizeKb, status: "running", classId: null, className: null,
-          uploadedAt: new Date().toISOString(), batchId, progress: 0, fields: [], evidence: [], reasons: [], errorCode: null, candidates: [], pageText: [],
+          uploadedAt: new Date().toISOString(), batchId, progress: 0, fields: [], evidence: [], reasons: [], errorCode: null, candidates: [], pageText: [], processedPages: [], unprocessedPages: [1, 2], codes: [], state: { progress: "queued", outcome: null, stage: null }, technicalErrors: [], resultVersion: 1, contractRevision: "main-7590db8 / openapi 0.5.0",
         });
       });
       docs = [...added, ...docs];
@@ -99,7 +128,9 @@ export function createMockClient(options: MockOptions = {}): ApiClient {
       for (const d of added) {
         setTimeout(() => {
           const done = seedDocuments()[0]!;
-          replace({ ...done, id: d.id, fileName: d.fileName, uploadedAt: d.uploadedAt, batchId: d.batchId, sizeKb: d.sizeKb });
+          const completed = { ...done, id: d.id, fileName: d.fileName, uploadedAt: d.uploadedAt, batchId: d.batchId, sizeKb: d.sizeKb, resultVersion: 1 };
+          replace(completed);
+          histories.set(d.id, { documents: [{ version: 1, fileName: d.fileName, sha256: "a".repeat(64), createdAt: d.uploadedAt }], results: [snapshot(completed, 1, "silnik")] });
         }, latency * 12);
       }
       return wait(added);
@@ -107,19 +138,31 @@ export function createMockClient(options: MockOptions = {}): ApiClient {
     async retryDocument(id) {
       const d = find(id);
       const done = seedDocuments()[0]!;
-      return wait(replace({ ...done, id: d.id, fileName: d.fileName, uploadedAt: d.uploadedAt, batchId: d.batchId }));
+      const history = histories.get(id)!;
+      const completed = { ...done, id: d.id, fileName: d.fileName, uploadedAt: d.uploadedAt, batchId: d.batchId, resultVersion: (history.results.at(-1)?.version ?? 0) + 1 };
+      history.results.push(snapshot(completed, completed.resultVersion, "silnik"));
+      return wait(replace(completed));
     },
     async chooseClass(id, classId) {
       const d = find(id);
       const cls = classes.find((c) => c.id === classId);
       if (!cls) throw new ApiError("NO_CLASS", "Nieznana klasa.");
-      return wait(replace({ ...d, status: "partial", classId, className: cls.name, candidates: [], fields: cls.fields.map((x) => ({ key: x.key, label: x.label, value: null, evidenceIds: [], state: "missing" as const })) }));
+      const template = seedDocuments().find(x => x.classId === cls.id && x.status === "full");
+      if (!template) throw new ApiError("NO_CLASS", "Wybierz klasę kontraktu.");
+      const history = histories.get(id)!;
+      const completed = { ...template, id: d.id, fileName: d.fileName, batchId: d.batchId, uploadedAt: d.uploadedAt, resultVersion: (history.results.at(-1)?.version ?? 0) + 1 };
+      history.results.push(snapshot(completed, completed.resultVersion, "silnik"));
+      return wait(replace(completed));
     },
     async updateField(id, fieldKey, value) {
       const d = find(id);
-      const fields = d.fields.map((x) => (x.key === fieldKey ? { ...x, value, state: value === null ? ("missing" as const) : ("corrected" as const) } : x));
-      const complete = evaluateExport({ ...d, fields }).allowed;
-      return wait(replace({ ...d, fields, status: complete && d.status === "partial" ? "full" : d.status }));
+      const old = d.fields.find(f => f.key === fieldKey);
+      if (!old) throw new ApiError("NOT_FOUND", "Nie znaleziono pola.");
+      const fields = d.fields.map((x) => (x.key === fieldKey ? { ...x, value, gap: null, state: value === null ? ("brak" as const) : ("poprawione" as const) } : x.key === "OdwolanieKIO.czynnosc_opis" && fieldKey === "OdwolanieKIO.czynnosc_powod_id" ? { ...x, value: typeof value === "number" ? appealReasons[value - 1] ?? null : null, state: "poprawione" as const, evidenceIds: [] } : x));
+      if (!d.classId || validateResult(d.classId, buildResult({ ...d, fields })).length) throw new ApiError("VALIDATION_ERROR", "Wartość jest niezgodna z kontraktem.");
+      const updated = { ...d, fields, reasons: d.status === "partial" ? [...new Set(fields.flatMap(f => f.gap ? [f.gap.reason] : []))] : [], resultVersion: d.resultVersion + 1 };
+      histories.get(id)?.results.push(snapshot(updated, updated.resultVersion, "korekta"));
+      return wait(replace(updated));
     },
     getExportDecision: async (id) => wait(evaluateExport(find(id))),
     async exportJson(id) {
@@ -140,7 +183,7 @@ function createMockInfoMethods(wait: <T>(value: T) => Promise<T>): Pick<ApiClien
       models: [{ id: "demo-llm", name: "MiniMax-M3.1-Flash-Preview", version: null, role: "Klasyfikacja i ekstrakcja", state: "configured", parameters: null, license: "MiniMax Community License — niepotwierdzona", weights: "Publiczne wagi: wymagają weryfikacji", localInstallation: "Instrukcja lokalnej instalacji: niepotwierdzona", provider: "api.minimax.io · protokół zgodny z Anthropic", companyCountry: null, serverCountry: null, region: "Europa — wpis demonstracyjny, niepotwierdzony", confirmation: "Brak źródła i daty potwierdzenia licencji oraz lokalizacji. Wywołania rzeczywistego modelu zablokowane." }],
       ocr: { name: "rapidocr", version: null, mode: "shim", execution: "Lokalnie, CPU urządzenia jury — konfiguracja demonstracyjna", license: null, parameters: null, detail: "OCR tymczasowy (shim). Docelowy własny model OCR nie jest podłączony. Mock nie wykonuje OCR ani nie potwierdza gotowości komponentu." },
       largestModel: null,
-      versions: { application: "0.1.0", engine: null, classes: "demo-v1", contract: null },
+      versions: { application: "0.1.0", engine: null, classes: "v1", contract: "main-7590db8 / openapi 0.5.0" },
       limits: { fileMb: 20, batch: null, concurrency: null },
       licenses: null,
     }),

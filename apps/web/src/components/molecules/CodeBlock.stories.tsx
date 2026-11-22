@@ -4,7 +4,7 @@ const meta = { title: "Molecules/CodeBlock" };
 export default meta;
 export const Default = {
   render: () => (
-    <CodeBlock code={'{"sygnatura": null}'} copyLabel="Kopiuj JSON" />
+    <CodeBlock code={'{"przelew_bankowy": {"kwota": null}}'} copyLabel="Kopiuj JSON" />
   ),
 };
 export const NoWrap = {

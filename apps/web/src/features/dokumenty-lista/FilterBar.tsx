@@ -169,7 +169,7 @@ export function FilterBar({
           className={control}
         >
           <option value="">Źródło tekstu</option>
-          <option value="text">Tekst PDF</option>
+          <option value="pdf">Tekst PDF</option>
           <option value="ocr">OCR</option>
         </select>
         <details className="relative">

@@ -2,6 +2,7 @@
 
 ## Nieopublikowane — 0.8.0
 
+- Dopisano do ADR-002 podział etapów (pip na etapie 1, GUI na prezentacji), punktację GUI i otwarte decyzje: biblioteka komponentów, podgląd PDF, model pól wg kontraktu.
 - Dodano [przepływ urzędnika](docs/04-architektura/gui/user-flow-urzednik.md): pełny przebieg operatora, widoczne etapy przetwarzania, naprawa błędów, korekty i wersjonowanie po MVP, eksport wariantu A oraz osobne dowody.
 - Udokumentowano obowiązkowy klucz MiniMax, brak logowania w zakresie i wyłącznie syntetyczne demo; dodano tablicę zgodności, mapę ramek/trasa/kod i pytania otwarte. Dokument rozróżnia plan, makiety i demonstracyjną implementację; VERSION pozostaje bez zmian.
 

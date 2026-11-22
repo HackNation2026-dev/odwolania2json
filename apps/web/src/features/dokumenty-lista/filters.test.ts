@@ -23,10 +23,10 @@ describe("document URL filters", () => {
       ...emptyFilters,
       q: "zażółć & plik.pdf",
       statuses: ["full", "error"] as const,
-      klasa: "decyzja",
+      klasa: "przelew",
       sort: "name" as const,
       widok: "tabela" as const,
-      codes: ["missing_field"],
+      codes: ["information_not_explicit"],
       attention: true,
       source: "ocr",
     };
@@ -47,15 +47,15 @@ describe("document URL filters", () => {
       filterDocuments(docs, {
         ...emptyFilters,
         statuses: ["full"],
-        klasa: "decyzja",
+        klasa: "przelew",
       }).map((d) => d.id),
     ).toEqual(["doc-10"]);
     expect(
       filterDocuments(docs, { ...emptyFilters, sort: "name" })[0]?.fileName,
-    ).toBe("decyzja-0412.pdf");
+    ).toBe("menu-restauracji.pdf");
     expect(
       filterDocuments(docs, { ...emptyFilters, sort: "oldest" })[0]?.id,
-    ).toBe("doc-5");
+    ).toBe("doc-1");
     expect(
       filterDocuments(docs, { ...emptyFilters, sort: "status" })[0]?.status,
     ).toBe("error");
@@ -69,7 +69,7 @@ describe("document URL filters", () => {
     expect(
       filterDocuments(docs, {
         ...emptyFilters,
-        codes: ["missing_field", "unreadable_scan"],
+        codes: ["ocr_unavailable", "scan"],
       }),
     ).toHaveLength(2);
   });

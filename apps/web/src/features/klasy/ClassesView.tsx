@@ -23,7 +23,7 @@ export function ClassesView() {
         </div>
       ) : query.data.length === 0 ? <p role="status">Brak poprawnego zestawu klas. Analiza zablokowana. Sprawdź konfigurację YAML poza GUI.</p> : (
         <div className="grid gap-4 lg:grid-cols-3">
-          {query.data.map((cls) => (
+          {query.data.filter(c => c.id !== "obcy").map((cls) => (
             <article key={cls.id} className="min-w-0 space-y-3 rounded-lg border border-border bg-surface p-4">
               <h2 className="text-lg font-semibold">{cls.name}</h2>
               <p className="break-all font-mono text-sm text-muted">{cls.id}</p>
@@ -33,10 +33,10 @@ export function ClassesView() {
               <details>
                 <summary className="min-h-11 cursor-pointer py-3 text-sm underline">Szczegóły pól — {cls.name}</summary>
                 <ul className="space-y-3">
-                  {cls.fields.map((field) => <li key={field.key} className="rounded-md bg-subtle p-3 text-sm">
+                  {[...cls.containers, ...cls.fields].map((field) => <li key={field.key} className="rounded-md bg-subtle p-3 text-sm">
                     <h3 className="font-medium">{field.label}</h3>
                     <code className="block break-all text-muted">{field.key}</code>
-                    <p>{field.required ? "Wymagane" : "Opcjonalne"} · {field.nullable ? "Dopuszcza null" : "Null niedozwolony"}</p>
+                    <p>{field.type} · {field.description}<br />{field.required ? "Wymagane" : "Opcjonalne"} · {field.nullable ? "Dopuszcza null" : "Null niedozwolony"}</p>
                   </li>)}
                 </ul>
               </details>

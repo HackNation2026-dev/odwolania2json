@@ -13,22 +13,22 @@ test("filters, searches, sorts, remembers view and opens a document", async ({
   await expect(
     page.getByTestId("document-gallery").getByRole("link"),
   ).toHaveCount(5);
-  await page.getByRole("searchbox").fill("odwolanie-001");
+  await page.getByRole("searchbox").fill("odwolanie.pdf");
   await expect(
     page.getByTestId("document-gallery").getByRole("link"),
   ).toHaveCount(1);
-  await expect(page).toHaveURL(/q=odwolanie-001/);
+  await expect(page).toHaveURL(/q=odwolanie.pdf/);
   await page.getByRole("button", { name: "Wyczyść filtry" }).click();
   await page.getByRole("combobox", { name: "Sortowanie" }).selectOption("name");
   await expect(
     page.getByTestId("document-gallery").getByRole("link").first(),
-  ).toContainText("decyzja-0412.pdf");
+  ).toContainText("menu-restauracji.pdf");
   await page
     .getByRole("combobox", { name: "Sortowanie" })
     .selectOption("oldest");
   await expect(
     page.getByTestId("document-gallery").getByRole("link").first(),
-  ).toContainText("odwolanie-005.pdf");
+  ).toContainText("odwolanie.pdf");
   await page.getByRole("button", { name: /Lista/ }).click();
   await expect(page.getByRole("button", { name: /Lista/ })).toHaveAttribute(
     "aria-pressed",
@@ -40,8 +40,8 @@ test("filters, searches, sorts, remembers view and opens a document", async ({
     "true",
   );
   await page.getByRole("button", { name: /Kafelki/ }).click();
-  await page.getByRole("searchbox").fill("odwolanie-001");
-  await page.getByRole("link", { name: /odwolanie-001.pdf/ }).click();
+  await page.getByRole("searchbox").fill("odwolanie.pdf");
+  await page.getByRole("link", { name: /^odwolanie\.pdf / }).click();
   await expect(page).toHaveURL(/\/dokumenty\/doc-1$/);
 });
 

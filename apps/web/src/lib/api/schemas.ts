@@ -3,7 +3,8 @@ import { z } from "zod";
 export const documentStatus = z.enum(["full", "partial", "foreign", "error", "running", "ambiguous", "multi"]);
 export type DocumentStatus = z.infer<typeof documentStatus>;
 
-export const partialReason = z.enum(["ocr_unavailable", "unreadable_scan", "missing_field", "low_confidence", "page_limit"]);
+export const classIdSchema = z.enum(["odwolanie", "pelnomocnictwo", "przelew", "obcy"]);
+export const partialReason = z.enum(["missing", "not_applicable", "unreadable", "conflicting", "unprocessed"]);
 export type PartialReason = z.infer<typeof partialReason>;
 
 export const evidenceSchema = z.object({
@@ -12,18 +13,29 @@ export const evidenceSchema = z.object({
   page: z.number().int().positive(),
   quote: z.string(),
   /** Prostokąt w ułamkach strony (0..1) do podświetlenia na PDF. */
-  box: z.object({ x: z.number(), y: z.number(), w: z.number(), h: z.number() }),
-  confidence: z.number().min(0).max(1),
-  source: z.enum(["text", "ocr"]),
+  box: z.object({ x: z.number(), y: z.number(), w: z.number(), h: z.number() }).optional(),
+  confidence: z.number().min(0).max(1).nullable(),
+  source: z.enum(["pdf", "ocr", "rule"]),
+  method: z.enum(["regex", "ai", "rule"]),
+  rule: z.string().nullable(),
+  premiseIds: z.array(z.string()),
+  words: z.array(z.string()),
+  bbox: z.array(z.tuple([z.number(), z.number(), z.number(), z.number()])),
 });
 export type Evidence = z.infer<typeof evidenceSchema>;
 
 export const fieldSchema = z.object({
   key: z.string(),
   label: z.string(),
-  value: z.union([z.string(), z.number(), z.boolean(), z.null()]),
+  group: z.string(),
+  type: z.string(),
+  description: z.string(),
+  required: z.boolean(),
+  nullable: z.boolean(),
+  value: z.json(),
   evidenceIds: z.array(z.string()),
-  state: z.enum(["ok", "missing", "computed", "corrected"]),
+  state: z.enum(["ok", "brak", "wyliczone", "poprawione"]),
+  gap: z.object({ reason: partialReason, codes: z.array(z.string()), description: z.string(), reviewRequired: z.boolean() }).nullable(),
 });
 export type Field = z.infer<typeof fieldSchema>;
 
@@ -33,7 +45,7 @@ export const documentSchema = z.object({
   pages: z.number().int().nonnegative(),
   sizeKb: z.number().nonnegative(),
   status: documentStatus,
-  classId: z.string().nullable(),
+  classId: classIdSchema.nullable(),
   className: z.string().nullable(),
   uploadedAt: z.string(),
   batchId: z.string(),
@@ -45,14 +57,24 @@ export const documentSchema = z.object({
   /** Nazwy klas kandydujących dla statusu "ambiguous". */
   candidates: z.array(z.string()),
   pageText: z.array(z.string()),
+  processedPages: z.array(z.number()),
+  unprocessedPages: z.array(z.number()),
+  codes: z.array(z.string()),
+  state: z.object({ progress: z.enum(["queued", "running", "done"]), outcome: z.enum(["complete", "partial", "foreign", "ambiguous", "technical_error"]).nullable(), stage: z.string().nullable() }),
+  technicalErrors: z.array(z.object({ stage: z.string(), code: z.string(), description: z.string(), retryable: z.boolean(), attempt: z.number().int().positive(), page: z.number().nullable() })),
+  resultVersion: z.number().int().positive(),
+  contractRevision: z.string(),
 });
 export type DocumentRecord = z.infer<typeof documentSchema>;
 
 export const documentClassSchema = z.object({
-  id: z.string(),
+  id: classIdSchema,
   name: z.string(),
   description: z.string(),
-  fields: z.array(z.object({ key: z.string(), label: z.string(), required: z.boolean(), nullable: z.boolean() })),
+  model: z.string(),
+  version: z.literal("v1"),
+  fields: z.array(fieldSchema.omit({ value: true, evidenceIds: true, state: true, gap: true })),
+  containers: z.array(fieldSchema.omit({ value: true, evidenceIds: true, state: true, gap: true })),
 });
 export type DocumentClass = z.infer<typeof documentClassSchema>;
 

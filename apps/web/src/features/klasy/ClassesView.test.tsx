@@ -19,7 +19,7 @@ describe("ClassesView", () => {
     const classes = await api.listClasses();
     mount(api);
     expect(screen.getByRole("status")).toHaveTextContent("Wczytywanie klas");
-    for (const cls of classes) {
+    for (const cls of classes.filter(c => c.id !== "obcy")) {
       const heading = await screen.findByRole("heading", { name: cls.name });
       const card = heading.closest("article")!;
       expect(within(card).getByText(`Liczba pól: ${cls.fields.length}`)).toBeVisible();

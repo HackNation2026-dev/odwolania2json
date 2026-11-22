@@ -267,7 +267,7 @@ Status ocenia **pokrycie w zaprojektowanym przepływie operatora**, nie realizac
 | UZP-02 — tekst, skany, mieszane (uzupełnienie 0.5.0) | 3, 6, §4–§5 | F56–F58/F23/F52 | częściowo — diagnoza i naprawa opisane; działający OCR/model i dowody wymagają odbioru |
 | UZP-03 — ścisły JSON, dowody osobno | 11–13 | F10/F60/F61, `?tab=json/dowody/eksport` | pokryte — wariant A i rozdzielenie plików; zapis skrócony oznacza trzy osobne wartości `tab` |
 | UZP-04 — brak zmyślonych danych | 8–11, §5 | F51/F11/F61 | częściowo — pięć powodów i blokada; U-Q13 o nieczytelnym wymaganym polu nadal otwarte |
-| UZP-05 — Python 3.13+, requirements.txt, tylko pip, CLI | przed krokiem 1 | poza GUI; F56 pokazuje wersje | luka — dokument operatora nie zastępuje próby instalacji i CLI; U11 |
+| UZP-05 — Python 3.13+, requirements.txt, tylko pip, CLI | przed krokiem 1 | poza GUI; F56 pokazuje wersje | luka dotyczy CLI, nie GUI — wymóg „tylko pip” obowiązuje na etapie 1 (CLI), GUI jest pokazywane na prezentacji ([ADR-002 0.8.0](../../07-decyzje/ADR-002-decyzje-po-recenzji.md)); dokument operatora nie zastępuje próby instalacji i CLI; U11 |
 | UZP-06 — nazwy i podfoldery input/output | 4, 12, §7 | F28/F42/F54, `/dokumenty` | częściowo — pojedyncze nazwy opisane; foldery i ZIP dopiero E2, niepotwierdzone testem |
 | UZP-07 — obcy: pusty JSON z nazwą oryginału; mentor: dokładnie `{}` | 7, 11–12, §5 | F13/F10 | pokryte — wystarczający odczyt, przesłanki i dokładna reprezentacja |
 | UZP-08 — otwarte komponenty i model możliwy do instalacji lokalnej | 3, §8 | F56/F22, `/jak-to-dziala` | luka — karta metadanych i udana kontrola nie dowodzą licencji ani możliwości lokalnej instalacji; U10 |

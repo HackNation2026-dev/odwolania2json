@@ -12,11 +12,11 @@ class DocumentScreen {
   get download() { return this.page.getByRole("button", { name: "Pobierz JSON", exact: true }); }
 }
 
-test("edits missing field and downloads validated JSON", async ({ page }) => {
+test("corrects a nullable field and downloads validated JSON", async ({ page }) => {
   const screen = new DocumentScreen(page); await screen.open("doc-3");
-  await expect(screen.download).toBeDisabled();
-  await page.getByRole("button", { name: "Edytuj Data pisma" }).click();
-  await page.getByLabel("Nowa wartość: Data pisma").fill("2026-03-20");
+  await expect(screen.download).toBeEnabled();
+  await page.getByRole("button", { name: "Edytuj Data odwołania" }).click();
+  await page.getByLabel("Nowa wartość: Data odwołania").fill("2026-03-20");
   await page.getByRole("button", { name: "Zapisz", exact: true }).click();
   await expect(screen.download).toBeEnabled();
   const downloading = page.waitForEvent("download"); await screen.download.click();
@@ -24,7 +24,7 @@ test("edits missing field and downloads validated JSON", async ({ page }) => {
   expect(download.suggestedFilename()).toBe("odwolanie-003.json");
   const path = await download.path();
   const json = JSON.parse(await readFile(path!, "utf8"));
-  expect(json.data_pisma).toBe("2026-03-20"); expect(json.kwota).toBeNull(); expect(json).not.toHaveProperty("evidence");
+  expect(json.OdwolanieKIO.data).toBe("2026-03-20"); expect(json.ZamowieniePubliczne.numer_ted).toBeNull(); expect(json).not.toHaveProperty("evidence");
 });
 
 test("blocks failed document and retries analysis", async ({ page }) => {
@@ -36,13 +36,13 @@ test("blocks failed document and retries analysis", async ({ page }) => {
   await expect(screen.download).toBeEnabled();
 });
 
-test("chooses ambiguous class while keeping incomplete export blocked", async ({ page }) => {
+test("reextracts an ambiguous document using the selected class", async ({ page }) => {
   const screen = new DocumentScreen(page); await screen.open("doc-5");
   await expect(screen.download).toBeDisabled();
-  await page.getByRole("button", { name: "Wybierz: Odwołanie od decyzji" }).click();
-  await expect(page.locator('[data-status="partial"]')).toBeVisible();
-  await expect(page.getByRole("button", { name: "Edytuj Data pisma" })).toBeVisible();
-  await expect(screen.download).toBeDisabled();
+  await page.getByRole("button", { name: "Wybierz: Odwołanie do KIO" }).click();
+  await expect(page.locator('[data-status="full"]')).toBeVisible();
+  await expect(page.getByRole("button", { name: "Edytuj Data odwołania" })).toBeVisible();
+  await expect(screen.download).toBeEnabled();
 });
 
 test("downloads exactly an empty object for confirmed foreign document", async ({ page }) => {
@@ -57,7 +57,7 @@ test("downloads exactly an empty object for confirmed foreign document", async (
 test("shows JSON wrapping and mobile document view without overflow", async ({ page }, testInfo) => {
   const screen = new DocumentScreen(page); await screen.open("doc-1", "json");
   await expect(page.getByLabel("Zawijaj linie")).toBeChecked();
-  await expect(page.getByLabel("JSON dokumentu")).toContainText('"sygnatura"');
+  await expect(page.getByLabel("JSON dokumentu")).toContainText('"ZamowieniePubliczne"');
   if (testInfo.project.name === "phone") {
     await page.getByRole("link", { name: "Dokument", exact: true }).click();
     await expect(page.getByRole("region", { name: /Strona PDF/ })).toBeVisible();
@@ -96,7 +96,7 @@ for (const viewport of [{ width: 1440, height: 900 }, { width: 1280, height: 720
       const panes = page.locator(".scroll-pane");
       await expect(panes).not.toHaveCount(0);
       for (const pane of await panes.all()) expect((await pane.boundingBox())?.height).toBeGreaterThan(0);
-      const targetField = panel.locator('article[id^="field-"]').filter({ hasText: id === "doc-10" ? "Data decyzji" : id === "doc-11" ? "Pełnomocnik" : "Data pisma" });
+      const targetField = panel.locator('article[id^="field-"]').filter({ hasText: id === "doc-10" ? "Data operacji" : id === "doc-11" ? "PESEL" : "Data odwołania" });
       await targetField.scrollIntoViewIfNeeded();
       await expect(targetField).toBeInViewport();
       expect((await targetField.boundingBox())?.height).toBeGreaterThan(0);
